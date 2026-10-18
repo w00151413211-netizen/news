@@ -164,6 +164,55 @@ def collect():
 # 2. 翻译
 # ============================================================
 
+CACHE_PATH = os.path.join("docs", "translate_cache.json")
+CACHE_MAX  = 5000          # 缓存最多保留多少条新闻的译文
+AI_MODELS  = ["openai/gpt-4o-mini", "openai/gpt-4.1-mini"]
+AI_BATCH   = 10            # 每批翻译几条：太大易超时，太小请求多
+AI_ENDPOINT = "https://models.github.ai/inference/v1/chat/completions"
+
+SYS_PROMPT = ("你是专业民航新闻翻译。把英文新闻标题/摘要逐条翻译成简体中文。\n"
+              "要求：准确、简洁，符合中文新闻表达习惯；"
+              "航空公司名、机型（如 Boeing 737 MAX）、机场三字码等专有名词保留英文原文；"
+              "不要添加任何解释、前言或后记。\n"
+              "必须严格按输入的行数输出，每行格式为「序号| 译文」，序号与输入一致。")
+
+
+def has_cn(text):
+    """判断字符串里有没有中文，用来确认翻译是否真的成功。"""
+    return bool(re.search(r"[\u4e00-\u9fff]", text or ""))
+
+
+# ---------- 译文缓存：翻过的就不再重复调用接口 ----------
+
+def load_cache():
+    """优先读 docs/ 下的缓存；没有再读仓库根目录的（方便手动上传补充）。"""
+    for path in (CACHE_PATH, "translate_cache.json"):
+        if not os.path.exists(path):
+            continue
+        try:
+            with open(path, encoding="utf-8") as f:
+                data = json.load(f)
+            if isinstance(data, dict) and data:
+                return data
+        except Exception:
+            continue
+    return {}
+
+
+def save_cache(cache):
+    try:
+        if len(cache) > CACHE_MAX:
+            keys = sorted(cache, key=lambda k: cache[k].get("ts", 0))
+            for k in keys[:len(cache) - CACHE_MAX]:
+                cache.pop(k, None)
+        with open(CACHE_PATH, "w", encoding="utf-8") as f:
+            json.dump(cache, f, ensure_ascii=False)
+    except Exception as e:
+        print(f"  (缓存写入失败: {e})")
+
+
+# ---------- 翻译接口 ----------
+
 def _translate_google(text, target="zh-CN"):
     """免费 Google 翻译接口（无需密钥）。失败返回 None。"""
     if not text:
@@ -180,54 +229,84 @@ def _translate_google(text, target="zh-CN"):
         return None
 
 
-def _translate_github_ai(texts, target="zh-CN"):
-    """用 GitHub 自带的免费 AI 接口批量翻译（GitHub Actions 里无需任何密钥）。
-
-    一次请求翻完一批标题，速度快、质量也比普通机器翻译好得多。
-    免费账号有调用额度限制，超了会自动回退到英文。
-    """
+def _ai_batch(texts, model):
+    """调用 GitHub 免费 AI 接口翻译一批（约 10 条）。失败返回 None。"""
     token = os.environ.get("GITHUB_TOKEN")
     if not token or not texts:
         return None
 
-    # 把待翻译内容编号后一起发过去，要求按同样顺序返回
-    numbered = "\n".join(f"{i+1}. {t}" for i, t in enumerate(texts))
+    numbered = "\n".join(f"{i+1}| {t}" for i, t in enumerate(texts))
     payload = {
-        "model": "openai/gpt-4o-mini",
+        "model": model,
         "messages": [
-            {"role": "system", "content":
-             "你是专业民航新闻翻译。把英文新闻标题/摘要翻译成简体中文，"
-             "要求：准确、简洁、符合中文新闻表达习惯；"
-             "保留航空公司名、机型（如 Boeing 737 MAX）、机场代码等专有名词原文；"
-             "只输出翻译结果，每行一条，格式为「序号. 译文」，不要任何解释。"},
-            {"role": "user", "content": numbered}
+            {"role": "system", "content": SYS_PROMPT},
+            {"role": "user", "content": numbered},
         ],
         "temperature": 0.3,
     }
     try:
         req = urllib.request.Request(
-            "https://models.github.ai/inference/v1/chat/completions",
-            method="POST",
+            AI_ENDPOINT, method="POST",
             headers={"Authorization": f"Bearer {token}",
                      "Content-Type": "application/json",
-                     "User-Agent": "codebuddy"},
+                     "User-Agent": "aviation-news-bot"},
             data=json.dumps(payload).encode("utf-8"))
-        with urllib.request.urlopen(req, timeout=90) as resp:
+        with urllib.request.urlopen(req, timeout=120) as resp:
             data = json.loads(resp.read().decode("utf-8"))
         content = data["choices"][0]["message"]["content"]
     except Exception as e:
-        print(f"  (AI 翻译不可用: {e})")
+        print(f"  ({model} 调用失败: {e})")
         return None
 
-    # 解析返回：按「序号. 译文」逐行提取
-    result = []
+    # 按「序号| 译文」解析，允许模型偶尔多吐几行废话
+    got = {}
     for line in content.splitlines():
         line = line.strip()
-        m = re.match(r"^\d+[\.、]\s*(.+)$", line)
+        m = re.match(r"^(\d+)\s*[|｜.、:：]\s*(.+)$", line)
         if m:
-            result.append(m.group(1).strip())
-    # 数量对不上就认为这次翻译不可靠，交给调用方回退
-    return result if len(result) == len(texts) else None
+            i = int(m.group(1)) - 1
+            val = m.group(2).strip()
+            if 0 <= i < len(texts) and val:
+                got[i] = val
+
+    if len(got) == len(texts):
+        return [got[i] for i in range(len(texts))]
+    # 拿到七成以上就算成功，缺的用原文补上，避免整批白翻
+    if len(got) >= max(1, int(len(texts) * 0.7)):
+        return [got.get(i, texts[i]) for i in range(len(texts))]
+    print(f"  ({model} 返回条数不足: {len(got)}/{len(texts)})")
+    return None
+
+
+def ai_translate(texts):
+    """分批 + 多模型 + 重试。返回与 texts 等长的列表，失败的位置是 None。"""
+    if not texts:
+        return []
+    result = [None] * len(texts)
+
+    for model in AI_MODELS:
+        todo = [i for i, v in enumerate(result) if v is None]
+        if not todo:
+            break
+        done_batches = 0
+        for s in range(0, len(todo), AI_BATCH):
+            idxs = todo[s:s + AI_BATCH]
+            got = None
+            for attempt in range(2):          # 每批最多试两次
+                got = _ai_batch([texts[i] for i in idxs], model)
+                if got:
+                    break
+                time.sleep(2 + attempt * 2)
+            if got:
+                for i, v in zip(idxs, got):
+                    result[i] = v
+                done_batches += 1
+        if done_batches == 0:
+            print(f"  AI 模型 {model} 本次完全不可用")
+        if all(v is not None for v in result):
+            break
+
+    return result
 
 
 def _translate_mymemory(text, target="zh-CN"):
@@ -241,75 +320,125 @@ def _translate_mymemory(text, target="zh-CN"):
         with urllib.request.urlopen(req, timeout=8) as resp:
             data = json.loads(resp.read().decode("utf-8"))
         out = data.get("responseData", {}).get("translatedText", "")
-        # MyMemory 失败时有时会原样返回，做一下校验
         return out if out and out != text else None
     except Exception:
         return None
 
 
-def translate_items(items):
-    """翻译标题和摘要。Google 为主，MyMemory 兜底。
-
-    先探测一次主接口是否可用：不可用就换备用源，
-    两个都不通就直接跳过整个翻译环节（保留英文），
-    避免几十条新闻每条都等超时。任何单条失败也不影响其它条目。
-    """
-    # ① 优先用 GitHub 自带 AI：一次把全部标题翻完，质量最好
-    titles = [it["title_en"] for it in items]
-    ai_titles = _translate_github_ai(titles)
-    if ai_titles:
-        print("  AI 翻译标题完成")
-        for it, zh in zip(items, ai_titles):
-            it["title_zh"] = zh
-
-        # 摘要也翻一批（截断长度，控制额度）
-        summaries = [(it["summary"] or "")[:150] for it in items]
-        ai_sums = _translate_github_ai(summaries)
-        if ai_sums:
-            print("  AI 翻译摘要完成")
-            for it, zh in zip(items, ai_sums):
-                it["summary_zh"] = zh
-        else:
-            for it in items:
-                it["summary_zh"] = it["summary"]
-        return items
-
-    # ② AI 不可用，退回传统的免费翻译接口
-    print("  AI 翻译不可用，改用免费翻译接口")
+def _fallback_translate(items):
+    """AI 不通时的兜底：Google → MyMemory，只对还缺中文的条目逐条翻。"""
     use_google = _translate_google("test") is not None
-    if not use_google:
-        if _translate_mymemory("test") is None:
-            print("  翻译接口均不可用，跳过翻译（保留英文原文）")
-            # 关键：跳过时也要把中文字段填成英文，否则界面上标题会是空白
-            for it in items:
-                it["title_zh"] = it["title_en"]
-                it["summary_zh"] = it["summary"]
-            return items
-        print("  Google 不可用，改用 MyMemory 翻译")
+    print("  兜底翻译：" + ("Google" if use_google else "MyMemory"))
 
     def tr(text):
-        """翻译一段文字，失败时重试，再失败返回 None（由调用方回退到英文）。"""
+        if not text:
+            return None
         out = _translate_google(text) if use_google else None
-        if out:
+        if out and has_cn(out):
             return out
-        # MyMemory 免费额度有限，偶尔会 429 限流，重试两次
         for _ in range(2):
             out = _translate_mymemory(text)
-            if out:
+            if out and has_cn(out):
                 return out
-            time.sleep(1.5)
+            time.sleep(1.2)
         return None
 
-    for i, it in enumerate(items):
-        # 标题
-        t = tr(it["title_en"])
-        it["title_zh"] = t if t else it["title_en"]
-        # 摘要
-        s = tr(it["summary"])
-        it["summary_zh"] = s if s else it["summary"]
-        time.sleep(0.25)   # 控制频率，防止被封
-        if (i + 1) % 10 == 0:
-            print(f"  已翻译 {i+1}/{len(items)}")
+    n = 0
+    for it in items:
+        if not has_cn(it.get("title_zh")):
+            t = tr(it["title_en"])
+            if t:
+                it["title_zh"] = t
+                n += 1
+        if (it.get("summary") or "").strip() and not has_cn(it.get("summary_zh")):
+            s = tr(it["summary"][:150])
+            if s:
+                it["summary_zh"] = s
+        time.sleep(0.2)
+    print(f"  兜底翻译完成 {n} 条标题")
+
+
+def translate_items(items):
+    """翻译标题和摘要。
+
+    策略（从稳到快）：
+      1. 先查历史译文缓存，命中的直接用 —— 不消耗任何接口额度
+      2. 新条目用 GitHub 免费 AI 分批翻译，每批成功立刻入缓存
+      3. 仍失败的走 Google / MyMemory 兜底
+      4. 最后无论如何都填成英文，界面上绝不会出现空白标题
+    """
+    cache = load_cache()
+    if cache:
+        print(f"  译文缓存 {len(cache)} 条，可复用")
+
+    title_todo, sum_todo = [], []
+    for it in items:
+        c = cache.get(it["link"]) or {}
+        it["title_zh"] = c.get("t") if has_cn(c.get("t")) else ""
+        it["summary_zh"] = c.get("s") if has_cn(c.get("s")) else ""
+        if not it["title_zh"]:
+            title_todo.append(it)
+        if (it.get("summary") or "").strip() and not it["summary_zh"]:
+            sum_todo.append(it)
+
+    hit = len(items) - len(title_todo)
+    print(f"  缓存命中 {hit} 条，需新翻译 {len(title_todo)} 条")
+
+    # ① AI 翻译标题
+    if title_todo:
+        zhs = ai_translate([t["title_en"] for t in title_todo])
+        ok = 0
+        for it, zh in zip(title_todo, zhs):
+            if zh and has_cn(zh):
+                it["title_zh"] = zh
+                rec = cache.setdefault(it["link"], {})
+                rec["t"] = zh
+                rec["ts"] = time.time()
+                ok += 1
+        print(f"  AI 翻译标题 {ok}/{len(title_todo)} 条")
+        save_cache(cache)
+
+    # ② AI 翻译摘要（长度截断，控制额度）
+    if sum_todo:
+        zhs = ai_translate([(t["summary"] or "")[:150] for t in sum_todo])
+        ok = 0
+        for it, zh in zip(sum_todo, zhs):
+            if zh and has_cn(zh):
+                it["summary_zh"] = zh
+                rec = cache.setdefault(it["link"], {})
+                rec["s"] = zh
+                rec["ts"] = time.time()
+                ok += 1
+        print(f"  AI 翻译摘要 {ok}/{len(sum_todo)} 条")
+        save_cache(cache)
+
+    # ③ 兜底：还缺中文的再走免费接口
+    missing = [it for it in items
+               if not has_cn(it.get("title_zh"))
+               or ((it.get("summary") or "").strip() and not has_cn(it.get("summary_zh")))]
+    if missing:
+        print(f"  {len(missing)} 条未翻译成功，尝试兜底接口")
+        _fallback_translate(missing)
+        for it in missing:
+            if has_cn(it.get("title_zh")):
+                rec = cache.setdefault(it["link"], {})
+                rec["t"] = it["title_zh"]
+                rec["ts"] = time.time()
+            if has_cn(it.get("summary_zh")):
+                rec = cache.setdefault(it["link"], {})
+                rec["s"] = it["summary_zh"]
+                rec["ts"] = time.time()
+        save_cache(cache)
+
+    # ④ 最终保底：任何情况下都不留空白
+    for it in items:
+        if not it.get("title_zh"):
+            it["title_zh"] = it["title_en"]
+        if not it.get("summary_zh"):
+            it["summary_zh"] = it["summary"]
+
+    zh_n = sum(1 for it in items if has_cn(it["title_zh"]))
+    print(f"  最终中文标题 {zh_n}/{len(items)} 条")
     return items
 
 
@@ -776,6 +905,21 @@ def write_assets():
         json.dump(MANIFEST, f, ensure_ascii=False, indent=2)
 
 
+def prev_has_chinese():
+    """上一版网页是不是中文的？用来决定这次能不能覆盖它。"""
+    path = os.path.join("docs", "data.json")
+    if not os.path.exists(path):
+        return False
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+        if isinstance(data, list):
+            return any(has_cn(i.get("title_zh", "")) for i in data)
+    except Exception:
+        pass
+    return False
+
+
 def main():
     os.makedirs("docs", exist_ok=True)
 
@@ -786,17 +930,21 @@ def main():
         print("翻译中 ...")
         translate_items(items)
 
-    out = build_html(items)
-    with open("docs/index.html", "w", encoding="utf-8") as f:
-        f.write(out)
+    # 防退化：这次一条都没翻成功、而上一版是中文时，
+    # 保留上一版网页不动，绝不把网站打回纯英文
+    zh_n = sum(1 for it in items if has_cn(it.get("title_zh", "")))
+    if items and zh_n == 0 and prev_has_chinese():
+        print("！本次翻译全部失败，保留上一版中文网页，不覆盖")
+    else:
+        out = build_html(items)
+        with open("docs/index.html", "w", encoding="utf-8") as f:
+            f.write(out)
+        # 保存原始数据，方便以后做 API 或历史记录
+        with open("docs/data.json", "w", encoding="utf-8") as f:
+            json.dump(items, f, ensure_ascii=False, indent=2)
+        print(f"已生成 docs/index.html（{len(out)} 字符）")
 
     write_assets()
-
-    # 保存原始数据，方便以后做 API 或历史记录
-    with open("docs/data.json", "w", encoding="utf-8") as f:
-        json.dump(items, f, ensure_ascii=False, indent=2)
-
-    print(f"已生成 docs/index.html（{len(out)} 字符）")
 
 
 if __name__ == "__main__":

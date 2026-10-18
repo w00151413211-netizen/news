@@ -1,0 +1,69 @@
+# 每天自动抓取民航新闻并更新网站
+#
+# 触发方式：
+#   - schedule：每天 UTC 0:00（北京时间 8:00）自动运行
+#   - workflow_dispatch：在 GitHub 网页上点一下手动触发
+#
+# 部署目标：GitHub Pages
+
+name: 每日民航新闻
+
+on:
+  schedule:
+    - cron: "0 0 * * *"        # 每天 UTC 00:00 = 北京时间 08:00
+  workflow_dispatch:                       # 允许手动点 Run 按钮
+
+permissions:
+  contents: write                     # 提交生成的 HTML 回仓库
+  pages: write
+  id-token: write
+  models: read                         # 调用 GitHub 免费 AI 接口做翻译
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 抓取新闻并生成网页
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # 供免费 AI 翻译接口使用
+        run: python aggregate.py
+
+      - name: 提交更新
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          # 没有变化时不报错，直接跳过
+          git diff --staged --quiet || git commit -m "更新新闻 $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
+
+      - name: 上传到 Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+            path: docs
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 部署到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

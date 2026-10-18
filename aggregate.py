@@ -11,6 +11,7 @@
 只依赖 Python 标准库 + feedparser，GitHub Actions 免费运行。
 """
 
+import base64
 import json
 import math
 import os
@@ -336,35 +337,248 @@ def hot_label(score):
     return "", 0
 
 
+DETAIL_CSS = """
+/* ========== 二级页面（详情） ========== */
+.detail{
+  position:fixed;inset:0;z-index:40;background:var(--bg);
+  display:flex;flex-direction:column;
+  transform:translateX(100%);visibility:hidden;
+  transition:transform .3s cubic-bezier(.32,.72,0,1), visibility .3s;
+  box-shadow:-1px 0 12px rgba(0,0,0,.06);
+}
+.detail.open{transform:none;visibility:visible}
+
+/* 详情顶栏 */
+.dbar{
+  flex:none;display:flex;align-items:center;gap:10px;
+  padding:calc(var(--safe-t) + 10px) 14px 10px;
+  background:color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:.5px solid var(--sep);
+}
+.dback{
+  flex:none;display:inline-flex;align-items:center;gap:2px;
+  background:none;border:0;padding:4px 2px;margin:0;
+  color:var(--accent);font-size:16px;font-family:inherit;font-weight:500;cursor:pointer;
+}
+.dback .chev{font-size:22px;line-height:1;margin-top:-2px}
+.dback:active{opacity:.5}
+.dbar-info{flex:1;min-width:0;text-align:right;font-size:12px;color:var(--sub);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dsrc{float:left;color:var(--accent);font-weight:600;max-width:60%;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+
+/* 详情内容 */
+.dscroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.dwrap{padding:18px 18px calc(var(--safe-b) + 20px);max-width:680px;margin:0 auto}
+.dmeta{display:flex;align-items:center;gap:7px;margin-bottom:9px;font-size:11.5px;color:var(--sub)}
+.dtitle{margin:0 0 16px;font-size:23px;line-height:1.35;font-weight:800;letter-spacing:.2px}
+
+.dsec{margin-bottom:18px}
+.dsec-h{
+  display:flex;align-items:center;gap:6px;
+  font-size:11.5px;font-weight:700;color:var(--sub);letter-spacing:.6px;
+  margin:0 0 8px;
+}
+.dsec-h::before{content:"";width:3px;height:11px;border-radius:2px;background:var(--accent)}
+.en-tag{font-size:9.5px;font-weight:700;letter-spacing:.5px;color:var(--sub);
+  border:.5px solid var(--sep);border-radius:4px;padding:1px 4px}
+.dzh{margin:0;font-size:16.5px;line-height:1.78;color:var(--text)}
+
+.dorig{background:var(--card);border:.5px solid var(--sep);border-radius:12px;padding:14px}
+.dentitle{margin:0 0 8px;font-size:16px;line-height:1.45;font-weight:600}
+.densum{margin:0;font-size:14px;line-height:1.65;color:var(--sub)}
+.dlink{display:block;margin-top:10px;font-size:11.5px;color:var(--sub);
+  word-break:break-all;text-decoration:none;opacity:.85}
+
+/* 上一条 / 下一条 */
+.dnav{display:flex;gap:10px;margin-top:6px}
+.dnav button{
+  flex:1;padding:11px 0;border-radius:10px;border:.5px solid var(--sep);
+  background:var(--card);color:var(--accent);font-size:14px;font-weight:600;
+  font-family:inherit;cursor:pointer;
+}
+.dnav button:disabled{color:var(--sub);opacity:.45}
+.dnav button:active:not(:disabled){opacity:.55}
+
+/* 底部操作栏 */
+.dbottom{
+  flex:none;display:flex;align-items:center;gap:8px;
+  padding:10px 14px calc(var(--safe-b) + 10px);
+  background:color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-top:.5px solid var(--sep);
+}
+.dbtn{
+  display:inline-flex;align-items:center;justify-content:center;
+  height:46px;padding:0 14px;border-radius:12px;font-size:15px;font-weight:600;
+  font-family:inherit;text-decoration:none;cursor:pointer;border:0;
+}
+.dbtn.sub{flex:none;background:var(--card);color:var(--text);border:.5px solid var(--sep);font-size:13.5px}
+.dbtn.primary{flex:1;background:var(--accent);color:#fff;font-size:16px}
+.dbtn.primary span{font-size:15px;margin-left:2px}
+.dbtn:active{opacity:.72}
+
+/* 卡片可点击 */
+.card{cursor:pointer;transition:background .12s, transform .12s}
+.card:active{background:color-mix(in srgb, var(--card) 92%, #000);transform:scale(.994)}
+.card .title{pointer-events:none}
+.badge-zh{display:none}
+"""
+
+DETAIL_JS = """
+var DATA = __DATA__;
+var detail  = document.getElementById('detail');
+var dscroll = document.getElementById('dscroll');
+var list    = document.getElementById('scroll');
+var listPos = 0, cur = -1;
+
+function $(id){ return document.getElementById(id); }
+function put(id, v){ $(id).textContent = (v == null ? '' : v); }
+
+function render(i){
+  var d = DATA[i];
+  cur = i;
+  put('d-title', d.zh || d.en);
+
+  var hb = $('d-hot');
+  if (d.hot) { hb.textContent = d.hot; hb.className = 'hot hot' + d.lv; hb.style.display = ''; }
+  else { hb.style.display = 'none'; }
+
+  put('d-src',  d.src);
+  put('d-time', d.t);
+  put('d-rank', (i + 1) + ' / ' + DATA.length);
+
+  var zhSec = $('d-zh-sec');
+  if (d.sum) { put('d-zh-body', d.sum); zhSec.style.display = ''; }
+  else { zhSec.style.display = 'none'; }
+
+  put('d-en-title', d.en);
+  var enSum = $('d-en-sum');
+  if (d.ensum) { put('d-en-sum', d.ensum); enSum.style.display = ''; }
+  else { enSum.style.display = 'none'; }
+
+  $('d-open').href = d.link;
+  put('d-link', d.link);
+
+  $('d-prev').disabled = (i <= 0);
+  $('d-next').disabled = (i >= DATA.length - 1);
+}
+
+function route(){
+  var m = /^#\\/n\\/(\\d+)$/.exec(location.hash || '');
+  if (m) {
+    var i = parseInt(m[1], 10);
+    if (i >= 0 && i < DATA.length) {
+      if (!detail.classList.contains('open')) listPos = list.scrollTop;
+      render(i);
+      detail.classList.add('open');
+      detail.setAttribute('aria-hidden', 'false');
+      dscroll.scrollTop = 0;
+      if (document.title.indexOf('·') > 0) document.title = (DATA[i].zh || DATA[i].en).slice(0, 30);
+      return;
+    }
+  }
+  detail.classList.remove('open');
+  detail.setAttribute('aria-hidden', 'true');
+  list.scrollTop = listPos;
+  document.title = '民航资讯 · 每日热点';
+}
+
+function go(i){
+  if (i < 0 || i >= DATA.length) return;
+  history.replaceState(null, '', '#/n/' + i);
+  render(i);
+  dscroll.scrollTop = 0;
+}
+
+/* 点卡片进入详情 */
+document.getElementById('list').addEventListener('click', function(e){
+  var c = e.target.closest ? e.target.closest('.card') : null;
+  if (c) location.hash = '#/n/' + c.getAttribute('data-i');
+});
+
+$('d-back').onclick = function(){
+  if (history.length > 1) history.back();
+  else { location.hash = ''; route(); }
+};
+$('d-prev').onclick = function(){ go(cur - 1); };
+$('d-next').onclick = function(){ go(cur + 1); };
+
+$('d-copy').onclick = function(){
+  var link = DATA[cur].link;
+  var btn = $('d-copy'), old = btn.textContent;
+  function done(){ btn.textContent = '已复制'; setTimeout(function(){ btn.textContent = old; }, 1400); }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(link).then(done, function(){
+      window.prompt('复制下面的链接：', link); btn.textContent = old;
+    });
+  } else { window.prompt('复制下面的链接：', link); }
+};
+
+var shareBtn = $('d-share');
+if (navigator.share) {
+  shareBtn.onclick = function(){
+    navigator.share({ title: DATA[cur].zh || DATA[cur].en, url: DATA[cur].link }).catch(function(){});
+  };
+} else { shareBtn.style.display = 'none'; }
+
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape' && detail.classList.contains('open')) $('d-back').click();
+});
+
+window.addEventListener('hashchange', route);
+route();
+"""
+
+
 def build_html(items):
     now = datetime.now(tz=timezone(timedelta(hours=8)))
     updated = now.strftime("%Y年%m月%d日 %H:%M")
 
+    data_js = []
     cards = []
-    for idx, it in enumerate(items, 1):
+    for idx, it in enumerate(items):
         label, level = hot_label(it["score"])
         label_html = (f'<span class="hot hot{level}">{label}</span>'
                       if label else '<span class="hot hot0"></span>')
         # 双保险：中文字段为空时一律回退到英文原文，界面上绝不会出现空白标题
         title   = it["title_zh"] or it["title_en"]
         summary = it["summary_zh"] or it["summary"]
+
+        data_js.append({
+            "zh":    it["title_zh"] or it["title_en"],
+            "en":    it["title_en"],
+            "sum":   it["summary_zh"] or it["summary"],
+            "ensum": it["summary"],
+            "src":   it["source"],
+            "t":     fmt_time(it["pub_ts"]),
+            "link":  it["link"],
+            "hot":   label,
+            "lv":    level,
+        })
+
         cards.append(f"""
-<article class="card" data-source="{html.escape(it['source'])}">
-  <div class="rank">{idx}</div>
+<article class="card" data-i="{idx}" data-source="{html.escape(it['source'])}" role="button" tabindex="0">
+  <div class="rank">{idx + 1}</div>
   <div class="body">
     <div class="meta">
       {label_html}
       <span class="src">{html.escape(it['source'])}</span>
       <span class="time">{fmt_time(it['pub_ts'])}</span>
     </div>
-    <a class="title" href="{html.escape(it['link'])}" target="_blank" rel="noopener">{html.escape(title)}</a>
-    <p class="orig">{html.escape(it['title_en'])}</p>
+    <h2 class="title">{html.escape(title)}</h2>
     {f'<p class="sum">{html.escape(summary)}</p>' if summary else ''}
   </div>
+  <div class="go">›</div>
 </article>""")
 
     cards_html = "\n".join(cards) if cards else \
         '<div class="empty">今天暂时没有抓取到新闻，明天再来。</div>'
+
+    payload = json.dumps(data_js, ensure_ascii=False, separators=(",", ":"))
+    payload = payload.replace("</", "<\\/").replace("<!--", "<\\!--")
+    js = DETAIL_JS.replace("__DATA__", payload)
 
     return f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -418,13 +632,13 @@ body{{background:var(--bg);color:var(--text);
 
 /* 新闻卡片 */
 .card{{
-  display:flex;gap:12px;background:var(--card);border-radius:14px;padding:14px;
+  display:flex;gap:10px;align-items:center;background:var(--card);border-radius:14px;padding:14px;
   margin-bottom:10px;border:.5px solid var(--sep);
   box-shadow:0 1px 3px rgba(0,0,0,.04);
 }}
 .rank{{
   flex:none;width:26px;font-size:20px;font-weight:800;text-align:center;
-  color:var(--sub);font-variant-numeric:tabular-nums;padding-top:2px;
+  color:var(--sub);font-variant-numeric:tabular-nums;
 }}
 .card:nth-child(-n+3) .rank{{color:var(--hot3)}}
 .body{{flex:1;min-width:0}}
@@ -433,16 +647,15 @@ body{{background:var(--bg);color:var(--text);
 .hot3{{background:var(--hot3)}} .hot2{{background:var(--hot2)}} .hot1{{background:var(--hot1)}}
 .hot0{{display:none}}
 .src{{font-weight:600;color:var(--accent)}}
-.title{{display:block;font-size:16.5px;font-weight:700;line-height:1.38;color:var(--text);
-  text-decoration:none;margin-bottom:4px}}
-.title:active{{opacity:.6}}
-.orig{{font-size:11.5px;color:var(--sub);line-height:1.35;margin:0 0 6px;opacity:.8}}
-.sum{{font-size:14px;color:var(--sub);line-height:1.55;margin:0;
+.title{{margin:0;font-size:16.5px;font-weight:700;line-height:1.38;color:var(--text)}}
+.sum{{font-size:14px;color:var(--sub);line-height:1.55;margin:5px 0 0;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}}
+.go{{flex:none;color:var(--sub);font-size:20px;opacity:.45;margin-right:-2px}}
 .empty{{text-align:center;padding:60px 20px;color:var(--sub);font-size:15px}}
 
 /* 底部信息 */
 .footer{{text-align:center;padding:8px 16px 4px;font-size:11px;color:var(--sub);opacity:.7}}
+{DETAIL_CSS}
 </style>
 </head>
 <body>
@@ -460,6 +673,52 @@ body{{background:var(--bg);color:var(--text);
 {cards_html}
   </div>
   <div class="footer">来源：{" / ".join(n for n,_,_ in SOURCES)}</div>
+</div>
+
+<!-- 二级页面：新闻详情 -->
+<div class="detail" id="detail" aria-hidden="true">
+  <div class="dbar">
+    <button class="dback" id="d-back"><span class="chev">‹</span> 返回</button>
+    <div class="dbar-info">
+      <span class="dsrc" id="d-src"></span>
+      <span id="d-rank"></span>
+    </div>
+  </div>
+
+  <div class="dscroll" id="dscroll">
+    <div class="dwrap">
+      <div class="dmeta">
+        <span class="hot" id="d-hot"></span>
+        <span id="d-time"></span>
+      </div>
+      <h1 class="dtitle" id="d-title"></h1>
+
+      <div class="dsec" id="d-zh-sec">
+        <div class="dsec-h">中文翻译</div>
+        <p class="dzh" id="d-zh-body"></p>
+      </div>
+
+      <div class="dsec">
+        <div class="dsec-h">原文 <span class="en-tag">ENGLISH</span></div>
+        <div class="dorig">
+          <h2 class="dentitle" id="d-en-title"></h2>
+          <p class="densum" id="d-en-sum"></p>
+          <div class="dlink" id="d-link"></div>
+        </div>
+      </div>
+
+      <div class="dnav">
+        <button id="d-prev">‹ 上一条</button>
+        <button id="d-next">下一条 ›</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="dbottom">
+    <button class="dbtn sub" id="d-copy">复制链接</button>
+    <button class="dbtn sub" id="d-share">分享</button>
+    <a class="dbtn primary" id="d-open" href="#" target="_blank" rel="noopener">阅读原文 <span>↗</span></a>
+  </div>
 </div>
 
 <script>
@@ -484,8 +743,37 @@ body{{background:var(--bg);color:var(--text);
   }};
 }})();
 </script>
+<script>
+{js}
+</script>
 </body>
 </html>"""
+
+
+ICON_B64 = "iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAADtElEQVR42u3dQXIaSRRF0cqM2gcsTl4VLE5aCR44HPZASAioIv/Lc4fdEW21OHr86rDptozS2/tlUd3OxzbCl9EAVhLwBrGScDeIlYS7gawk2A1kJcHuMOulPdlMA1lJa91hVtJad5iVhLqBrKQTpMOspLXuMCsJdYdZSai775aS6s/+CZFeudIdZiWh7jArCbUbWpPc0NZZBVe6w6wk1E4OhZ8c1lmFV9pCK3ihrbOKr7SFVvgNLUWAdm4o4Oyw0HJySGODdm4o5Oyw0Dt1OR18E5wcEtDDrrOV3gO0+1lBd7SF3vl2ttJODgnoEdfZSgMtAT3yOltpoCWgR15nAQ2+gIYUaPkBAFpwAi0/CEBDKaAFtPZeZwsPtAT0yLezlQZaAnrkRbXSQEtAj7ykVhpoCWgBLQEtAS0BLaAloCWgJaAloAW0BLQEtAS0BLSAloCWgJaAloAW0BLQEtAS0BLQAloCOr89Pnvucjr4jLs7asvb+8W3YRzIV1+oXx9eAKDrQwYb6EjIYAMdCRlsD4XRD2IeHC10LAprPTno1HWbGfaUoGd5m54RdofZM4GFBtliAw0y2ECDDPbcN7Tf1DP3D33MQkNsrSNAgwx2BGiQwY4ADTLYEaBBBvuWOsy69TWo8DoMvdAgW+yIhfbfkr1rRiw0xNY6AjTIYEeABhnsKW5o6d5W34L71mfrd5f/V847GdBRtyHcQMc8tX/3tQEOdCnA1hvoaMDWG+hoxIBPAtqnCM15nqwAw50EfIVYScBXgJV0nqwAK2m9V4iVtN4rwEpa7w6zkl5Tv31UUQEtoCWgJaAloAW0BLQEtG7LH6cCOg4b1EBvDmxvZFADHQfLp7ECHYkJaqDjAFlroCPRQA10HBRrDXQkDqiBjgNhrf8U8//6HgnyZ38M6XI6XP3re/z6s+TTR3dCdO3v+/RQoMsgfuSfBzfQJRF/9+uADXTUTWq1f/pQuCzLrA+GXwEZ/cGq8te+Wedjs9BFIVhuJ0fsmsH9rw6zf6c80Odj82al6vfz9AstJ4dUBLSzQ8XPDQstJ4dUB7SzQ4XPDQutCU4OK62i62yhNclDoZVWwXX+eqGhVjHMTg5NcnJYaRVc59sWGmoVwXz7yQG1CmB2Q2uyG9pKq9A6/3yhodbAmO87OaDWoJiX5e/nctzbxB/0qLEgP+eh0FprIMyPg4ZaA2F+/ORwgmgQyM9baGutgcxsB9Ba6wXjt/2igq0d38X3PRHghnjjXnfzwg1xFGjAAd6g36rs1XqMajeMAAAAAElFTkSuQmCC"
+
+MANIFEST = {
+    "name": "民航资讯 · 每日热点",
+    "short_name": "民航资讯",
+    "start_url": "./index.html",
+    "scope": "./",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#F6F7F9",
+    "theme_color": "#0064E0",
+    "lang": "zh-CN",
+    "icons": [
+        {"src": "icon-180.png", "sizes": "180x180", "type": "image/png", "purpose": "any"},
+    ],
+}
+
+
+def write_assets():
+    """图标和 PWA 配置内嵌在脚本里，无需额外文件。"""
+    with open(os.path.join("docs", "icon-180.png"), "wb") as f:
+        f.write(base64.b64decode(ICON_B64))
+    with open(os.path.join("docs", "manifest.json"), "w", encoding="utf-8") as f:
+        json.dump(MANIFEST, f, ensure_ascii=False, indent=2)
 
 
 def main():
@@ -501,6 +789,8 @@ def main():
     out = build_html(items)
     with open("docs/index.html", "w", encoding="utf-8") as f:
         f.write(out)
+
+    write_assets()
 
     # 保存原始数据，方便以后做 API 或历史记录
     with open("docs/data.json", "w", encoding="utf-8") as f:

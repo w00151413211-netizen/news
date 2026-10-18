@@ -1,0 +1,19 @@
+{
+  "name": "民航资讯 · 每日热点",
+  "short_name": "民航资讯",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F6F7F9",
+  "theme_color": "#0064E0",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

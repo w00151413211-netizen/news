@@ -50,13 +50,13 @@ body{background:var(--bg);color:var(--text);
 
 /* 新闻卡片 */
 .card{
-  display:flex;gap:12px;background:var(--card);border-radius:14px;padding:14px;
+  display:flex;gap:10px;align-items:center;background:var(--card);border-radius:14px;padding:14px;
   margin-bottom:10px;border:.5px solid var(--sep);
   box-shadow:0 1px 3px rgba(0,0,0,.04);
 }
 .rank{
   flex:none;width:26px;font-size:20px;font-weight:800;text-align:center;
-  color:var(--sub);font-variant-numeric:tabular-nums;padding-top:2px;
+  color:var(--sub);font-variant-numeric:tabular-nums;
 }
 .card:nth-child(-n+3) .rank{color:var(--hot3)}
 .body{flex:1;min-width:0}
@@ -65,23 +65,109 @@ body{background:var(--bg);color:var(--text);
 .hot3{background:var(--hot3)} .hot2{background:var(--hot2)} .hot1{background:var(--hot1)}
 .hot0{display:none}
 .src{font-weight:600;color:var(--accent)}
-.title{display:block;font-size:16.5px;font-weight:700;line-height:1.38;color:var(--text);
-  text-decoration:none;margin-bottom:4px}
-.title:active{opacity:.6}
-.orig{font-size:11.5px;color:var(--sub);line-height:1.35;margin:0 0 6px;opacity:.8}
-.sum{font-size:14px;color:var(--sub);line-height:1.55;margin:0;
+.title{margin:0;font-size:16.5px;font-weight:700;line-height:1.38;color:var(--text)}
+.sum{font-size:14px;color:var(--sub);line-height:1.55;margin:5px 0 0;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.go{flex:none;color:var(--sub);font-size:20px;opacity:.45;margin-right:-2px}
 .empty{text-align:center;padding:60px 20px;color:var(--sub);font-size:15px}
 
 /* 底部信息 */
 .footer{text-align:center;padding:8px 16px 4px;font-size:11px;color:var(--sub);opacity:.7}
+
+/* ========== 二级页面（详情） ========== */
+.detail{
+  position:fixed;inset:0;z-index:40;background:var(--bg);
+  display:flex;flex-direction:column;
+  transform:translateX(100%);visibility:hidden;
+  transition:transform .3s cubic-bezier(.32,.72,0,1), visibility .3s;
+  box-shadow:-1px 0 12px rgba(0,0,0,.06);
+}
+.detail.open{transform:none;visibility:visible}
+
+/* 详情顶栏 */
+.dbar{
+  flex:none;display:flex;align-items:center;gap:10px;
+  padding:calc(var(--safe-t) + 10px) 14px 10px;
+  background:color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:.5px solid var(--sep);
+}
+.dback{
+  flex:none;display:inline-flex;align-items:center;gap:2px;
+  background:none;border:0;padding:4px 2px;margin:0;
+  color:var(--accent);font-size:16px;font-family:inherit;font-weight:500;cursor:pointer;
+}
+.dback .chev{font-size:22px;line-height:1;margin-top:-2px}
+.dback:active{opacity:.5}
+.dbar-info{flex:1;min-width:0;text-align:right;font-size:12px;color:var(--sub);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dsrc{float:left;color:var(--accent);font-weight:600;max-width:60%;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+
+/* 详情内容 */
+.dscroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.dwrap{padding:18px 18px calc(var(--safe-b) + 20px);max-width:680px;margin:0 auto}
+.dmeta{display:flex;align-items:center;gap:7px;margin-bottom:9px;font-size:11.5px;color:var(--sub)}
+.dtitle{margin:0 0 16px;font-size:23px;line-height:1.35;font-weight:800;letter-spacing:.2px}
+
+.dsec{margin-bottom:18px}
+.dsec-h{
+  display:flex;align-items:center;gap:6px;
+  font-size:11.5px;font-weight:700;color:var(--sub);letter-spacing:.6px;
+  margin:0 0 8px;
+}
+.dsec-h::before{content:"";width:3px;height:11px;border-radius:2px;background:var(--accent)}
+.en-tag{font-size:9.5px;font-weight:700;letter-spacing:.5px;color:var(--sub);
+  border:.5px solid var(--sep);border-radius:4px;padding:1px 4px}
+.dzh{margin:0;font-size:16.5px;line-height:1.78;color:var(--text)}
+
+.dorig{background:var(--card);border:.5px solid var(--sep);border-radius:12px;padding:14px}
+.dentitle{margin:0 0 8px;font-size:16px;line-height:1.45;font-weight:600}
+.densum{margin:0;font-size:14px;line-height:1.65;color:var(--sub)}
+.dlink{display:block;margin-top:10px;font-size:11.5px;color:var(--sub);
+  word-break:break-all;text-decoration:none;opacity:.85}
+
+/* 上一条 / 下一条 */
+.dnav{display:flex;gap:10px;margin-top:6px}
+.dnav button{
+  flex:1;padding:11px 0;border-radius:10px;border:.5px solid var(--sep);
+  background:var(--card);color:var(--accent);font-size:14px;font-weight:600;
+  font-family:inherit;cursor:pointer;
+}
+.dnav button:disabled{color:var(--sub);opacity:.45}
+.dnav button:active:not(:disabled){opacity:.55}
+
+/* 底部操作栏 */
+.dbottom{
+  flex:none;display:flex;align-items:center;gap:8px;
+  padding:10px 14px calc(var(--safe-b) + 10px);
+  background:color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-top:.5px solid var(--sep);
+}
+.dbtn{
+  display:inline-flex;align-items:center;justify-content:center;
+  height:46px;padding:0 14px;border-radius:12px;font-size:15px;font-weight:600;
+  font-family:inherit;text-decoration:none;cursor:pointer;border:0;
+}
+.dbtn.sub{flex:none;background:var(--card);color:var(--text);border:.5px solid var(--sep);font-size:13.5px}
+.dbtn.primary{flex:1;background:var(--accent);color:#fff;font-size:16px}
+.dbtn.primary span{font-size:15px;margin-left:2px}
+.dbtn:active{opacity:.72}
+
+/* 卡片可点击 */
+.card{cursor:pointer;transition:background .12s, transform .12s}
+.card:active{background:color-mix(in srgb, var(--card) 92%, #000);transform:scale(.994)}
+.card .title{pointer-events:none}
+.badge-zh{display:none}
+
 </style>
 </head>
 <body>
 
 <div class="topbar">
   <h1>民航资讯</h1>
-  <div class="sub">每日自动更新 · 更新于 2026年10月18日 19:40</div>
+  <div class="sub">每日自动更新 · 更新于 2026年10月18日 21:05</div>
 </div>
 
 <div class="scroll" id="scroll">
@@ -90,189 +176,189 @@ body{background:var(--bg);color:var(--text);
   </div>
   <div id="list">
 
-<article class="card" data-source="Simple Flying">
+<article class="card" data-i="0" data-source="Simple Flying" role="button" tabindex="0">
   <div class="rank">1</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot2">热</span>
       <span class="src">Simple Flying</span>
-      <span class="time">3 小时前</span>
+      <span class="time">刚刚</span>
     </div>
-    <a class="title" href="https://simpleflying.com/latam-boeing-767-oxygen-masks-midair-emergency/" target="_blank" rel="noopener">南美航空 波音 767 从 23,000 英尺高处坠落，氧气面罩在空中紧急部署</a>
-    <p class="orig">LATAM Boeing 767 Drops 23,000 Feet As Oxygen Masks Deploy In Midair Emergency</p>
-    <p class="sum">机组人员宣布应答器 7700 紧急，并立即下降，然后将飞机返回利马。</p>
+    <h2 class="title">Virgin Atlantic Launches New 14-Hour Nonstop Heathrow Route Today: See Map Now</h2>
+    <p class="sum">The seasonal route will run until late March.</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Aviation24">
+<article class="card" data-i="1" data-source="Simple Flying" role="button" tabindex="0">
   <div class="rank">2</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot2">热</span>
-      <span class="src">Aviation24</span>
-      <span class="time">19 小时前</span>
+      <span class="src">Simple Flying</span>
+      <span class="time">刚刚</span>
     </div>
-    <a class="title" href="https://www.aviation24.be/air-traffic-control/enav/italian-air-traffic-control-failure-delays-brussels-flights/" target="_blank" rel="noopener">意大利空中交通管制故障导致布鲁塞尔航班延误</a>
-    <p class="orig">Italian air traffic control failure delays Brussels flights</p>
-    <p class="sum">周五，影响意大利空中交通管制系统的技术故障导致布鲁塞尔机场的航班中断，导致延误长达两个小时，并取消了布鲁塞尔航空公司飞往米兰的航班。布鲁塞尔机场 有 21 班航班飞往意大利，2 班</p>
+    <h2 class="title">American Airlines Passengers Evacuate Onto Runway After Cabin Haze Forces Emergency Landing</h2>
+    <p class="sum">Some passengers jumped from the wing after oxygen masks deployed shortly after takeoff.</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Simple Flying">
+<article class="card" data-i="2" data-source="Simple Flying" role="button" tabindex="0">
   <div class="rank">3</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot2">热</span>
       <span class="src">Simple Flying</span>
-      <span class="time">6 小时前</span>
+      <span class="time">刚刚</span>
     </div>
-    <a class="title" href="https://simpleflying.com/woman-trapped-united-airlines-737-max-lavatory-emergency-descent/" target="_blank" rel="noopener">一名女子被困在 35,000 英尺高空的美联航 737 MAX 飞机厕所内，被迫紧急降落</a>
-    <p class="orig">Woman Trapped In United 737 MAX Lavatory At 35,000 Feet Forces Emergency Descent</p>
-    <p class="sum">空乘人员最终解救了这名 69 岁的乘客并取消了改道。</p>
+    <h2 class="title">TSA Launches Military &#x27;Honor Lanes&#x27; - Will They Cause Longer Lines For Regular Flyers?</h2>
+    <p class="sum">The US Transportation Security Administration (TSA) has rolled out a new perk for American military veterans and current service members, as well as their families, at more than 30 airports across the US. This comes in the form of a dedicated &#x27;Honor Lane&#x27; at s</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="OMAAT">
+<article class="card" data-i="3" data-source="Simple Flying" role="button" tabindex="0">
   <div class="rank">4</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot2">热</span>
-      <span class="src">OMAAT</span>
-      <span class="time">刚刚</span>
+      <span class="src">Simple Flying</span>
+      <span class="time">5 小时前</span>
     </div>
-    <a class="title" href="https://onemileatatime.com/guides/chase-sapphire-lounges/" target="_blank" rel="noopener">大通蓝宝石休息室位置、营业时间、访问规则和设施：完整指南</a>
-    <p class="orig">Chase Sapphire Lounges Locations, Hours, Access Rules, &amp; Amenities: Complete Guide</p>
-    <p class="sum">目前，大通银行在美国各地运营着 9 家 Chase Sapphire Lounge by The Club，并且还将开设更多。以下是他们的位置、如何进入以及会发生什么。</p>
+    <h2 class="title">LATAM Boeing 767 Drops 23,000 Feet As Oxygen Masks Deploy In Midair Emergency</h2>
+    <p class="sum">The crew declared a transponder 7700 emergency and executed an immediate descent before returning the jet to Lima.</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Simple Flying">
+<article class="card" data-i="4" data-source="Aviation24" role="button" tabindex="0">
   <div class="rank">5</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot2">热</span>
-      <span class="src">Simple Flying</span>
-      <span class="time">刚刚</span>
+      <span class="src">Aviation24</span>
+      <span class="time">20 小时前</span>
     </div>
-    <a class="title" href="https://simpleflying.com/rolls-royce-ultrafan-engine-built-next-generation-widebodies/" target="_blank" rel="noopener">劳斯莱斯 UltraFan 解释：专为下一代宽体飞机打造的发动机</a>
-    <p class="orig">Rolls-Royce UltraFan Explained: The Engine Built For The Next Generation Of Widebodies</p>
-    <p class="sum">随着劳斯莱斯为​​宽体和窄体客机开发新一代发动机，第二台 UltraFan 80 演示机预计很快就会运行。</p>
+    <h2 class="title">Italian air traffic control failure delays Brussels flights</h2>
+    <p class="sum">A technical failure affecting Italy’s air traffic control systems disrupted flights at Brussels Airport on Friday, causing delays of up to two hours and the cancellation of a Brussels Airlines service to Milan. Brussels Airport had 21 departures to Italy and 2</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="AeroTime">
+<article class="card" data-i="5" data-source="Simple Flying" role="button" tabindex="0">
   <div class="rank">6</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot2">热</span>
-      <span class="src">AeroTime</span>
-      <span class="time">1 小时前</span>
+      <span class="src">Simple Flying</span>
+      <span class="time">8 小时前</span>
     </div>
-    <a class="title" href="https://www.aerotime.aero/articles/lufthansa-prepares-for-final-a340-600-flight-as-17-year-old-aircraft-exits-fleet" target="_blank" rel="noopener">汉莎航空为 A340-600 的最后一次飞行做准备，17 年前的飞机退出机队</a>
-    <p class="orig">Lufthansa prepares for final A340-600 flight as 17-year-old aircraft exits fleet</p>
-    <p class="sum">汉莎航空计划于 10 月 18 日运营最后一次空客 A340-600 客运服务，结束该机型的…汉莎航空为最后一次 A340-600 航班做准备，拥有 17 年机龄的飞机机队首次出现在 AeroTime 上。</p>
+    <h2 class="title">Woman Trapped In United 737 MAX Lavatory At 35,000 Feet Forces Emergency Descent</h2>
+    <p class="sum">Flight attendants were eventually able to free the 69-year-old passenger and call off the diversion.</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Simple Flying">
+<article class="card" data-i="6" data-source="Simple Flying" role="button" tabindex="0">
   <div class="rank">7</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot2">热</span>
       <span class="src">Simple Flying</span>
-      <span class="time">1 小时前</span>
+      <span class="time">刚刚</span>
     </div>
-    <a class="title" href="https://simpleflying.com/delta-air-lines-southwest-wins-passenger-satisfaction-2026/" target="_blank" rel="noopener">达美航空与达美航空西南航空：2026 年哪家美国航空公司在乘客满意度方面获胜</a>
-    <p class="orig">Delta Air Lines Vs. Southwest: Which US Carrier Wins On Passenger Satisfaction In 2026</p>
-    <p class="sum">ACSI 将达美航空放在首位。 J.D. Power 将西南航空以 3 分的优势领先。</p>
+    <h2 class="title">The Striking Differences Flight Attendants Notice Working On A Mainline Aircraft Vs. A Regional Jet</h2>
+    <p class="sum">The same job but very different circumstances.</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Simple Flying">
+<article class="card" data-i="7" data-source="OMAAT" role="button" tabindex="0">
   <div class="rank">8</div>
+  <div class="body">
+    <div class="meta">
+      <span class="hot hot2">热</span>
+      <span class="src">OMAAT</span>
+      <span class="time">1 小时前</span>
+    </div>
+    <h2 class="title">Chase Sapphire Lounges Locations, Hours, Access Rules, &amp; Amenities: Complete Guide</h2>
+    <p class="sum">Chase now operates nine Chase Sapphire Lounges by The Club across the US, with more on the way. Here&#x27;s where they are, how to get in, and what to expect.</p>
+  </div>
+  <div class="go">›</div>
+</article>
+
+<article class="card" data-i="8" data-source="Simple Flying" role="button" tabindex="0">
+  <div class="rank">9</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot2">热</span>
       <span class="src">Simple Flying</span>
       <span class="time">2 小时前</span>
     </div>
-    <a class="title" href="https://simpleflying.com/why-did-qantas-quietly-kill-its-nonstop-perth-london-flight-in-2026/" target="_blank" rel="noopener">为何澳洲航空悄然取消了 2026 年珀斯至伦敦直飞航班</a>
-    <p class="orig">Why Qantas Quietly Killed Its Nonstop Perth-London Flight In 2026</p>
-    <p class="sum">仔细看看澳洲航空为何对世界上最长的直飞航班之一进行调整</p>
+    <h2 class="title">Rolls-Royce UltraFan Explained: The Engine Built For The Next Generation Of Widebodies</h2>
+    <p class="sum">The second UltraFan 80 demonstrator is soon expected to run as Rolls-Royce develops a new generation of engines for widebody and narrowbody airliners.</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Simple Flying">
-  <div class="rank">9</div>
-  <div class="body">
-    <div class="meta">
-      <span class="hot hot2">热</span>
-      <span class="src">Simple Flying</span>
-      <span class="time">4 小时前</span>
-    </div>
-    <a class="title" href="https://simpleflying.com/trent-xwb-97-4-million-flight-hours-before-ge9x-first-pound-freight/" target="_blank" rel="noopener">遄达 XWB-97 在 GE9X 运载第一磅货物之前已经飞行了 450 万小时</a>
-    <p class="orig">The Trent XWB-97 Has 4.5 Million Flight Hours Before The GE9X Carries Its First Pound Of Freight</p>
-    <p class="sum">XWB-97 的成熟度正在成为相对于竞争对手新型 GE9X 涡扇发动机的优势，有助于该项目取得进展并被认为风险较小。</p>
-  </div>
-</article>
-
-<article class="card" data-source="Simple Flying">
+<article class="card" data-i="9" data-source="AeroTime" role="button" tabindex="0">
   <div class="rank">10</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot2">热</span>
-      <span class="src">Simple Flying</span>
-      <span class="time">7 小时前</span>
+      <span class="src">AeroTime</span>
+      <span class="time">2 小时前</span>
     </div>
-    <a class="title" href="https://simpleflying.com/airlines-worlds-superior-economy-class-2026/" target="_blank" rel="noopener">2026 年全球拥有高级经济舱的航空公司有哪些</a>
-    <p class="orig">These Are The Airlines With The World&#x27;s Superior Economy Class In 2026</p>
-    <p class="sum">新加坡航空上升两位，被 Skytrax 评为 2026 年最佳经济舱航空公司。</p>
+    <h2 class="title">Lufthansa prepares for final A340-600 flight as 17-year-old aircraft exits fleet</h2>
+    <p class="sum">Lufthansa is scheduled to operate its final Airbus A340-600 passenger service on October 18, ending the aircraft type’s… The post Lufthansa prepares for final A340-600 flight as 17-year-old aircraft exits fleet appeared first on AeroTime .</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Simple Flying">
+<article class="card" data-i="10" data-source="Simple Flying" role="button" tabindex="0">
   <div class="rank">11</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot2">热</span>
       <span class="src">Simple Flying</span>
-      <span class="time">9 小时前</span>
+      <span class="time">3 小时前</span>
     </div>
-    <a class="title" href="https://simpleflying.com/why-do-pilots-pull-back-thrust-seconds-after-lifting-off-runway/" target="_blank" rel="noopener">为什么飞行员在离开跑道后几秒内故意拉回推力</a>
-    <p class="orig">Why Pilots Deliberately Pull Back Thrust Seconds After Lifting Off The Runway</p>
-    <p class="sum">这对飞机起飞时有何影响？</p>
+    <h2 class="title">Delta Air Lines Vs. Southwest: Which US Carrier Wins On Passenger Satisfaction In 2026</h2>
+    <p class="sum">ACSI puts Delta first. J.D. Power puts Southwest first by three points.</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Simple Flying">
+<article class="card" data-i="11" data-source="Simple Flying" role="button" tabindex="0">
   <div class="rank">12</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot2">热</span>
       <span class="src">Simple Flying</span>
-      <span class="time">11 小时前</span>
+      <span class="time">3 小时前</span>
     </div>
-    <a class="title" href="https://simpleflying.com/boeing-quietly-raised-777-9-range-7285-8000-nautical-miles-without-announcing/" target="_blank" rel="noopener">波音悄悄地将 777-9 的航程从 7,285 海里提高到 8,000 海里，但没有宣布</a>
-    <p class="orig">Boeing Quietly Raised The 777-9&#x27;s Range From 7,285 To 8,000 Nautical Miles Without Announcing It</p>
-    <p class="sum">新数据令人印象深刻，但该飞机仍在等待认证。</p>
+    <h2 class="title">Why Qantas Quietly Killed Its Nonstop Perth-London Flight In 2026</h2>
+    <p class="sum">A closer look at why Qantas made adjustment to one of the world&#x27;s longest non-stop flights</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="OMAAT">
+<article class="card" data-i="12" data-source="Simple Flying" role="button" tabindex="0">
   <div class="rank">13</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot2">热</span>
-      <span class="src">OMAAT</span>
-      <span class="time">11 小时前</span>
+      <span class="src">Simple Flying</span>
+      <span class="time">6 小时前</span>
     </div>
-    <a class="title" href="https://onemileatatime.com/news/delta-flight-attendants-clash-badly-pilots-call-supervisor-help/" target="_blank" rel="noopener">达美航空空乘人员发生严重冲突，飞行员向主管寻求帮助</a>
-    <p class="orig">Delta Flight Attendants Clash So Badly That Pilots Call Supervisor For Help</p>
-    <p class="sum">据报道，机上仅有的两名空乘人员发生了可能升级的冲突，一名达美联运飞行员要求机上主管在底特律与飞机会面。</p>
+    <h2 class="title">The Trent XWB-97 Has 4.5 Million Flight Hours Before The GE9X Carries Its First Pound Of Freight</h2>
+    <p class="sum">The XWB-97&#x27;s maturity is becoming an advantage over the rival new GE9X turbofan, helping the program to progress and be perceived as less risky.</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Aviation Week">
+<article class="card" data-i="13" data-source="Aviation Week" role="button" tabindex="0">
   <div class="rank">14</div>
   <div class="body">
     <div class="meta">
@@ -280,13 +366,13 @@ body{background:var(--bg);color:var(--text);
       <span class="src">Aviation Week</span>
       <span class="time">03月08日</span>
     </div>
-    <a class="title" href="https://aviationweek.com/node/4740936" target="_blank" rel="noopener">BCA 特别版时事通讯</a>
-    <p class="orig">BCA Special Edition Newsletter</p>
-    <p class="sum">&lt;span&gt;BCA 特别版简讯&lt;/span&gt; &lt;span&gt;&lt;span lang=&quot;&quot; about=&quot;/users/kylee-adams&quot; typeof=&quot;schema:Person&quot; property=&quot;schema:name&quot; datatype=&quot;&quot; content=&quot;kylee.adams&quot;&gt;kylee.adams@in…&lt;/span&gt;&lt;/span&gt; &lt;span&gt;&lt;time datetime=&quot;2025-03-07T23:30:14+00:00&quot;标题=“星期五</p>
+    <h2 class="title">BCA Special Edition Newsletter</h2>
+    <p class="sum">&lt;span&gt;BCA Special Edition Newsletter&lt;/span&gt; &lt;span&gt;&lt;span lang=&quot;&quot; about=&quot;/users/kylee-adams&quot; typeof=&quot;schema:Person&quot; property=&quot;schema:name&quot; datatype=&quot;&quot; content=&quot;kylee.adams&quot;&gt;kylee.adams@in…&lt;/span&gt;&lt;/span&gt; &lt;span&gt;&lt;time datetime=&quot;2025-03-07T23:30:14+00:00&quot; title=&quot;Fri</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Aviation Week">
+<article class="card" data-i="14" data-source="Aviation Week" role="button" tabindex="0">
   <div class="rank">15</div>
   <div class="body">
     <div class="meta">
@@ -294,13 +380,13 @@ body{background:var(--bg);color:var(--text);
       <span class="src">Aviation Week</span>
       <span class="time">03月15日</span>
     </div>
-    <a class="title" href="https://aviationweek.com/selected-us-military-contracts-week-march-6-march-10-2017" target="_blank" rel="noopener">2017年3月6日至10日当周精选美国军事合同</a>
-    <p class="orig">Selected U.S. Military Contracts for the Week of March 6 - March 10, 2017</p>
-    <p class="sum">&lt;span&gt;2017 年 3 月 6 日至 3 月 10 日当周精选美国军事合同&lt;/span&gt; &lt;span&gt;&lt;span lang=&quot;&quot; about=&quot;/user/1&quot; typeof=&quot;schema:Person&quot; property=&quot;schema:name&quot; datatype=&quot;&quot; content=&quot;email_registration_qPH4cFMVam&quot;&gt;user+1@localho…&lt;/span&gt;&lt;/span&gt; &lt;span&gt;&lt;ti</p>
+    <h2 class="title">Selected U.S. Military Contracts for the Week of March 6 - March 10, 2017</h2>
+    <p class="sum">&lt;span&gt;Selected U.S. Military Contracts for the Week of March 6 - March 10, 2017&lt;/span&gt; &lt;span&gt;&lt;span lang=&quot;&quot; about=&quot;/user/1&quot; typeof=&quot;schema:Person&quot; property=&quot;schema:name&quot; datatype=&quot;&quot; content=&quot;email_registration_qPH4cFMVam&quot;&gt;user+1@localho…&lt;/span&gt;&lt;/span&gt; &lt;span&gt;&lt;ti</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Aviation Week">
+<article class="card" data-i="15" data-source="Aviation Week" role="button" tabindex="0">
   <div class="rank">16</div>
   <div class="body">
     <div class="meta">
@@ -308,13 +394,13 @@ body{background:var(--bg);color:var(--text);
       <span class="src">Aviation Week</span>
       <span class="time">04月19日</span>
     </div>
-    <a class="title" href="https://aviationweek.com/aerospace/product-realization-pop-quiz-0" target="_blank" rel="noopener">产品实现小测验</a>
-    <p class="orig">Product Realization Pop Quiz</p>
-    <p class="sum">&lt;span class=&quot;basic-page--title&quot;&gt;产品实现小测验&lt;/span&gt; &lt;span&gt;&lt;span lang=&quot;&quot; about=&quot;/user/3620551&quot; typeof=&quot;schema:Person&quot; property=&quot;schema:name&quot; datatype=&quot;&quot; content=&quot;Will.Herth&quot;&gt;will.herth@pen…&lt;/span&gt;&lt;/span&gt; &lt;span&gt;&lt;time日期时间=“2016-04-18T17:42:07</p>
+    <h2 class="title">Product Realization Pop Quiz</h2>
+    <p class="sum">&lt;span class=&quot;basic-page--title&quot;&gt;Product Realization Pop Quiz&lt;/span&gt; &lt;span&gt;&lt;span lang=&quot;&quot; about=&quot;/user/3620551&quot; typeof=&quot;schema:Person&quot; property=&quot;schema:name&quot; datatype=&quot;&quot; content=&quot;Will.Herth&quot;&gt;will.herth@pen…&lt;/span&gt;&lt;/span&gt; &lt;span&gt;&lt;time datetime=&quot;2016-04-18T17:42:07</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Aviation Week">
+<article class="card" data-i="16" data-source="Aviation Week" role="button" tabindex="0">
   <div class="rank">17</div>
   <div class="body">
     <div class="meta">
@@ -322,13 +408,13 @@ body{background:var(--bg);color:var(--text);
       <span class="src">Aviation Week</span>
       <span class="time">03月31日</span>
     </div>
-    <a class="title" href="https://aviationweek.com/node/4994461" target="_blank" rel="noopener">奥飞V5000矩阵</a>
-    <p class="orig">Autoflight V5000 Matrix</p>
-    <p class="sum">&lt;span&gt;Autoflight V5000 矩阵&lt;/span&gt; &lt;span&gt;&lt;span lang=&quot;&quot; about=&quot;/users/william-moore-7&quot; typeof=&quot;schema:Person&quot; property=&quot;schema:name&quot; datatype=&quot;&quot; content=&quot;william.moore&quot;&gt;william.moore@…&lt;/span&gt;&lt;/span&gt; &lt;span&gt;&lt;time datetime=&quot;2026-03-31T07:48:56+00:00&quot; title=&quot;星期二</p>
+    <h2 class="title">Autoflight V5000 Matrix</h2>
+    <p class="sum">&lt;span&gt;Autoflight V5000 Matrix&lt;/span&gt; &lt;span&gt;&lt;span lang=&quot;&quot; about=&quot;/users/william-moore-7&quot; typeof=&quot;schema:Person&quot; property=&quot;schema:name&quot; datatype=&quot;&quot; content=&quot;william.moore&quot;&gt;william.moore@…&lt;/span&gt;&lt;/span&gt; &lt;span&gt;&lt;time datetime=&quot;2026-03-31T07:48:56+00:00&quot; title=&quot;Tues</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Aviation Week">
+<article class="card" data-i="17" data-source="Aviation Week" role="button" tabindex="0">
   <div class="rank">18</div>
   <div class="body">
     <div class="meta">
@@ -336,13 +422,13 @@ body{background:var(--bg);color:var(--text);
       <span class="src">Aviation Week</span>
       <span class="time">10月28日</span>
     </div>
-    <a class="title" href="https://aviationweek.com/defense/aircraft-propulsion/turkey-signs-11-billion-eurofighter-deal" target="_blank" rel="noopener">土耳其签署价值 110 亿美元的欧洲战斗机协议</a>
-    <p class="orig">Turkey Signs $11 Billion Eurofighter Deal</p>
-    <p class="sum">&lt;span&gt;土耳其签署价值 110 亿美元的欧洲战斗机协议&lt;/span&gt; &lt;span&gt;&lt;span lang=&quot;&quot; about=&quot;/users/dan-hockensmith&quot; typeof=&quot;schema:Person&quot; property=&quot;schema:name&quot; datatype=&quot;&quot; content=&quot;hockensmithawin&quot;&gt;hockensmithawi…&lt;/span&gt;&lt;/span&gt; &lt;span&gt;&lt;time datetime=&quot;2025-10-27T18:19:4</p>
+    <h2 class="title">Turkey Signs $11 Billion Eurofighter Deal</h2>
+    <p class="sum">&lt;span&gt;Turkey Signs $11 Billion Eurofighter Deal&lt;/span&gt; &lt;span&gt;&lt;span lang=&quot;&quot; about=&quot;/users/dan-hockensmith&quot; typeof=&quot;schema:Person&quot; property=&quot;schema:name&quot; datatype=&quot;&quot; content=&quot;hockensmithawin&quot;&gt;hockensmithawi…&lt;/span&gt;&lt;/span&gt; &lt;span&gt;&lt;time datetime=&quot;2025-10-27T18:19:4</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Aviation Week">
+<article class="card" data-i="18" data-source="Aviation Week" role="button" tabindex="0">
   <div class="rank">19</div>
   <div class="body">
     <div class="meta">
@@ -350,13 +436,13 @@ body{background:var(--bg);color:var(--text);
       <span class="src">Aviation Week</span>
       <span class="time">10月28日</span>
     </div>
-    <a class="title" href="https://aviationweek.com/defense/aircraft-propulsion/project-lotus-northrop-grummans-secret-autonomous-aircraft-revealed" target="_blank" rel="noopener">诺斯罗普·格鲁曼公司的秘密自主飞机“莲花计划”揭晓</a>
-    <p class="orig">Project Lotus, Northrop Grumman’s Secret Autonomous Aircraft Revealed</p>
-    <p class="sum">&lt;span&gt;莲花计划，诺斯罗普·格鲁曼公司的秘密自主飞机揭晓&lt;/span&gt; &lt;span&gt;&lt;span lang=&quot;&quot; about=&quot;/users/dan-hockensmith&quot; typeof=&quot;schema:Person&quot; property=&quot;schema:name&quot; datatype=&quot;&quot; content=&quot;hockensmithawin&quot;&gt;hockensmithawi…&lt;/span&gt;&lt;/span&gt; &lt;span&gt;&lt;time</p>
+    <h2 class="title">Project Lotus, Northrop Grumman’s Secret Autonomous Aircraft Revealed</h2>
+    <p class="sum">&lt;span&gt;Project Lotus, Northrop Grumman’s Secret Autonomous Aircraft Revealed&lt;/span&gt; &lt;span&gt;&lt;span lang=&quot;&quot; about=&quot;/users/dan-hockensmith&quot; typeof=&quot;schema:Person&quot; property=&quot;schema:name&quot; datatype=&quot;&quot; content=&quot;hockensmithawin&quot;&gt;hockensmithawi…&lt;/span&gt;&lt;/span&gt; &lt;span&gt;&lt;time </p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Aviation Week">
+<article class="card" data-i="19" data-source="Aviation Week" role="button" tabindex="0">
   <div class="rank">20</div>
   <div class="body">
     <div class="meta">
@@ -364,13 +450,13 @@ body{background:var(--bg);color:var(--text);
       <span class="src">Aviation Week</span>
       <span class="time">09月12日</span>
     </div>
-    <a class="title" href="https://aviationweek.com/defense/aircraft-propulsion/second-b-21-enters-flight-test-palmdale" target="_blank" rel="noopener">第二架 B-21 在帕姆代尔进行飞行测试</a>
-    <p class="orig">Second B-21 Enters Flight Test In Palmdale</p>
-    <p class="sum">&lt;span&gt;第二架 B-21 在棕榈谷进行飞行测试&lt;/span&gt; &lt;span&gt;&lt;span lang=&quot;&quot; about=&quot;/users/dan-hockensmith&quot; typeof=&quot;schema:Person&quot; property=&quot;schema:name&quot; datatype=&quot;&quot; content=&quot;hockensmithawin&quot;&gt;hockensmithawi…&lt;/span&gt;&lt;/span&gt; &lt;span&gt;&lt;time datetime=&quot;2025-09-11T18:36:</p>
+    <h2 class="title">Second B-21 Enters Flight Test In Palmdale</h2>
+    <p class="sum">&lt;span&gt;Second B-21 Enters Flight Test In Palmdale&lt;/span&gt; &lt;span&gt;&lt;span lang=&quot;&quot; about=&quot;/users/dan-hockensmith&quot; typeof=&quot;schema:Person&quot; property=&quot;schema:name&quot; datatype=&quot;&quot; content=&quot;hockensmithawin&quot;&gt;hockensmithawi…&lt;/span&gt;&lt;/span&gt; &lt;span&gt;&lt;time datetime=&quot;2025-09-11T18:36:</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Aviation Week">
+<article class="card" data-i="20" data-source="Aviation Week" role="button" tabindex="0">
   <div class="rank">21</div>
   <div class="body">
     <div class="meta">
@@ -378,13 +464,13 @@ body{background:var(--bg);color:var(--text);
       <span class="src">Aviation Week</span>
       <span class="time">07月29日</span>
     </div>
-    <a class="title" href="https://aviationweek.com/node/4780076" target="_blank" rel="noopener">亿航VT35</a>
-    <p class="orig">EHang VT35</p>
-    <p class="sum">&lt;span&gt;亿航VT35&lt;/span&gt; &lt;span&gt;&lt;span lang=&quot;&quot; about=&quot;/users/william-moore-7&quot; typeof=&quot;schema:Person&quot; property=&quot;schema:name&quot; datatype=&quot;&quot; content=&quot;william.moore&quot;&gt;william.moore@…&lt;/span&gt;&lt;/span&gt; &lt;span&gt;&lt;时间datetime=&quot;2025-07-29T08:58:34+00:00&quot; title=&quot;7 月 29 日星期二</p>
+    <h2 class="title">EHang VT35</h2>
+    <p class="sum">&lt;span&gt;EHang VT35&lt;/span&gt; &lt;span&gt;&lt;span lang=&quot;&quot; about=&quot;/users/william-moore-7&quot; typeof=&quot;schema:Person&quot; property=&quot;schema:name&quot; datatype=&quot;&quot; content=&quot;william.moore&quot;&gt;william.moore@…&lt;/span&gt;&lt;/span&gt; &lt;span&gt;&lt;time datetime=&quot;2025-07-29T08:58:34+00:00&quot; title=&quot;Tuesday, July 29,</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Aviation Week">
+<article class="card" data-i="21" data-source="Aviation Week" role="button" tabindex="0">
   <div class="rank">22</div>
   <div class="body">
     <div class="meta">
@@ -392,13 +478,13 @@ body{background:var(--bg);color:var(--text);
       <span class="src">Aviation Week</span>
       <span class="time">07月02日</span>
     </div>
-    <a class="title" href="https://aviationweek.com/node/4773341" target="_blank" rel="noopener">钻石V.MO</a>
-    <p class="orig">Diamond V.MO</p>
-    <p class="sum">&lt;span&gt;钻石 V.MO&lt;/span&gt; &lt;span&gt;&lt;span lang=&quot;&quot; about=&quot;/users/william-moore-7&quot; typeof=&quot;schema:Person&quot; property=&quot;schema:name&quot; datatype=&quot;&quot; content=&quot;william.moore&quot;&gt;william.moore@…&lt;/span&gt;&lt;/span&gt; &lt;span&gt;&lt;时间datetime=&quot;2025-07-02T09:55:06+00:00&quot; title=&quot;七月星期三</p>
+    <h2 class="title">Diamond V.MO</h2>
+    <p class="sum">&lt;span&gt;Diamond V.MO&lt;/span&gt; &lt;span&gt;&lt;span lang=&quot;&quot; about=&quot;/users/william-moore-7&quot; typeof=&quot;schema:Person&quot; property=&quot;schema:name&quot; datatype=&quot;&quot; content=&quot;william.moore&quot;&gt;william.moore@…&lt;/span&gt;&lt;/span&gt; &lt;span&gt;&lt;time datetime=&quot;2025-07-02T09:55:06+00:00&quot; title=&quot;Wednesday, July</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Aviation Week">
+<article class="card" data-i="22" data-source="Aviation Week" role="button" tabindex="0">
   <div class="rank">23</div>
   <div class="body">
     <div class="meta">
@@ -406,97 +492,97 @@ body{background:var(--bg);color:var(--text);
       <span class="src">Aviation Week</span>
       <span class="time">07月02日</span>
     </div>
-    <a class="title" href="https://aviationweek.com/node/4773331" target="_blank" rel="noopener">零重力ZG-T6</a>
-    <p class="orig">Zero Gravity ZG-T6</p>
-    <p class="sum">&lt;span&gt;零重力 ZG-T6&lt;/span&gt; &lt;span&gt;&lt;span lang=&quot;&quot; about=&quot;/users/william-moore-7&quot; typeof=&quot;schema:Person&quot; property=&quot;schema:name&quot; datatype=&quot;&quot; content=&quot;william.moore&quot;&gt;william.moore@…&lt;/span&gt;&lt;/span&gt; &lt;span&gt;&lt;time datetime=&quot;2025-07-02T09:51:25+00:00&quot; title=&quot;星期三</p>
+    <h2 class="title">Zero Gravity ZG-T6</h2>
+    <p class="sum">&lt;span&gt;Zero Gravity ZG-T6&lt;/span&gt; &lt;span&gt;&lt;span lang=&quot;&quot; about=&quot;/users/william-moore-7&quot; typeof=&quot;schema:Person&quot; property=&quot;schema:name&quot; datatype=&quot;&quot; content=&quot;william.moore&quot;&gt;william.moore@…&lt;/span&gt;&lt;/span&gt; &lt;span&gt;&lt;time datetime=&quot;2025-07-02T09:51:25+00:00&quot; title=&quot;Wednesday</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Simple Flying">
+<article class="card" data-i="23" data-source="AeroTime" role="button" tabindex="0">
   <div class="rank">24</div>
   <div class="body">
     <div class="meta">
-      <span class="hot hot2">热</span>
-      <span class="src">Simple Flying</span>
-      <span class="time">12 小时前</span>
+      <span class="hot hot1">荐</span>
+      <span class="src">AeroTime</span>
+      <span class="time">刚刚</span>
     </div>
-    <a class="title" href="https://simpleflying.com/how-many-hours-can-the-airbus-a380-fly-without-refueling/" target="_blank" rel="noopener">空客 A380 不加油可以飞行多少小时？</a>
-    <p class="orig">How Many Hours Can The Airbus A380 Fly Without Refueling?</p>
-    <p class="sum">空客 A380 可以不间断飞行长达 16 小时。以下是其巨大的燃油容量和航程如何使超长途飞行成为可能。</p>
+    <h2 class="title">777 Partners founder pleads guilty to $500 million fraud scheme</h2>
+    <p class="sum">Joshua Wander, co-founder and former chief executive of 777 Partners, has pleaded guilty to wire fraud and securities… The post 777 Partners founder pleads guilty to $500 million fraud scheme appeared first on AeroTime .</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="OMAAT">
+<article class="card" data-i="24" data-source="OMAAT" role="button" tabindex="0">
   <div class="rank">25</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot1">荐</span>
       <span class="src">OMAAT</span>
-      <span class="time">14 小时前</span>
+      <span class="time">13 小时前</span>
     </div>
-    <a class="title" href="https://onemileatatime.com/news/american-flight-attendants-furious-mandatory-credit-card-training/" target="_blank" rel="noopener">美国空乘人员对强制性信用卡培训感到愤怒</a>
-    <p class="orig">American Flight Attendants Furious Over Mandatory Credit Card Training</p>
-    <p class="sum">美国航空要求空乘人员完成信用卡销售培训，APFA 工会表示这违反了他们的合同。这就是为什么我认为工会反应过度。</p>
+    <h2 class="title">Delta Flight Attendants Clash So Badly That Pilots Call Supervisor For Help</h2>
+    <p class="sum">A Delta Connection pilot asked for an inflight supervisor to meet the plane in Detroit after the only two flight attendants onboard reportedly had a conflict that might escalate.</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="OMAAT">
+<article class="card" data-i="25" data-source="AeroTime" role="button" tabindex="0">
   <div class="rank">26</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot1">荐</span>
-      <span class="src">OMAAT</span>
-      <span class="time">14 小时前</span>
+      <span class="src">AeroTime</span>
+      <span class="time">2 小时前</span>
     </div>
-    <a class="title" href="https://onemileatatime.com/weekly-review/2026-10-17/" target="_blank" rel="noopener">每周回顾：2026 年 10 月 17 日</a>
-    <p class="orig">Weekly Review: October 17, 2026</p>
-    <p class="sum">我希望到目前为止大家都度过了一个愉快的周末！在可预见的未来，我没有重大的旅行计划，所以我会继续修改我的旅行报告，尽管最近的新闻确实让我很忙！在积分和旅行方面，西南航空本周宣布</p>
+    <h2 class="title">Pakistan extends airspace ban on Indian airlines</h2>
+    <p class="sum">Pakistan has extended its airspace ban on Indian aircraft for another month, keeping restrictions in place until November… The post Pakistan extends airspace ban on Indian airlines appeared first on AeroTime .</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Aviation24">
+<article class="card" data-i="26" data-source="OMAAT" role="button" tabindex="0">
   <div class="rank">27</div>
+  <div class="body">
+    <div class="meta">
+      <span class="hot hot1">荐</span>
+      <span class="src">OMAAT</span>
+      <span class="time">15 小时前</span>
+    </div>
+    <h2 class="title">American Flight Attendants Furious Over Mandatory Credit Card Training</h2>
+    <p class="sum">American Airlines is requiring flight attendants to complete credit card sales training, and the APFA union says it violates their contract. Here&#x27;s why I think the union is overreacting.</p>
+  </div>
+  <div class="go">›</div>
+</article>
+
+<article class="card" data-i="27" data-source="Aviation24" role="button" tabindex="0">
+  <div class="rank">28</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot1">荐</span>
       <span class="src">Aviation24</span>
       <span class="time">昨天</span>
     </div>
-    <a class="title" href="https://www.aviation24.be/airports/lyon/vinci-launches-lyon-terminal-2-overhaul-ahead-of-2030-winter-olympics/" target="_blank" rel="noopener">VINCI 在 2030 年冬奥会之前启动里昂 2 号航站楼大修</a>
-    <p class="orig">VINCI launches Lyon Terminal 2 overhaul ahead of 2030 Winter Olympics</p>
-    <p class="sum">VINCI 机场启动了里昂圣埃克絮佩里机场 2 号航站楼的重建工作，计划于 2029 年在法国阿尔卑斯山举行的 2030 年冬季奥运会和残奥会之前开放。该项目是更广泛的投资计划的一部分</p>
+    <h2 class="title">VINCI launches Lyon Terminal 2 overhaul ahead of 2030 Winter Olympics</h2>
+    <p class="sum">VINCI Airports has launched the redevelopment of Terminal 2 at Lyon-Saint Exupéry Airport, with opening scheduled for 2029 ahead of the 2030 Winter Olympic and Paralympic Games in the French Alps. The project forms part of a wider investment programme exceedin</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="OMAAT">
-  <div class="rank">28</div>
+<article class="card" data-i="28" data-source="OMAAT" role="button" tabindex="0">
+  <div class="rank">29</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot1">荐</span>
       <span class="src">OMAAT</span>
       <span class="time">16 小时前</span>
     </div>
-    <a class="title" href="https://onemileatatime.com/insights/best-hotel-awards-great-rates-hard-expectations/" target="_blank" rel="noopener">全球最佳酒店奖的价格非常高，但期望却很难</a>
-    <p class="orig">The World’s Best Hotel Awards Are Great For Rates, But Hard On Expectations</p>
-    <p class="sum">入住被《Travel + Leisure》评为全球最佳酒店的 Patina Osaka 后，我反思了大奖项如何提高房价，同时也提高了客人的期望。</p>
+    <h2 class="title">Weekly Review: October 17, 2026</h2>
+    <p class="sum">I hope everyone is having a nice weekend so far! I have no major travel plans for the foreseeable future, so I’ll keep chipping away at my trip reports, though the news lately sure has kept me busy! On the points &amp; travel front, this week Southwest announced h</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Aviation24">
-  <div class="rank">29</div>
-  <div class="body">
-    <div class="meta">
-      <span class="hot hot1">荐</span>
-      <span class="src">Aviation24</span>
-      <span class="time">昨天</span>
-    </div>
-    <a class="title" href="https://www.aviation24.be/airlines/condor/condor-launches-daily-berlin-abu-dhabi-flights-with-etihad-codeshare/" target="_blank" rel="noopener">秃鹰航空推出与阿提哈德代码共享的每日柏林至阿布扎比航班</a>
-    <p class="orig">Condor launches daily Berlin–Abu Dhabi flights with Etihad codeshare</p>
-    <p class="sum">秃鹰航空已开通柏林勃兰登堡和阿布扎比之间的每日航班，与阿提哈德航空代码共享。该全年服务提供直达阿联酋首都的航班，并通过阿提哈德航空枢纽转乘前往亚洲、澳大利亚等地的目的地</p>
-  </div>
-</article>
-
-<article class="card" data-source="Aviation24">
+<article class="card" data-i="29" data-source="Aviation24" role="button" tabindex="0">
   <div class="rank">30</div>
   <div class="body">
     <div class="meta">
@@ -504,97 +590,97 @@ body{background:var(--bg);color:var(--text);
       <span class="src">Aviation24</span>
       <span class="time">昨天</span>
     </div>
-    <a class="title" href="https://www.aviation24.be/airlines/delta-air-lines/delta-to-launch-daily-boston-reykjavik-flights-in-april-2027/" target="_blank" rel="noopener">达美航空将于 2027 年 4 月开通波士顿至雷克雅未克每日航班</a>
-    <p class="orig">Delta to launch daily Boston–Reykjavík flights in April 2027</p>
-    <p class="sum">达美航空将于 2027 年 4 月 12 日推出波士顿和雷克雅未克凯夫拉维克之间的每日季节性航班，运营至 10 月 30 日。该航线将使用波音 757-200 飞机，提供达美尊尚精选舱、达美舒适舱和达美主力舱。雷克雅未克</p>
+    <h2 class="title">Condor launches daily Berlin–Abu Dhabi flights with Etihad codeshare</h2>
+    <p class="sum">Condor has launched daily flights between Berlin Brandenburg and Abu Dhabi, operated in codeshare with Etihad Airways. The year-round service provides direct access to the UAE capital and onward connections through Etihad’s hub to destinations across Asia, Aus</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="OMAAT">
+<article class="card" data-i="30" data-source="Aviation24" role="button" tabindex="0">
   <div class="rank">31</div>
+  <div class="body">
+    <div class="meta">
+      <span class="hot hot1">荐</span>
+      <span class="src">Aviation24</span>
+      <span class="time">昨天</span>
+    </div>
+    <h2 class="title">Delta to launch daily Boston–Reykjavík flights in April 2027</h2>
+    <p class="sum">Delta Air Lines will introduce daily seasonal flights between Boston and Reykjavík Keflavík on 12 April 2027, operating through 30 October. The route will use Boeing 757-200 aircraft offering Delta Premium Select, Delta Comfort and Delta Main cabins. Reykjavík</p>
+  </div>
+  <div class="go">›</div>
+</article>
+
+<article class="card" data-i="31" data-source="OMAAT" role="button" tabindex="0">
+  <div class="rank">32</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot1">荐</span>
       <span class="src">OMAAT</span>
       <span class="time">18 小时前</span>
     </div>
-    <a class="title" href="https://onemileatatime.com/reviews/waldorf-astoria-osaka/" target="_blank" rel="noopener">大阪华尔道夫酒店点评：希尔顿宝石酒店拥有令人惊叹的设计、服务和设施！</a>
-    <p class="orig">Waldorf Astoria Osaka Review: Hilton Gem With Amazing Design, Service, &amp; Facilities!</p>
-    <p class="sum">我在大阪华尔道夫酒店住了一晚，这是一家拥有 252 间客房的希尔顿酒店，由 André Fu 设计，提供完美的服务、一流的水疗中心和游泳池以及令人惊叹的角落套房。</p>
+    <h2 class="title">The World’s Best Hotel Awards Are Great For Rates, But Hard On Expectations</h2>
+    <p class="sum">After staying at Patina Osaka, rated the world&#x27;s best hotel by Travel + Leisure, I&#x27;m reflecting on how big awards boost rates but also raise guest expectations.</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Aviation24">
-  <div class="rank">32</div>
+<article class="card" data-i="32" data-source="OMAAT" role="button" tabindex="0">
+  <div class="rank">33</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot1">荐</span>
-      <span class="src">Aviation24</span>
-      <span class="time">18 小时前</span>
+      <span class="src">OMAAT</span>
+      <span class="time">20 小时前</span>
     </div>
-    <a class="title" href="https://www.aviation24.be/airlines/lufthansa-group/lufthansa/lufthansa-prepares-for-final-a340-600-flights/" target="_blank" rel="noopener">汉莎航空为最后一次 A340-600 航班做准备</a>
-    <p class="orig">Lufthansa prepares for final A340-600 flights</p>
-    <p class="sum">汉莎航空将于 10 月 18 日结束空客 A340-600 客运运营，最后一趟航班于次日早上抵达法兰克福，结束这家德国航空公司近 23 年的服务。从华盛顿杜勒斯国际机场出发的 LH419 航班计划于</p>
+    <h2 class="title">Waldorf Astoria Osaka Review: Hilton Gem With Amazing Design, Service, &amp; Facilities!</h2>
+    <p class="sum">I spent a night at the Waldorf Astoria Osaka, a 252-key Hilton hotel with André Fu design, flawless service, a great spa and pool, and a stunning corner suite.</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Aviation24">
-  <div class="rank">33</div>
+<article class="card" data-i="33" data-source="Aviation24" role="button" tabindex="0">
+  <div class="rank">34</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot1">荐</span>
       <span class="src">Aviation24</span>
       <span class="time">20 小时前</span>
     </div>
-    <a class="title" href="https://www.aviation24.be/airlines/red-sea-airlines/st-petersburg-bound-charter-diverts-to-helsinki-after-drone-alert/" target="_blank" rel="noopener">无人机警报后飞往圣彼得堡的包机转向赫尔辛基</a>
-    <p class="orig">St. Petersburg-bound charter diverts to Helsinki after drone alert</p>
-    <p class="sum">红海航空公司 (Red Sea Airlines) 的 4S321 包机从埃及赫尔格达飞往俄罗斯联邦圣彼得堡，由波音 737-800（注册号 SU-RSB，如上图所示）运营，在无人机警报促使普尔科沃机场关闭后，改飞芬兰赫尔辛基万塔。一个</p>
+    <h2 class="title">Lufthansa prepares for final A340-600 flights</h2>
+    <p class="sum">Lufthansa will end Airbus A340-600 passenger operations on 18 October, with the final scheduled service arriving in Frankfurt the following morning, ending almost 23 years of service for the German airline. Flight LH419 from Washington Dulles is scheduled to d</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="OMAAT">
-  <div class="rank">34</div>
-  <div class="body">
-    <div class="meta">
-      <span class="hot hot1">荐</span>
-      <span class="src">OMAAT</span>
-      <span class="time">21 小时前</span>
-    </div>
-    <a class="title" href="https://onemileatatime.com/guides/ihg-card-free-night/" target="_blank" rel="noopener">IHG 信用卡免费住宿奖励：如何赚取和兑换，实现价值最大化</a>
-    <p class="orig">IHG Credit Card Free Night Awards: How To Earn &amp; Redeem Them, Maximize Value</p>
-    <p class="sum">三张 IHG One Rewards Chase 卡可提供价值高达 60,000 积分的周年纪念免费住宿礼券。以下是如何赚取、兑换以及用积分充值的方法。</p>
-  </div>
-</article>
-
-<article class="card" data-source="OMAAT">
+<article class="card" data-i="34" data-source="Aviation24" role="button" tabindex="0">
   <div class="rank">35</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot1">荐</span>
-      <span class="src">OMAAT</span>
-      <span class="time">23 小时前</span>
+      <span class="src">Aviation24</span>
+      <span class="time">22 小时前</span>
     </div>
-    <a class="title" href="https://onemileatatime.com/news/air-traffic-controllers-ride-airline-cockpit-jumpseats/" target="_blank" rel="noopener">有趣：美国联邦航空局将允许空中交通管制员乘坐航空公司驾驶舱的折叠座椅</a>
-    <p class="orig">Fun: FAA Will Let Air Traffic Controllers Ride In Airline Cockpit Jumpseats</p>
-    <p class="sum">美国联邦航空局正在恢复其驾驶舱培训计划，让空中交通管制员申请在符合条件的航班上乘坐折叠座椅，以直接了解飞行员的工作量。</p>
+    <h2 class="title">St. Petersburg-bound charter diverts to Helsinki after drone alert</h2>
+    <p class="sum">Red Sea Airlines) charter flight 4S321 from Hurghada, Egypt, to St. Petersburg, Russian Federation, operated by a Boeing 737-800 (reg. SU-RSB, pictured above), diverted to Helsinki-Vantaa, Finland, after a drone alert prompted the closure of Pulkovo Airport. A</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="OMAAT">
+<article class="card" data-i="35" data-source="OMAAT" role="button" tabindex="0">
   <div class="rank">36</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot1">荐</span>
       <span class="src">OMAAT</span>
-      <span class="time">昨天</span>
+      <span class="time">22 小时前</span>
     </div>
-    <a class="title" href="https://onemileatatime.com/reviews/credit-cards/chase/united-business-card/" target="_blank" rel="noopener">美联航名片评论：这张卡值得 150 美元的年费吗？</a>
-    <p class="orig">United Business Card Review: Is The Card Worth The $150 Annual Fee?</p>
-    <p class="sum">美联航商务卡可提供高达 10 万英里的奖励里程、免费的第一件托运行李、美联航俱乐部通行证以及可抵消年费的积分。这就是它适合的人。</p>
+    <h2 class="title">IHG Credit Card Free Night Awards: How To Earn &amp; Redeem Them, Maximize Value</h2>
+    <p class="sum">Three IHG One Rewards Chase cards offer anniversary free night certificates worth up to 60,000 points. Here&#x27;s how to earn them, redeem them, and top them up with points.</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="OMAAT">
+<article class="card" data-i="36" data-source="OMAAT" role="button" tabindex="0">
   <div class="rank">37</div>
   <div class="body">
     <div class="meta">
@@ -602,13 +688,13 @@ body{background:var(--bg);color:var(--text);
       <span class="src">OMAAT</span>
       <span class="time">昨天</span>
     </div>
-    <a class="title" href="https://onemileatatime.com/guides/chase-5-24-rule/" target="_blank" rel="noopener">Chase 5/24 规则：如何运作、如何检查您的状态以及是否仍然强制执行</a>
-    <p class="orig">Chase 5/24 Rule: How It Works, How To Check Your Status, &amp; Whether It’s Still Enforced</p>
-    <p class="sum">如果您在 24 个月内开立了 5 张或更多卡，Chase 5/24 规则可能会阻止您的申请，但该规则似乎不再一贯执行。这是它的工作原理。</p>
+    <h2 class="title">Fun: FAA Will Let Air Traffic Controllers Ride In Airline Cockpit Jumpseats</h2>
+    <p class="sum">The FAA is reinstating its Flight Deck Training program, letting air traffic controllers apply to ride in the jumpseat on eligible flights to see pilots&#x27; workload firsthand.</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="OMAAT">
+<article class="card" data-i="37" data-source="OMAAT" role="button" tabindex="0">
   <div class="rank">38</div>
   <div class="body">
     <div class="meta">
@@ -616,41 +702,87 @@ body{background:var(--bg);color:var(--text);
       <span class="src">OMAAT</span>
       <span class="time">昨天</span>
     </div>
-    <a class="title" href="https://onemileatatime.com/deals/buy-qatar-airways-privilege-club-avios/" target="_blank" rel="noopener">购买卡塔尔航空 Avios 积分可获得 60% 奖励，每张 1.44 美分：值得吗？</a>
-    <p class="orig">Buy Qatar Airways Avios With 60% Bonus, 1.44 Cents Each: Worth It?</p>
-    <p class="sum">卡塔尔航空常旅客俱乐部 (Qatar Airways Privilege Club) 出售 Avios 积分时可享受高达 60% 的奖励，相当于每张 1.44 美分。这是今年最好的报价，但值得购买吗？</p>
+    <h2 class="title">United Business Card Review: Is The Card Worth The $150 Annual Fee?</h2>
+    <p class="sum">The United Business Card offers up to 100K bonus miles, a free first checked bag, United Club passes and credits that can offset the annual fee. Here&#x27;s who it suits.</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Aviation24">
+<article class="card" data-i="38" data-source="OMAAT" role="button" tabindex="0">
   <div class="rank">39</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot1">荐</span>
-      <span class="src">Aviation24</span>
+      <span class="src">OMAAT</span>
       <span class="time">昨天</span>
     </div>
-    <a class="title" href="https://www.aviation24.be/manufacturers/airbus/a350-xwb/airbus-considers-second-a350-assembly-line-as-long-haul-demand-grows/" target="_blank" rel="noopener">随着长途需求的增长，空客考虑建设第二条 A350 装配线</a>
-    <p class="orig">Airbus considers second A350 assembly line as long-haul demand grows</p>
-    <p class="sum">随着航空公司寻求更多的长途飞机，空中客车公司正准备决定扩大 A350 的产能。商用飞机首席执行官拉尔斯·瓦格纳表示，这项投资需要董事会批准，但预计会更快做出决定</p>
+    <h2 class="title">Chase 5/24 Rule: How It Works, How To Check Your Status, &amp; Whether It’s Still Enforced</h2>
+    <p class="sum">The Chase 5/24 rule can block your application if you&#x27;ve opened five or more cards in 24 months, but it no longer seems consistently enforced. Here&#x27;s how it works.</p>
   </div>
+  <div class="go">›</div>
 </article>
 
-<article class="card" data-source="Aviation24">
+<article class="card" data-i="39" data-source="OMAAT" role="button" tabindex="0">
   <div class="rank">40</div>
   <div class="body">
     <div class="meta">
       <span class="hot hot1">荐</span>
-      <span class="src">Aviation24</span>
+      <span class="src">OMAAT</span>
       <span class="time">昨天</span>
     </div>
-    <a class="title" href="https://www.aviation24.be/airlines/ryanair/ryanair-answers-passengers-windowless-seat-complaint-take-a-nap/" target="_blank" rel="noopener">瑞安航空回应乘客无窗座位投诉：“小睡一会儿”</a>
-    <p class="orig">Ryanair answers passenger’s windowless-seat complaint: ‘Take a nap’</p>
-    <p class="sum">瑞安航空在回应一名乘客对其 11A 无窗座位的投诉时，在社交媒体上用了一句典型的俏皮话：“小憩一下。”在 TikTok 视频中，该旅客表示，航空公司应该警告他，他选择的座位面向机舱墙壁，而不是面向机舱墙壁。</p>
+    <h2 class="title">Buy Qatar Airways Avios With 60% Bonus, 1.44 Cents Each: Worth It?</h2>
+    <p class="sum">Qatar Airways Privilege Club is selling Avios with up to a 60% bonus, which works out to 1.44 cents each. It&#x27;s the best offer this year, but is buying worthwhile?</p>
   </div>
+  <div class="go">›</div>
 </article>
   </div>
   <div class="footer">来源：Aviation Week / FlightGlobal / Aviation24 / OMAAT / Simple Flying / AeroTime</div>
+</div>
+
+<!-- 二级页面：新闻详情 -->
+<div class="detail" id="detail" aria-hidden="true">
+  <div class="dbar">
+    <button class="dback" id="d-back"><span class="chev">‹</span> 返回</button>
+    <div class="dbar-info">
+      <span class="dsrc" id="d-src"></span>
+      <span id="d-rank"></span>
+    </div>
+  </div>
+
+  <div class="dscroll" id="dscroll">
+    <div class="dwrap">
+      <div class="dmeta">
+        <span class="hot" id="d-hot"></span>
+        <span id="d-time"></span>
+      </div>
+      <h1 class="dtitle" id="d-title"></h1>
+
+      <div class="dsec" id="d-zh-sec">
+        <div class="dsec-h">中文翻译</div>
+        <p class="dzh" id="d-zh-body"></p>
+      </div>
+
+      <div class="dsec">
+        <div class="dsec-h">原文 <span class="en-tag">ENGLISH</span></div>
+        <div class="dorig">
+          <h2 class="dentitle" id="d-en-title"></h2>
+          <p class="densum" id="d-en-sum"></p>
+          <div class="dlink" id="d-link"></div>
+        </div>
+      </div>
+
+      <div class="dnav">
+        <button id="d-prev">‹ 上一条</button>
+        <button id="d-next">下一条 ›</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="dbottom">
+    <button class="dbtn sub" id="d-copy">复制链接</button>
+    <button class="dbtn sub" id="d-share">分享</button>
+    <a class="dbtn primary" id="d-open" href="#" target="_blank" rel="noopener">阅读原文 <span>↗</span></a>
+  </div>
 </div>
 
 <script>
@@ -674,6 +806,112 @@ body{background:var(--bg);color:var(--text);
     document.querySelectorAll('.card').forEach(c => c.style.display = 'flex');
   };
 })();
+</script>
+<script>
+
+var DATA = [{"zh":"Virgin Atlantic Launches New 14-Hour Nonstop Heathrow Route Today: See Map Now","en":"Virgin Atlantic Launches New 14-Hour Nonstop Heathrow Route Today: See Map Now","sum":"The seasonal route will run until late March.","ensum":"The seasonal route will run until late March.","src":"Simple Flying","t":"刚刚","link":"https://simpleflying.com/virgin-launches-new-14-hour-route-today/","hot":"热","lv":2},{"zh":"American Airlines Passengers Evacuate Onto Runway After Cabin Haze Forces Emergency Landing","en":"American Airlines Passengers Evacuate Onto Runway After Cabin Haze Forces Emergency Landing","sum":"Some passengers jumped from the wing after oxygen masks deployed shortly after takeoff.","ensum":"Some passengers jumped from the wing after oxygen masks deployed shortly after takeoff.","src":"Simple Flying","t":"刚刚","link":"https://simpleflying.com/american-airlines-passengers-evacuate-st-louis-runway-odor-emergency-landing/","hot":"热","lv":2},{"zh":"TSA Launches Military 'Honor Lanes' - Will They Cause Longer Lines For Regular Flyers?","en":"TSA Launches Military 'Honor Lanes' - Will They Cause Longer Lines For Regular Flyers?","sum":"The US Transportation Security Administration (TSA) has rolled out a new perk for American military veterans and current service members, as well as their families, at more than 30 airports across the US. This comes in the form of a dedicated 'Honor Lane' at s","ensum":"The US Transportation Security Administration (TSA) has rolled out a new perk for American military veterans and current service members, as well as their families, at more than 30 airports across the US. This comes in the form of a dedicated 'Honor Lane' at s","src":"Simple Flying","t":"刚刚","link":"https://simpleflying.com/video/tsa-launches-military-honor-lanes-will-they-cause-longer-lines-for-regular-flyers/","hot":"热","lv":2},{"zh":"LATAM Boeing 767 Drops 23,000 Feet As Oxygen Masks Deploy In Midair Emergency","en":"LATAM Boeing 767 Drops 23,000 Feet As Oxygen Masks Deploy In Midair Emergency","sum":"The crew declared a transponder 7700 emergency and executed an immediate descent before returning the jet to Lima.","ensum":"The crew declared a transponder 7700 emergency and executed an immediate descent before returning the jet to Lima.","src":"Simple Flying","t":"5 小时前","link":"https://simpleflying.com/latam-boeing-767-oxygen-masks-midair-emergency/","hot":"热","lv":2},{"zh":"Italian air traffic control failure delays Brussels flights","en":"Italian air traffic control failure delays Brussels flights","sum":"A technical failure affecting Italy’s air traffic control systems disrupted flights at Brussels Airport on Friday, causing delays of up to two hours and the cancellation of a Brussels Airlines service to Milan. Brussels Airport had 21 departures to Italy and 2","ensum":"A technical failure affecting Italy’s air traffic control systems disrupted flights at Brussels Airport on Friday, causing delays of up to two hours and the cancellation of a Brussels Airlines service to Milan. Brussels Airport had 21 departures to Italy and 2","src":"Aviation24","t":"20 小时前","link":"https://www.aviation24.be/air-traffic-control/enav/italian-air-traffic-control-failure-delays-brussels-flights/","hot":"热","lv":2},{"zh":"Woman Trapped In United 737 MAX Lavatory At 35,000 Feet Forces Emergency Descent","en":"Woman Trapped In United 737 MAX Lavatory At 35,000 Feet Forces Emergency Descent","sum":"Flight attendants were eventually able to free the 69-year-old passenger and call off the diversion.","ensum":"Flight attendants were eventually able to free the 69-year-old passenger and call off the diversion.","src":"Simple Flying","t":"8 小时前","link":"https://simpleflying.com/woman-trapped-united-airlines-737-max-lavatory-emergency-descent/","hot":"热","lv":2},{"zh":"The Striking Differences Flight Attendants Notice Working On A Mainline Aircraft Vs. A Regional Jet","en":"The Striking Differences Flight Attendants Notice Working On A Mainline Aircraft Vs. A Regional Jet","sum":"The same job but very different circumstances.","ensum":"The same job but very different circumstances.","src":"Simple Flying","t":"刚刚","link":"https://simpleflying.com/striking-differences-flight-attendants-notice-mainline-aircraft-regional-jet/","hot":"热","lv":2},{"zh":"Chase Sapphire Lounges Locations, Hours, Access Rules, & Amenities: Complete Guide","en":"Chase Sapphire Lounges Locations, Hours, Access Rules, & Amenities: Complete Guide","sum":"Chase now operates nine Chase Sapphire Lounges by The Club across the US, with more on the way. Here's where they are, how to get in, and what to expect.","ensum":"Chase now operates nine Chase Sapphire Lounges by The Club across the US, with more on the way. Here's where they are, how to get in, and what to expect.","src":"OMAAT","t":"1 小时前","link":"https://onemileatatime.com/guides/chase-sapphire-lounges/","hot":"热","lv":2},{"zh":"Rolls-Royce UltraFan Explained: The Engine Built For The Next Generation Of Widebodies","en":"Rolls-Royce UltraFan Explained: The Engine Built For The Next Generation Of Widebodies","sum":"The second UltraFan 80 demonstrator is soon expected to run as Rolls-Royce develops a new generation of engines for widebody and narrowbody airliners.","ensum":"The second UltraFan 80 demonstrator is soon expected to run as Rolls-Royce develops a new generation of engines for widebody and narrowbody airliners.","src":"Simple Flying","t":"2 小时前","link":"https://simpleflying.com/rolls-royce-ultrafan-engine-built-next-generation-widebodies/","hot":"热","lv":2},{"zh":"Lufthansa prepares for final A340-600 flight as 17-year-old aircraft exits fleet","en":"Lufthansa prepares for final A340-600 flight as 17-year-old aircraft exits fleet","sum":"Lufthansa is scheduled to operate its final Airbus A340-600 passenger service on October 18, ending the aircraft type’s… The post Lufthansa prepares for final A340-600 flight as 17-year-old aircraft exits fleet appeared first on AeroTime .","ensum":"Lufthansa is scheduled to operate its final Airbus A340-600 passenger service on October 18, ending the aircraft type’s… The post Lufthansa prepares for final A340-600 flight as 17-year-old aircraft exits fleet appeared first on AeroTime .","src":"AeroTime","t":"2 小时前","link":"https://www.aerotime.aero/articles/lufthansa-prepares-for-final-a340-600-flight-as-17-year-old-aircraft-exits-fleet","hot":"热","lv":2},{"zh":"Delta Air Lines Vs. Southwest: Which US Carrier Wins On Passenger Satisfaction In 2026","en":"Delta Air Lines Vs. Southwest: Which US Carrier Wins On Passenger Satisfaction In 2026","sum":"ACSI puts Delta first. J.D. Power puts Southwest first by three points.","ensum":"ACSI puts Delta first. J.D. Power puts Southwest first by three points.","src":"Simple Flying","t":"3 小时前","link":"https://simpleflying.com/delta-air-lines-southwest-wins-passenger-satisfaction-2026/","hot":"热","lv":2},{"zh":"Why Qantas Quietly Killed Its Nonstop Perth-London Flight In 2026","en":"Why Qantas Quietly Killed Its Nonstop Perth-London Flight In 2026","sum":"A closer look at why Qantas made adjustment to one of the world's longest non-stop flights","ensum":"A closer look at why Qantas made adjustment to one of the world's longest non-stop flights","src":"Simple Flying","t":"3 小时前","link":"https://simpleflying.com/why-did-qantas-quietly-kill-its-nonstop-perth-london-flight-in-2026/","hot":"热","lv":2},{"zh":"The Trent XWB-97 Has 4.5 Million Flight Hours Before The GE9X Carries Its First Pound Of Freight","en":"The Trent XWB-97 Has 4.5 Million Flight Hours Before The GE9X Carries Its First Pound Of Freight","sum":"The XWB-97's maturity is becoming an advantage over the rival new GE9X turbofan, helping the program to progress and be perceived as less risky.","ensum":"The XWB-97's maturity is becoming an advantage over the rival new GE9X turbofan, helping the program to progress and be perceived as less risky.","src":"Simple Flying","t":"6 小时前","link":"https://simpleflying.com/trent-xwb-97-4-million-flight-hours-before-ge9x-first-pound-freight/","hot":"热","lv":2},{"zh":"BCA Special Edition Newsletter","en":"BCA Special Edition Newsletter","sum":"<span>BCA Special Edition Newsletter<\/span> <span><span lang=\"\" about=\"/users/kylee-adams\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"kylee.adams\">kylee.adams@in…<\/span><\/span> <span><time datetime=\"2025-03-07T23:30:14+00:00\" title=\"Fri","ensum":"<span>BCA Special Edition Newsletter<\/span> <span><span lang=\"\" about=\"/users/kylee-adams\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"kylee.adams\">kylee.adams@in…<\/span><\/span> <span><time datetime=\"2025-03-07T23:30:14+00:00\" title=\"Fri","src":"Aviation Week","t":"03月08日","link":"https://aviationweek.com/node/4740936","hot":"热","lv":2},{"zh":"Selected U.S. Military Contracts for the Week of March 6 - March 10, 2017","en":"Selected U.S. Military Contracts for the Week of March 6 - March 10, 2017","sum":"<span>Selected U.S. Military Contracts for the Week of March 6 - March 10, 2017<\/span> <span><span lang=\"\" about=\"/user/1\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"email_registration_qPH4cFMVam\">user+1@localho…<\/span><\/span> <span><ti","ensum":"<span>Selected U.S. Military Contracts for the Week of March 6 - March 10, 2017<\/span> <span><span lang=\"\" about=\"/user/1\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"email_registration_qPH4cFMVam\">user+1@localho…<\/span><\/span> <span><ti","src":"Aviation Week","t":"03月15日","link":"https://aviationweek.com/selected-us-military-contracts-week-march-6-march-10-2017","hot":"热","lv":2},{"zh":"Product Realization Pop Quiz","en":"Product Realization Pop Quiz","sum":"<span class=\"basic-page--title\">Product Realization Pop Quiz<\/span> <span><span lang=\"\" about=\"/user/3620551\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"Will.Herth\">will.herth@pen…<\/span><\/span> <span><time datetime=\"2016-04-18T17:42:07","ensum":"<span class=\"basic-page--title\">Product Realization Pop Quiz<\/span> <span><span lang=\"\" about=\"/user/3620551\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"Will.Herth\">will.herth@pen…<\/span><\/span> <span><time datetime=\"2016-04-18T17:42:07","src":"Aviation Week","t":"04月19日","link":"https://aviationweek.com/aerospace/product-realization-pop-quiz-0","hot":"热","lv":2},{"zh":"Autoflight V5000 Matrix","en":"Autoflight V5000 Matrix","sum":"<span>Autoflight V5000 Matrix<\/span> <span><span lang=\"\" about=\"/users/william-moore-7\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"william.moore\">william.moore@…<\/span><\/span> <span><time datetime=\"2026-03-31T07:48:56+00:00\" title=\"Tues","ensum":"<span>Autoflight V5000 Matrix<\/span> <span><span lang=\"\" about=\"/users/william-moore-7\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"william.moore\">william.moore@…<\/span><\/span> <span><time datetime=\"2026-03-31T07:48:56+00:00\" title=\"Tues","src":"Aviation Week","t":"03月31日","link":"https://aviationweek.com/node/4994461","hot":"热","lv":2},{"zh":"Turkey Signs $11 Billion Eurofighter Deal","en":"Turkey Signs $11 Billion Eurofighter Deal","sum":"<span>Turkey Signs $11 Billion Eurofighter Deal<\/span> <span><span lang=\"\" about=\"/users/dan-hockensmith\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"hockensmithawin\">hockensmithawi…<\/span><\/span> <span><time datetime=\"2025-10-27T18:19:4","ensum":"<span>Turkey Signs $11 Billion Eurofighter Deal<\/span> <span><span lang=\"\" about=\"/users/dan-hockensmith\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"hockensmithawin\">hockensmithawi…<\/span><\/span> <span><time datetime=\"2025-10-27T18:19:4","src":"Aviation Week","t":"10月28日","link":"https://aviationweek.com/defense/aircraft-propulsion/turkey-signs-11-billion-eurofighter-deal","hot":"热","lv":2},{"zh":"Project Lotus, Northrop Grumman’s Secret Autonomous Aircraft Revealed","en":"Project Lotus, Northrop Grumman’s Secret Autonomous Aircraft Revealed","sum":"<span>Project Lotus, Northrop Grumman’s Secret Autonomous Aircraft Revealed<\/span> <span><span lang=\"\" about=\"/users/dan-hockensmith\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"hockensmithawin\">hockensmithawi…<\/span><\/span> <span><time ","ensum":"<span>Project Lotus, Northrop Grumman’s Secret Autonomous Aircraft Revealed<\/span> <span><span lang=\"\" about=\"/users/dan-hockensmith\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"hockensmithawin\">hockensmithawi…<\/span><\/span> <span><time ","src":"Aviation Week","t":"10月28日","link":"https://aviationweek.com/defense/aircraft-propulsion/project-lotus-northrop-grummans-secret-autonomous-aircraft-revealed","hot":"热","lv":2},{"zh":"Second B-21 Enters Flight Test In Palmdale","en":"Second B-21 Enters Flight Test In Palmdale","sum":"<span>Second B-21 Enters Flight Test In Palmdale<\/span> <span><span lang=\"\" about=\"/users/dan-hockensmith\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"hockensmithawin\">hockensmithawi…<\/span><\/span> <span><time datetime=\"2025-09-11T18:36:","ensum":"<span>Second B-21 Enters Flight Test In Palmdale<\/span> <span><span lang=\"\" about=\"/users/dan-hockensmith\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"hockensmithawin\">hockensmithawi…<\/span><\/span> <span><time datetime=\"2025-09-11T18:36:","src":"Aviation Week","t":"09月12日","link":"https://aviationweek.com/defense/aircraft-propulsion/second-b-21-enters-flight-test-palmdale","hot":"热","lv":2},{"zh":"EHang VT35","en":"EHang VT35","sum":"<span>EHang VT35<\/span> <span><span lang=\"\" about=\"/users/william-moore-7\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"william.moore\">william.moore@…<\/span><\/span> <span><time datetime=\"2025-07-29T08:58:34+00:00\" title=\"Tuesday, July 29,","ensum":"<span>EHang VT35<\/span> <span><span lang=\"\" about=\"/users/william-moore-7\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"william.moore\">william.moore@…<\/span><\/span> <span><time datetime=\"2025-07-29T08:58:34+00:00\" title=\"Tuesday, July 29,","src":"Aviation Week","t":"07月29日","link":"https://aviationweek.com/node/4780076","hot":"热","lv":2},{"zh":"Diamond V.MO","en":"Diamond V.MO","sum":"<span>Diamond V.MO<\/span> <span><span lang=\"\" about=\"/users/william-moore-7\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"william.moore\">william.moore@…<\/span><\/span> <span><time datetime=\"2025-07-02T09:55:06+00:00\" title=\"Wednesday, July","ensum":"<span>Diamond V.MO<\/span> <span><span lang=\"\" about=\"/users/william-moore-7\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"william.moore\">william.moore@…<\/span><\/span> <span><time datetime=\"2025-07-02T09:55:06+00:00\" title=\"Wednesday, July","src":"Aviation Week","t":"07月02日","link":"https://aviationweek.com/node/4773341","hot":"热","lv":2},{"zh":"Zero Gravity ZG-T6","en":"Zero Gravity ZG-T6","sum":"<span>Zero Gravity ZG-T6<\/span> <span><span lang=\"\" about=\"/users/william-moore-7\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"william.moore\">william.moore@…<\/span><\/span> <span><time datetime=\"2025-07-02T09:51:25+00:00\" title=\"Wednesday","ensum":"<span>Zero Gravity ZG-T6<\/span> <span><span lang=\"\" about=\"/users/william-moore-7\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"william.moore\">william.moore@…<\/span><\/span> <span><time datetime=\"2025-07-02T09:51:25+00:00\" title=\"Wednesday","src":"Aviation Week","t":"07月02日","link":"https://aviationweek.com/node/4773331","hot":"热","lv":2},{"zh":"777 Partners founder pleads guilty to $500 million fraud scheme","en":"777 Partners founder pleads guilty to $500 million fraud scheme","sum":"Joshua Wander, co-founder and former chief executive of 777 Partners, has pleaded guilty to wire fraud and securities… The post 777 Partners founder pleads guilty to $500 million fraud scheme appeared first on AeroTime .","ensum":"Joshua Wander, co-founder and former chief executive of 777 Partners, has pleaded guilty to wire fraud and securities… The post 777 Partners founder pleads guilty to $500 million fraud scheme appeared first on AeroTime .","src":"AeroTime","t":"刚刚","link":"https://www.aerotime.aero/articles/777-partners-founder-pleads-guilty-to-500-million-fraud-scheme","hot":"荐","lv":1},{"zh":"Delta Flight Attendants Clash So Badly That Pilots Call Supervisor For Help","en":"Delta Flight Attendants Clash So Badly That Pilots Call Supervisor For Help","sum":"A Delta Connection pilot asked for an inflight supervisor to meet the plane in Detroit after the only two flight attendants onboard reportedly had a conflict that might escalate.","ensum":"A Delta Connection pilot asked for an inflight supervisor to meet the plane in Detroit after the only two flight attendants onboard reportedly had a conflict that might escalate.","src":"OMAAT","t":"13 小时前","link":"https://onemileatatime.com/news/delta-flight-attendants-clash-badly-pilots-call-supervisor-help/","hot":"荐","lv":1},{"zh":"Pakistan extends airspace ban on Indian airlines","en":"Pakistan extends airspace ban on Indian airlines","sum":"Pakistan has extended its airspace ban on Indian aircraft for another month, keeping restrictions in place until November… The post Pakistan extends airspace ban on Indian airlines appeared first on AeroTime .","ensum":"Pakistan has extended its airspace ban on Indian aircraft for another month, keeping restrictions in place until November… The post Pakistan extends airspace ban on Indian airlines appeared first on AeroTime .","src":"AeroTime","t":"2 小时前","link":"https://www.aerotime.aero/articles/pakistan-extends-airspace-ban-on-indian-airlines","hot":"荐","lv":1},{"zh":"American Flight Attendants Furious Over Mandatory Credit Card Training","en":"American Flight Attendants Furious Over Mandatory Credit Card Training","sum":"American Airlines is requiring flight attendants to complete credit card sales training, and the APFA union says it violates their contract. Here's why I think the union is overreacting.","ensum":"American Airlines is requiring flight attendants to complete credit card sales training, and the APFA union says it violates their contract. Here's why I think the union is overreacting.","src":"OMAAT","t":"15 小时前","link":"https://onemileatatime.com/news/american-flight-attendants-furious-mandatory-credit-card-training/","hot":"荐","lv":1},{"zh":"VINCI launches Lyon Terminal 2 overhaul ahead of 2030 Winter Olympics","en":"VINCI launches Lyon Terminal 2 overhaul ahead of 2030 Winter Olympics","sum":"VINCI Airports has launched the redevelopment of Terminal 2 at Lyon-Saint Exupéry Airport, with opening scheduled for 2029 ahead of the 2030 Winter Olympic and Paralympic Games in the French Alps. The project forms part of a wider investment programme exceedin","ensum":"VINCI Airports has launched the redevelopment of Terminal 2 at Lyon-Saint Exupéry Airport, with opening scheduled for 2029 ahead of the 2030 Winter Olympic and Paralympic Games in the French Alps. The project forms part of a wider investment programme exceedin","src":"Aviation24","t":"昨天","link":"https://www.aviation24.be/airports/lyon/vinci-launches-lyon-terminal-2-overhaul-ahead-of-2030-winter-olympics/","hot":"荐","lv":1},{"zh":"Weekly Review: October 17, 2026","en":"Weekly Review: October 17, 2026","sum":"I hope everyone is having a nice weekend so far! I have no major travel plans for the foreseeable future, so I’ll keep chipping away at my trip reports, though the news lately sure has kept me busy! On the points & travel front, this week Southwest announced h","ensum":"I hope everyone is having a nice weekend so far! I have no major travel plans for the foreseeable future, so I’ll keep chipping away at my trip reports, though the news lately sure has kept me busy! On the points & travel front, this week Southwest announced h","src":"OMAAT","t":"16 小时前","link":"https://onemileatatime.com/weekly-review/2026-10-17/","hot":"荐","lv":1},{"zh":"Condor launches daily Berlin–Abu Dhabi flights with Etihad codeshare","en":"Condor launches daily Berlin–Abu Dhabi flights with Etihad codeshare","sum":"Condor has launched daily flights between Berlin Brandenburg and Abu Dhabi, operated in codeshare with Etihad Airways. The year-round service provides direct access to the UAE capital and onward connections through Etihad’s hub to destinations across Asia, Aus","ensum":"Condor has launched daily flights between Berlin Brandenburg and Abu Dhabi, operated in codeshare with Etihad Airways. The year-round service provides direct access to the UAE capital and onward connections through Etihad’s hub to destinations across Asia, Aus","src":"Aviation24","t":"昨天","link":"https://www.aviation24.be/airlines/condor/condor-launches-daily-berlin-abu-dhabi-flights-with-etihad-codeshare/","hot":"荐","lv":1},{"zh":"Delta to launch daily Boston–Reykjavík flights in April 2027","en":"Delta to launch daily Boston–Reykjavík flights in April 2027","sum":"Delta Air Lines will introduce daily seasonal flights between Boston and Reykjavík Keflavík on 12 April 2027, operating through 30 October. The route will use Boeing 757-200 aircraft offering Delta Premium Select, Delta Comfort and Delta Main cabins. Reykjavík","ensum":"Delta Air Lines will introduce daily seasonal flights between Boston and Reykjavík Keflavík on 12 April 2027, operating through 30 October. The route will use Boeing 757-200 aircraft offering Delta Premium Select, Delta Comfort and Delta Main cabins. Reykjavík","src":"Aviation24","t":"昨天","link":"https://www.aviation24.be/airlines/delta-air-lines/delta-to-launch-daily-boston-reykjavik-flights-in-april-2027/","hot":"荐","lv":1},{"zh":"The World’s Best Hotel Awards Are Great For Rates, But Hard On Expectations","en":"The World’s Best Hotel Awards Are Great For Rates, But Hard On Expectations","sum":"After staying at Patina Osaka, rated the world's best hotel by Travel + Leisure, I'm reflecting on how big awards boost rates but also raise guest expectations.","ensum":"After staying at Patina Osaka, rated the world's best hotel by Travel + Leisure, I'm reflecting on how big awards boost rates but also raise guest expectations.","src":"OMAAT","t":"18 小时前","link":"https://onemileatatime.com/insights/best-hotel-awards-great-rates-hard-expectations/","hot":"荐","lv":1},{"zh":"Waldorf Astoria Osaka Review: Hilton Gem With Amazing Design, Service, & Facilities!","en":"Waldorf Astoria Osaka Review: Hilton Gem With Amazing Design, Service, & Facilities!","sum":"I spent a night at the Waldorf Astoria Osaka, a 252-key Hilton hotel with André Fu design, flawless service, a great spa and pool, and a stunning corner suite.","ensum":"I spent a night at the Waldorf Astoria Osaka, a 252-key Hilton hotel with André Fu design, flawless service, a great spa and pool, and a stunning corner suite.","src":"OMAAT","t":"20 小时前","link":"https://onemileatatime.com/reviews/waldorf-astoria-osaka/","hot":"荐","lv":1},{"zh":"Lufthansa prepares for final A340-600 flights","en":"Lufthansa prepares for final A340-600 flights","sum":"Lufthansa will end Airbus A340-600 passenger operations on 18 October, with the final scheduled service arriving in Frankfurt the following morning, ending almost 23 years of service for the German airline. Flight LH419 from Washington Dulles is scheduled to d","ensum":"Lufthansa will end Airbus A340-600 passenger operations on 18 October, with the final scheduled service arriving in Frankfurt the following morning, ending almost 23 years of service for the German airline. Flight LH419 from Washington Dulles is scheduled to d","src":"Aviation24","t":"20 小时前","link":"https://www.aviation24.be/airlines/lufthansa-group/lufthansa/lufthansa-prepares-for-final-a340-600-flights/","hot":"荐","lv":1},{"zh":"St. Petersburg-bound charter diverts to Helsinki after drone alert","en":"St. Petersburg-bound charter diverts to Helsinki after drone alert","sum":"Red Sea Airlines) charter flight 4S321 from Hurghada, Egypt, to St. Petersburg, Russian Federation, operated by a Boeing 737-800 (reg. SU-RSB, pictured above), diverted to Helsinki-Vantaa, Finland, after a drone alert prompted the closure of Pulkovo Airport. A","ensum":"Red Sea Airlines) charter flight 4S321 from Hurghada, Egypt, to St. Petersburg, Russian Federation, operated by a Boeing 737-800 (reg. SU-RSB, pictured above), diverted to Helsinki-Vantaa, Finland, after a drone alert prompted the closure of Pulkovo Airport. A","src":"Aviation24","t":"22 小时前","link":"https://www.aviation24.be/airlines/red-sea-airlines/st-petersburg-bound-charter-diverts-to-helsinki-after-drone-alert/","hot":"荐","lv":1},{"zh":"IHG Credit Card Free Night Awards: How To Earn & Redeem Them, Maximize Value","en":"IHG Credit Card Free Night Awards: How To Earn & Redeem Them, Maximize Value","sum":"Three IHG One Rewards Chase cards offer anniversary free night certificates worth up to 60,000 points. Here's how to earn them, redeem them, and top them up with points.","ensum":"Three IHG One Rewards Chase cards offer anniversary free night certificates worth up to 60,000 points. Here's how to earn them, redeem them, and top them up with points.","src":"OMAAT","t":"22 小时前","link":"https://onemileatatime.com/guides/ihg-card-free-night/","hot":"荐","lv":1},{"zh":"Fun: FAA Will Let Air Traffic Controllers Ride In Airline Cockpit Jumpseats","en":"Fun: FAA Will Let Air Traffic Controllers Ride In Airline Cockpit Jumpseats","sum":"The FAA is reinstating its Flight Deck Training program, letting air traffic controllers apply to ride in the jumpseat on eligible flights to see pilots' workload firsthand.","ensum":"The FAA is reinstating its Flight Deck Training program, letting air traffic controllers apply to ride in the jumpseat on eligible flights to see pilots' workload firsthand.","src":"OMAAT","t":"昨天","link":"https://onemileatatime.com/news/air-traffic-controllers-ride-airline-cockpit-jumpseats/","hot":"荐","lv":1},{"zh":"United Business Card Review: Is The Card Worth The $150 Annual Fee?","en":"United Business Card Review: Is The Card Worth The $150 Annual Fee?","sum":"The United Business Card offers up to 100K bonus miles, a free first checked bag, United Club passes and credits that can offset the annual fee. Here's who it suits.","ensum":"The United Business Card offers up to 100K bonus miles, a free first checked bag, United Club passes and credits that can offset the annual fee. Here's who it suits.","src":"OMAAT","t":"昨天","link":"https://onemileatatime.com/reviews/credit-cards/chase/united-business-card/","hot":"荐","lv":1},{"zh":"Chase 5/24 Rule: How It Works, How To Check Your Status, & Whether It’s Still Enforced","en":"Chase 5/24 Rule: How It Works, How To Check Your Status, & Whether It’s Still Enforced","sum":"The Chase 5/24 rule can block your application if you've opened five or more cards in 24 months, but it no longer seems consistently enforced. Here's how it works.","ensum":"The Chase 5/24 rule can block your application if you've opened five or more cards in 24 months, but it no longer seems consistently enforced. Here's how it works.","src":"OMAAT","t":"昨天","link":"https://onemileatatime.com/guides/chase-5-24-rule/","hot":"荐","lv":1},{"zh":"Buy Qatar Airways Avios With 60% Bonus, 1.44 Cents Each: Worth It?","en":"Buy Qatar Airways Avios With 60% Bonus, 1.44 Cents Each: Worth It?","sum":"Qatar Airways Privilege Club is selling Avios with up to a 60% bonus, which works out to 1.44 cents each. It's the best offer this year, but is buying worthwhile?","ensum":"Qatar Airways Privilege Club is selling Avios with up to a 60% bonus, which works out to 1.44 cents each. It's the best offer this year, but is buying worthwhile?","src":"OMAAT","t":"昨天","link":"https://onemileatatime.com/deals/buy-qatar-airways-privilege-club-avios/","hot":"荐","lv":1}];
+var detail  = document.getElementById('detail');
+var dscroll = document.getElementById('dscroll');
+var list    = document.getElementById('scroll');
+var listPos = 0, cur = -1;
+
+function $(id){ return document.getElementById(id); }
+function put(id, v){ $(id).textContent = (v == null ? '' : v); }
+
+function render(i){
+  var d = DATA[i];
+  cur = i;
+  put('d-title', d.zh || d.en);
+
+  var hb = $('d-hot');
+  if (d.hot) { hb.textContent = d.hot; hb.className = 'hot hot' + d.lv; hb.style.display = ''; }
+  else { hb.style.display = 'none'; }
+
+  put('d-src',  d.src);
+  put('d-time', d.t);
+  put('d-rank', (i + 1) + ' / ' + DATA.length);
+
+  var zhSec = $('d-zh-sec');
+  if (d.sum) { put('d-zh-body', d.sum); zhSec.style.display = ''; }
+  else { zhSec.style.display = 'none'; }
+
+  put('d-en-title', d.en);
+  var enSum = $('d-en-sum');
+  if (d.ensum) { put('d-en-sum', d.ensum); enSum.style.display = ''; }
+  else { enSum.style.display = 'none'; }
+
+  $('d-open').href = d.link;
+  put('d-link', d.link);
+
+  $('d-prev').disabled = (i <= 0);
+  $('d-next').disabled = (i >= DATA.length - 1);
+}
+
+function route(){
+  var m = /^#\/n\/(\d+)$/.exec(location.hash || '');
+  if (m) {
+    var i = parseInt(m[1], 10);
+    if (i >= 0 && i < DATA.length) {
+      if (!detail.classList.contains('open')) listPos = list.scrollTop;
+      render(i);
+      detail.classList.add('open');
+      detail.setAttribute('aria-hidden', 'false');
+      dscroll.scrollTop = 0;
+      if (document.title.indexOf('·') > 0) document.title = (DATA[i].zh || DATA[i].en).slice(0, 30);
+      return;
+    }
+  }
+  detail.classList.remove('open');
+  detail.setAttribute('aria-hidden', 'true');
+  list.scrollTop = listPos;
+  document.title = '民航资讯 · 每日热点';
+}
+
+function go(i){
+  if (i < 0 || i >= DATA.length) return;
+  history.replaceState(null, '', '#/n/' + i);
+  render(i);
+  dscroll.scrollTop = 0;
+}
+
+/* 点卡片进入详情 */
+document.getElementById('list').addEventListener('click', function(e){
+  var c = e.target.closest ? e.target.closest('.card') : null;
+  if (c) location.hash = '#/n/' + c.getAttribute('data-i');
+});
+
+$('d-back').onclick = function(){
+  if (history.length > 1) history.back();
+  else { location.hash = ''; route(); }
+};
+$('d-prev').onclick = function(){ go(cur - 1); };
+$('d-next').onclick = function(){ go(cur + 1); };
+
+$('d-copy').onclick = function(){
+  var link = DATA[cur].link;
+  var btn = $('d-copy'), old = btn.textContent;
+  function done(){ btn.textContent = '已复制'; setTimeout(function(){ btn.textContent = old; }, 1400); }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(link).then(done, function(){
+      window.prompt('复制下面的链接：', link); btn.textContent = old;
+    });
+  } else { window.prompt('复制下面的链接：', link); }
+};
+
+var shareBtn = $('d-share');
+if (navigator.share) {
+  shareBtn.onclick = function(){
+    navigator.share({ title: DATA[cur].zh || DATA[cur].en, url: DATA[cur].link }).catch(function(){});
+  };
+} else { shareBtn.style.display = 'none'; }
+
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape' && detail.classList.contains('open')) $('d-back').click();
+});
+
+window.addEventListener('hashchange', route);
+route();
+
 </script>
 </body>
 </html>

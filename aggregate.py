@@ -60,7 +60,7 @@ REQUEST_DELAY  = 0.4       # 抓取间隔（秒），对服务器友好
 
 # ---- 正文（全文）相关 ----
 BODY_LIMIT     = 1600      # 每篇英文正文最多保留多少字符
-BODY_TRANSLATE = 1100      # 正文最多翻译多少字符（够读完整篇，也省 AI 额度）
+BODY_TRANSLATE = 1200      # 正文最多翻译多少字符（够翻完大部分段落，也避免输出超限）
 BODY_MIN       = 320       # RSS 自带的正文少于这个数，就去原网页抓全文
 BODY_TIMEOUT   = 12        # 抓单个网页的超时（秒）
 NOISE_WORDS    = ("cookie", "subscribe", "newsletter", "sign up", "sign-up",
@@ -409,27 +409,35 @@ def ai_translate(texts):
     return result
 
 
-BODY_SYS_PROMPT = ("你是专业民航新闻翻译。把每篇英文新闻正文翻译成简体中文。\n"
-                   "输入里有多篇正文，用 <<<序号>>> 分隔；"
-                   "你必须用完全相同的分隔标记和顺序输出对应译文。\n"
-                   "要求：保持原来的段落结构（段落之间空一行），语言通顺自然；"
-                   "航空公司名、机型、机场三字码保留英文；不要加任何解释、标题或前后缀。")
+BODY_SYS_PROMPT = ("你是专业民航新闻翻译。把英文新闻正文逐段翻译成简体中文。\n"
+                   "输入包含多篇正文，每篇以 <<<篇号>>> 开头，篇内每段以 [[段号]] 开头。\n"
+                   "输出必须使用完全相同的标记结构：<<<篇号>>> 和 [[段号]]，逐段给出译文。\n"
+                   "严格要求：段数必须与输入完全一致，一段对一段，绝不合并、拆分或省略段落。\n"
+                   "语言通顺自然，航空公司名、机型、机场三字码保留英文；不要加任何解释或标题。")
 
 
 def _ai_batch_body(blocks, model):
-    """一次翻译多篇正文（比标题长，所以每批更少）。失败返回 None。"""
+    """翻译多篇正文，保持段落一一对应。
+
+    blocks: [[段落1, 段落2, ...], ...]，每篇一个列表
+    返回与 blocks 同结构的译文（失败为 None，缺失段落为空串）
+    """
     token = os.environ.get("GITHUB_TOKEN")
     if not token or not blocks:
         return None
 
-    numbered = "\n".join(f"<<<{i+1}>>>\n{b}" for i, b in enumerate(blocks))
+    numbered = []
+    for i, paras in enumerate(blocks):
+        inner = "\n".join(f"[[{j+1}]]{p}" for j, p in enumerate(paras))
+        numbered.append(f"<<<{i+1}>>>\n{inner}")
     payload = {
         "model": model,
         "messages": [
             {"role": "system", "content": BODY_SYS_PROMPT},
-            {"role": "user", "content": numbered},
+            {"role": "user", "content": "\n".join(numbered)},
         ],
         "temperature": 0.3,
+        "max_tokens": 4096,
     }
     try:
         req = urllib.request.Request(
@@ -449,19 +457,29 @@ def _ai_batch_body(blocks, model):
     parts = re.split(r"<<<\s*(\d+)\s*>>>", content)
     for i in range(1, len(parts) - 1, 2):
         idx = int(parts[i]) - 1
-        val = parts[i + 1].strip()
-        if 0 <= idx < len(blocks) and val:
-            got[idx] = val
+        if not (0 <= idx < len(blocks)):
+            continue
+        segs = re.split(r"\[\[\s*(\d+)\s*\]\]", parts[i + 1])
+        paras = {}
+        for j in range(1, len(segs) - 1, 2):
+            pidx = int(segs[j]) - 1
+            val = segs[j + 1].strip()
+            if 0 <= pidx < len(blocks[idx]) and val:
+                paras[pidx] = val
+        need = len(blocks[idx])
+        if len(paras) >= max(1, int(need * 0.5)):
+            got[idx] = [paras.get(k, "") for k in range(need)]
 
     if len(got) == len(blocks):
         return [got[i] for i in range(len(blocks))]
-    if len(got) >= max(1, int(len(blocks) * 0.7)):
+    if len(got) >= max(1, int(len(blocks) * 0.5)):
+        print(f"  ({model} 正文部分成功: {len(got)}/{len(blocks)})")
         return [got.get(i) for i in range(len(blocks))]
-    print(f"  ({model} 正文返回不足: {len(got)}/{len(blocks)})")
+    print(f"  ({model} 正文返回不足: {len(got)}/{len(blocks)})，开头: " + repr(content[:120]))
     return None
 
 
-def ai_translate_bodies(blocks, batch=4):
+def ai_translate_bodies(blocks, batch=2):
     """分批 + 多模型翻译正文。返回与 blocks 等长的列表，失败位置是 None。"""
     if not blocks:
         return []
@@ -600,20 +618,31 @@ def translate_items(items):
         print(f"  AI 翻译摘要 {ok}/{len(sum_todo)} 条")
         save_cache(cache)
 
-    # ②⑤ AI 翻译正文（只翻前面一部分，够读就行，也省额度）
+    # ②⑤ AI 翻译正文：逐段翻译，让中文段落和英文段落一一对上
     if body_todo:
-        blocks = ["\n".join(it["body_en"])[:BODY_TRANSLATE] for it in body_todo]
-        zhs = ai_translate_bodies(blocks)
+        packs = []
+        for it in body_todo:
+            paras, total = [], 0
+            for p in it["body_en"]:
+                if total and total + len(p) > BODY_TRANSLATE:
+                    break
+                paras.append(p)
+                total += len(p)
+            packs.append(paras)
+
+        zhs = ai_translate_bodies(packs)
         ok = 0
-        for it, zh in zip(body_todo, zhs):
-            if zh and has_cn(zh):
-                paras = [p.strip() for p in re.split(r"\n+", zh) if len(p.strip()) > 4]
-                if paras:
-                    it["body_zh"] = paras
-                    rec = cache.setdefault(it["link"], {})
-                    rec["b"] = "\n".join(paras)
-                    rec["ts"] = time.time()
-                    ok += 1
+        for it, pack, zh in zip(body_todo, packs, zhs):
+            if not zh:
+                continue
+            body = [(x or "").replace("\n", " ").strip() for x in zh]
+            body = (body + [""] * len(pack))[:len(pack)]   # 长度对齐，缺的留空
+            if any(has_cn(x) for x in body):
+                it["body_zh"] = body
+                rec = cache.setdefault(it["link"], {})
+                rec["b"] = "\n".join(body)
+                rec["ts"] = time.time()
+                ok += 1
         print(f"  AI 翻译正文 {ok}/{len(body_todo)} 篇")
         save_cache(cache)
 
@@ -717,9 +746,21 @@ DETAIL_CSS = """
 .dsec-h::before{content:"";width:3px;height:11px;border-radius:2px;background:var(--accent)}
 .en-tag{font-size:9.5px;font-weight:700;letter-spacing:.5px;color:var(--sub);
   border:.5px solid var(--sep);border-radius:4px;padding:1px 4px}
-.dzh{margin:0;font-size:16.5px;line-height:1.78;color:var(--text)}
-.dzh p{margin:0 0 14px}
-.dzh p:last-child{margin-bottom:0}
+/* 正文：中英逐段对照 */
+.orgtitle{font-size:12.5px;color:var(--sub);line-height:1.55;margin:0 0 15px;
+  padding-left:9px;border-left:2px solid var(--sep)}
+.segbar{display:flex;background:var(--sep);border-radius:9px;padding:2px;margin-bottom:18px}
+.seg{flex:1;border:0;background:none;padding:7px 0;border-radius:7px;font-size:13.5px;
+  font-family:inherit;color:var(--text);cursor:pointer;transition:all .15s}
+.seg.on{background:var(--card);font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.para{margin-bottom:20px}
+.p-en{font-size:13.5px;line-height:1.72;color:var(--sub);margin-bottom:9px}
+.p-zh{font-size:16.5px;line-height:1.8;color:var(--text);padding-left:12px;
+  border-left:3px solid var(--accent)}
+.p-zh.missing{font-size:12px;color:var(--sub);opacity:.65;border-left-color:var(--sep)}
+.p-zh-only{font-size:16.5px;line-height:1.8;margin:0 0 17px}
+.p-en-only{font-size:14.5px;line-height:1.75;color:var(--sub);margin:0 0 15px}
+.p-none{text-align:center;padding:30px 12px;color:var(--sub);font-size:14px}
 
 .dorig{background:var(--card);border:.5px solid var(--sep);border-radius:12px;padding:14px}
 .dentitle{margin:0 0 8px;font-size:16px;line-height:1.45;font-weight:600}
@@ -787,29 +828,56 @@ function esc(s){
 function paras(list){
   return (list || []).map(function(p){ return '<p>' + esc(p) + '</p>'; }).join('');
 }
-var enExpanded = false;
+var mode = 'both';
 
-function renderEn(d){
-  var box = $('d-en-sum');
-  if (d.enbody && d.enbody.length) {
-    var list = enExpanded ? d.enbody : d.enbody.slice(0, 3);
-    var html = paras(list);
-    if (d.enbody.length > 3) {
-      html += '<button class="more" id="d-more">' +
-              (enExpanded ? '收起英文原文' : '展开英文全文（共 ' + d.enbody.length + ' 段）') +
-              '</button>';
-    }
-    box.innerHTML = html;
-    box.style.display = '';
-    var mb = $('d-more');
-    if (mb) { mb.onclick = function(){ enExpanded = !enExpanded; renderEn(d); }; }
-  } else if (d.ensum) {
-    box.innerHTML = '<p>' + esc(d.ensum) + '</p>';
-    box.style.display = '';
-  } else {
-    box.innerHTML = '';
-    box.style.display = 'none';
+function syncSeg(){
+  var bs = document.querySelectorAll('.seg');
+  for (var i = 0; i < bs.length; i++) {
+    bs[i].classList.toggle('on', bs[i].getAttribute('data-m') === mode);
   }
+}
+
+function renderBody(d){
+  var box = $('d-body');
+  var en = d.enbody || [];
+  var zh = d.body || [];
+  var html = '';
+
+  if (mode === 'zh') {
+    var zs = zh.filter(function(x){ return x && x.trim(); });
+    if (zs.length) {
+      html = zs.map(function(t){ return '<p class="p-zh-only">' + esc(t) + '</p>'; }).join('');
+    } else if (d.sum) {
+      html = '<p class="p-zh-only">' + esc(d.sum) + '</p>';
+    } else {
+      html = '<div class="p-none">这篇还没有中文译文</div>';
+    }
+  } else if (mode === 'en') {
+    if (en.length) {
+      html = en.map(function(t){ return '<p class="p-en-only">' + esc(t) + '</p>'; }).join('');
+    } else if (d.ensum) {
+      html = '<p class="p-en-only">' + esc(d.ensum) + '</p>';
+    } else {
+      html = '<div class="p-none">暂无正文</div>';
+    }
+  } else {
+    if (en.length) {
+      for (var i = 0; i < en.length; i++) {
+        var z = (i < zh.length && zh[i]) ? zh[i] : '';
+        html += '<div class="para">'
+             +  '<div class="p-en">' + esc(en[i]) + '</div>'
+             +  (z ? '<div class="p-zh">' + esc(z) + '</div>'
+                   : '<div class="p-zh missing">（本段未翻译）</div>')
+             +  '</div>';
+      }
+    } else if (d.ensum) {
+      html = '<div class="para"><div class="p-en">' + esc(d.ensum) + '</div>'
+           + '<div class="p-zh">' + esc(d.sum || '') + '</div></div>';
+    } else {
+      html = '<div class="p-none">暂无正文，点下方「阅读原文」看完整报道</div>';
+    }
+  }
+  box.innerHTML = html;
 }
 
 function render(i){
@@ -825,21 +893,10 @@ function render(i){
   put('d-time', d.t);
   put('d-rank', (i + 1) + ' / ' + DATA.length);
 
-  // 中文全文：抓到正文就显示全文，否则退回摘要那句话
-  var zhSec = $('d-zh-sec');
-  if (d.body && d.body.length) {
-    $('d-zh-body').innerHTML = paras(d.body);
-    zhSec.style.display = '';
-  } else if (d.sum) {
-    $('d-zh-body').innerHTML = '<p>' + esc(d.sum) + '</p>';
-    zhSec.style.display = '';
-  } else {
-    zhSec.style.display = 'none';
-  }
-
   put('d-en-title', d.en);
-  enExpanded = false;
-  renderEn(d);
+  mode = 'both';
+  syncSeg();
+  renderBody(d);
 
   $('d-open').href = d.link;
   put('d-link', d.link);
@@ -909,6 +966,18 @@ if (navigator.share) {
 document.addEventListener('keydown', function(e){
   if (e.key === 'Escape' && detail.classList.contains('open')) $('d-back').click();
 });
+
+var segbar = $('d-segbar');
+if (segbar) {
+  segbar.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('.seg') : null;
+    if (b && cur >= 0) {
+      mode = b.getAttribute('data-m');
+      syncSeg();
+      renderBody(DATA[cur]);
+    }
+  });
+}
 
 window.addEventListener('hashchange', route);
 route();
@@ -1078,19 +1147,17 @@ body{{background:var(--bg);color:var(--text);
       </div>
       <h1 class="dtitle" id="d-title"></h1>
 
-      <div class="dsec" id="d-zh-sec">
-        <div class="dsec-h">中文全文</div>
-        <div class="dzh" id="d-zh-body"></div>
+      <div class="orgtitle" id="d-en-title"></div>
+
+      <div class="segbar" id="d-segbar">
+        <button class="seg on" data-m="both">中英对照</button>
+        <button class="seg" data-m="zh">只看中文</button>
+        <button class="seg" data-m="en">只看英文</button>
       </div>
 
-      <div class="dsec">
-        <div class="dsec-h">英文原文 <span class="en-tag">ENGLISH</span></div>
-        <div class="dorig">
-          <h2 class="dentitle" id="d-en-title"></h2>
-          <div class="densum" id="d-en-sum"></div>
-          <div class="dlink" id="d-link"></div>
-        </div>
-      </div>
+      <div class="dbody" id="d-body"></div>
+
+      <div class="dlink" id="d-link"></div>
 
       <div class="dnav">
         <button id="d-prev">‹ 上一条</button>

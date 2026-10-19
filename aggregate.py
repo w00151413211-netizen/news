@@ -282,6 +282,18 @@ def has_cn(text):
     return bool(re.search(r"[\u4e00-\u9fff]", text or ""))
 
 
+# ---------- 运行诊断：把失败原因写进 docs/，方便上线后直接查看 ----------
+
+RUN_LOG = []
+
+
+def log(msg):
+    """同时打印到控制台和日志（最后一起写进 docs/translate_log.txt）。"""
+    text = str(msg)
+    print(text, flush=True)
+    RUN_LOG.append(text)
+
+
 # ---------- 译文缓存：翻过的就不再重复调用接口 ----------
 
 def load_cache():
@@ -313,16 +325,16 @@ def save_cache(cache):
 
 # ---------- 翻译接口 ----------
 
-def _translate_google(text, target="zh-CN"):
+def _translate_google(text, target="zh-CN", sl="auto", timeout=8):
     """免费 Google 翻译接口（无需密钥）。失败返回 None。"""
     if not text:
         return ""
     q = urllib.parse.quote(text)
     url = (f"https://translate.googleapis.com/translate_a/single"
-           f"?client=gtx&sl=auto&tl={target}&dt=t&q={q}")
+           f"?client=gtx&sl={sl}&tl={target}&dt=t&q={q}")
     try:
         req = urllib.request.Request(url, headers={"User-Agent": UA})
-        with urllib.request.urlopen(req, timeout=8) as resp:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
             data = json.loads(resp.read().decode("utf-8"))
         return "".join(seg[0] for seg in data[0] if seg[0])
     except Exception:
@@ -355,7 +367,7 @@ def _ai_batch(texts, model):
             data = json.loads(resp.read().decode("utf-8"))
         content = data["choices"][0]["message"]["content"]
     except Exception as e:
-        print(f"  ({model} 调用失败: {e})")
+        log(f"  ({model} 调用失败: {e})")
         return None
 
     # 按「序号| 译文」解析，允许模型偶尔多吐几行废话
@@ -374,7 +386,7 @@ def _ai_batch(texts, model):
     # 拿到七成以上就算成功，缺的用原文补上，避免整批白翻
     if len(got) >= max(1, int(len(texts) * 0.7)):
         return [got.get(i, texts[i]) for i in range(len(texts))]
-    print(f"  ({model} 返回条数不足: {len(got)}/{len(texts)})")
+    log(f"  ({model} 返回条数不足: {len(got)}/{len(texts)})")
     return None
 
 
@@ -463,11 +475,11 @@ def _ai_batch_body(blocks, model):
                     detail = e2.read().decode("utf-8", "ignore")[:160]
                 except Exception:
                     pass
-                print(f"  ({model} 正文调用失败: {e2} {detail})")
+                log(f"  ({model} 正文调用失败: {e2} {detail})")
                 return None
         content = data["choices"][0]["message"]["content"]
     except Exception as e:
-        print(f"  ({model} 正文解析失败: {e})")
+        log(f"  ({model} 正文解析失败: {e})")
         return None
 
     got = {}
@@ -504,9 +516,9 @@ def _ai_batch_body(blocks, model):
             return [[chunks[k] if k < len(chunks) else "" for k in range(need)]]
 
     if len(got) >= max(1, int(len(blocks) * 0.5)):
-        print(f"  ({model} 正文部分成功: {len(got)}/{len(blocks)})")
+        log(f"  ({model} 正文部分成功: {len(got)}/{len(blocks)})")
         return [got.get(i) for i in range(len(blocks))]
-    print(f"  ({model} 正文返回不足: {len(got)}/{len(blocks)})，开头: " + repr(content[:120]))
+    log(f"  ({model} 正文返回不足: {len(got)}/{len(blocks)})，开头: " + repr(content[:120]))
     return None
 
 
@@ -579,7 +591,7 @@ def _ai_batch_para(texts, model):
             data = json.loads(resp.read().decode("utf-8"))
         content = data["choices"][0]["message"]["content"]
     except Exception as e:
-        print(f"  ({model} 逐段调用失败: {e})")
+        log(f"  ({model} 逐段调用失败: {e})")
         return None
 
     # 解析：序号开头算新的一段；没有序号的行视为上一段的续行
@@ -600,7 +612,7 @@ def _ai_batch_para(texts, model):
     got = {k: v for k, v in got.items() if v}
     if len(got) >= max(1, int(len(texts) * 0.7)):
         return [got.get(i, "") for i in range(len(texts))]
-    print(f"  ({model} 逐段返回不足: {len(got)}/{len(texts)})")
+    log(f"  ({model} 逐段返回不足: {len(got)}/{len(texts)})")
     return None
 
 
@@ -649,6 +661,77 @@ def ai_translate_paragraphs(packs):
     return out
 
 
+def _pack_spans(packs):
+    """把多篇文章的段落拉平，同时记下每篇在拉平后列表里的起止位置。"""
+    flat, spans = [], []
+    for paras in packs:
+        spans.append((len(flat), len(flat) + len(paras)))
+        flat.extend(paras)
+    return flat, spans
+
+
+def _rebuild(result, spans, n_packs):
+    """按原结构把译文拼回「一篇文章一个列表」。"""
+    if not result:
+        return [None] * n_packs
+    out = []
+    for a, b in spans:
+        chunk = result[a:b]
+        out.append(None if all(v is None for v in chunk)
+                   else [(v or "") for v in chunk])
+    return out
+
+
+def google_translate_paragraphs(packs):
+    """用免费 Google 接口逐段翻译正文（不占 GitHub AI 额度）。
+
+    packs: [[段落, 段落...], ...]；返回同结构列表，整篇失败的位置是 None。
+    """
+    flat, spans = _pack_spans(packs)
+    if not flat:
+        return [None] * len(packs)
+
+    result = [None] * len(flat)
+    ok = 0
+    miss = 0
+    for i, t in enumerate(flat):
+        out = _translate_google(t, sl="en", timeout=12)
+        if out and has_cn(out):
+            result[i] = out
+            ok += 1
+            miss = 0
+        else:
+            miss += 1
+            if miss >= 4 and ok == 0:
+                log(f"  Google 逐段翻译连续失败 {miss} 次，放弃")
+                break
+        time.sleep(0.2 + 0.2 * (i % 3))     # 稍微抖一抖，别打得太密
+    log(f"  Google 逐段翻译 {ok}/{len(flat)} 段")
+    return _rebuild(result, spans, len(packs))
+
+
+def mymemory_translate_paragraphs(packs, budget=4000):
+    """最后兜底：MyMemory 逐段翻。有每日字数限额，用完就停。"""
+    flat, spans = _pack_spans(packs)
+    if not flat:
+        return [None] * len(packs)
+
+    result = [None] * len(flat)
+    used = 0
+    ok = 0
+    for i, t in enumerate(flat):
+        if used >= budget:
+            break
+        out = _translate_mymemory(t)
+        used += len(t or "")
+        if out and has_cn(out):
+            result[i] = out
+            ok += 1
+        time.sleep(0.4)
+    log(f"  MyMemory 逐段翻译 {ok}/{len(flat)} 段（用掉 {used} 字额度）")
+    return _rebuild(result, spans, len(packs))
+
+
 def _translate_mymemory(text, target="zh-CN"):
     """备用翻译：MyMemory（免费，无需密钥，每天限额约 5000 字）。失败返回 None。"""
     if not text:
@@ -668,7 +751,7 @@ def _translate_mymemory(text, target="zh-CN"):
 def _fallback_translate(items):
     """AI 不通时的兜底：Google → MyMemory，只对还缺中文的条目逐条翻。"""
     use_google = _translate_google("test") is not None
-    print("  兜底翻译：" + ("Google" if use_google else "MyMemory"))
+    log("  兜底翻译：" + ("Google" if use_google else "MyMemory"))
 
     def tr(text):
         if not text:
@@ -788,19 +871,38 @@ def translate_items(items):
                     rest_pk.append(pack)
             return ok, rest_it, rest_pk
 
-        # 先整篇翻（一次调用翻完一篇，最省额度）
+        total_paras = sum(len(p) for p in packs)
+        log(f"  待翻正文 {len(packs)} 篇 / {total_paras} 段")
+
+        # ① AI 整篇翻（一次调用翻完一篇，译文质量最好）
         zhs = ai_translate_bodies(packs)
-        ok, rest_it, rest_pk = absorb(body_todo, packs, zhs)
-        print(f"  AI 整篇翻译正文 {ok}/{len(body_todo)} 篇")
+        ok, todo_it, todo_pk = absorb(body_todo, packs, zhs)
+        log(f"  AI 整篇翻译正文 {ok}/{len(body_todo)} 篇")
         save_cache(cache)
 
-        # 整篇不灵的，改用逐段翻（和标题翻译同一套机制，最稳）
-        if rest_it:
-            print(f"  {len(rest_it)} 篇改用逐段翻译")
-            zhs2 = ai_translate_paragraphs(rest_pk)
-            ok2, _, _ = absorb(rest_it, rest_pk, zhs2)
-            print(f"  AI 逐段翻译正文 {ok2}/{len(rest_it)} 篇")
+        # ② AI 逐段翻（和标题翻译同一套机制）
+        if todo_it:
+            zhs2 = ai_translate_paragraphs(todo_pk)
+            ok2, todo_it, todo_pk = absorb(todo_it, todo_pk, zhs2)
+            log(f"  AI 逐段翻译正文 {ok2} 篇")
             save_cache(cache)
+
+        # ③ Google 免费接口逐段翻（不占 GitHub AI 额度，额度不够时的主力）
+        if todo_it:
+            zhs3 = google_translate_paragraphs(todo_pk)
+            ok3, todo_it, todo_pk = absorb(todo_it, todo_pk, zhs3)
+            log(f"  Google 逐段翻译正文 {ok3} 篇")
+            save_cache(cache)
+
+        # ④ MyMemory 最后兜底（有每日字数限额）
+        if todo_it:
+            zhs4 = mymemory_translate_paragraphs(todo_pk)
+            ok4, todo_it, todo_pk = absorb(todo_it, todo_pk, zhs4)
+            log(f"  MyMemory 逐段翻译正文 {ok4} 篇")
+            save_cache(cache)
+
+        if todo_it:
+            log(f"  仍有 {len(todo_it)} 篇正文没翻出来")
 
     # ③ 兜底：还缺中文的再走免费接口
     missing = [it for it in items
@@ -1408,7 +1510,10 @@ def main():
 
     if items:
         enrich_bodies(items)        # 摘要不够长的，去原网页补全文
-        print("翻译中 ...")
+        log("GITHUB_TOKEN: " + ("已配置" if os.environ.get("GITHUB_TOKEN") else "缺失"))
+        probe = _translate_google("Boeing 737", sl="en", timeout=10)
+        log("Google 通道探测: " + (repr(probe) if probe else "不可用"))
+        log("翻译中 ...")
         translate_items(items)
 
     # 防退化：这次一条都没翻成功、而上一版是中文时，
@@ -1425,7 +1530,19 @@ def main():
             json.dump(items, f, ensure_ascii=False, indent=2)
         print(f"已生成 docs/index.html（{len(out)} 字符）")
 
+    # 统计一下这轮的翻译成果，一起写进日志
+    en_p = sum(len(it.get("body_en") or []) for it in items)
+    zh_p = sum(len([x for x in (it.get("body_zh") or []) if x.strip()]) for it in items)
+    log(f"结果：中文标题 {zh_n}/{len(items)}，英文段落 {en_p}，中文段落 {zh_p}")
+
     write_assets()
+
+    # 把诊断日志存到 docs/，这样上线后能直接打开查看失败原因
+    try:
+        with open(os.path.join("docs", "translate_log.txt"), "w", encoding="utf-8") as f:
+            f.write("\n".join(RUN_LOG[-500:]))
+    except Exception as e:
+        print(f"(日志写入失败: {e})")
 
 
 if __name__ == "__main__":

@@ -410,9 +410,9 @@ def ai_translate(texts):
 
 
 BODY_SYS_PROMPT = ("你是专业民航新闻翻译。把英文新闻正文逐段翻译成简体中文。\n"
-                   "输入包含多篇正文，每篇以 <<<篇号>>> 开头，篇内每段以 [[段号]] 开头。\n"
-                   "输出必须使用完全相同的标记结构：<<<篇号>>> 和 [[段号]]，逐段给出译文。\n"
-                   "严格要求：段数必须与输入完全一致，一段对一段，绝不合并、拆分或省略段落。\n"
+                   "如果输入里带有 [[段号]] 标记，请原样保留这些标记，一段对应一段翻译。\n"
+                   "无论如何：段落数量必须与输入一致，一段对一段，不要合并、拆分或省略，"
+                   "段落之间用一个空行分隔。\n"
                    "语言通顺自然，航空公司名、机型、机场三字码保留英文；不要加任何解释或标题。")
 
 
@@ -439,18 +439,35 @@ def _ai_batch_body(blocks, model):
         "temperature": 0.3,
         "max_tokens": 4096,
     }
-    try:
+    def _post(body):
         req = urllib.request.Request(
             AI_ENDPOINT, method="POST",
             headers={"Authorization": f"Bearer {token}",
                      "Content-Type": "application/json",
                      "User-Agent": "aviation-news-bot"},
-            data=json.dumps(payload).encode("utf-8"))
+            data=json.dumps(body).encode("utf-8"))
         with urllib.request.urlopen(req, timeout=180) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
+            return json.loads(resp.read().decode("utf-8"))
+
+    try:
+        try:
+            data = _post(payload)
+        except Exception as e1:
+            # 有些模型不接受 max_tokens，去掉再试一次
+            payload.pop("max_tokens", None)
+            try:
+                data = _post(payload)
+            except Exception as e2:
+                detail = ""
+                try:
+                    detail = e2.read().decode("utf-8", "ignore")[:160]
+                except Exception:
+                    pass
+                print(f"  ({model} 正文调用失败: {e2} {detail})")
+                return None
         content = data["choices"][0]["message"]["content"]
     except Exception as e:
-        print(f"  ({model} 正文调用失败: {e})")
+        print(f"  ({model} 正文解析失败: {e})")
         return None
 
     got = {}
@@ -467,11 +484,25 @@ def _ai_batch_body(blocks, model):
             if 0 <= pidx < len(blocks[idx]) and val:
                 paras[pidx] = val
         need = len(blocks[idx])
+        if not paras:
+            # 模型没按 [[段号]] 输出时，退一步按空行切块，按顺序对上段落
+            chunks = [c.strip() for c in re.split(r"\n\s*\n", parts[i + 1]) if c.strip()]
+            if chunks:
+                paras = {k: (chunks[k] if k < len(chunks) else "")
+                         for k in range(min(need, len(chunks)))}
         if len(paras) >= max(1, int(need * 0.5)):
             got[idx] = [paras.get(k, "") for k in range(need)]
 
     if len(got) == len(blocks):
         return [got[i] for i in range(len(blocks))]
+
+    # 模型完全没用任何标记时（单篇最常见）：整篇按空行切块，按顺序对上段落
+    if not got and len(blocks) == 1:
+        need = len(blocks[0])
+        chunks = [c.strip() for c in re.split(r"\n\s*\n", content) if c.strip()]
+        if len(chunks) >= max(1, int(need * 0.5)):
+            return [[chunks[k] if k < len(chunks) else "" for k in range(need)]]
+
     if len(got) >= max(1, int(len(blocks) * 0.5)):
         print(f"  ({model} 正文部分成功: {len(got)}/{len(blocks)})")
         return [got.get(i) for i in range(len(blocks))]
@@ -479,7 +510,7 @@ def _ai_batch_body(blocks, model):
     return None
 
 
-def ai_translate_bodies(blocks, batch=2):
+def ai_translate_bodies(blocks, batch=1):
     """分批 + 多模型翻译正文。返回与 blocks 等长的列表，失败位置是 None。"""
     if not blocks:
         return []
@@ -493,21 +524,129 @@ def ai_translate_bodies(blocks, batch=2):
         for s in range(0, len(todo), batch):
             idxs = todo[s:s + batch]
             got = None
-            for attempt in range(2):
+            for attempt in range(1):          # 只试一次，失败的交给逐段兜底，省时间
                 got = _ai_batch_body([blocks[i] for i in idxs], model)
                 if got:
                     break
-                time.sleep(2 + attempt * 2)
+                time.sleep(1)
             if got:
                 for i, v in zip(idxs, got):
                     result[i] = v
                 done += 1
+            time.sleep(0.5)        # 放慢一点，别把免费额度打爆
         if done == 0:
             print(f"  AI 模型 {model} 正文不可用")
         if all(v is not None for v in result):
             break
 
     return result
+
+
+PARA_BATCH = 6     # 逐段翻译每批几条：正文比标题长，批次要小一点
+
+PARA_SYS_PROMPT = ("你是专业民航新闻翻译。把英文新闻正文逐段翻译成简体中文。\n"
+                   "严格按输入的行数输出，每行格式为「序号| 译文」，序号从 1 开始，与输入一一对应。\n"
+                   "每一段只输出一行，不要在译文中间换行；"
+                   "航空公司名称、机型、机场三字码保留英文；不要加任何解释或标题。")
+
+
+def _ai_batch_para(texts, model):
+    """逐段翻译一批正文段落，沿用标题那种「序号| 译文」格式（这条路径已验证可用）。
+
+    返回与 texts 等长的译文列表；失败返回 None。
+    """
+    token = os.environ.get("GITHUB_TOKEN")
+    if not token or not texts:
+        return None
+
+    numbered = "\n".join(f"{i+1}| {t}" for i, t in enumerate(texts))
+    payload = {
+        "model": model,
+        "messages": [
+            {"role": "system", "content": PARA_SYS_PROMPT},
+            {"role": "user", "content": numbered},
+        ],
+        "temperature": 0.3,
+    }
+    try:
+        req = urllib.request.Request(
+            AI_ENDPOINT, method="POST",
+            headers={"Authorization": f"Bearer {token}",
+                     "Content-Type": "application/json",
+                     "User-Agent": "aviation-news-bot"},
+            data=json.dumps(payload).encode("utf-8"))
+        with urllib.request.urlopen(req, timeout=180) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+        content = data["choices"][0]["message"]["content"]
+    except Exception as e:
+        print(f"  ({model} 逐段调用失败: {e})")
+        return None
+
+    # 解析：序号开头算新的一段；没有序号的行视为上一段的续行
+    got, last = {}, None
+    for line in content.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        m = re.match(r"^(\d+)\s*[|｜.、:：]\s*(.*)$", line)
+        if m:
+            i = int(m.group(1)) - 1
+            if 0 <= i < len(texts):
+                last = i
+                got[i] = m.group(2).strip()
+        elif last is not None:
+            got[last] = (got.get(last, "") + " " + line).strip()
+
+    got = {k: v for k, v in got.items() if v}
+    if len(got) >= max(1, int(len(texts) * 0.7)):
+        return [got.get(i, "") for i in range(len(texts))]
+    print(f"  ({model} 逐段返回不足: {len(got)}/{len(texts)})")
+    return None
+
+
+def ai_translate_paragraphs(packs):
+    """把多篇文章的段落拉平后逐段翻译，再按原结构拼回去。
+
+    packs: [[段落, 段落, ...], ...]（一篇文章一个列表）
+    返回同结构列表，整篇失败的位置是 None。
+    """
+    flat, spans = [], []
+    for paras in packs:
+        spans.append((len(flat), len(flat) + len(paras)))
+        flat.extend(paras)
+    if not flat:
+        return [None] * len(packs)
+
+    result = [None] * len(flat)
+    for model in AI_MODELS:
+        todo = [i for i, v in enumerate(result) if v is None]
+        if not todo:
+            break
+        done = 0
+        for s in range(0, len(todo), PARA_BATCH):
+            idxs = todo[s:s + PARA_BATCH]
+            got = None
+            for attempt in range(2):
+                got = _ai_batch_para([flat[i] for i in idxs], model)
+                if got:
+                    break
+                time.sleep(3 + attempt * 5)
+            if got:
+                for i, v in zip(idxs, got):
+                    result[i] = v
+                done += 1
+            time.sleep(1)
+        if done == 0:
+            print(f"  AI 模型 {model} 逐段不可用")
+        if all(v is not None for v in result):
+            break
+
+    out = []
+    for a, b in spans:
+        chunk = result[a:b]
+        out.append(None if all(v is None for v in chunk)
+                   else [(v or "") for v in chunk])
+    return out
 
 
 def _translate_mymemory(text, target="zh-CN"):
@@ -630,21 +769,38 @@ def translate_items(items):
                 total += len(p)
             packs.append(paras)
 
+        def absorb(todo_list, packs_list, zhs):
+            """把译文写回条目并更新缓存，返回 (成功篇数, 仍缺的条目, 仍缺的段落包)。"""
+            ok, rest_it, rest_pk = 0, [], []
+            for it, pack, zh in zip(todo_list, packs_list, zhs):
+                body = []
+                if zh:
+                    body = [(x or "").replace("\n", " ").strip() for x in zh]
+                    body = (body + [""] * len(pack))[:len(pack)]  # 长度对齐，缺的留空
+                if any(has_cn(x) for x in body):
+                    it["body_zh"] = body
+                    rec = cache.setdefault(it["link"], {})
+                    rec["b"] = "\n".join(body)
+                    rec["ts"] = time.time()
+                    ok += 1
+                else:
+                    rest_it.append(it)
+                    rest_pk.append(pack)
+            return ok, rest_it, rest_pk
+
+        # 先整篇翻（一次调用翻完一篇，最省额度）
         zhs = ai_translate_bodies(packs)
-        ok = 0
-        for it, pack, zh in zip(body_todo, packs, zhs):
-            if not zh:
-                continue
-            body = [(x or "").replace("\n", " ").strip() for x in zh]
-            body = (body + [""] * len(pack))[:len(pack)]   # 长度对齐，缺的留空
-            if any(has_cn(x) for x in body):
-                it["body_zh"] = body
-                rec = cache.setdefault(it["link"], {})
-                rec["b"] = "\n".join(body)
-                rec["ts"] = time.time()
-                ok += 1
-        print(f"  AI 翻译正文 {ok}/{len(body_todo)} 篇")
+        ok, rest_it, rest_pk = absorb(body_todo, packs, zhs)
+        print(f"  AI 整篇翻译正文 {ok}/{len(body_todo)} 篇")
         save_cache(cache)
+
+        # 整篇不灵的，改用逐段翻（和标题翻译同一套机制，最稳）
+        if rest_it:
+            print(f"  {len(rest_it)} 篇改用逐段翻译")
+            zhs2 = ai_translate_paragraphs(rest_pk)
+            ok2, _, _ = absorb(rest_it, rest_pk, zhs2)
+            print(f"  AI 逐段翻译正文 {ok2}/{len(rest_it)} 篇")
+            save_cache(cache)
 
     # ③ 兜底：还缺中文的再走免费接口
     missing = [it for it in items
@@ -1004,7 +1160,8 @@ def build_html(items):
             "sum":    it["summary_zh"] or it["summary"],
             "ensum":  it["summary"],
             "body":   it.get("body_zh") or [],
-            "enbody": (it.get("body_en") or [])[:12],
+            # 英文段落跟中文段落取同样长度，对照时才不会末尾挂一串「未翻译」
+            "enbody": (it.get("body_en") or [])[:len(it.get("body_zh") or []) or 12],
             "src":    it["source"],
             "t":      fmt_time(it["pub_ts"]),
             "link":   it["link"],

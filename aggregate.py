@@ -58,6 +58,16 @@ TRANSLATE_TO   = "zh-CN"   # 目标语言
 FETCH_PER_SRC  = 12        # 每个源最多取多少条
 REQUEST_DELAY  = 0.4       # 抓取间隔（秒），对服务器友好
 
+# ---- 正文（全文）相关 ----
+BODY_LIMIT     = 1600      # 每篇英文正文最多保留多少字符
+BODY_TRANSLATE = 1100      # 正文最多翻译多少字符（够读完整篇，也省 AI 额度）
+BODY_MIN       = 320       # RSS 自带的正文少于这个数，就去原网页抓全文
+BODY_TIMEOUT   = 12        # 抓单个网页的超时（秒）
+NOISE_WORDS    = ("cookie", "subscribe", "newsletter", "sign up", "sign-up",
+                  "advertisement", "follow us", "read more", "copyright",
+                  "all rights reserved", "photo:", "getty", "share this",
+                  "click here", "terms of service", "privacy policy")
+
 
 # ============================================================
 # 1. 抓取
@@ -100,10 +110,87 @@ def parse_date(entry):
 
 
 def clean_html(text):
-    """把摘要里的 HTML 标签剥掉，只留纯文本。"""
+    """把摘要里的 HTML 标签剥掉，只留纯文本。
+
+    先反转义再剥标签、最后再反转义一次：
+    有些源（如 Aviation Week）给的是被转义过的 HTML，
+    只剥一次会把 <span> 变成明文标签留下来。
+    """
+    text = html.unescape(text or "")
     text = re.sub(r"<[^>]+>", " ", text)
     text = html.unescape(text)
     return re.sub(r"\s+", " ", text).strip()
+
+
+def html_to_paragraphs(raw, limit=BODY_LIMIT, min_len=45):
+    """把一段 HTML 变成干净的正文段落列表。
+
+    会跳过脚本、广告、版权之类的噪声，只留像样的正文段落，
+    并且总长度控制在 limit 以内，避免详情页塞进整本书。
+    """
+    if not raw:
+        return []
+    # 去掉脚本、样式、图片、表单等无关区块
+    raw = re.sub(r"(?is)<(script|style|noscript|svg|figure|form|iframe|"
+                 r"nav|header|footer|aside)[^>]*>.*?</\1>", " ", raw)
+    # 段落/换行标记换成换行符，方便后面切段
+    raw = re.sub(r"(?is)<(br|/p|/div|/h[1-6]|/li|p|div)[^>]*>", "\n", raw)
+    raw = html.unescape(raw)
+    raw = re.sub(r"<[^>]+>", " ", raw)
+    raw = html.unescape(raw)
+
+    out, total = [], 0
+    for piece in re.split(r"\n+", raw):
+        p = re.sub(r"\s+", " ", piece).strip()
+        if len(p) < min_len:
+            continue
+        low = p.lower()[:80]
+        if any(w in low for w in NOISE_WORDS):
+            continue
+        if total + len(p) > limit and out:
+            break
+        out.append(p)
+        total += len(p)
+    return out
+
+
+def fetch_article_html(url):
+    """下载新闻原网页的 HTML。失败返回空字符串。"""
+    try:
+        req = urllib.request.Request(
+            url, headers={"User-Agent": UA,
+                          "Accept": "text/html,application/xhtml+xml",
+                          "Accept-Language": "en-US,en;q=0.9"})
+        with urllib.request.urlopen(req, timeout=BODY_TIMEOUT) as resp:
+            raw = resp.read(600_000).decode("utf-8", "ignore")
+        return raw
+    except Exception:
+        return ""
+
+
+def enrich_bodies(items):
+    """给正文不够长的文章补全文。
+
+    有些源（Aviation24、Simple Flying）的 RSS 只给一句话摘要，
+    这时直接去原网页把正文抓下来。抓不到就保持摘要，不影响其它流程。
+    """
+    need = [it for it in items
+            if sum(len(p) for p in it.get("body_en", [])) < BODY_MIN]
+    if not need:
+        return
+    print(f"  补充抓取正文 {len(need)} 篇 ...")
+    got = 0
+    for it in need:
+        raw = fetch_article_html(it["link"])
+        if not raw:
+            time.sleep(0.2)
+            continue
+        paras = html_to_paragraphs(raw)
+        if sum(len(p) for p in paras) > sum(len(p) for p in it.get("body_en", [])):
+            it["body_en"] = paras
+            got += 1
+        time.sleep(0.2)
+    print(f"  成功补充 {got} 篇")
 
 
 def collect():
@@ -131,6 +218,17 @@ def collect():
             summary = clean_html(e.get("summary") or e.get("description") or "")[:260]
             pub = parse_date(e)
 
+            # ---- 正文：RSS 里有全文的直接用，没有的后面再补抓 ----
+            content_html = ""
+            if e.get("content"):
+                content_html = e["content"][0].get("value", "") or ""
+            elif e.get("content_detail"):
+                content_html = e["content_detail"].get("value", "") or ""
+            body_en = html_to_paragraphs(content_html)
+            if not body_en:
+                # 有些源把全文直接塞在 description 里
+                body_en = html_to_paragraphs(e.get("summary") or "")
+
             # ---- 热度分 ----
             # 来源权重（0-10 分）
             source_score = weight * 2
@@ -148,6 +246,8 @@ def collect():
                 "title_zh": "",
                 "summary":  summary,
                 "summary_zh": "",
+                "body_en":  body_en,     # 英文正文段落
+                "body_zh":  [],          # 中文正文段落（翻译后填）
                 "link":     link,
                 "source":   name,
                 "pub_ts":   pub,
@@ -309,6 +409,89 @@ def ai_translate(texts):
     return result
 
 
+BODY_SYS_PROMPT = ("你是专业民航新闻翻译。把每篇英文新闻正文翻译成简体中文。\n"
+                   "输入里有多篇正文，用 <<<序号>>> 分隔；"
+                   "你必须用完全相同的分隔标记和顺序输出对应译文。\n"
+                   "要求：保持原来的段落结构（段落之间空一行），语言通顺自然；"
+                   "航空公司名、机型、机场三字码保留英文；不要加任何解释、标题或前后缀。")
+
+
+def _ai_batch_body(blocks, model):
+    """一次翻译多篇正文（比标题长，所以每批更少）。失败返回 None。"""
+    token = os.environ.get("GITHUB_TOKEN")
+    if not token or not blocks:
+        return None
+
+    numbered = "\n".join(f"<<<{i+1}>>>\n{b}" for i, b in enumerate(blocks))
+    payload = {
+        "model": model,
+        "messages": [
+            {"role": "system", "content": BODY_SYS_PROMPT},
+            {"role": "user", "content": numbered},
+        ],
+        "temperature": 0.3,
+    }
+    try:
+        req = urllib.request.Request(
+            AI_ENDPOINT, method="POST",
+            headers={"Authorization": f"Bearer {token}",
+                     "Content-Type": "application/json",
+                     "User-Agent": "aviation-news-bot"},
+            data=json.dumps(payload).encode("utf-8"))
+        with urllib.request.urlopen(req, timeout=180) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+        content = data["choices"][0]["message"]["content"]
+    except Exception as e:
+        print(f"  ({model} 正文调用失败: {e})")
+        return None
+
+    got = {}
+    parts = re.split(r"<<<\s*(\d+)\s*>>>", content)
+    for i in range(1, len(parts) - 1, 2):
+        idx = int(parts[i]) - 1
+        val = parts[i + 1].strip()
+        if 0 <= idx < len(blocks) and val:
+            got[idx] = val
+
+    if len(got) == len(blocks):
+        return [got[i] for i in range(len(blocks))]
+    if len(got) >= max(1, int(len(blocks) * 0.7)):
+        return [got.get(i) for i in range(len(blocks))]
+    print(f"  ({model} 正文返回不足: {len(got)}/{len(blocks)})")
+    return None
+
+
+def ai_translate_bodies(blocks, batch=4):
+    """分批 + 多模型翻译正文。返回与 blocks 等长的列表，失败位置是 None。"""
+    if not blocks:
+        return []
+    result = [None] * len(blocks)
+
+    for model in AI_MODELS:
+        todo = [i for i, v in enumerate(result) if v is None]
+        if not todo:
+            break
+        done = 0
+        for s in range(0, len(todo), batch):
+            idxs = todo[s:s + batch]
+            got = None
+            for attempt in range(2):
+                got = _ai_batch_body([blocks[i] for i in idxs], model)
+                if got:
+                    break
+                time.sleep(2 + attempt * 2)
+            if got:
+                for i, v in zip(idxs, got):
+                    result[i] = v
+                done += 1
+        if done == 0:
+            print(f"  AI 模型 {model} 正文不可用")
+        if all(v is not None for v in result):
+            break
+
+    return result
+
+
 def _translate_mymemory(text, target="zh-CN"):
     """备用翻译：MyMemory（免费，无需密钥，每天限额约 5000 字）。失败返回 None。"""
     if not text:
@@ -371,15 +554,20 @@ def translate_items(items):
     if cache:
         print(f"  译文缓存 {len(cache)} 条，可复用")
 
-    title_todo, sum_todo = [], []
+    title_todo, sum_todo, body_todo = [], [], []
     for it in items:
         c = cache.get(it["link"]) or {}
         it["title_zh"] = c.get("t") if has_cn(c.get("t")) else ""
         it["summary_zh"] = c.get("s") if has_cn(c.get("s")) else ""
+        cache_body = c.get("b") or ""
+        it["body_zh"] = ([p for p in cache_body.split("\n") if p.strip()]
+                         if has_cn(cache_body) else [])
         if not it["title_zh"]:
             title_todo.append(it)
         if (it.get("summary") or "").strip() and not it["summary_zh"]:
             sum_todo.append(it)
+        if it.get("body_en") and not it["body_zh"]:
+            body_todo.append(it)
 
     hit = len(items) - len(title_todo)
     print(f"  缓存命中 {hit} 条，需新翻译 {len(title_todo)} 条")
@@ -410,6 +598,23 @@ def translate_items(items):
                 rec["ts"] = time.time()
                 ok += 1
         print(f"  AI 翻译摘要 {ok}/{len(sum_todo)} 条")
+        save_cache(cache)
+
+    # ②⑤ AI 翻译正文（只翻前面一部分，够读就行，也省额度）
+    if body_todo:
+        blocks = ["\n".join(it["body_en"])[:BODY_TRANSLATE] for it in body_todo]
+        zhs = ai_translate_bodies(blocks)
+        ok = 0
+        for it, zh in zip(body_todo, zhs):
+            if zh and has_cn(zh):
+                paras = [p.strip() for p in re.split(r"\n+", zh) if len(p.strip()) > 4]
+                if paras:
+                    it["body_zh"] = paras
+                    rec = cache.setdefault(it["link"], {})
+                    rec["b"] = "\n".join(paras)
+                    rec["ts"] = time.time()
+                    ok += 1
+        print(f"  AI 翻译正文 {ok}/{len(body_todo)} 篇")
         save_cache(cache)
 
     # ③ 兜底：还缺中文的再走免费接口
@@ -513,10 +718,20 @@ DETAIL_CSS = """
 .en-tag{font-size:9.5px;font-weight:700;letter-spacing:.5px;color:var(--sub);
   border:.5px solid var(--sep);border-radius:4px;padding:1px 4px}
 .dzh{margin:0;font-size:16.5px;line-height:1.78;color:var(--text)}
+.dzh p{margin:0 0 14px}
+.dzh p:last-child{margin-bottom:0}
 
 .dorig{background:var(--card);border:.5px solid var(--sep);border-radius:12px;padding:14px}
 .dentitle{margin:0 0 8px;font-size:16px;line-height:1.45;font-weight:600}
-.densum{margin:0;font-size:14px;line-height:1.65;color:var(--sub)}
+.densum{margin:0;font-size:14px;line-height:1.7;color:var(--sub)}
+.densum p{margin:0 0 11px}
+.densum p:last-child{margin-bottom:0}
+.more{
+  display:block;width:100%;margin-top:10px;padding:9px 0;
+  background:none;border:.5px solid var(--sep);border-radius:9px;
+  color:var(--accent);font-size:13.5px;font-weight:600;font-family:inherit;cursor:pointer;
+}
+.more:active{opacity:.6}
 .dlink{display:block;margin-top:10px;font-size:11.5px;color:var(--sub);
   word-break:break-all;text-decoration:none;opacity:.85}
 
@@ -564,6 +779,38 @@ var listPos = 0, cur = -1;
 
 function $(id){ return document.getElementById(id); }
 function put(id, v){ $(id).textContent = (v == null ? '' : v); }
+function esc(s){
+  return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+  });
+}
+function paras(list){
+  return (list || []).map(function(p){ return '<p>' + esc(p) + '</p>'; }).join('');
+}
+var enExpanded = false;
+
+function renderEn(d){
+  var box = $('d-en-sum');
+  if (d.enbody && d.enbody.length) {
+    var list = enExpanded ? d.enbody : d.enbody.slice(0, 3);
+    var html = paras(list);
+    if (d.enbody.length > 3) {
+      html += '<button class="more" id="d-more">' +
+              (enExpanded ? '收起英文原文' : '展开英文全文（共 ' + d.enbody.length + ' 段）') +
+              '</button>';
+    }
+    box.innerHTML = html;
+    box.style.display = '';
+    var mb = $('d-more');
+    if (mb) { mb.onclick = function(){ enExpanded = !enExpanded; renderEn(d); }; }
+  } else if (d.ensum) {
+    box.innerHTML = '<p>' + esc(d.ensum) + '</p>';
+    box.style.display = '';
+  } else {
+    box.innerHTML = '';
+    box.style.display = 'none';
+  }
+}
 
 function render(i){
   var d = DATA[i];
@@ -578,14 +825,21 @@ function render(i){
   put('d-time', d.t);
   put('d-rank', (i + 1) + ' / ' + DATA.length);
 
+  // 中文全文：抓到正文就显示全文，否则退回摘要那句话
   var zhSec = $('d-zh-sec');
-  if (d.sum) { put('d-zh-body', d.sum); zhSec.style.display = ''; }
-  else { zhSec.style.display = 'none'; }
+  if (d.body && d.body.length) {
+    $('d-zh-body').innerHTML = paras(d.body);
+    zhSec.style.display = '';
+  } else if (d.sum) {
+    $('d-zh-body').innerHTML = '<p>' + esc(d.sum) + '</p>';
+    zhSec.style.display = '';
+  } else {
+    zhSec.style.display = 'none';
+  }
 
   put('d-en-title', d.en);
-  var enSum = $('d-en-sum');
-  if (d.ensum) { put('d-en-sum', d.ensum); enSum.style.display = ''; }
-  else { enSum.style.display = 'none'; }
+  enExpanded = false;
+  renderEn(d);
 
   $('d-open').href = d.link;
   put('d-link', d.link);
@@ -676,15 +930,17 @@ def build_html(items):
         summary = it["summary_zh"] or it["summary"]
 
         data_js.append({
-            "zh":    it["title_zh"] or it["title_en"],
-            "en":    it["title_en"],
-            "sum":   it["summary_zh"] or it["summary"],
-            "ensum": it["summary"],
-            "src":   it["source"],
-            "t":     fmt_time(it["pub_ts"]),
-            "link":  it["link"],
-            "hot":   label,
-            "lv":    level,
+            "zh":     it["title_zh"] or it["title_en"],
+            "en":     it["title_en"],
+            "sum":    it["summary_zh"] or it["summary"],
+            "ensum":  it["summary"],
+            "body":   it.get("body_zh") or [],
+            "enbody": (it.get("body_en") or [])[:12],
+            "src":    it["source"],
+            "t":      fmt_time(it["pub_ts"]),
+            "link":   it["link"],
+            "hot":    label,
+            "lv":     level,
         })
 
         cards.append(f"""
@@ -823,15 +1079,15 @@ body{{background:var(--bg);color:var(--text);
       <h1 class="dtitle" id="d-title"></h1>
 
       <div class="dsec" id="d-zh-sec">
-        <div class="dsec-h">中文翻译</div>
-        <p class="dzh" id="d-zh-body"></p>
+        <div class="dsec-h">中文全文</div>
+        <div class="dzh" id="d-zh-body"></div>
       </div>
 
       <div class="dsec">
-        <div class="dsec-h">原文 <span class="en-tag">ENGLISH</span></div>
+        <div class="dsec-h">英文原文 <span class="en-tag">ENGLISH</span></div>
         <div class="dorig">
           <h2 class="dentitle" id="d-en-title"></h2>
-          <p class="densum" id="d-en-sum"></p>
+          <div class="densum" id="d-en-sum"></div>
           <div class="dlink" id="d-link"></div>
         </div>
       </div>
@@ -927,6 +1183,7 @@ def main():
     print(f"\n共采集 {len(items)} 条")
 
     if items:
+        enrich_bodies(items)        # 摘要不够长的，去原网页补全文
         print("翻译中 ...")
         translate_items(items)
 

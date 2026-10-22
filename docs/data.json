@@ -1,652 +1,476 @@
 [
   {
-    "title_en": "airBaltic prepares job cuts as fleet shrinks to 36 aircraft",
-    "title_zh": "波罗的海航空准备裁员 机队规模缩减至 36 架",
-    "summary": "Latvia’s airBaltic is preparing collective redundancies as it reduces its fleet and restructures its finances, board chairman Andrejs Martinovs told Latvian Radio on 20 October. Martinovs declined to give a final figure, saying voluntary departures continued t",
-    "summary_zh": "拉脱维亚波罗的海航空董事会主席安德烈斯·马丁诺夫斯 (Andrejs Martinovs) 告诉《L》，该公司正在准备集体裁员，以减少机队并重组财务。",
+    "title_en": "Qatar Airways to launch Western Sydney flights in December 2027",
+    "title_zh": "卡塔尔航空将于2027年12月开通西悉尼航班",
+    "summary": "Qatar Airways plans to launch three weekly flights between Doha and Western Sydney International Airport on 15 December 2027, adding a second Sydney gateway to its Australian network. Tickets will go on sale on 19 December 2026. The airline intends to increase",
+    "summary_zh": "卡塔尔航空公司计划于2027年12月15日开通多哈和西悉尼国际机场之间的每周三班航班，",
     "body_en": [
-      "Latvia’s airBaltic is preparing collective redundancies as it reduces its fleet and restructures its finances, board chairman Andrejs Martinovs told Latvian Radio on 20 October. Martinovs declined to give a final figure, saying voluntary departures continued to affect the number of compulsory job losses required. The airline had previously indicated that between 500 and 700 […]"
+      "Qatar Airways plans to launch three weekly flights between Doha and Western Sydney International Airport on 15 December 2027, adding a second Sydney gateway to its Australian network. Tickets will go on sale on 19 December 2026. The airline intends to increase the service progressively to daily operations, although no timetable for that expansion has […]"
     ],
     "body_zh": [
-      "10 月 20 日，拉脱维亚波罗的海航空董事会主席安德烈斯·马丁诺夫斯 (Andrejs Martinovs) 告诉拉脱维亚广播电台，该公司正在准备集体裁员，以减少机队规模并重组财务。马蒂诺夫斯拒绝透露最终数字，称自愿离职继续影响所需的强制失业人数。该航空公司此前曾表示，500 至 700 […]"
+      "卡塔尔航空公司计划于2027年12月15日开通多哈和西悉尼国际机场之间的每周三班航班，为其澳大利亚网络增加第二个悉尼门户。门票将于2026年12月19日开始发售。该航空公司打算逐步将服务扩展到日常运营，尽管没有扩展的时间表[…]"
     ],
-    "link": "https://www.aviation24.be/airlines/airbaltic/airbaltic-prepares-job-cuts-as-fleet-shrinks-to-36-aircraft/",
+    "link": "https://www.aviation24.be/airlines/qatar-airways/qatar-airways-to-launch-western-sydney-flights-in-december-2027/",
     "source": "Aviation24",
-    "pub_ts": 1792521645.0,
-    "score": 12.99
+    "pub_ts": 1792607450.0,
+    "score": 12.97
   },
   {
-    "title_en": "Boeing launches AI-powered data platform to give airlines greater fleet insight",
-    "title_zh": "波音推出人工智能数据平台，为航空公司提供更深入的机队洞察",
-    "summary": "Boeing has launched a new AI-powered aircraft data platform to give airlines and operators deeper insight into their… The post Boeing launches AI-powered data platform to give airlines greater fleet insight appeared first on AeroTime .",
-    "summary_zh": "波音推出了新的人工智能飞机数据平台，让航空公司和运营商更深入地了解他们的……波音推出人工智能飞机后",
+    "title_en": "Alaska Airlines Launches New 7-Hour Nonstop Boeing 737 MAX Routes: See Map Now",
+    "title_zh": "阿拉斯加航空公司推出全新7小时直飞波音737 MAX航线：立即查看地图",
+    "summary": "Alaska Airlines is launching two seven-hour Honolulu routes as its growing Boeing 737 MAX fleet opens new opportunities.",
+    "summary_zh": "阿拉斯加航空公司将推出两条7小时的檀香山航线，因为其不断增长的波音737 MAX机队开辟了新的机遇。",
     "body_en": [
-      "Boeing has launched a new AI-powered aircraft data platform to give airlines and operators deeper insight into their fleet and “unlock greater value from their aviation data”.",
-      "On October 20, 2026, in conjunction with technology firm Microsoft, Boeing unveiled Dataliner, intended to help bring “fragmented data into connected, fleet-wide intelligence that supports smarter maintenance and operational decisions”.",
-      "According to Lindsey Douglas, Vice President of Cabin, Modifications, Maintenance and Digital Services at Boeing Global Services, Dataliner will enable its customers to “anticipate maintenance needs, identify emerging risks and take timely action”.",
-      "The platform brings together aviation data and AI, plus Boeing’s vast aircraft and engineering knowledge, to access more complete fleet insight rather than looking at data for each individual aircraft.",
-      "“Airlines have more data available to them than ever before, but turning that data into meaningful action remains a challenge,” Douglas said. “Dataliner is an important step in how Boeing is bringing its aircraft expertise and digital capabilities together to help customers.”",
-      "Boeing highlighted that airlines keep control over what they share via Dataliner, accessing Boeing intelligence through applications, APIs, analytics and AI-enabled experiences.",
-      "Dataliner adopts Azure AI Foundry and Microsoft’s data solutions, as well as other technologies."
+      "Alaska Airlines will launch two new nonstop routes to Honolulu International Airport (HNL) in less than two months' time, connecting Hawaii with the secondary cities of Boise, Idaho, and Spokane, Washington. Both services will be operated by Boeing 737 MAX 8 aircraft, with scheduled flight times of approximately seven hours. Boise will receive daily flights beginning December 17, while Spokane will follow on December 19 with weekly service."
     ],
     "body_zh": [
-      "波音公司推出了一个新的人工智能飞机数据平台，使航空公司和运营商能够更深入地了解其机队并“从航空数据中释放更大的价值”。",
-      "2026 年 10 月 20 日，波音与技术公司微软合作推出了 Dataliner，旨在帮助“将碎片数据纳入互联的、全机队的智能中，以支持更明智的维护和运营决策”。",
-      "波音全球服务部客舱、改装、维护和数字服务副总裁 Lindsey Douglas 表示，Dataliner 将帮助客户“预测维护需求、识别新出现的风险并及时采取行动”。",
-      "该平台汇集了航空数据和人工智能，加上波音丰富的飞机和工程知识，以获得更完整的机队洞察力，而不是查看每架飞机的数据。",
-      "道格拉斯表示：“航空公司拥有比以往更多的数据，但将这些数据转化为有意义的行动仍然是一个挑战。” “Dataliner 是波音将其飞机专业知识和数字能力结合起来以帮助客户的重要一步。”"
+      "阿拉斯加航空公司将在不到两个月的时间内推出两条通往檀香山国际机场（ HNL ）的新直飞航线，将夏威夷与爱达荷州博伊西和华盛顿州斯波坎的二线城市连接起来。这两项服务都将由波音737 MAX 8飞机运营，预定飞行时间约为7小时。博伊西将从12月17日开始接收每日航班，而斯波坎将于12月19日开始接收每周航班。"
     ],
-    "link": "https://www.aerotime.aero/articles/boeing-ai-powered-data-platform-airlines-fleet-dataliner",
+    "link": "https://simpleflying.com/alaska-airlines-new-7-hour-nonstop-737-max-routes/",
+    "source": "Simple Flying",
+    "pub_ts": 1792596816.0,
+    "score": 12.5
+  },
+  {
+    "title_en": "Civil Air Patrol orders 21 Cessna aircraft for search and rescue, youth missions",
+    "title_zh": "民航空中巡逻命令21架塞斯纳飞机进行搜索和救援，青年任务",
+    "summary": "Civil Air Patrol (CAP) has ordered 21 new Cessna piston aircraft from Textron Aviation, destined to support its… The post Civil Air Patrol orders 21 Cessna aircraft for search and rescue, youth missions appeared first on AeroTime .",
+    "summary_zh": "民用空中巡逻（ CAP ）已从德事隆航空订购了21架新的塞斯纳活塞飞机，用于支持其……民用空中巡逻后订购了21架C",
+    "body_en": [
+      "Civil Air Patrol (CAP) has ordered 21 new Cessna piston aircraft from Textron Aviation, destined to support its search and rescue, disaster response, training and youth programs across the United States.",
+      "Textron Aviation announced the order on October 21, 2026, and expects to complete deliveries during 2027. The order comprises seven Cessna Skyhawk 172s, 11 Cessna Skylane 182s, two Cessna Turbo Skylane T182Ts and one Cessna Turbo Stationair HD 206.",
+      "CAP, a nonprofit that serves as the official civilian auxiliary of the US Air Force, is already the world’s largest operator of Cessna aircraft, with a fleet of 543 single-engine planes.",
+      "Aircraft to support search and rescue, disaster response and youth programs",
+      "CAP’s 72,000 members, about 35,000 adults and 37,000 young cadets, operate from 1,424 locations nationwide.",
+      "Beyond emergency services, the organization supports military training and government agencies and runs aviation and STEM education programs for cadets, who can join up from the age of 12.",
+      "“These Cessna aircraft help ensure our members are ready when communities need us, whether searching for someone who is missing, responding after a disaster, or introducing young people to aviation,” said Major General Regena Aye, CAP’s national commander and CEO.",
+      "Since October 2024, CAP has flown nearly 200,000 hours, carried out 860 search and rescue missions and saved 104 lives, according to the organization. It claims to have saved nearly 5,000 lives since it began tracking in 1967.",
+      "CAP also reported that its work has delivered an estimated $334 million in operational value in 2025."
+    ],
+    "body_zh": [
+      "民用空中巡逻队（ CAP ）已从德事隆航空订购了21架新的塞斯纳活塞飞机，用于支持其在美国各地的搜索和救援、灾害响应、培训和青年计划。",
+      "德事隆航空于2026年10月21日宣布了这一订单，预计将在2027年完成交付。该订单包括7架Cessna Skyhawk 172、11架Cessna Skylane 182、2架Cessna Turbo Skylane T182T和1架Cessna Turbo Stationair HD 206。",
+      "CAP是一家非营利组织，是美国空军的官方民用辅助机构，已经是世界上最大的塞斯纳飞机运营商，拥有543架单引擎飞机。",
+      "用于支持搜索和救援、灾害响应和青年计划的飞机",
+      "CAP的72,000名成员，约35,000名成年人和37,000名年轻学员，在全国1,424个地点开展业务。",
+      "除了紧急服务外，该组织还支持军事培训和政府机构，并为12岁以上的学员提供航空和STEM教育计划。"
+    ],
+    "link": "https://www.aerotime.aero/articles/civil-air-patrol-orders-21-cessna-aircraft-for-search-and-rescue-youth-missions",
     "source": "AeroTime",
-    "pub_ts": 1792501760.0,
-    "score": 12.15
+    "pub_ts": 1792593517.0,
+    "score": 12.37
   },
   {
-    "title_en": "How The US Navy Turned A Boeing 737 Into A Submarine Hunter",
-    "title_zh": "美国海军如何将波音 737 变成潜艇猎人",
-    "summary": "How an icon of air travel adapted to protect peace on the high seas.",
-    "summary_zh": "航空旅行的标志如何适应保护公海的和平。",
+    "title_en": "Air India Launches New 20-Hour Ultra-Long North America Route In 4 Days: See Map Now",
+    "title_zh": "印度航空公司在4天内推出新的20小时超长北美航线：立即查看地图",
+    "summary": "The route was initially scheduled to operate nonstop flights both ways but it will now include one stop on the westbound journey.",
+    "summary_zh": "该航线最初计划运营双向直飞航班，但现在将包括西行航班上的一站。",
     "body_en": [
-      "The Boeing P-8A Poseidon is a military-grade 737-800 Next Generation airliner that is the latest and greatest 'big wing' anti-submarine warfare plane to patrol the waves for the US Navy. It is a significant upgrade in performance and technology over the decades-old Lockheed P-3 Orion that has succeeded in the maritime patrol mission. Its ability to fly at altitudes tens of thousands of feet higher than the Orion has reversed decades of ASW and intelligence, surveillance, and reconnaissance doctrine."
+      "Air India Launches New 20-Hour Ultra-Long North America Route In 4 Days: See Map Now",
+      "Prachi is a London-based journalist with extensive experience in the aviation industry. She has worked for several leading industry publications, covering a broad range of topics. Her expertise lies in aircraft maintenance, emerging technologies, and advanced air mobility. She is currently pursuing a PhD in Journalism, focusing on data journalism and its potential to transform conventional aviation reporting.",
+      "Air India is India's largest international airline and remains the only Indian carrier operating long-haul flights to North America. For obvious reasons, it is the largest operator in the India–North America market, accounting for roughly 50–60% of the combined seat capacity.",
+      "In just four days, as the Northern Hemisphere winter season begins and airlines switch to their winter schedules, the Star Alliance member will launch a new service between Mumbai International Airport (BOM) and Toronto Pearson International Airport (YYZ). The new service will fill the gap left by Air Canada, which completely withdrew from the Toronto–Mumbai market earlier this year.",
+      "Air India’s New Toronto Flights Will Stop In Rome",
+      "Until recently, this new service was listed as a nonstop flight in both directions . However, the airline’s latest schedule shows that the westbound flight will make a stop at Rome Fiumicino Airport (FCO). Including the layover, the total block time will be more than 20 hours. The return flight from Toronto to Mumbai will operate nonstop."
     ],
     "body_zh": [
-      "波音 P-8A Poseidon 是一款军用级 737-800 下一代客机，是美国海军最新、最出色的海浪巡逻型“大翼”反潜战机。与已成功执行海上巡逻任务的数十年前的洛克希德 P-3 Orion 相比，这是性能和技术的重大升级。它能够在比猎户座高出数万英尺的高度飞行，扭转了数十年来的反潜战以及情报、监视和侦察原则。"
+      "印度航空公司在4天内推出新的20小时超长北美航线：立即查看地图",
+      "Prachi是一名驻伦敦的记者，在航空业拥有丰富的经验。她曾为几家领先的行业出版物工作，涉及广泛的主题。她的专长在于飞机维护、新兴技术和先进的空中机动性。她目前正在攻读新闻学博士学位，专注于数据新闻及其改变传统航空报道的潜力。",
+      "印度航空公司是印度最大的国际航空公司，仍然是唯一一家运营飞往北美长途航班的印度航空公司。由于显而易见的原因，它是印度-北美市场最大的运营商，约占总座位容量的50-60 ％。",
+      "在短短四天内，随着北半球冬季的开始和航空公司转向冬季时间表，星空联盟成员将推出孟买国际机场（ BOM ）和多伦多皮尔逊国际机场（ YYZ ）之间的新服务。这项新服务将填补加拿大航空公司留下的空白，加拿大航空公司今年早些时候完全退出了多伦多-孟买市场。"
     ],
-    "link": "https://simpleflying.com/how-us-navy-turn-boeing-737-submarine-hunter/",
+    "link": "https://simpleflying.com/air-india-launches-new-20-hour-north-america-route-in-4-days/",
     "source": "Simple Flying",
-    "pub_ts": 1792540815.0,
-    "score": 11.96
+    "pub_ts": 1792591216.0,
+    "score": 12.27
   },
   {
-    "title_en": "Why Southwest Airlines' Customer Of Size Second-Seat Refund Is A Gamble On Flights That Typically Run 80% Full",
-    "title_zh": "为什么西南航空的第二个座位尺寸退款是对通常满座率达到 80% 的航班的一场赌博",
-    "summary": "Southwest Customer of Size refund depends on flight occupancy, leaving plus-size travelers facing uncertain costs under its new seating policy",
-    "summary_zh": "西南航空的大号乘客退款取决于航班入住率，这使得大号旅客在新的座位政策下面临不确定的成本",
+    "title_en": "Frontier Airlines’ New First Class Won’t Include Food, Drinks, Or Recline",
+    "title_zh": "Frontier Airlines的新头等舱不包括食品、饮料或躺椅",
+    "summary": "Frontier's first class goes on sale March 5, 2027, but the pre-reclined seats come with no complimentary food or drinks. Here's why that may be a missed opportunity.",
+    "summary_zh": "Frontier的头等舱将于2027年3月5日开始销售，但预先倾斜的座位不提供免费的食物或饮料。这可能是一个失误的原因",
     "body_en": [
-      "Southwest Airlines has made a major change to the passenger experience, but one of the most consequential parts of its new seating system isn't the assigned seat itself. For plus-size travelers who need extra space, the airline 's Customer of Size policy creates financial uncertainty: passengers may have to buy a second seat to guarantee accommodation, but getting that money back depends on how much space remains when the aircraft departs."
+      "In early 2025, Frontier Airlines announced plans to introduce first class , along with several other initiatives intended to become more competitive when it comes to premium demand and loyalty. While first class was initially supposed to be rolled out as of late 2025, that timeline didn’t stick.",
+      "There’s now an update, as we have more of a sense of when this product will launch. For that matter, we’ve learned more about the soft product, and this will be even more basic than we were expecting…",
+      "Frontier Airlines first class formally launches March 2027",
+      "View from the Wing reports on a memo to Frontier flight attendants, about the carrier’s rollout of first class. For context, Frontier plans to reconfigure its entire fleet to add eight first class seats at the front of the cabin, with two rows of seats in a 2-2 configuration. Specifically, the airline has selected the Geven Comoda seating platform.",
+      "Up until now, we haven’t known the timeline for this being introduced, though now we know. The expectation is that Frontier will start reconfiguring planes with first class as of late October 2026, and then seats will be on sale for travel as of March 5, 2027. So while the seats will already be in service, and some customers will luck out, that’s the formal launch plan.",
+      "The expectation is that all planes will have first class by then. That’s obviously a fast timeline, but keep in mind most of the cabin will remain unchanged, so it shouldn’t take much time to reconfigure each aircraft."
     ],
     "body_zh": [
-      "西南航空对乘客体验做出了重大改变，但其新座位系统最重要的部分之一并不是分配的座位本身。对于需要额外空间的大号旅客来说，航空公司的“大号客户”政策会造成财务不确定性：乘客可能必须购买第二个座位才能保证住宿，但能否收回这笔钱取决于飞机起飞时剩余的空间。"
+      "2025年初， Frontier Airlines宣布计划推出头等舱，以及其他几项旨在在高端需求和忠诚度方面提高竞争力的举措。虽然头等舱最初应该在2025年底推出，但这个时间表并没有坚持下去。",
+      "现在有一个更新，因为我们对此产品何时推出有更多的了解。因此，我们对软产品有了更多的了解，这将比我们预期的更加基本……",
+      "Frontier Airlines头等舱于2027年3月正式开通",
+      "从Wing报告中查看给Frontier空乘人员的备忘录，该备忘录涉及承运人推出头等舱。作为背景， Frontier计划重新配置其整个车队，在客舱前部增加八个头等舱座位，其中两排座位为2-2配置。具体而言，该航空公司选择了Geven Comoda座椅平台。"
     ],
-    "link": "https://simpleflying.com/southwest-airlines-customer-size-second-size-refund-gamble-flights-typically-80-full/",
-    "source": "Simple Flying",
-    "pub_ts": 1792540815.0,
-    "score": 11.96
-  },
-  {
-    "title_en": "Fraction Of The Cost: How Single-Engine Turboprops Are Taking Over Private Flying",
-    "title_zh": "成本的一小部分：单引擎涡轮螺旋桨飞机如何接管私人飞行",
-    "summary": "The rising demand for high performance single-props with GA flyers.",
-    "summary_zh": "对带有 GA 传单的高性能单一道具的需求不断增长。",
-    "body_en": [
-      "A twin-engine business jet is what many picture when they imagine private flying, but single-engine turboprops have a well-deserved and growing reputation as an ideal means of independent ownership of a fast private plane. The cost advantage behind the reputation is real: a Daher TBM 960, Pilatus PC-12 NGX, or Piper M600 SLS burns far less fuel than the lightest light jet. Thus, an owner who flies short trips should pay a fraction of a jet's price for each hour."
-    ],
-    "body_zh": [
-      "双引擎公务机是许多人想象中的私人飞行的样子，但单引擎涡轮螺旋桨飞机作为独立拥有快速私人飞机的理想方式而享有盛誉，而且声誉不断提高。声誉背后的成本优势是真实的：Daher TBM 960、Pilatus PC-12 NGX 或 Piper M600 SLS 燃烧的燃料比最轻的轻型喷气机少得多。因此，乘坐短途航班的机主每小时只需支付飞机价格的一小部分。"
-    ],
-    "link": "https://simpleflying.com/single-engine-aircraft-taking-over-private/",
-    "source": "Simple Flying",
-    "pub_ts": 1792537216.0,
-    "score": 11.77
-  },
-  {
-    "title_en": "How TSA Wait Times Compare At America’s 10 Busiest Airports",
-    "title_zh": "美国 10 个最繁忙机场的 TSA 等待时间比较",
-    "summary": "New York airports perform particularly poorly, while San Francisco's, which uses private contractors, perform well.",
-    "summary_zh": "纽约机场的表现尤其糟糕，而使用私人承包商的旧金山机场则表现良好。",
-    "body_en": [
-      "Travel Bulletin has released data from the MyTSA app's wait estimates, covering mid-June through mid-August. They have compiled the average Transportation Security Administration (TSA) security wait times across 50 airports during this peak season. Across each of these 50 airports, the average wait time was 9.9 minutes, with John F. Kennedy International Airport (JFK), the US's second-busiest airport, performing worst."
-    ],
-    "body_zh": [
-      "Travel Bulletin 发布了 MyTSA 应用程序的等待估计数据，涵盖 6 月中旬至 8 月中旬。他们统计了本旺季期间 50 个机场运输安全管理局 (TSA) 的平均安检等待时间。在这 50 个机场中，平均等待时间均为 9.9 分钟，其中美国第二繁忙的机场约翰·肯尼迪国际机场 (JFK) 的表现最差。"
-    ],
-    "link": "https://simpleflying.com/how-tsa-wait-times-compare-at-americas-10-busiest-airports/",
-    "source": "Simple Flying",
-    "pub_ts": 1792537216.0,
-    "score": 11.77
-  },
-  {
-    "title_en": "Alaska Launching Seattle To Osaka & Tahiti Flights, Using Hawaiian A330s",
-    "title_zh": "阿拉斯加开通西雅图至大阪和塔希提岛的航班，使用夏威夷 A330 飞机",
-    "summary": "Alaska Airlines will launch Seattle to Osaka flights in May 2027 and Seattle to Papeete flights in June 2027, operated by Hawaiian Airlines A330s with Hawaiian branding.",
-    "summary_zh": "阿拉斯加航空将于 2027 年 5 月开通西雅图飞往大阪的航班，并于 2027 年 6 月开通西雅图飞往帕皮提的航班，由夏威夷航空 A330 执飞，",
-    "body_en": [
-      "We know that Alaska Airlines is currently trying to build up a global hub out of Seattle Tacoma International Airport (SEA), following its acquisition of Hawaiian Airlines. While the initial goal was to launch 12 long haul routes out of the airport by 2030, that number has since been increased by 25%, to 15 routes. Along those lines, the two latest long haul routes for the airline have just been revealed, with a twist.",
-      "Alaska will fly from Seattle to Osaka & Papeete",
-      "In the spring of 2027, Alaska plans to launch two new routes from Seattle — the oneworld airline will fly to Osaka, Japan (KIX), and Papeete, French Polynesia (PPT).",
-      "As of May 14, 2027, Alaska will begin operating 4x weekly between Seattle and Osaka, with the following schedule:",
-      "AS867 Seattle to Osaka departing 12:10PM arriving 4:00PM",
-      "AS868 Osaka to Seattle departing 6:00PM arriving 12:20PM",
-      "The 5,040-mile flight is blocked at 11hr50min westbound and 10hr20min eastbound. The service will operate westbound on Sundays, Mondays, Wednesdays, and Fridays, and eastbound on Mondays, Tuesdays, Thursdays, and Saturdays.",
-      "As of June 11, 2027, Alaska will begin operating 3x weekly between Seattle and Papeete, with the following schedule:",
-      "AS987 Seattle to Papeete departing 11:55PM arriving 7:20AM (+1 day)",
-      "AS988 Papeete to Seattle departing 5:00PM arriving 6:00AM",
-      "The 4,782-mile is blocked at 10hr25min southbound and 10hr northbound. The service will operate southbound on Wednesdays, Fridays, and Saturdays, and northbound on Sundays, Thursdays, and Saturdays."
-    ],
-    "body_zh": [
-      "我们知道，阿拉斯加航空在收购夏威夷航空后，目前正试图在西雅图塔科马国际机场（SEA）之外建立一个全球枢纽。虽然最初的目标是到 2030 年开通 12 条从机场出发的长途航线，但此后这一数字已增加 25%，达到 15 条。沿着这些思路，该航空公司刚刚公布了两条最新的长途航线，但情况有所不同。",
-      "阿拉斯加将从西雅图飞往大阪和帕皮提",
-      "2027 年春季，阿拉斯加计划开通两条从西雅图出发的新航线——寰宇一家航空公司将飞往日本大阪 (KIX) 和法属波利尼西亚帕皮提 (PPT)。",
-      "自 2027 年 5 月 14 日起，阿拉斯加航空将开始每周运营 4 趟西雅图和大阪之间的航班，时间表如下：",
-      "AS867 西雅图 飞往 大阪 出发时间 12:10PM 抵达时间 4:00PM",
-      "AS868 大阪 飞往 西雅图 出发时间 6:00PM 到达 12:20PM",
-      "这趟全长 5,040 英里的航班在西行 11 小时 50 分钟和东行 10 小时 20 分钟受阻。该服务将于周日、周一、周三和周五运营西行，周一、周二、周四和周六运营东行。",
-      "自 2027 年 6 月 11 日起，阿拉斯加航空将开始每周运营 3 趟西雅图和帕皮提之间的航班，时间表如下："
-    ],
-    "link": "https://onemileatatime.com/news/alaska-seattle-osaka-tahiti-flights-hawaiian-a330/",
+    "link": "https://onemileatatime.com/news/frontier-airlines-first-class/",
     "source": "OMAAT",
-    "pub_ts": 1792487801.0,
-    "score": 11.65
+    "pub_ts": 1792625928.0,
+    "score": 11.89
   },
   {
-    "title_en": "How The Blue Angels Fly Just Inches Apart: Inside The US Navy’s Demonstration Team",
-    "title_zh": "蓝天使如何飞行仅几英寸：美国海军演示队内部",
-    "summary": "Breaking down the incredible skill and grit the Blues put on display at every show.",
-    "summary_zh": "打破蓝军在每场演出中所展现的令人难以置信的技巧和勇气。",
+    "title_en": "Lufthansa Group launches first consumer campaign for umbrella brand",
+    "title_zh": "汉莎航空集团推出首个伞形品牌消费活动",
+    "summary": "Lufthansa Group launched its first group-level consumer advertising campaign on 21 October, seeking to raise awareness of the benefits offered across its airline network. Under the slogan “Greatness is a Group effort”, the campaign highlights connections throu",
+    "summary_zh": "汉莎航空集团于10月21日推出了首个集团级消费者广告活动，旨在提高人们对",
     "body_en": [
-      "The Blue Angels' astounding ability to fly at high speed just 12-to-18-inches (30-45 cm) apart is the result of intense training, custom flight controls, and extreme physical endurance by the US Navy and Marine Corps aviators in the cockpit. The wingmen focus all of their attention on the flight leader's aircraft rather than using autonomous onboard flight computers or conventional cockpit instruments. Pilots make constant micro-adjustments to keep precisely aligned inside the tight diamond by concentrating on a hyper-specific visual marker, such as a single rivet or a jet's paint stripe."
+      "Lufthansa Group launched its first group-level consumer advertising campaign on 21 October, seeking to raise awareness of the benefits offered across its airline network. Under the slogan “Greatness is a Group effort”, the campaign highlights connections through the group’s hubs, lounge access, shared loyalty benefits and digital services. It follows the introduction of a new […]"
     ],
     "body_zh": [
-      "蓝天使飞机具有惊人的高速飞行能力，飞行距离仅为 12 至 18 英寸（30-45 厘米），这是美国海军和海军陆战队飞行员在驾驶舱内进行高强度训练、定制飞行控制以及极高体能耐力的结果。僚机将所有注意力集中在长机的飞机上，而不是使用自主机载飞行计算机或传统的驾驶舱仪器。飞行员通过专注于超特定的视觉标记（例如单个铆钉或喷气式飞机的油漆条纹）进行不断的微调，以在紧密的菱形内保持精确对齐。"
+      "汉莎航空集团于10月21日推出了首个集团级消费者广告活动，旨在提高人们对其航空公司网络提供的好处的认识。在“伟大是集团的努力”的口号下，该活动强调了通过集团的枢纽、休息室使用权、共享忠诚度福利和数字服务建立的联系。在此之前，我们引入了新的[…]"
     ],
-    "link": "https://simpleflying.com/how-blue-angles-fly-inches-apart-inside-us-navy-demonstration-team/",
-    "source": "Simple Flying",
-    "pub_ts": 1792533615.0,
-    "score": 11.58
+    "link": "https://www.aviation24.be/airlines/lufthansa-group/lufthansa-group-launches-first-consumer-campaign-for-umbrella-brand/",
+    "source": "Aviation24",
+    "pub_ts": 1792576082.0,
+    "score": 11.72
   },
   {
-    "title_en": "Belgrade To Miami: Air Serbia Adds Its Longest US Route Yet With The Airbus A330",
-    "title_zh": "贝尔格莱德飞往迈阿密：塞尔维亚航空使用空客 A330 开辟迄今为止最长的美国航线",
-    "summary": "Air Serbia will launch nonstop Belgrade-Miami flights in May 2027, expanding its North American network with Airbus A330s.",
-    "summary_zh": "塞尔维亚航空将于 2027 年 5 月开通贝尔格莱德-迈阿密直飞航班，通过空客 A330 扩大其北美网络。",
+    "title_en": "airBaltic introduces in-seat food and drink ordering",
+    "title_zh": "airBaltic推出座位内食品和饮料订购",
+    "summary": "airBaltic has begun introducing mobile ordering for onboard food and beverages through its Skynet portal, allowing passengers to pay digitally and have purchases delivered to their seats by cabin crew. The service is being rolled out progressively, starting wi",
+    "summary_zh": "波罗的海航空已开始通过其天网门户网站推出机上食品和饮料的移动订购，使乘客能够以数字方式付款并享受",
     "body_en": [
-      "Air Serbia has announced plans to launch nonstop flights between Belgrade Nikola Tesla Airport (BEG) and Miami International Airport (MIA) starting on May 20, 2027. The new service will operate twice-weekly using the Airbus A330-200 , covering approximately 5,471 miles (8,805 km). Miami will become the Serbian flag carrier's longest scheduled route, surpassing its existing services to Shanghai and Guangzhou in China."
+      "airBaltic has begun introducing mobile ordering for onboard food and beverages through its Skynet portal, allowing passengers to pay digitally and have purchases delivered to their seats by cabin crew. The service is being rolled out progressively, starting with short- and medium-haul flights on Starlink-equipped aircraft. Passengers can access the airCafe ordering platform through the […]"
     ],
-    "body_zh": [
-      "塞尔维亚航空宣布计划从 2027 年 5 月 20 日起开通贝尔格莱德尼古拉·特斯拉机场 (BEG) 和迈阿密国际机场 (MIA) 之间的直飞航班。新服务将使用空客 A330-200 每周运营两班，航程约 5,471 英里（8,805 公里）。迈阿密将成为塞尔维亚旗舰航空公司最长的定期航线，超过其飞往中国上海和广州的现有航班。"
-    ],
-    "link": "https://simpleflying.com/air-serbia-longest-us-route-airbus-a330/",
-    "source": "Simple Flying",
-    "pub_ts": 1792532584.0,
-    "score": 11.53
+    "body_zh": [],
+    "link": "https://www.aviation24.be/airlines/airbaltic/airbaltic-introduces-in-seat-food-and-drink-ordering/",
+    "source": "Aviation24",
+    "pub_ts": 1792574869.0,
+    "score": 11.67
   },
   {
-    "title_en": "Brand-New $125 Million, 37,000 Square-Foot VIP Private Terminal Is Coming To Washington Dulles Airport",
-    "title_zh": "耗资 1.25 亿美元、面积 37,000 平方英尺的全新 VIP 私人航站楼即将落户华盛顿杜勒斯机场",
-    "summary": "Pricing details for commercial passengers using the facility have not yet been confirmed.",
-    "summary_zh": "使用该设施的商业乘客的定价细节尚未确定。",
+    "title_en": "New Hilton Pay With Points App Feature: Why You Should (Probably) Skip It",
+    "title_zh": "全新希尔顿积分支付应用功能：为什么您应该（可能）跳过它",
+    "summary": "Hilton Honors elites can now use points toward on-property charges at app check-out, but the likely value per point is poor. Here's why you should skip it.",
+    "summary_zh": "希尔顿荣誉客会精英现在可以在应用程序结账时使用积分支付物业费用，但每分可能的价值很低。以下是您应该去滑雪的原因",
     "body_en": [
-      "Washington Dulles International Airport (IAD) will add a roughly 37,000-square-foot (3,437 square meters) VIP terminal for paying commercial passengers, airport officials announced this week. The facility will stand apart from the main terminal, near the airport’s cargo buildings. The $125 million figure reflects the value of the operating contract over its 20-year term, not the cost of construction."
+      "Hilton Honors has announced a new way for members to redeem their points directly toward the cost of on-property spending at check-out, exclusively for elite members through the app. More options are always a good thing, but please don’t use your points this way, despite the data that Hilton is using to suggest that this is appealing.",
+      "Hilton lets elite members redeem points with app check-out",
+      "Hilton Honors has launched Pay with Points. The idea is that elite members — Hilton Honors Silver, Gold, and Diamond members — can apply points toward eligible hotel charges during digital check-out in the Hilton Honors app.",
+      "This feature is now available at 150 participating hotels in the United States. This is expected to expand to more than 800 hotels by the end of 2026, with a full rollout to more than 6,000 properties in the US and Canada by early 2027. Availability and eligible redemption options may vary by property.",
+      "Hilton claims it’s the first major hotel brand to offer something like this through a fully digital check out experience with no front desk visit required. That’s true, though the point of differentiation here isn’t the ability to redeem points toward on-property spending, but instead, the ability to do this without interacting with someone at the front desk. Accor Live Limitless , Global Hotel Alliance , and World of Hyatt , all let you redeem points toward hotel costs at check-out.",
+      "Will this be a good way to redeem Hilton Honors points?"
     ],
-    "body_zh": [
-      "机场官员本周宣布，华盛顿杜勒斯国际机场 (IAD) 将为付费商业乘客增设一座约 37,000 平方英尺（3,437 平方米）的 VIP 航站楼。该设施将远离主航站楼，靠近机场货运大楼。 1.25 亿美元的数字反映了 20 年期限内运营合同的价值，而不是建设成本。"
-    ],
-    "link": "https://simpleflying.com/vip-private-terminal-washington-dulles/",
-    "source": "Simple Flying",
-    "pub_ts": 1792532001.0,
-    "score": 11.5
-  },
-  {
-    "title_en": "Boeing 737 MAX 10 Gets FAA Certification, And It’s A Big Deal For Airlines",
-    "title_zh": "波音 737 MAX 10 获得 FAA 认证，这对航空公司来说意义重大",
-    "summary": "The FAA has certified the Boeing 737 MAX 10, clearing the way for deliveries to airlines like Alaska, American, Delta, and United, though service won't begin until spring 2027.",
-    "summary_zh": "美国联邦航空管理局 (FAA) 已对波音 737 MAX 10 进行了认证，为向阿拉斯加航空、美国航空、达美航空和联合航空等航空公司交付扫清了道路，尽管服务仍将继续",
-    "body_en": [
-      "It goes without saying that Boeing has had a rather rough several years when it comes to getting new aircraft certified. Up until recently, the aerospace giant hadn’t yet received certification for the 737 MAX 7, 737 MAX 10, or 777X.",
-      "Fortunately the tides at Boeing are slowly turning. Recently, the Federal Aviation Administration (FAA) certified the 737 MAX 7 , which is exciting for Southwest (basically the only airline with the plane on order). Now there’s another exciting update, as Boeing has also just received FAA certification for the 737 MAX 10. Last month we learned that this was imminent, but it’s now official.",
-      "Boeing 737 MAX 10 certified, will fly in spring 2027",
-      "The FAA has announced that following years of extensive review, the agency has issued the certification for the Boeing 737 MAX 10. With production approved, the aircraft can be delivered to domestic and foreign carriers.",
-      "FAA Administrator Bryan Bedford emphasizes that the agency “will continue to hold Boeing to the highest safety standards as the company begins production of the 737 MAX-10.” In late September 2026, we learned how Alaska Airlines anticipated certification of the aircraft within weeks, so it’s nice to see this become a reality."
-    ],
-    "body_zh": [
-      "不言而喻，波音在新飞机认证方面经历了相当艰难的几年。直到最近，这家航空航天巨头尚未获得 737 MAX 7、737 MAX 10 或 777X 的认证。",
-      "幸运的是，波音公司的形势正在慢慢转变。最近，美国联邦航空管理局 (FAA) 对 737 MAX 7 进行了认证，这对于西南航空（基本上是唯一一家订购该飞机的航空公司）来说是令人兴奋的。现在还有另一个令人兴奋的更新，波音公司也刚刚获得了 737 MAX 10 的 FAA 认证。上个月我们获悉这即将到来，但现在它已正式发布。",
-      "波音 737 MAX 10 获得认证，将于 2027 年春季飞行",
-      "美国联邦航空局 (FAA) 宣布，经过多年的广泛审查，该机构已为波音 737 MAX 10 颁发了认证。获得生产批准后，该飞机即可交付给国内外航空公司。"
-    ],
-    "link": "https://onemileatatime.com/news/boeing-737-max-10-certification/",
+    "body_zh": [],
+    "link": "https://onemileatatime.com/news/hilton-pay-with-points-app-feature/",
     "source": "OMAAT",
-    "pub_ts": 1792529711.0,
-    "score": 11.38
+    "pub_ts": 1792619581.0,
+    "score": 11.56
   },
   {
-    "title_en": "Boeing announces FAA certification of 737 MAX 10",
-    "title_zh": "波音公司宣布 737 MAX 10 获得 FAA 认证",
-    "summary": "Boeing says the US Federal Aviation Administration has certified the 737-10, the largest member of its 737 MAX family, clearing the way for deliveries to begin in the coming months. Announcing the approval on 20 October, the manufacturer said the certification",
-    "summary_zh": "波音公司表示，美国联邦航空管理局已对 737 MAX 系列中最大的成员 737-10 进行了认证，为交付扫清了道路",
+    "title_en": "United Airlines Unveils 54,000 Square-Foot Lounge As Part Of Houston’s Terminal B Overhaul",
+    "title_zh": "联合航空公司推出54,000平方英尺的休息室，作为休斯顿B航站楼大修的一部分",
+    "summary": "United Airlines has unveiled the largest airline lounge in the Americas alongside a $2.6 billion Houston terminal transformation.",
+    "summary_zh": "联合航空公司推出了美洲最大的航空公司休息室，以及价值$ 26亿的休斯顿航站楼改造。",
     "body_en": [
-      "Boeing says the US Federal Aviation Administration has certified the 737-10, the largest member of its 737 MAX family, clearing the way for deliveries to begin in the coming months. Announcing the approval on 20 October, the manufacturer said the certification programme involved nearly 1,000 test flights, more than 2,000 flight hours and a further […]"
+      "United Airlines Unveils 54,000 Square-Foot Lounge As Part Of Houston’s Terminal B Overhaul",
+      "Paul has had a career of 25+ years focused on the international technology sector, which has taken him to over 100 countries. Along the way, he developed a deep love for aviation, with a travel bucket list measured by aircraft types flown rather than destinations reached. Now he brings that avgeek passion, along with the journalism experience he accumulated early in his career, to write insightful pieces for Simple Flying.",
+      "United Airlines has unveiled a massive 54,000-square-foot United Club at George Bush Intercontinental Airport (IAH), making it the largest airline-branded lounge in the Americas. The new facility, which can accommodate 800 passengers, opens on Thursday, alongside the airport's redeveloped Terminal B North Concourse.",
+      "The opening represents a major milestone in United's $2.6 billion terminal transformation, which is designed to accommodate larger aircraft, increase passenger capacity by 40%, and modernize the airline's Houston hub. It also fits into a broader investment in premium airport facilities across United's network."
     ],
-    "body_zh": [
-      "波音公司表示，美国联邦航空管理局已对其 737 MAX 系列中最大的成员 737-10 进行了认证，为未来几个月开始交付扫清了道路。该制造商于 10 月 20 日宣布获得批准，表示该认证计划涉及近 1,000 次试飞、超过 2,000 飞行小时以及进一步的 [...]"
-    ],
-    "link": "https://www.aviation24.be/manufacturers/boeing/737/max/boeing-announces-faa-certification-of-737-max-10/",
-    "source": "Aviation24",
-    "pub_ts": 1792526840.0,
-    "score": 11.24
-  },
-  {
-    "title_en": "Frontier Airlines Cancels 7 Routes From World's Busiest Airport: See List Now",
-    "title_zh": "边疆航空取消 7 条从全球最繁忙机场起飞的航线：立即查看列表",
-    "summary": "Seven routes were cut earlier this year from O'Hare amid heavy competition on corridors like Miami and Minneapolis.",
-    "summary_zh": "今年早些时候，由于迈阿密和明尼阿波利斯等走廊的激烈竞争，从奥黑尔机场出发的 7 条航线被取消。",
-    "body_en": [
-      "Denver-based Frontier Airlines has cut seven routes from Chicago O'Hare International Airport (ORD) this year, as the airline redeploys its aircraft on more lucrative routes. O'Hare is the world's busiest airport by the total number of flights , while Hartsfield-Jackson Atlanta International Airport (ATL) holds the title of the world's busiest airport by the number of passengers served."
-    ],
-    "body_zh": [
-      "总部位于丹佛的边疆航空公司今年已削减了 7 条从芝加哥奥黑尔国际机场 (ORD) 起飞的航线，因为该航空公司将其飞机重新部署到利润更丰厚的航线上。从航班总数来看，奥黑尔机场是世界上最繁忙的机场，而从服务乘客数量来看，哈兹菲尔德-杰克逊亚特兰大国际机场 (ATL) 则拥有世界上最繁忙机场的称号。"
-    ],
-    "link": "https://simpleflying.com/frontier-airlines-cancels-7-routes-worlds-busiest-airport/",
+    "body_zh": [],
+    "link": "https://simpleflying.com/united-airlines-unveils-54000-square-foot-lounge-houston/",
     "source": "Simple Flying",
-    "pub_ts": 1792526415.0,
-    "score": 11.22
+    "pub_ts": 1792616529.0,
+    "score": 11.4
   },
   {
-    "title_en": "Atlanta Vs. Dallas/Fort Worth: Which US Mega-Hub Handles More Passengers In 2026?",
-    "title_zh": "亚特兰大 VS 亚特兰大达拉斯/沃斯堡：哪个美国大型枢纽机场将在 2026 年接待更多乘客？",
-    "summary": "The gap between the US' busiest airports has narrowed most recently.",
-    "summary_zh": "美国最繁忙的机场之间的差距最近有所缩小。",
+    "title_en": "United Opens 54K Square Foot Club In Houston, The Largest Airline Lounge In The Americas",
+    "title_zh": "美联航在休斯敦开设54000平方英尺的俱乐部，这是美洲最大的航空公司休息室",
+    "summary": "United has opened a 54,000 square foot United Club in Houston's new Terminal B North Concourse, the largest airline lounge in the Americas, with seating for 800 guests.",
+    "summary_zh": "美联航在休斯顿的新B航站楼北大厅开设了一个54,000平方英尺的美联航俱乐部，这是美洲最大的航空公司休息室，",
     "body_en": [
-      "The United States is the world’s largest aviation market by a stretch. A total of 890.1 million arriving and departing passengers last year saw the US trump the next biggest, China with 776.1 million, by well over 100 million passengers, according to data from the International Air Transport Association (IATA). The UK, which was the third-busiest country for passenger traffic, then recorded just 269.7 million people boarding and disembarking flights over the course of 2025, for context. Naturally, supporting such vast numbers of fliers in the US requires a string of mega-hubs."
+      "United Airlines has just announced the opening of a new concourse at Houston George Bush Intercontinental Airport (IAH). In addition to adding gate capacity and having a modern design, it also has a cool amenity, in the form of the largest airline lounge in the Americas.",
+      "New 800-seat United Club Houston Terminal B North opens",
+      "The new Terminal B North Concourse at Houston Airport is open as of this week. The new concourse is three levels, 765,000 square feet, and has 22 mainline gates.",
+      "But perhaps what’s most exciting is that this concourse is home to a new 54,000 square foot United Club, making it the largest airline lounge in the United States, and for that matter, the largest in all of the Americas.",
+      "The new lounge has seating for 800 people, with a 1,350 square foot outdoor terrace, panoramic views of the airfield, two full service bars, two buffet stations, 11 private phone booths, and more. Here’s how the design is described:",
+      "Inspired by Houston’s distinctive spirit, the club’s design captures the feeling of traveling from the city to the sky, blending elements of the local cityscape and bayou landscape with nods to Houston’s legacy as a center of aerospace innovation and cultural diversity. The space features a curated collection of artwork from predominantly Texas-based artists, including photography by a San Antonio-based United employee."
     ],
-    "body_zh": [
-      "美国无疑是世界上最大的航空市场。国际航空运输协会 (IATA) 的数据显示，去年美国入境和出境旅客总数为 8.901 亿人次，超过了第二大中国（7.761 亿人次），远超 1 亿人次。作为客运量第三繁忙的国家，英国在 2025 年的登机和下机人数仅为 2.697 亿人次，仅供参考。当然，支持美国如此大量的旅客需要一系列的大型枢纽。"
-    ],
-    "link": "https://simpleflying.com/atlanta-dallas-us-mega-hub-handles-more-passengers-2026/",
-    "source": "Simple Flying",
-    "pub_ts": 1792526415.0,
-    "score": 11.22
-  },
-  {
-    "title_en": "European Parliament backs stronger passenger rights enforcement and clearer flight refunds",
-    "title_zh": "欧洲议会支持加强乘客权利执法和更明确的航班退款",
-    "summary": "The European Parliament has approved updated rules to strengthen passenger rights enforcement across transport modes, including clearer refund obligations for flights booked through travel agents and online platforms. The legislation passed with 652 votes in f",
-    "summary_zh": "欧洲议会批准了更新的规则，以加强跨交通方式的乘客权利执法，包括更明确的退款义务",
-    "body_en": [
-      "The European Parliament has approved updated rules to strengthen passenger rights enforcement across transport modes, including clearer refund obligations for flights booked through travel agents and online platforms. The legislation passed with 652 votes in favour, two against and eight abstentions. It still requires formal Council approval before publication in the EU Official Journal and […]"
-    ],
-    "body_zh": [
-      "欧洲议会批准了更新后的规则，以加强跨交通方式的乘客权利执法，包括通过旅行社和在线平台预订的航班的更明确的退款义务。该法案以 652 票赞成、2 票反对、8 票弃权获得通过。在欧盟官方公报上发表之前，它仍然需要理事会的正式批准，并且[...]"
-    ],
-    "link": "https://www.aviation24.be/organisations/european-parliament/european-parliament-back-stronger-passenger-rights-enforcement-and-clearer-flight-refunds/",
-    "source": "Aviation24",
-    "pub_ts": 1792526232.0,
-    "score": 11.21
-  },
-  {
-    "title_en": "Breaking: Boeing 737 MAX 10 Wins FAA Type Certification",
-    "title_zh": "突发新闻：波音 737 MAX 10 荣获 FAA 型号认证",
-    "summary": "After 6+ years of delays, the largest 737 MAX variant is finally cleared for takeoff.",
-    "summary_zh": "经过 6 年多的延误，最大的 737 MAX 型号终于获准起飞。",
-    "body_en": [
-      "Boeing has officially secured Federal Aviation Administration (FAA) type certification for its long-delayed 737 MAX 10 aircraft, marking a major milestone for the American planemaker as it now works to bring the largest member of its best-selling narrowbody family into commercial service. Coming in the form of an amended type certificate, the announcement came on October 20, 2026, by US Transportation Secretary Sean Duffy during a visit to Boeing’s new 737 MAX production line in Everett, Washington."
-    ],
-    "body_zh": [
-      "波音公司已为其拖延已久的 737 MAX 10 飞机正式获得美国联邦航空管理局 (FAA) 型号认证，这标志着这家美国飞机制造商的一个重要里程碑，该公司目前正致力于将其最畅销窄体飞机系列中最大的成员投入商业服务。 2026 年 10 月 20 日，美国运输部长肖恩·达菲 (Sean Duffy) 在参观波音位于华盛顿州埃弗里特的新 737 MAX 生产线时以修订型号证书的形式宣布了这一消息。"
-    ],
-    "link": "https://simpleflying.com/boeing-737-max-10-faa-type-certification/",
-    "source": "Simple Flying",
-    "pub_ts": 1792525870.0,
-    "score": 11.19
-  },
-  {
-    "title_en": "Three passengers hospitalised after illness on Eurowings Rhodes–Düsseldorf flight",
-    "title_zh": "欧洲之翼罗德斯-杜塞尔多夫航班上的三名乘客因生病住院",
-    "summary": "Three passengers were taken to hospital after several travellers became unwell on a Eurowings flight from Rhodes to Düsseldorf on Sunday evening, 18 October. The cockpit crew requested priority landing for flight EW9631, an Airbus A321 (D-AIDT) which carried 2",
-    "summary_zh": "周日晚上 18 点，在从罗德岛飞往杜塞尔多夫的欧洲之翼航班上，几名旅客出现不适，三名乘客被送往医院",
-    "body_en": [
-      "Three passengers were taken to hospital after several travellers became unwell on a Eurowings flight from Rhodes to Düsseldorf on Sunday evening, 18 October. The cockpit crew requested priority landing for flight EW9631, an Airbus A321 (D-AIDT) which carried 212 passengers and seven crew members. The aircraft arrived in Düsseldorf at around 22:00, where emergency […]"
-    ],
-    "body_zh": [
-      "10 月 18 日（周日）晚，从罗得岛飞往杜塞尔多夫的欧洲之翼航班上，几名旅客出现不适，三名乘客被送往医院。驾驶舱机组人员请求 EW9631 航班优先着陆，该航班是一架空客 A321 (D-AIDT)，机上载有 212 名乘客和 7 名机组人员。飞机于 22:00 左右抵达杜塞尔多夫，那里发生紧急情况 [...]"
-    ],
-    "link": "https://www.aviation24.be/airlines/lufthansa-group/eurowings/three-passengers-hospitalised-after-illness-on-eurowings-rhodes-dusseldorf-flight/",
-    "source": "Aviation24",
-    "pub_ts": 1792525306.0,
-    "score": 11.17
-  },
-  {
-    "title_en": "LATAM flight cancelled after reported fire at Lima airport",
-    "title_zh": "据报道利马机场发生火灾后，拉丁美洲航班被取消",
-    "summary": "A LATAM Airlines Perú flight to Piura was cancelled before take-off at Lima’s Jorge Chávez International Airport on Monday following a technical incident, with footage reportedly showing smoke and flames near the aircraft’s left wing. Passengers on flight LA23",
-    "summary_zh": "周一，秘鲁南美航空飞往皮乌拉的航班在利马豪尔赫查韦斯国际机场起飞前因技术事故而被取消",
-    "body_en": [
-      "A LATAM Airlines Perú flight to Piura was cancelled before take-off at Lima’s Jorge Chávez International Airport on Monday following a technical incident, with footage reportedly showing smoke and flames near the aircraft’s left wing. Passengers on flight LA2302 disembarked from the Airbus A320 registered CC-BFS as a precaution after the airline activated its safety […]"
-    ],
-    "body_zh": [
-      "周一，秘鲁南美航空飞往皮乌拉的航班在利马豪尔赫查韦斯国际机场起飞前因技术事故而被取消，据报道，视频显示飞机左翼附近冒烟和火焰。在航空公司启动安全功能后，作为预防措施，LA2302 航班上的乘客从注册为 CC-BFS 的空客 A320 下机 [...]"
-    ],
-    "link": "https://www.aviation24.be/airlines/latam/latam-peru/latam-flight-cancelled-after-reported-fire-at-lima-airport/",
-    "source": "Aviation24",
-    "pub_ts": 1792524257.0,
-    "score": 11.12
-  },
-  {
-    "title_en": "Capital One Venture X Business: Up To 300K Miles + $1,300 In Travel Credits With $120K Spend",
-    "title_zh": "Capital One Venture X Business：消费 12 万美元即可获得高达 30 万英里 + 1,300 美元的旅行积分",
-    "summary": "The Capital One Venture X Business offers up to 300,000 bonus miles plus $1,300 in travel credits, but earning it all requires $120,000 in spending within four months.",
-    "summary_zh": "Capital One Venture X Business 提供高达 300,000 英里的奖励里程以及 1,300 美元的旅行积分，但要获得全部奖励，需要花费 120,000 美元",
-    "body_en": [
-      "Capital One has two Venture-branded business cards. The Capital One Venture X Business is Capital One’s most lucrative business card. A new limited time welcome bonus has just launched, which is the biggest we’ve seen on the card… the catch is that the spending requirement is massive as well!",
-      "If the high annual fee or spending requirement turns you off, the lower annual fee version, the Capital One Venture Business , also offers a compelling bonus. In this post, I’d like to go over all the details of both offers.",
-      "Earn 300K miles + $1,300 credit with the Capital One Venture X Business",
-      "The Capital One Venture X Business is currently offering a limited time welcome offer, to celebrate the card’s third anniversary. This limited time welcome offer is structured as follows:",
-      "Earn up to 300,000 bonus miles — 150,000 bonus miles after spending $40,000, plus another 150,000 bonus miles after spending a total of $120,000, all within the first four months",
-      "Earn up to $1,300 in Capital One Business Travel credits — get a $300 annual travel credit, plus earn a limited time $1,000 travel credit for bookings through Capital One Business Travel (to be used within the first 12 months) when you spend $120,000 in the first four months",
-      "To state the obvious, the spending requirement here is massive. Based on my latest miles & points valuation , Capital One miles are worth 1.7 cents each, so that means I’d value the 300,000 miles at $5,100. If you add in the incremental $1,000 travel credit, I’d say that’s a value of $6,100."
-    ],
-    "body_zh": [
-      "第一资本有两张风险投资品牌的名片。 Capital One Venture X 业务是 Capital One 最赚钱的名片。新的限时欢迎奖金刚刚推出，这是我们在卡上见过的最大的奖金……问题是消费要求也很高！",
-      "如果高年费或支出要求让您望而却步，年费较低的版本——第一资本风险投资业务（Capital One Venture Business）也提供了令人信服的奖金。在这篇文章中，我想详细介绍这两个优惠的所有细节。",
-      "通过 Capital One Venture X Business 赚取 30 万英里 + 1,300 美元积分",
-      "Capital One Venture X Business 目前提供限时迎新优惠，以庆祝该卡成立三周年。此限时欢迎优惠的结构如下：",
-      "赚取最多 300,000 英里奖励里程 - 消费 40,000 美元后可获得 150,000 英里奖励里程，加上总计消费 120,000 美元后可获得 150,000 英里奖励里程，所有这些均在前四个月内完成"
-    ],
-    "link": "https://onemileatatime.com/deals/capital-one-venture-business-bonus/",
+    "body_zh": [],
+    "link": "https://onemileatatime.com/news/united-club-houston-largest-lounge-americas/",
     "source": "OMAAT",
-    "pub_ts": 1792523598.0,
-    "score": 11.09
+    "pub_ts": 1792613812.0,
+    "score": 11.27
   },
   {
-    "title_en": "Air Serbia adds Miami among six new routes for summer 2027",
-    "title_zh": "塞尔维亚航空将迈阿密纳入 2027 年夏季 6 条新航线中",
-    "summary": "Air Serbia has opened bookings for six new routes from Belgrade for summer 2027, led by a nonstop connection to Miami. The expansion also includes Helsinki, Yerevan, Cluj-Napoca, Chi?in?u and Menorca. Miami flights will begin on 20 May, operating twice weekly ",
-    "summary_zh": "塞尔维亚航空已开放 2027 年夏季从贝尔格莱德出发的 6 条新航线的预订，其中以直飞迈阿密的航线为主。该扩展包还包括 Hel",
+    "title_en": "The Most Superior Business Class Seats On US-To-Europe Flights In 2026",
+    "title_zh": "2026年美国到欧洲航班上最优质的商务舱座位",
+    "summary": "How to have the best experience in business class when crossing the Atlantic.",
+    "summary_zh": "如何在穿越大西洋时获得最佳商务舱体验。",
     "body_en": [
-      "Air Serbia has opened bookings for six new routes from Belgrade for summer 2027, led by a nonstop connection to Miami. The expansion also includes Helsinki, Yerevan, Cluj-Napoca, Chi?in?u and Menorca. Miami flights will begin on 20 May, operating twice weekly with Airbus A330-200 aircraft. The Florida city will become Air Serbia’s third US destination […]"
+      "The transatlantic market is one of the largest international markets in the aviation industry and is therefore quite competitive. It's dominated by joint ventures operated by Star Alliance members Air Canada, United Airlines, and Lufthansa Group's airlines, SkyTeam members Delta Air Lines, Virgin Atlantic, Air France, and KLM, and one by American Airlines, IAG's airlines, and Finnair. With the intense competition, one of the ways to determine which airline to choose is the product, and business class is where product competition is the strongest."
     ],
-    "body_zh": [
-      "塞尔维亚航空已开放 2027 年夏季从贝尔格莱德出发的 6 条新航线的预订，其中以直飞迈阿密的航线为主。此次扩张还包括赫尔辛基、埃里温、克卢日-纳波卡、基尼努和梅诺卡岛。迈阿密航班将于 5 月 20 日开始运营，每周运营两班，由空客 A330-200 飞机执飞。佛罗里达州城市将成为塞尔维亚航空的第三个美国目的地[...]"
-    ],
-    "link": "https://www.aviation24.be/airlines/air-serbia/air-serbia-adds-miami-among-six-new-routes-for-summer-2027/",
-    "source": "Aviation24",
-    "pub_ts": 1792522593.0,
-    "score": 11.04
+    "body_zh": [],
+    "link": "https://simpleflying.com/superior-business-class-seats-us-europe-flights-2026/",
+    "source": "Simple Flying",
+    "pub_ts": 1792609217.0,
+    "score": 11.05
   },
   {
-    "title_en": "London Heathrow adds six winter routes and welcomes Xiamen Airlines and beOnd",
-    "title_zh": "伦敦希思罗机场新增6条冬季航线迎来厦航和beOnd",
-    "summary": "London Heathrow Airport has announced six additions to its winter 2026/27 route programme, including Virgin Atlantic flights to Phuket and British Airways’ one-stop Melbourne service. Xiamen Airlines and beOnd are also joining the airport’s airline network. Vi",
-    "summary_zh": "伦敦希思罗机场宣布其 2026/27 年冬季航线计划新增 6 条航线，包括维珍航空飞往普吉岛和英国航空的航班",
+    "title_en": "American Airlines Cancels 11 Long-Haul Routes From Major Hub: See Full List Now",
+    "title_zh": "美国航空公司取消主要枢纽的11条长途航线：立即查看完整列表",
+    "summary": "All of these places have stopped seeing the carrier from Philadelphia, including one in 2026.",
+    "summary_zh": "所有这些地方都已经停止与来自费城的承运人接触，其中包括2026年的一家。",
     "body_en": [
-      "London Heathrow Airport has announced six additions to its winter 2026/27 route programme, including Virgin Atlantic flights to Phuket and British Airways’ one-stop Melbourne service. Xiamen Airlines and beOnd are also joining the airport’s airline network. Virgin Atlantic launched Phuket on 18 October with three weekly flights. British Airways will introduce daily Melbourne services via […]"
+      "American Airlines Cancels 11 Long-Haul Routes From Major Hub: See Full List Now",
+      "James lives and breathes route development. Educated in Air Transport Management at Loughborough University and Cranfield University, James has a PhD in Airline Strategy and Economics. James was Market Opportunity Analyst at London Luton Airport and Chief Analyst at anna.aero. He taught airline strategy and economics to undergraduate and postgraduate students for five years and has worked closely with multiple carriers on route and market intelligence projects. He is based near London, UK.",
+      "American Airlines has long-haul flights from 11 hubs and other airports in 2026. They include Las Vegas, but that's only for the Consumer Electronics Show. Regular services are from ten of them, including Philadelphia International Airport (PHL).",
+      "Looking ahead to July 2027 , Cirium Diio data shows that the oneworld member will have 22 daily long-haul departures from PHL. Services have risen by 16% compared to the same month in 2026, cementing PHL as American's second-largest long-haul hub. Given the elimination of Doha flights in March 2026, this growth is entirely because of the carrier's European network.",
+      "American Has Ended These Long-Haul Routes From Philadelphia"
     ],
-    "body_zh": [
-      "伦敦希思罗机场宣布其 2026/27 年冬季航线计划新增 6 条航线，包括维珍航空飞往普吉岛的航班和英国航空的一站式墨尔本服务。厦门航空和 beOnd 也加入了机场的航线网络。维珍航空于 10 月 18 日开通普吉岛航线，每周运营 3 趟航班。英国航空将通过 [...] 推出每日墨尔本航班"
+    "body_zh": [],
+    "link": "https://simpleflying.com/american-airlines-cancels-11-long-haul-routes-from-this-major-hub/",
+    "source": "Simple Flying",
+    "pub_ts": 1792609217.0,
+    "score": 11.05
+  },
+  {
+    "title_en": "Alaska Atmos Rewards Ascent Card Bonus: 80K Points & $99 Companion Fare",
+    "title_zh": "Alaska Atmos Rewards Ascent卡奖励： 8万积分和99 $随行票价",
+    "summary": "The Atmos Rewards Ascent Card is offering 80,000 points plus a $99 Companion Fare after minimum spending. Here's what the limited time bonus includes and why it's worth getting.",
+    "summary_zh": "Atmos Rewards Ascent卡在最低消费金额后提供80,000积分加上$ 99的随行票价。以下是限时奖励包含的内容",
+    "body_en": [
+      "The $95 annual fee Atmos™ Rewards Ascent Visa Signature® credit card is currently offering a limited time welcome bonus, which is among the best offers we’ve seen on the card. This card has a reasonable annual fee, and offers lots of valuable perks for travel on Alaska.",
+      "In this post I’d like to go over the details of the Atmos Rewards Ascent Card bonus, for anyone who may be considering applying. There are lots of reasons to get this card , including a welcome offer that should be enough incentive to give the card a try.",
+      "Link: Learn about the Atmos Rewards Ascent Card bonus offer",
+      "Atmos Rewards Ascent Card limited time welcome bonus",
+      "The Atmos Rewards Ascent Card is currently offering a limited time welcome bonus that can earn you up to 80,000 Atmos Rewards points plus a $99 Companion Fare upon completing minimum spending. Specifically:",
+      "Earn 60,000 Atmos Rewards bonus points and a $99 Companion Fare (plus taxes and fees from $23) after spending $3,000 or more on purchases within the first 90 days",
+      "Earn an additional 20,000 Atmos Rewards bonus points after spending a total of $5,000 or more on purchases within the same 90-day period",
+      "Based on my latest miles & points valuations , Atmos Rewards points are worth 1.5 cents each. That means the 80,000 bonus points are worth $1,200, and that doesn’t factor in the value of the $99 Companion Fare. Even if you’re not convinced on the long term value proposition of the card, I absolutely think it’s worth giving a try, given all the uses of Atmos Rewards points ."
     ],
-    "link": "https://www.aviation24.be/airports/london-heathrow-lhr/london-heathrow-adds-six-winter-routes-and-welcomes-xiamen-airlines-and-beond/",
-    "source": "Aviation24",
-    "pub_ts": 1792522193.0,
+    "body_zh": [],
+    "link": "https://onemileatatime.com/reviews/credit-cards/bank-of-america/atmos-rewards-ascent-card-bonus/",
+    "source": "OMAAT",
+    "pub_ts": 1792608538.0,
     "score": 11.02
   },
   {
-    "title_en": "LOT suspends four winter routes as fuel costs rise",
-    "title_zh": "由于燃油成本上涨，LOT 暂停了 4 条冬季航线",
-    "summary": "LOT Polish Airlines will suspend four routes during its winter timetable and reduce frequencies elsewhere as higher jet fuel costs put pressure on profitability. The suspensions affect Warsaw–Bologna and services from Kraków to Barcelona, Madrid and Rome, acco",
-    "summary_zh": "由于航空燃油成本上涨给专业人士带来压力，波兰航空公司将在冬季时刻表中暂停四条航线，并减少其他地区的班次。",
+    "title_en": "American Airlines 787 suffers tyre failure after landing at Chicago O’Hare",
+    "title_zh": "美国航空公司787在芝加哥奥黑尔机场降落后轮胎出现故障",
+    "summary": "An American Airlines Boeing 787-8 registered N806AA arriving from Barcelona suffered a tyre failure after landing at Chicago O’Hare on Tuesday, 20 October. All 234 passengers and 11 crew members were uninjured. The Federal Aviation Administration said the crew",
+    "summary_zh": "从巴塞罗那抵达的美国航空公司波音787-8注册的N806AA在10月20日星期二降落在芝加哥奥黑尔机场后发生轮胎故障",
     "body_en": [
-      "LOT Polish Airlines will suspend four routes during its winter timetable and reduce frequencies elsewhere as higher jet fuel costs put pressure on profitability. The suspensions affect Warsaw–Bologna and services from Kraków to Barcelona, Madrid and Rome, according to Poland’s PAP news agency. LOT plans to restore the routes in early April. Airline spokesman Krzysztof […]"
+      "An American Airlines Boeing 787-8 registered N806AA arriving from Barcelona suffered a tyre failure after landing at Chicago O’Hare on Tuesday, 20 October. All 234 passengers and 11 crew members were uninjured. The Federal Aviation Administration said the crew of flight AA41 reported a brake issue followed by a blown tyre after landing safely. In […]"
     ],
-    "body_zh": [
-      "由于航空燃油成本上涨给盈利能力带来压力，波兰航空公司将在冬季时刻表中暂停四条航线，并减少其他地区的班次。据波兰人民行动党报道，停飞影响了华沙-博洛尼亚以及从克拉科夫到巴塞罗那、马德里和罗马的航班。 LOT 计划于四月初恢复航线。航空公司发言人克日什托夫 [...]"
-    ],
-    "link": "https://www.aviation24.be/airlines/lot-polish-airlines/lot-suspends-four-winter-routes-as-fuel-costs-rise/",
+    "body_zh": [],
+    "link": "https://www.aviation24.be/airlines/american-airlines/american-airlines-787-suffers-tyre-failure-after-landing-at-chicago-ohare/",
     "source": "Aviation24",
-    "pub_ts": 1792521169.0,
-    "score": 10.97
+    "pub_ts": 1792608455.0,
+    "score": 11.01
   },
   {
-    "title_en": "Singapore Airlines First Class Passengers Now Get A Personal Concierge At Changi Airport",
-    "title_zh": "新加坡航空头等舱乘客现可在樟宜机场享受私人礼宾服务",
-    "summary": "Singapore Airlines has made its first class personal concierge service at Changi Airport permanent, escorting passengers from check-in to the lounge and then to the gate, including help clearing security.",
-    "summary_zh": "新加坡航空在樟宜机场永久提供头等舱个人礼宾服务，护送乘客从办理登机手续到休息室",
+    "title_en": "Norwegian adds four routes from Oslo, Copenhagen and Billund for 2027",
+    "title_zh": "挪威航空2027年新增4条从奥斯陆、哥本哈根和比隆出发的航线",
+    "summary": "Norwegian will launch four European routes in 2027, connecting Oslo and Copenhagen with Seville, Copenhagen with Santiago de Compostela, and Billund with Manchester. The Seville services will operate twice weekly in spring and autumn, with a break during the p",
+    "summary_zh": "挪威航空将于2027年推出四条欧洲航线，连接奥斯陆和哥本哈根与塞维利亚，哥本哈根与圣地亚哥德孔波斯特拉，以及比隆德与",
     "body_en": [
-      "Singapore Airlines is known for its phenomenal first class experience ( marketed as First Class on the 777 , and Suites Class on the A380 ) — the airline has a great onboard experience , and a very good lounge at its Singapore Changi hub.",
-      "One thing that has historically been missing with Singapore Airlines’ first class product offering is making the ground experience seamless and end-to-end. A few months ago we saw the airline introduce a trial to address this, and there’s now an update , as this is “permanent” (well, as permanent as anything in the airline industry is).",
-      "Singapore Airlines first class concierge service details",
-      "Historically, Singapore Airlines first class passengers traveling through Changi Airport have had to get from the first class check-in facility to the lounge on their own, and then from the lounge to the gate on their own. Keep in mind that at Singapore Changi Terminal 3 and Terminal 2, security is typically at each individual gate, meaning that in the past, actually clearing security as a first class passenger hasn’t been very seamless.",
-      "So after a trial lasting several weeks, the airline has now introduced a personal concierge concept.",
-      "The service starts the second you arrive at Changi Airport, as the porter service offers help with bags, so that passengers can proceed straight to the first class check-in area, where they’ll be greeted with chilled hand towels, while formalities are taken care of."
+      "Norwegian will launch four European routes in 2027, connecting Oslo and Copenhagen with Seville, Copenhagen with Santiago de Compostela, and Billund with Manchester. The Seville services will operate twice weekly in spring and autumn, with a break during the peak summer period. Copenhagen–Santiago de Compostela will run during the summer, while Billund–Manchester will operate from […]"
     ],
-    "body_zh": [
-      "新加坡航空以其非凡的头等舱体验而闻名（在 777 上标为头等舱，在 A380 上标为套房）——该航空公司拥有出色的机上体验，并在新加坡樟宜枢纽设有非常好的休息室。",
-      "新加坡航空的头等舱产品历来缺少的一件事是无缝和端到端的地面体验。几个月前，我们看到航空公司推出了一项试验来解决这个问题，现在有了更新，因为这是“永久性的”（嗯，就像航空业中的任何事情一样永久性）。",
-      "新加坡航空头等舱礼宾服务详情",
-      "从历史上看，新加坡航空头等舱乘客在樟宜机场旅行时必须自行从头等舱办理登机手续前往休息室，然后自行从休息室前往登机口。请记住，在新加坡樟宜 3 号航站楼和 2 号航站楼，安检通常在每个单独的登机口进行，这意味着在过去，头等舱乘客的实际安检并不是非常顺利。",
-      "因此，经过几周的试用后，该航空公司现在推出了个人礼宾服务概念。"
+    "body_zh": [],
+    "link": "https://www.aviation24.be/airlines/norwegian/norwegian-adds-four-routes-from-oslo-copenhagen-and-billund-for-2027/",
+    "source": "Aviation24",
+    "pub_ts": 1792607891.0,
+    "score": 10.99
+  },
+  {
+    "title_en": "Buy IHG One Rewards Points With 100% Bonus (0.5 Cents Each): Worth It?",
+    "title_zh": "购买IHG One Rewards积分并获得100%奖励（每次0.5美分） ：值得吗？",
+    "summary": "IHG One Rewards is offering a 100% bonus on purchased points through November 5, 2026, which works out to 0.5 cents each. Here's whether buying is worth it.",
+    "summary_zh": "IHG One Rewards将在2026年11月5日之前为购买的积分提供100%的奖励，每个积分0.5美分。以下是购买是否会导致",
+    "body_en": [
+      "IHG One Rewards is currently offering a limited time 100% bonus on purchased points. With this, IHG One Rewards members can purchase points for as little as 0.5 cents each. Is this a good deal?",
+      "While I wouldn’t recommend buying points without a specific use in mind, there are absolutely ways to get outsized value, and this is in line with the best offers that we see from the program. With the right strategy, this could be an opportunity to get a significant discount on an IHG hotel stay, and I’ll show exactly how.",
+      "Link: Buy IHG One Rewards points with this promotion with a 100% bonus",
+      "Through 11:59PM ET on Thursday, November 5, 2026, IHG One Rewards is offering a bonus on purchased points . Points can be purchased in increments of 1,000 points, and the bonus is tiered, as follows:",
+      "Buy 5,000-10,000 points, receive an 80% bonus",
+      "Buy 11,000-39,000 points, receive a 90% bonus",
+      "Buy 40,000-200,000 points, receive a 100% bonus",
+      "Note that the purchase of IHG points doesn’t count toward elite status.",
+      "Ordinarily you can buy IHG One Rewards points for as little as one cent each (the pricing isn’t linear), before any discounts or bonuses. With that in mind, if you were eligible for a 100% bonus and purchased 200,000 IHG One Rewards points pre-bonus, you’d receive a total of 400,000 points at a cost of $2,000, which is a rate of 0.5 cents per IHG point."
     ],
-    "link": "https://onemileatatime.com/news/singapore-airlines-first-class-personal-concierge-service/",
+    "body_zh": [],
+    "link": "https://onemileatatime.com/deals/buy-ihg-one-rewards-points/",
     "source": "OMAAT",
-    "pub_ts": 1792519346.0,
-    "score": 10.89
+    "pub_ts": 1792606392.0,
+    "score": 10.92
   },
   {
-    "title_en": "World’s Southernmost Hotel Opens In Chile, But Only Silversea Cruise Guests Can Stay",
-    "title_zh": "世界最南端酒店在智利开业，但只有银海邮轮的客人可以入住",
-    "summary": "Silversea has opened The Cormorant at 55 South in Puerto Williams, Chile, billed as the world's southernmost hotel, but it's only available as part of a Silversea cruise package.",
-    "summary_zh": "银海邮轮 (Silversea) 在智利威廉姆斯港南 55 号开设了 The Cormorant 酒店，被誉为世界上最南端的酒店，但它仅作为",
+    "title_en": "The Most Expensive Domestic Routes To Fly In The US In 2026",
+    "title_zh": "2026年美国最昂贵的国内航线",
+    "summary": "Discover the most expensive US domestic flight routes in 2026, from Colorado ski resorts to New York–San Francisco, and why fares remain high.",
+    "summary_zh": "探索2026年最昂贵的美国国内航线，从科罗拉多州滑雪胜地到纽约-旧金山，以及为什么票价仍然很高。",
     "body_en": [
-      "The Cormorant at 55 South, which claims to be the world’s southernmost hotel, has just opened its doors. The catch is that you can only stay here in conjunction with a Silversea cruise… the hotel isn’t otherwise bookable independently!",
-      "Silversea opens hotel in Puerto Williams, Chile",
-      "Luxury cruise line Silversea, which belongs to Royal Caribbean Group, has just opened a hotel in Puerto Williams, Chile . The hotel is named The Cormorant at 55 South , and it’s being marketed as the world’s southernmost hotel.",
-      "The hotel features 150 rooms, along with several food & beverage outlets. This includes Latitude 55 (the main restaurant, serving a family-style breakfast, lunch, and dinner), Bar Sur (the bar serving drinks, snacks, and afternoon tea), and Fireplace Lounge (the lounge open in the evenings).",
-      "The hotel also has a 24/7 gym, as well as exploration opportunities in the area, ranging from sea kayaking, to horseback riding, to birdwatching, and more.",
-      "I’ve gotta say, I’m intrigued by this property. I’ve stayed at the world’s northernmost hotel, the Radisson Blu Polar Hotel in Longyearbyen, Svalbard. I’d certainly love to stay at the world’s southernmost hotel as well.",
-      "There’s a catch, though, which is that you can’t actually directly book this hotel, unless it’s part of a cruise package.",
-      "This is part of the Antarctica Fly Cruise program"
+      "The most expensive flights in the United States don't necessarily connect the farthest points in the country. In the first quarter of 2026, a flight from Eagle County Regional Airport (EGE), Colorado, near the Vail ski resorts, to Miami International Airport (MIA) cost more than $500, putting it ahead of routes connecting major metropolitan areas or transcontinental flights."
     ],
-    "body_zh": [
-      "号称世界最南端的酒店 55 South 的 Cormorant 刚刚开业。问题是，您只能与 Silversea 游轮一起住在这里……酒店不能单独预订！",
-      "银海邮轮在智利威廉姆斯港开设酒店",
-      "皇家加勒比集团旗下的豪华邮轮银海邮轮刚刚在智利威廉姆斯港开设了一家酒店。该酒店被命名为“The Cormorant at 55 South”，并被宣传为世界上最南端的酒店。",
-      "酒店拥有 150 间客房以及多家餐饮店。其中包括 Latitude 55（主餐厅，供应家庭式早餐、午餐和晚餐）、Bar Sur（供应饮料、小吃和下午茶的酒吧）和 Fireplace Lounge（晚上开放的休息室）。",
-      "酒店还设有 24/7 健身房，并提供该地区的探索机会，包括海上皮划艇、骑马、观鸟等。",
-      "我不得不说，我对这个房产很感兴趣。我住过世界最北端的酒店，斯瓦尔巴群岛朗伊尔城的丽笙极地酒店。我当然也很想住在世界最南端的酒店。"
-    ],
-    "link": "https://onemileatatime.com/news/worlds-southernmost-hotel-opens-chile-silversea/",
-    "source": "OMAAT",
-    "pub_ts": 1792513029.0,
-    "score": 10.61
+    "body_zh": [],
+    "link": "https://simpleflying.com/most-expensive-domestic-routes-fly-us-2026/",
+    "source": "Simple Flying",
+    "pub_ts": 1792602016.0,
+    "score": 10.72
   },
   {
-    "title_en": "Buy JetBlue TrueBlue Points With Up To 120% Bonus (1.47 Cents Each): Worth It?",
-    "title_zh": "购买 JetBlue TrueBlue 积分可享受高达 120% 的奖励（每个积分 1.47 美分）：值得吗？",
-    "summary": "JetBlue TrueBlue is selling points with up to a 120% bonus, for as little as 1.47 cents each. Buying rarely works for JetBlue flights, but partner awards could justify it.",
-    "summary_zh": "JetBlue TrueBlue 正在以高达 120% 的奖励出售积分，每个积分仅需 1.47 美分。购买捷蓝航空航班很少有效，但合作伙伴阿瓦",
+    "title_en": "Honda backs Thrive’s fractional launch with refurbished HondaJets",
+    "title_zh": "本田通过翻新的本田喷气式飞机支持Thrive的部分推出",
+    "summary": "Honda Aircraft is backing Thrive Aviation’s move into fractional ownership with a minority investment and refurbished HondaJets, as… The post Honda backs Thrive’s fractional launch with refurbished HondaJets appeared first on AeroTime .",
+    "summary_zh": "本田飞机（ Honda Aircraft ）支持Thrive Aviation通过少数股权投资和翻新本田喷气机（ HondaJets ）进入部分所有权，因为……",
     "body_en": [
-      "JetBlue has introduced its newest promotion on purchasing points . With this, TrueBlue members can purchase points with up to a 120% bonus, which is an opportunity to acquire points for as little as 1.47 cents each. Is this a good deal?",
-      "Let’s take a look at the details — so that I don’t bury the lede, let me say that I’d only recommend taking advantage of this JetBlue buy points offer with a specific use in mind, and primarily if you intend to redeem on partner airlines.",
-      "Link: See what JetBlue TrueBlue bonus you’re eligible for",
-      "JetBlue TrueBlue buy points promotion details",
-      "Through 11:59PM EST on Thursday, November 5, 2026, JetBlue TrueBlue is offering a bonus on purchased points , which is close to being in line with the best offers from the program.",
-      "How big of a bonus is JetBlue offering on buying points?",
-      "JetBlue TrueBlue is offering up to a 120% bonus on purchasing points . The offer is structured as follows, with three tiers of bonuses:",
-      "Buy 5,000-9,000 JetBlue points, get a 100% bonus",
-      "Buy 10,000-19,000 JetBlue points, get a 110% bonus",
-      "Buy 20,000-300,000 JetBlue points, get a 120% bonus",
-      "Let me emphasize that this appears to be the standard offer, though sometimes different members are targeted for different offers. You’ll want to log into your TrueBlue account to see what you’re eligible for.",
-      "How many JetBlue points can you buy with a promotion?",
-      "JetBlue ordinarily allows TrueBlue members to purchase up to 200,000 points per calendar year. However, during this promotion, that cap has been increased to 300,000 points."
+      "Honda Aircraft is backing Thrive Aviation’s move into fractional ownership with a minority investment and refurbished HondaJets, as the Las Vegas operator launches a program offering shares in HondaJets and Bombardier Challenger 3500s.",
+      "Honda Aircraft President and CEO Hideto Yamasaki said the deal closed over the summer after several years of discussions and due diligence. Under the partnership, announced in September 2026, Honda subsidiary Arulean Air will acquire aircraft while Thrive manages flight operations and customer accounts.",
+      "Thrive displayed the program’s first HondaJet and Challenger 3500 at NBAA-BACE 2026 in Las Vegas. The company plans to begin operations on the West Coast, with a goal of adding four to six HondaJets and two to four Challenger 3500s annually as demand grows.",
+      "Fractional customers buy a share of an aircraft and receive an allocation of flying time, while the operator supplies the crews and handles maintenance and scheduling. Thrive will sell shares in both the HondaJet and Challenger 3500, covering the light-jet and super-midsize categories.",
+      "Customers will also have access to Thrive’s existing fleet of about 30 aircraft. The terms of that access, including how flights on other aircraft types would be priced, were not specified.",
+      "Thrive Co-Founder and Chief Executive Officer Curtis Edenfield showed off the refurbished HondaJet at Henderson Executive Airport during NBAA-BACE 2026, expressing enthusiasm for the company’s expansion into fractional ownership."
     ],
-    "body_zh": [
-      "捷蓝航空推出了最新的积分促销活动。借此，TrueBlue 会员可以以高达 120% 的奖励购买积分，这是一个以每张低至 1.47 美分的价格获得积分的机会。这划算吗？",
-      "让我们看一下细节——为了不让我埋没，我想说的是，我只建议在考虑到特定用途的情况下利用捷蓝航空购买积分优惠，尤其是如果您打算在合作伙伴航空公司兑换的话。",
-      "链接：查看您有资格获得哪些捷蓝 TrueBlue 奖励",
-      "JetBlue TrueBlue 购买积分促销详情",
-      "截至 2026 年 11 月 5 日星期四晚上 11:59（美国东部时间），捷蓝 TrueBlue 将为购买的积分提供奖励，这接近于该计划的最佳优惠。",
-      "捷蓝航空为购买积分提供了多大的奖励？",
-      "JetBlue TrueBlue 为购买积分提供高达 120% 的奖励。该优惠的结构如下，包含三个级别的奖金：",
-      "购买 5,000-9,000 捷蓝航空积分，获得 100% 奖励",
-      "购买 10,000-19,000 捷蓝航空积分，获得 110% 奖励",
-      "购买 20,000-300,000 捷蓝航空积分，获得 120% 奖励"
-    ],
-    "link": "https://onemileatatime.com/deals/buy-jetblue-trueblue-points/",
-    "source": "OMAAT",
-    "pub_ts": 1792510509.0,
-    "score": 10.5
-  },
-  {
-    "title_en": "ICEYE launches four radar satellites on SpaceX Bandwagon-5 mission",
-    "title_zh": "ICEYE 在 SpaceX Bandwagon-5 任务中发射四颗雷达卫星",
-    "summary": "ICEYE confirmed on October 20, 2026, that four of its synthetic aperture radar (SAR) satellites had separated from… The post ICEYE launches four radar satellites on SpaceX Bandwagon-5 mission appeared first on AeroTime .",
-    "summary_zh": "ICEYE 于 2026 年 10 月 20 日确认，其四颗合成孔径雷达 (SAR) 卫星已与……分离。 ICEYE 发射四颗雷达后",
-    "body_en": [
-      "ICEYE confirmed on October 20, 2026, that four of its synthetic aperture radar (SAR) satellites had separated from a SpaceX Falcon 9 rocket flying the Bandwagon-5 rideshare mission from Florida.",
-      "In a post on X , the Finnish company stated that all four satellites had been deployed into orbit and that its team was working to establish first contact with each spacecraft.",
-      "ICEYE has not provided the satellites’ orbital parameters, and nor has it disclosed whether they will join its own constellation or serve dedicated customer missions.",
-      "The Falcon 9 lifted off from Space Launch Complex 40 at Cape Canaveral Space Force Station on October 20, 2026, after SpaceX postponed an attempt the day before, citing unfavorable recovery weather.",
-      "SpaceX announced on October 17, 2026, that 32 payloads had been encapsulated for the mission, and later confirmed that the first stage had landed on the droneship A Shortfall of Gravitas.",
-      "SpaceX’s Bandwagon missions serve mid-inclination orbits, while its Transporter rideshares fly to sun-synchronous orbit. When two ICEYE satellites flew on Bandwagon-2 on December 21, 2024, the company said that mid-inclination orbits offered more than twice the collection opportunities of a polar orbit, at latitudes between 45 degrees north and 45 degrees south.",
-      "ICEYE targets production of 100 satellites a year",
-      "Bandwagon-5 follows ICEYE launches on SpaceX’s Transporter-17 rideshare on July 7, 2026, and Transporter-18 on October 1, 2026. ICEYE’s Transporter-17 release put its cumulative total at 76 satellites launched."
-    ],
-    "body_zh": [
-      "ICEYE 于 2026 年 10 月 20 日证实，其四颗合成孔径雷达 (SAR) 卫星与从佛罗里达州执行 Bandwagon-5 拼车任务的 SpaceX Falcon 9 火箭分离。",
-      "这家芬兰公司在 X 上的一篇帖子中表示，所有四颗卫星均已部署到轨道上，其团队正在努力与每颗航天器建立首次联系。",
-      "ICEYE 没有提供这些卫星的轨道参数，也没有透露它们是否会加入自己的星座或服务专门的客户任务。",
-      "猎鹰 9 号于 2026 年 10 月 20 日从卡纳维拉尔角太空部队站 40 号航天发射场升空，此前 SpaceX 以不利的回收天气为由推迟了前一天的发射尝试。",
-      "SpaceX 于 2026 年 10 月 17 日宣布，已为此次任务封装了 32 个有效载荷，随后证实第一级已降落在无人机 A Shortfall of Gravitas 上。"
-    ],
-    "link": "https://www.aerotime.aero/articles/iceye-four-sar-satellites-spacex-bandwagon-5",
+    "body_zh": [],
+    "link": "https://www.aerotime.aero/articles/honda-thrive-fractional-ownership-hondajets",
     "source": "AeroTime",
-    "pub_ts": 1792508947.0,
+    "pub_ts": 1792597012.0,
+    "score": 10.51
+  },
+  {
+    "title_en": "Norwegian adds new routes to Seville, Santiago de Compostela and Manchester",
+    "title_zh": "挪威航空新增前往塞维利亚、圣地亚哥-德孔波斯特拉和曼彻斯特的航线",
+    "summary": "Norwegian will launch several new European routes for summer 2027, including direct flights from Oslo and Copenhagen to Seville, Spain. The Oslo–Seville route will launch on 20 March 2027, with two weekly flights on Wednesdays and Saturdays, operating until 16",
+    "summary_zh": "挪威航空将在2027年夏季推出几条新的欧洲航线，包括从奥斯陆和哥本哈根直飞西班牙塞维利亚的航班。",
+    "body_en": [
+      "Norwegian will launch several new European routes for summer 2027, including direct flights from Oslo and Copenhagen to Seville, Spain. The Oslo–Seville route will launch on 20 March 2027, with two weekly flights on Wednesdays and Saturdays, operating until 16 June before resuming on 18 August and running until 30 October. The airline will also […]"
+    ],
+    "body_zh": [],
+    "link": "https://www.aviation24.be/airlines/norwegian/new-routes-to-seville-santiago-de-compostela-and-manchester/",
+    "source": "Aviation24",
+    "pub_ts": 1792595314.0,
     "score": 10.44
   },
   {
-    "title_en": "United Gateway Card Review: No Annual Fee & Up To 50K Bonus Miles",
-    "title_zh": "United Gateway 卡审核：无年费 & 高达 50K 奖励里程",
-    "summary": "The United Gateway Card has no annual fee, no foreign transaction fees, and a welcome bonus of up to 50,000 miles. Here's my take on whether it's worth getting.",
-    "summary_zh": "United Gateway 卡无年费、无境外交易费，并可享受高达 50,000 英里的迎新奖励。这是我对是否是麦芽汁的看法",
+    "title_en": "Alaska Atmos Rewards Summit Card Bonus: 100K Points & 25K-Point Global Companion Award",
+    "title_zh": "阿拉斯加全景声奖励峰会卡奖励： 10万积分和25K积分全球精英奖励",
+    "summary": "The Atmos Rewards Summit Visa Infinite Card is back with its best-ever public welcome bonus: 100,000 points plus a 25,000-point Global Companion Award after $6,000 in spend.",
+    "summary_zh": "Atmos Rewards Summit Visa Infinite卡再次推出有史以来最好的公众欢迎奖金： 100,000积分加上25,000积分全球伴侣奖励",
     "body_en": [
-      "Chase and United offer a suite of co-branded credit cards , and the no annual fee option is the United Gateway℠ Card . The card earns 5x total miles on eligible United flights, 2x miles on all other eligible United purchases, and 2x miles on other travel purchases, including spending at gas stations and local transit and commuting.",
-      "The United Gateway Card also gets you perks when you fly with United, but some of them require meeting an annual spending threshold on the card. This is my in-depth United Gateway Card review, so let’s dive into the card details, and whether I think the benefits are worth it below.",
-      "Link: Learn more about the United Gateway℠ Card",
-      "United Airlines Gateway Card summary & key details for October 2026",
-      "Before I share my full thoughts on the United Gateway Card , let me take a moment to go over the top-level details, including the card’s welcome bonus, perks, and rewards structure.",
-      "United Gateway Card welcome offer: Earn 40,000 bonus miles after you spend $1,000 on purchases in the first 3 months your account is open. Plus, 0% intro APR for 12 months from account opening on purchases. Learn more.",
-      "United Gateway Card miles earning rate: 2x miles on eligible United purchases and on other travel purchases including gas stations and local transit and commuting, 1x miles on all other purchases",
-      "United Gateway Card foreign transaction fee: None"
+      "The $395 annual fee Atmos™ Rewards Summit Visa Infinite ® Credit Card has just brought back its best-ever publicly available welcome bonus, which can earn you 100,000 Atmos Rewards points plus a 25K-point Global Companion Award (which I consider to be worth face value).",
+      "This is one of the most lucrative airline credit cards on the market — it’s a card that I have, and it’s also one that I spend a lot of money on. If you don’t yet have the card, you really can’t go wrong with this, and this is the time to apply.",
+      "Link: Learn about the Atmos Rewards Summit Card bonus offer",
+      "Atmos Rewards Summit Card limited time welcome bonus",
+      "The Atmos Rewards Summit Card is currently offering a limited time welcome bonus that consists of 100,000 bonus points and a 25,000-point Global Companion Award. To qualify, you need to spend $6,000 or more on purchases within the first 90 days of opening your account.",
+      "Based on my latest miles & points valuations , Atmos Rewards points are worth 1.5 cents each. I consider the offer to be worth 125,000 points, putting the value of this at a staggering $1,875. Even if you’re not convinced on the long term value proposition of the card, I absolutely think it’s worth giving a try, given all the uses of Atmos Rewards points .",
+      "Atmos Rewards Summit Card eligibility requirements"
     ],
-    "body_zh": [
-      "大通银行和美联航提供一套联名信用卡，其中免年费的选项是 United Gateway℠ 卡。使用该卡搭乘符合条件的美联航航班可赚取 5 倍总里程，购买所有其他符合条件的美联航消费可赚取 2 倍里程，购买其他旅行消费可赚取 2 倍里程，包括在加油站以及当地交通和通勤消费。",
-      "当您乘坐美联航航班时，美联航网关卡还可以为您提供额外福利，但其中一些福利需要达到该卡的年度消费限额。这是我对联合网关卡的深入评论，所以让我们深入了解该卡的详细信息，以及我认为下面的好处是否值得。",
-      "链接：了解有关 United Gateway℠ 卡的更多信息",
-      "2026 年 10 月联合航空网关卡摘要和关键详细信息",
-      "在分享我对 United Gateway 卡的完整想法之前，让我花点时间回顾一下顶级细节，包括该卡的欢迎奖金、福利和奖励结构。",
-      "United Gateway 卡迎新优惠：在帐户开设的前 3 个月内消费满 1,000 美元即可赢取 40,000 英里奖励里程。此外，自购买账户开立之日起 12 个月内，年利率为 0%。了解更多。"
-    ],
-    "link": "https://onemileatatime.com/reviews/credit-cards/chase/united-gateway-card/",
+    "body_zh": [],
+    "link": "https://onemileatatime.com/deals/alaska-atmos-rewards-summit-card-bonus/",
     "source": "OMAAT",
-    "pub_ts": 1792507878.0,
-    "score": 10.4
+    "pub_ts": 1792594161.0,
+    "score": 10.39
   },
   {
-    "title_en": "Eurowings and Wizz Air drive Berlin Brandenburg’s winter expansion",
-    "title_zh": "欧洲之翼航空和威兹航空推动柏林勃兰登堡的冬季扩张",
-    "summary": "Berlin Brandenburg Airport will offer 140 destinations in 50 countries during its winter 2026/27 timetable, around ten more than in the previous season. Approximately 70 airlines will operate between 25 October 2026 and 27 March 2027, with Eurowings and Wizz A",
-    "summary_zh": "柏林勃兰登堡机场在 2026/27 年冬季时刻表中将开通 50 个国家的 140 个目的地，比上一季增加约 10 个目的地",
+    "title_en": "Best-Ever Citi AAdvantage Executive Card 125K Bonus Miles Offer Ends Soon",
+    "title_zh": "史上最佳花旗AAdvantage行政卡12.5万奖励里程优惠即将结束",
+    "summary": "The Citi AAdvantage Executive Card is offering a limited-time bonus of 125,000 AAdvantage miles after spending $15,000 in five months.",
+    "summary_zh": "Citi AAdvantage Executive Card在五个月内消费$ 15,000后，将提供125,000 AAdvantage里程的限时奖励。",
     "body_en": [
-      "Berlin Brandenburg Airport will offer 140 destinations in 50 countries during its winter 2026/27 timetable, around ten more than in the previous season. Approximately 70 airlines will operate between 25 October 2026 and 27 March 2027, with Eurowings and Wizz Air expanding their networks. Eurowings will serve 40 destinations in 17 countries. From 2 November, […]"
+      "We’re currently seeing a huge limited time welcome bonus on the Citi® / AAdvantage® Executive World Legend Mastercard® . I’ve just received word that this welcome offer ends soon, so if you’re interested in applying with this offer, now is the time to do so.",
+      "This limited time welcome bonus comes just shortly after the AAdvantage Executive Card has undergone a refresh — while the card’s fee has gone up (from $595 to $695 per year), the value has potentially increased as well. Regardless of the welcome offer, this is a genuinely rewarding card, which offers lounge access, bonus Loyalty Points, and much more.",
+      "The Citi Executive Card is a product that I’ve personally had for years. In this post, I’d like to recap the details of this bonus, as this is the ideal time to apply.",
+      "Link: Learn more about the Citi® / AAdvantage® Executive World Legend Mastercard®",
+      "Citi AAdvantage Executive Card 125K miles welcome offer",
+      "The Citi AAdvantage Executive Card is offering a limited time welcome bonus of 125,000 AAdvantage bonus miles after making $15,000 in purchases within the first five months of account opening, and this offer ends soon. This is the highest-ever offer that we’ve seen on the card.",
+      "Based on my latest miles & points valuations , AAdvantage miles are worth 1.5 cents each, so to me that bonus is worth $1,875. There are some incredible uses of American AAdvantage miles , so you can redeem this for experiences like Etihad’s A350 business class or Qatar Airways’ A350 business class ."
     ],
-    "body_zh": [
-      "柏林勃兰登堡机场在 2026/27 年冬季时刻表中将开通 50 个国家的 140 个目的地，比上一季增加约 10 个目的地。大约有 70 家航空公司将在 2026 年 10 月 25 日至 2027 年 3 月 27 日期间运营，欧洲之翼航空和维兹航空将扩大其网络。欧洲之翼航空将飞往 17 个国家的 40 个目的地。从 11 月 2 日起，[…]"
-    ],
-    "link": "https://www.aviation24.be/airports/berlin/eurowings-and-wizz-air-drive-berlin-brandenburgs-winter-expansion/",
-    "source": "Aviation24",
-    "pub_ts": 1792507077.0,
-    "score": 10.36
-  },
-  {
-    "title_en": "Discover Airlines adds Edmonton and Belize, takes over Seattle routes",
-    "title_zh": "探索航空新增埃德蒙顿和伯利兹航线，并接管西雅图航线",
-    "summary": "Discover Airlines will add Edmonton and Belize City to its Frankfurt network in 2027 and take over Lufthansa’s Seattle services from both Frankfurt and Munich. The Lufthansa Group leisure carrier will also expand its Munich-based fleet. Frankfurt–Edmonton flig",
-    "summary_zh": "探索航空将于 2027 年将埃德蒙顿和伯利兹城纳入其法兰克福网络，并从法兰克福和伯利兹城接管汉莎航空的西雅图航班。",
-    "body_en": [
-      "Discover Airlines will add Edmonton and Belize City to its Frankfurt network in 2027 and take over Lufthansa’s Seattle services from both Frankfurt and Munich. The Lufthansa Group leisure carrier will also expand its Munich-based fleet. Frankfurt–Edmonton flights will launch on 1 June 2027, operating three times weekly on Tuesdays, Thursdays and Saturdays. Discover says […]"
-    ],
-    "body_zh": [
-      "探索航空将于 2027 年将埃德蒙顿和伯利兹城纳入其法兰克福网络，并接管汉莎航空从法兰克福和慕尼黑飞往西雅图的航班。汉莎集团休闲航空公司还将扩大其位于慕尼黑的机队。法兰克福 - 埃德蒙顿航班将于 2027 年 6 月 1 日开通，每周运营 3 趟，周二、周四和周六。发现说[...]"
-    ],
-    "link": "https://www.aviation24.be/airlines/lufthansa-group/discover-airlines/discover-airlines-adds-edmonton-and-belize-takes-over-seattle-routes/",
-    "source": "Aviation24",
-    "pub_ts": 1792506240.0,
+    "body_zh": [],
+    "link": "https://onemileatatime.com/deals/citi-aadvantage-executive-card-bonus/",
+    "source": "OMAAT",
+    "pub_ts": 1792592553.0,
     "score": 10.33
   },
   {
-    "title_en": "Engine fire forces emergency evacuation of a LATAM A320 in Lima",
-    "title_zh": "利马一架 LATAM A320 发动机消防部队紧急疏散",
-    "summary": "A LATAM Airlines Airbus A320 aircraft, registration CC-BFS, had to be evacuated due to an engine fire while… The post Engine fire forces emergency evacuation of a LATAM A320 in Lima appeared first on AeroTime .",
-    "summary_zh": "一架 LATAM 航空公司的空客 A320 飞机（注册号为 CC-BFS）因发动机起火而不得不撤离，同时……发动机起火后迫使紧急撤离",
+    "title_en": "Why The B-21 Raider's Flying-Wing Shape Creates Unique Design Tradeoffs",
+    "title_zh": "为什么B-21突袭机的飞翼形状创造了独特的设计权衡",
+    "summary": "A deep dive into the engineering and tactics that shaped the 'Dorito of Doom.'",
+    "summary_zh": "深入探索塑造“末日多里托”的工程和战术。",
     "body_en": [
-      "A LATAM Airlines Airbus A320 aircraft, registration CC-BFS, had to be evacuated due to an engine fire while on the tarmac at Lima’s Jorge Chávez International Airport (LIM), Perú, on October 19, 2026.",
-      "The incident started when the aircraft was taxiing towards the runway as it prepared to operate flight LA 2302, bound for the city of Piura (PIU) in northern Perú.",
-      "For reasons yet to be established, the CFM56 engine on the port side of the A320 then caught fire, with flames appearing to spread to the adjacent areas of the wing.",
-      "Despite the spectacular force of the fire, as reflected in a number of videos which have since emerged on social media, no one was injured in the incident.",
-      "All passengers and crew managed to safely evacuate the aircraft as the emergency services rushed to extinguish the fire. They were later reallocated to another flight in order to continue the journey towards their final destination.",
-      "A note issued by LATAM Airlines highlights that the emergency protocol was successfully activated and implemented. An investigation has been launched to determine the causes of the incident.",
-      "The post Engine fire forces emergency evacuation of a LATAM A320 in Lima appeared first on AeroTime ."
+      "The Northrop Grumman B-21 Raider is the world's first sixth-generation stealth bomber. Its low-observable flying-wing design represents a highly optimized compromise between extreme all-aspect stealth and endurance. Eliminating a traditional fuselage and tail removes the largest radar-reflecting surfaces, giving it 360-degree stealth across multiple radar bands. Furthermore, the unique aerodynamic efficiency of the 'Flying Dorito' unlocks massive unrefueled global combat ranges."
     ],
-    "body_zh": [
-      "2026 年 10 月 19 日，南美航空一架注册号为 CC-BFS 的空客 A320 飞机在秘鲁利马豪尔赫查韦斯国际机场 (LIM) 的停机坪上因发动机起火而不得不撤离。",
-      "事件发生时，飞机正准备运行飞往秘鲁北部皮乌拉市 (PIU) 的 LA 2302 航班，并滑向跑道。",
-      "由于尚未确定的原因，A320 左舷的 CFM56 发动机随后起火，火焰似乎蔓延到机翼的邻近区域。",
-      "尽管火灾威力惊人，正如社交媒体上出现的许多视频所反映的那样，但没有人在事件中受伤。",
-      "当紧急服务人员赶赴扑灭大火时，所有乘客和机组人员均设法安全撤离飞机。他们后来被重新分配到另一趟航班，以便继续前往最终目的地的旅程。",
-      "南美航空发布的一份说明强调，紧急协议已成功启动和实施。已展开调查以确定事件原因。"
+    "body_zh": [],
+    "link": "https://simpleflying.com/b21-raider-unique-design/",
+    "source": "Simple Flying",
+    "pub_ts": 1792591216.0,
+    "score": 10.27
+  },
+  {
+    "title_en": "Chase United Club Card Review: Is The Lounge Access Worth The Annual Fee?",
+    "title_zh": "大通美联航俱乐部卡评测：贵宾室使用权是否值得收取年费？",
+    "summary": "The United Club Card offers United Club lounge access, up to 100,000 bonus miles, free checked bags and PQP earning. Here's who it's best for and whether it's worth it.",
+    "summary_zh": "美联航俱乐部卡提供美联航俱乐部贵宾室使用权，最高可达100,000英里奖励里程，免费托运行李和PQP奖励。以下是它最适合谁以及是否",
+    "body_en": [
+      "The United Club℠ Card is the most premium co-branded credit card issued by United MileagePlus and Chase. The card has a $695 annual fee, and offers very strong perks, including United Club access, all kinds of travel perks, and credits that can offset the annual fee. The card unlocks the full value of MileagePlus, in terms of being able to earn and redeem miles. Best of all, the Chase United Club Credit Card has an excellent bonus, making it an ideal time to apply.",
+      "This post is in-depth Chase United Club Card review. So let’s take a look at all the United Club Credit Card benefits, and talk about whether the card is worth it or not.",
+      "Chase United Club Card summary & key details for October 2026",
+      "Before I get into my United Club Card review, here’s a quick overview of key details of the card:",
+      "United Club Card welcome offer: Earn 90,000 bonus miles after you spend $5,000 on purchases in the first 3 months from account opening., plus 10,000 bonus miles after you add an authorized user to your account in the first three months",
+      "United Club Card miles earning rate: 5x miles on United purchases and on hotel stays when you prepay directly through Renowned Hotels and Resorts, 2x miles on all other travel including airfare, trains, local transit, and more, 2x miles on dining, and 1x miles on all other purchases",
+      "United Club Card foreign transaction fee: None"
     ],
-    "link": "https://www.aerotime.aero/articles/engine-fire-forces-emergency-evacuation-of-a-latam-a320-in-lima",
+    "body_zh": [],
+    "link": "https://onemileatatime.com/reviews/credit-cards/chase/united-club-card/",
+    "source": "OMAAT",
+    "pub_ts": 1792589542.0,
+    "score": 10.21
+  },
+  {
+    "title_en": "Russian Su-30 fighter crashes in Kaliningrad, pilots eject",
+    "title_zh": "俄罗斯苏-30战斗机在加里宁格勒坠毁，飞行员弹射",
+    "summary": "A Russian Sukhoi Su-30 fighter jet crashed in the Kaliningrad region on October 21, 2026, during a scheduled… The post Russian Su-30 fighter crashes in Kaliningrad, pilots eject appeared first on AeroTime .",
+    "summary_zh": "一架俄罗斯苏-30战斗机于2026年10月21日在加里宁格勒地区坠毁，当时计划……俄罗斯苏-30战斗机坠毁",
+    "body_en": [
+      "A Russian Sukhoi Su-30 fighter jet crashed in the Kaliningrad region on October 21, 2026, during a scheduled training flight, the Russian Ministry of Defense has confirmed.",
+      "The crew ejected and was recovered by a ground search and rescue team. The pilots’ lives are not in danger, according to a ministry statement carried by state news agency TASS . The aircraft was flying without ammunition and crashed in an uninhabited area.",
+      "Kaliningrad, a Russian exclave on the Baltic Sea bordered by NATO members Lithuania and Poland, hosts several military airfields. Chernyakhovsk Air Base is home to the Baltic Fleet’s 4th Guards Naval Attack Aviation Regiment, which operates Su-30SM and Su-30SM2 fighters, while Chkalovsk Air Base hosts the 689th Guards Fighter Aviation Regiment, another operator of the Su-30SM2.",
+      "The reported crash site lies in the Chernyakhovsky district, where the Baltic Fleet’s Su-30s are based.",
+      "A Russian Su-30SM military aircraft has crashed in Kaliningrad region, Russian media report.",
+      "Both pilots managed to eject but have been hospitalized with injuries. https://t.co/7EbJn1xKZM",
+      "— Anton Gerashchenko (@Gerashchenko_en) October 21, 2026",
+      "Russian media outlets, citing unnamed sources, identified the aircraft as a Su-30SM and claimed that both pilots had sustained injuries.",
+      "According to Izvestia , the aircraft went down between the villages of Timofeevka and Zeleny Bor. Both crew members are said to have ejected before the crash and been taken to hospital."
+    ],
+    "body_zh": [],
+    "link": "https://www.aerotime.aero/articles/russian-su-30-fighter-crash-kaliningrad-pilots-eject",
     "source": "AeroTime",
-    "pub_ts": 1792505279.0,
-    "score": 10.29
+    "pub_ts": 1792589393.0,
+    "score": 10.2
   },
   {
-    "title_en": "Best Ways To Redeem Bilt Points (And The Redemptions To Skip)",
-    "title_zh": "兑换 Bilt 积分的最佳方式（以及跳过的兑换）",
-    "summary": "Bilt Rewards points can be redeemed for airline and hotel transfers, a home down payment, or travel bookings. Here's how to rank the options from best to worst.",
-    "summary_zh": "Bilt Rewards 积分可兑换航空公司和酒店接送、房屋首付或旅行预订。以下是如何对最佳选项进行排名",
+    "title_en": "Typhoon Champi Threatens Asian Hubs With Flight Cuts: Military Aviation Also Hit",
+    "title_zh": "台风Champi通过削减航班威胁亚洲枢纽：军用航空也受到打击",
+    "summary": "Japan Airlines has already axed flights at nine airports over the coming days.",
+    "summary_zh": "日本航空公司在未来几天已经削减了9个机场的航班。",
     "body_en": [
-      "Bilt is the platform that potentially helps people earn rewards on their housing payments , whether paying rent or a mortgage. However, Bilt goes way beyond that, and nowadays has quite the robust transferable points currency. In this post, I’d like to take a closer look at the basics of redeeming Bilt Points, and how to maximize value.",
-      "So that I don’t bury the lede, generally the best use of Bilt Points is to move them to the program’s airline and hotel partners, as this can offer the most outsized value. Bilt has some valuable and unique partners, and that’s what makes the ecosystem so lucrative.",
-      "Link: Apply for a Bilt credit card ( Rates & Fees ), with three options to choose from",
-      "The basic value proposition of Bilt’s credit card ecosystem",
-      "The easiest way to rack up Bilt Points is with the three co-branded credit cards, issued by Column N.A. and serviced by Cardless, including the no annual fee Bilt Blue Card ( learn more ), $95 annual fee Bilt Obsidian Card ( learn more ), and $495 Bilt Palladium Card ( learn more ) — read my Bilt credit card review and comparison ( Rates & Fees ). Not only do these cards earn points, but they also earn you Bilt Cash, which can be redeemed to earn even more points (up to $100 of Bilt Cash earned rolls over to the next year)."
+      "In the coming days, Typhoon Champi is expected to approach the coasts of eastern Asia. The tropical storm, which is described by such publications as the South China Morning Post as being the strongest of the year, is currently heading towards Taiwan and mainland China. Elsewhere in the region, it is thought that the storm may later hit the south of Japan, resulting in pre-emptive flight cancelations."
     ],
-    "body_zh": [
-      "Bilt 是一个潜在帮助人们通过住房付款（无论是支付租金还是抵押贷款）获得奖励的平台。然而，比尔特的用途远不止于此，如今它拥有相当强大的可转让积分货币。在这篇文章中，我想仔细研究一下兑换 Bilt 积分的基础知识，以及如何最大化价值。",
-      "为了避免埋葬lede，一般来说，Bilt 积分的最佳用途是将其转移到该计划的航空公司和酒店合作伙伴处，因为这可以提供最大的价值。 Bilt 拥有一些有价值且独特的合作伙伴，这就是生态系统如此有利可图的原因。",
-      "链接：申请 Bilt 信用卡（费率和费用），有三个选项可供选择",
-      "Bilt信用卡生态系统的基本价值主张"
-    ],
-    "link": "https://onemileatatime.com/guides/bilt-rewards-points/",
-    "source": "OMAAT",
-    "pub_ts": 1792503536.0,
-    "score": 10.22
+    "body_zh": [],
+    "link": "https://simpleflying.com/typhoon-champi-aviation-impact/",
+    "source": "Simple Flying",
+    "pub_ts": 1792588523.0,
+    "score": 10.17
   },
   {
-    "title_en": "Delta’s Free Wi-Fi Rollout Is 95% Complete, But Its Edge Over United Won’t Last Long",
-    "title_zh": "达美航空的免费 Wi-Fi 部署已完成 95%，但相对于美联航的优势不会持续太久",
-    "summary": "Delta says free Wi-Fi is now on nearly 1,300 aircraft, roughly 95% of flights, including Asia-Pacific routes. Full fleet coverage is promised by early 2027.",
-    "summary_zh": "达美航空表示，目前近 1,300 架飞机上提供免费 Wi-Fi，约占 95% 的航班，包括亚太航线。早期承诺全面覆盖机队",
+    "title_en": "Buy World Of Hyatt Points For 20% Off (2.08 Cents Each): Worth It?",
+    "title_zh": "购买World Of Hyatt积分可享八折优惠（每张2.08美分） ：物有所值？",
+    "summary": "World of Hyatt is selling points at a 20% discount through December 21, 2026, or 2.08 cents each. Here's when buying could still make sense.",
+    "summary_zh": "截至2026年12月21日，凯悦世界以20%的折扣或2.08美分的价格出售积分。在这里，购买仍然可能有意义。",
     "body_en": [
-      "In early 2023, Delta Air Lines started introducing free inflight Wi-Fi for SkyMiles members, in partnership with T-Mobile. While the airline was a decade behind JetBlue, this was pretty revolutionary among the “big three” US carriers. Unfortunately the actual rollout of free Wi-Fi didn’t go as fast as planned, and kept getting delayed.",
-      "There’s now a positive update , as Delta has shared that the rollout of free Wi-Fi is almost complete, and this latest update is particularly good for long haul travelers.",
-      "Delta now has free Wi-Fi on nearly 1,300 aircraft",
-      "In February 2023, Delta started slowly rolling out free Wi-Fi for SkyMiles members . This came as part of a project where Delta began installing Viasat Wi-Fi on a vast majority of aircraft, but obviously that doesn’t happen overnight.",
-      "So while Delta did a pretty good job of getting free Wi-Fi live on domestic flights, the rollout on long haul flights has been excruciatingly slow. That has left many Delta travelers frustrated, since some long haul flights have had huge coverage gaps.",
-      "That brings us to the positive news — Delta has now announced that free Wi-Fi is available on nearly 1,300 aircraft, operating roughly 95% of flights. The latest progress here is that free Wi-Fi is now available on Asia-Pacific routes, possible thanks to Viasat’s new satellites , which should boost coverage and bandwidth.",
-      "Delta is now promising full fleet connectivity by early 2027, as coverage extends to remaining Boeing 717s and Delta Connection Embraer regional jets, which are the only fleet types not consistently offering free Wi-Fi."
+      "World of Hyatt is offering a promotion on purchased points . With this, members can purchase points with up to a 20% discount, which is an opportunity to acquire them for 2.08 cents each. World of Hyatt is a useful points currency, and there’s definitely value to be had here for some, especially if you don’t have access to World of Hyatt points via transferable points currencies.",
+      "However, let me of course remind everyone that Hyatt recently introduced more dynamic award pricing , and in many cases it’s really bad for redemption values. Still, there are definitely ways to come out ahead while taking advantage of this offer, though everyone should crunch the numbers for themselves.",
+      "Link: Buy World of Hyatt points with this promotion for 20% off",
+      "Through 11:59PM ET on Monday, December 21, 2026, World of Hyatt is offering a 20% discount on purchased points. You can unlock this offer as long as you purchase at least 3,000 points in one transaction. If you purchase 1,000 or 2,000 points, you don’t receive any bonus.",
+      "Under normal circumstances, World of Hyatt charges 2.6 cents per purchased World of Hyatt point , inclusive of all taxes and fees. If you maxed out the promotion, you could purchase 110,000 World of Hyatt points for $2,288, which is a rate of 2.08 cents per World of Hyatt point.",
+      "Ordinarily, when Hyatt has a promotion on purchased points, the program offers either a 20-30% bonus or a 20-30% discount. So this is not at the top end of that range, though some bonus is better than no bonus!"
     ],
-    "body_zh": [
-      "2023 年初，达美航空与 T-Mobile 合作，开始为“飞凡里程常客计划”会员推出免费机上 Wi-Fi。虽然该航空公司落后捷蓝航空十年，但这在美国“三大”航空公司中是相当革命性的。不幸的是，免费 Wi-Fi 的实际推出并没有像计划的那么快，而且一直被推迟。",
-      "现在有一个积极的更新，达美航空表示免费 Wi-Fi 的推出已接近完成，而这一最新更新对于长途旅客来说尤其有利。",
-      "达美航空现已在近 1,300 架飞机上提供免费 Wi-Fi",
-      "2023 年 2 月，达美航空开始慢慢为“飞凡里程常客计划”会员推出免费 Wi-Fi。这是达美航空开始在绝大多数飞机上安装 Viasat Wi-Fi 项目的一部分，但显然这不是一朝一夕就能实现的。",
-      "因此，虽然达美航空在国内航班上提供免费 Wi-Fi 方面做得相当不错，但在长途航班上的推出却极其缓慢。这让许多达美航空旅客感到沮丧，因为一些长途航班的覆盖范围存在巨大差距。"
-    ],
-    "link": "https://onemileatatime.com/news/delta-free-wi-fi-rollout/",
+    "body_zh": [],
+    "link": "https://onemileatatime.com/deals/buy-world-of-hyatt-points/",
     "source": "OMAAT",
-    "pub_ts": 1792500834.0,
-    "score": 10.12
+    "pub_ts": 1792586045.0,
+    "score": 10.07
   },
   {
     "title_en": "BCA Special Edition Newsletter",
@@ -819,5 +643,104 @@
     "source": "Aviation Week",
     "pub_ts": 1753779514.0,
     "score": 10.0
+  },
+  {
+    "title_en": "Diamond V.MO",
+    "title_zh": "钻石V.MO",
+    "summary": "Diamond V.MO william.moore@… Wed, 07/02/2025 - 09:55 The V.MO is a lift and cruise eVTOL aircraft being developed by Diamond Aircraft Industries GmbH, a subsidiary of the Wanfeng Auto Holding Group. The aircraft design was originally developed by Volkswagen Ch",
+    "summary_zh": "<span>钻石 V.MO</span> <span><span lang=\"\" about=\"/users/william-moore-7\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"william.moore\">william.moore@…</span></span> <span><时间datetime=\"2025-07-02T09:55:06+00:00\" title=\"七月星期三",
+    "body_en": [
+      "The V.MO is a lift and cruise eVTOL aircraft being developed by Diamond Aircraft Industries GmbH, a subsidiary of the Wanfeng Auto Holding Group. The aircraft design was originally developed by Volkswagen China and was transferred to Diamond following a deal between the two companies in February 2024. A subscale prototype of the V.MO first flew in 2022. The full-scale aircraft design was unveiled at the Zhuhai Airshow in November 2024. No official certification plans have been announced. Structure and Powertrain The V.MO seats a pilot and four passengers in a streamlined cabin. The aircraft features a twin-boom connected by fore and aft wings, with eight vertical lift fans distributed along the booms. The aircraft features two pusher propellers, providing propulsion during wing-borne cruise flight. The aircraft features distributed electric propulsion (DEP), with each propeller powered by its own electric motor. This design approach provides high redundancy and reliability by eliminating critical points of failure. Specifications Aircraft Type Lift and Cruise eVTOL Seats Pilot + 4 MTOW 2,000–2,500 kg / 4,400–5,500 lb Range 200 km / 125 miles Cruising Speed 200 kph / 125 mph Propulsion 10 electric motors power 10 propellers (8 lift fans and 2 pusher propellers) Power/Energy Storage Battery details unknown. Flight Controls Fly-by-wire Takeoff & Landing VTOL Autonomy No"
+    ],
+    "body_zh": [
+      "V.MO是一款升降巡航电动垂直起降飞机，由万丰奥特控股集团子公司钻石飞机工业有限公司开发。该飞机设计最初由大众中国开发，并在两家公司于 2024 年 2 月达成协议后转让给 Diamond。V.MO 的小型原型机于 2022 年首飞。全尺寸飞机设计于 2024 年 11 月在珠海航展上亮相。目前尚未公布任何官方认证计划。结构和动力系统 V.MO 的流线型机舱内可容纳一名飞行员和四名乘客。该飞机具有由前后翼连接的双吊臂，沿吊臂分布有八个垂直升力风扇。该飞机配有两个推进式螺旋桨，在翼载巡航飞行期间提供推进力。该飞机采用分布式电力推进（DEP），每个螺旋桨均由自己的电动机提供动力。这种设计方法通过消除关键故障点来提供高冗余和可靠性。规格 飞机类型 升降和巡航 eVTOL 座椅 飞行员 + 4 个最大起飞重量 2,000–2,500 公斤/4,400–5,500 磅 航程 200 公里/125 英里 巡航速度 200 公里/小时/125 英里/小时 推进 10 个电动机为 10 个螺旋桨提供动力（8 个升力风扇和 2 个推进螺旋桨） 动力/储能电池详细信息未知。飞行控制 电传飞行起飞和着陆 VTOL 自主 否"
+    ],
+    "link": "https://aviationweek.com/node/4773341",
+    "source": "Aviation Week",
+    "pub_ts": 1751450106.0,
+    "score": 10.0
+  },
+  {
+    "title_en": "Zero Gravity ZG-T6",
+    "title_zh": "零重力ZG-T6",
+    "summary": "Zero Gravity ZG-T6 william.moore@… Wed, 07/02/2025 - 09:51 The ZG-T6 is a tiltrotor eVTOL concept being developed by Zero Gravity Aircraft Industry. It is designed for both passenger transport and urban air cargo missions and is set to enter into service in 20",
+    "summary_zh": "<span>零重力 ZG-T6</span> <span><span lang=\"\" about=\"/users/william-moore-7\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"william.moore\">william.moore@…</span></span> <span><time datetime=\"2025-07-02T09:51:25+00:00\" title=\"星期三",
+    "body_en": [
+      "The ZG-T6 is a tiltrotor eVTOL concept being developed by Zero Gravity Aircraft Industry. It is designed for both passenger transport and urban air cargo missions and is set to enter into service in 2028. Certification is expected to come from the Civil Aviation Authority of China (CAAC). Structure and Powertrain The aircraft is designed to seat one pilot and five passengers inside a carbon fiber composite cabin with panoramic wrap-around windows for enhanced visibility. It is equipped with six tiltrotors powered by six electric motors, allowing for vertical takeoff and landing, and forward flight. The tiltrotors are positioned on the ends of the V-tail, high wing, and low forewing. Distributed electric propulsion (DEP) is the name given to this method of powering aircraft. No critical points of failure provide a high level of redundancy and will ensure safety onboard. Specifications Aircraft Type Tiltrotor eVTOL Seats Pilot + 5 passengers MTOW 2,500 kg (5,512 lb) (Estimated) Range 300 km (186 miles) (Estimated) Cruising Speed 250 kph (155 mph) (Estimated) Flight Time 90 minutes (Estimated) Landing Gear Fixed tricycle wheeled landing gear Propulsion 6 tilt-propellers powered by 6 electric motors Power/Energy Storage Batteries – details unknown Flight Controls Fly-by-wire Takeoff & Landing VTOL Autonomy Planned for future operations Safety Emergency ballistic parachute"
+    ],
+    "body_zh": [
+      "ZG-T6 是零重力飞机工业公司正在开发的倾转旋翼电动垂直起降概念。它专为客运和城市航空货运任务而设计，计划于 2028 年投入使用。预计将获得中国民航局 (CAAC) 的认证。结构和动力系统 该飞机的碳纤维复合材料机舱内可容纳一名飞行员和五名乘客，并配有全景环绕式窗户，以提高视野。它配备了由六个电动机驱动的六个倾转旋翼机，可以垂直起降和向前飞行。倾转旋翼机位于 V 型尾翼、高机翼和低前翼的末端。分布式电力推进（DEP）是这种为飞机提供动力的方法的名称。无关键故障点提供高水平的冗余并确保船上安全。规格 飞机类型 倾转旋翼电动垂直起降 座位 飞行员 + 5 名乘客 最大起飞重量 2,500 公斤（5,512 磅）（估计） 航程 300 公里（186 英里）（估计） 巡航速度 250 公里/小时（155 英里/小时）（估计） 飞行时间 90 分钟（估计） 起落架 固定三轮式起落架 推进力 6 个倾斜螺旋桨，由 6 提供动力电动马达 动力/储能电池 – 详细信息未知 飞行控制 电传操纵起飞和着陆 VTOL 自主 计划未来操作 安全 紧急弹道降落伞"
+    ],
+    "link": "https://aviationweek.com/node/4773331",
+    "source": "Aviation Week",
+    "pub_ts": 1751449885.0,
+    "score": 10.0
+  },
+  {
+    "title_en": "Emirates Will Give You One Mile For Every Minute You Spend In Dubai",
+    "title_zh": "阿联酋航空将为您在迪拜度过的每一分钟提供一英里",
+    "summary": "Emirates Skywards is offering one bonus mile for every minute members spend in Dubai, but there's a cap of 7,200 miles, which you'd hit after five days.",
+    "summary_zh": "阿联酋航空Skywards会员每在迪拜消费一分钟可获得一英里奖励里程，但上限为7,200英里，五天后即可到达",
+    "body_en": [
+      "Emirates Skywards has just launched a creative promotion. I love when loyalty programs think outside the box, and this is the perfect example of that. Now, whether people actually want to visit Dubai right now is a different question…",
+      "Emirates’ creative “mile-a-minute” promotion details",
+      "Thanks to a limited time promotion , Emirates is offering Skywards members one mile for every minute they spend in Dubai:",
+      "This is valid for tickets booked between October 21 and November 5, 2026",
+      "This is valid for travel between October 21 and December 13, 2026",
+      "All Skywards members are eligible, but registration is required",
+      "The ticket must originate outside the UAE, with the Dubai stay lasting between 24 hours and 30 days",
+      "The ticket must book a ticket directly through Emirates or flydubai, and must be for roundtrip travel",
+      "The ticket must be eligible to earn Skywards miles, meaning that award tickets don’t qualify",
+      "The calculated length of stay is based on the ticketed itinerary — you can either have an extended stopover in Dubai (like flying New York to Dubai to Delhi), or you can make Dubai your destination (like flying New York to Dubai to New York)",
+      "While Emirates is an independently profitable airline, there’s no denying that a major incentive for the carrier is also to build up the economy of Dubai, and that largely comes in the form of encouraging people to visit. Keep in mind that the carrier also has the “My Emirates Pass” concept , where your Emirates boarding pass can unlock savings at retailers throughout the UAE."
+    ],
+    "body_zh": [],
+    "link": "https://onemileatatime.com/deals/emirates-mile-a-minute-promotion/",
+    "source": "OMAAT",
+    "pub_ts": 1792582387.0,
+    "score": 9.94
+  },
+  {
+    "title_en": "Air Canada's Leisure Airline Is Getting Seatback Screens, Recline & Free WiFi On Its Boeing 737 MAX 8s",
+    "title_zh": "加拿大航空公司的休闲航空公司在其波音737 MAX 8上安装了座椅靠背屏幕、躺椅和免费无线网络",
+    "summary": "Air Canada is undergoing a major fleet reshuffle, bringing updated 737 MAX aircraft into Air Canada Rouge. What does this mean for leisure travelers?",
+    "summary_zh": "加拿大航空公司正在进行重大机队重组，将更新的737 MAX飞机带入加拿大航空公司红色航空。这对休闲旅行者意味着什么？",
+    "body_en": [
+      "Leisure carriers will typically be the first to strip away passenger comforts to compress operating costs, relying on bare-bones seating and personal device streaming to keep overhead down. Air Canada has decided that this is not a necessity, deploying Boeing 737 MAX 8 aircraft into its leisure subsidiary, Air Canada Rouge , outfitted with full seatback entertainment screens, ergonomic recline, and complimentary high-speed connectivity."
+    ],
+    "body_zh": [],
+    "link": "https://simpleflying.com/air-canada-leisure-airline-seatback-screens-recline-free-wifi-boeing-737-max-8s/",
+    "source": "Simple Flying",
+    "pub_ts": 1792582216.0,
+    "score": 9.93
+  },
+  {
+    "title_en": "Leipzig airport plot raises wider concerns over security of European aviation",
+    "title_zh": "莱比锡机场阴谋引发对欧洲航空安全的广泛担忧",
+    "summary": "The failed drone attack targeting a Ukrainian Antonov cargo aircraft at Leipzig/Halle Airport has taken on a new significance following a report by The Wall Street Journal alleging that Russian President Vladimir Putin personally ordered an intensified sabotag",
+    "summary_zh": "针对莱比锡/哈雷机场一架乌克兰安东诺夫货运飞机的无人机袭击失败，在",
+    "body_en": [
+      "The failed drone attack targeting a Ukrainian Antonov cargo aircraft at Leipzig/Halle Airport has taken on a new significance following a report by The Wall Street Journal alleging that Russian President Vladimir Putin personally ordered an intensified sabotage campaign against NATO countries. Citing US intelligence reporting, the newspaper describes the August 4 incident as one […]"
+    ],
+    "body_zh": [],
+    "link": "https://www.aviation24.be/airlines/leipzig-airport-plot-raises-wider-concerns-over-security-of-european-aviation/",
+    "source": "Aviation24",
+    "pub_ts": 1792581862.0,
+    "score": 9.92
+  },
+  {
+    "title_en": "Is Singapore Airlines Better Than Cathay Pacific?",
+    "title_zh": "新加坡航空是否优于国泰航空？",
+    "summary": "In this video, we'll compare Singapore Airlines and Cathay Pacific's Premium Economy cabins, looking at everything from seats and baggage allowances to onboard service, fleet differences, and passenger experience to see where each airline stands.",
+    "summary_zh": "在本视频中，我们将比较新加坡航空公司和国泰航空的豪华经济舱，从座位和行李限额到",
+    "body_en": [
+      "Is Singapore Airlines Better Than Cathay Pacific?",
+      "In this video, we'll compare Singapore Airlines and Cathay Pacific's Premium Economy cabins, looking at everything from seats and baggage allowances to onboard service, fleet differences, and passenger experience to see where each airline stands."
+    ],
+    "body_zh": [],
+    "link": "https://simpleflying.com/video/is-singapore-airlines-better-than-cathay-pacific/",
+    "source": "Simple Flying",
+    "pub_ts": 1792580416.0,
+    "score": 9.87
   }
 ]

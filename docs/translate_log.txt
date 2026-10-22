@@ -1,5 +1,5 @@
 GITHUB_TOKEN: 已配置
-Google 通道探测: '波音 737'
+Google 通道探测: 不可用
 翻译中 ...
   (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
@@ -7,10 +7,6 @@ Google 通道探测: '波音 737'
   (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
-  (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
-  (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
-  (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
-  (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
@@ -23,19 +19,13 @@ Google 通道探测: '波音 737'
   (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
-  (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
-  (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
-  (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
-  (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
-  待翻正文 32 篇 / 89 段
-  (openai/gpt-4o-mini 正文调用失败: Expecting value: line 1 column 1 (char 0) )
-  (openai/gpt-4o-mini 正文调用失败: Expecting value: line 1 column 1 (char 0) )
+  待翻正文 30 篇 / 102 段
   (openai/gpt-4o-mini 正文调用失败: Expecting value: line 1 column 1 (char 0) )
   (openai/gpt-4o-mini 正文调用失败: Expecting value: line 1 column 1 (char 0) )
   (openai/gpt-4o-mini 正文调用失败: Expecting value: line 1 column 1 (char 0) )
@@ -96,9 +86,7 @@ Google 通道探测: '波音 737'
   (openai/gpt-4.1-mini 正文调用失败: Expecting value: line 1 column 1 (char 0) )
   (openai/gpt-4.1-mini 正文调用失败: Expecting value: line 1 column 1 (char 0) )
   (openai/gpt-4.1-mini 正文调用失败: Expecting value: line 1 column 1 (char 0) )
-  (openai/gpt-4.1-mini 正文调用失败: Expecting value: line 1 column 1 (char 0) )
-  (openai/gpt-4.1-mini 正文调用失败: Expecting value: line 1 column 1 (char 0) )
-  AI 整篇翻译正文 0/32 篇
+  AI 整篇翻译正文 0/30 篇
   (openai/gpt-4o-mini 逐段调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4o-mini 逐段调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4o-mini 逐段调用失败: Expecting value: line 1 column 1 (char 0))
@@ -129,6 +117,14 @@ Google 通道探测: '波音 737'
   (openai/gpt-4o-mini 逐段调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4o-mini 逐段调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4o-mini 逐段调用失败: Expecting value: line 1 column 1 (char 0))
+  (openai/gpt-4o-mini 逐段调用失败: Expecting value: line 1 column 1 (char 0))
+  (openai/gpt-4o-mini 逐段调用失败: Expecting value: line 1 column 1 (char 0))
+  (openai/gpt-4o-mini 逐段调用失败: Expecting value: line 1 column 1 (char 0))
+  (openai/gpt-4o-mini 逐段调用失败: Expecting value: line 1 column 1 (char 0))
+  (openai/gpt-4.1-mini 逐段调用失败: Expecting value: line 1 column 1 (char 0))
+  (openai/gpt-4.1-mini 逐段调用失败: Expecting value: line 1 column 1 (char 0))
+  (openai/gpt-4.1-mini 逐段调用失败: Expecting value: line 1 column 1 (char 0))
+  (openai/gpt-4.1-mini 逐段调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4.1-mini 逐段调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4.1-mini 逐段调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4.1-mini 逐段调用失败: Expecting value: line 1 column 1 (char 0))
@@ -160,7 +156,11 @@ Google 通道探测: '波音 737'
   (openai/gpt-4.1-mini 逐段调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4.1-mini 逐段调用失败: Expecting value: line 1 column 1 (char 0))
   AI 逐段翻译正文 0 篇
-  Google 逐段翻译 89/89 段
-  Google 逐段翻译正文 32 篇
-  兜底翻译：Google
-结果：中文标题 40/40，英文段落 145，中文段落 116
+  Google 逐段翻译连续失败 4 次，放弃
+  Google 逐段翻译 0/102 段
+  Google 逐段翻译正文 0 篇
+  MyMemory 逐段翻译 17/102 段（用掉 4251 字额度）
+  MyMemory 逐段翻译正文 6 篇
+  仍有 24 篇正文没翻出来
+  兜底翻译：MyMemory
+结果：中文标题 40/40，英文段落 162，中文段落 46

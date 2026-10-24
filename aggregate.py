@@ -34,7 +34,8 @@ except ImportError:
 # 配置区：想改来源、翻译目标、数量都在这里
 # ============================================================
 
-SOURCES = [
+# ---- 板块一：民航（全球）----
+SOURCES_AVIATION = [
     # (名称, RSS地址, 来源权重)
     # 权重反映权威性/影响力，直接参与热度计算
     ("Aviation Week",   "https://aviationweek.com/rss.xml",                5),
@@ -46,11 +47,50 @@ SOURCES = [
 ]
 
 # 这些词出现在标题里会提分（大新闻信号）
-HOT_WORDS = [
+HOT_WORDS_AVIATION = [
     "crash", "accident", "grounded", "crash-land", "emergency",
     "first flight", "delivery", "order", "orders", "launch",
     "bankrupt", "merger", "acquisition", "record", "banned",
     "delay", "delays", "strike", "fleet", "widebody",
+]
+
+# ---- 板块二：美国国内（时政为主，科技互联网为辅）----
+SOURCES_US = [
+    # 时政（权重高，保证排前面）
+    ("NPR Politics",  "https://feeds.npr.org/1014/rss.xml",                    5),
+    ("Politico",      "https://rss.politico.com/politics-news.xml",            5),
+    ("Guardian US",   "https://www.theguardian.com/us-news/rss",               5),
+    ("NYT Politics",  "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml", 5),
+    ("NBC News",      "https://feeds.nbcnews.com/nbcnews/public/news",         4),
+    ("CBS News",      "https://www.cbsnews.com/latest/rss/main",               4),
+    ("ABC Politics",  "https://abcnews.go.com/abcnews/politicsheadlines",      4),
+    ("CNN Politics",  "https://rss.cnn.com/rss/cnn_allpolitics.rss",           4),
+    ("NPR News",      "https://feeds.npr.org/1001/rss.xml",                    4),
+    ("The Hill",      "https://thehill.com/rss/syndicator/19109-176787",       3),
+    ("USA Today",     "https://rssfeeds.usatoday.com/usatoday-NewsTopStories", 3),
+    ("PBS NewsHour",  "https://www.pbs.org/newshour/feeds/rss/headlines",      3),
+    ("Axios",         "https://api.axios.com/feed/",                           3),
+    # 科技互联网（权重稍低，作为辅助）
+    ("The Verge",     "https://www.theverge.com/rss/index.xml",                3),
+    ("TechCrunch",    "https://techcrunch.com/feed/",                          3),
+    ("Ars Technica",  "https://arstechnica.com/feed/",                         3),
+    ("Wired",         "https://www.wired.com/feed/rss",                        3),
+]
+
+HOT_WORDS_US = [
+    "trump", "biden", "congress", "senate", "white house", "election",
+    "supreme court", "shutdown", "impeach", "indict", "verdict",
+    "governor", "campaign", "ballot", "lawsuit", "ruling", "subpoena",
+    "deportation", "immigration", "tariff", "fbi", "pentagon",
+    "state department", "openai", "semiconductor", "antitrust",
+]
+
+# 板块定义（顺序即界面顺序）
+SECTIONS = [
+    {"key": "aviation", "name": "民航资讯", "icon": "✈️",
+     "sources": SOURCES_AVIATION, "hot": HOT_WORDS_AVIATION},
+    {"key": "us",       "name": "美国要闻", "icon": "🇺🇸",
+     "sources": SOURCES_US,       "hot": HOT_WORDS_US},
 ]
 
 MAX_ITEMS      = 40        # 最终保留多少条
@@ -60,15 +100,17 @@ REQUEST_DELAY  = 0.4       # 抓取间隔（秒），对服务器友好
 
 # ---- 正文（全文）相关 ----
 BODY_LIMIT     = 7000      # 每篇英文正文最多保留多少字符（要够装下一篇完整报道）
-BODY_TRANSLATE = 4500      # 正文最多翻译多少字符
-BODY_PARA_MAX  = 16        # 每篇最多保留多少段
+BODY_TRANSLATE = 8000      # 正文最多翻译多少字符（跟上全文上限，中英段数才对得齐）
+BODY_PARA_MAX  = 20        # 每篇最多保留多少段
 BODY_MIN       = 900       # RSS 自带正文少于这个数，就去原网页抓全文
 BODY_MIN_SEG   = 3         # 或者段数少于这个数，也去抓全文（很多源只给一句话摘要）
 BODY_TIMEOUT   = 12        # 抓单个网页的超时（秒）
 NOISE_WORDS    = ("cookie", "subscribe", "newsletter", "sign up", "sign-up",
                   "advertisement", "follow us", "read more", "copyright",
                   "all rights reserved", "photo:", "getty", "share this",
-                  "click here", "terms of service", "privacy policy")
+                  "click here", "terms of service", "privacy policy",
+                  "add simple flying", "preferred source", "follow on google",
+                  "add to home screen", "continue reading")
 
 
 # ============================================================
@@ -217,12 +259,56 @@ def enrich_bodies(items):
     print(f"  成功补充 {got}/{len(need)} 篇")
 
 
-def collect():
-    """从所有源抓取文章，去重，算热度分。"""
+def _img_ok(url):
+    """过滤掉占位图、追踪像素之类的假图片。"""
+    u = (url or "").strip()
+    if not u.startswith("http"):
+        return ""
+    low = u.lower()
+    if any(x in low for x in ("pixel", "spacer", "1x1", "tracking",
+                              "beacon", ".svg", "gravatar")):
+        return ""
+    return u
+
+
+def pick_image(entry):
+    """从 RSS 条目里挑一张配图；没有就返回空字符串。
+
+    依次尝试 media:content → media:thumbnail → enclosure → 正文里的第一张图。
+    """
+    # ① 媒体扩展字段（大多数主流媒体都带）
+    for key in ("media_content", "media_thumbnail"):
+        for m in (entry.get(key) or []):
+            if not isinstance(m, dict):
+                continue
+            u = _img_ok(m.get("url") or "")
+            if u:
+                return u
+
+    # ② 附件
+    for en in (entry.get("enclosures") or []):
+        if "image" in ((en.get("type") or "").lower()):
+            u = _img_ok(en.get("href") or en.get("url") or "")
+            if u:
+                return u
+
+    # ③ 正文或摘要里的第一张图
+    raw = ""
+    if entry.get("content"):
+        raw = entry["content"][0].get("value", "") or ""
+    raw += " " + (entry.get("summary") or "")
+    m = re.search(r"(?is)<img[^>]+src=[\"']([^\"']+)[\"']", raw)
+    if m:
+        return _img_ok(m.group(1))
+    return ""
+
+
+def collect(sources, hot_words):
+    """从指定源抓取文章，去重，算热度分。"""
     seen = set()
     items = []
 
-    for name, url, weight in SOURCES:
+    for name, url, weight in sources:
         print(f"抓取 {name} ...")
         entries = fetch_feed(url)
         print(f"  得到 {len(entries)} 条")
@@ -261,7 +347,7 @@ def collect():
             freshness = 6 * math.exp(-age_hours / 30)
             # 标题信号词
             t_lower = title.lower()
-            signal = sum(2 for w in HOT_WORDS if w in t_lower)
+            signal = sum(2 for w in hot_words if w in t_lower)
 
             score = source_score + freshness + signal
 
@@ -272,6 +358,7 @@ def collect():
                 "summary_zh": "",
                 "body_en":  body_en,     # 英文正文段落
                 "body_zh":  [],          # 中文正文段落（翻译后填）
+                "img":      pick_image(e),
                 "link":     link,
                 "source":   name,
                 "pub_ts":   pub,
@@ -1119,11 +1206,16 @@ DETAIL_CSS = """
 """
 
 DETAIL_JS = """
-var DATA = __DATA__;
+var DATASETS = __DATA__;
+var SECTIONS = __SECTIONS__;
+var curSec = SECTIONS[0].key;
 var detail  = document.getElementById('detail');
 var dscroll = document.getElementById('dscroll');
 var list    = document.getElementById('scroll');
 var listPos = 0, cur = -1;
+
+/* 当前板块的数据（切换板块时自动跟着变） */
+function D(){ return DATASETS[curSec] || []; }
 
 function $(id){ return document.getElementById(id); }
 function put(id, v){ $(id).textContent = (v == null ? '' : v); }
@@ -1188,7 +1280,8 @@ function renderBody(d){
 }
 
 function render(i){
-  var d = DATA[i];
+  var d = D()[i];
+  if (!d) return;
   cur = i;
   put('d-title', d.zh || d.en);
 
@@ -1198,9 +1291,15 @@ function render(i){
 
   put('d-src',  d.src);
   put('d-time', d.t);
-  put('d-rank', (i + 1) + ' / ' + DATA.length);
+  put('d-rank', (i + 1) + ' / ' + D().length);
 
   put('d-en-title', d.en);
+
+  /* 顶部大图：有就显示，没有就整块收起来 */
+  var box = $('d-imgbox'), im = $('d-img');
+  if (d.img) { im.src = d.img; box.style.display = ''; }
+  else { im.src = ''; box.style.display = 'none'; }
+
   mode = 'both';
   syncSeg();
   renderBody(d);
@@ -1209,41 +1308,105 @@ function render(i){
   put('d-link', d.link);
 
   $('d-prev').disabled = (i <= 0);
-  $('d-next').disabled = (i >= DATA.length - 1);
+  $('d-next').disabled = (i >= D().length - 1);
 }
 
 function route(){
-  var m = /^#\\/n\\/(\\d+)$/.exec(location.hash || '');
+  var m = /^#\\/n\\/([a-z0-9]+)\\/(\\d+)$/.exec(location.hash || '');
   if (m) {
-    var i = parseInt(m[1], 10);
-    if (i >= 0 && i < DATA.length) {
-      if (!detail.classList.contains('open')) listPos = list.scrollTop;
-      render(i);
-      detail.classList.add('open');
-      detail.setAttribute('aria-hidden', 'false');
-      dscroll.scrollTop = 0;
-      if (document.title.indexOf('·') > 0) document.title = (DATA[i].zh || DATA[i].en).slice(0, 30);
-      return;
+    var sec = m[1];
+    if (DATASETS[sec]) {
+      if (sec !== curSec) switchSec(sec, true);
+      var i = parseInt(m[2], 10);
+      if (i >= 0 && i < D().length) {
+        if (!detail.classList.contains('open')) listPos = list.scrollTop;
+        render(i);
+        detail.classList.add('open');
+        detail.setAttribute('aria-hidden', 'false');
+        dscroll.scrollTop = 0;
+        document.title = (D()[i].zh || D()[i].en).slice(0, 30);
+        return;
+      }
     }
   }
   detail.classList.remove('open');
   detail.setAttribute('aria-hidden', 'true');
   list.scrollTop = listPos;
-  document.title = '民航资讯 · 每日热点';
+  document.title = '每日资讯 · 民航 & 美国要闻';
 }
 
 function go(i){
-  if (i < 0 || i >= DATA.length) return;
-  history.replaceState(null, '', '#/n/' + i);
+  if (i < 0 || i >= D().length) return;
+  history.replaceState(null, '', '#/n/' + curSec + '/' + i);
   render(i);
   dscroll.scrollTop = 0;
 }
 
-/* 点卡片进入详情 */
-document.getElementById('list').addEventListener('click', function(e){
-  var c = e.target.closest ? e.target.closest('.card') : null;
-  if (c) location.hash = '#/n/' + c.getAttribute('data-i');
-});
+/* ---- 板块切换 ---- */
+function buildFilters(){
+  var bar = $('filters');
+  var pane = document.getElementById('list-' + curSec);
+  var cards = pane ? pane.querySelectorAll('.card') : [];
+  var srcs = [];
+  for (var i = 0; i < cards.length; i++) {
+    if (srcs.indexOf(cards[i].dataset.source) < 0) srcs.push(cards[i].dataset.source);
+  }
+  bar.innerHTML = '<button class="f on" data-s="">全部</button>';
+  srcs.forEach(function(s){
+    var b = document.createElement('button');
+    b.className = 'f'; b.textContent = s; b.dataset.s = s;
+    b.onclick = function(){
+      var all = bar.querySelectorAll('.f');
+      for (var k = 0; k < all.length; k++) all[k].classList.toggle('on', all[k].dataset.s === s);
+      for (var j = 0; j < cards.length; j++) {
+        cards[j].style.display = (cards[j].dataset.source === s) ? 'flex' : 'none';
+      }
+    };
+    bar.appendChild(b);
+  });
+  bar.querySelector('[data-s=""]').onclick = function(){
+    var all = bar.querySelectorAll('.f');
+    for (var k = 0; k < all.length; k++) all[k].classList.toggle('on', !all[k].dataset.s);
+    for (var j = 0; j < cards.length; j++) cards[j].style.display = 'flex';
+  };
+}
+
+function switchSec(key, keepHash){
+  if (!DATASETS[key]) return;
+  curSec = key;
+  var tabs = document.querySelectorAll('.sectab');
+  for (var i = 0; i < tabs.length; i++) {
+    tabs[i].classList.toggle('on', tabs[i].getAttribute('data-sec') === key);
+  }
+  var panes = document.querySelectorAll('.listpane');
+  for (var j = 0; j < panes.length; j++) {
+    panes[j].classList.toggle('on', panes[j].id === 'list-' + key);
+  }
+  buildFilters();
+  if (!keepHash) {
+    detail.classList.remove('open');
+    detail.setAttribute('aria-hidden', 'true');
+    if (location.hash) history.replaceState(null, '', location.pathname);
+    list.scrollTop = 0;
+  }
+}
+
+var secbar = $('secbar');
+if (secbar) {
+  secbar.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('.sectab') : null;
+    if (b) switchSec(b.getAttribute('data-sec'), false);
+  });
+}
+
+/* 点卡片进入详情（每个板块各自监听） */
+var panesAll = document.querySelectorAll('.listpane');
+for (var pi = 0; pi < panesAll.length; pi++) {
+  panesAll[pi].addEventListener('click', function(e){
+    var c = e.target.closest ? e.target.closest('.card') : null;
+    if (c) location.hash = '#/n/' + curSec + '/' + c.getAttribute('data-i');
+  });
+}
 
 $('d-back').onclick = function(){
   if (history.length > 1) history.back();
@@ -1253,7 +1416,7 @@ $('d-prev').onclick = function(){ go(cur - 1); };
 $('d-next').onclick = function(){ go(cur + 1); };
 
 $('d-copy').onclick = function(){
-  var link = DATA[cur].link;
+  var link = D()[cur].link;
   var btn = $('d-copy'), old = btn.textContent;
   function done(){ btn.textContent = '已复制'; setTimeout(function(){ btn.textContent = old; }, 1400); }
   if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -1266,7 +1429,7 @@ $('d-copy').onclick = function(){
 var shareBtn = $('d-share');
 if (navigator.share) {
   shareBtn.onclick = function(){
-    navigator.share({ title: DATA[cur].zh || DATA[cur].en, url: DATA[cur].link }).catch(function(){});
+    navigator.share({ title: D()[cur].zh || D()[cur].en, url: D()[cur].link }).catch(function(){});
   };
 } else { shareBtn.style.display = 'none'; }
 
@@ -1281,7 +1444,7 @@ if (segbar) {
     if (b && cur >= 0) {
       mode = b.getAttribute('data-m');
       syncSeg();
-      renderBody(DATA[cur]);
+      renderBody(D()[cur]);
     }
   });
 }
@@ -1291,36 +1454,51 @@ route();
 """
 
 
-def build_html(items):
+def build_html(sections_out):
+    """sections_out: [(板块配置, 该板块的新闻列表), ...]"""
     now = datetime.now(tz=timezone(timedelta(hours=8)))
     updated = now.strftime("%Y年%m月%d日 %H:%M")
 
-    data_js = []
-    cards = []
-    for idx, it in enumerate(items):
-        label, level = hot_label(it["score"])
-        label_html = (f'<span class="hot hot{level}">{label}</span>'
-                      if label else '<span class="hot hot0"></span>')
-        # 双保险：中文字段为空时一律回退到英文原文，界面上绝不会出现空白标题
-        title   = it["title_zh"] or it["title_en"]
-        summary = it["summary_zh"] or it["summary"]
+    datasets = {}
+    panes = []
+    sec_meta = []
 
-        data_js.append({
-            "zh":     it["title_zh"] or it["title_en"],
-            "en":     it["title_en"],
-            "sum":    it["summary_zh"] or it["summary"],
-            "ensum":  it["summary"],
-            "body":   it.get("body_zh") or [],
-            # 英文段落跟中文段落取同样长度，对照时才不会末尾挂一串「未翻译」
-            "enbody": (it.get("body_en") or [])[:len(it.get("body_zh") or []) or 12],
-            "src":    it["source"],
-            "t":      fmt_time(it["pub_ts"]),
-            "link":   it["link"],
-            "hot":    label,
-            "lv":     level,
-        })
+    for pos, (sec, items) in enumerate(sections_out):
+        key = sec["key"]
+        data_js = []
+        cards = []
+        for idx, it in enumerate(items):
+            label, level = hot_label(it["score"])
+            label_html = (f'<span class="hot hot{level}">{label}</span>'
+                          if label else '<span class="hot hot0"></span>')
+            # 双保险：中文字段为空时一律回退到英文原文，界面上绝不会出现空白标题
+            title   = it["title_zh"] or it["title_en"]
+            summary = it["summary_zh"] or it["summary"]
+            img     = it.get("img") or ""
 
-        cards.append(f"""
+            data_js.append({
+                "zh":     it["title_zh"] or it["title_en"],
+                "en":     it["title_en"],
+                "sum":    it["summary_zh"] or it["summary"],
+                "ensum":  it["summary"],
+                "body":   it.get("body_zh") or [],
+                # 英文段落跟中文段落取同样长度，对照时才不会末尾挂一串「未翻译」
+                "enbody": (it.get("body_en") or [])[:len(it.get("body_zh") or []) or 12],
+                "src":    it["source"],
+                "t":      fmt_time(it["pub_ts"]),
+                "link":   it["link"],
+                "img":    img,
+                "hot":    label,
+                "lv":     level,
+            })
+
+            # 图片加载失败就整块隐藏，不留空白框
+            thumb = (f'<div class="thumb"><img src="{html.escape(img)}" alt="" '
+                     f'loading="lazy" referrerpolicy="no-referrer" '
+                     f'onerror="this.parentNode.style.display=\'none\'"></div>'
+                     if img else '')
+
+            cards.append(f"""
 <article class="card" data-i="{idx}" data-source="{html.escape(it['source'])}" role="button" tabindex="0">
   <div class="rank">{idx + 1}</div>
   <div class="body">
@@ -1332,15 +1510,33 @@ def build_html(items):
     <h2 class="title">{html.escape(title)}</h2>
     {f'<p class="sum">{html.escape(summary)}</p>' if summary else ''}
   </div>
+  {thumb}
   <div class="go">›</div>
 </article>""")
 
-    cards_html = "\n".join(cards) if cards else \
-        '<div class="empty">今天暂时没有抓取到新闻，明天再来。</div>'
+        cards_html = "\n".join(cards) if cards else \
+            '<div class="empty">这个板块今天没抓到新闻，明天再来。</div>'
+        panes.append(
+            f'<div class="listpane{" on" if pos == 0 else ""}" id="list-{key}">\n'
+            f'{cards_html}\n</div>')
+        datasets[key] = data_js
+        sec_meta.append({"key": key, "name": sec["name"], "icon": sec["icon"]})
 
-    payload = json.dumps(data_js, ensure_ascii=False, separators=(",", ":"))
+    tabs = "\n".join(
+        f'    <button class="sectab{" on" if i == 0 else ""}" data-sec="{s["key"]}">'
+        f'{s["icon"]} {s["name"]}</button>'
+        for i, s in enumerate(sec_meta))
+
+    payload = json.dumps(datasets, ensure_ascii=False, separators=(",", ":"))
     payload = payload.replace("</", "<\\/").replace("<!--", "<\\!--")
-    js = DETAIL_JS.replace("__DATA__", payload)
+    sec_payload = json.dumps(sec_meta, ensure_ascii=False, separators=(",", ":"))
+    js = (DETAIL_JS.replace("__DATA__", payload)
+                   .replace("__SECTIONS__", sec_payload))
+
+    panes_html = "\n".join(panes)
+    footers = " ｜ ".join(
+        f'{sec["name"]}：{" / ".join(n for n, _, _ in sec["sources"][:6])}'
+        for sec, _ in sections_out)
 
     return f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -1350,8 +1546,8 @@ def build_html(items):
 <meta name="theme-color" content="#F6F7F9">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="民航资讯">
-<title>民航资讯 · 每日热点</title>
+<meta name="apple-mobile-web-app-title" content="每日资讯">
+<title>每日资讯 · 民航 & 美国要闻</title>
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-180.png">
 <style>
@@ -1379,6 +1575,23 @@ body{{background:var(--bg);color:var(--text);
 }}
 .topbar h1{{margin:0;font-size:26px;font-weight:800;letter-spacing:.3px}}
 .topbar .sub{{font-size:12px;color:var(--sub);margin-top:3px}}
+
+/* 板块切换（顶部，像新闻 App 那样） */
+.segtop{{display:flex;gap:4px;background:var(--sep);border-radius:11px;padding:3px}}
+.sectab{{
+  flex:1;border:0;background:transparent;padding:9px 4px;border-radius:9px;
+  font-family:inherit;font-size:14.5px;font-weight:600;color:var(--sub);
+  transition:background .18s,color .18s;
+}}
+.sectab.on{{background:var(--card);color:var(--text);box-shadow:0 1px 4px rgba(0,0,0,.10)}}
+.listpane{{display:none}}
+.listpane.on{{display:block}}
+
+/* 列表配图 / 详情大图 */
+.thumb{{flex:none;width:76px;height:76px;margin-left:9px;border-radius:9px;overflow:hidden;background:var(--sep)}}
+.thumb img{{width:100%;height:100%;object-fit:cover;display:block}}
+.dimg{{margin:0 0 14px;border-radius:12px;overflow:hidden;background:var(--sep)}}
+.dimg img{{width:100%;display:block;max-height:230px;object-fit:cover}}
 
 /* 内容 */
 .scroll{{position:fixed;top:calc(var(--safe-t) + 64px);bottom:0;left:0;right:0;
@@ -1423,7 +1636,9 @@ body{{background:var(--bg);color:var(--text);
 <body>
 
 <div class="topbar">
-  <h1>民航资讯</h1>
+  <div class="segtop" id="secbar">
+{tabs}
+  </div>
   <div class="sub">每日自动更新 · 更新于 {updated}</div>
 </div>
 
@@ -1431,10 +1646,8 @@ body{{background:var(--bg);color:var(--text);
   <div class="filters" id="filters">
     <button class="f on" data-s="">全部</button>
   </div>
-  <div id="list">
-{cards_html}
-  </div>
-  <div class="footer">来源：{" / ".join(n for n,_,_ in SOURCES)}</div>
+{panes_html}
+  <div class="footer">{footers}</div>
 </div>
 
 <!-- 二级页面：新闻详情 -->
@@ -1454,6 +1667,11 @@ body{{background:var(--bg);color:var(--text);
         <span id="d-time"></span>
       </div>
       <h1 class="dtitle" id="d-title"></h1>
+
+      <div class="dimg" id="d-imgbox" style="display:none">
+        <img id="d-img" alt="" referrerpolicy="no-referrer"
+             onerror="this.parentNode.style.display='none'">
+      </div>
 
       <div class="orgtitle" id="d-en-title"></div>
 
@@ -1482,29 +1700,8 @@ body{{background:var(--bg);color:var(--text);
 </div>
 
 <script>
-// 来源筛选
-(function(){{
-  const srcs = [...new Set([...document.querySelectorAll('.card')].map(c => c.dataset.source))];
-  const bar = document.getElementById('filters');
-  srcs.forEach(s => {{
-    const b = document.createElement('button');
-    b.className = 'f'; b.textContent = s; b.dataset.s = s;
-    b.onclick = () => {{
-      document.querySelectorAll('.f').forEach(x => x.classList.toggle('on', x.dataset.s === s));
-      document.querySelectorAll('.card').forEach(c => {{
-        c.style.display = (c.dataset.source === s) ? 'flex' : 'none';
-      }});
-    }};
-    bar.appendChild(b);
-  }});
-  bar.querySelector('[data-s=""]').onclick = () => {{
-    document.querySelectorAll('.f').forEach(x => x.classList.toggle('on', !x.dataset.s));
-    document.querySelectorAll('.card').forEach(c => c.style.display = 'flex');
-  }};
-}})();
-</script>
-<script>
 {js}
+buildFilters();
 </script>
 </body>
 </html>"""
@@ -1513,8 +1710,8 @@ body{{background:var(--bg);color:var(--text);
 ICON_B64 = "iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAADtElEQVR42u3dQXIaSRRF0cqM2gcsTl4VLE5aCR44HPZASAioIv/Lc4fdEW21OHr86rDptozS2/tlUd3OxzbCl9EAVhLwBrGScDeIlYS7gawk2A1kJcHuMOulPdlMA1lJa91hVtJad5iVhLqBrKQTpMOspLXuMCsJdYdZSai775aS6s/+CZFeudIdZiWh7jArCbUbWpPc0NZZBVe6w6wk1E4OhZ8c1lmFV9pCK3ihrbOKr7SFVvgNLUWAdm4o4Oyw0HJySGODdm4o5Oyw0Dt1OR18E5wcEtDDrrOV3gO0+1lBd7SF3vl2ttJODgnoEdfZSgMtAT3yOltpoCWgR15nAQ2+gIYUaPkBAFpwAi0/CEBDKaAFtPZeZwsPtAT0yLezlQZaAnrkRbXSQEtAj7ykVhpoCWgBLQEtAS0BLaAloCWgJaAloAW0BLQEtAS0BLSAloCWgJaAloAW0BLQEtAS0BLQAloCOr89Pnvucjr4jLs7asvb+8W3YRzIV1+oXx9eAKDrQwYb6EjIYAMdCRlsD4XRD2IeHC10LAprPTno1HWbGfaUoGd5m54RdofZM4GFBtliAw0y2ECDDPbcN7Tf1DP3D33MQkNsrSNAgwx2BGiQwY4ADTLYEaBBBvuWOsy69TWo8DoMvdAgW+yIhfbfkr1rRiw0xNY6AjTIYEeABhnsKW5o6d5W34L71mfrd5f/V847GdBRtyHcQMc8tX/3tQEOdCnA1hvoaMDWG+hoxIBPAtqnCM15nqwAw50EfIVYScBXgJV0nqwAK2m9V4iVtN4rwEpa7w6zkl5Tv31UUQEtoCWgJaAloAW0BLQEtG7LH6cCOg4b1EBvDmxvZFADHQfLp7ECHYkJaqDjAFlroCPRQA10HBRrDXQkDqiBjgNhrf8U8//6HgnyZ38M6XI6XP3re/z6s+TTR3dCdO3v+/RQoMsgfuSfBzfQJRF/9+uADXTUTWq1f/pQuCzLrA+GXwEZ/cGq8te+Wedjs9BFIVhuJ0fsmsH9rw6zf6c80Odj82al6vfz9AstJ4dUBLSzQ8XPDQstJ4dUB7SzQ4XPDQutCU4OK62i62yhNclDoZVWwXX+eqGhVjHMTg5NcnJYaRVc59sWGmoVwXz7yQG1CmB2Q2uyG9pKq9A6/3yhodbAmO87OaDWoJiX5e/nctzbxB/0qLEgP+eh0FprIMyPg4ZaA2F+/ORwgmgQyM9baGutgcxsB9Ba6wXjt/2igq0d38X3PRHghnjjXnfzwg1xFGjAAd6g36rs1XqMajeMAAAAAElFTkSuQmCC"
 
 MANIFEST = {
-    "name": "民航资讯 · 每日热点",
-    "short_name": "民航资讯",
+    "name": "每日资讯 · 民航 & 美国要闻",
+    "short_name": "每日资讯",
     "start_url": "./index.html",
     "scope": "./",
     "display": "standalone",
@@ -1554,35 +1751,47 @@ def prev_has_chinese():
 def main():
     os.makedirs("docs", exist_ok=True)
 
-    items = collect()
-    print(f"\n共采集 {len(items)} 条")
+    log("GITHUB_TOKEN: " + ("已配置" if os.environ.get("GITHUB_TOKEN") else "缺失"))
+    probe = _translate_google("Boeing 737", sl="en", timeout=10)
+    log("Google 通道探测: " + (repr(probe) if probe else "不可用"))
 
-    if items:
-        enrich_bodies(items)        # 摘要不够长的，去原网页补全文
-        log("GITHUB_TOKEN: " + ("已配置" if os.environ.get("GITHUB_TOKEN") else "缺失"))
-        probe = _translate_google("Boeing 737", sl="en", timeout=10)
-        log("Google 通道探测: " + (repr(probe) if probe else "不可用"))
-        log("翻译中 ...")
-        translate_items(items)
+    sections_out = []
+    zh_total = 0
+    for sec in SECTIONS:
+        print(f"\n===== 板块：{sec['name']} =====")
+        items = collect(sec["sources"], sec["hot"])
+        print(f"共采集 {len(items)} 条")
+        if items:
+            enrich_bodies(items)        # 摘要不够长的，去原网页补全文
+            log("翻译中 ...")
+            translate_items(items)
+        zh_total += sum(1 for it in items if has_cn(it.get("title_zh", "")))
+        sections_out.append((sec, items))
 
     # 防退化：这次一条都没翻成功、而上一版是中文时，
     # 保留上一版网页不动，绝不把网站打回纯英文
-    zh_n = sum(1 for it in items if has_cn(it.get("title_zh", "")))
-    if items and zh_n == 0 and prev_has_chinese():
+    total_items = sum(len(items) for _, items in sections_out)
+    if total_items and zh_total == 0 and prev_has_chinese():
         print("！本次翻译全部失败，保留上一版中文网页，不覆盖")
     else:
-        out = build_html(items)
+        out = build_html(sections_out)
         with open("docs/index.html", "w", encoding="utf-8") as f:
             f.write(out)
-        # 保存原始数据，方便以后做 API 或历史记录
-        with open("docs/data.json", "w", encoding="utf-8") as f:
-            json.dump(items, f, ensure_ascii=False, indent=2)
+        # 分板块保存原始数据（data.json 保持民航，向后兼容）
+        for sec, items in sections_out:
+            name = "data.json" if sec["key"] == "aviation" else f"{sec['key']}.json"
+            with open(os.path.join("docs", name), "w", encoding="utf-8") as f:
+                json.dump(items, f, ensure_ascii=False, indent=2)
         print(f"已生成 docs/index.html（{len(out)} 字符）")
 
     # 统计一下这轮的翻译成果，一起写进日志
-    en_p = sum(len(it.get("body_en") or []) for it in items)
-    zh_p = sum(len([x for x in (it.get("body_zh") or []) if x.strip()]) for it in items)
-    log(f"结果：中文标题 {zh_n}/{len(items)}，英文段落 {en_p}，中文段落 {zh_p}")
+    for sec, items in sections_out:
+        en_p = sum(len(it.get("body_en") or []) for it in items)
+        zh_p = sum(len([x for x in (it.get("body_zh") or []) if x.strip()]) for it in items)
+        zh_t = sum(1 for it in items if has_cn(it.get("title_zh", "")))
+        img_n = sum(1 for it in items if it.get("img"))
+        log(f"结果[{sec['name']}]：{len(items)} 条，中文标题 {zh_t}，"
+            f"英文段落 {en_p}，中文段落 {zh_p}，配图 {img_n}")
 
     write_assets()
 

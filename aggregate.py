@@ -59,9 +59,11 @@ FETCH_PER_SRC  = 12        # 每个源最多取多少条
 REQUEST_DELAY  = 0.4       # 抓取间隔（秒），对服务器友好
 
 # ---- 正文（全文）相关 ----
-BODY_LIMIT     = 1600      # 每篇英文正文最多保留多少字符
-BODY_TRANSLATE = 1200      # 正文最多翻译多少字符（够翻完大部分段落，也避免输出超限）
-BODY_MIN       = 320       # RSS 自带的正文少于这个数，就去原网页抓全文
+BODY_LIMIT     = 7000      # 每篇英文正文最多保留多少字符（要够装下一篇完整报道）
+BODY_TRANSLATE = 4500      # 正文最多翻译多少字符
+BODY_PARA_MAX  = 16        # 每篇最多保留多少段
+BODY_MIN       = 900       # RSS 自带正文少于这个数，就去原网页抓全文
+BODY_MIN_SEG   = 3         # 或者段数少于这个数，也去抓全文（很多源只给一句话摘要）
 BODY_TIMEOUT   = 12        # 抓单个网页的超时（秒）
 NOISE_WORDS    = ("cookie", "subscribe", "newsletter", "sign up", "sign-up",
                   "advertisement", "follow us", "read more", "copyright",
@@ -122,22 +124,28 @@ def clean_html(text):
     return re.sub(r"\s+", " ", text).strip()
 
 
-def html_to_paragraphs(raw, limit=BODY_LIMIT, min_len=45):
+def html_to_paragraphs(raw, limit=BODY_LIMIT, min_len=45, max_paras=BODY_PARA_MAX):
     """把一段 HTML 变成干净的正文段落列表。
 
     会跳过脚本、广告、版权之类的噪声，只留像样的正文段落，
     并且总长度控制在 limit 以内，避免详情页塞进整本书。
+    插图（img/figcaption）只会被跳过，不会打断后面的正文提取。
     """
     if not raw:
         return []
-    # 去掉脚本、样式、图片、表单等无关区块
-    raw = re.sub(r"(?is)<(script|style|noscript|svg|figure|form|iframe|"
-                 r"nav|header|footer|aside)[^>]*>.*?</\1>", " ", raw)
+    # 去掉脚本、样式、表单等无关区块（figure 不整块删，里面的正文段落要留）
+    raw = re.sub(r"(?is)<(script|style|noscript|svg|form|iframe|"
+                 r"figcaption|nav|header|footer|aside)[^>]*>.*?</\1>", " ", raw)
+    # 先把网页源码里的排版换行压成空格，免得一个自然段被切成好几片
+    raw = re.sub(r"[ \t\r\f\v]*\n[ \t\r\f\v]*", " ", raw)
     # 段落/换行标记换成换行符，方便后面切段
     raw = re.sub(r"(?is)<(br|/p|/div|/h[1-6]|/li|p|div)[^>]*>", "\n", raw)
     raw = html.unescape(raw)
     raw = re.sub(r"<[^>]+>", " ", raw)
     raw = html.unescape(raw)
+
+    # 图片标签本身清掉，避免 alt 文字混进正文
+    raw = re.sub(r"(?is)<img[^>]*>", " ", raw)
 
     out, total = [], 0
     for piece in re.split(r"\n+", raw):
@@ -148,6 +156,8 @@ def html_to_paragraphs(raw, limit=BODY_LIMIT, min_len=45):
         if any(w in low for w in NOISE_WORDS):
             continue
         if total + len(p) > limit and out:
+            break
+        if len(out) >= max_paras:
             break
         out.append(p)
         total += len(p)
@@ -174,23 +184,37 @@ def enrich_bodies(items):
     有些源（Aviation24、Simple Flying）的 RSS 只给一句话摘要，
     这时直接去原网页把正文抓下来。抓不到就保持摘要，不影响其它流程。
     """
-    need = [it for it in items
-            if sum(len(p) for p in it.get("body_en", [])) < BODY_MIN]
+    need = []
+    for it in items:
+        paras = it.get("body_en") or []
+        # 字符太少、或只有一两段（很多源只给一句话摘要），都去原网页抓全文
+        if sum(len(p) for p in paras) < BODY_MIN or len(paras) < BODY_MIN_SEG:
+            need.append(it)
     if not need:
         return
     print(f"  补充抓取正文 {len(need)} 篇 ...")
-    got = 0
-    for it in need:
+
+    def grab(it):
         raw = fetch_article_html(it["link"])
         if not raw:
-            time.sleep(0.2)
-            continue
+            return 0
         paras = html_to_paragraphs(raw)
-        if sum(len(p) for p in paras) > sum(len(p) for p in it.get("body_en", [])):
+        if sum(len(p) for p in paras) > sum(len(p) for p in (it.get("body_en") or [])):
             it["body_en"] = paras
-            got += 1
-        time.sleep(0.2)
-    print(f"  成功补充 {got} 篇")
+            return 1
+        return 0
+
+    # 并发抓，别让 20 多篇串行下载拖慢整个流程
+    got = 0
+    try:
+        from concurrent.futures import ThreadPoolExecutor
+        with ThreadPoolExecutor(max_workers=6) as pool:
+            for r in pool.map(grab, need):
+                got += r
+    except Exception as e:
+        print(f"  (并发抓取失败，退回串行: {e})")
+        got = sum(grab(it) for it in need)
+    print(f"  成功补充 {got}/{len(need)} 篇")
 
 
 def collect():
@@ -267,6 +291,19 @@ def collect():
 CACHE_PATH = os.path.join("docs", "translate_cache.json")
 CACHE_MAX  = 5000          # 缓存最多保留多少条新闻的译文
 AI_MODELS  = ["openai/gpt-4o-mini", "openai/gpt-4.1-mini"]
+AI_DISABLED = False      # AI 探测失败后置 True，本次直接全走 Google，省掉上百次无效请求
+
+
+def probe_ai():
+    """先用两条短句探路：AI 不通就把 AI 全部跳过（日志已证实接口在 Actions 里不可用）。"""
+    global AI_DISABLED
+    for model in AI_MODELS:
+        got = _ai_batch(["Boeing 737", "Airbus A350"], model)
+        if got and any(has_cn(x) for x in got):
+            log(f"  AI 探测通过（{model}）")
+            return
+    log("  AI 探测失败，本次正文/标题全部走 Google 免费翻译")
+    AI_DISABLED = True
 AI_BATCH   = 10            # 每批翻译几条：太大易超时，太小请求多
 AI_ENDPOINT = "https://models.github.ai/inference/v1/chat/completions"
 
@@ -392,8 +429,8 @@ def _ai_batch(texts, model):
 
 def ai_translate(texts):
     """分批 + 多模型 + 重试。返回与 texts 等长的列表，失败的位置是 None。"""
-    if not texts:
-        return []
+    if not texts or AI_DISABLED:
+        return [None] * len(texts) if texts else []
     result = [None] * len(texts)
 
     for model in AI_MODELS:
@@ -524,8 +561,8 @@ def _ai_batch_body(blocks, model):
 
 def ai_translate_bodies(blocks, batch=1):
     """分批 + 多模型翻译正文。返回与 blocks 等长的列表，失败位置是 None。"""
-    if not blocks:
-        return []
+    if not blocks or AI_DISABLED:
+        return [None] * len(blocks) if blocks else []
     result = [None] * len(blocks)
 
     for model in AI_MODELS:
@@ -622,6 +659,8 @@ def ai_translate_paragraphs(packs):
     packs: [[段落, 段落, ...], ...]（一篇文章一个列表）
     返回同结构列表，整篇失败的位置是 None。
     """
+    if AI_DISABLED:
+        return [None] * len(packs) if packs else []
     flat, spans = [], []
     for paras in packs:
         spans.append((len(flat), len(flat) + len(paras)))
@@ -800,8 +839,14 @@ def translate_items(items):
         it["title_zh"] = c.get("t") if has_cn(c.get("t")) else ""
         it["summary_zh"] = c.get("s") if has_cn(c.get("s")) else ""
         cache_body = c.get("b") or ""
-        it["body_zh"] = ([p for p in cache_body.split("\n") if p.strip()]
-                         if has_cn(cache_body) else [])
+        # 注意：不能过滤空段，否则上次没翻出来的段会让后面所有段落错位
+        cached = cache_body.split("\n") if has_cn(cache_body) else []
+        cached_ok = sum(1 for p in cached if p.strip())
+        # 缓存段落明显比现在的正文少，说明上次没翻全，这次重翻
+        if cached and cached_ok >= max(1, int(len(it.get("body_en") or []) * 0.6)):
+            it["body_zh"] = cached
+        else:
+            it["body_zh"] = []
         if not it["title_zh"]:
             title_todo.append(it)
         if (it.get("summary") or "").strip() and not it["summary_zh"]:
@@ -811,6 +856,10 @@ def translate_items(items):
 
     hit = len(items) - len(title_todo)
     print(f"  缓存命中 {hit} 条，需新翻译 {len(title_todo)} 条")
+
+    # 开工前先探一次 AI 的路：不通就全程走 Google，别白耗几十次请求
+    if title_todo or sum_todo or body_todo:
+        probe_ai()
 
     # ① AI 翻译标题
     if title_todo:
@@ -1012,12 +1061,12 @@ DETAIL_CSS = """
   font-family:inherit;color:var(--text);cursor:pointer;transition:all .15s}
 .seg.on{background:var(--card);font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.08)}
 .para{margin-bottom:20px}
-.p-en{font-size:13.5px;line-height:1.72;color:var(--sub);margin-bottom:9px}
+.p-en{font-size:16.5px;line-height:1.8;color:var(--sub);margin-bottom:9px}
 .p-zh{font-size:16.5px;line-height:1.8;color:var(--text);padding-left:12px;
   border-left:3px solid var(--accent)}
 .p-zh.missing{font-size:12px;color:var(--sub);opacity:.65;border-left-color:var(--sep)}
 .p-zh-only{font-size:16.5px;line-height:1.8;margin:0 0 17px}
-.p-en-only{font-size:14.5px;line-height:1.75;color:var(--sub);margin:0 0 15px}
+.p-en-only{font-size:16.5px;line-height:1.8;color:var(--sub);margin:0 0 15px}
 .p-none{text-align:center;padding:30px 12px;color:var(--sub);font-size:14px}
 
 .dorig{background:var(--card);border:.5px solid var(--sep);border-radius:12px;padding:14px}

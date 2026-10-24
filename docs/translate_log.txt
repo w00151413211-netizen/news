@@ -4,10 +4,21 @@ Google 通道探测: '波音 737'
   (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
   AI 探测失败，本次正文/标题全部走 Google 免费翻译
-  待翻正文 28 篇 / 413 段
-  AI 整篇翻译正文 0/28 篇
+  待翻正文 9 篇 / 152 段
+  AI 整篇翻译正文 0/9 篇
   AI 逐段翻译正文 0 篇
-  Google 逐段翻译 401/413 段
-  Google 逐段翻译正文 28 篇
+  Google 逐段翻译 150/152 段
+  Google 逐段翻译正文 9 篇
   兜底翻译：Google
-结果：中文标题 40/40，英文段落 471，中文段落 448
+翻译中 ...
+  (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
+  (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
+  AI 探测失败，本次正文/标题全部走 Google 免费翻译
+  待翻正文 40 篇 / 541 段
+  AI 整篇翻译正文 0/40 篇
+  AI 逐段翻译正文 0 篇
+  Google 逐段翻译 541/541 段
+  Google 逐段翻译正文 40 篇
+  兜底翻译：Google
+结果[民航资讯]：40 条，中文标题 40，英文段落 522，中文段落 472，配图 23
+结果[美国要闻]：40 条，中文标题 40，英文段落 541，中文段落 541，配图 35

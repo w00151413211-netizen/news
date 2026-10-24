@@ -1,6 +1,6 @@
 {
-  "name": "民航资讯 · 每日热点",
-  "short_name": "民航资讯",
+  "name": "每日资讯 · 民航 & 美国要闻",
+  "short_name": "每日资讯",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

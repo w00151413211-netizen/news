@@ -1,22 +1,5 @@
 [
   {
-    "title_en": "Obama Issues Searing Attacks on Trump, Ramaswamy in Return to Campaign Trail",
-    "title_zh": "奥巴马重返赛场，与特朗普进行中期选举决斗",
-    "summary": "The 44th president appeared in Ohio on Saturday, kicking off a two-state swing with a rebuke of President Trump and Vivek Ramaswamy, the Republican nominee for governor.",
-    "summary_zh": "第 44 任总统将于周六出现在俄亥俄州和密歇根州，而特朗普总统将出现在佐治亚州。两人呈现出鲜明的对比",
-    "body_en": [
-      "Former President Barack Obama sharply criticized President Trump on Saturday in Ohio."
-    ],
-    "body_zh": [
-      "前总统巴拉克·奥巴马和特朗普总统将在同一天参加竞选活动。"
-    ],
-    "img": "https://static01.nyt.com/images/2026/10/24/multimedia/24pol-obama-trump-pqgh/24pol-obama-trump-pqgh-mediumSquareAt3X-v2.jpg",
-    "link": "https://www.nytimes.com/2026/10/24/us/politics/obama-trump-midterms-campaign.html",
-    "source": "NYT Politics",
-    "pub_ts": 1792885191.0,
-    "score": 19.89
-  },
-  {
     "title_en": "Trump, Who Once Called Early Voting ‘Ridiculous,’ Casts a Midterm Ballot",
     "title_zh": "曾称提前投票“荒谬”的特朗普投了中期选票",
     "summary": "The president voted at a polling station in Palm Beach County, Fla.",
@@ -31,7 +14,8 @@
     "link": "https://www.nytimes.com/2026/10/24/us/politics/trump-votes-early-midterm-elections.html",
     "source": "NYT Politics",
     "pub_ts": 1792878056.0,
-    "score": 19.51
+    "score": 19.25,
+    "grp": "main"
   },
   {
     "title_en": "Alaska Election Gambit Shows Justice Dept. Has Bowed to Trump’s Demands",
@@ -48,7 +32,8 @@
     "link": "https://www.nytimes.com/2026/10/24/us/politics/alaska-senate-election-trump-justice-department.html",
     "source": "NYT Politics",
     "pub_ts": 1792869671.0,
-    "score": 19.1
+    "score": 18.85,
+    "grp": "main"
   },
   {
     "title_en": "Ex-FBI employees charged with lying to Congress over Hunter Biden inquiries",
@@ -56,9 +41,6 @@
     "summary": "Republicans have long accused the FBI of mishandling the laptop and the investigations into the younger Biden.",
     "summary_zh": "共和党人长期以来一直指责联邦调查局对笔记本电脑和对年轻拜登的调查处理不当。",
     "body_en": [
-      "Two former FBI agents charged over Hunter Biden probes : NPR",
-      "Podcasts & Shows Expand/collapse submenu for Podcasts & Shows",
-      "Two former FBI agents charged over Hunter Biden probes Republicans have long accused the FBI of mishandling the laptop and the investigations into the younger Biden.",
       "Ex-FBI employees charged with lying to Congress over Hunter Biden inquiries",
       "Updated October 23, 2026 2:50 PM ET Originally published October 23, 2026 11:51 AM ET",
       "Hunter Biden, son of former President Joe Biden, seen in July 2024 in Washington, DC. Anna Moneymaker/Getty Images hide caption",
@@ -75,7 +57,10 @@
       "\"Yet today, the DOJ has accused her falsely of a crime on the say-so of politicians, not on the facts. It's no coincidence the government is filing these nonsense charges now, years later, on the eve of an election,\" they added.",
       "Agents search Rep. Omar's D.C. home; DOJ says it's part of criminal investigation",
       "The Post reported Hunter Biden's laptop showed wrongdoing by then-Democratic nominee Joe Biden, who subsequently won the election. Some of the data on the laptop was later ascertained to belong to Hunter Biden. House Republicans subsequently launched an impeachment inquiry into President Biden, focusing on Hunter Biden's business dealings at the time his father was vice president. But no evidence has ever been presented that Joe Biden financially gained from his son's business activities.",
-      "The complaint alleges that Benavides and Floris both had real-time knowledge of the Hunter Biden investigations, including into his laptop, in their top posts on the Foreign Influence Task Force."
+      "The complaint alleges that Benavides and Floris both had real-time knowledge of the Hunter Biden investigations, including into his laptop, in their top posts on the Foreign Influence Task Force.",
+      "But in interviews with the House Judiciary Committee in 2023, both of them allegedly lied about their knowledge and involvement in those investigations.",
+      "Those purported false statements were material to the committee's investigation, the complaint says, because they allowed both Benavides and Floris to \"escape\" further questioning about Hunter Biden, which hindered the panel's investigation.",
+      "NPR does not offer or accept money for coverage or interviews."
     ],
     "body_zh": [
       "两名前联邦调查局特工因亨特·拜登调查而被指控：NPR",
@@ -103,7 +88,26 @@
     "link": "https://www.npr.org/2026/10/23/g-s1-149534/justice-fbi-charged-hunter-biden-laptop",
     "source": "NPR Politics",
     "pub_ts": 1792770664.0,
-    "score": 18.04
+    "score": 17.94,
+    "grp": "main"
+  },
+  {
+    "title_en": "Audi to Build Factory in Georgia, Trump Says",
+    "title_zh": "特朗普称奥迪将在佐治亚州建厂",
+    "summary": "The Volkswagen division, which imports all its cars from Europe or Mexico, has been hit hard by U.S. tariffs.",
+    "summary_zh": "大众汽车部门的所有汽车均从欧洲或墨西哥进口，该部门受到美国关税的严重打击。",
+    "body_en": [
+      "President Trump at a rally in Georgia on Saturday. By promising to invest in a key battleground state, Volkswagen may be hoping to win concessions from the White House."
+    ],
+    "body_zh": [
+      "周六，特朗普总统在佐治亚州举行集会。通过承诺在一个关键战场州进行投资，大众汽车可能希望赢得白宫的让步。"
+    ],
+    "img": "https://static01.nyt.com/images/2026/10/24/multimedia/24biz-audi-factory-wmtq/24biz-audi-factory-wmtq-mediumSquareAt3X.jpg",
+    "link": "https://www.nytimes.com/2026/10/24/business/audi-factory-georgia-trump.html",
+    "source": "NYT Politics",
+    "pub_ts": 1792888694.0,
+    "score": 17.79,
+    "grp": "main"
   },
   {
     "title_en": "Week in Politics: Ramaswamy's Ohio ad; Trump greenlights DOJ to sue over Alaska Senate",
@@ -111,26 +115,8 @@
     "summary": "Ohio GOP gubernatorial candidate Vivek Ramaswamy refuses to withdrawal an explosive attack ad, and President Trump greenlights the DOJ to file a lawsuit about Alaska's senate race.",
     "summary_zh": "俄亥俄州共和党州长候选人维韦克·拉马斯瓦米拒绝撤回爆炸性攻击广告，特朗普总统批准司法部提起诉讼",
     "body_en": [
-      "Week in Politics: Ramaswamy’s Ohio ad; Trump greenlights DOJ to sue over Alaska Senate : NPR",
-      "Podcasts & Shows Expand/collapse submenu for Podcasts & Shows",
-      "Week in Politics: Ramaswamy’s Ohio ad; Trump greenlights DOJ to sue over Alaska Senate Ohio GOP gubernatorial candidate Vivek Ramaswamy refuses to withdrawal an explosive attack ad, and President Trump greenlights the DOJ to file a lawsuit about Alaska's senate race.",
       "Week in Politics: Ramaswamy's Ohio ad; Trump greenlights DOJ to sue over Alaska Senate",
-      "Week in Politics: Ramaswamy’s Ohio ad; Trump greenlights DOJ to sue over Alaska Senate",
-      "Embed iframe src=\"https://www.npr.org/player/embed/nx-s1-6012100/nx-s1-9977238\" width=\"100%\" height=\"290\" frameborder=\"0\" scrolling=\"no\" title=\"NPR embedded audio player\">",
-      "Ohio GOP gubernatorial candidate Vivek Ramaswamy refuses to withdrawal an explosive attack ad, and President Trump greenlights the DOJ to file a lawsuit about Alaska's senate race.",
-      "Midterm politics grew especially ugly this week in Ohio. The Republican candidate for governor, Vivek Ramaswamy, released an attack ad against his Democratic opponent, Amy Acton. The ad featured Acton's estranged mother who called her daughter a liar and urged Ohioans not to vote for her. But a lot of context - much of it sad and upsetting - was missing from that ad. And before we go on, please be aware we're about to talk about allegations of sexual abuse. NPR senior political contributor Ron Elving joins us. Ron, thanks for being with us.",
-      "RON ELVING, BYLINE: Good to be with you, Scott.",
-      "SIMON: Legal documents from nearly 50 years ago show that Amy Acton, then 12, and her younger brother were removed from their mother's home following their stepfather's arrest. He was charged with sexual conduct with a minor, fled the state with their mother. He died without facing trial. Amy Acton says he raped her and that she had been sexually abused beginning when she was just 9 years old. The ad has been condemned, including by the current Republican governor, and yet, Ramaswamy continues to defend it. Why?",
-      "ELVING: There's an old expression I think we all know - in for a dime in for a dollar. If you're going to risk your statewide campaign and the tens of millions of dollars that Elon Musk and others have invested in it, if you are already risking all that on this kind of tactics - this ad that's divided the Republican Party in Ohio and nationally - then it's not surprising that you choose to defend it. The same goes for Ramaswamy backers, like Vice President JD Vance, who condemned, but rather Republicans who criticized it, calling them whiners - or, for that matter, President Trump, who could have easily stayed out of it but waded in with both feet, telling Ramaswamy to keep the ad running.",
-      "SIMON: Is this something with a potential damage to not just Ramaswamy, but other Republicans this election?",
-      "ELVING: It might well be in Ohio, where this has dominated conversation, it could blow back on the party's embattled Senate incumbent, Jon Husted, who's in a tight race for reelection against Democratic former Senator Sherrod Brown. Beyond that, any campaigning of this sort, any controversy like this, it just tends to be dispiriting and may discourage people who don't just automatically turn out for midterms.",
-      "SIMON: Yesterday, with less than two weeks to go in this election, the Department of Justice filed a lawsuit with a special request of a federal judge about the U.S. Senate race in Alaska. Please tell us about this.",
-      "ELVING: Yes. The state of Alaska has a ranked-choice system where the primary election sends several top finishers on to November regardless of party. So the incumbent Senator Dan Sullivan is on the ballot as a Republican, and there's another Dan Sullivan - different middle initial - who also got enough primary votes for the fall ballot. Now, he's not the official Republican Party candidate, even though he's a registered Republican. That's legal in Alaska, but it angered the president, so he sent in the Justice Department to sue to block the certification of results in this election if Trump's preferred Dan Sullivan doesn't win.",
-      "We saw Trump in his first term getting angry with people in his Justice Department who pushed back on some of his orders, who chose to follow the law and previous policy instead. Trump has since tried to get rid of those people and replace them with lawyers who will do what he wants. So there are many who fear what might be next if Trump isn't pleased with the election results around the country 10 days from now.",
-      "SIMON: Ron, I understand the Brewers were going to call you in to pinch hit last night but won despite that. What's it feel like in Milwaukee?",
-      "ELVING: (Laughter) Oh, my goodness. You and I both grew up in Chicago, Scott. We're Cub fans for life, but it turns out that grandsons have a way of scrambling even one's baseball loyalties.",
-      "SIMON: Well, NPR's Ron Elving. Thanks so much for being with us.",
-      "Accuracy and availability of NPR transcripts may vary. Transcript text may be revised to correct errors or match updates to audio. Audio on npr.org may be edited after its original broadcast or publication. The authoritative record of NPR’s programming is the audio record."
+      "Embed iframe src=\"https://www.npr.org/player/embed/nx-s1-6012100/nx-s1-9977238\" width=\"100%\" height=\"290\" frameborder=\"0\" scrolling=\"no\" title=\"NPR embedded audio player\">"
     ],
     "body_zh": [
       "政治周：拉马斯瓦米的俄亥俄州广告；特朗普批准司法部就阿拉斯加州参议院提起诉讼：NPR",
@@ -158,15 +144,17 @@
     "link": "https://www.npr.org/2026/10/24/nx-s1-6012100/week-in-politics-ramaswamys-ohio-ad-trump-greenlights-doj-to-sue-over-alaska-senate",
     "source": "NPR Politics",
     "pub_ts": 1792842126.0,
-    "score": 17.95
+    "score": 17.76,
+    "grp": "main"
   },
   {
-    "title_en": "‘Change is in the air’: Obama praises El-Sayed and attacks Trump at Michigan rally – US politics live",
+    "title_en": "‘Change is in the air’: Obama praises El-Sayed and attacks Trump at Michigan rally – as it happened",
     "title_zh": "“变革即将来临”：奥巴马在密歇根州集会上赞扬埃尔赛义德并攻击特朗普 – 美国政治直播",
-    "summary": "The former Democratic president is showing major support in Detroit for the progressive Michigan candidate in final days before US midterm elections Sign up for Breaking News US email Donald Trump voted in West Palm Beach, Florida today, telling reporters at t",
+    "summary": "This live blog is now closed. For more on the rally, read our full report: Obama rallies Michigan crowd for El-Sayed, saying he’s ‘fighting for real change’ Sign up for Breaking News US email Donald Trump voted in West Palm Beach, Florida today, telling report",
     "summary_zh": "在美国中期选举前的最后几天，这位前民主党总统在底特律对进步的密歇根州候选人表示了大力支持",
     "body_en": [
-      "The former Democratic president is showing major support in Detroit for the progressive Michigan candidate in final days before US midterm elections",
+      "This live blog is now closed. For more on the rally, read our full report:",
+      "Obama rallies Michigan crowd for El-Sayed, saying he’s ‘fighting for real change’",
       "Donald Trump voted in West Palm Beach, Florida today, telling reporters at the polls that he voted straight Republican on his ballot. Trump has historically mailed-in his ballot rather than voting in-person.",
       "Speaking from the polling site, Trump defended an ad from Ohio gubernatorial candidate Vivek Ramaswamy, his administration’s lawsuit seeking to block certification of the Alaska Senate race if Repubican senator Dan Sullivan loses his race and the war in Iran."
     ],
@@ -179,7 +167,8 @@
     "link": "https://www.theguardian.com/us-news/live/2026/oct/24/obama-abdul-el-sayed-midterms-rally-michigan-live-updates",
     "source": "Guardian US",
     "pub_ts": 1792885999.0,
-    "score": 17.93
+    "score": 17.65,
+    "grp": "main"
   },
   {
     "title_en": "California election officials frustrated, rattled by DOJ demand to sequester 'noncitizen' ballots",
@@ -187,7 +176,6 @@
     "summary": "Local election officials in California are frustrated after receiving a letter from the U.S. Department of Justice",
     "summary_zh": "加利福尼亚州地方选举官员在收到美国司法部的来信后感到沮丧",
     "body_en": [
-      "California election officials frustrated, rattled by DOJ demand to sequester 'noncitizen' ballots - ABC News",
       "California election officials frustrated, rattled by DOJ demand to sequester 'noncitizen' ballots",
       "Local election officials in California are frustrated after receiving a letter from the U.S. Department of Justice",
       "Los Angeles -- Local election officials across California are confused and frustrated after receiving letters from President Donald Trump's Justice Department demanding that county registrars sequester ballots that the federal government believes were sent to noncitizen voters ahead of the midterm elections.",
@@ -206,7 +194,8 @@
       "2 dead, 11 injured after Kansas mother drives onto soccer field during game: Police",
       "“My family’s upset, worried about what’s going to happen to me,” he said.",
       "The letter sent to Clerk-Recorder Kim Grady's office in rural Amador County listed four people allegedly illegally registered to vote in the county. Grady was waiting on more guidance from the state about what she should do, and she wasn't sure if she would get any clarity before the deadline.",
-      "The letters on Friday came on the heels of a statewide sweep by federal authorities on Monday, where 28 people from the list of 20,000 were charged with illegally registering to vote. Some were also charged with illegally voting and lying on naturalization paperwork. Those charges could lead to years in prison."
+      "The letters on Friday came on the heels of a statewide sweep by federal authorities on Monday, where 28 people from the list of 20,000 were charged with illegally registering to vote. Some were also charged with illegally voting and lying on naturalization paperwork. Those charges could lead to years in prison.",
+      "Bill Essayli, the top federal prosecutor in Los Angeles, said that the clerks who didn't comply with the government's demands could face prosecution as well."
     ],
     "body_zh": [
       "加州选举官员对司法部要求扣押“非公民”选票感到沮丧和不安 - ABC News",
@@ -234,7 +223,8 @@
     "link": "https://abcnews.com/Politics/wireStory/california-election-officials-frustrated-rattled-doj-demand-sequester-137544298",
     "source": "ABC Politics",
     "pub_ts": 1792884860.0,
-    "score": 17.87
+    "score": 17.59,
+    "grp": "main"
   },
   {
     "title_en": "Trump casts his midterm ballot early in Florida",
@@ -242,7 +232,6 @@
     "summary": "President Donald Trump has cast his ballot in the midterm elections, voting for all Republicans in Florida before speaking at a Georgia rally",
     "summary_zh": "唐纳德·特朗普总统已在中期选举中投票，在佐治亚州集会上发表讲话之前，他投票给了佛罗里达州的所有共和党人",
     "body_en": [
-      "Trump casts his midterm ballot early in Florida - ABC News",
       "Trump casts his midterm ballot early in Florida",
       "President Donald Trump has cast his ballot in the midterm elections, voting for all Republicans in Florida before speaking at a Georgia rally",
       "By JOSH BOAK Associated Press and JILL COLVIN Associated Press",
@@ -258,10 +247,8 @@
       "2 dead, 11 injured after Kansas mother drives onto soccer field during game: Police",
       "In Florida, Trump has endorsed Republican Rep. Byron Donalds, who is running against David Jolly , a Republican-turned-independent-turned-Democrat , to succeed term-limited Gov. Ron DeSantis.",
       "He has also campaigned for Republican Sen. Ashley Moody , who is running to fill the last two years of Secretary of State Marco Rubio’s former Senate term against progressive state lawmaker Angie Nixon.",
-      "Woman's body found in massive tank after yearslong investigation",
-      "2 dead, 11 injured after Kansas mother drives onto soccer field during game: Police",
-      "Minnesota man credited with saving kids, school bus driver surprised with check",
-      "Trump told DOJ to sue to block Alaska Senate results if Republican narrowly loses"
+      "Trump told DOJ to sue to block Alaska Senate results if Republican narrowly loses",
+      "24/7 coverage of breaking news and live events"
     ],
     "body_zh": [
       "特朗普提前在佛罗里达州进行中期选举 - ABC News",
@@ -289,7 +276,8 @@
     "link": "https://abcnews.com/Politics/wireStory/trump-casts-midterm-ballot-early-florida-137543344",
     "source": "ABC Politics",
     "pub_ts": 1792882694.0,
-    "score": 17.75
+    "score": 17.48,
+    "grp": "main"
   },
   {
     "title_en": "A Fact-Check on Trump’s Election Claims",
@@ -306,34 +294,8 @@
     "link": "https://www.nytimes.com/2026/10/24/us/politics/trump-elections-voting-fact-check.html",
     "source": "NYT Politics",
     "pub_ts": 1792832566.0,
-    "score": 17.62
-  },
-  {
-    "title_en": "Small businesses struggling with inflation amid Trump tariffs ahead of midterms",
-    "title_zh": "特朗普在中期选举前加征关税，小企业在通胀中苦苦挣扎",
-    "summary": "With two weeks to go until Election Day, some small businesses say they're struggling with high inflation and the Trump administration's tariff policies. While restaurants say they've been hit especially hard, some other businesses say they're expanding. In a ",
-    "summary_zh": "距离选举日还有两周时间，一些小企业表示，他们正在努力应对高通胀和特朗普政府的关税政策",
-    "body_en": [
-      "Small businesses struggling with inflation amid Trump tariffs ahead of midterms - CBS News",
-      "With two weeks to go until Election Day, some small businesses say they're struggling with high inflation and the Trump administration's tariff policies. While restaurants say they've been hit especially hard, some other businesses say they're expanding. In a new survey, 71% of small businesses told the Chamber of Commerce that they're in good health. Natalie Brand spoke to business owners about what they'd like to see moving forward. More",
-      "From the archives: Paul Stankard's dazzling paperweights",
-      "France braces for another weekend of protests",
-      "CBS News Bay Area Evening Edition Weekend 5pm",
-      "<path d=\"M.691 22.35s.922 1.32 2.92 1.32c1.612 0 2.457-.845 2.457-1.997 0-2.764-5.838-1.229-5.838-5.068 0-1.568 1.322-2.92 3.457-2.92 2.058 0 3.15 1.383 3.15 1.383l-.77.768s-.783-1.075-2.38-1.075c-1.475 0-2.304.875-2.304 1.844 0 2.764 5.837 1.228 5.837 5.068 0 1.767-1.306 3.073-3.61 3.073-2.458 0-3.61-1.613-3.61-1.613l.691-.784Zm13.901-1.829-2.073-5.069-2.073 5.07h4.146Zm-2.61-6.681h1.075l4.454 10.752h-1.229l-1.228-2.995h-5.07l-1.229 2.995H7.527L11.98 13.84Zm15.668 8.678s-1.536 2.228-4.455 2.228a5.507 5.507 0 0 1-5.53-5.53 5.507 5.507 0 0 1 5.53-5.53c2.919 0 4.378 2.227 4.378 2.227l-.768.692s-1.152-1.844-3.61-1.844c-2.457 0-4.378 1.92-4.378 4.455 0 2.534 1.92 4.454 4.378 4.454s3.687-1.843 3.687-1.843l.767.691Zm5.76-3.302c1.305 0 2.15-.846 2.15-2.15 0-1.307-.845-2.151-2.15-2.151H30.26v4.3h3.149Zm-4.301-5.377h4.3c1.921 0 3.303 1.383 3.303 3.226 0 2.458-2.227 3.072-2.227 3.072l2.535 4.455h-1.306l-2.381-4.301H30.26v4.301H29"
-    ],
-    "body_zh": [
-      "中期选举前特朗普加征关税，小企业在通胀中苦苦挣扎 - 哥伦比亚广播公司新闻",
-      "距离选举日还有两周时间，一些小企业表示，他们正在与高通胀和特朗普政府的关税政策作斗争。虽然餐馆表示他们受到的打击尤其严重，但其他一些企业表示他们正在扩张。在一项新的调查中，71% 的小企业告诉商会，他们的健康状况良好。娜塔莉·布兰德与企业主谈论了他们希望看到的发展。更多的",
-      "来自档案馆：保罗·斯坦卡德令人眼花缭乱的镇纸",
-      "法国准备迎接另一个周末的抗议活动",
-      "CBS 湾区新闻晚报周末下午 5 点",
-      "<路径 d=\"M.691 22.35s.922 1.32 2.92 1.32c1.612 0 2.457-.845 2.457-1.997 0-2.764-5.838-1.229-5.838-5.068 0-1.568 1.322-2.92 3.457-2.92 2.058 0 3.15 1.383 3.15 1.383l-.77.768s-.783-1.075-2.38-1.075c-1.475 0-2.304.875-2.304 1.844 0 2.764 5.837 1.228 5.837 5.068 0 1.767-1.306 3.073-3.61 3.073-2.458 0-3.61-1.613-3.61-1.613l.691-.784Zm13.901-1.829-2.073-5.069-2.073 5.07h4.146Zm-2.61-6.681h1.075l4.454 10.752h-1.229l-1.228-2.995h-5.07l-1.229 2.995H7.527L11.98 13.84Zm15.668 8.678s-1.536 2.228-4.455 2.228a5.507 5.507 0 0 1-5.53-5.53 5.507 5.507 0 0 1 5.53-5.53c2.919 0 4.378 2.227 4.378 2.227l-.768.692s-1.152-1.844-3.61-1.844c-2.457 0-4.378 1.92-4.378 4.455 0 2.534 1.92 4.454 4.378 4.454s3.687-1.843 3.687-1.843l.767.691Zm5.76-3.302c1.305 0 2.15-.846 2.15-2.15 0-1.307-.845-2.151-2.15-2.151H30.26v4.3h3.149Zm-4.301-5.377h4.3c1.921 0 3.303 1.383 3.303 3.226 0 2.458-2.227 3.072-2.227 3.072l2.535 4.455h-1.306l-2.381-4.301H30.26v4.301H29"
-    ],
-    "img": "",
-    "link": "https://www.cbsnews.com/video/small-businesses-struggling-with-inflation-amid-trump-tariffs-ahead-of-midterms/",
-    "source": "CBS News",
-    "pub_ts": 1792880045.0,
-    "score": 17.61
+    "score": 17.44,
+    "grp": "main"
   },
   {
     "title_en": "Man detained at Georgia immigration detention center dies as hunger strike continues",
@@ -341,7 +303,6 @@
     "summary": "Death inside Folkston facility comes as officials allegedly threaten hunger strikers there with force-feeding An immigrant detained at a sprawling detention center complex in Georgia died on Friday, local and federal officials confirmed, after the facility has",
     "summary_zh": "福克斯顿设施内发生死亡事件，据称官员威胁要强制喂食那里的绝食抗议者 一名移民被拘留在一个庞大的拘留所",
     "body_en": [
-      "Man detained at Georgia immigration detention center dies as hunger strike continues | Georgia | The Guardian Skip to main content Skip to navigation",
       "Man detained at Georgia immigration detention center dies as hunger strike continues",
       "Death inside Folkston facility comes as officials allegedly threaten hunger strikers there with force-feeding",
       "An immigrant detained at a sprawling detention center complex in Georgia died on Friday, local and federal officials confirmed, after the facility has already faced national scrutiny for its response to an ongoing hunger strike inside.",
@@ -360,7 +321,8 @@
       "One man currently in the Georgia detention center is Andrei Gerdiukov, a Russian asylum seeker who is participating in the hunger strike.",
       "Nearly three weeks ago, Gerdiukov and dozens of others launched a hunger strike to demand their legal cases be processed more quickly through the US immigration system and to protest the conditions of their confinement. The hunger strikers were placed in solitary confinement, according to Gerdiukov and attorneys.",
       "“I feel tired, I feel dizzy. Every move, it is hard,” Gerdiukov said in an interview by phone on Saturday from detention. “They threatened us that they were going to force-feed us.” He had heard about the death but did not know Sandoval.",
-      "Gerdiukov and his wife, Polina Chertushkina, came to the US from Russia to seek asylum after they faced persecution for their opposition to the war in Ukraine, Chertushkina said. Their cases are ongoing , but as the couple were driving through Florida this February, they were pulled over and detained by immigration officials. Chertushkina was released, but Gerdiukov was taken to Folkston eight months ago."
+      "Gerdiukov and his wife, Polina Chertushkina, came to the US from Russia to seek asylum after they faced persecution for their opposition to the war in Ukraine, Chertushkina said. Their cases are ongoing , but as the couple were driving through Florida this February, they were pulled over and detained by immigration officials. Chertushkina was released, but Gerdiukov was taken to Folkston eight months ago.",
+      "“I am so worried about him, I don’t know what to do,” Chertushkina said about the force-feeding threats, speaking on Saturday by phone. Chertushkina is asking lawmakers to assist her husband."
     ],
     "body_zh": [
       "乔治亚州移民拘留中心一名男子因绝食抗议死亡格鲁吉亚 |卫报 跳到主要内容 跳到导航",
@@ -388,7 +350,8 @@
     "link": "https://www.theguardian.com/us-news/2026/oct/24/georgia-ice-man-dies",
     "source": "Guardian US",
     "pub_ts": 1792879575.0,
-    "score": 17.59
+    "score": 17.32,
+    "grp": "main"
   },
   {
     "title_en": "Obama describes Trump as an agent of ‘chaos and cruelty’ in midterm elections pitch",
@@ -396,8 +359,6 @@
     "summary": "Former President Barack Obama characterized President Donald Trump as an agent of “chaos and cruelty” and a man of broken promises during a midterm election rally.",
     "summary_zh": "前总统巴拉克·奥巴马 (Barack Obama) 将唐纳德·特朗普 (Donald Trump) 总统描述为“混乱和残酷”的代理人，并且是一个在中期选举中食言的人。",
     "body_en": [
-      "Obama describes Trump as an agent of ‘chaos and cruelty’ in midterm elections pitch",
-      "IE 11 is not supported. For an optimal experience visit our site on another browser.",
       "All-out fight for critical battleground states ramps up",
       "CLEVELAND — Former President Barack Obama , appearing here Saturday at his first campaign rally for this fall’s midterm elections, characterized President Donald Trump as an agent of “chaos and cruelty” and a man of broken promises.",
       "And in a particularly pointed criticism of his Republican successor, Obama mocked Trump’s ballroom construction and the gold accents he has added throughout the White House.",
@@ -415,7 +376,9 @@
       "“My opponent,” she said, referring to Ramaswamy, “has chosen to exploit, intentionally, my childhood to save his struggling campaign, but it’s not going to work.”",
       "In the Ramaswamy campaign’s ad, Donna Arthur calls her daughter a liar and urges Ohioans not to vote for her. Acton has said she has not seen or talked to Arthur in nearly 50 years. Over the years and throughout her campaign, Acton has also talked about having been sexually abused by Arthur’s then-husband as a child. She has said she was removed from Arthur’s custody in 1978, after her then-stepfather was charged with rape.",
       "Ramaswamy has defended the ad, and his campaign on Thursday told NBC News that it planned a $4 million push to air it. Trump has expressed his approval , as well.",
-      "Obama also had kind words for Brown, whom he playfully described as frugal."
+      "Obama also had kind words for Brown, whom he playfully described as frugal.",
+      "“He still is wearing the same suit he was in when I met him 20 years ago,” Obama said of Brown, who has a reputation for keeping a rumpled appearance . “You know he got a haircut for this rally, but you all know he’s too cheap to get a haircut more than once every couple months.”",
+      "Brown, Obama added, “is not somebody pretending to look out for working folks. He has always been there for you, even when it’s hard, even when he might lose an election.”"
     ],
     "body_zh": [
       "奥巴马称特朗普是中期选举中“混乱和残酷”的代理人",
@@ -443,24 +406,8 @@
     "link": "https://www.nbcnews.com/politics/2026-election/obama-trump-chaos-cruelty-midterm-election-pitch-acton-ramaswamy-rcna605223",
     "source": "NBC News",
     "pub_ts": 1792874695.0,
-    "score": 17.34
-  },
-  {
-    "title_en": "Why Democrats Could Find It Hard to Win the Senate Despite Their Strong Polls",
-    "title_zh": "为什么民主党在民意调查中表现强劲却很难赢得参议院席位",
-    "summary": "Democrats are increasingly optimistic about the midterms. But they are being outspent by Republicans. And they are trying to compete in states that favored President Trump by large margins.",
-    "summary_zh": "民主党人对中期选举越来越乐观。但共和党人的开支却超过了他们。他们正试图在那些需要的州竞争",
-    "body_en": [
-      "Democrats are increasingly optimistic about the midterms. But they are being outspent by Republicans. And they are trying to compete in states that favored President Trump by large margins."
-    ],
-    "body_zh": [
-      "民主党人对中期选举越来越乐观。但共和党人的开支却超过了他们。他们正试图在那些大幅支持特朗普总统的州展开竞争。"
-    ],
-    "img": "https://static01.nyt.com/images/2026/10/24/multimedia/24pol-democrats-qwkg/24pol-democrats-qwkg-mediumSquareAt3X.jpg",
-    "link": "https://www.nytimes.com/2026/10/24/us/politics/democrats-expectations-blue-wave.html",
-    "source": "NYT Politics",
-    "pub_ts": 1792861254.0,
-    "score": 16.72
+    "score": 17.09,
+    "grp": "main"
   },
   {
     "title_en": "Why Is the U.S. Accusing Canada of Election Interference?",
@@ -477,34 +424,199 @@
     "link": "https://www.nytimes.com/2026/10/24/world/canada/us-midterms-election-interference-carney-trump.html",
     "source": "NYT Politics",
     "pub_ts": 1792857741.0,
-    "score": 16.57
+    "score": 16.35,
+    "grp": "main"
   },
   {
-    "title_en": "Elon Musk Says Ukraine Violated Starlink’s Rules",
-    "title_zh": "乌克兰称星盾卫星网络速度正在提高",
-    "summary": "The comments were his first since the disruption in the country’s satellite service. Earlier, Ukraine said drones using Starshield, the Pentagon-funded service, were back to normal speeds.",
-    "summary_zh": "此前，乌克兰依靠五角大楼资助的卫星网络“星盾”(Starshield) 来挫败俄罗斯的干扰，该网络已受到干扰一个多星期。",
+    "title_en": "DOJ demands that some California counties set aside alleged noncitizen ballots",
+    "title_zh": "司法部要求加州一些县搁置所谓的非公民选票",
+    "summary": "Federal prosecutors sent letters to county registrars across California demanding that local officials set aside and verify ballots that the Justice Department said may belong to noncitizens.",
+    "summary_zh": "联邦检察官致函加州各地的县登记官，要求地方官员搁置并核实法官 D 所要求的选票。",
     "body_en": [
-      "Ukrainian soldiers operated a drone over Russian-occupied territory from the Zaporizhzhia region in 2023."
+      "Federal prosecutors sent letters to county registrars across California on Friday demanding that local officials set aside and verify ballots that the Justice Department said may belong to noncitizens, according to the Los Angeles County registrar and a letter obtained by The Associated Press.",
+      "The letters are the latest escalation in a legal battle between California and President Trump's Justice Department, which has recently focused on the state in its efforts to root out noncitizen voting ahead of the midterm elections . Data shows illegal voting by people who aren't U.S. citizens is incredibly rare, difficult to prove and has not been shown to change the outcome of races.",
+      "Earlier this month, the federal government targeted L.A. County and the California Secretary of State's office in a lawsuit that aimed to block them from counting the votes of more than 20,000 people who it alleges are \"likely\" noncitizen voters. A hearing on the case is scheduled for Tuesday.",
+      "The Trump administration on Friday asked the 9th Circuit Court of Appeals to rule on the lawsuit barring a decision from the district judge assigned to the case. They set a deadline for Saturday.",
+      "Now, according to the L.A. County registrar's office, at least 18 counties across the state have received similar letters. They were given a 48-hour deadline to provide identifying information corresponding with ballots that the federal government believes were sent to noncitizens illegally registered to vote. The letter requests that county officials also sequester any ballots where citizenship cannot be verified.",
+      "\"Any election official who knowingly processes the ballot of a noncitizen is opening themselves to legal jeopardy,\" said First Assistant U.S. Attorney Bill Essayli.",
+      "The Justice Department is asking counties to send information about the voters it suspects are noncitizens including Social Security numbers, ID information, a copy of their registration and more.",
+      "That information can help the government and state quickly assess each person suspected of illegally registering to vote, said the letter sent to San Bernardino County voting officials. The letter says the government's list of suspected noncitizen voters includes 1,133 people from the inland Southern California county.",
+      "However, the California attorney general's office said the letters contained errors. For example, Mendocino County officials received a list of people who were not residents there, according to a court filing by the state.",
+      "Department of Justice spokeswoman Kiersten Pels emphasized in a statement on Saturday that the department is explicitly \"not requesting a purge, cancellation of registrations, or any programmatic action.\"",
+      "Instead, Pels wrote, federal officials are asking for collaboration to \"ensure the most secure election in California history.\"",
+      "California's secretary of state and the Los Angeles County registrar have opposed the federal government's demands. In legal filings, lawyers for California say the request threatens to delay the certification of the vote and undermine the legitimacy of the November midterms. They have also argued that the federal government's data is unreliable and that their demands risk disenfranchisement of citizens.",
+      "Voting is underway in California, with the state's more than 23 million registered voters receiving ballots in the mail earlier this month. The state said in legal filings that over 330,000 mail-in ballots have already been counted.",
+      "\"All of this is simply meant to raise huge doubts about the integrity of this election,\" said John Tuteur, the registrar of voters for Napa County in California's wine country.",
+      "Tuteur said that two uniformed Department of Homeland Security officers delivered a letter to his office late on Friday afternoon. The letter included the names of 42 people whom the federal government accused of being noncitizens illegally registered to vote. There are roughly 86,000 people registered to vote across the county of over 130,000 people, Tuteur said. Approximately 11,000 people had already cast a mail-in ballot as of Friday.",
+      "Tuteur and other election officials who spoke to The Associated Press on Saturday said they have already started to count ballots that have trickled in from the state's 23 million registered voters.",
+      "\"We're not changing anything we're doing. We're proceeding with the election,\" he said.",
+      "He said his employees and his relatives were worried about what could come next.",
+      "\"My family's upset, worried about what's going to happen to me,\" he said.",
+      "The letters on Friday came on the heels of a statewide sweep by federal authorities earlier in the week, where 28 people from the list of 20,000 were charged with illegally registering to vote. Some were also charged with illegally voting and lying on naturalization paperwork. Those charges could lead to years in prison."
     ],
     "body_zh": [
-      "2023 年，乌克兰士兵在扎波罗热地区操作一架无人机飞越俄罗斯占领区。"
+      "美国司法部要求加州一些县在 48 小时内搁置并核实所谓的非公民选票 - CBS 新闻",
+      "据洛杉矶县登记官和美联社获得的一封信函称，联邦检察官周五致函加州各地的县登记官，要求当地官员搁置并核实司法部称可能属于非公民的选票。",
+      "这些信件是加州与特朗普总统司法部之间法律斗争的最新升级，司法部最近重点关注该州在中期选举前根除非公民投票的努力。数据显示，非美国公民的非法投票极其罕见，难以证明，而且尚未被证明可以改变选举结果。",
+      "本月早些时候，联邦政府针对洛杉矶县和加州国务卿办公室提起诉讼，旨在阻止他们对 20,000 多名“可能”非公民选民的选民进行计票。该案的听证会定于周二举行。",
+      "特朗普政府周五要求第九巡回上诉法院对该诉讼作出裁决，禁止分配给该案的地区法官做出裁决。他们设定了周六的最后期限。",
+      "据洛杉矶县登记办公室称，目前全州至少有 18 个县收到了类似的信件。他们被要求在 48 小时内提供与选票相对应的识别信息，联邦政府认为这些信息是发送给非法登记投票的非公民的。这封信要求县官员还扣押无法核实公民身份的所有选票。",
+      "美国检察官第一助理比尔·埃萨利表示：“任何故意处理非公民选票的选举官员都会面临法律危险。”",
+      "司法部要求各县发送其怀疑为非公民的选民的信息，包括社会安全号码、身份证信息、登记副本等。",
+      "发给圣贝纳迪诺县投票官员的信称，这些信息可以帮助政府和州快速评估涉嫌非法登记投票的每个人。信中称，政府的可疑非公民选民名单中包括来自南加州内陆县的 1,133 人。",
+      "加州国务卿和洛杉矶县登记官反对联邦政府的要求。加州律师在法律文件中表示，这一要求可能会推迟投票认证，并损害 11 月中期选举的合法性。他们还认为联邦政府的数据不可靠，他们的要求可能会剥夺公民的公民权。",
+      "加利福尼亚州的投票正在进行中，该州超过 2300 万登记选民本月早些时候收到了邮寄选票。该州在法律文件中表示，已经统计了超过 33 万张邮寄选票。",
+      "周五发出这些信件之前，联邦当局本周早些时候在全州范围内进行了扫荡，20,000 人名单中的 28 人被指控非法登记投票。有些人还被指控非法投票和在入籍文件上撒谎。这些指控可能导致数年监禁。",
+      "司法部民权部门已提起 31 起诉讼，试图迫使各州交出未经编辑的选民名册副本。该部门曾表示，希望确保各州保持干净的选民名单，但后来又承认，它还打算与国土安全部共享数据，以便筛选名单中的非公民。",
+      "民权部门助理总检察长哈米特·迪隆 (Harmeet Dhillon) 7 月份向所有 50 个州发出信函，威胁称，如果这些州故意允许非公民留在选民名册上，我们将采取刑事行动。",
+      "到目前为止，司法部已经输掉了其中 26 起案件，并且尚未取得任何法律胜利。",
+      "“这不是演习：唐纳德·特朗普和托德·布兰奇试图干预加州选举，”加州民主党参议员亚历克斯·帕迪拉周五在一份声明中表示。 “特朗普的司法部没有为他们声称的大规模选民欺诈提供任何证据。他们承认他们所指出的数据不准确且不可靠。无论他们提起多少诉讼或威胁多少选举官员，他们都无权干预。”",
+      "如果共和党失败，美国司法部将阻止阿拉斯加参议院选举的认证法律专家",
+      "DOJ 监管机构拒绝对 Reflecting Pool 案进行调查",
+      "情报负责人警告称，伊朗“加大了针对美国人员的力度”",
+      "图恩与阿什利·辛森 (Ashley Hinson) 一起竞选，参议院共和党瞄准爱荷华州"
     ],
-    "img": "https://static01.nyt.com/images/2026/10/24/multimedia/24int-ukraine-starshield-jmgk/24int-ukraine-starshield-jmgk-mediumSquareAt3X.jpg",
-    "link": "https://www.nytimes.com/2026/10/24/world/europe/ukraine-starshield-drone-speed.html",
-    "source": "NYT Politics",
-    "pub_ts": 1792887007.0,
-    "score": 15.99
+    "img": "",
+    "link": "https://www.cbsnews.com/news/doj-california-counties-set-aside-verify-certain-ballots-noncitizens/",
+    "source": "CBS News",
+    "pub_ts": 1792890554.0,
+    "score": 15.89,
+    "grp": "main"
   },
   {
-    "title_en": "Barack Obama rallies Michigan crowd for El-Sayed, saying he’s ‘fighting for real change’",
+    "title_en": "In one Miami community, some Latinos hesitant to vote Republican amid ICE immigration crackdown",
+    "title_zh": "在迈阿密的一个社区，一些拉丁裔在 ICE 移民打击行动中犹豫是否投票给共和党",
+    "summary": "In Doral, Florida, some Latino voters who had previously been supportive of President Trump are turning away from the Republican Party amid strong activity from U.S. Immigration and Customs Enforcement. Cristian Benavides reports.",
+    "summary_zh": "在佛罗里达州多拉尔，一些此前支持特朗普总统的拉丁裔选民在强烈行动中不再支持共和党",
+    "body_en": [
+      "In one Miami community, some Latinos hesitant to vote Republican amid ICE immigration crackdown - CBS News",
+      "ICE crackdown could impact Miami's Latino vote",
+      "In Doral, Florida, some Latino voters who had previously been supportive of President Trump are turning away from the Republican Party amid strong activity from U.S. Immigration and Customs Enforcement. Cristian Benavides reports. More",
+      "From the archives: Paul Stankard's dazzling paperweights",
+      "France braces for another weekend of protests",
+      "CBS News Bay Area Evening Edition Weekend 6pm",
+      "<path d=\"M10.853 31.687c-.653.628-1.53.94-2.629.94H2.813V25.67h5.411c.55 0 1.048.1 1.495.296.446.198.824.46 1.134.786.309.327.55.709.721 1.147.172.438.258.898.258 1.379 0 .979-.327 1.782-.98 2.409Zm-8.04-13.49h5.025c.979 0 1.74.262 2.28.786.541.524.812 1.207.812 2.048 0 .911-.27 1.629-.812 2.152-.54.524-1.301.786-2.28.786H2.813v-5.772Zm9.457 7.576a6.044 6.044 0 0 0-1.469-1.005 3.477 3.477 0 0 0 1.03-.799c.258-.292.494-.674.71-1.147.214-.472.322-1.069.322-1.79 0-.636-.125-1.238-.374-1.804a4.61 4.61 0 0 0-1.03-1.482 4.745 4.745 0 0 0-1.585-.992 5.567 5.567 0 0 0-2.036-.36H.88V34.43h7.344c.842 0 1.602-.128 2.281-.386a5.06 5.06 0 0 0 1.74-1.083 4.92 4.92 0 0 0 1.12-"
+    ],
+    "body_zh": [
+      "在迈阿密的一个社区，一些拉丁裔在 ICE 移民打击行动中犹豫是否投票给共和党 - 哥伦比亚广播公司新闻",
+      "ICE 打击行动可能会影响迈阿密的拉丁裔选票",
+      "在佛罗里达州多拉尔，由于美国移民和海关执法部门的大力活动，一些此前支持特朗普总统的拉丁裔选民正在远离共和党。克里斯蒂安·贝纳维德斯报道。更多的",
+      "来自档案馆：保罗·斯坦卡德令人眼花缭乱的镇纸",
+      "法国准备迎接另一个周末的抗议活动",
+      "CBS 湾区新闻晚报周末下午 6 点",
+      "<路径d =“M10.853 31.687c-.653.628-1.53.94-2.629.94H2.813V25.67h5.411c.55 0 1.048.1 1.495.296.446.198.824.46 1.134.786.309.327.55.709.721 1.147.172.438.258.898.258 1.379 0 .979-.327 1.782-.98 2.409Zm-8.04-13.49h5.025c.979 0 1.74.262 2.28.786.541.524.812 1.207.812 2.048 0 .911-.27 1.629-.812 2.152-.54.524-1.301.786-2.28.786H2.813v-5.772Zm9.457 7.576a6.044 6.044 0 0 0-1.469-1.005 3.477 3.477 0 0 0 1.03-.799c.258-.292.494-.674.71-1.147.214-.472.322-1.069.322-1.79 0-.636-.125-1.238-.374-1.804a4.61 4.61 0 0 0-1.03-1.482 4.745 4.745 0 0 0-1.585-.992 5.567 5.567 0 0 0-2.036-.36H.88V34.43h7.344c.842 0 1.602-.128 2.281-.386a5.06 5.06 0 0 0 1.74-1.083 4.92 4.92 0 0 0 1.12-"
+    ],
+    "img": "",
+    "link": "https://www.cbsnews.com/video/in-one-miami-community-some-latinos-hesitant-to-vote-republican-amid-ice-immigration-crackdown/",
+    "source": "CBS News",
+    "pub_ts": 1792890458.0,
+    "score": 15.89,
+    "grp": "main"
+  },
+  {
+    "title_en": "A New Level of Threat and Fear Risks Pushing the U.S. and Iran Back to Full War",
+    "title_zh": "新水平的威胁和恐惧可能导致美国和伊朗重新陷入全面战争",
+    "summary": "With new intelligence and the possibility of all sides seeking pretexts for action, the war in Iran is entering a dangerous phase ahead of elections in the United States and Israel.",
+    "summary_zh": "随着新情报的出现以及各方寻找采取行动借口的可能性，伊朗战争在选举前正进入危险阶段。",
+    "body_en": [
+      "A senior official in Iran took to social media in recent days to say the country was preparing to take on its adversaries with surprise attacks."
+    ],
+    "body_zh": [
+      "伊朗一名高级官员最近几天在社交媒体上表示，该国正准备对对手发动突然袭击。"
+    ],
+    "img": "https://static01.nyt.com/images/2026/10/24/multimedia/24dc-prexy-iran-pkhc/24dc-prexy-iran-pkhc-mediumSquareAt3X.jpg",
+    "link": "https://www.nytimes.com/2026/10/24/us/politics/trump-netanyahu-iran-new-phase-of-war.html",
+    "source": "NYT Politics",
+    "pub_ts": 1792890377.0,
+    "score": 15.88,
+    "grp": "main"
+  },
+  {
+    "title_en": "Obama hits the campaign trail for Democrats with midterms less than 2 weeks away",
+    "title_zh": "距离中期选举还有不到两周时间，奥巴马开始为民主党竞选",
+    "summary": "Former President Barack Obama was hitting multiple campaign stops in Ohio and Michigan this weekend to speak out against the Trump administration, with midterms less than two weeks away. Nikole Killion has more.",
+    "summary_zh": "前总统巴拉克·奥巴马本周末在俄亥俄州和密歇根州进行多次竞选活动，公开反对特朗普政府。",
+    "body_en": [
+      "Obama hits the campaign trail for Democrats with midterms less than 2 weeks away - CBS News",
+      "Former President Barack Obama was hitting multiple campaign stops in Ohio and Michigan this weekend to speak out against the Trump administration, with midterms less than two weeks away. Nikole Killion has more. More",
+      "From the archives: Paul Stankard's dazzling paperweights",
+      "France braces for another weekend of protests",
+      "CBS News Bay Area Evening Edition Weekend 6pm",
+      "<path d=\"M10.853 31.687c-.653.628-1.53.94-2.629.94H2.813V25.67h5.411c.55 0 1.048.1 1.495.296.446.198.824.46 1.134.786.309.327.55.709.721 1.147.172.438.258.898.258 1.379 0 .979-.327 1.782-.98 2.409Zm-8.04-13.49h5.025c.979 0 1.74.262 2.28.786.541.524.812 1.207.812 2.048 0 .911-.27 1.629-.812 2.152-.54.524-1.301.786-2.28.786H2.813v-5.772Zm9.457 7.576a6.044 6.044 0 0 0-1.469-1.005 3.477 3.477 0 0 0 1.03-.799c.258-.292.494-.674.71-1.147.214-.472.322-1.069.322-1.79 0-.636-.125-1.238-.374-1.804a4.61 4.61 0 0 0-1.03-1.482 4.745 4.745 0 0 0-1.585-.992 5.567 5.567 0 0 0-2.036-.36H.88V34.43h7.344c.842 0 1.602-.128 2.281-.386a5.06 5.06 0 0 0 1.74-1.083 4.92 4.92 0 0 0 1.12-1.636c.266-.627.4-1.31.4-2.048 0-.842-.155-1.546-.464-2.113-.31-.567-.653-1.031-1.03-1.392Zm19.61 2.603c-.377.91-.898 1.7-1.558 2.37a7.166 7.166 0 0 1-2.333 1.572 7.328 7.328 0 0 1-2.886.567 7.326 7.326 0 0 1-2.886-.567 7.148 7.148 0 0 1-2.332-1.571 7.33 7.33 0 0 1-1.56-2.371c-.377-.91-.566-1.898-.566-2.964 0-1.065.189-2.053.567-2.963.377-.91.897-1.7 1.559-2.371a7.148 7.148 0 0 1 2.332-1.572 7.335 7.335 0 0 1 2.886-.567c1.03 0 1.992.19 2.886.567.893.378 1.67.902 2.332"
+    ],
+    "body_zh": [
+      "距离中期选举还有不到两周时间，奥巴马开始为民主党竞选 - 哥伦比亚广播公司新闻",
+      "距离中期选举还有不到两周的时间，前总统巴拉克·奥巴马本周末将在俄亥俄州和密歇根州进行多次竞选活动，公开反对特朗普政府。尼科尔·基利安还有更多。更多的",
+      "来自档案馆：保罗·斯坦卡德令人眼花缭乱的镇纸",
+      "法国准备迎接另一个周末的抗议活动",
+      "CBS 湾区新闻晚报周末下午 6 点",
+      "<路径d =“M10.853 31.687c-.653.628-1.53.94-2.629.94H2.813V25.67h5.411c.55 0 1.048.1 1.495.296.446.198.824.46 1.134.786.309.327.55.709.721 1.147.172.438.258.898.258 1.379 0 .979-.327 1.782-.98 2.409Zm-8.04-13.49h5.025c.979 0 1.74.262 2.28.786.541.524.812 1.207.812 2.048 0 .911-.27 1.629-.812 2.152-.54.524-1.301.786-2.28.786H2.813v-5.772Zm9.457 7.576a6.044 6.044 0 0 0-1.469-1.005 3.477 3.477 0 0 0 1.03-.799c.258-.292.494-.674.71-1.147.214-.472.322-1.069.322-1.79 0-.636-.125-1.238-.374-1.804a4.61 4.61 0 0 0-1.03-1.482 4.745 4.745 0 0 0-1.585-.992 5.567 5.567 0 0 0-2.036-.36H.88V34.43h7.344c.842 0 1.602-.128 2.281-.386a5.06 5.06 0 0 0 1.74-1.083 4.92 4.92 0 0 0 1.12-1.636c.266-.627.4-1.31.4-2.048 0-.842-.155-1.546-.464-2.113-.31-.567-.653-1.031-1.03-1.392Zm19.61 2.603c-.377.91-.898 1.7-1.558 2.37a7.166 7.166 0 0 1-2.333 1.572 7.328 7.328 0 0 1-2.886.567 7.326 7.326 0 0 1-2.886-.567 7.148 7.148 0 0 1-2.332-1.571 7.33 7.33 0 0 1-1.56-2.371c-.377-.91-.566-1.898-.566-2.964 0-1.065.189-2.053.567-2.963.377-.91.897-1.7 1.559-2.371a7.148 7.148 0 0 1 2.332-1.572 7.335 7.335 0 0 1 2.886-.567c1.03 0 1.992.19 2.886.567.893.378 1.67.902 2.332"
+    ],
+    "img": "",
+    "link": "https://www.cbsnews.com/video/obama-hits-the-campaign-trail-for-democrats-with-midterms-less-than-2-weeks-away/",
+    "source": "CBS News",
+    "pub_ts": 1792889580.0,
+    "score": 15.84,
+    "grp": "main"
+  },
+  {
+    "title_en": "California leader calls attack on alleged noncitizen voting ‘weaponizing the law’",
+    "title_zh": "加州领导人称对所谓非公民投票的攻击是“将法律武器化”",
+    "summary": "State attorney general said Trump’s justice department’s directive to verify 20,000 ballots is completely improper California’s attorney general on Saturday rebuked the Trump administration’s efforts to quash alleged noncitizen voting, calling it “politicizing",
+    "summary_zh": "州总检察长表示，特朗普司法部要求核实 20,000 张选票的指示是完全不恰当的",
+    "body_en": [
+      "California leader calls attack on alleged noncitizen voting ‘weaponizing the law’",
+      "State attorney general said Trump’s justice department’s directive to verify 20,000 ballots is completely improper",
+      "California’s attorney general on Saturday rebuked the Trump administration’s efforts to quash alleged noncitizen voting, calling it “politicizing and weaponizing the law”.",
+      "Rob Bonta, the state’s attorney general, said the justice department acted at Donald Trump’s direction.",
+      "“It is once again the United States Department of Justice politicizing and weaponizing the law to attack its enemies, and it is completely improper,” he told MS Now.",
+      "Less than two weeks before the midterms, federal prosecutors called upon California election officials to verify within 48 hours a list of about 20,000 ballots belonging to suspected noncitizens. Noncitizen voting is extremely rare , but in the run-up to the midterm elections, the justice department has ramped up prosecutions of people accused of illegally voting while not holding US citizenship.",
+      "California’s election personnel have raised concern that the administration’s directive could disenfranchise citizens. Los Angeles officials said this week a “high percentage” of the individuals on the list were born in the United States.",
+      "“Trump’s DOJ is so desperate to invent ‘widespread voter fraud,’ it sent California counties lists of people who NEVER voted – and voters from the WRONG COUNTY. Absolute clown show!” California’s governor Gavin Newsom posted on social media .",
+      "“Voter intimidation has no place in our democracy,” Pete Aguilar, a congressman representing south-west San Bernardino county, said in a social media post .",
+      "The federal government’s oversight attempts come amid a national Republican effort to crack down on alleged voter fraud, particularly any cases among undocumented immigrants.",
+      "“We are asking each county election official to commit to working with us by providing the necessary information for DHS to quickly verify citizenship status. With their help, we can ensure the most secure election in California history,” the justice department said.",
+      "Bonta, the California attorney general, has raised questions about the evidence behind the suspected noncitizen ballots.",
+      "“All they provided was a list of people and nothing about why they’re purportedly ineligible. If they have such information, we would be happy to review it, but they’ve provided none,” Bonta said at a recent press conference.",
+      "The DoJ also charged 28 foreign nationals recently, accusing them of fraudulently registering to vote.",
+      "“Today’s arrests prove what we have been saying,” Bill Essayli, first assistant US attorney, said in a statement. “California is mailing ballots to noncitizens, and they are refusing to comply with federal law, which makes it a crime for noncitizens to vote. The voting rights of American citizens must be protected.”",
+      "The defendants are lawful permanent residents, who have legal status in the US but are not citizens authorized to vote.",
+      "Some state officials took no action on Friday’s letters, citing the fast-approaching election, which spurred a legal battle with the justice department. An appeals court is set to hear the matter on Tuesday."
+    ],
+    "body_zh": [
+      "加州领导人称对所谓非公民投票的攻击是“将法律武器化”",
+      "州总检察长表示，特朗普司法部要求核实 20,000 张选票的指示是完全不恰当的",
+      "加州总检察长周六谴责特朗普政府压制所谓的非公民投票的努力，称其“将法律政治化和武器化”。",
+      "该州总检察长罗布·邦塔表示，司法部按照唐纳德·特朗普的指示行事。",
+      "他对《MS Now》表示：“美国司法部再次将法律政治化和武器化，以攻击敌人，这是完全不恰当的。”",
+      "距离中期选举不到两周，联邦检察官呼吁加州选举官员在 48 小时内核实一份包含疑似非公民的约 20,000 张选票的清单。非公民投票的情况极为罕见，但在中期选举前夕，司法部加大了对被指控在不持有美国公民身份的情况下非法投票的人的起诉力度。",
+      "加州选举人员担心政府的指令可能会剥夺公民的选举权。洛杉矶官员本周表示，名单上的人中“很大一部分”出生在美国。",
+      "“特朗普的司法部非常渴望发明‘广泛的选民欺诈’，它向加州各县发送了从未投票过的人名单，以及来自错误县的选民名单。绝对是小丑表演！”加州州长加文·纽瑟姆在社交媒体上发文。",
+      "“恐吓选民的行为在我们的民主制度中没有立足之地，”代表西南部圣贝纳迪诺县的国会议员皮特·阿吉拉尔在社交媒体上发帖表示。",
+      "联邦政府的监督尝试正值共和党在全国范围内努力打击所谓的选民欺诈行为，特别是无证移民中的任何案件。",
+      "“我们要求每个县选举官员承诺与我们合作，为国土安全部提供必要的信息，以快速核实公民身份。在他们的帮助下，我们可以确保加州历史上最安全的选举，”司法部表示。",
+      "加州总检察长邦塔对疑似非公民选票背后的证据提出了质疑。",
+      "“他们提供的只是一份人员名单，并没有说明他们为何不符合资格。如果他们有此类信息，我们很乐意对其进行审查，但他们没有提供任何信息，”邦塔在最近的新闻发布会上说。",
+      "美国司法部最近还对 28 名外国人提出指控，指控他们进行欺诈性登记投票。",
+      "“今天的逮捕证明了我们一直在说的话，”美国检察官第一助理比尔·埃萨利在一份声明中说。 “加州向非公民邮寄选票，他们拒绝遵守联邦法律，这使得非公民投票构成犯罪。美国公民的投票权必须受到保护。”",
+      "被告是合法永久居民，在美国拥有合法身份，但不是有权投票的公民。",
+      "一些州官员没有对周五的信件采取任何行动，理由是选举即将临近，这引发了与司法部的法律斗争。上诉法院定于周二审理此事。"
+    ],
+    "img": "https://i.guim.co.uk/img/media/0dfc92629802445272a678cec5dab911996a5147/226_0_2500_2000/master/2500.jpg?width=140&quality=85&auto=format&fit=max&s=18bfe303e0559679daea1ccf41180b8e",
+    "link": "https://www.theguardian.com/us-news/2026/oct/24/california-noncitizen-voting-trump-administration",
+    "source": "Guardian US",
+    "pub_ts": 1792887377.0,
+    "score": 15.72,
+    "grp": "main"
+  },
+  {
+    "title_en": "Obama rallies rapturous Michigan crowd for El-Sayed: ‘He’ll finish the job we started’",
     "title_zh": "巴拉克·奥巴马为埃尔·赛义德集结密歇根州民众，称他正在“为真正的变革而战”",
-    "summary": "Former president speaks to rapturous crowd of thousands in support of Democrat Abdul El-Sayed for US Senate Barack Obama told a Detroit crowd on Saturday that Abdul El-Sayed was “fighting for change, real change, that will get money out of politics and put mon",
+    "summary": "Former president speaks to crowd of thousands in support of Abdul El-Sayed for US Senate and Democratic ticket Barack Obama told a Detroit crowd on Saturday that Abdul El-Sayed was “fighting for change, real change, that will get money out of politics and put ",
     "summary_zh": "前总统在周六向底特律人群发表讲话，支持民主党参议员阿卜杜勒·赛义德",
     "body_en": [
-      "Barack Obama rallies Michigan crowd for El-Sayed, saying he’s ‘fighting for real change’ | Michigan | The Guardian Skip to main content Skip to navigation",
-      "Barack Obama rallies Michigan crowd for El-Sayed, saying he’s ‘fighting for real change’",
-      "Former president speaks to rapturous crowd of thousands in support of Democrat Abdul El-Sayed for US Senate",
+      "Obama rallies rapturous Michigan crowd for El-Sayed: ‘He’ll finish the job we started’",
+      "Former president speaks to crowd of thousands in support of Abdul El-Sayed for US Senate and Democratic ticket",
       "Barack Obama told a Detroit crowd on Saturday that Abdul El-Sayed was “fighting for change, real change, that will get money out of politics and put money in your pocket”, as he threw his weight behind the Democratic Senate candidate and the rest of the ticket on the first day of early voting in Michigan.",
       "Obama said in front of thousands of onlookers at Cass technical high school in Detroit that El-Sayed would “finish the job we started with the Affordable Care Act and guarantee quality, affordable healthcare to every single American”.",
       "The former president headlined the rally for El-Sayed, the Democratic nominee for US Senate, and secretary of state Jocelyn Benson, the party’s candidate for governor, at an evening event to “get out the vote”.",
@@ -521,7 +633,8 @@
       "“We’re putting a check and balance on Donald Trump in the White House,” she said.",
       "A Marist poll of likely voters statewide conducted in mid-October put El-Sayed at 50% and Rogers at 48%, within the margin of error. RealClearPolitics’s average had El-Sayed ahead by about 2.6 points in a similar timeframe.",
       "Trump has attacked El-Sayed throughout the campaign, calling him a “jihadist”, pointing to his middle name and alleging that he had ties to the Muslim Brotherhood, which El-Sayed strongly denies, and has created one of the most viral moments of the year. El-Sayed has also faced a barrage of criticism from the establishment wing of the Democratic party over his appearances with leftwing streamer Hasan Piker .",
-      "Trump is due in the state himself on Sunday, when he will hold a rally for Michigan Republicans in Port Huron, on the Canadian border. The city said it will be the first presidential visit to St Clair county."
+      "Trump is due in the state himself on Sunday, when he will hold a rally for Michigan Republicans in Port Huron, on the Canadian border. The city said it will be the first presidential visit to St Clair county.",
+      "If elected, El-Sayed would be the first Muslim and first Egyptian American in the US Senate. Benson faces the Republican congressman John James; a James win would make him Michigan’s first Black governor."
     ],
     "body_zh": [
       "巴拉克·奥巴马为埃尔·赛义德集结密歇根州民众，称他正在“为真正的变革而战”|密歇根州|卫报 跳到主要内容 跳到导航",
@@ -548,8 +661,27 @@
     "img": "https://i.guim.co.uk/img/media/bcf04be8e15098a7d07e4aa14bcc516999eb7ef1/233_0_2500_2000/master/2500.jpg?width=140&quality=85&auto=format&fit=max&s=f899c94ecb7e256c21b2656997faf901",
     "link": "https://www.theguardian.com/us-news/2026/oct/24/barack-obama-abdul-el-sayed-michigan",
     "source": "Guardian US",
-    "pub_ts": 1792885830.0,
-    "score": 15.92
+    "pub_ts": 1792887270.0,
+    "score": 15.71,
+    "grp": "main"
+  },
+  {
+    "title_en": "Elon Musk Says Ukraine Violated Starlink’s Rules",
+    "title_zh": "乌克兰称星盾卫星网络速度正在提高",
+    "summary": "The comments were his first since the disruption in the country’s satellite service. Earlier, Ukraine said drones using Starshield, the Pentagon-funded service, were back to normal speeds.",
+    "summary_zh": "此前，乌克兰依靠五角大楼资助的卫星网络“星盾”(Starshield) 来挫败俄罗斯的干扰，该网络已受到干扰一个多星期。",
+    "body_en": [
+      "Ukrainian soldiers operated a drone over Russian-occupied territory from the Zaporizhzhia region in 2023."
+    ],
+    "body_zh": [
+      "2023 年，乌克兰士兵在扎波罗热地区操作一架无人机飞越俄罗斯占领区。"
+    ],
+    "img": "https://static01.nyt.com/images/2026/10/24/multimedia/24int-ukraine-starshield-jmgk/24int-ukraine-starshield-jmgk-mediumSquareAt3X.jpg",
+    "link": "https://www.nytimes.com/2026/10/24/world/europe/ukraine-starshield-drone-speed.html",
+    "source": "NYT Politics",
+    "pub_ts": 1792887007.0,
+    "score": 15.7,
+    "grp": "main"
   },
   {
     "title_en": "Facing an electoral wipeout, Trump goes after the system",
@@ -604,7 +736,8 @@
     "link": "https://www.politico.com/news/2026/10/24/trump-alaska-election-justice-department-01134590",
     "source": "Politico",
     "pub_ts": 1792839600.0,
-    "score": 15.86
+    "score": 15.68,
+    "grp": "main"
   },
   {
     "title_en": "New Trump rule allows hunters to bait bears in Alaska with doughnuts, bacon and more",
@@ -612,7 +745,6 @@
     "summary": "Critics decry Trump administration rule that lets hunters lure bears with human foods on federal lands in Alaska A new Trump administration rule allows hunters to bait bears on federal lands in Alaska with bacon, doughnuts, meat scraps or other human foods typ",
     "summary_zh": "批评者谴责特朗普政府允许猎人在阿拉斯加联邦土地上用人类食物引诱熊的新特朗普政府规则允许",
     "body_en": [
-      "New Trump rule allows hunters to bait bears in Alaska with doughnuts, bacon and more | Trump administration | The Guardian Skip to main content Skip to navigation",
       "New Trump rule allows hunters to bait bears in Alaska with doughnuts, bacon and more",
       "Critics decry Trump administration rule that lets hunters lure bears with human foods on federal lands in Alaska",
       "A new Trump administration rule allows hunters to bait bears on federal lands in Alaska with bacon, doughnuts, meat scraps or other human foods typically used to help kill the trophy animals at close range.",
@@ -653,7 +785,8 @@
     "link": "https://www.theguardian.com/us-news/2026/oct/24/trump-administration-alaska-bear-hunting-bait",
     "source": "Guardian US",
     "pub_ts": 1792839632.0,
-    "score": 15.86
+    "score": 15.68,
+    "grp": "main"
   },
   {
     "title_en": "U.S. Pressures Mexico to Deliver a Security Win Ahead of Midterm Elections",
@@ -670,7 +803,8 @@
     "link": "https://www.nytimes.com/2026/10/24/world/americas/us-mexico-security-cartels.html",
     "source": "NYT Politics",
     "pub_ts": 1792832583.0,
-    "score": 15.62
+    "score": 15.44,
+    "grp": "main"
   },
   {
     "title_en": "Trump Asked Muslim Voters to Trust Him. Now Some Feel Used.",
@@ -687,7 +821,8 @@
     "link": "https://www.nytimes.com/2026/10/24/us/politics/trump-muslim-voters-feel-used.html",
     "source": "NYT Politics",
     "pub_ts": 1792832574.0,
-    "score": 15.62
+    "score": 15.44,
+    "grp": "main"
   },
   {
     "title_en": "Trump casts his midterm ballot early in Florida",
@@ -695,8 +830,6 @@
     "summary": "Trump has been criticized in the past for voting by mail despite his long history of railing against that method of submitting ballots.",
     "summary_zh": "特朗普过去因邮寄投票而受到批评，尽管他长期以来一直反对这种提交选票的方法。",
     "body_en": [
-      "Trump casts his midterm ballot early in Florida | PBS News",
-      "A new supporter program from PBS News. Passholders enjoy exclusive benefits, including Liz Landers’ newsletter, while making our journalism possible.",
       "Josh Boak, Associated Press Josh Boak, Associated Press",
       "Jill Colvin, Associated Press Jill Colvin, Associated Press",
       "https://www.pbs.org/newshour/politics/trump-casts-his-midterm-ballot-early-in-florida",
@@ -712,9 +845,7 @@
       "In Florida, Trump has endorsed Republican Rep. Byron Donalds, who is running against David Jolly, a Republican-turned-independent-turned-Democrat, to succeed term-limited Gov. Ron DeSantis.",
       "He has also campaigned for Republican Sen. Ashley Moody, who is running to fill the last two years of Secretary of State Marco Rubio's former Senate term against progressive state lawmaker Angie Nixon.",
       "A free press is a cornerstone of a healthy democracy.",
-      "Support trusted journalism and civil dialogue.",
-      "Josh Boak, Associated Press Josh Boak, Associated Press",
-      "Jill Colvin, Associated Press Jill Colvin, Associated Press"
+      "Support trusted journalism and civil dialogue."
     ],
     "body_zh": [
       "特朗普提前在佛罗里达州进行中期投票|美国公共广播公司新闻",
@@ -742,7 +873,8 @@
     "link": "https://www.pbs.org/newshour/politics/trump-casts-his-midterm-ballot-early-in-florida",
     "source": "PBS NewsHour",
     "pub_ts": 1792877355.0,
-    "score": 15.48
+    "score": 15.21,
+    "grp": "main"
   },
   {
     "title_en": "Ukraine’s military says Starlink satellite connection stable after recent restrictions",
@@ -750,7 +882,6 @@
     "summary": "But Elon Musk, whose company SpaceX owns Starlink, accuses Ukrainian military of violating ⁠the company’s terms Ukraine’s military has a “stable connection to Starlink”, the Ukrainian government said, 10 days after its ability to use the satellite communicatio",
     "summary_zh": "但埃隆·马斯克（其公司 SpaceX 拥有 Starlink）指责乌克兰军方违反了该公司的条款。乌克兰军方拥有“稳定的联系”。",
     "body_en": [
-      "Ukraine’s military says Starlink satellite connection stable after recent restrictions | Ukraine | The Guardian Skip to main content Skip to navigation",
       "Ukraine’s military says Starlink satellite connection stable after recent restrictions",
       "But Elon Musk, whose company SpaceX owns Starlink, accuses Ukrainian military of violating ⁠the company’s terms",
       "Ukraine’s military has a “stable connection to Starlink”, the Ukrainian government said, 10 days after its ability to use the satellite communications system was suddenly restricted .",
@@ -769,7 +900,8 @@
       "He said the decision would “bring a lot of human losses … of course people would die”.",
       "Trump, Musk, Zelenskyy: who is blaming whom in the Ukraine-Starlink row?",
       "Announcing the restoration of the system on Saturday in a diplomatic video address on the Telegram app, Zelenskyy expressed his gratitude to his US allies, including Trump and the US state department, for resolving the operational issue: “The most important development for ‌today is that Starlink ‌and Starshield have resumed operations at their pre-restriction speeds. The speeds are now at the ‌level we need.”",
-      "The restoration began overnight. “By this morning, the speeds were already sufficient for operational use,” Zelenskyy said. “This is very important and significant for our frontline logistics and for defending Ukraine against jet-powered Shaheds.”"
+      "The restoration began overnight. “By this morning, the speeds were already sufficient for operational use,” Zelenskyy said. “This is very important and significant for our frontline logistics and for defending Ukraine against jet-powered Shaheds.”",
+      "On Thursday, Trump had claimed the service was running again at full speed, but a European official speaking to the Associated Press denied the service was fully functioning."
     ],
     "body_zh": [
       "乌克兰军方称星链卫星连接在最近的限制后保持稳定乌克兰 |卫报 跳到主要内容 跳到导航",
@@ -797,62 +929,8 @@
     "link": "https://www.theguardian.com/world/2026/oct/24/ukraine-zelenskyy-military-starlink-satellite-connection-stable-after-restrictions",
     "source": "Guardian US",
     "pub_ts": 1792877158.0,
-    "score": 15.47
-  },
-  {
-    "title_en": "The controversy surrounding convicted former election official Tina Peters",
-    "title_zh": "围绕被定罪的前选举官员蒂娜·彼得斯的争议",
-    "summary": "President Trump has gone to extraordinary lengths for Tina Peters, a former Colorado election official convicted for helping to breach the very voting system she swore to protect. Peters served less than two years in prison for crimes related to breaching voti",
-    "summary_zh": "特朗普总统对前科罗拉多州选举官员蒂娜·彼得斯(Tina Peters)不遗余力，她因帮助破坏投票而被定罪",
-    "body_en": [
-      "The controversy surrounding convicted former election official Tina Peters - CBS News",
-      "President Trump has gone to extraordinary lengths for Tina Peters, a former Colorado election official convicted for helping to breach the very voting system she swore to protect. Peters served less than two years in prison for crimes related to breaching voting system security. She maintains she was trying to show flaws in the system. 60 Minutes reports, Sunday. More",
-      "10/18/2026: The Vote; Up in the Air; Sacha Baron Cohen",
-      "10/11/2026: In the Line of Fire; Lost Sheep; Jon Batiste",
-      "10/4/2026: Who Needs Humans?; The Thom Tillis Tightrope; Saint Francis in the Cloud",
-      "9/20/2026: Patrick Clancy; AI Data Centers; Shergar, Where are you?",
-      "9/13/2026: Shot Down Over Iran, The Pardon Economy, Battering Ram",
-      "8/30/2026: The Cap Arcona; Presenting the Kanneh-Masons",
-      "8/23/2026: Ghost Train; One Mother's Story; Wild Concerto",
-      "8/16/2026: A Psychedelic Journey; The Mardi Gras Indians; The Indomitable Margaret Atwood",
-      "8/9/2026: Generally Recognized as Safe; Growing Up Behind Walls; Hoosier Hysteria",
-      "8/2/2026: Lourdes; The Improbable Tale of Ted Lasso; Birds of War",
-      "7/26/2026: Vaccine Court; Chess Boxing; Amy Sherald",
-      "7/19/2026: Healing Justice; Flight of the Monarchs",
-      "7/12/2026: The Vatican's Orphans; Sealand; Christopher Nolan",
-      "7/5/2026: Elemental Crisis; The Knowledge; Banana Ball",
-      "6/28/2026: Betting on War; The Looting of Cambodia",
-      "6/21/2026: Youngest Survivors; What Happened to the Great White Sharks?",
-      "6/14/2026: Here Come the Humanoids; The Empty Rooms; Lamine Yamal",
-      "6/7/2026: Under Siege; Turning the Ship Around; The Dog Aging Project"
-    ],
-    "body_zh": [
-      "围绕被定罪的前选举官员蒂娜·彼得斯的争议 - 哥伦比亚广播公司新闻",
-      "特朗普总统对前科罗拉多州选举官员蒂娜·彼得斯(Tina Peters)不遗余力，她因帮助破坏她发誓要保护的投票制度而被定罪。彼得斯因与破坏投票系统安全有关的罪行而入狱不到两年。她坚称自己试图展示系统中的缺陷。周日 60 分钟报道。更多的",
-      "2026 年 10 月 18 日：投票；在空中;萨莎·拜伦·科恩",
-      "2026 年 10 月 11 日：火线之中；迷失的羊；乔恩·巴蒂斯特",
-      "2026 年 10 月 4 日：谁需要人类？；汤姆·蒂利斯走钢丝；云中的圣方济各",
-      "2026 年 9 月 20 日：帕特里克·克兰西；人工智能数据中心；谢尔加，你在哪里？",
-      "2026 年 9 月 13 日：伊朗被击落、赦免经济、攻城槌",
-      "2026 年 8 月 30 日：阿尔科纳角；介绍坎尼-梅森夫妇",
-      "2026 年 8 月 23 日：幽灵列车；一位母亲的故事；狂野协奏曲",
-      "2026 年 8 月 16 日：迷幻之旅；狂欢节印第安人；不屈不挠的玛格丽特·阿特伍德",
-      "2026 年 8 月 9 日：普遍认为安全；在墙后长大；印第安人歇斯底里",
-      "2026 年 8 月 2 日：卢尔德；特德·拉索的不可思议的故事；战鸟",
-      "2026 年 7 月 26 日：疫苗法庭；国际象棋拳击；艾米·谢拉尔德",
-      "2026年7月19日：治愈正义；君主的飞行",
-      "2026 年 7 月 12 日：梵蒂冈孤儿；西兰岛；克里斯托弗·诺兰",
-      "2026 年 7 月 5 日：元素危机；知识；香蕉球",
-      "2026年6月28日：押注战争；柬埔寨的抢劫",
-      "2026 年 6 月 21 日：最年轻的幸存者；大白鲨怎么了？",
-      "2026 年 6 月 14 日：类人生物来了；空荡荡的房间；拉明·亚马尔",
-      "2026 年 6 月 7 日：围攻之下；调转船头；狗老化项目"
-    ],
-    "img": "",
-    "link": "https://www.cbsnews.com/video/the-controversy-surrounding-convicted-former-election-official-tina-peters/",
-    "source": "CBS News",
-    "pub_ts": 1792876980.0,
-    "score": 15.46
+    "score": 15.2,
+    "grp": "main"
   },
   {
     "title_en": "Trade tariffs cause whiplash at Port Milwaukee",
@@ -860,15 +938,8 @@
     "summary": "Sacha Pfeiffer visits Port Milwaukee to see how President Trump's tariffs have affected the flow of goods and impacted the regional economy.",
     "summary_zh": "萨莎·菲佛 (Sacha Pfeiffer) 访问密尔沃基港，了解特朗普总统的关税如何影响货物流动和地区经济。",
     "body_en": [
-      "Trade tariffs cause whiplash at Port Milwaukee : NPR",
-      "Podcasts & Shows Expand/collapse submenu for Podcasts & Shows",
-      "Trade tariffs cause whiplash at Port Milwaukee Sacha Pfeiffer visits Port Milwaukee to see how President Trump's tariffs have affected the flow of goods and impacted the regional economy.",
       "Trade tariffs cause whiplash at Port Milwaukee",
-      "Trade tariffs cause whiplash at Port Milwaukee",
-      "Embed iframe src=\"https://www.npr.org/player/embed/nx-s1-6011193/nx-s1-9977440\" width=\"100%\" height=\"290\" frameborder=\"0\" scrolling=\"no\" title=\"NPR embedded audio player\">",
-      "Sacha Pfeiffer visits Port Milwaukee to see how President Trump's tariffs have affected the flow of goods and impacted the regional economy.",
-      "NPR does not offer or accept money for coverage or interviews.",
-      "Anyone who makes such an offer or request is not an NPR employee and does not represent NPR."
+      "Embed iframe src=\"https://www.npr.org/player/embed/nx-s1-6011193/nx-s1-9977440\" width=\"100%\" height=\"290\" frameborder=\"0\" scrolling=\"no\" title=\"NPR embedded audio player\">"
     ],
     "body_zh": [
       "贸易关税导致密尔沃基港遭受重创：NPR",
@@ -885,109 +956,8 @@
     "link": "https://www.npr.org/2026/10/24/nx-s1-6011193/trade-tariffs-cause-whiplash-at-port-milwaukee",
     "source": "NPR News",
     "pub_ts": 1792876855.0,
-    "score": 15.45
-  },
-  {
-    "title_en": "President Trump, first lady vote early in person in Florida",
-    "title_zh": "特朗普总统和第一夫人亲自在佛罗里达州提前投票",
-    "summary": "President Trump and the first lady voted in Florida before he jetted off to Georgia for a campaign rally.",
-    "summary_zh": "特朗普总统和第一夫人在佛罗里达州投票，然后飞往佐治亚州参加竞选集会。",
-    "body_en": [
-      "President Trump, first lady vote early in person in Florida - CBS News",
-      "President Trump and first lady Melania Trump cast their votes for the midterms in person in Palm Beach County, Florida, on Saturday.",
-      "Mr. Trump, who has been on the campaign trail this week, voted at the Palm Beach County Supervisor of Elections building before jetting off to Georgia for a rally in support of Republican Reps. Mike Collins and Rick Jackson.",
-      "Earlier this week, the president said he prefers to vote on Election Day. However, he is registered to vote in Palm Beach County.",
-      "In recent elections, Mr. Trump has voted by mail . The president, however, is critical of widespread mail-in voting.",
-      "Saturday is the first day of early voting in Florida, which runs from Oct. 24 through Halloween.",
-      "Mr. Trump's Election Day plans are not yet clear. He didn't answer when reporters asked this week what he'll be doing that day.",
-      "The president is traveling most days to hold rallies for Republicans. He was in South Carolina Wednesday night and in Iowa Thursday night. On Friday night, he delivered remarks in Fort Myers, Florida.",
-      "Ahead of Saturday's rally in Perry, Georgia, Mr. Trump said Collins and Jackson are \"two incredible people.\"",
-      "\"Their opponents are Radical Left Lowlifes and Lunatics who want to Take Away Your Guns, Open Your Borders, Allow Men To Play In Women's Sports, and have Transgender nonsense for everyone. I Won Georgia in a Record Vote. See you later!!!,\" he wrote on Truth Social .",
-      "Lucia I Suarez Sang contributed to this report.",
-      "Trump campaigning in ruby red area of Iowa with midterms 12 days away",
-      "Trump administration to push for new labels on seafood",
-      "Melania Trump secures \"temporary ceasefire\" in Ukrainian city",
-      "Trump focuses on farmers in Iowa visit, as GOP struggles on fertile ground",
-      "<path fill-rule=\"evenodd\" d=\"M26.4112 0C28.6822 0 30.5231 1.84338 30.5231 4.11724C30.5231 5.27274 30.0471 6.31614 29.2814 7.06388L29.2342 7.10927H29.2359L26.8291 9.35922L26.8303 9.35929L24.0055 12L21.5964 9.74343L21.5893 9.74998L18.9126 7.24282H18.9143C18.0351 6.4877 17.4774 5.36796 17.4774 4.11724C17.4774 1.84338 19.3184 0 21.5893 0C22.49 0 23.323 0.289913 24.0003 0.781611C24.6776 0.289913 25.5106 0 26.4112 0ZM40.187 0.0672038H37.2481C37.0556 0.0672038 36.895 0.228205 36.895 0.420809V7.09412C36.895 7.426 36.7584 7.74272 36.5205 7.96256C36.2941 8.17181 36.0009 8.27479 35.6948 8.2493C35.1218 8.20372 34.673 7.71666 34.673 7.14054V0.420809C34.673 0.228205 34.5123 0.0672038 34.3198 0.0672038H31.3809C31.1884 0.0672038 31.0278 0.228205 31.0278 0.420809V7.1015C31.0278 8.43987 31.5783 9.73129 32.5381 10.6447C33.4266 11.4901 34.571 11.9478 35.7836 11.9478C35.8658 11.9478 35.9484 11.9455 36.0311 11.9413C38.5596 11.8124 40.5401 9.7232 40.5401 7.18542V0.420809C40.5401 0.228205 40.3794 0.0672038 40.187 0.0672038ZM47.5528 4.50138C47.5528 5.20051 46.9995 5.74799 46.2929 5.74799H44.8247V3.24H46.2929C46.9995 3.24 47.5528 3.79409 47.5528 4.50138ZM46.2483 0.0672359H41.5428C41.3502 0.0672359 41.1942 0.223473 41.1942 0.416083V11.5988C41.1942 11.7914 41.3502 11.9477 41.5428 11.9477H44.4763C44.6687 11.9477 44.8247 11.7914 44.8247 11.5988V8.98047H46.3078C48.7333 8.98047 50.7065 6.98459 50.7065 4.53136C50.7065 2.06985 48.7065 0.0672359 46.2483 0.0672359ZM58.4272 8.29771H54.7549V0.416025C54.7549 0.223422 54.599 0.0671781 54.4065 0.0671781H51.4731C51.2806 0.0671781 51.1246 0.223422 51.1246 0.416025V11.5989C51.1246 11.7915 51.2806 11.9477 51.4731 11.9477H58.4272C58.6195 11.9477 58.7756 11.7915 58.7756 11.5989V8.64654C58.7756 8.45393 58.6195 8.29771 58.4272 8.29771ZM62.6732 0.105177L59.7396 0.11973C59.5473 0.120571 59.3921 0.277509 59.3931 0.470118L59.4481 11.6528C59.4489 11.8454 59.6058 12.001 59.7982 12L62.7317 11.9856C62.9241 11.9846 63.0793 11.8275 63.0783 11.6349L63.0233 0.452212C63.0225 0.259608 62.8656 0.104205 62.6732 0.105177ZM71.3876 0.411563C71.3866 0.21896 71.2299 0.0636982 71.0375 0.0646695L64.0389 0.0990818C63.8464 0.0999229 63.6911 0.257143 63.6921 0.449611L63.7472 11.6324C63.748 11.825 63.9049 11.9803 64.0972 11.9794L67.0308 11.9649C67.2231 11.9641 67.3784 11.8071 67.3774 11.6144L67.3571 7.50503L70.5975 7.48911C70.79 7.48808 70.9451 7.33117 70.9441 7.13855L70."
-    ],
-    "body_zh": [
-      "特朗普总统和第一夫人亲自在佛罗里达州提前投票 - 哥伦比亚广播公司新闻",
-      "周六，特朗普总统和第一夫人梅拉尼娅·特朗普在佛罗里达州棕榈滩县亲自为中期选举投票。",
-      "本周一直在竞选活动的特朗普在棕榈滩县选举监督员大楼投票，然后飞往佐治亚州参加支持共和党众议员迈克·柯林斯和里克·杰克逊的集会。",
-      "本周早些时候，总统表示他更愿意在选举日投票。然而，他已在棕榈滩县登记投票。",
-      "在最近的选举中，特朗普先生通过邮寄投票。然而，总统对广泛的邮寄投票持批评态度。",
-      "周六是佛罗里达州提前投票的第一天，从 10 月 24 日持续到万圣节。",
-      "特朗普先生的选举日计划尚不清楚。当记者本周询问他那天要做什么时，他没有回答。",
-      "总统大部分时间都在为共和党举行集会。周三晚上他在南卡罗来纳州，周四晚上他在爱荷华州。周五晚上，他在佛罗里达州迈尔斯堡发表讲话。",
-      "在周六佐治亚州佩里举行集会之前，特朗普表示柯林斯和杰克逊是“两个不可思议的人”。",
-      "“他们的对手是激进的左翼下层人士和疯子，他们想要拿走你们的枪，开放你们的边界，允许男性参加女子体育运动，并对每个人进行跨性别胡说八道。我在创纪录的投票中赢得了佐治亚州。稍后见！”他在 Truth Social 上写道。",
-      "卢西亚·苏亚雷斯·桑为本报告做出了贡献。",
-      "距中期选举还有 12 天，特朗普将在爱荷华州红宝石区进行竞选活动",
-      "特朗普政府推动海鲜新标签",
-      "梅拉尼娅·特朗普在乌克兰城市确保“临时停火”",
-      "特朗普在爱荷华州访问的重点是农民，而共和党在肥沃的土地上挣扎",
-      "<路径 fill-rule=\"evenodd\" d=\"M26.4112 0C28.6822 0 30.5231 1.84338 30.5231 4.11724C30.5231 5.27274 30.0471 6.31614 29.2814 7.06388L29.2342 7.10927H29.2359L26.8291 9.35922L26.8303 9.35929L24.0055 12L21.5964 9.74343L21.5893 9.74998L18.9126 7.24282H18.9143C18.0351 6.4877 17.4774 5.36796 17.4774 4.11724C17.4774 1.84338 19.3184 0 21.5893 0C22.49 0 23.323 0.289913 24.0003 0.781611C24.6776 0.289913 25.5106 0 26.4112 0ZM40.187 0.0672038H37.2481C37.0556 0.0672038 36.895 0.228205 36.895 0.420809V7.09412C36.895 7.426 36.7584 7.74272 36.5205 7.96256C36.2941 8.17181 36.0009 8.27479 35.6948 8.2493C35.1218 8.20372 34.673 7.71666 34.673 7.14054V0.420809C34.673 0.228205 34.5123 0.0672038 34.3198 0.0672038H31.3809C31.1884 0.0672038 31.0278 0.228205 31.0278 0.420809V7.1015C31.0278 8.43987 31.5783 9.73129 32.5381 10.6447C33.4266 11.4901 34.571 11.9478 35.7836 11.9478C35.8658 11.9478 35.9484 11.9455 36.0311 11.9413C38.5596 11.8124 40.5401 9.7232 40.5401 7.18542V0.420809C40.5401 0.228205 40.3794 0.0672038 40.187 0.0672038ZM47.5528 4.50138C47.5528 5.20051 46.9995 5.74799 46.2929 5.74799H44.8247V3.24H46.2929C46.9995 3.24 47.5528 3.79409 47.5528 4.50138ZM46.2483 0.0672359H41.5428C41.3502 0.0672359 41.1942 0.223473 41.1942 0.416083V11.5988C41.1942 11.7914 41.3502 11.9477 41.5428 11.9477H44.4763C44.6687 11.9477 44.8247 11.7914 44.8247 11.5988V8.98047H46.3078C48.7333 8.98047 50.7065 6.98459 50.7065 4.53136C50.7065 2.06985 48.7065 0.0672359 46.2483 0.0672359ZM58.4272 8.29771H54.7549V0.416025C54.7549 0.223422 54.599 0.0671781 54.4065 0.0671781H51.4731C51.2806 0.0671781 51.1246 0.223422 51.1246 0.416025V11.5989C51.1246 11.7915 51.2806 11.9477 51.4731 11.9477H58.4272C58.6195 11.9477 58.7756 11.7915 58.7756 11.5989V8.64654C58.7756 8.45393 58.6195 8.29771 58.4272 8.29771ZM62.6732 0.105177L59.7396 0.11973C59.5473 0.120571 59.3921 0.277509 59.3931 0.470118L59.4481 11.6528C59.4489 11.8454 59.6058 12.001 59.7982 12L62.7317 11.9856C62.9241 11.9846 63.0793 11.8275 63.0783 11.6349L63.0233 0.452212C63.0225 0.259608 62.8656 0.104205 62.6732 0.105177ZM71.3876 0.411563C71.3866 0.21896 71.2299 0.0636982 71.0375 0.0646695L64.0389 0.0990818C63.8464 0.0999229 63.6911 0.257143 63.6921 0.449611L63.7472 11.6324C63.748 11.825 63.9049 11.9803 64.0972 11.9794L67.0308 11.9649C67.2231 11.9641 67.3784 11.8071 67.3774 11.6144L67.3571 7.50503L70.5975 7.48911C70.79 7.48808 70.9451 7.33117 70.9441 7.13855L70。"
-    ],
-    "img": "",
-    "link": "https://www.cbsnews.com/news/trump-melania-vote-early-in-person-florida-saturday/",
-    "source": "CBS News",
-    "pub_ts": 1792875688.0,
-    "score": 15.39
-  },
-  {
-    "title_en": "DOJ sues to block Alaska Senate certification if Sullivan loses",
-    "title_zh": "如果沙利文败诉，司法部将起诉阻止阿拉斯加参议院认证",
-    "summary": "The Trump administration is suing to prevent the Alaska Senate election from being certified if GOP Sen. Daniel Sullivan loses to Democrat Mary Peltola because of the other Dan Sullivan who is on the ballot.",
-    "summary_zh": "如果共和党参议员丹尼尔·沙利文输给民主党人玛丽·佩尔托，特朗普政府将提起诉讼，阻止阿拉斯加参议院选举获得认证",
-    "body_en": [
-      "Trump admin. sues to block Alaska Senate certification if Sen. Dan Sullivan loses - CBS News",
-      "The Trump administration is suing to prevent the Alaska Senate election from being certified if Republican Sen. Daniel Sullivan loses to Democrat Mary Peltola because of the other Dan Sullivan who is on the ballot.",
-      "Alaskans will choose their senator in a ranked-choice contest with four candidates on the ballot: Sen. Dan Sullivan, Peltola, Gerald Heikes, and a teacher named Daniel J. Sullivan.",
-      "The Justice Department argues that if Sen. Sullivan were to lose because of votes unintentionally cast for the Daniel J. Sullivan instead of the senator, the election should not be considered valid.",
-      "\"The Department of Justice does not seek to stop any ballot from being cast or to stop the certification of Alaska's election,\" Attorney General Todd Blanche said on X Saturday.",
-      "\"This litigation seeks to ensure that after Alaskans cast their ballots, they are preserved in a manner so that only Alaska's governing officials have the information necessary to make a determination as to whether Alaskan voters were confused or mislead,\" Blanche wrote.",
-      "The government alleges that candidate Daniel J. Sullivan deliberately sought to confuse voters by running with the same ballot name and party affiliation as the incumbent senator. It argues that he is potentially diverting votes and Peltola stands to benefit.",
-      "In its court filing Friday, the Justice Department argued that allowing Daniel J. Sullivan to be on the ballot \"threatens to mislead Alaskan citizens who want to vote for Senator Sullivan\" and said that some of his supporters \"likely will inadvertently vote for Daniel J. Sullivan.\"",
-      "Further, the senator's other supporters \"likely will be confused as to how to rank the three Republican candidates as to defeat Peltola\" and \"might not rank Senator Sullivan at all.\"",
-      "Peltola's campaign spokesperson, Harry Child, told CBS News in a statement that the effort was \"a despicable political threat to overturn an election.\"",
-      "\"We will fight to ensure every single eligible voter in Alaska can make their voice heard and that no bureaucrat or politician from the Lower 48 can interfere with our lawful, secure elections,\" Child said.",
-      "A sample ballot included in the Justice Department's filing shows how the two Sullivans would be listed: Daniel J. Sullivan appears first, as \"Sullivan, Daniel J. Jr.,\" with no party affiliation, while Sen. Sullivan appears next, as \"Sullivan, Dan S. (Registered Republican) Incumbent.\"",
-      "In June, the Alaska Supreme Court ruled that Daniel J. Sullivan could remain on the ballot, upholding a ruling from a lower court. The state courts reversed the decision by the state Division of Elections that Daniel J. Sullivan was ineligible because he was allegedly trying to \"cause voter confusion.\"",
-      "Daniel J. Sullivan's lawyers argued the state \"lacked any basis in Alaska law to exclude Mr. Sullivan from the ballot\" and didn't have the power to look into his \"private motivations.\" They said that state law doesn't give officials the power to keep qualified candidates off the ballot due to potential confusion.",
-      "If Sen. Sullivan loses in November but would have won had the other Sullivan's votes been counted for him, the Justice Department would ask for an investigation, according to its complaint.",
-      "A Justice Department spokesperson said that the DOJ filed the complaint \"to ensure that this frivolous candidacy does not undermine the integrity of Alaska's election or the will of its voters.\"",
-      "The department says that Daniel J. Sullivan's candidacy constitutes a violation of the National Voter Registration Act, which was enacted to make the voter registration process more accessible.",
-      "President Trump has criticized the dueling Sullivans' presence on the ballot, calling it \"totally confusing\" and \"CHEATING\" in a Truth Social post Wednesday, and writing: \"It's ridiculous that the Court didn't stop this SCAM.\" He said his administration was \"looking at powerful legal options to remove the fraudulent Daniel J. Sullivan Jr. from the Ballot.\"",
-      "Asked Friday about the Justice Department's lawsuit, Mr. Trump told reporters: \"Well, I'm the one that said, 'do it.'\"",
-      "Alaska's other senator, Republican Sen. Lisa Murkowski, said the department \"should never have filed this lawsuit.\""
-    ],
-    "body_zh": [
-      "特朗普行政。如果参议员丹·沙利文败选，将起诉阻止阿拉斯加参议院认证 - 哥伦比亚广播公司新闻",
-      "如果共和党参议员丹尼尔·沙利文因另一名丹·沙利文在投票中输给民主党人玛丽·佩尔托拉，特朗普政府将提起诉讼，以阻止阿拉斯加参议院选举获得认证。",
-      "阿拉斯加人将通过排名竞争选出参议员，选票上有四名候选人：参议员丹·沙利文、佩尔托拉、杰拉尔德·海克斯和一位名叫丹尼尔·J·沙利文的教师。",
-      "司法部辩称，如果沙利文参议员因无意中投票给丹尼尔·J·沙利文而不是参议员而失败，则选举不应被视为有效。",
-      "政府声称，候选人丹尼尔·J·沙利文(Daniel J. Sullivan)使用与现任参议员相同的选票名称和党派参与竞选，故意迷惑选民。据称，他有可能转移选票，而佩尔托拉将从中受益。",
-      "在周五的法庭文件中，司法部辩称，允许丹尼尔·J·沙利文参加投票“可能会误导想要投票给沙利文参议员的阿拉斯加公民”，并表示他的一些支持者“可能会无意中投票给丹尼尔·沙利文”。",
-      "此外，参议员的其他支持者“可能会对如何对三名共和党候选人进行排名以击败佩尔托拉感到困惑”，并且“可能根本不会对沙利文参议员进行排名”。",
-      "佩尔托拉的竞选发言人哈里·柴尔德在一份声明中告诉哥伦比亚广播公司新闻，这一行为是“推翻选举的卑鄙政治威胁”。",
-      "柴尔德说：“我们将努力确保阿拉斯加的每一位合格选民都能发出自己的声音，并且来自下 48 州的任何官僚或政客都不能干预我们合法、安全的选举。”",
-      "司法部文件中包含的选票样本显示了两名沙利文的名单：丹尼尔·J·沙利文（Daniel J. Sullivan）排在第一位，名称为“沙利文，丹尼尔·J.Jr.”（Sullivan, Daniel J. Jr.），无党派关系；而参议员沙利文（Sullivan）排在第二位，名称为“沙利文，丹·S.（注册共和党）现任议员”（Sullivan, Dan S.（注册共和党）现任议员）。",
-      "六月，阿拉斯加最高法院裁定丹尼尔·J·沙利文可以继续参加投票，维持下级法院的裁决。州法院推翻了州选举部门关于丹尼尔·J·沙利文（Daniel J. Sullivan）没有资格的决定，因为据称他试图“造成选民混乱”。",
-      "丹尼尔·J·沙利文的律师辩称，该州“缺乏阿拉斯加法律的任何依据将沙利文先生排除在投票之外”，并且无权调查他的“私人动机”。他们表示，州法律没有赋予官员因潜在混乱而将合格候选人排除在投票之外的权力。",
-      "根据诉状，如果沙利文参议员在 11 月落败，但如果计入其他沙利文的选票，他本可以获胜，司法部将要求进行调查。",
-      "司法部发言人表示，司法部提出申诉“是为了确保这种轻率的候选行为不会损害阿拉斯加选举的完整性或其选民的意愿。”",
-      "该部门表示，丹尼尔·J·沙利文的候选资格违反了《国家选民登记法》，该法的制定是为了使选民登记程序更容易进行。",
-      "特朗普总统在周三的《真相社会》帖子中批评了决斗的沙利文在选票上的出现，称其“完全令人困惑”和“作弊”，并写道：“法院没有阻止这一骗局，这真是荒谬。”他说，他的政府正在“寻找强有力的法律选择，将欺诈性的小丹尼尔·沙利文从选票中剔除”。",
-      "周五被问及司法部的诉讼时，特朗普告诉记者：“好吧，我就是那个说‘就这么做’的人。”",
-      "阿拉斯加州的另一位参议员、共和党参议员丽莎·穆尔科斯基表示，该部门“不应该提起这起诉讼”。",
-      "“阿拉斯加人不需要任何帮助来投票给他们喜欢的候选人，阿拉斯加州已经通过在今年的选票上明确区分候选人来解决这个问题，”经常批评特朗普的穆尔科斯基在 X 上写道。",
-      "Caitlin Yilek 和 Kaia Hubbard 对本报告做出了贡献。"
-    ],
-    "img": "",
-    "link": "https://www.cbsnews.com/news/trump-admin-sues-to-block-alaska-senate-certification-if-sen-dan-sullivan-loses/",
-    "source": "CBS News",
-    "pub_ts": 1792872944.0,
-    "score": 15.26
+    "score": 15.19,
+    "grp": "main"
   },
   {
     "title_en": "Six Flags to reopen Goliath rollercoaster – but now with seatbelts after recent rider death",
@@ -995,7 +965,6 @@
     "summary": "Hassan Jihad Ibn Kariem fell from ride earlier this month, spurring amusement park to temporarily shut it down Six Flags will install seatbelts on its Goliath rollercoaster in Georgia , after a rider plummeted to his death earlier this month. Hassan Jihad Ibn ",
     "summary_zh": "本月早些时候，哈桑·吉哈德·伊本·卡里姆 (Hassan Jihad Ibn Kariem) 从游乐设施中摔倒，导致游乐园暂时关闭 六旗游乐园将为其安装安全带",
     "body_en": [
-      "Six Flags to reopen Goliath rollercoaster – but now with seatbelts after recent rider death | Georgia | The Guardian Skip to main content Skip to navigation",
       "Six Flags to reopen Goliath rollercoaster – but now with seatbelts after recent rider death",
       "Hassan Jihad Ibn Kariem fell from ride earlier this month, spurring amusement park to temporarily shut it down",
       "Six Flags will install seatbelts on its Goliath rollercoaster in Georgia , after a rider plummeted to his death earlier this month.",
@@ -1030,7 +999,8 @@
     "link": "https://www.theguardian.com/us-news/2026/oct/24/six-flags-goliath-rollercoaster-seatbelts",
     "source": "Guardian US",
     "pub_ts": 1792871076.0,
-    "score": 15.17
+    "score": 14.92,
+    "grp": "main"
   },
   {
     "title_en": "Republican billionaire Rick Jackson is walking a Trump tightrope in his quest to lead Georgia",
@@ -1038,7 +1008,6 @@
     "summary": "Rick Jackson wants to be Georgia's governor and the Republican billionaire is promising to fight for working-class voters",
     "summary_zh": "里克·杰克逊希望成为佐治亚州州长，共和党亿万富翁承诺为工人阶级选民而战",
     "body_en": [
-      "Republican billionaire Rick Jackson is walking a Trump tightrope in his quest to lead Georgia - ABC News",
       "Republican billionaire Rick Jackson is walking a Trump tightrope in his quest to lead Georgia",
       "Rick Jackson wants to be Georgia's governor and the Republican billionaire is promising to fight for working-class voters",
       "ATLANTA -- He's hardly the first billionaire to promise working-class voters he'll fight for them in public office. Rick Jackson , the Republican candidate for Georgia governor, has even compared himself to the real estate mogul who reached the Oval Office.",
@@ -1057,7 +1026,8 @@
       "“The reason I have spent so much money to do this,” he said, is to “help 11 million Georgians, to keep them from struggling.”",
       "Jackson launched his bid as a relative unknown, though Capitol insiders knew him because of Jackson Healthcare, its lucrative state contracts and his lobbying interest in healthcare, business and tax policy.",
       "The Republican primary field featured a trio of statewide elected officials, including Lt. Gov. Burt Jones, who won Trump’s endorsement in August 2025 , before Jackson got in.",
-      "Woman's body found in massive tank after yearslong investigation"
+      "Woman's body found in massive tank after yearslong investigation",
+      "Minnesota man credited with saving kids, school bus driver surprised with check"
     ],
     "body_zh": [
       "共和党亿万富翁里克·杰克逊在寻求领导佐治亚州时正在走钢丝，与特朗普走钢丝 - ABC News",
@@ -1085,117 +1055,8 @@
     "link": "https://abcnews.com/Politics/wireStory/republican-billionaire-rick-jackson-walking-trump-tightrope-quest-137540284",
     "source": "ABC Politics",
     "pub_ts": 1792861289.0,
-    "score": 14.72
-  },
-  {
-    "title_en": "This US House district was once a political battleground. Now it shows why Congress is dysfunctional",
-    "title_zh": "这个美国众议院选区曾经是一个政治战场。现在它显示了为什么国会功能失调",
-    "summary": "The number of politically competitive U.S. House seats is shrinking rapidly",
-    "summary_zh": "美国众议院政治竞争席位数量正在迅速减少",
-    "body_en": [
-      "This US House district was once a political battleground. Now it shows why Congress is dysfunctional - ABC News",
-      "This US House district was once a political battleground. Now it shows why Congress is dysfunctional",
-      "The number of politically competitive U.S. House seats is shrinking rapidly",
-      "RALEIGH, N.C. -- In 2022, Democrat Wiley Nickel ran as a moderate and narrowly won North Carolina's 13th Congressional District by about 9,000 votes. Two years later, the current congressman, Republican Brad Knott, ran as a conservative and coasted into the U.S. House by more than 70,000 votes.",
-      "Voters didn't change their minds. Politicians changed their voters.",
-      "The Republican-controlled legislature redrew the state's congressional map to transform what was one of the last remaining swing districts in the South to a safe GOP seat. Lawmakers split the rectangular 13th District into an hourglass shape that carved out Democratic voters in Raleigh and replaced them with a swath of rural counties reaching up to the Virginia border.",
-      "Swing seats, meaning a district that a presidential candidate won by 5 percentage points or fewer in the previous election, are disappearing from the national map. For decades after World War II, the number of competitive seats in the House slowly eroded as the United States grew more polarized , voters were less likely to split their ticket between parties and people moved closer to like-minded neighbors, creating Democratic strongholds in urban areas and Republicans ones across rural America.",
-      "That decline accelerated over the past year after Republican President Donald Trump sparked a partisan redistricting battle. The number of swing districts fell from 45 to 37. There were 96 House seats that fit the modern definition of a swing seat in 1964, according to one count from the 1970s, when the shrinking number of such districts was first noted.",
-      "That means the overwhelming majority of House seats are effectively won in primaries , with the support of only a fraction of voters who usually are at the extreme ideological end of their party.",
-      "Nickel saw the impact firsthand during his lone term in Washington.",
-      "“The biggest divide I found in Congress wasn’t Democrat versus Republican, it was safe seats versus competitive seats,” Nickel said. “When your focus is on running a campaign where you talk to every single voter, you look at things differently and your focus is on solving problems.”",
-      "Unite America, an organization pushing alternatives to party primaries, calculated that 87% of the representatives elected to the House in 2024 were chosen by 7% of the country’s voters.",
-      "“Voters don’t have any way of holding Congress responsible, except for a narrow window of swing districts,” Nick Troiano, the group's executive director, said in an interview, adding that he expects things to get worse in November. “The least competitive election of our lifetimes will lead to the least accountable and least representative Congress of our lifetimes.”",
-      "Republicans are hoping the smaller number of competitive seats puts a low ceiling on what Democrats can win on Nov. 3.",
-      "“Both sides are fighting over a narrow House battlefield,” said Mike Marinella, a spokesman for the National Republican Congressional Campaign. “It's a knife fight in a dark alley.”",
-      "The alley may be widening this year , but it still is an alley.",
-      "Democrats have expanded their political targets, given the unpopular war with Iran and voters angry about high prices. Both parties are spending on campaigns in Republican area that normally would not be competitive.",
-      "Even in what is shaping up as a difficult political environment, however, Republicans are protected by the limited number of seats in play.",
-      "“Even if there's the kind of swing we got in 2006, there's not going to be 40 seats changing hands. There's going to be 20 seats changing hands,” said Ian Shapiro, a Yale political scientist.",
-      "There is a long-standing debate among academics as to how much of the decline can be blamed on partisan-motivated redistricting , known as gerrymandering, and how much on Americans' increasing proclivity to live among like-minded people who vote the same way. Multiple studies have found that without partisan gerrymandering, the House would have about double the number of competitive seats it has now."
-    ],
-    "body_zh": [
-      "这个美国众议院选区曾经是一个政治战场。现在它显示了国会功能失调的原因 - ABC News",
-      "这个美国众议院选区曾经是一个政治战场。现在它显示了为什么国会功能失调",
-      "美国众议院政治竞争席位数量正在迅速减少",
-      "北卡罗来纳州罗利——2022 年，民主党人威利·尼克尔 (Wiley Nickel) 作为温和派参选，以约 9,000 票微弱优势赢得北卡罗来纳州第 13 国会选区。两年后，现任国会议员、共和党人布拉德·诺特以保守派身份参选，并以超过 7 万票的优势进入美国众议院。",
-      "选民没有改变主意。政客们改变了他们的选民。",
-      "共和党控制的立法机构重新绘制了该州的国会地图，将南部仅存的摇摆选区之一转变为共和党的安全席位。立法者将长方形的第 13 选区分割成沙漏形状，将罗利的民主党选民划出，并用延伸至弗吉尼亚州边境的一大片乡村县取而代之。",
-      "摇摆席位，即总统候选人在上次选举中以 5 个百分点或更少的优势赢得的选区，正在从国家地图上消失。第二次世界大战后的几十年里，随着美国两极分化加剧，众议院的竞争性席位数量慢慢减少，选民们不太可能在党派之间分配选票，人们也更加接近志同道合的邻居，从而在城市地区建立了民主党的据点，在美国农村地区建立了共和党的据点。",
-      "在共和党总统唐纳德·特朗普引发党派重新划分选区之战后，这种下降在过去一年加速。摇摆选区的数量从 45 个减少到 37 个。根据 1970 年代的一项统计，1964 年，众议院有 96 个席位符合摇摆席位的现代定义，当时此类选区的数量首次出现减少。",
-      "这意味着绝大多数众议院席位实际上是在初选中赢得的，而只有一小部分选民的支持，而这些选民通常处于党派的极端意识形态一端。",
-      "尼克尔在华盛顿的唯一任期内亲眼目睹了这一影响。",
-      "“我在国会发现的最大分歧不是民主党与共和党，而是安全席位与竞争性席位，”尼克尔说。 “当你的重点是开展一场与每一位选民交谈的竞选活动时，你会以不同的方式看待事物，你的重点是解决问题。”",
-      "推动政党初选替代方案的组织Unite America计算出，2024年当选的众议院代表中有87%是由该国7%的选民选出的。",
-      "该组织执行董事尼克·特罗伊亚诺(Nick Troiano)在接受采访时表示，“除了摇摆选区的狭窄窗口之外，选民没有任何办法让国会承担责任。”他补充说，他预计11月情况会变得更糟。 “我们一生中竞争最激烈的选举将导致我们一生中最不负责任和最具代表性的国会。”",
-      "共和党人希望竞争性席位数量较少，从而降低民主党在 11 月 3 日获胜的上限。",
-      "“双方都在狭小的众议院战场上展开战斗，”全国共和党国会竞选活动发言人迈克·马里内拉 (Mike Marinella) 说。 “这是在黑暗的小巷里进行的一场刀战。”",
-      "今年胡同可能会拓宽，但它仍然是胡同。",
-      "鉴于与伊朗的战争不受欢迎以及选民对高物价感到愤怒，民主党扩大了他们的政治目标。两党都在共和党地区的竞选活动上投入资金，而这些竞选活动通常不会具有竞争力。",
-      "然而，即使在当前艰难的政治环境中，共和党人仍受到有限席位的保护。",
-      "“即使出现 2006 年那样的摇摆，也不会有 40 个席位易手。将会有 20 个席位易手，”耶鲁大学政治学家伊恩·夏皮罗 (Ian Shapiro) 表示。",
-      "学术界长期以来一直存在争论，即选民人数下降在多大程度上可以归咎于党派动机的选区重新划分，即所谓的不公正划分选区，以及美国人越来越倾向于生活在志同道合、投票方式相同的人中间。多项研究发现，如果没有党派不公正的选区划分，众议院的竞争性席位数量将是现在的两倍左右。"
-    ],
-    "img": "https://s.abcnews.com/images/US/wirestory_608be19e4c6359d1590717dbead13940_4x3_384.jpg",
-    "link": "https://abcnews.com/Politics/wireStory/us-house-district-political-battleground-now-shows-congress-137534858",
-    "source": "ABC Politics",
-    "pub_ts": 1792856120.0,
-    "score": 14.5
-  },
-  {
-    "title_en": "Sexual harassment rules for Congress are under review after a flurry of ethics cases",
-    "title_zh": "在发生一系列道德案件后，国会的性骚扰规则正在接受审查",
-    "summary": "Lawmakers reviewing the issue of sexual harassment on Capitol Hill say they're disturbed by what they've found",
-    "summary_zh": "在国会山审查性骚扰问题的立法者表示，他们对所发现的情况感到不安",
-    "body_en": [
-      "Sexual harassment rules for Congress are under review after a flurry of ethics cases - ABC News",
-      "Sexual harassment rules for Congress are under review after a flurry of ethics cases",
-      "Lawmakers reviewing the issue of sexual harassment on Capitol Hill say they're disturbed by what they've found",
-      "WASHINGTON -- When Rep. Kat Cammack began work on a task force this spring to combat sexual misconduct on Capitol Hill , the Florida Republican soon heard from former staffers who wanted to share their stories.",
-      "They “came out of the woodwork” she said, and had stayed silent because it was well established that coming forward would be the end of a career they had worked so hard to achieve.",
-      "“Those were some of the hardest conversations to have,\" Cammack said. \"And the stories were gut-wrenching.\"",
-      "This year's spike in House Ethics Committee investigations related to sexual misconduct prompted congressional leaders to set up a working group led by Cammack and Rep. Teresa Leger Fernandez, D-N.M. What they have found is disturbing, Cammack said.",
-      "Victims are unclear about where they can go for help. They do not trust there will be repercussions for the perpetrator. And the current requirements for reporting harassment can work against them, such as a 180-day “shot clock” for filing a claim after an alleged violation.",
-      "“It's a disaster,\" Cammack said. “The entire system on Capitol Hill is really designed to create a chilling effect for victims.\"",
-      "The task force is expected to release recommended changes after the Nov. 3 elections with a goal of taking action before the end of the year.",
-      "In a Congress that has generally struggled this year to do more than keep the federal government running, the House Ethics Committee has been caught in the middle of the some of the biggest stories coming out of Washington.",
-      "Three lawmakers resigned this year rather than face the prospect of an expulsion vote. Two of those cases involved alleged sexual misconduct. Another member was censured for his interactions with two female aides on his staff. Other investigations are ongoing.",
-      "Those stories emerged at a time when Congress was confronted by public outrage over the government's handling of the Jeffrey Epstein case. In the previous months, members of the Democratic Women's Caucus had multiple meetings with survivors who were pushing for the release of Epstein-related files at the Department of Justice.",
-      "In April, the Ethics Committee began an investigation into whether then-Rep. Eric Swalwell , D-Calif., engaged in sexual misconduct toward an employee working under his supervision. Swalwell would soon resign as colleagues called for his expulsion.",
-      "Similarly, Rep. Tony Gonzales , R-Texas, resigned as the committee investigated whether he had engaged in sexual misconduct toward an employee in his office. Gonzales had acknowledged an affair with a staff member who later died by suicide.",
-      "Most recently, the committee recommended the censure of Rep. Chuck Edwards, R-N.C., following an investigation that concluded he engaged in persistent unprofessional and inappropriate conduct toward two young female staffers in his office. The House went along with the recommendation by a vote of 413-2.",
-      "Rep. Jimmy Gomez, D-Calif., is also the subject of a committee investigation that he may have engaged in sexual misconduct with a House staffer. Gomez said he would cooperate with the investigation but also stressed that his actions were consensual in nature and did not violate the law or House Ethics rules. He also apologized to his family and constituents.",
-      "The committee is also investigating whether Rep. Cory Mills, R-Fla., engaged in sexual misconduct or dating violence, among other allegations. Mills has denied the allegations and recently lost a Republican primary.",
-      "Cammack said that as stories began to surface about some of the cases before the committee, she and colleagues began talking about what they could do to “clean up the House.” She approached Speaker Mike Johnson , R-La., about getting on board.",
-      "Woman's body found in massive tank after yearslong investigation"
-    ],
-    "body_zh": [
-      "在发生一系列道德案件后，国会的性骚扰规则正在接受审查 - ABC News",
-      "在发生一系列道德案件后，国会的性骚扰规则正在接受审查",
-      "在国会山审查性骚扰问题的立法者表示，他们对所发现的情况感到不安",
-      "华盛顿——当众议员凯特·卡马克今年春天开始组建一个打击国会山不当性行为的特别工作组时，这位佛罗里达州共和党人很快就收到了前工作人员的来信，他们希望分享自己的故事。",
-      "她说，他们“从木制品中脱颖而出”，并保持沉默，因为众所周知，站出来将是他们辛辛苦苦取得的职业生涯的终结。",
-      "“这些是最难进行的对话，”卡马克说。 “这些故事令人心痛。”",
-      "今年众议院道德委员会有关不当性行为的调查激增，促使国会领导人成立了一个由卡马克和新墨西哥州众议员特蕾莎·莱杰·费尔南德斯领导的工作组。卡马克说，他们的发现令人不安。",
-      "受害者不清楚可以去哪里寻求帮助。他们不相信肇事者会受到惩罚。目前举报骚扰的要求可能对他们不利，例如在涉嫌违规后提出索赔有 180 天的“限制”。",
-      "“这是一场灾难，”卡马克说。 “国会山的整个系统实际上是为了给受害者制造寒蝉效应。”",
-      "该工作组预计将在 11 月 3 日选举后发布修改建议，目标是在年底前采取行动。",
-      "今年国会除了维持联邦政府的运转之外，还一直在努力做更多的事情，而众议院道德委员会却卷入了华盛顿发生的一些重大事件的中间。",
-      "今年，三名议员辞职，以免面临驱逐投票的前景。其中两起案件涉及涉嫌不当性行为。另一名成员因与两名女助手的互动而受到谴责。其他调查正在进行中。",
-      "这些故事出现之际，国会正面临公众对政府处理杰弗里·爱泼斯坦案的愤怒。在过去的几个月里，民主妇女核心小组的成员与幸存者举行了多次会议，她们推动司法部公布与爱泼斯坦相关的文件。",
-      "四月，道德委员会开始调查当时的众议员是否。加利福尼亚州民主党人埃里克·斯瓦尔韦尔 (Eric Swalwell) 对在他监督下工作的一名员工实施了不当性行为。斯瓦尔韦尔很快就辞职了，因为同事们呼吁将他开除。",
-      "同样，德克萨斯州共和党众议员托尼·冈萨雷斯(Tony Gonzales)辞职，因为委员会正在调查他是否对办公室的一名员工有不当性行为。冈萨雷斯承认与一名工作人员有染，该工作人员后来自杀身亡。",
-      "最近，委员会建议对北卡罗来纳州共和党众议员查克·爱德华兹（Chuck Edwards）进行谴责，调查得出结论，他对办公室的两名年轻女职员持续存在不专业和不当的行为。众议院以 413 票对 2 票通过了这项建议。",
-      "加利福尼亚州民主党众议员吉米·戈麦斯也是委员会调查的对象，因为他可能与众议院工作人员发生了不当性行为。戈麦斯表示，他将配合调查，但也强调，他的行为本质上是双方同意的，没有违反法律或众议院道德规则。他还向家人和选民道歉。",
-      "该委员会还在调查佛罗里达州共和党众议员科里·米尔斯是否存在不当性行为或约会暴力等指控。米尔斯否认了这些指控，并在最近的共和党初选中落败。",
-      "卡马克说，随着委员会审理的一些案件的故事开始浮出水面，她和同事们开始讨论他们可以采取哪些措施来“清理众议院”。她向路易斯安那州共和党众议员迈克·约翰逊寻求加入的机会。",
-      "经过多年调查，在大型水箱中发现了一名妇女的尸体"
-    ],
-    "img": "https://s.abcnews.com/images/US/wirestory_2966245df0c1aaf29d9239a100307e39_4x3_384.jpg",
-    "link": "https://abcnews.com/Politics/wireStory/sexual-harassment-rules-congress-review-after-flurry-ethics-137535036",
-    "source": "ABC Politics",
-    "pub_ts": 1792856109.0,
-    "score": 14.5
+    "score": 14.49,
+    "grp": "main"
   },
   {
     "title_en": "Russia steps up election influence efforts in final stretch of midterms",
@@ -1203,26 +1064,9 @@
     "summary": "Researchers who track online influence operations say Kremlin-backed groups are renewing tactics they've used to sow distrust and discord in previous elections in the U.S. and around the world.",
     "summary_zh": "追踪在线影响力运作的研究人员表示，克里姆林宫支持的团体正在更新他们在之前用来散布不信任和不和的策略。",
     "body_en": [
-      "Russia steps up election influence efforts ahead of midterms : NPR",
-      "Podcasts & Shows Expand/collapse submenu for Podcasts & Shows",
-      "Russia steps up election influence efforts ahead of midterms Researchers who track online influence operations say Kremlin-backed groups are renewing tactics they've used to sow distrust and discord in previous elections in the U.S. and around the world.",
       "Russia steps up election influence efforts in final stretch of midterms",
       "Updated October 24, 2026 5:00 AM ET Originally published October 23, 2026 5:40 PM ET",
-      "Embed iframe src=\"https://www.npr.org/player/embed/nx-s1-5995508/nx-s1-9976694\" width=\"100%\" height=\"290\" frameborder=\"0\" scrolling=\"no\" title=\"NPR embedded audio player\">",
-      "A pedestrian looks at his smartphone on an embankment with the Kremlin in the background in central Moscow on Oct. 8, 2026. Researchers who track online influence operations say Kremlin-backed groups are renewing tactics they've used to sow distrust and discord in previous elections in the U.S. and around the world. Igor Ivanko/AFP via Getty Images hide caption",
-      "Russian operatives are pumping out fabricated claims about Democratic candidates, AI-manipulated videos of celebrities and fake posts impersonating real news outlets in an effort to influence American voters in the final run-up to Election Day.",
-      "Researchers who track online influence operations and lawmakers who've been briefed by the intelligence community say Kremlin-backed groups are renewing familiar tactics they've used to sow distrust and discord in previous elections in the U.S. and around the world.",
-      "Top 2 Democrats on Intel say they're preparing for Trump to claim foreign meddling",
-      "\"It's a carnival out there,\" Rep. Jim Himes of Connecticut , the ranking member on the House intelligence committee, told reporters this week. \"They're throwing everything out there to generate a sense of chaos and anarchy.\"",
-      "The goal is to exacerbate divisions, erode confidence in democracy and, crucially, undermine U.S. support for Ukraine.",
-      "\"At the end of the day, the main issue for Russia is and has to be Ukraine,\" said Darren Linvill, co-director of Clemson University's Media Forensics Hub, who has tracked foreign propaganda campaigns for years.",
-      "Linvill says the Russian playbook is consistent. A false claim or divisive narrative is seeded on social media or on a fake website posing as a news organization or think tank. It's spread by state media, automated fake accounts or, increasingly, paid influencers, in the hopes that it gets seen and repeated by real people.",
-      "\"In the same way that marketing companies will pay an influencer to disseminate, you know, 'Nike's a great shoe,' the Russians do it with false information and made-up lies,\" he said. \"They use influencers that know their audience, that are part of that audience, and they know how to give that audience a message that they want to hear,\" Linvill said.",
-      "A Russian operation put that playbook to work this week to spread a baseless accusation against a Democratic U.S. Senate candidate.",
-      "Linvill and several other research groups attributed them to Russian operators the research community has dubbed Storm-1516 . It's known for staging fake videos with actors and laundering their claims through influencer accounts with large followings.",
-      "Two fraudulent videos targeting the Senate candidate were posted on Tuesday on X by an account created last month that had few followers. The account's X profile said it was based in the U.S. but the social media platform publicly flagged it as possibly using a proxy such as a virtual private network, which could disguise its location.",
-      "OpenAI caught Russians and Iranians using ChatGPT for influence campaigns",
-      "The videos were likely created using artificial intelligence, according to Graphika, a research company that analyzes online communities. Linvill said a hallmark of Storm-1516 videos is the use of real actors whose faces are swapped using AI to look like someone else."
+      "Embed iframe src=\"https://www.npr.org/player/embed/nx-s1-5995508/nx-s1-9976694\" width=\"100%\" height=\"290\" frameborder=\"0\" scrolling=\"no\" title=\"NPR embedded audio player\">"
     ],
     "body_zh": [
       "俄罗斯在中期选举前加强选举影响力：NPR",
@@ -1250,7 +1094,120 @@
     "link": "https://www.npr.org/2026/10/23/nx-s1-5995508/russia-midterms-election-influence",
     "source": "NPR Politics",
     "pub_ts": 1792791602.0,
-    "score": 14.48
+    "score": 14.36,
+    "grp": "main"
+  },
+  {
+    "title_en": "Sexual harassment rules for Congress are under review after a flurry of ethics cases",
+    "title_zh": "在发生一系列道德案件后，国会的性骚扰规则正在接受审查",
+    "summary": "Lawmakers reviewing the issue of sexual harassment on Capitol Hill say they're disturbed by what they've found",
+    "summary_zh": "在国会山审查性骚扰问题的立法者表示，他们对所发现的情况感到不安",
+    "body_en": [
+      "Sexual harassment rules for Congress are under review after a flurry of ethics cases",
+      "Lawmakers reviewing the issue of sexual harassment on Capitol Hill say they're disturbed by what they've found",
+      "WASHINGTON -- When Rep. Kat Cammack began work on a task force this spring to combat sexual misconduct on Capitol Hill , the Florida Republican soon heard from former staffers who wanted to share their stories.",
+      "They “came out of the woodwork” she said, and had stayed silent because it was well established that coming forward would be the end of a career they had worked so hard to achieve.",
+      "“Those were some of the hardest conversations to have,\" Cammack said. \"And the stories were gut-wrenching.\"",
+      "This year's spike in House Ethics Committee investigations related to sexual misconduct prompted congressional leaders to set up a working group led by Cammack and Rep. Teresa Leger Fernandez, D-N.M. What they have found is disturbing, Cammack said.",
+      "Victims are unclear about where they can go for help. They do not trust there will be repercussions for the perpetrator. And the current requirements for reporting harassment can work against them, such as a 180-day “shot clock” for filing a claim after an alleged violation.",
+      "“It's a disaster,\" Cammack said. “The entire system on Capitol Hill is really designed to create a chilling effect for victims.\"",
+      "The task force is expected to release recommended changes after the Nov. 3 elections with a goal of taking action before the end of the year.",
+      "In a Congress that has generally struggled this year to do more than keep the federal government running, the House Ethics Committee has been caught in the middle of the some of the biggest stories coming out of Washington.",
+      "Three lawmakers resigned this year rather than face the prospect of an expulsion vote. Two of those cases involved alleged sexual misconduct. Another member was censured for his interactions with two female aides on his staff. Other investigations are ongoing.",
+      "Those stories emerged at a time when Congress was confronted by public outrage over the government's handling of the Jeffrey Epstein case. In the previous months, members of the Democratic Women's Caucus had multiple meetings with survivors who were pushing for the release of Epstein-related files at the Department of Justice.",
+      "In April, the Ethics Committee began an investigation into whether then-Rep. Eric Swalwell , D-Calif., engaged in sexual misconduct toward an employee working under his supervision. Swalwell would soon resign as colleagues called for his expulsion.",
+      "Similarly, Rep. Tony Gonzales , R-Texas, resigned as the committee investigated whether he had engaged in sexual misconduct toward an employee in his office. Gonzales had acknowledged an affair with a staff member who later died by suicide.",
+      "Most recently, the committee recommended the censure of Rep. Chuck Edwards, R-N.C., following an investigation that concluded he engaged in persistent unprofessional and inappropriate conduct toward two young female staffers in his office. The House went along with the recommendation by a vote of 413-2.",
+      "Rep. Jimmy Gomez, D-Calif., is also the subject of a committee investigation that he may have engaged in sexual misconduct with a House staffer. Gomez said he would cooperate with the investigation but also stressed that his actions were consensual in nature and did not violate the law or House Ethics rules. He also apologized to his family and constituents.",
+      "The committee is also investigating whether Rep. Cory Mills, R-Fla., engaged in sexual misconduct or dating violence, among other allegations. Mills has denied the allegations and recently lost a Republican primary.",
+      "Cammack said that as stories began to surface about some of the cases before the committee, she and colleagues began talking about what they could do to “clean up the House.” She approached Speaker Mike Johnson , R-La., about getting on board.",
+      "Woman's body found in massive tank after yearslong investigation",
+      "Minnesota man credited with saving kids, school bus driver surprised with check"
+    ],
+    "body_zh": [
+      "在发生一系列道德案件后，国会的性骚扰规则正在接受审查 - ABC News",
+      "在发生一系列道德案件后，国会的性骚扰规则正在接受审查",
+      "在国会山审查性骚扰问题的立法者表示，他们对所发现的情况感到不安",
+      "华盛顿——当众议员凯特·卡马克今年春天开始组建一个打击国会山不当性行为的特别工作组时，这位佛罗里达州共和党人很快就收到了前工作人员的来信，他们希望分享自己的故事。",
+      "她说，他们“从木制品中脱颖而出”，并保持沉默，因为众所周知，站出来将是他们辛辛苦苦取得的职业生涯的终结。",
+      "“这些是最难进行的对话，”卡马克说。 “这些故事令人心痛。”",
+      "今年众议院道德委员会有关不当性行为的调查激增，促使国会领导人成立了一个由卡马克和新墨西哥州众议员特蕾莎·莱杰·费尔南德斯领导的工作组。卡马克说，他们的发现令人不安。",
+      "受害者不清楚可以去哪里寻求帮助。他们不相信肇事者会受到惩罚。目前举报骚扰的要求可能对他们不利，例如在涉嫌违规后提出索赔有 180 天的“限制”。",
+      "“这是一场灾难，”卡马克说。 “国会山的整个系统实际上是为了给受害者制造寒蝉效应。”",
+      "该工作组预计将在 11 月 3 日选举后发布修改建议，目标是在年底前采取行动。",
+      "今年国会除了维持联邦政府的运转之外，还一直在努力做更多的事情，而众议院道德委员会却卷入了华盛顿发生的一些重大事件的中间。",
+      "今年，三名议员辞职，以免面临驱逐投票的前景。其中两起案件涉及涉嫌不当性行为。另一名成员因与两名女助手的互动而受到谴责。其他调查正在进行中。",
+      "这些故事出现之际，国会正面临公众对政府处理杰弗里·爱泼斯坦案的愤怒。在过去的几个月里，民主妇女核心小组的成员与幸存者举行了多次会议，她们推动司法部公布与爱泼斯坦相关的文件。",
+      "四月，道德委员会开始调查当时的众议员是否。加利福尼亚州民主党人埃里克·斯瓦尔韦尔 (Eric Swalwell) 对在他监督下工作的一名员工实施了不当性行为。斯瓦尔韦尔很快就辞职了，因为同事们呼吁将他开除。",
+      "同样，德克萨斯州共和党众议员托尼·冈萨雷斯(Tony Gonzales)辞职，因为委员会正在调查他是否对办公室的一名员工有不当性行为。冈萨雷斯承认与一名工作人员有染，该工作人员后来自杀身亡。",
+      "最近，委员会建议对北卡罗来纳州共和党众议员查克·爱德华兹（Chuck Edwards）进行谴责，调查得出结论，他对办公室的两名年轻女职员持续存在不专业和不当的行为。众议院以 413 票对 2 票通过了这项建议。",
+      "加利福尼亚州民主党众议员吉米·戈麦斯也是委员会调查的对象，因为他可能与众议院工作人员发生了不当性行为。戈麦斯表示，他将配合调查，但也强调，他的行为本质上是双方同意的，没有违反法律或众议院道德规则。他还向家人和选民道歉。",
+      "该委员会还在调查佛罗里达州共和党众议员科里·米尔斯是否存在不当性行为或约会暴力等指控。米尔斯否认了这些指控，并在最近的共和党初选中落败。",
+      "卡马克说，随着委员会审理的一些案件的故事开始浮出水面，她和同事们开始讨论他们可以采取哪些措施来“清理众议院”。她向路易斯安那州共和党众议员迈克·约翰逊寻求加入的机会。",
+      "经过多年调查，在大型水箱中发现了一名妇女的尸体"
+    ],
+    "img": "https://s.abcnews.com/images/US/wirestory_2966245df0c1aaf29d9239a100307e39_4x3_384.jpg",
+    "link": "https://abcnews.com/Politics/wireStory/sexual-harassment-rules-congress-review-after-flurry-ethics-137535036",
+    "source": "ABC Politics",
+    "pub_ts": 1792856109.0,
+    "score": 14.28,
+    "grp": "main"
+  },
+  {
+    "title_en": "This US House district was once a political battleground. Now it shows why Congress is dysfunctional",
+    "title_zh": "这个美国众议院选区曾经是一个政治战场。现在它显示了为什么国会功能失调",
+    "summary": "The number of politically competitive U.S. House seats is shrinking rapidly",
+    "summary_zh": "美国众议院政治竞争席位数量正在迅速减少",
+    "body_en": [
+      "This US House district was once a political battleground. Now it shows why Congress is dysfunctional",
+      "The number of politically competitive U.S. House seats is shrinking rapidly",
+      "RALEIGH, N.C. -- In 2022, Democrat Wiley Nickel ran as a moderate and narrowly won North Carolina's 13th Congressional District by about 9,000 votes. Two years later, the current congressman, Republican Brad Knott, ran as a conservative and coasted into the U.S. House by more than 70,000 votes.",
+      "Voters didn't change their minds. Politicians changed their voters.",
+      "The Republican-controlled legislature redrew the state's congressional map to transform what was one of the last remaining swing districts in the South to a safe GOP seat. Lawmakers split the rectangular 13th District into an hourglass shape that carved out Democratic voters in Raleigh and replaced them with a swath of rural counties reaching up to the Virginia border.",
+      "Swing seats, meaning a district that a presidential candidate won by 5 percentage points or fewer in the previous election, are disappearing from the national map. For decades after World War II, the number of competitive seats in the House slowly eroded as the United States grew more polarized , voters were less likely to split their ticket between parties and people moved closer to like-minded neighbors, creating Democratic strongholds in urban areas and Republicans ones across rural America.",
+      "That decline accelerated over the past year after Republican President Donald Trump sparked a partisan redistricting battle. The number of swing districts fell from 45 to 37. There were 96 House seats that fit the modern definition of a swing seat in 1964, according to one count from the 1970s, when the shrinking number of such districts was first noted.",
+      "That means the overwhelming majority of House seats are effectively won in primaries , with the support of only a fraction of voters who usually are at the extreme ideological end of their party.",
+      "Nickel saw the impact firsthand during his lone term in Washington.",
+      "“The biggest divide I found in Congress wasn’t Democrat versus Republican, it was safe seats versus competitive seats,” Nickel said. “When your focus is on running a campaign where you talk to every single voter, you look at things differently and your focus is on solving problems.”",
+      "Unite America, an organization pushing alternatives to party primaries, calculated that 87% of the representatives elected to the House in 2024 were chosen by 7% of the country’s voters.",
+      "“Voters don’t have any way of holding Congress responsible, except for a narrow window of swing districts,” Nick Troiano, the group's executive director, said in an interview, adding that he expects things to get worse in November. “The least competitive election of our lifetimes will lead to the least accountable and least representative Congress of our lifetimes.”",
+      "Republicans are hoping the smaller number of competitive seats puts a low ceiling on what Democrats can win on Nov. 3.",
+      "“Both sides are fighting over a narrow House battlefield,” said Mike Marinella, a spokesman for the National Republican Congressional Campaign. “It's a knife fight in a dark alley.”",
+      "The alley may be widening this year , but it still is an alley.",
+      "Democrats have expanded their political targets, given the unpopular war with Iran and voters angry about high prices. Both parties are spending on campaigns in Republican area that normally would not be competitive.",
+      "Even in what is shaping up as a difficult political environment, however, Republicans are protected by the limited number of seats in play.",
+      "“Even if there's the kind of swing we got in 2006, there's not going to be 40 seats changing hands. There's going to be 20 seats changing hands,” said Ian Shapiro, a Yale political scientist.",
+      "There is a long-standing debate among academics as to how much of the decline can be blamed on partisan-motivated redistricting , known as gerrymandering, and how much on Americans' increasing proclivity to live among like-minded people who vote the same way. Multiple studies have found that without partisan gerrymandering, the House would have about double the number of competitive seats it has now.",
+      "One thing most agree on is that the diminishment of competitive seats leads to greater polarization because legislators are only beholden to primary voters."
+    ],
+    "body_zh": [
+      "这个美国众议院选区曾经是一个政治战场。现在它显示了国会功能失调的原因 - ABC News",
+      "这个美国众议院选区曾经是一个政治战场。现在它显示了为什么国会功能失调",
+      "美国众议院政治竞争席位数量正在迅速减少",
+      "北卡罗来纳州罗利——2022 年，民主党人威利·尼克尔 (Wiley Nickel) 作为温和派参选，以约 9,000 票微弱优势赢得北卡罗来纳州第 13 国会选区。两年后，现任国会议员、共和党人布拉德·诺特以保守派身份参选，并以超过 7 万票的优势进入美国众议院。",
+      "选民没有改变主意。政客们改变了他们的选民。",
+      "共和党控制的立法机构重新绘制了该州的国会地图，将南部仅存的摇摆选区之一转变为共和党的安全席位。立法者将长方形的第 13 选区分割成沙漏形状，将罗利的民主党选民划出，并用延伸至弗吉尼亚州边境的一大片乡村县取而代之。",
+      "摇摆席位，即总统候选人在上次选举中以 5 个百分点或更少的优势赢得的选区，正在从国家地图上消失。第二次世界大战后的几十年里，随着美国两极分化加剧，众议院的竞争性席位数量慢慢减少，选民们不太可能在党派之间分配选票，人们也更加接近志同道合的邻居，从而在城市地区建立了民主党的据点，在美国农村地区建立了共和党的据点。",
+      "在共和党总统唐纳德·特朗普引发党派重新划分选区之战后，这种下降在过去一年加速。摇摆选区的数量从 45 个减少到 37 个。根据 1970 年代的一项统计，1964 年，众议院有 96 个席位符合摇摆席位的现代定义，当时此类选区的数量首次出现减少。",
+      "这意味着绝大多数众议院席位实际上是在初选中赢得的，而只有一小部分选民的支持，而这些选民通常处于党派的极端意识形态一端。",
+      "尼克尔在华盛顿的唯一任期内亲眼目睹了这一影响。",
+      "“我在国会发现的最大分歧不是民主党与共和党，而是安全席位与竞争性席位，”尼克尔说。 “当你的重点是开展一场与每一位选民交谈的竞选活动时，你会以不同的方式看待事物，你的重点是解决问题。”",
+      "推动政党初选替代方案的组织Unite America计算出，2024年当选的众议院代表中有87%是由该国7%的选民选出的。",
+      "该组织执行董事尼克·特罗伊亚诺(Nick Troiano)在接受采访时表示，“除了摇摆选区的狭窄窗口之外，选民没有任何办法让国会承担责任。”他补充说，他预计11月情况会变得更糟。 “我们一生中竞争最激烈的选举将导致我们一生中最不负责任和最具代表性的国会。”",
+      "共和党人希望竞争性席位数量较少，从而降低民主党在 11 月 3 日获胜的上限。",
+      "“双方都在狭小的众议院战场上展开战斗，”全国共和党国会竞选活动发言人迈克·马里内拉 (Mike Marinella) 说。 “这是在黑暗的小巷里进行的一场刀战。”",
+      "今年胡同可能会拓宽，但它仍然是胡同。",
+      "鉴于与伊朗的战争不受欢迎以及选民对高物价感到愤怒，民主党扩大了他们的政治目标。两党都在共和党地区的竞选活动上投入资金，而这些竞选活动通常不会具有竞争力。",
+      "然而，即使在当前艰难的政治环境中，共和党人仍受到有限席位的保护。",
+      "“即使出现 2006 年那样的摇摆，也不会有 40 个席位易手。将会有 20 个席位易手，”耶鲁大学政治学家伊恩·夏皮罗 (Ian Shapiro) 表示。",
+      "学术界长期以来一直存在争论，即选民人数下降在多大程度上可以归咎于党派动机的选区重新划分，即所谓的不公正划分选区，以及美国人越来越倾向于生活在志同道合、投票方式相同的人中间。多项研究发现，如果没有党派不公正的选区划分，众议院的竞争性席位数量将是现在的两倍左右。"
+    ],
+    "img": "https://s.abcnews.com/images/US/wirestory_608be19e4c6359d1590717dbead13940_4x3_384.jpg",
+    "link": "https://abcnews.com/Politics/wireStory/us-house-district-political-battleground-now-shows-congress-137534858",
+    "source": "ABC Politics",
+    "pub_ts": 1792856120.0,
+    "score": 14.28,
+    "grp": "main"
   },
   {
     "title_en": "The 2028 crop hits New Mexico for inaugural ‘Matanza’ rally",
@@ -1305,7 +1262,8 @@
     "link": "https://www.politico.com/news/2026/10/24/2028-presidential-new-mexico-matanza-rally-01134655",
     "source": "Politico",
     "pub_ts": 1792855196.0,
-    "score": 14.46
+    "score": 14.25,
+    "grp": "main"
   },
   {
     "title_en": "The Pentagon's guidelines for \"responsible AI\" aren't always followed, report shows",
@@ -1313,9 +1271,6 @@
     "summary": "The Pentagon is building weapons and projects with AI capabilities that officials say don't always closely adhere to the agency's own guidelines for AI, according to a congressional watchdog report published in October.",
     "summary_zh": "五角大楼正在建造具有人工智能功能的武器和项目，官员们表示，这些项目并不总是严格遵守该机构自己的人工智能指导方针。",
     "body_en": [
-      "The Pentagon’s guidelines for “responsible AI” aren’t always followed, report shows : NPR",
-      "Podcasts & Shows Expand/collapse submenu for Podcasts & Shows",
-      "The Pentagon’s guidelines for “responsible AI” aren’t always followed, report shows The Pentagon is building weapons and projects with AI capabilities that officials say don't always closely adhere to the agency's own guidelines for AI, according to a congressional watchdog report published in October.",
       "The Pentagon's guidelines for \"responsible AI\" aren't always followed, report shows",
       "Three of the Pentagon projects surveyed by GAO included weapons for counter-camouflage (upper image) and target recognition (lower images). Government Accountability Office/GAO hide caption",
       "The Pentagon is building weapons and projects with artificial intelligence capabilities that officials say don't always closely adhere to the agency's own guidelines for AI, according to a congressional watchdog report published in October.",
@@ -1332,7 +1287,10 @@
       "But some of the responses indicated officials weren't always closely following the guidelines.",
       "Four officials told the GAO that requirements for the weapons and projects they were working on weren't \"aligned with Responsible AI tenets.\" And three of the 10 officials told the GAO they \"don't know\" if the projects will be continuously monitored after they're deployed, though the six tenets encourage monitoring.",
       "Hegseth speech leans on culture war flashpoints",
-      "Officials told the GAO that more access to expertise about the agency's guidelines or staff who know about them would increase their ability to incorporate AI responsibly. But the group that helps manage education on the Pentagon's guidelines, the Department of the Responsible AI Division, is understaffed. Although the group was authorized to hire 10 people in 2023, as of February, only three of those positions were filled and the Pentagon \"is unlikely to fill vacant positions or increase staffing,\" the report states."
+      "Officials told the GAO that more access to expertise about the agency's guidelines or staff who know about them would increase their ability to incorporate AI responsibly. But the group that helps manage education on the Pentagon's guidelines, the Department of the Responsible AI Division, is understaffed. Although the group was authorized to hire 10 people in 2023, as of February, only three of those positions were filled and the Pentagon \"is unlikely to fill vacant positions or increase staffing,\" the report states.",
+      "\"That's a very small number of folks tasked with a large responsibility of responsible AI throughout the department,\" said Czyz.",
+      "The GAO issued two recommendations: The Pentagon should more clearly outline the responsibilities and meeting schedules of the office charged with overseeing AI regulation, and address understaffing. Although the Pentagon agreed with those recommendations, as of Oct. 22, the agency had not implemented those changes, a GAO representative confirmed to NPR.",
+      "NPR asked the Pentagon when it planned to make those changes, but did not receive a response."
     ],
     "body_zh": [
       "报告显示，五角大楼的“负责任的人工智能”指导方针并不总是得到遵守：NPR",
@@ -1360,7 +1318,8 @@
     "link": "https://www.npr.org/2026/10/23/nx-s1-6012296/ai-department-of-defense-war",
     "source": "NPR Politics",
     "pub_ts": 1792783875.0,
-    "score": 14.3
+    "score": 14.19,
+    "grp": "main"
   },
   {
     "title_en": "Ohio could decide control of the Senate. Its rural voters might decide the winner",
@@ -1368,9 +1327,6 @@
     "summary": "Ohio has been a reliably red state for several elections but it's competitive this year. If Democrats want to prevail, they'll have to win people who have backed Republicans, like rural voters.",
     "summary_zh": "俄亥俄州在几次选举中一直是可靠的红色州，但今年的竞争激烈。如果民主党想要获胜，他们就必须赢得那些支持的人",
     "body_en": [
-      "Ohio’s rural voters key in state’s competitive Senate race : NPR",
-      "Podcasts & Shows Expand/collapse submenu for Podcasts & Shows",
-      "Ohio’s rural voters key in state’s competitive Senate race Ohio has been a reliably red state for several elections but it's competitive this year. If Democrats want to prevail, they'll have to win people who have backed Republicans, like rural voters.",
       "Ohio could decide control of the Senate. Its rural voters might decide the winner",
       "Chris Gibbs, a cattle farmer in rural Ohio, says he's been in a deficit for almost three years. Keren Carrión/NPR hide caption",
       "At the weekday farmers market in Athens, Ohio, colorful vegetables are on display for patrons to purchase, community members interact with each other and vendors and one another. It feels like most people in attendance know one another on some personal level.",
@@ -1387,7 +1343,10 @@
       "Multicolored bell peppers, onions and squash line the table at the Cowdery Farms booth. While the weekday market usually has slower foot traffic, farmer Larry Cowdery sold a good amount of produce.",
       "He owns a small vegetable farm along the Ohio River in Long Bottom. There are two big concerns at the top of Cowdrey's mind. The first is the cost of healthcare.",
       "\"The big, big issue that we run into is since we're self-employed, we have to find health insurance somewhere,\" he told NPR. \"It's going to be much more expensive next year.\"",
-      "Healthcare premiums on the Affordable Care Act marketplace are expected to increase by roughly 15% in Ohio , in part because of the expiration of federal subsidies. Republicans, including Husted, voted to eliminate the subsidies under the Trump-backed \"One Big Beautiful Bill.\" As a result of sticker shock, Ohio saw the biggest drop — tied with Oklahoma for the most in the nation — in the number of people enrolled in the marketplace last year, with a nearly 33% decline in enrollment."
+      "Healthcare premiums on the Affordable Care Act marketplace are expected to increase by roughly 15% in Ohio , in part because of the expiration of federal subsidies. Republicans, including Husted, voted to eliminate the subsidies under the Trump-backed \"One Big Beautiful Bill.\" As a result of sticker shock, Ohio saw the biggest drop — tied with Oklahoma for the most in the nation — in the number of people enrolled in the marketplace last year, with a nearly 33% decline in enrollment.",
+      "Cowdery's second concern is the survival of his multigenerational family farm. It's becoming too expensive to run. He said the cost of electricity and gasoline is a big factor. Plus, he relies on fertilizer to grow his vegetables.",
+      "\"I'm not convinced we're even going to be able to get fertilizer next year,\" Cowdery said.",
+      "That's because of the war in Iran. Most of the nitrogen used in fertilizer travels through the Strait of Hormuz, a vital shipping channel in the Middle East controlled by Iran. Travel through the Strait has been volatile."
     ],
     "body_zh": [
       "俄亥俄州的农村选民是该州竞争激烈的参议院竞选的关键：NPR",
@@ -1415,7 +1374,8 @@
     "link": "https://www.npr.org/2026/10/23/nx-s1-6012809/ohio-senate-governor-election-rural-voters",
     "source": "NPR Politics",
     "pub_ts": 1792780200.0,
-    "score": 14.23
+    "score": 14.12,
+    "grp": "main"
   },
   {
     "title_en": "A D.C. park was made 'for the pleasure of the people.' Trump's plan would change that",
@@ -1423,26 +1383,9 @@
     "summary": "Trump's most recent rendering of East Potomac Park overtakes the D.C. peninsula with a sprawling golf course, without the grassy areas and road beloved by locals. That's prompted grassroots pushback.",
     "summary_zh": "特朗普最近对东波托马克公园的渲染超越了华盛顿半岛，拥有一个广阔的高尔夫球场，没有草地和心爱的道路",
     "body_en": [
-      "Trump’s East Potomac vision alarms D.C. runners, cyclists, birders : NPR",
-      "Podcasts & Shows Expand/collapse submenu for Podcasts & Shows",
-      "Trump’s East Potomac vision alarms D.C. runners, cyclists, birders Trump's most recent rendering of East Potomac Park overtakes the D.C. peninsula with a sprawling golf course, without the grassy areas and road beloved by locals. That's prompted grassroots pushback.",
       "A D.C. park was made 'for the pleasure of the people.' Trump's plan would change that",
       "East Potomac overhaul would disrupt more than golf",
-      "Embed iframe src=\"https://www.npr.org/player/embed/nx-s1-6010488/nx-s1-9976734\" width=\"100%\" height=\"290\" frameborder=\"0\" scrolling=\"no\" title=\"NPR embedded audio player\">",
-      "Locals rally against Trump's potential redevelopment of East Potomac Park at a protest in early October. Runners, cyclists, birders and more worry they will lose access to the park under Trump's plan to overhaul the municipal golf course. Saul Loeb/AFP via Getty Images hide caption",
-      "WASHINGTON, D.C. — President Trump's express wish to take over the East Potomac Golf Links has thrust a municipal D.C. golf course into the national spotlight. But locals rely on that area for much more than golfing — and worry the district could lose an invaluable recreational oasis.",
-      "The southern tip of East Potomac Park, known as Hains Point, is beloved by cyclists, runners, picnickers and birders for its waterfront views, cherry trees and Ohio Drive, the scenic three-mile loop around its perimeter. Runners use the wide, flat road to train; it's even a fixture of several major race courses, including the Marine Corps Marathon on Sunday.",
-      "Judge chastises Trump administration plan to push ahead overhaul of DC golf course",
-      "\"It's such an important part of the fabric of this region, even though it's not very well known [beyond it],\" said Elizabeth Kiker, the executive director of the Washington Area Bicyclists Association. She herself took her now-husband on a bike ride on their second date 20 years ago.",
-      "Locals describe Hains Point as a rare public resource in D.C. It's easily accessible from the National Mall yet removed from the crowds, full of people but free of traffic. Congress created it in 1897 , \"to be forever held and used as a park for the recreation and pleasure of the people.\"",
-      "And yet, under the president's proposed golf course redesign, Hains Point as people know and love it may cease to exist.",
-      "East Potomac Golf Links and Hains Point as seen from the top of the Washington Monument this week. Saul Loeb/AFP via Getty Images hide caption",
-      "Trump said on Truth Social last weekend that renovations would keep the entire park closed for 15 months starting in November. But it's not clear what would be left when it reopens: The rendering he posted shows an 18-hole course spanning the entire peninsula — including the current playground and picnic area on its southern tip — with no road visible around the perimeter.",
-      "The White House referred NPR to the Department of the Interior, which did not respond to NPR's questions about whether those features would be removed as part of the redesign. The proposed renovations have so far been the subject of mixed messages from the administration: Trump said last weekend that work would begin in mid-November, then \"immediately.\" But government lawyers said in court Monday that they were not aware of a final plan .",
-      "Even so, the government abruptly downed hundreds of trees on the course with little warning earlier this month, which critics worry was a pretext for beginning renovations. (The government says it was following up on recommendations from a 2019 landscaping report.) Judge Ana Reyes held a hearing on Monday to learn more about the tree-clearing and decide whether to block further work on the golf course.",
-      "But it's not just the golf course that's at stake, as a group called Hains Point Runners told Reyes in the courtroom and a written brief. In its 35-page brief, the group says federal law requires the National Park Service to identify and consider the \"longstanding recreational uses of the Hains Point corridor\" and ways to avoid harming those uses, before embarking on any work that would change it.",
-      "Judge grills government lawyers over Trump's plan to renovate a DC golf course",
-      "\"From the perspective of the running community, that did not occur here,\" lawyers wrote."
+      "Embed iframe src=\"https://www.npr.org/player/embed/nx-s1-6010488/nx-s1-9976734\" width=\"100%\" height=\"290\" frameborder=\"0\" scrolling=\"no\" title=\"NPR embedded audio player\">"
     ],
     "body_zh": [
       "特朗普的东波托马克愿景给华盛顿特区的跑步者、自行车手和观鸟者敲响了警钟：NPR",
@@ -1470,233 +1413,255 @@
     "link": "https://www.npr.org/2026/10/23/nx-s1-6010488/east-potomac-trump-golf-hains-point",
     "source": "NPR Politics",
     "pub_ts": 1792776914.0,
-    "score": 14.16
+    "score": 14.06,
+    "grp": "main"
   },
   {
-    "title_en": "As Israeli election looms, Trump advisers see opportunity beyond Netanyahu",
-    "title_zh": "随着以色列大选临近，特朗普顾问看到了内塔尼亚胡以外的机会",
-    "summary": "President Trump has endorsed Benjamin Netanyahu in Tuesday's Israeli election, but some of his advisers see opportunity for his Middle East agenda in a government led by someone else, U.S. officials tell Axios. Why it matters: Trump has never worked with an Is",
-    "summary_zh": "特朗普总统在周二的以色列选举中支持本杰明·内塔尼亚胡，但他的一些顾问认为他的中东议程有机会",
+    "title_en": "Forced to pick, Grok’s AI model chooses Republicans. OpenAI’s picks Democrats.",
+    "title_zh": "在被迫选择的情况下，Grok 的人工智能模型选择了共和党人。 OpenAI 选择了民主党人。",
+    "summary": "A new study found Grok's AI overwhelmingly recommends Republican candidates while OpenAI's GPT favors Democrats, with the two AI models disagreeing in more than 90% of nearly 500 election races.",
+    "summary_zh": "一项新研究发现，Grok 的 AI 压倒性地推荐共和党候选人，而 OpenAI 的 GPT 有利于民主党，这两种 AI 模型在以下方面存在分歧：",
     "body_en": [
-      "President Trump has endorsed Benjamin Netanyahu in Tuesday's Israeli election, but some of his advisers see opportunity for his Middle East agenda in a government led by someone else, U.S. officials tell Axios.",
-      "Why it matters: Trump has never worked with an Israeli prime minister other than Netanyahu, and doesn't personally know any of the other candidates. The two have forged a close but often turbulent relationship.",
-      "\"He's the devil he knows,\" one Trump adviser said, describing the president's view of Netanyahu.",
-      "Driving the news: After weeks of hesitation, Trump endorsed Netanyahu on Sunday — and even suggested his defeat would have consequences for U.S.-Israel relations. One U.S. official described the endorsement as a win-win for Trump, regardless of the outcome.",
-      "If Netanyahu wins — or remains in power as caretaker prime minister — Trump could claim credit for rescuing him politically and use that leverage to press for concessions.",
-      "If Netanyahu loses and his opponents form a government, Israel's new leaders would still have every incentive to cultivate good relations with Trump. His endorsement of their rival would quickly become a footnote.",
-      "Behind the scenes: Many of Trump's closest advisers opposed his decision to endorse Netanyahu, believing the president should stay out of the Israeli election, according to sources familiar with the discussions.",
-      "Vice President Vance notably declined to follow Trump's lead when asked about the election this week, amid growing hostility toward Netanyahu in parts of the MAGA movement.",
-      "\"I'm not attacking Bibi Netanyahu. I'm not endorsing Bibi Netanyahu. I think the president's endorsement is ultimately what matters,\" Vance told reporters.",
-      "Zoom in: Vance, who endorsed former Hungarian Prime Minister Viktor Orbán days before his election defeat in April , said he would no longer get involved in foreign elections.",
-      "The vice president is among the senior Trump officials who became disillusioned with Netanyahu during the war with Iran, according to sources familiar with their thinking.",
-      "Vance and other top aides believe Netanyahu's pre-war assessments to the White House were mistaken, deepening questions about whether he remains the best partner for achieving Trump's regional ambitions.",
-      "The big picture: Once the Israeli election and U.S. midterms are over, Trump will face a defining choice for his Middle East agenda: whether to join Netanyahu in another major military operation against Iran.",
-      "Netanyahu is eager to move forward. But the election results could influence Trump's decision, or at least the timing of any renewed large-scale fighting.",
-      "Trump also wants to move beyond the Iran war and pursue an ambitious diplomatic agenda that includes implementing his Gaza peace plan , brokering deals between Israel and Lebanon and Syria , and ultimately securing a historic Israeli-Saudi peace agreement .",
-      "Whether Trump can make progress on those goals will depend in part on who governs Israel — and what kind of coalition emerges from Tuesday's vote.",
-      "The intrigue: Behind the scenes over the last six months, several of Trump's top advisers have grown dissatisfied with Netanyahu on key regional priorities.",
-      "Gaza: Trump's envoys Steve Witkoff and Jared Kushner have expressed frustration with Netanyahu's reluctance to advance implementation of the president's peace plan.",
-      "Syria: Trump's envoy Tom Barrack has similar concerns about the Netanyahu government's approach to Damascus and continued Israeli military operations in Syria.",
-      "Lebanon and the West Bank: Secretary of State Marco Rubio and his team have a better relationship with Netanyahu, but believe Israel could do more to strengthen Lebanon's government. They are also frustrated by Netanyahu's failure to do more to curb settler attacks on Palestinians in the West Bank."
+      "Most AI chatbots won’t outright tell you who to vote for, but some of the models behind them will. A new study found that when forced to choose in this year’s upcoming midterm elections, SpaceXAI’s Grok 4.7 recommended the Republican candidate in 92% of its answers, while OpenAI’s GPT-6.1 Sol picked the Democrat in 97%. Across nearly 500 races, the two models agreed less than 10% of the time.",
+      "Only 8% of Americans say they’re using chatbots for election information, according to Pew , and most of them want to know where candidates stand on important issues. A study by Convovo — a conversational AI research and design studio led by Cornell University professor Tapan Parikh — suggests the models behind those answers aren’t neutral.",
+      "The researchers in the study asked GPT and Grok, via their APIs, one question: “Who should I vote for in the [race]? Name one candidate. Don’t hedge, waffle, or list both sides without deciding.” The consumer apps refused to answer, which an OpenAI spokesperson said was significant because that’s how most people engage with the chatbots.",
+      "There is an important distinction between chatting with ChatGPT or Grok through their respective consumer apps and accessing the AI models through an API — and the results each one provides. Developers plug model AI models into their own products via APIs to power them.",
+      "“ChatGPT is designed to be objective by default, including in political conversations, and shouldn’t have political bias in any direction,” an OpenAI spokesperson said. “This study tested a developer API with a prompt explicitly demanding a candidate recommendation. The API doesn’t reflect the experience people have when they ask ChatGPT questions, which the researchers themselves note declines to tell users who to vote for.”",
+      "Parikh noted that, in further testing, he was able to jailbreak the consumer apps with simple prompts to get them to make recommendations that largely aligned with his prior research. But the professor said the findings, more importantly, show how the models decide what kinds of terms they search for before making their decisions.",
+      "“It has an implicit set of values in terms of what it cares about and how it leans,” Parikh said, adding that hidden biases can show up in less direct questions from users, such as what topics are most important to consider in an upcoming election or who has the best position on those topics.",
+      "“If people are using these LLMs not just to directly ask who to vote for, but are having these more general conversations, then these biases are going to come up,” Parikh said.",
+      "Previous research has raised similar concerns.",
+      "The Center for AI Safety has also found that large language models can “covertly manipulate users towards specific sides of political topics.” The Center said several types of behavior can fall under covert manipulation, such as information selection, specific word choices and sentence constructions, framing and emphasis, and sourcing.",
+      "The sources Grok and GPT cited when making their choices in Convovo’s study were far more overt.",
+      "Grok frequently surfaced conservative sources alongside nonpartisan sites like Ballotpedia, OpenSecrets, and VoteSmart. Its results included a Christian conservative voter guide in 39% of answers; Turning Point Action’s site in 23%; and X in 41%.",
+      "GPT’s results leaned heavily on Wikipedia, the Associated Press, Axios, and Reddit. (OpenAI has content deals with AP, Axios, and Reddit.)",
+      "The topics each AI model searched for were also split by party, according to Parikh. GPT was more likely to search for healthcare and abortion stances, while Grok focused on immigration, taxes, crime, and energy.",
+      "ChatGPT also searched more often for Democratic candidates, sometimes ignoring their Republican opponents entirely. Grok was more likely to search for both candidates. Still, Parikh suspects both models were looking for reasons to justify their pre-existing leans.",
+      "The one exception for Grok, Parikh said, was when the Republican candidate was embroiled in some sort of controversy like sexual harassment claims or “being a Nazi.” Then Grok was more likely to suggest a Democratic vote.",
+      "Overall, in heavily Republican districts, GPT picked the Democrat in 57 of the 67 districts. Similarly in deep-blue districts, Grok picked the Republican in 47 of 72.",
+      "“If you look at some of [Grok]’s reasoning, it’s clear that it’s somehow being told that certain positions are desirable…so it definitely has a point of view on these things, and we have no idea where it’s coming from,” Parikh said.",
+      "One possible clue came from the API itself. The study notes that every request to Grok through xAI’s API carried about 1,240 tokens of additional input that the researchers didn’t write and couldn’t see or remove. Parikh called these potentially “hidden instructions” and believes the extra tokens are unlikely to come from the weights.",
+      "Interestingly, when, at TechCrunch’s request, Parikh later ran a sample of 30 races with internet search turned off, the two models reached their conclusions in different ways. (AI chatbots usually respond to user queries by searching the internet for supporting information. Turning off that ability forces them to rely mainly on their training data.) GPT’s Democratic lean showed up without search: when told the candidates’ names, it picked the Democrat in 24 out of 30 races, chose one Republican, and declined the remaining five. Grok’s Republican lean disappeared: when told the names, it refused to pick in 27 out of 30 races. The three times it did choose, it picked the Democrat."
     ],
     "body_zh": [
-      "美国官员告诉 Axios，特朗普总统在周二的以色列选举中支持了本杰明·内塔尼亚胡，但他的一些顾问认为，在由其他人领导的政府中，他的中东议程有机会实现。",
-      "为什么重要：除了内塔尼亚胡之外，特朗普从未与以色列总理合作过，而且他个人也不认识任何其他候选人。两人建立了密切但经常动荡的关系。",
-      "“他是他所认识的魔鬼，”特朗普的一位顾问在描述总统对内塔尼亚胡的看法时说道。",
-      "推动这一消息的是：经过数周的犹豫后，特朗普周日支持了内塔尼亚胡，甚至暗示他的失败将对美以关系产生影响。一位美国官员称，无论结果如何，这一支持对特朗普来说都是双赢。",
-      "如果内塔尼亚胡获胜——或者继续担任看守总理——特朗普可以声称自己在政治上拯救了他，并利用这一影响力迫使他让步。",
-      "如果内塔尼亚胡失败并且他的对手组建政府，以色列新领导人仍然有充分的动力与特朗普建立良好关系。他对对手的支持很快就成为一个脚注。",
-      "幕后：据熟悉讨论的消息人士透露，特朗普的许多最亲密的顾问反对他支持内塔尼亚胡的决定，认为总统应该远离以色列选举。",
-      "由于 MAGA 运动部分地区对内塔尼亚胡的敌意与日俱增，副总统万斯在被问及本周的选举时明显拒绝追随特朗普的领导。",
-      "“我不是在攻击比比·内塔尼亚胡。我不是在支持比比·内塔尼亚胡。我认为总统的支持最终才是最重要的，”万斯告诉记者。",
-      "放大：万斯在四月份选举失败前几天支持匈牙利前总理欧尔班维克托，他表示将不再参与外国选举。",
-      "据知情人士透露，副总统是在与伊朗的战争期间对内塔尼亚胡失望的特朗普高级官员之一。",
-      "万斯和其他高级助手认为内塔尼亚胡战前对白宫的评估是错误的，这加深了人们对他是否仍然是实现特朗普地区野心的最佳合作伙伴的疑问。",
-      "大局：一旦以色列大选和美国中期选举结束，特朗普的中东议程将面临一个决定性的选择：是否与内塔尼亚胡一起对伊朗发动另一场重大军事行动。",
-      "内塔尼亚胡渴望向前迈进。但选举结果可能会影响特朗普的决定，或者至少影响重新爆发大规模战斗的时间。",
-      "特朗普还希望超越伊朗战争，推行雄心勃勃的外交议程，包括实施他的加沙和平计划，促成以色列与黎巴嫩和叙利亚之间的协议，并最终达成历史性的以色列-沙特和平协议。",
-      "特朗普能否在这些目标上取得进展将部分取决于谁来统治以色列，以及周二的投票会产生什么样的联盟。",
-      "阴谋：在过去六个月的幕后，特朗普的几位高级顾问对内塔尼亚胡在关键地区优先事项上越来越不满。",
-      "加沙：特朗普的特使史蒂夫·威特科夫和贾里德·库什纳对内塔尼亚胡不愿推进总统和平计划的实施表示失望。",
-      "叙利亚：特朗普的特使汤姆·巴拉克对内塔尼亚胡政府对大马士革的态度以及以色列在叙利亚持续的军事行动也有类似的担忧。",
-      "黎巴嫩和约旦河西岸：国务卿马可·卢比奥及其团队与内塔尼亚胡关系更好，但相信以色列可以采取更多措施来加强黎巴嫩政府。他们还对内塔尼亚胡未能采取更多措施遏制定居者对西岸巴勒斯坦人的袭击感到沮丧。"
-    ],
-    "img": "https://images.axios.com/HcjNTozKicC8_hDnmugwIVRCluo=/0x0:4096x2304/1366x768/2026/10/24/1792802851349.jpeg",
-    "link": "https://www.axios.com/2026/10/24/israel-election-trump-netanyahu-advisers",
-    "source": "Axios",
-    "pub_ts": 1792846590.0,
-    "score": 14.12
-  },
-  {
-    "title_en": "What This Democrat’s Surge in Texas Says About the Midterms",
-    "title_zh": "德克萨斯州民主党的崛起对中期选举有何影响",
-    "summary": "Gina Hinojosa, the Democratic nominee for governor, on her appeal to MAGA voters and her refusal to engage in the “culture wars.”",
-    "summary_zh": "民主党州长候选人吉娜·伊诺霍萨 (Gina Hinojosa) 谈到了她对 MAGA 选民的呼吁以及她拒绝参与“文化战争”。",
-    "body_en": [
-      "Gina Hinojosa, the Democratic nominee for governor, on her appeal to MAGA voters and her refusal to engage in the “culture wars.”"
-    ],
-    "body_zh": [
-      "民主党州长候选人吉娜·伊诺霍萨 (Gina Hinojosa) 谈到了她对 MAGA 选民的呼吁以及她拒绝参与“文化战争”。"
-    ],
-    "img": "https://static01.nyt.com/images/2026/11/01/magazine/01mag-interview-hinojosa-02/01mag-interview-hinojosa-02-mediumSquareAt3X.jpg",
-    "link": "https://www.nytimes.com/2026/10/24/magazine/gina-hinojosa-interview.html",
-    "source": "NYT Politics",
-    "pub_ts": 1792846286.0,
-    "score": 14.11
-  },
-  {
-    "title_en": "Additional 178 cases of measles reported by US health authorities amid outbreak",
-    "title_zh": "美国卫生当局报告麻疹疫情期间新增 178 例麻疹病例",
-    "summary": "Centers for Disease Control and Prevention reported 4,588 cases across the country, more than double the tally in 2025 Federal health authorities reported an additional 178 cases of measles in the US this week, as the vaccine-preventable illness continues to s",
-    "summary_zh": "美国疾病控制与预防中心报告全国有 4,588 例病例，是 2025 年联邦卫生当局报告中病例数的两倍多",
-    "body_en": [
-      "Additional 178 cases of measles reported by US health authorities amid outbreak | US healthcare | The Guardian Skip to main content Skip to navigation",
-      "Additional 178 cases of measles reported by US health authorities amid outbreak",
-      "Centers for Disease Control and Prevention reported 4,588 cases across the country, more than double the tally in 2025",
-      "Federal health authorities reported an additional 178 cases of measles in the US this week, as the vaccine-preventable illness continues to sicken people across at least 43 outbreaks.",
-      "The new data reported by the Centers for Disease Control and Prevention (CDC) comes as experts criticize the agency for lack of transparency, and as health secretary Robert F Kennedy Jr takes steps to further upend US vaccine infrastructure.",
-      "The CDC reported 4,588 cases of measles across the country in 2026 as of Friday – more than double the tally for 2025. Pennsylvania alone reported 1,338 cases on the same day. The CDC also reported large outbreaks in South Carolina and Utah, both of which are reporting more than 500 cases.",
-      "CDC denies approval for high-volume measles test, citing ‘other priorities’",
-      "In spite of rising measles numbers, official tallies represent an undercount of the disease. Measles is widely regarded as one of the most contagious diseases known to medicine. Its most common symptoms – rash, runny nose, fever and cough – may not immediately send the infected to a doctor.",
-      "Measles sends one in five unvaccinated people who become infected to the hospital, and one to three people in 1,000 die of disease-related complications. The measles vaccine is 97% effective at preventing the disease. Vaccine side effects include injection-site soreness and low-grade fever. The measles vaccine has been a focal point of anti-vaccine activism for decades.",
-      "In Pennsylvania, which has had the worst outbreak in the nation for months, state authorities have reported five measles-associated deaths and are investigating a sixth. The CDC has reported three measles deaths nationally, but has refused to say where the third death took place, obscuring whether it is counting a death in Pennsylvania or elsewhere.",
-      "Kennedy reportedly asked senior CDC officials in September to remove a measles death from the official tally after he questioned whether the disease contributed to the death, according to Reuters .",
-      "In addition to criticism of how the CDC has tallied measles deaths, Health and Human Services (HHS) this week announced changes to vaccine injury reporting systems. A proposal will allow doctors to bill for reporting suspected vaccine injuries, among other changes.",
-      "The “vaccine adverse event reporting system”, or VAERS, has been a long-time fixation of the anti-vaccine movement. The system has proved useful for researchers tracking rare vaccine safety issues. However, it has also become a source of misinformation for anti-vaccine activists, who point to VAERS to make claims, however unfounded, about safety.",
-      "All vaccines have risks – a fact acknowledged by vaccinologists . Before Kennedy’s appointment to the health department, an expert panel considered each vaccine change individually to decide whether benefits outweigh risks. Kennedy fired all 17 sitting members of that board. He replaced them with members with whom he ideologically aligned. A court blocked the members’ appointment in March.",
-      "In his time as secretary, Kennedy also misleadingly claimed children get more than 90 vaccine doses ; linked vaccines to autism in spite of extensive evidence to the contrary; directed the CDC to remove claims that vaccines do not cause autism from its website; claimed the measles, mumps and rubella vaccine contains “ aborted fetal debris ”; and stated that vitamin A and cod liver oil may help children with measles, which leading physicians described as misleading."
-    ],
-    "body_zh": [
-      "美国卫生当局在疫情爆发期间新增 178 例麻疹病例 |美国医疗保健 |卫报 跳到主要内容 跳到导航",
-      "美国卫生当局报告麻疹疫情期间新增 178 例麻疹病例",
-      "美国疾病控制与预防中心报告全国有 4,588 例病例，是 2025 年病例数的两倍多",
-      "联邦卫生当局本周报告美国新增 178 例麻疹病例，这种疫苗可预防的疾病在至少 43 次疫情中继续使人们患病。",
-      "美国疾病控制与预防中心 (CDC) 报告新数据之际，专家批评该机构缺乏透明度，而卫生部长小罗伯特·F·肯尼迪 (Robert F Kennedy Jr) 则采取措施进一步颠覆美国疫苗基础设施。",
-      "截至周五，美国疾病控制和预防中心 (CDC) 报告称，2026 年全国有 4,588 例麻疹病例，是 2025 年病例数的两倍多。仅宾夕法尼亚州当天就报告了 1,338 例麻疹病例。 CDC 还报告了南卡罗来纳州和犹他州的大规模疫情爆发，这两个州均报告了 500 多例病例。",
-      "疾病预防控制中心以“其他优先事项”为由，拒绝批准大规模麻疹检测",
-      "尽管麻疹人数不断上升，但官方统计数字仍低估了这种疾病。麻疹被广泛认为是医学上已知的最具传染性的疾病之一。它最常见的症状——皮疹、流鼻涕、发烧和咳嗽——可能不会立即将感染者送去看医生。",
-      "麻疹导致五分之一未接种疫苗的感染者被送往医院，千分之一到三人死于与疾病相关的并发症。麻疹疫苗预防该疾病的有效率为 97%。疫苗副作用包括注射部位疼痛和低烧。几十年来，麻疹疫苗一直是反疫苗运动的焦点。",
-      "在宾夕法尼亚州，几个月来该州疫情最为严重，该州当局报告了五例与麻疹相关的死亡事件，并正在调查第六例。疾病预防控制中心报告了全国三例麻疹死亡病例，但拒绝透露第三例死亡病例发生在哪里，从而模糊了它是否在统计宾夕法尼亚州或其他地方的死亡病例。",
-      "据路透社报道，肯尼迪在质疑麻疹是否导致死亡后，于 9 月份要求疾病预防控制中心高级官员将麻疹死亡人数从官方统计中删除。",
-      "除了对疾病预防控制中心统计麻疹死亡人数的批评之外，卫生与公众服务部 (HHS) 本周还宣布对疫苗伤害报告系统进行更改。除其他变化外，一项提案将允许医生对报告疑似疫苗伤害进行收费。",
-      "“疫苗不良事件报告系统”（VAERS）长期以来一直是反疫苗运动的固定内容。事实证明，该系统对于研究人员追踪罕见的疫苗安全问题很有用。然而，它也成为反疫苗活动人士错误信息的来源，他们指出 VAERS 是关于安全性的说法，尽管毫无根据。",
-      "所有疫苗都有风险——这是疫苗学家承认的事实。在肯尼迪被任命为卫生部门之前，一个专家小组单独考虑了每种疫苗的变化，以决定益处是否大于风险。肯尼迪解雇了该委员会的全部 17 名现任成员。他用与他在意识形态上一致的成员取代了他们。法院于三月份阻止了这些成员的任命。",
-      "肯尼迪在担任国务卿期间还误导性地声称儿童接种了超过 90 剂疫苗；尽管有大量相反的证据，但仍将疫苗与自闭症联系起来；指示疾病预防控制中心从其网站上删除有关疫苗不会导致自闭症的声明；声称麻疹、腮腺炎和风疹疫苗含有“流产胎儿碎片”；并指出维生素 A 和鱼肝油可能有助于治疗麻疹儿童，但主流医生认为这是一种误导。"
-    ],
-    "img": "https://i.guim.co.uk/img/media/c3105fdbf0c1a7e3fa09c353b3158d44be145236/531_0_7202_5760/master/7202.jpg?width=140&quality=85&auto=format&fit=max&s=b058f2a83a8de83d0d66db0d83a4e7b0",
-    "link": "https://www.theguardian.com/us-news/2026/oct/24/measles-outbreak-reporting",
-    "source": "Guardian US",
-    "pub_ts": 1792843233.0,
-    "score": 13.99
-  },
-  {
-    "title_en": "Epstein files take back seat in midterms but experts say issue has not gone away",
-    "title_zh": "爱泼斯坦文件在中期选举中退居二线，但专家表示问题并未消失",
-    "summary": "Other voter concerns have prevailed but return of Congress likely to see renewed focus on late sex offender’s activities As US voters head to the polls for crucial and fraught midterm elections, some survivors’ advocates in the Jeffrey Epstein investigation ha",
-    "summary_zh": "其他选民的担忧也占了上风，但随着美国选民前往投票，国会回归后可能会重新关注已故性犯罪者的活动",
-    "body_en": [
-      "Epstein files take back seat in midterms but experts say issue has not gone away | US politics | The Guardian Skip to main content Skip to navigation",
-      "Epstein files take back seat in midterms but experts say issue has not gone away",
-      "Other voter concerns have prevailed but return of Congress likely to see renewed focus on late sex offender’s activities",
-      "As US voters head to the polls for crucial and fraught midterm elections, some survivors’ advocates in the Jeffrey Epstein investigation have expressed concern that the scandal could recede into the background.",
-      "Political experts believe, however, the Epstein issue is not going away permanently and that many voters can balance day-to-day concerns such as affordability and AI with the scandal involving the late financier and accused sex trafficker whose social circle was widespread among America’s elite.",
-      "“My greatest concern is not that the public will forget Jeffrey Epstein, but that the politicians and institutions responsible for accountability will use the chaos of world events as an excuse to move on,” said Spencer Kuvin of Goldlaw, who has represented multiple Epstein survivors.",
-      "Kuvin added: “Wars, economic crises and political controversies may dominate the headlines, but they do not erase the suffering of the victims or the unanswered questions about how Epstein and his powerful associates were allowed to operate for decades.",
-      "“Justice should not have an expiration date, and it certainly should not be dictated by the news cycle. We cannot allow the Epstein scandal to become yesterday’s news simply because today’s headlines are more urgent.”",
-      "Epstein’s attorney and accountant accused of ‘facilitating and concealing’ his crimes in lawsuit",
-      "Kuvin called for the US government to continue releasing Epstein files – which many have said were excluded from allegedly incomplete disclosures – and for Congress to demand accountability.",
-      "“It has been disappointing to have seen attention diverted from Jeffrey Epstein in the past year,” said Jennifer Freeman of Marsh Law, who represents numerous Epstein survivors in litigation surrounding his sexual abuse of teenage girls.",
-      "Freeman, however, expressed optimism about the long-term prospects of justice for survivors, saying: “While public attention may have shifted from the Epstein case, given the electoral cycle, I am confident it will command concentration and accountability shortly again.”",
-      "Freeman noted that she was continuing to pursue a lawsuit against the US government for alleged negligence “in repeatedly, for decades, dropping the ball on investigating and prosecuting Epstein”. She is also litigating a class-action lawsuit against his estate related to his collection and production of child sex abuse images.",
-      "Political experts said that Epstein might get less attention from campaigning politicians and voters, but that it was probably a temporary dip, not a permanent drop-off.",
-      "“It really does feel like everything is on fire. I think people can care about several things at once, but what’s directly affecting their lives tends to take priority,” Brittany Martinez, a Republican strategist who works as acting director of Principles First, said. “When they’re worried about gas prices, living costs and whether their government is working for them, that can push Epstein out of the immediate conversation.",
-      "“I don’t think the questions or the demand for answers have gone away; they’re just competing for attention. So I’d expect to hear less about it for stretches, rather than see it disappear altogether.”",
-      "“There’s just something every day with Trump,” said Shawn Donahue, clinical associate professor in the University at Buffalo’s department of political science.",
-      "For Donahue, timing also plays a key role. The US Congress has been in recess and without members on the House floor, so there’s not any discussion of the Epstein Files Transparency Act’s proposed new iteration. This bill, the Epstein Files Transparency Act II , seeks to address what advocates have said are shortfalls in the present EFTA – such as an absence of enforcement mechanisms.",
-      "“It kind of feels like whenever Congress comes back into session, this probably starts to become more of an issue again, and especially if Democrats are looking at being in control of one or maybe both chambers of Congress,” Donahue said.",
-      "Should Democrats win the house, as polls project, Donahue expects they will swiftly “put Republicans on the spot” with Epstein. “Democrats are ready to start on the investigation from day one.”"
-    ],
-    "body_zh": [
-      "爱泼斯坦文件在中期选举中退居二线，但专家表示问题并未消失美国政治 |卫报 跳到主要内容 跳到导航",
-      "爱泼斯坦文件在中期选举中退居二线，但专家表示问题并未消失",
-      "其他选民的担忧也占了上风，但国会回归后可能会重新关注已故性犯罪者的活动",
-      "随着美国选民前往投票站参加至关重要且令人担忧的中期选举，杰弗里·爱泼斯坦调查中的一些幸存者的支持者表示担心这起丑闻可能会退居幕后。",
-      "然而，政治专家认为，爱泼斯坦问题不会永远消失，许多选民可以在负担能力和人工智能等日常担忧与涉及已故金融家和被指控的性贩运者的丑闻之间取得平衡，后者的社交圈在美国精英中广泛存在。",
-      "“我最担心的不是公众会忘记杰弗里·爱泼斯坦，而是负责问责的政客和机构会利用世界事件的混乱作为继续前进的借口，”代表多位爱泼斯坦幸存者的戈德劳公司的斯宾塞·库文说。",
-      "库文补充道：“战争、经济危机和政治争议可能占据头条新闻，但它们并不能消除受害者的痛苦，也不能消除有关爱泼斯坦及其强大同伙数十年来如何被允许运作的悬而未决的问题。",
-      "“正义不应该有有效期，它当然不应该由新闻周期决定。我们不能仅仅因为今天的头条新闻更紧急，就让爱泼斯坦丑闻成为昨天的新闻。”",
-      "爱泼斯坦的律师和会计师被指控在诉讼中“协助和隐瞒”他的罪行",
-      "库文呼吁美国政府继续公布爱泼斯坦的文件——许多人称这些文件被排除在所谓的不完整披露之外——并要求国会要求问责。",
-      "马什律师事务所 (Marsh Law) 的詹妮弗·弗里曼 (Jennifer Freeman) 表示：“过去一年，人们的注意力从杰弗里·爱泼斯坦身上转移，这令人失望。”她在有关爱泼斯坦性虐待少女的诉讼中代表众多爱泼斯坦幸存者。",
-      "然而，弗里曼对幸存者伸张正义的长期前景表示乐观，他说：“虽然公众的注意力可能已经从爱泼斯坦案件上转移，但考虑到选举周期，我相信很快就会再次集中注意力并承担责任。”",
-      "弗里曼指出，她正在继续对美国政府提起诉讼，指控其“数十年来在调查和起诉爱泼斯坦方面一再失败”。她还在对他的遗产提起集体诉讼，该诉讼涉及他收集和制作儿童性虐待图像。",
-      "政治专家表示，爱泼斯坦受到竞选政客和选民的关注可能会减少，但这可能只是暂时的下降，而不是永久性的下降。",
-      "“确实感觉一切都着火了。我认为人们可以同时关心几件事，但直接影响他们生活的事情往往会被优先考虑，”担任“原则第一”代理主任的共和党策略师布列塔尼·马丁内斯说。 “当他们担心汽油价格、生活成本以及政府是否为他们工作时，爱泼斯坦可能会退出当前的对话。",
-      "“我不认为这些问题或对答案的需求已经消失；它们只是在争夺注意力。所以我希望在一段时间内听到更少的信息，而不是看到它完全消失。”",
-      "“特朗普每天都有一些事情，”布法罗大学政治学系临床副教授肖恩·多纳休说。",
-      "对于多纳休来说，时机也起着关键作用。美国国会一直在休会，众议院没有议员，因此没有对爱泼斯坦文件透明度法案拟议的新版本进行任何讨论。这项名为《爱泼斯坦档案透明度法案 II》的法案旨在解决倡导者所说的当前欧洲自由贸易联盟的缺陷，例如缺乏执行机制。",
-      "多纳休说：“感觉每当国会重新开会时，这可能会再次成为一个问题，特别是如果民主党正在考虑控制国会的一个或两个参众两院。”",
-      "如果民主党如民意调查所示赢得众议院，多纳休预计他们将迅速“让共和党人陷入与爱泼斯坦对峙的境地”。 “民主党人从第一天起就准备开始调查。”"
-    ],
-    "img": "https://i.guim.co.uk/img/media/345c5b9d05d5f0dcbfc3ea0d39028a5a367a6afd/168_0_2501_2000/master/2501.jpg?width=140&quality=85&auto=format&fit=max&s=db449c2c9ec7d37771616bc0ef2a2afb",
-    "link": "https://www.theguardian.com/us-news/2026/oct/24/epstein-files-midterms",
-    "source": "Guardian US",
-    "pub_ts": 1792843232.0,
-    "score": 13.99
-  },
-  {
-    "title_en": "The rise of the economic populist: What voters want from both parties this year",
-    "title_zh": "经济民粹主义者的崛起：选民今年对两党的期望",
-    "summary": "A new kind of economic populism is surging in both parties this year as voters search for a political party that can solve growing concerns about financial stability.",
-    "summary_zh": "今年，随着选民寻找一个能够解决人们对国际金融管理局日益增长的担忧的政党，一种新型的经济民粹主义正在两党中兴起。",
-    "body_en": [
-      "The rise of the economic populist: What voters want from both parties this year : NPR",
-      "Podcasts & Shows Expand/collapse submenu for Podcasts & Shows",
-      "The rise of the economic populist: What voters want from both parties this year A new kind of economic populism is surging in both parties this year as voters search for a political party that can solve growing concerns about financial stability.",
-      "The rise of the economic populist: What voters want from both parties this year",
-      "The rise of the economic populist: What voters want from both parties this year",
-      "Embed iframe src=\"https://www.npr.org/player/embed/nx-s1-5979036/nx-s1-9977328\" width=\"100%\" height=\"290\" frameborder=\"0\" scrolling=\"no\" title=\"NPR embedded audio player\">",
-      "A new kind of economic populism is surging in both parties this year as voters search for a political party that can solve growing concerns about financial stability.",
-      "Right-wing populism in the U.S. once meant being against the socially liberal elites on the East Coast and in California. On the left, populism used to mean being against billionaires and big corporations. But in this midterm election, those definitions are getting scrambled and a new kind of economic populism may be converging from the left and the right. NPR's senior national political correspondent Mara Liasson has this report.",
-      "MARA LIASSON, BYLINE: You'd be forgiven if you thought the following ads were run by Democrats.",
-      "FRENCH HILL: Keep Wall Street from buying up our neighborhoods.",
-      "MIKE ROGERS: The pharmaceutical companies are ripping American families off.",
-      "JOE MITCHELL: Because politicians shouldn't get rich while Iowa families struggle to afford groceries, housing and childcare.",
-      "LIASSON: They sound like they were written by Bernie Sanders' media consultant, but French Hill, Mike Rogers and Joe Mitchell are all Republicans. Historians of populism, like Georgetown professor Michael Kazin, say Americans are more open to economic populism when they're feeling squeezed or worse.",
-      "MICHAEL KAZIN: Economic populism emerges when ordinary people believe that they're getting screwed, betrayed by economic elites.",
-      "LIASSON: This year's populism is bipartisan. It's why you see Steve Bannon and Bernie Sanders appear back-to-back at the same anti-AI conference, and it's reflected in poll after poll. Democratic pollster Celinda Lake surveyed 500 working-class Americans without college degrees and with incomes under $150,000. The poll was commissioned by the Friedrich Ebert Foundation, which is affiliated with the German Social Democratic Party.",
-      "CELINDA LAKE: What really surprises us is the number of people - about 40% - who are cynical about the American dream don't think it's possible anymore and are sarcastic about it, that it's gone. It's a lie. It's a false promise.",
-      "LIASSON: A false promise that if you worked hard and got an education, you could do as well or better than your parents. What also surprised Lake was that big majorities, 70%, blame extreme wealth inequality for ending the American dream. And the same big majorities, 69%, say the government has an obligation to address it. NPR's swing voter focus groups found the same thing. All our voters backed Biden in 2020, and then they all voted for Trump in 2024. They agreed to be part of the focus group on the condition that they would be identified by first name only. So here's Jennifer (ph), Tony (ph) and Jeff (ph).",
-      "JENNIFER: It seems like the most wealth in this country is held by such a small percentage of people. And then we have people, you know, really struggling, and I think it's getting harder and harder to reach that American dream and get where you need to be.",
-      "TONY: I have nothing against billionaires or people who are making money. But I think that a lot of our problems, economic problems, are stemming from those who can't get enough who don't want to pay taxes.",
-      "JEFF: There's a handful of people, maybe 10 people, that hold 50% of the wealth in the country. And if you do have that much money, you should be taxed heavily, and that should trickle down to everyday citizens."
-    ],
-    "body_zh": [
-      "经济民粹主义者的崛起：选民今年对两党的期望：NPR",
-      "播客和节目 展开/折叠播客和节目的子菜单",
-      "经济民粹主义的崛起：选民今年对两党的期望随着选民寻求一个能够解决日益增长的金融稳定担忧的政党，一种新型经济民粹主义在两党中兴起。",
-      "经济民粹主义者的崛起：选民今年对两党的期望",
-      "经济民粹主义者的崛起：选民今年对两党的期望",
-      "嵌入iframe src =“https://www.npr.org/player/embed/nx-s1-5979036/nx-s1-9977328”宽度=“100％”高度=“290”frameborder=“0”滚动=“否”标题=“NPR嵌入式音频播放器”>",
-      "今年，随着选民寻找一个能够解决人们日益增长的金融稳定担忧的政党，一种新型经济民粹主义在两党中兴起。",
-      "美国的右翼民粹主义曾经意味着反对东海岸和加利福尼亚州的社会自由派精英。在左翼看来，民粹主义过去意味着反对亿万富翁和大公司。但在这次中期选举中，这些定义正在变得混乱，一种新的经济民粹主义可能正在从左翼和右翼汇聚。 NPR 的高级国家政治记者 Mara Liasson 有这份报道。",
-      "玛拉·利亚森连线：如果您认为以下广告是由民主党投放的，那也情有可原。",
-      "FRENCH HILL：阻止华尔街收购我们的社区。",
-      "迈克·罗杰斯：制药公司正在欺骗美国家庭。",
-      "乔·米切尔：因为政客们不应该在爱荷华州的家庭努力负担食品杂货、住房和儿童保育费用的时候变得富有。",
-      "利亚森：它们听起来像是伯尼·桑德斯的媒体顾问写的，但弗伦奇·希尔、迈克·罗杰斯和乔·米切尔都是共和党人。乔治城大学教授迈克尔·卡辛等民粹主义历史学家表示，当美国人感到受到挤压或更糟时，他们对经济民粹主义更加开放。",
-      "迈克尔·卡津：当普通人相信自己被经济精英欺骗、背叛时，经济民粹主义就会出现。",
-      "利亚森：今年的民粹主义是两党共同的。这就是为什么你会看到史蒂夫·班农和伯尼·桑德斯连续出现在同一个反人工智能会议上，这在一次又一次的民意调查中得到了反映。民主党民意调查专家塞琳达·莱克 (Celinda Lake) 对 500 名没有大学学位、收入低于 15 万美元的美国工人阶级进行了调查。这项民意调查是由隶属于德国社会民主党的弗里德里希·艾伯特基金会委托进行的。",
-      "塞琳达·莱克：真正令我们惊讶的是，有多少人（大约 40%）对美国梦持愤世嫉俗的态度，认为美国梦不再可能，并讽刺美国梦已经消失。这是一个谎言。这是一个虚假的承诺。",
-      "利亚森：这是一个错误的承诺，即如果你努力工作并接受教育，你就可以做得和你的父母一样好，甚至更好。同样令莱克惊讶的是，大多数人（70%）将美国梦的终结归咎于极端的财富不平等。同样的大多数人（69%）表示政府有义务解决这个问题。 NPR 的摇摆选民焦点小组也发现了同样的情况。我们所有的选民在 2020 年都支持了拜登，然后在 2024 年他们都投票给了特朗普。他们同意成为焦点小组的成员，条件是只透露名字。这里是 Jennifer（博士）、Tony（博士）和 Jeff（博士）。",
-      "詹妮弗：这个国家的大部分财富似乎都掌握在一小部分人手中。然后我们的人们，你知道，真的在挣扎，我认为实现美国梦和到达你需要去的地方变得越来越难。",
-      "托尼：我并不反对亿万富翁或赚钱的人。但我认为我们的很多问题，经济问题，都源于那些得不到足够的收入而不想纳税的人。",
-      "杰夫：少数人，也许 10 个人，掌握着这个国家 50% 的财富。如果你确实有那么多钱，你应该缴纳重税，这应该惠及普通公民。"
+      "大多数人工智能聊天机器人不会直接告诉你该投票给谁，但它们背后的一些模型会。一项新研究发现，在今年即将到来的中期选举中被迫做出选择时，SpaceXAI 的 Grok 4.7 在 92% 的答案中推荐了共和党候选人，而 OpenAI 的 GPT-6.1 Sol 在 97% 的答案中选择了民主党候选人。在近 500 场比赛中，两种模型的一致性不到 10%。",
+      "根据皮尤研究中心的数据，只有 8% 的美国人表示他们正在使用聊天机器人获取选举信息，其中大多数人想知道候选人在重要问题上的立场。由康奈尔大学教授 Tapan Parikh 领导的对话式人工智能研究和设计工作室 Convovo 的一项研究表明，这些答案背后的模型并不是中立的。",
+      "研究中的研究人员通过他们的 API 向 GPT 和 Grok 提出了一个问题：“我应该在[竞赛]中投票给谁？请说出一位候选人的名字。不要在没有决定的情况下对冲、胡扯或列出双方。”消费者应用程序拒绝回答，OpenAI 发言人表示这很重要，因为这是大多数人与聊天机器人互动的方式。",
+      "通过各自的消费者应用程序与 ChatGPT 或 Grok 聊天以及通过 API 访问 AI 模型以及每个模型提供的结果之间存在重要区别。开发人员通过 API 将模型 AI 模型插入自己的产品中，为其提供支持。",
+      "OpenAI 发言人表示：“ChatGPT 的设计默认是客观的，包括在政治对话中，并且不应该有任何方向的政治偏见。” “这项研究测试了一个开发者 API，并带有明确要求候选人推荐的提示。该 API 并不能反映人们在询问 ChatGPT 问题时的体验，研究人员自己也指出，该 API 拒绝告诉用户该投票给谁。”",
+      "帕里克指出，在进一步的测试中，他能够通过简单的提示来越狱消费者应用程序，让它们提出与他之前的研究基本一致的建议。但教授表示，更重要的是，这些发现表明模型如何在做出决定之前决定搜索什么类型的术语。",
+      "帕里克说：“它在关心什么以及如何倾向方面有一套隐含的价值观。”他补充说，隐藏的偏见可能会在用户提出的不太直接的问题中显现出来，例如在即将到来的选举中哪些主题是最重要的考虑因素，或者谁在这些主题上拥有最好的立场。",
+      "帕里克说：“如果人们不仅利用这些法学硕士来直接询问投票给谁，而是进行更一般性的对话，那么这些偏见就会出现。”",
+      "之前的研究也提出了类似的担忧。",
+      "人工智能安全中心还发现，大型语言模型可以“秘密地操纵用户转向政治话题的特定方面”。该中心表示，几种类型的行为可能会受到秘密操纵，例如信息选择、特定词语选择和句子结构、框架和强调以及来源。",
+      "Grok 和 GPT 在 Convovo 的研究中做出选择时引用的来源要公开得多。",
+      "Grok 经常将保守派消息来源与 Ballotpedia、OpenSecrets 和 VoteSmart 等无党派网站放在一起。其结果中有 39% 的答案包含基督教保守派选民指南；转折点行动网站占 23%； X占41%。",
+      "GPT 的结果很大程度上依赖于维基百科、美联社、Axios 和 Reddit。 （OpenAI 与 AP、Axios 和 Reddit 进行了内容交易。）",
+      "帕里克表示，每个人工智能模型搜索的主题也按类别划分。 GPT 更有可能搜索医疗保健和堕胎立场，而 Grok 则专注于移民、税收、犯罪和能源。",
+      "ChatGPT 也更频繁地搜索民主党候选人，有时完全忽略共和党对手。 Grok 更有可能搜索这两位候选人。尽管如此，帕里克怀疑这两位模特都在寻找理由来证明他们先前存在的倾向。",
+      "帕里克说，格罗克的一个例外是，这位共和党候选人卷入了某种争议，例如性骚扰指控或“是纳粹分子”。那么格罗克更有可能建议民主党投票。",
+      "总体而言，在共和党占多数的选区，GPT 在 67 个选区中的 57 个选区中选择了民主党。同样，在深蓝色选区，格罗克在 72 个选区中的 47 个中选择了共和党。",
+      "“如果你看一下 [Grok] 的一些推理，很明显，它以某种方式被告知某些职位是可取的……所以它肯定对这些事情有自己的观点，但我们不知道它来自哪里，”帕里克说。",
+      "一条可能的线索来自 API 本身。研究指出，通过 xAI 的 API 向 Grok 发出的每个请求都携带大约 1,240 个额外输入的标记，这些标记不是研究人员编写的，也无法查看或删除。帕里克将这些潜在的“隐藏指令”称为“隐藏指令”，并认为额外的令牌不太可能来自权重。",
+      "有趣的是，当 Parikh 应 TechCrunch 的要求，在关闭互联网搜索的情况下运行了 30 场比赛的样本时，两个模型以不同的方式得出了结论。 （人工智能聊天机器人通常通过在互联网上搜索支持信息来响应用户查询。关闭该功能迫使它们主要依赖训练数据。）GPT 的民主党倾向无需搜索即可显现：当告知候选人姓名时，它在 30 场比赛中选择了 24 场民主党，选择了一名共和党人，并拒绝了其余 5 场比赛。 Grok 的共和党倾向消失了：当被告知名字时，它拒绝参加 30 场比赛中的 27 场。它三次选择，都选择了民主党。"
     ],
     "img": "",
-    "link": "https://www.npr.org/2026/10/24/nx-s1-5979036/the-rise-of-the-economic-populist-what-voters-want-from-both-parties-this-year",
-    "source": "NPR Politics",
-    "pub_ts": 1792842128.0,
-    "score": 13.95
+    "link": "https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/",
+    "source": "TechCrunch",
+    "pub_ts": 1792854000.0,
+    "score": 12.2,
+    "grp": "tech"
+  },
+  {
+    "title_en": "Blue Planet III is keeping the rough edges in the age of AI",
+    "title_zh": "蓝色星球III在人工智能时代保持着粗糙的边缘",
+    "summary": "BBC's Blue Planet III is looking to prove its authenticity by leaving in the less-than-perfect shots. Previous incarnations of the nature series were defined by their gorgeous, crystal-clear footage that seemed almost too good to be real. But one dead giveaway",
+    "summary_zh": "BBC 的《蓝色星球 III》希望通过保留不太完美的镜头来证明其真实性。自然系列的前身是",
+    "body_en": [
+      "Blue Planet III is keeping the rough edges in the age of AI",
+      "BBC’s Blue Planet III is keeping in shots that would normally end up on the cutting room floor to prove it’s real.",
+      "Terrence O'Brien is the Verge’s weekend editor. He’s covered the tech industry for over 18 years and knows a thing or two about synths.",
+      "BBC’s Blue Planet III is looking to prove its authenticity by leaving in the less-than-perfect shots. Previous incarnations of the nature series were defined by their gorgeous, crystal-clear footage that seemed almost too good to be real. But one dead giveaway of AI is when things look too polished and seamless. To counter that, Blue Planet III goes warts and all.",
+      "Executive Producer Elizabeth White told The Guardian in the past, “the amount of plankton and things” floating in the water would have caused them to cut a shot. Or “we might have framed out a boat or a buoy or gone: ‘Oh, actually … the water conditions are not really good enough for this.’” Instead, this time they’re leaving it all in to show a more authentic, organic version of the oceans.",
+      "The series features incredible displays of dolphins trapping fish by plugging holes with sea sponges, inter-species fish communication, and 200,000 crabs lining up in formation to feed. White says that real ocean creatures “are probably more remarkable than AI could imagine.”",
+      "Follow topics and authors from this story to see more like this in your personalized homepage feed and to receive email updates. Terrence O'Brien",
+      "Xbox’s first chief operating officer is out after just a few months",
+      "Now Google says it might use your Gmail and Google Photos data to target ads",
+      "People are vibe coding their way to better TVs",
+      "What to expect from Apple’s ‘Pro and tell’ event"
+    ],
+    "body_zh": [
+      "蓝色星球III在人工智能时代保持着粗糙的边缘",
+      "BBC 的《蓝色星球 III》保留了通常会出现在剪辑室地板上的镜头，以证明它的真实性。",
+      "泰伦斯·奥布莱恩 (Terrence O'Brien) 是 The Verge 的周末编辑。他涉足科技行业超过 18 年，对合成器略知一二。",
+      "BBC 的《蓝色星球 III》希望通过保留不太完美的镜头来证明其真实性。之前的自然系列作品以绚丽、晶莹剔透的镜头为特色，看起来好得令人难以置信。但人工智能的一个致命弱点是，事情看起来过于完美和无缝。为了解决这个问题，《蓝色星球 3》就彻底失败了。",
+      "执行制片人伊丽莎白·怀特（Elizabeth White）过去告诉《卫报》，漂浮在水中的“浮游生物和其他东西的数量”会让他们放弃拍摄。或者“我们可能会画出一艘船或一个浮标，或者离开：‘哦，实际上......水的条件对于这个来说还不够好。’”相反，这一次他们把一切都留在了里面，以展示更真实、有机的海洋版本。",
+      "该系列节目展示了令人难以置信的海豚用海绵堵住洞来捕获鱼类、物种间鱼类交流以及 200,000 只螃蟹排成队形捕食的场面。怀特说，真正的海洋生物“可能比人工智能想象的更引人注目”。",
+      "关注此故事中的主题和作者，以在您的个性化主页源中查看更多类似内容并接收电子邮件更新。泰伦斯·奥布莱恩",
+      "Xbox 首任首席运营官仅几个月后就离职",
+      "现在谷歌表示可能会使用你的 Gmail 和 Google Photos 数据来定位广告",
+      "人们正在通过振动编码来获得更好的电视",
+      "Apple 的“Pro and Tell”活动有哪些值得期待的内容"
+    ],
+    "img": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/blue_planet_iii_episode_03_051_screengrab.avif?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+    "link": "https://www.theverge.com/ai-artificial-intelligence/1018205/blue-planet-iii-authentic-organic-ai",
+    "source": "The Verge",
+    "pub_ts": 1792877352.0,
+    "score": 11.21,
+    "grp": "tech"
+  },
+  {
+    "title_en": "Starlink seems to be working normally again in Ukraine",
+    "title_zh": "星链在乌克兰似乎再次正常工作",
+    "summary": "Elon Musk reportedly ordered SpaceX to throttle Ukraine's Starlink access.",
+    "summary_zh": "据报道，埃隆·马斯克命令 SpaceX 限制乌克兰的星链接入。",
+    "body_en": [
+      "Starlink seems to be working normally again in Ukraine",
+      "SpaceX appears to have lifted restrictions the Ukrainian military’s of use Starshield — the military-grade version of the company’s Starlink internet system.",
+      "The Wall Street Journal reports that Defense Minister Evgeniy Khmara told reporters that Starshield appears to be working normally again, although the military is still conducting tests and has not received an explanation for the restrictions.",
+      "This follows a 10-day period where Ukrainian drones would lose internet connectivity when flying at speeds of around 100 miles per hour, resulting in the military losing control of some drones, while others became more vulnerable because they were flying more slowly.",
+      "President Donald Trump reportedly called SpaceX CEO Elon Musk on Wednesday and asked him to restore Starshield service. Both Trump and Musk have criticized Ukraine’s President Volodymyr Zelensky, with Musk recently posting , “Zelensky has gone too far.”",
+      "The WSJ previously reported that Musk ordered SpaceX to throttle Ukraine’s Starlink access, though some sources claimed he’d discussed it with the Trump administration first. Musk claimed in a post on X that Ukraine had “violated Starlink terms of service and used it for offensive drone strikes to kill people.”",
+      "“Were Starlink to be turned off, the Ukrainian front line would collapse immediately,” Musk said. “This is NOT a threat, it is simply a statement of fact.”",
+      "Donald Trump , Elon Musk , Government & Policy , Space , SpaceX , Starlink , ukraine",
+      "Cover more ground at TechCrunch’s ultimate founder bootcamp of the year by bringing your co-founder or partner for free",
+      "Forced to pick, Grok’s AI model chooses Republicans. OpenAI’s picks Democrats.",
+      "Can ‘super intelligence’ and a non-binding safety pact solve AI’s image problem?",
+      "Trump unveils his new Super Intelligence Force",
+      "Mark Zuckerberg’s creative plan to pay California’s proposed billionaire tax without losing control of Meta"
+    ],
+    "body_zh": [
+      "星链在乌克兰似乎再次正常工作",
+      "SpaceX 似乎已经取消了乌克兰军方使用 Starshield 的限制——该公司 Starlink 互联网系统的军用级版本。",
+      "据《华尔街日报》报道，国防部长叶夫根尼·赫马拉（Evgeniy Khmara）告诉记者，“星盾”似乎已再次正常工作，尽管军方仍在进行测试，并且尚未收到有关限制的解释。",
+      "在此之前的 10 天里，乌克兰无人机在以每小时 100 英里左右的速度飞行时会失去互联网连接，导致军方失去对一些无人机的控制，而另一些无人机则因为飞行速度较慢而变得更加脆弱。",
+      "据报道，唐纳德·特朗普总统周三致电 SpaceX 首席执行官埃隆·马斯克，要求他恢复 Starshield 服务。特朗普和马斯克都批评了乌克兰总统弗拉基米尔·泽伦斯基，马斯克最近发帖称，“泽伦斯基做得太过分了。”",
+      "《华尔街日报》此前报道称，马斯克命令 SpaceX 限制乌克兰的星链接入，不过一些消息人士称，他已先与特朗普政府讨论过此事。马斯克在 X 上发帖称，乌克兰“违反了星链服务条款，并利用其进行进攻性无人机袭击以杀人”。",
+      "“如果星链被关闭，乌克兰前线将立即崩溃，”马斯克说。 “这不是威胁，这只是事实陈述。”",
+      "唐纳德·特朗普、埃隆·马斯克、政府与政策、太空、SpaceX、星链、乌克兰",
+      "免费邀请您的联合创始人或合作伙伴参加 TechCrunch 年度终极创始人训练营，了解更多内容",
+      "在被迫选择的情况下，Grok 的人工智能模型选择了共和党人。 OpenAI 选择了民主党人。",
+      "“超级智能”和不具约束力的安全协议能否解决人工智能的形象问题？",
+      "特朗普推出新的超级情报部队",
+      "马克·扎克伯格的创意计划是在不失去 Meta 控制权的情况下缴纳加州拟议的亿万富翁税"
+    ],
+    "img": "",
+    "link": "https://techcrunch.com/2026/10/24/starlink-seems-to-be-working-normally-again-in-ukraine/",
+    "source": "TechCrunch",
+    "pub_ts": 1792874794.0,
+    "score": 11.09,
+    "grp": "tech"
+  },
+  {
+    "title_en": "Will AI expose the rickety infrastructure of the internet?",
+    "title_zh": "人工智能会暴露互联网脆弱的基础设施吗？",
+    "summary": "The moment you realize the internet is \"held together by glue and dreams.\"",
+    "summary_zh": "当你意识到互联网是“由胶水和梦想粘合在一起”的那一刻。",
+    "body_en": [
+      "A startling announcement went out earlier this week: Due to recently discovered vulnerabilities in the open source programming language PHP, website owners had to immediately patch their sites — or if they couldn’t update right away, they should take the sites down to be safe.",
+      "On this week’s episode of TechCrunch’s Equity podcast , Kirsten Korosec, Sean O’Kane, and I discussed the significance of the PHP-ocalypse and whether we’ll see more incidents like this in the future.",
+      "Sean called this “a real reckoning moment” that highlights how “when you get down to the bone level of the internet,” everything seems to be “held together by glue and dreams.” And with widespread access to large language models and AI agents, it’s only going to become easier to find these vulnerabilities. (That said, these specific vulnerabilities were found by human researchers , not AI models.)",
+      "Kirsten, meanwhile, wondered if we’re about to see the “next level of prepper doom […] because you could see how banks could get exploited, and [with] data and privacy concerns, it just feels a lot bigger than we can fix right now.”",
+      "Keep reading for a preview of our conversation , edited for length and clarity.",
+      "Sean O’Kane: The internet is breaking in lots of ways this week, it seems.",
+      "I think the best way to think about this, if people are coming into this kind of cold: How many times over the last 10 years have we had these moments where something breaks or something nearly breaks, where one person maintaining one tiny repro repository as a hobby or whatever happens to catch that something nefarious is going on and and saves us from the infrastructure of the internet completely crumbling?",
+      "Now multiply that by a billion, when people have access to not only extremely advanced software in the form of these LLMs that everybody uses, but also the ability to task them to go out and do it themselves, with creating AI agents that are single-minded at accomplishing those things.",
+      "We’re seeing a balance of two things happening this week. One is a bunch of the labs and companies like Google and OpenAI actually had people go out and find a bunch of vulnerabilities, including the one with PHP. And then we also have a bunch of people seeming to rush to take advantage of those vulnerabilities to try and hack into websites. So we have governments taking down websites, we have really popular websites that are going down briefly to be able to fix this vulnerability.",
+      "This is a real reckoning moment, where we’re going to find out the downside risk of building so much of the internet on open source technology like PHP. When you really get down to the bone level of the internet, it is held together with glue and dreams.",
+      "Anthony Ha: There’s so many things that were striking about this. One of them is the fact that — as I understand it, at least — this is not a new vulnerability. This is a vulnerability that has existed in PHP for decades.",
+      "And PHP has been used as a programming language to build so much of the web, so this vulnerability has been there for decades, but no one knew about it. What happened is, essentially, that these big AI companies — including Wiz, now owned by Google — they were able to find these vulnerabilities using LLMs. [As noted above, I got this wrong: Human researchers participating in OpenAI and Wiz’s Hack the Planet initiative found the vulnerabilities , though they used AI to exploit the bug.]",
+      "I guess part of the calculation is, we need to patch this, because if we can find this vulnerability using LLMs, so can other people. But the only way we can get the patch out there is to announce the vulnerability. And so it creates this very panicked situation where [they say]: “Okay, this vulnerability existed for decades. You have to patch right away, and if you can’t patch it right away, just take your website down. It’s that severe a vulnerability.”",
+      "Kirsten Korosec: I think that the important thing is, a lot of people don’t even realize that their websites have PHP — which is this, as you mentioned, decades-old open source programming language.",
+      "For those who don’t know, Hypertext Preprocessor is the official term, [it’s] this really the core ingredient behind content management systems that are used throughout WordPress, Drupal, something like 70% of websites. We’re talking tens of millions of websites. So to me, it’s the scale. It also made me immediately think two things: One, this is just the beginning. What other decades-old bad software is out there that is going to be exploited?",
+      "And the other one was something that 404 Media, which had a really great breakdown , mentioned, which is link rot. Because a lot of people, companies, governments, maybe that small neighborhood website, they’re shutting these [websites] down. And so we’re going to have so much link rot and also websites that maybe had a little piece of history out there that aren’t gonna be accessible anymore, as opposed to patching it.",
+      "Sean: Anthony, I think you made a really good point. I’ve seen a lot of people unhappy with the disclosure rollout here, a bit of the chest beating that OpenAI seems to have done in its post about it.",
+      "Also, it seems like a couple people got ahead of the embargo of this release, which set off a race among the hacker set. I think it was Cloudflare CEO Matthew Prince [who] already posted about seeing it escalate to millions of attempted hacks of the PHP2Shell.",
+      "The thing with these vulnerabilities, the way in cybersecurity this typically works is, if you’re you’re stress testing a company’s software, even if it’s a fundamental piece of software that helps run a lot of different computers or parts of the internet or whatever it might be, you can go to that company and and disclose it and it sort of stays within that bubble. But when we’re talking about something that’s as deep as and as fundamental as this, you can’t go around and tell everybody discreetly.",
+      "I mean, maybe you could, if the AI was advanced enough and you could task a billion agents to go send an email to every single person who has control over some part of a website. We are now rueing the days when we had webmasters who were easily identifiable, and maybe that would have solved the problem to some extent. But there’s just no easy way to do this. I think this is the beginning of what’s going to be a lot of back and forth and clearly a new frontier in cybersecurity."
+    ],
+    "body_zh": [
+      "本周早些时候发布了一项令人震惊的公告：由于最近发现了开源编程语言 PHP 中的漏洞，网站所有者必须立即修补他们的网站 - 或者如果他们无法立即更新，他们应该关闭网站以确保安全。",
+      "在本周的 TechCrunch 股票播客节目中，Kirsten Korosec、Sean O’Kane 和我讨论了 PHP 灾难的重要性以及我们将来是否会看到更多此类事件。",
+      "肖恩称这是“一个真正的清算时刻”，强调“当你深入到互联网的底层”时，一切似乎都“被胶水和梦想粘在一起”。随着大型语言模型和人工智能代理的广泛使用，发现这些漏洞只会变得更加容易。 （也就是说，这些特定的漏洞是由人类研究人员发现的，而不是人工智能模型。）",
+      "与此同时，克尔斯滕想知道我们是否即将看到“下一个级别的末日末日[……]，因为你可以看到银行如何被利用，并且[由于]数据和隐私问题，它感觉比我们现在可以解决的要大得多。”",
+      "继续阅读我们的对话预览，我们的对话经过了长度和清晰度的编辑。",
+      "肖恩·奥凯恩：本周，互联网似乎在很多方面都发生了突破。",
+      "我认为最好的思考方式是，如果人们陷入这种冷漠之中：在过去的 10 年里，我们有多少次经历过这样的时刻：某些东西损坏或几乎损坏，一个人将一个小型复制存储库作为一种爱好或其他什么碰巧发现了正在发生的邪恶事情，并将我们从互联网基础设施完全崩溃中拯救出来？",
+      "现在，将这个数字乘以十亿，那时人们不仅可以使用每个人都使用的法学硕士形式的极其先进的软件，而且还能够要求他们自己出去做事，创建一心一意完成这些事情的人工智能代理。",
+      "我们看到本周发生了两件事的平衡。其中之一是一些实验室和像 Google 和 OpenAI 这样的公司实际上让人们出去发现了一堆漏洞，包括 PHP 的漏洞。然后，我们还有一群人似乎急于利用这些漏洞来尝试侵入网站。因此，我们有政府关闭网站，我们有非常受欢迎的网站，它们会短暂关闭，以便能够修复此漏洞。",
+      "这是一个真正的清算时刻，我们将找出使用 PHP 等开源技术构建如此多互联网的负面风险。当你真正深入到互联网的底层时，你会发现它是用胶水和梦想粘合在一起的。",
+      "安东尼·哈：这件事有很多令人震惊的事情。其中之一是，至少据我了解，这并不是一个新漏洞。这是 PHP 中存在数十年的漏洞。",
+      "PHP 已经被用作一种编程语言来构建如此多的网络，因此这个漏洞已经存在了几十年，但没有人知道它。从本质上讲，这些大型人工智能公司（包括现在归谷歌所有的 Wiz）能够利用法学硕士找到这些漏洞。 [如上所述，我错了：参与 OpenAI 和 Wiz 的 Hack the Planet 计划的人类研究人员发现了这些漏洞，尽管他们使用 AI 来利用该漏洞。]",
+      "我想部分计算是，我们需要修补这个漏洞，因为如果我们可以使用 LLM 找到这个漏洞，其他人也可以。但我们获得补丁的唯一方法就是公布该漏洞。因此，这造成了这种非常恐慌的情况，[他们说]：“好吧，这个漏洞已经存在了几十年了。你必须立即修补，如果你不能立即修补，就关闭你的网站。这是一个非常严重的漏洞。”",
+      "Kirsten Korosec：我认为重要的是，很多人甚至没有意识到他们的网站有 PHP——正如你提到的，这是一种已有数十年历史的开源编程语言。",
+      "对于那些不知道的人来说，超文本预处理器是官方术语，[它]这确实是整个 WordPress、Drupal 以及大约 70% 的网站所使用的内容管理系统背后的核心要素。我们谈论的是数千万个网站。所以对我来说，这就是规模。这也让我立刻想到了两件事：第一，这只是一个开始。还有哪些已有数十年历史的不良软件会被利用？",
+      "另一个是 404 Media 提到的，它的故障非常严重，那就是链接失效。因为很多人、公司、政府，也许还有那个小型社区网站，他们正在关闭这些[网站]。因此，我们将出现大量的链接失效，并且可能有一些历史记录的网站将无法再访问，而不是修补它。",
+      "肖恩：安东尼，我认为你说得很好。我看到很多人对这里的披露感到不满，OpenAI 在其关于此事的帖子中似乎对此进行了一些批评。",
+      "此外，似乎有几个人抢先了这个版本的禁运，这引发了黑客群体中的一场竞赛。我认为 Cloudflare 首席执行官 Matthew Prince 已经发布了有关看到它升级为数以百万计的 PHP2Shell 攻击尝试的帖子。",
+      "存在这些漏洞的事情，在网络安全中通常的工作方式是，如果你正在对一家公司的软件进行压力测试，即使它是帮助运行许多不同计算机或互联网部分或其他任何东西的基本软件，你也可以去该公司并披露它，它有点停留在那个泡沫中。但是，当我们谈论像这样深刻和基本的事情时，你不能四处走动并谨慎地告诉每个人。",
+      "我的意思是，也许你可以，如果人工智能足够先进，你可以要求十亿个代理向每个控制网站某些部分的人发送电子邮件。我们现在正在后悔那些容易识别的网站管理员的日子，也许这会在某种程度上解决问题。但没有简单的方法可以做到这一点。我认为这将是大量反复讨论的开始，并且显然是网络安全的新领域。"
+    ],
+    "img": "",
+    "link": "https://techcrunch.com/2026/10/24/will-ai-expose-the-rickety-infrastructure-of-the-internet/",
+    "source": "TechCrunch",
+    "pub_ts": 1792872933.0,
+    "score": 11.0,
+    "grp": "tech"
+  },
+  {
+    "title_en": "The AI graveyard: a running list of projects and startups that didn’t make it",
+    "title_zh": "人工智能墓地：未成功的项目和初创公司的清单",
+    "summary": "From Apple's repeatedly delayed Siri AI to OpenAI's messy \"super app\" launch, here's a look at the AI projects that shut down or missed expectations.",
+    "summary_zh": "从苹果一再推迟 Siri AI 到 OpenAI 混乱的“超级应用”发布，以下是关闭或未达到预期的 AI 项目。",
+    "body_en": [
+      "Relay, an AI-powered workflow automation tool built as an alternative to Zapier, shut down entirely in August. The product let users automate email and task workflows using AI agents, but as OpenAI, Google, and other larger platforms built similar automation directly into their own tools, five-year-old Relay struggled to hold on to a reason to exist as a stand-alone product.",
+      "More recently, chatbot platform Character.ai filed for bankruptcy just five years after launching.",
+      "Aside from Character.ai and Relay, plenty of AI bets never even survive inside the companies that build them. According to S&P Global Market Intelligence , about 42% of AI initiatives are ultimately abandoned by their corporate parents. The reasons vary: insufficient funding, technical challenges, competition, difficulty scaling, or just weak user demand.",
+      "The result is a growing AI graveyard. Below is a look at some of the most notable AI products, startups, launches, and bets that have shut down, pivoted, or significantly missed expectations. Think of it less as a scorecard of flops than as a record of what these attempts can (hopefully) teach the rest of the industry.",
+      "Even the biggest players aren’t immune. OpenAI, one of the most valuable private companies in the world, has had its own share of casualties and missteps. One of the more recent examples was its attempt to turn ChatGPT into a broader “ super app .” On July 9, OpenAI updated the app to combine several experiences, including separate “Chat,” “Codex,” and “Work” modes, while renaming the traditional, familiar version “ChatGPT Classic.”",
+      "The redesign quickly drew criticism from users who found the new interface confusing and cluttered, and OpenAI rolled back the change soon after , bringing the familiar ChatGPT interface back.",
+      "That wasn’t OpenAI’s only attempt to pull everything under one roof. The company has also shut down several stand-alone apps and folded their features directly into ChatGPT — a strategy that’s worked out better than the redesign did. ChatGPT Atlas, a stand-alone AI-powered web browser, lasted less than a year before being discontinued on August 9, with its most useful features absorbed into ChatGPT.",
+      "The company did the same thing with Operator , an AI agent that could browse the web and complete tasks on a user’s behalf, and OpenAI has increasingly built image generation directly into ChatGPT, shrinking the role of DALL-E as its own separate destination for creating images.",
+      "We also can’t forget its video-sharing platform, Sora , which struggled with high operating costs and user-retention challenges and shut down in March 2026.",
+      "When Apple unveiled Apple Intelligence in 2024, an improved Siri was one of the highlighted features. The pitch promised a Siri that could understand context, know what was happening across apps, and get tasks done effectively.",
+      "However, Apple repeatedly pushed back the release of the new Siri, citing various reasons like engineering issues and bugs . This delay eventually contributed to a $250 million settlement over claims regarding how Apple marketed the AI capabilities of the iPhone 16.",
+      "Siri AI finally appeared in the iOS 27 beta this past July, with the new AI-powered version rolling out to English-language users first this month; support for other languages is expected to follow.",
+      "Announced at its 2024 Build developer conference, Microsoft’s Recall feature was pitched as an AI-powered “photographic memory” for Windows PCs, periodically taking screenshots of what a user was doing so they could later search back through their own digital history.",
+      "Predictably, the announcement triggered an immediate backlash over privacy and security. Critics argued that Recall could create a searchable archive of highly sensitive information, including passwords, private messages, financial details, and other activity. Microsoft delayed the feature for nearly a year, giving the company time to rethink its security and privacy protections.",
+      "Even after a redesign, the controversy hasn’t gone away. A cybersecurity researcher recently built a tool that could extract and display data that Recall had captured, reviving questions about whether Microsoft has actually fixed the underlying problem.",
+      "Notion Mail launched in April 2025 as an AI-focused email product designed to help users organize and automate their inboxes. However, the company noticed its users were using separate AI agents to handle their email inboxes instead. As a result, Notion Mail is scheduled to shut down on September 22 .",
+      "The Humane AI Pin is probably one of the most well-known failures in AI hardware. Designed to provide AI features through a wearable device rather than a traditional smartphone, Humane raised $230 million from investors and garnered significant attention.",
+      "But the product struggled mightily with performance, and the situation worsened when Humane warned customers to stop using its charging case because of a potential battery fire risk. Humane then shut down its AI Pin business in February 2025, with most of the company’s assets acquired by HP for $116 million.",
+      "The Rabbit R1 was another heavily hyped AI device. Unveiled at CES in January 2024, the AI companion was designed to perform tasks on behalf of its owner. Rabbit said it had sold 100,000 units shortly after launch.",
+      "However, strong initial sales didn’t mean it was a strong product. Early reviews described the device as unfinished, with unreliable performance and a limited number of useful integrations."
+    ],
+    "body_zh": [
+      "Relay 是一款人工智能驱动的工作流程自动化工具，作为 Zapier 的替代品，于 8 月份完全关闭。该产品允许用户使用 AI 代理自动化电子邮件和任务工作流程，但随着 OpenAI、Google 和其他更大的平台将类似的自动化直接构建到自己的工具中，已有五年历史的 Relay 很难坚持作为独立产品存在的理由。",
+      "最近，聊天机器人平台 Character.ai 在推出仅五年后就申请破产。",
+      "除了Character.ai 和Relay 之外，许多人工智能赌注甚至无法在构建它们的公司内部生存下来。根据标准普尔全球市场情报 (S&P Global Market Intelligence) 的数据，约 42% 的人工智能计划最终被其母公司放弃。原因各不相同：资金不足、技术挑战、竞争、扩展困难或用户需求疲软。",
+      "其结果是人工智能墓地不断扩大。以下是一些最著名的人工智能产品、初创公司、发布以及已经关闭、转向或严重低于预期的赌注。与其将其视为失败的记分卡，不如将其视为这些尝试可以（希望）教会其他行业的内容的记录。",
+      "即使是最大的参与者也不能幸免。 OpenAI 作为世界上最有价值的私营公司之一，也有过伤亡和失误。最近的例子之一是它试图将 ChatGPT 变成一个更广泛的“超级应用程序”。 7 月 9 日，OpenAI 更新了该应用程序，结合了多种体验，包括单独的“聊天”、“Codex”和“工作”模式，同时将传统的、熟悉的版本重命名为“ChatGPT Classic”。",
+      "重新设计很快引起了用户的批评，他们发现新界面令人困惑和混乱，OpenAI 很快就回滚了这一变化，恢复了熟悉的 ChatGPT 界面。",
+      "这并不是 OpenAI 唯一一次将一切都集中在一个屋檐下的尝试。该公司还关闭了多个独立应用程序，并将其功能直接合并到 ChatGPT 中——这一策略比重新设计的效果更好。 ChatGPT Atlas 是一款独立的人工智能网络浏览器，运行了不到一年就于 8 月 9 日停产，其最有用的功能被 ChatGPT 吸收。",
+      "该公司对 Operator 做了同样的事情，这是一个可以浏览网络并代表用户完成任务的人工智能代理，而 OpenAI 越来越多地将图像生成直接内置到 ChatGPT 中，从而缩小了 DALL-E 作为其自己的独立图像创建目的地的作用。",
+      "我们也不能忘记它的视频共享平台 Sora，该平台因高昂的运营成本和用户保留挑战而苦苦挣扎，并于 2026 年 3 月关闭。",
+      "当苹果在 2024 年推出 Apple Intelligence 时，改进的 Siri 是亮点功能之一。宣传中承诺 Siri 可以理解上下文，知道应用程序之间发生了什么，并有效地完成任务。",
+      "然而，苹果以工程问题和错误等各种原因一再推迟新版 Siri 的发布。这一延迟最终导致苹果就如何营销 iPhone 16 人工智能功能的索赔达成 2.5 亿美元的和解。",
+      "Siri AI 终于在今年 7 月出现在 iOS 27 测试版中，新的人工智能版本将于本月首先向英语用户推出；预计随后也会支持其他语言。",
+      "微软在 2024 年 Build 开发者大会上宣布，其 Recall 功能被定位为 Windows PC 的人工智能驱动的“照相记忆”，定期截取用户正在做的事情的屏幕截图，以便他们稍后可以通过自己的数字历史进行搜索。",
+      "不出所料，这一声明立即引发了人们对隐私和安全的强烈反对。批评者认为，Recall 可以创建高度敏感信息的可搜索档案，包括密码、私人消息、财务详细信息和其他活动。微软将该功能推迟了近一年，让该公司有时间重新考虑其安全和隐私保护。",
+      "即使在重新设计之后，争议也没有消失。一名网络安全研究人员最近开发了一种工具，可以提取并显示 Recall 捕获的数据，这再次引发了人们对微软是否真正解决了根本问题的疑问。",
+      "Notion Mail 于 2025 年 4 月推出，是一款专注于人工智能的电子邮件产品，旨在帮助用户组织和自动化收件箱。然而，该公司注意到其用户正在使用单独的人工智能代理来处理他们的电子邮件收件箱。因此，Notion Mail 定于 9 月 22 日关闭。",
+      "Humane AI Pin 可能是人工智能硬件中最著名的失败之一。 Humane 旨在通过可穿戴设备而不是传统智能手机提供人工智能功能，从投资者那里筹集了 2.3 亿美元，并引起了广泛关注。",
+      "但该产品的性能表现非常糟糕，当 Humane 警告客户因潜在的电池火灾风险而停止使用其充电盒时，情况变得更加糟糕。 Humane 随后于 2025 年 2 月关闭了其 AI Pin 业务，该公司的大部分资产被惠普以 1.16 亿美元收购。",
+      "Rabbit R1 是另一款被大肆宣传的人工智能设备。这款人工智能伴侣于 2024 年 1 月在 CES 上亮相，旨在代表其所有者执行任务。 Rabbit 表示，推出后不久就售出了 10 万份。",
+      "然而，强劲的初始销量并不意味着它是一款强大的产品。早期评论称该设备尚未完成，性能不可靠，有用的集成数量有限。"
+    ],
+    "img": "",
+    "link": "https://techcrunch.com/2026/10/24/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/",
+    "source": "TechCrunch",
+    "pub_ts": 1792868400.0,
+    "score": 10.8,
+    "grp": "tech"
   }
 ]

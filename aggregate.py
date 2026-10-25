@@ -91,14 +91,14 @@ US_GROUPS = {"The Verge": "tech", "TechCrunch": "tech",
              "Ars Technica": "tech", "Wired": "tech"}
 
 # 板块定义（顺序即界面顺序）
-# quota: {分组: (最少条数, 最多条数)}
+# quota: {分组: (最少条数, 最多条数)}，_max_per_source 限制同一媒体的席位数
 SECTIONS = [
     {"key": "aviation", "name": "民航资讯", "icon": "✈️",
      "sources": SOURCES_AVIATION, "hot": HOT_WORDS_AVIATION,
      "groups": None, "quota": None},
     {"key": "us",       "name": "美国要闻", "icon": "🇺🇸",
      "sources": SOURCES_US,       "hot": HOT_WORDS_US,
-     "groups": US_GROUPS, "quota": {"tech": (5, 12)}},
+     "groups": US_GROUPS, "quota": {"tech": (5, 12), "_max_per_source": 3}},
 ]
 
 MAX_ITEMS      = 40        # 最终保留多少条
@@ -121,9 +121,23 @@ NOISE_WORDS    = ("cookie", "subscribe", "newsletter", "sign up", "sign-up",
                   "add to home screen", "continue reading",
                   # 网站导航/菜单类的垃圾文本（抓全文时容易混进来）
                   "expand/collapse", "submenu", "skip to main content",
-                  "skip to content", "toggle navigation", "main menu",
-                  "open menu", "close menu", "search this site",
-                  "sign in to", "back to top", "follow npr")
+                  "skip to content", "skip to navigation", "toggle navigation",
+                  "main menu", "open menu", "close menu", "search this site",
+                  "sign in to", "back to top", "follow npr",
+                  # 现场实测抓出来的残留（NPR 播放器、Guardian live blog 等）
+                  "embed iframe", "this live blog is now closed",
+                  "read our full report", "more on this story",
+                  "related coverage", "transcripts may be",
+                  "npr transcripts", "was this helpful",
+                  "republished with permission", "originally published",
+                  "share this page", "most viewed", "latest stories")
+
+# 段落里挂在开头或结尾的站点标识/跳转链接，直接裁掉而不是丢掉整段
+SITE_CHROME = ("skip to main content", "skip to content", "skip to navigation",
+               "jump to content", "|卫报", "| the guardian", "| guardian",
+               "| abc news", "| pbs", "| npr", "| cnn", "| nytimes",
+               "| axios", "| politico", "| cbs news", "| nbc news",
+               "跳到主要内容", "跳到导航", "分享此页", "查看更多")
 
 
 # ============================================================
@@ -179,6 +193,36 @@ def clean_html(text):
     return re.sub(r"\s+", " ", text).strip()
 
 
+def clean_chrome(p):
+    """裁掉段落开头/结尾挂着的站点标识和跳转链接文字。
+
+    比如卫报的《标题 | The Guardian 跳到主要内容 跳到导航》——整段是有用的标题+导语，
+    因为尾巴上沾了这些词就被丢掉太可惜，所以只裁掉尾巴。
+    """
+    changed = True
+    while changed:
+        changed = False
+        for w in SITE_CHROME:
+            ww = re.escape(w)
+            # 尾巴上的：允许前面挂分隔符（Case 1: "...coaster |卫报"）
+            new = re.sub(r"[\s|·—–,，:：-]*%s[\s|·—–,，:：-]*$" % ww, "", p, flags=re.I)
+            if new == p:               # 开头的：「Skip to main content …」
+                new = re.sub(r"^[\s|·—–,，:：-]*%s[\s|·—–,，:：-]*" % ww, "", p, flags=re.I)
+            # 别为了擦掉几个字把整段弄没（后面还有 min_len 兜底，这里放宽些）
+            if new != p and len(new.strip()) >= 12:
+                p, changed = new, True
+                break
+    return p.strip(" |·-—–,，:：")
+
+
+def _looks_embedded(p):
+    """判断这一段其实是没清干净的播放器/嵌入代码残留。"""
+    low = p.lower()
+    return ('src="http' in low or 'href="http' in low
+            or low.count('="') >= 3
+            or ('width=' in low and 'height=' in low))
+
+
 def html_to_paragraphs(raw, limit=BODY_LIMIT, min_len=45, max_paras=BODY_PARA_MAX):
     """把一段 HTML 变成干净的正文段落列表。
 
@@ -205,9 +249,13 @@ def html_to_paragraphs(raw, limit=BODY_LIMIT, min_len=45, max_paras=BODY_PARA_MA
     out, total = [], 0
     for piece in re.split(r"\n+", raw):
         p = re.sub(r"\s+", " ", piece).strip()
+        # 播放器 / 嵌入代码没清干净的残留，直接丢
+        if _looks_embedded(p):
+            continue
+        p = clean_chrome(p)
         if len(p) < min_len:
             continue
-        low = p.lower()[:80]
+        low = p.lower()[:120]
         if any(w in low for w in NOISE_WORDS):
             continue
         if total + len(p) > limit and out:
@@ -234,6 +282,24 @@ def main_block(raw):
     if m and len(m.group(1)) > 1500:
         return m.group(1)
     return raw
+
+
+def best_paras(raw):
+    """从网页 HTML 里挑出正文最多的一段提取结果。
+
+    main_block 能把导航菜单挡在外面，但不是所有站点都把正文放在 <article> 里——
+    NPR 就是典型：<article> 里只有标题和播放器，真正的正文在外面。
+    所以这里把「只取正文区块」和「整页」两种切法都算一遍，取正文更多的那一种，
+    保证加了 main_block 之后抓取效果只会变好、不会变差。
+    """
+    block = main_block(raw)
+    cands = [raw] if block is raw else [block, raw]
+    best = []
+    for c in cands:
+        ps = html_to_paragraphs(c)
+        if sum(len(x) for x in ps) > sum(len(x) for x in best):
+            best = ps
+    return best
 
 
 def dedup_paras(paras):
@@ -282,8 +348,8 @@ def enrich_bodies(items):
         raw = fetch_article_html(it["link"])
         if not raw:
             return 0
-        # 先裁出正文区域，导航菜单就不会混进正文里
-        paras = html_to_paragraphs(main_block(raw))
+        # 两种切法择优：既能避开菜单，又不会像 NPR 那样把正文切没
+        paras = best_paras(raw)
         if sum(len(p) for p in paras) > sum(len(p) for p in (it.get("body_en") or [])):
             it["body_en"] = paras
             return 1
@@ -364,9 +430,30 @@ def apply_quota(items, quota):
     for it in items:                      # items 已按分数降序
         groups.setdefault(it.get("grp") or "main", []).append(it)
 
+    # 同一家媒体最多占几席，免得科技的 5 个名额全被 TechCrunch 包了
+    cap_src = quota.get("_max_per_source") or 0
+
+    def pick(list_obj, want, ban=None):
+        """从 list_obj 里挑 want 条出来（避开已选和超配额的来源）。"""
+        got = []
+        for it in list_obj:
+            if len(got) >= want:
+                break
+            if id(it) in cid:
+                continue
+            if cap_src:
+                already = sum(1 for x in chosen + got if x.get("source") == it.get("source"))
+                if already >= cap_src:
+                    continue
+            got.append(it)
+        return got
+
     chosen, cid = [], set()
-    for g, (mn, mx) in quota.items():
-        for it in groups.get(g, [])[:mn]:
+    for g, val in quota.items():
+        if not isinstance(g, str) or g.startswith("_"):   # _ 开头的是全局参数，不是分组
+            continue
+        mn, mx = val
+        for it in pick(groups.get(g, []), mn):
             chosen.append(it)
             cid.add(id(it))
 
@@ -380,6 +467,10 @@ def apply_quota(items, quota):
         already = sum(1 for x in chosen if (x.get("grp") or "main") == g)
         if already >= mx:
             continue
+        if cap_src:
+            already_src = sum(1 for x in chosen if x.get("source") == it.get("source"))
+            if already_src >= cap_src:
+                continue
         chosen.append(it)
         cid.add(id(it))
 
@@ -1001,6 +1092,18 @@ def _fallback_translate(items):
     print(f"  兜底翻译完成 {n} 条标题")
 
 
+def align_bodies(items):
+    """写进网页前最后兜底：中文段落数必须等于英文段落数。
+
+    少的位置补空串（详情页会显示英文），多的直接截掉——
+    这样「逐段对照」模式永远不会多挂一串、也不会前后错开。
+    """
+    for it in items:
+        en = it.get("body_en") or []
+        zh = list(it.get("body_zh") or [])
+        it["body_zh"] = (zh + [""] * len(en))[:len(en)]
+
+
 def translate_items(items):
     """翻译标题和摘要。
 
@@ -1022,9 +1125,14 @@ def translate_items(items):
         cache_body = c.get("b") or ""
         # 注意：不能过滤空段，否则上次没翻出来的段会让后面所有段落错位
         cached = cache_body.split("\n") if has_cn(cache_body) else []
+        n_en = len(it.get("body_en") or [])
+        # 上次翻得多、这次正文抓得少的情况也必须截断：
+        # 不截断的话中文会比英文多出一串，逐段对照就整篇错位了
+        if cached and n_en:
+            cached = cached[:n_en]
         cached_ok = sum(1 for p in cached if p.strip())
-        # 缓存段落明显比现在的正文少，说明上次没翻全，这次重翻
-        if cached and cached_ok >= max(1, int(len(it.get("body_en") or []) * 0.6)):
+        # 缓存段落比现在的正文少太多，说明上次没翻全，这次重翻
+        if cached and cached_ok >= max(1, int(n_en * 0.6)):
             it["body_zh"] = cached
         else:
             it["body_zh"] = []
@@ -1860,6 +1968,7 @@ def main():
             enrich_bodies(items)        # 摘要不够长的，去原网页补全文
             log("翻译中 ...")
             translate_items(items)
+            align_bodies(items)         # 中文段落数不许超过英文，保证逐段对照不错位
         zh_total += sum(1 for it in items if has_cn(it.get("title_zh", "")))
         sections_out.append((sec, items))
 

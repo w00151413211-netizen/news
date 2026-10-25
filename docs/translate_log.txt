@@ -1,15 +1,24 @@
 GITHUB_TOKEN: 已配置
 Google 通道探测: '波音 737'
 翻译中 ...
+  (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
+  (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
+  AI 探测失败，本次正文/标题全部走 Google 免费翻译
+  待翻正文 2 篇 / 37 段
+  AI 整篇翻译正文 0/2 篇
+  AI 逐段翻译正文 0 篇
+  Google 逐段翻译 37/37 段
+  Google 逐段翻译正文 2 篇
+  兜底翻译：Google
 翻译中 ...
   (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
   (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
   AI 探测失败，本次正文/标题全部走 Google 免费翻译
-  待翻正文 10 篇 / 116 段
-  AI 整篇翻译正文 0/10 篇
+  待翻正文 17 篇 / 309 段
+  AI 整篇翻译正文 0/17 篇
   AI 逐段翻译正文 0 篇
-  Google 逐段翻译 116/116 段
-  Google 逐段翻译正文 10 篇
+  Google 逐段翻译 307/309 段
+  Google 逐段翻译正文 17 篇
   兜底翻译：Google
-结果[民航资讯]：40 条，中文标题 40，英文段落 436，中文段落 520，配图 22
-结果[美国要闻]：40 条，中文标题 40，英文段落 479，中文段落 545，配图 31
+结果[民航资讯]：40 条，中文标题 40，英文段落 520，中文段落 501，配图 22
+结果[美国要闻]：40 条，中文标题 40，英文段落 661，中文段落 651，配图 32

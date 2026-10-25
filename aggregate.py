@@ -132,6 +132,12 @@ NOISE_WORDS    = ("cookie", "subscribe", "newsletter", "sign up", "sign-up",
                   "republished with permission", "originally published",
                   "share this page", "most viewed", "latest stories")
 
+# 社交分享条里常见的平台名。注意：单独出现不算噪声（正文里也会提 Facebook），
+# 要一段里同时冒出好几个才判为分享条。
+SOCIAL_WORDS = ("facebook", "instagram", "linkedin", "twitter", "x.com",
+                "whatsapp", "telegram", "pinterest", "reddit", "vkontakte",
+                "youtube", "tiktok", "rss", "newsletter", "podcast")
+
 # 段落里挂在开头或结尾的站点标识/跳转链接，直接裁掉而不是丢掉整段
 SITE_CHROME = ("skip to main content", "skip to content", "skip to navigation",
                "jump to content", "|卫报", "| the guardian", "| guardian",
@@ -223,6 +229,19 @@ def _looks_embedded(p):
             or ('width=' in low and 'height=' in low))
 
 
+def _looks_socialbar(p):
+    """判断这一段是文章末尾/侧栏的社交分享条。
+
+    正文里提到一两个平台很正常（科技新闻天天讲 Facebook），
+    但一段短文字里同时冒出三个以上平台名，基本就是分享按钮了。
+    """
+    low = (p or "").lower()
+    if len(low) > 200:
+        return False
+    hit = sum(1 for w in SOCIAL_WORDS if w in low)
+    return hit >= 3
+
+
 def html_to_paragraphs(raw, limit=BODY_LIMIT, min_len=45, max_paras=BODY_PARA_MAX):
     """把一段 HTML 变成干净的正文段落列表。
 
@@ -251,6 +270,9 @@ def html_to_paragraphs(raw, limit=BODY_LIMIT, min_len=45, max_paras=BODY_PARA_MA
         p = re.sub(r"\s+", " ", piece).strip()
         # 播放器 / 嵌入代码没清干净的残留，直接丢
         if _looks_embedded(p):
+            continue
+        # 社交分享条（Facebook Instagram LinkedIn RSS X ...）
+        if _looks_socialbar(p):
             continue
         p = clean_chrome(p)
         if len(p) < min_len:
@@ -1092,6 +1114,108 @@ def _fallback_translate(items):
     print(f"  兜底翻译完成 {n} 条标题")
 
 
+def _pack_for(it, idxs):
+    """取出条目里指定段号的英文，打包成待翻列表（受单篇字数上限约束）。"""
+    paras, keep, total = [], [], 0
+    for i in idxs:
+        if i >= len(it["body_en"]):
+            continue
+        p = it["body_en"][i]
+        if total and total + len(p) > BODY_TRANSLATE:
+            break
+        paras.append(p)
+        keep.append(i)
+        total += len(p)
+    return paras, keep
+
+
+def _fp(p):
+    """段落指纹：去掉标点空格后取前 80 个字符。
+
+    用来判断「这一段英文」和「缓存里存的英文」是不是同一段话——
+    只要正文有增删或顺序变动，指纹就对不上，从而避免复用错位了的旧译文。
+    """
+    return re.sub(r"\W+", "", (p or "").lower())[:80]
+
+
+def _numset(s):
+    return set(re.findall(r"\d[\d,\.]*", s or ""))
+
+
+def _cached_body_aligned(en, czhs):
+    """旧缓存没有指纹时，按位置复用之前先做体检。
+
+    两把尺子：
+      ① 数字——英文段落里的数字（日期、金额、百分比）翻译后一定留在对应中文里；
+      ② 长度——中文字符数通常落在英文字符数的 0.18~2 倍之间，差太远就是张冠李戴。
+    任一把尺子量出大面积不符，就判定「两次抓到的正文顺序不一样」，整篇重翻。
+    """
+    if len(czhs) != len(en):
+        return False
+    n_checked = n_bad = 0
+    l_checked = l_bad = 0
+    for i, p in enumerate(en):
+        en_n = _numset(p)
+        if len(en_n) >= 2:                       # 数字太少不作数
+            n_checked += 1
+            if not (en_n & _numset(czhs[i])):
+                n_bad += 1
+        if len(p) >= 60 and czhs[i]:
+            l_checked += 1
+            r = len(czhs[i]) / len(p)
+            if r < 0.18 or r > 2.0:
+                l_bad += 1
+    # 有数字样本就以数字为准，最可靠
+    if n_checked >= 2:
+        return n_bad <= n_checked * 0.3
+    # 数字太少就退而看长度比例
+    if l_checked >= 3:
+        return l_bad <= l_checked * 0.35
+    # 实在没什么可比的，就信它（总比每次都重翻强）
+    return True
+
+
+def match_cached_body(en, c):
+    """把缓存里的译文按「段落指纹」对回当前英文，返回 (中文列表, 待翻段号)。
+
+    这是逐段对照不错位的关键：绝不按位置硬套，而是一段一段认人。
+    认不出来的段留空，交给翻译流程补上。
+    """
+    zh = [""] * len(en)
+    if not en:
+        return zh, []
+    cfps = (c.get("f") or "").split("\n")
+    czhs = (c.get("b") or "").split("\n")
+
+    if cfps and len(cfps) == len(czhs):
+        # ① 新缓存带指纹：逐段认人，最可靠
+        idx = {}
+        for j, f in enumerate(cfps):
+            if f and f not in idx:
+                idx.setdefault(f, j)
+        miss = []
+        for i, p in enumerate(en):
+            j = idx.get(_fp(p))
+            if j is not None and has_cn(czhs[j]):
+                zh[i] = czhs[j]
+            else:
+                miss.append(i)
+        return zh, miss
+
+    if not czhs or not any(has_cn(x) for x in czhs):
+        return zh, list(range(len(en)))
+
+    # ② 老缓存没指纹：段落数一致且数字对得上才敢按位置复用
+    if _cached_body_aligned(en, czhs):
+        for i in range(len(en)):
+            if i < len(czhs) and has_cn(czhs[i]):
+                zh[i] = czhs[i]
+        return zh, [i for i in range(len(en)) if not has_cn(zh[i])]
+
+    # ③ 对不上就整篇重翻，宁可多花额度也不能让译文张冠李戴
+    return zh, list(range(len(en)))
+
+
 def align_bodies(items):
     """写进网页前最后兜底：中文段落数必须等于英文段落数。
 
@@ -1122,29 +1246,32 @@ def translate_items(items):
         c = cache.get(it["link"]) or {}
         it["title_zh"] = c.get("t") if has_cn(c.get("t")) else ""
         it["summary_zh"] = c.get("s") if has_cn(c.get("s")) else ""
-        cache_body = c.get("b") or ""
-        # 注意：不能过滤空段，否则上次没翻出来的段会让后面所有段落错位
-        cached = cache_body.split("\n") if has_cn(cache_body) else []
-        n_en = len(it.get("body_en") or [])
-        # 上次翻得多、这次正文抓得少的情况也必须截断：
-        # 不截断的话中文会比英文多出一串，逐段对照就整篇错位了
-        if cached and n_en:
-            cached = cached[:n_en]
-        cached_ok = sum(1 for p in cached if p.strip())
-        # 缓存段落比现在的正文少太多，说明上次没翻全，这次重翻
-        if cached and cached_ok >= max(1, int(n_en * 0.6)):
-            it["body_zh"] = cached
-        else:
-            it["body_zh"] = []
+        it["body_zh"] = []
         if not it["title_zh"]:
             title_todo.append(it)
         if (it.get("summary") or "").strip() and not it["summary_zh"]:
             sum_todo.append(it)
-        if it.get("body_en") and not it["body_zh"]:
-            body_todo.append(it)
+        if it.get("body_en"):
+            zh, miss = match_cached_body(it["body_en"], c)
+            it["body_zh"] = zh
+            if miss:
+                it["_miss"] = miss
+                body_todo.append(it)
+            elif any(has_cn(v) for v in zh) and not c.get("f"):
+                # 老缓存没指纹、但这次校验通过了：顺手把指纹补上。
+                # 从下一轮起这篇就是精确匹配，再也不用靠猜。
+                rec = cache.setdefault(it["link"], {})
+                rec["f"] = "\n".join(_fp(p) for p in it["body_en"])
+                rec["ts"] = time.time()
 
     hit = len(items) - len(title_todo)
     print(f"  缓存命中 {hit} 条，需新翻译 {len(title_todo)} 条")
+    # 段落级命中情况写进日志，方便事后核对有没有大面积错位
+    en_seg = sum(len(it.get("body_en") or []) for it in items)
+    zh_seg = sum(1 for it in items for v in (it.get("body_zh") or []) if has_cn(v))
+    if en_seg:
+        print(f"  正文段落复用 {zh_seg}/{en_seg} 段" +
+              (f"，待翻 {en_seg - zh_seg} 段" if zh_seg < en_seg else ""))
 
     # 开工前先探一次 AI 的路：不通就全程走 Google，别白耗几十次请求
     if title_todo or sum_todo or body_todo:
@@ -1182,31 +1309,42 @@ def translate_items(items):
     if body_todo:
         packs = []
         for it in body_todo:
-            paras, total = [], 0
-            for p in it["body_en"]:
-                if total and total + len(p) > BODY_TRANSLATE:
-                    break
-                paras.append(p)
-                total += len(p)
+            paras, keep = _pack_for(it, it.get("_miss") or [])
             packs.append(paras)
+            it["_keep"] = keep
 
         def absorb(todo_list, packs_list, zhs):
-            """把译文写回条目并更新缓存，返回 (成功篇数, 仍缺的条目, 仍缺的段落包)。"""
+            """把译文按段号填回条目并更新缓存，返回 (成功篇数, 仍缺的条目, 仍缺的段落包)。
+
+            注意：译文是「哪一段翻的」就写回「哪一段」，绝不按顺序硬塞——
+            这就是逐段对照不会错位的最后一道保险。
+            """
             ok, rest_it, rest_pk = 0, [], []
             for it, pack, zh in zip(todo_list, packs_list, zhs):
-                body = []
+                en = it["body_en"]
+                body = list(it.get("body_zh") or [""] * len(en))
                 if zh:
-                    body = [(x or "").replace("\n", " ").strip() for x in zh]
-                    body = (body + [""] * len(pack))[:len(pack)]  # 长度对齐，缺的留空
+                    keep = it.get("_keep") or []
+                    clean = [(x or "").replace("\n", " ").strip() for x in zh]
+                    for k, i in enumerate(keep):
+                        if k < len(clean) and i < len(body) and has_cn(clean[k]):
+                            body[i] = clean[k]
+                it["body_zh"] = body
                 if any(has_cn(x) for x in body):
-                    it["body_zh"] = body
                     rec = cache.setdefault(it["link"], {})
                     rec["b"] = "\n".join(body)
+                    rec["f"] = "\n".join(_fp(p) for p in en)
                     rec["ts"] = time.time()
+                left = [i for i in range(len(en)) if not has_cn(body[i])]
+                if not left:
                     ok += 1
-                else:
-                    rest_it.append(it)
-                    rest_pk.append(pack)
+                    continue
+                more, keep = _pack_for(it, left)
+                if not more:            # 剩下的太长，这一轮先不翻了，别空转
+                    continue
+                rest_it.append(it)
+                rest_pk.append(more)
+                it["_keep"] = keep
             return ok, rest_it, rest_pk
 
         total_paras = sum(len(p) for p in packs)

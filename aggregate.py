@@ -130,7 +130,19 @@ NOISE_WORDS    = ("cookie", "subscribe", "newsletter", "sign up", "sign-up",
                   "related coverage", "transcripts may be",
                   "npr transcripts", "was this helpful",
                   "republished with permission", "originally published",
-                  "share this page", "most viewed", "latest stories")
+                  "share this page", "most viewed", "latest stories",
+                  "home airlines")            # Aviation24 的面包屑导航
+
+# 老译文里可能还挂着这些当年的站点标识/导航词，属于「陈旧译文」，必须重翻不能复用
+STALE_CN = ("|卫报", "｜卫报", "|the guardian", "跳到主要内容", "跳到导航",
+            "播客和节目", "展开/折叠", "嵌入iframe", "嵌入 iframe",
+            "首页 航空", "跳过导航", "返回顶部")
+
+# 「竖线 + 站点名」才算站点标识。注意不能只看竖线——
+# 科技文章正文里经常有命令行、表格，竖线本身不是问题。
+STALE_SITE_RE = re.compile(
+    r"[|｜]\s*(卫报|guardian|npr|abc news|cbs news|nbc news|cnn|pbs|"
+    r"politico|axios|nytimes|纽约时报|福克斯|天空新闻)")
 
 # 社交分享条里常见的平台名。注意：单独出现不算噪声（正文里也会提 Facebook），
 # 要一段里同时冒出好几个才判为分享条。
@@ -1142,6 +1154,16 @@ def _numset(s):
     return set(re.findall(r"\d[\d,\.]*", s or ""))
 
 
+def _is_stale(zh):
+    """判断一段中文是不是「清洗之前留下的老译文」。
+
+    特征是尾巴上挂着站点标识（|卫报）或导航词（跳到主要内容）——
+    现在的英文侧早就把这些剪掉了，中文里还留着就说明是旧货。
+    """
+    zl = (zh or "").lower()
+    return any(w in zl for w in STALE_CN) or bool(STALE_SITE_RE.search(zl))
+
+
 def _cached_body_aligned(en, czhs):
     """旧缓存没有指纹时，按位置复用之前先做体检。
 
@@ -1186,6 +1208,10 @@ def match_cached_body(en, c):
         return zh, []
     cfps = (c.get("f") or "").split("\n")
     czhs = (c.get("b") or "").split("\n")
+
+    # 陈旧译文（还挂着站点标识/导航词）一律整篇重翻，两条匹配路径都不例外
+    if czhs and any(_is_stale(z) for z in czhs):
+        return zh, list(range(len(en)))
 
     if cfps and len(cfps) == len(czhs):
         # ① 新缓存带指纹：逐段认人，最可靠

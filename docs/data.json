@@ -50,50 +50,8 @@
     "link": "https://www.aviation24.be/airports/brussels-airport-bru/expand-border-controls-as-ees-delays-persist-government-registration-kiosks-remain-offline/",
     "source": "Aviation24",
     "pub_ts": 1792764459.0,
-    "score": 13.42,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18
-    ]
+    "score": 13.36,
+    "grp": "main"
   },
   {
     "title_en": "Allegiant orders six more Boeing 737 MAX jets for 2028 delivery",
@@ -130,8 +88,88 @@
     "link": "https://www.aerotime.aero/articles/allegiant-six-boeing-737-max-order-2028",
     "source": "AeroTime",
     "pub_ts": 1792813323.0,
-    "score": 12.23,
+    "score": 12.13,
     "grp": "main"
+  },
+  {
+    "title_en": "Delta One's 'Biggest Overhaul In 30 Years' Still Has A Smaller Screen Than United's Polaris Studio",
+    "title_zh": "达美航空“30年来最大的一次改造”的屏幕仍然比美联航北极星工作室小",
+    "summary": "Delta One's rebrand covers every aspect of the in-flight experience, from culinary additions to aesthetics.",
+    "summary_zh": "达美航空的品牌重塑涵盖了飞行体验的各个方面，从烹饪添加到美学。",
+    "body_en": [
+      "Delta One's 'Biggest Overhaul In 30 Years' Still Has A Smaller Screen Than United's Polaris Studio",
+      "Jack comes to Simple Flying with a lifelong interest in all things aviation. He holds a degree in Aerospace Engineering from Georgia Tech, and is a certified private and remote pilot. Beyond these experiences, Jack previously worked for a corporate flight department where he gained first-hand experience in the world of business aviation. Currently, Jack works in the professional services industry and continues to build his flight hours outside of work.",
+      "Delta Air Lines is presenting its latest Delta One redesign as its most comprehensive premium-cabin overhaul in nearly 30 years, but one headline feature leaves room for a rival to claim an advantage. Delta’s next-generation suite on the Airbus A350-1000 will have a 24-inch (60.96 cm) 4K QLED seatback display, the largest in the airline's history. Delta's rival, United Airlines , now offers Polaris Studio suites, introduced on its redesigned Boeing 787-9 Dreamliner , featuring a 27-inch (68.58 cm) 4K OLED display. United’s screen is three inches larger diagonally.",
+      "Announced on October 14, Delta’s redesign focuses on dining, hospitality, and rest, including a longer meal preselection window, a sleep-first breakfast option, refreshed amenities, and new beverage partnerships. Service changes will begin on select flights departing Los Angeles International Airport (LAX) this fall before expanding across the global network. Delta is also preparing a new suite for A350-1000 aircraft and retrofits for Airbus A330-200 and Airbus A330-300 jets. The rollout combines immediate service changes with a longer hardware transition.",
+      "A Broad Service Redesign, Not Just A New Suite",
+      "Delta calls the project its largest and most holistic Delta One redesign in nearly three decades, building on more than $1 billion invested in its fleet. The goal is a more consistent journey from airport to aircraft. The culinary program was developed with chef Simon Hulstone and Master Sommelier Andrea Robinson. It emphasizes familiar dishes with upgraded ingredients, including a Wagyu beef burger and regionally inspired sea bass, alongside refreshed desserts and tableware. Delta says the program reflects customer feedback and aims to improve consistency as well as presentation. The airline produces around eight million Delta One meals annually through international kitchens, making execution across routes a significant operational undertaking.",
+      "Hospitality changes include a “sip and settle” moment with a preferred beverage, warm nuts, and a hot towel before the meal. Fresh-cracked pepper and sauces served separately give passengers more control over how dishes are finished. Their success depends on consistent delivery by crews and catering teams. The program will first appear on transoceanic Delta One routes departing LAX in fall 2026, with broader expansion planned for early 2027. This is a staged rollout, not a single fleetwide launch. Travelers booking during the transition should check the aircraft and service details for their flight rather than assume every advertised element is already available.",
+      "The 24-Inch Display Is A Major Upgrade, But Not The Biggest",
+      "Delta’s upcoming A350-1000 suite will feature a 24-inch 4K QLED screen, Bluetooth headphone connectivity, wireless charging, and additional storage. The suite is also designed around a longer lie-flat bed and privacy doors. These changes should improve entertainment and usability on long-haul journeys. United’s Polaris Studio moves the screen benchmark to 27 inches, with a 4K OLED panel. The suites debuted on United’s elevated interior Boeing 787-9 with privacy doors, wireless charging, Bluetooth connectivity, upgraded bedding, and a companion ottoman in six of the eight Studio suites. United describes the display as the largest among US airlines. United’s screen is three inches larger diagonally, although QLED and OLED differ, and size alone does not determine viewing quality. OLED panels can produce individually lit pixels and deep blacks, while QLED displays use a quantum-dot layer with LED backlighting; actual performance also depends on implementation.",
+      "The comparison applies to specific next-generation products, not every seat on either airline. Polaris Studio is a premium subset of United’s Polaris cabin, while Delta’s new suite is tied to incoming A350-1000s and planned A330 refurbishments. Existing aircraft can have different seats and entertainment hardware. Viewing angle, glare, responsiveness, content, and comfort also affect the experience. United wins the numerical comparison; Delta’s overall proposition depends on the complete suite and the consistency of its delivery.",
+      "Meal Preselection And Sleep-First Service Target Practical Needs",
+      "Delta is extending entrée preselection to 18 hours before departure, six hours closer to departure than its previous window. It says this is the latest pre-order cutoff offered by any US carrier. The later cutoff may help travelers with changing plans and improve catering forecasts. The sleep-first option lets passengers skip a full pre-arrival breakfast and receive coffee and a croissant instead. On overnight flights, a conventional meal can interrupt rest even when the food is well-prepared. A lighter alternative recognizes that not every passenger values the same number of courses, particularly before landing.",
+      "Emirates also offers advance meal selection . Eligible Business Class passengers can pre-order main courses as early as 14 days before departure and up to 24 hours before the flight, although the option is limited to selected routes. Its longer window lets passengers secure a preferred dish earlier, while Delta’s new selling point is its later cutoff. These systems are not identical, and route eligibility matters.",
+      "Premium Drinks And Amenities Add Distinction, But Execution Matters",
+      "Delta is refreshing its beverage lineup with a wine program curated by Andrea Robinson. The airline says it has selected 13 wines from 11 wineries for the October 2026 to September 2027 period, moving from four annual rotations to two. Fewer rotations may help crews deliver more consistent service while retaining variety. The lineup also introduces Dassai 45 sake on selected routes to and from Tokyo-Haneda (HND), plus cocktails and mocktails including Hugo Spritz and Paloma variations. Blanton’s Single Barrel Bourbon is scheduled to join the offering on December 1, 2026. Delta says it will be the first and only airline to serve the label, using the partnership to give the cabin a recognizable premium identity. Availability can still depend on route, provisioning, and rollout timing."
+    ],
+    "body_zh": [
+      "达美航空“30年来最大的一次改造”的屏幕仍然比美联航北极星工作室小",
+      "杰克 (Jack) 带着对航空一切事物的终生兴趣加入了简单飞行 (Simple Flying)。他拥有佐治亚理工学院的航空航天工程学位，并且是一名经过认证的私人和远程飞行员。除了这些经验之外，杰克还曾在公司飞行部门工作过，在那里他获得了公务航空领域的第一手经验。目前，杰克在专业服务行业工作，并在工作之外继续增加飞行时间。",
+      "达美航空正在展示其最新的达美一号重新设计，这是其近 30 年来最全面的高级客舱改造，但其中一个头条新闻为竞争对手留下了占据优势的空间。达美航空在空客 A350-1000 上的下一代套房将配备 24 英寸（60.96 厘米）4K QLED 椅背显示屏，这是该航空公司历史上最大的。达美航空的竞争对手联合航空现在提供 Polaris Studio 套件，该套件在其重新设计的波音 787-9 梦想飞机上推出，配备 27 英寸（68.58 厘米）4K OLED 显示屏。曼联的屏幕对角线大了三英寸。",
+      "达美航空于 10 月 14 日宣布，重新设计的重点是餐饮、招待和休息，包括更长的膳食预选窗口、睡眠优先的早餐选项、更新的设施以及新的饮料合作伙伴关系。服务变更将于今年秋季从洛杉矶国际机场 (LAX) 出发的部分航班开始，然后扩展到全球网络。达美航空还正在为 A350-1000 飞机准备一套新套件，并为空客 A330-200 和空客 A330-300 喷气式飞机进行改装。此次推出将即时服务变更与较长的硬件过渡结合起来。",
+      "广泛的服务重新设计，而不仅仅是新套件",
+      "达美航空将该项目称为近三十年来最大、最全面的达美一号重新设计项目，其机队投资超过 10 亿美元。目标是从机场到飞机的旅程更加一致。烹饪项目由主厨 Simon Hulstone 和侍酒师 Andrea Robinson 共同制定。它强调采用升级食材的熟悉菜肴，包括和牛牛肉汉堡和当地风味的鲈鱼，以及新鲜的甜点和餐具。达美航空表示，该计划反映了客户的反馈，旨在提高一致性和展示效果。该航空公司每年通过国际厨房生产约 800 万份达美航空餐食，这使得跨航线的执行成为一项重要的运营任务。",
+      "招待方式的变化包括在餐前“小酌一杯，安顿下来”，享用首选饮料、热坚果和热毛巾。新鲜胡椒和酱汁分开供应，让乘客可以更好地控制菜肴的制作方式。他们的成功取决于工作人员和餐饮团队的持续交付。该计划将于 2026 年秋季首次出现在从洛杉矶国际机场出发的跨洋达美航空航线上，并计划于 2027 年初进行更广泛的扩展。这是分阶段推出，而不是在整个机队范围内单独推出。在过渡期间预订的旅客应检查其航班的飞机和服务详细信息，而不是假设所有广告元素都已可用。",
+      "24 英寸显示屏是一次重大升级，但不是最大的升级",
+      "达美航空即将推出的 A350-1000 套件将配备 24 英寸 4K QLED 屏幕、蓝牙耳机连接、无线充电和额外存储空间。套房还围绕更长的平躺床和隐私门进行设计。这些变化应该会改善长途旅行的娱乐性和可用性。 United 的 Polaris Studio 将屏幕基准提升至 27 英寸，配备 4K OLED 面板。这些套房在美联航的高架内饰波音 787-9 上首次亮相，配有隐私门、无线充电、蓝牙连接、升级的床上用品，八间单间套房中的六间还配有配套脚凳。美联航称该显示屏是美国航空公司中最大的。尽管 QLED 和 OLED 有所不同，United 的屏幕对角线大了 3 英寸，而且尺寸本身并不能决定观看质量。 OLED 面板可以产生单独发光的像素和深黑色，而 QLED 显示器则使用带有 LED 背光的量子点层；实际效果还取决于实施。",
+      "该比较适用于特定的下一代产品，而不是两家航空公司的每个座位。 Polaris Studio 是美联航 Polaris 客舱的高级子集，而达美航空的新套房则与即将上市的 A350-1000 和计划中的 A330 翻新飞机相关。现有的飞机可以有不同的座位和娱乐硬件。视角、眩光、响应能力、内容和舒适度也会影响体验。曼联在数值对比中获胜；达美航空的整体主张取决于完整的套件及其交付的一致性。",
+      "餐食预选、睡眠优先服务瞄准实际需求",
+      "达美航空将主菜预选时间延长至起飞前 18 小时，比之前的窗口时间提前了 6 小时。该公司表示，这是美国航空公司提供的最新预订截止日期。较晚的截止时间可能有助于旅客改变计划并改善餐饮预测。 “睡眠优先”选项让乘客无需享用全套抵达前早餐，而是享用咖啡和羊角面包。在夜间航班上，即使食物准备充分，传统膳食也可能会中断休息。一个更轻松的替代方案认识到并非每个乘客都重视相同数量的课程，特别是在着陆之前。",
+      "阿联酋航空还提供提前膳食选择。符合条件的商务舱乘客最早可以在出发前 14 天和航班起飞前 24 小时预订主菜，但该选项仅限于选定的航线。其较长的窗口让乘客可以更早地获得喜欢的菜肴，而达美航空的新卖点是其较晚的截止时间。这些系统并不相同，路线资格也很重要。",
+      "优质饮品和便利设施增添特色，但执行力很重要",
+      "达美航空正在通过由 Andrea Robinson 策划的葡萄酒节目来更新其饮料阵容。该航空公司表示，已从 11 个酒庄挑选了 13 款葡萄酒供 2026 年 10 月至 2027 年 9 月期间使用，从每年 4 次轮换变为每年 2 次。更少的轮换可以帮助工作人员提供更一致的服务，同时保持多样性。该阵容还在往返东京羽田机场 (HND) 的特定航线上推出了 Dassai 45 清酒，以及包括 Hugo Spritz 和 Paloma 在内的鸡尾酒和无酒精鸡尾酒。布兰顿 (Blanton) 的单桶波本威士忌 (Single Barrel Bourbon) 计划于 2026 年 12 月 1 日加入该活动。达美航空表示，它将成为第一家也是唯一一家提供该品牌服务的航空公司，利用此次合作为客舱赋予可识别的优质身份。可用性仍然取决于路由、配置和推出时间。"
+    ],
+    "img": "https://static0.simpleflyingimages.com/wordpress/wp-content/uploads/2026/10/delta-one-s-biggest-overhaul-in-30-years-still-has-a-smaller-screen-than-united-s-polaris-studio.jpg",
+    "link": "https://simpleflying.com/delta-one-biggest-overhaul-30-years-smaller-screen-united-polaris-studio/",
+    "source": "Simple Flying",
+    "pub_ts": 1792922418.0,
+    "score": 11.86,
+    "grp": "main",
+    "_miss": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "_keep": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
   },
   {
     "title_en": "Here's Why Australia Canceled Its Order For F-35 Fighter Jets",
@@ -186,52 +224,8 @@
     "link": "https://simpleflying.com/why-australia-canceled-its-order-for-f-35-fighter-jets/",
     "source": "Simple Flying",
     "pub_ts": 1792877419.0,
-    "score": 12.04,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ]
+    "score": 11.86,
+    "grp": "main"
   },
   {
     "title_en": "Aer Lingus Completes Free Starlink Wi-Fi Rollout On Long Haul Fleet",
@@ -270,7 +264,7 @@
     "link": "https://onemileatatime.com/news/aer-lingus-free-starlink-wi-fi/",
     "source": "OMAAT",
     "pub_ts": 1792868939.0,
-    "score": 11.73,
+    "score": 11.57,
     "grp": "main"
   },
   {
@@ -318,44 +312,8 @@
     "link": "https://simpleflying.com/cessna-grand-caravan-top-speed/",
     "source": "Simple Flying",
     "pub_ts": 1792911618.0,
-    "score": 11.54,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15
-    ]
+    "score": 11.3,
+    "grp": "main"
   },
   {
     "title_en": "SAS Flight From JFK Turns Back Over Atlantic, Passengers Left To Find Hotels After Midnight",
@@ -400,42 +358,8 @@
     "link": "https://simpleflying.com/sas-flight-jfk-turns-back-atlantic-passengers-find-hotels-midnight/",
     "source": "Simple Flying",
     "pub_ts": 1792909565.0,
-    "score": 11.44,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14
-    ]
+    "score": 11.2,
+    "grp": "main"
   },
   {
     "title_en": "JetBlue Creditors Hire Advisers As Stock & Bonds Sink, Bankruptcy Looms",
@@ -478,7 +402,7 @@
     "link": "https://onemileatatime.com/news/jetblue-creditors-hire-advisers-stock-bonds-sink-bankruptcy-looms/",
     "source": "OMAAT",
     "pub_ts": 1792852175.0,
-    "score": 11.2,
+    "score": 11.06,
     "grp": "main"
   },
   {
@@ -524,42 +448,8 @@
     "link": "https://www.aviation24.be/manufacturers/airbus/airbus-forecasts-46-growth-in-global-freighter-fleet-by-2045/",
     "source": "Aviation24",
     "pub_ts": 1792849862.0,
-    "score": 11.13,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14
-    ]
+    "score": 10.99,
+    "grp": "main"
   },
   {
     "title_en": "American posts record revenue but fuel costs drive third-quarter loss",
@@ -568,7 +458,6 @@
     "summary_zh": "美国航空公布第三季度收入创纪录，达163亿美元，同比增长19.3%，但燃油成本上涨导致该集团出现净亏损",
     "body_en": [
       "American posts record revenue but fuel costs drive third-quarter loss - Aviation24.be",
-      "Home Airlines American Airlines American posts record revenue but fuel costs drive third-quarter loss",
       "American Airlines reported record third-quarter revenue of US$16.3 billion, up 19.3% year-on-year, but higher fuel costs pushed the group to a net loss of US$269 million.",
       "The airline’s fuel bill increased by US$1.9 billion, or 67.5%, compared with the third quarter of 2025. Its adjusted net loss was US$182 million, while unit costs excluding fuel and special items rose by 3%.",
       "Revenue growth extended across cabins and markets. Premium revenue increased by 22.9% and Main Cabin revenue by 19.5%, while total revenue per available seat kilometre rose by 14.5%. International passenger unit revenue grew by 16.4%, led by Latin America, ahead of a 13.6% increase domestically.",
@@ -586,19 +475,18 @@
     ],
     "body_zh": [
       "美国航空收入创纪录，但燃料成本导致第三季度亏损 - Aviation24.be",
-      "首页 航空 美国航空 美国航空公布创纪录的收入，但燃油成本导致第三季度亏损",
-      "美国航空公布第三季度营收创历史新高163亿美元，同比增长19.3%，但燃油成本上涨导致该集团净亏损2.69亿美元。",
+      "美国航空公布第三季度营收创历史新高，达163亿美元，同比增长19.3%，但燃油成本上涨导致该集团净亏损2.69亿美元。",
       "与 2025 年第三季度相比，该航空公司的燃油费用增加了 19 亿美元，即 67.5%。调整后的净亏损为 1.82 亿美元，不包括燃油和特殊项目的单位成本增长了 3%。",
-      "收入增长遍及各个客舱和市场。高级舱收入增长 22.9%，经济舱收入增长 19.5%，每可用座公里总收入增长 14.5%。国际客运单位收入增长 16.4%，其中拉丁美洲领先，国内客运收入增长 13.6%。",
+      "收入增长遍及各个客舱和市场。高级舱收入增长了 22.9%，经济舱收入增长了 19.5%，而每可用座公里的总收入增长了 14.5%。国际客运单位收入增长 16.4%，其中拉丁美洲领先，国内客运收入增长 13.6%。",
       "商务旅行也保持强劲，托管企业收入增长 27.6%，连续第六个季度实现两位数增长。 AAdvantage 忠诚度计划的注册人数增加了 27.4%。",
-      "美国航空持续投资于高级座椅、休息室和机上技术。该公司计划将 Starlink 连接扩展到其超过 1,000 架飞机的整个干线机队，并从 2028 年开始在新交付的窄体飞机上引入座椅靠背娱乐系统。窄体飞机改造计划旨在在未来几年将高级座椅比例提高到 40%。",
+      "美国航空持续投资于高级座椅、休息室和机上技术。该公司计划将 Starlink 连接扩展到其超过 1,000 架飞机的整个干线机队，并从 2028 年开始在新交付的窄体飞机上引入座椅靠背娱乐系统。窄体飞机改装计划旨在在未来几年将高级座椅比例提高到 40%。",
       "截至 9 月底，该集团的可用流动资金为 118 亿美元。预计到 2026 年底，其效率计划将每年节省近 10 亿美元。",
       "美国航空预计第四季度收入增长 19.5-22.5%，但根据截至 10 月 19 日的远期燃油曲线，预计燃油费用同比将进一步增加 28 亿美元。与 2026 年相比，燃料价格上涨预计也会导致 2027 年网络增长放缓。",
       "空客预计到 2045 年全球货机机队将增长 46%",
       "奥斯汀风暴迫使西欧各地的航班取消和改道",
       "罗马尼亚航空公司 Dan Air 因 1000 万欧元环境债务申请破产",
       "捷星航空禁止乘客在安全演示中给救生衣充气",
-      "弗拉芒政府因噪音问题暂停布鲁塞尔机场新航班计划",
+      "弗拉芒政府因噪音问题暂停布鲁塞尔机场新的航班计划",
       "哥本哈根机场在新的安检要求后面临严重的安检排队",
       "由于 EES 持续延误，布鲁塞尔机场扩大边境管制，政府登记亭仍处于离线状态"
     ],
@@ -606,7 +494,7 @@
     "link": "https://www.aviation24.be/airlines/american-airlines/american-posts-record-revenue-but-fuel-costs-drive-third-quarter-loss/",
     "source": "Aviation24",
     "pub_ts": 1792849517.0,
-    "score": 11.12,
+    "score": 10.98,
     "grp": "main",
     "_miss": [
       0,
@@ -623,8 +511,7 @@
       11,
       12,
       13,
-      14,
-      15
+      14
     ],
     "_keep": [
       0,
@@ -641,8 +528,7 @@
       11,
       12,
       13,
-      14,
-      15
+      14
     ]
   },
   {
@@ -692,7 +578,7 @@
     "link": "https://simpleflying.com/airlines-got-away-only-paying-flight-attendants-once-boarding-door-closed/",
     "source": "Simple Flying",
     "pub_ts": 1792900880.0,
-    "score": 11.02,
+    "score": 10.8,
     "grp": "main"
   },
   {
@@ -748,7 +634,7 @@
     "link": "https://simpleflying.com/western-sydney-international-airport-opens-first-jetstar-flight/",
     "source": "Simple Flying",
     "pub_ts": 1792900482.0,
-    "score": 11.0,
+    "score": 10.78,
     "grp": "main"
   },
   {
@@ -802,7 +688,7 @@
     "link": "https://onemileatatime.com/news/qatar-airways-airbus-a321lr-flat-bed-business-class/",
     "source": "OMAAT",
     "pub_ts": 1792841218.0,
-    "score": 10.89,
+    "score": 10.76,
     "grp": "main"
   },
   {
@@ -858,7 +744,7 @@
     "link": "https://onemileatatime.com/news/new-qatar-airways-qsuite-next-gen-business-class/",
     "source": "OMAAT",
     "pub_ts": 1792837130.0,
-    "score": 10.78,
+    "score": 10.66,
     "grp": "main"
   },
   {
@@ -908,46 +794,8 @@
     "link": "https://simpleflying.com/airbus-a350-1000-popularity-airbus-wished-decade-ago/",
     "source": "Simple Flying",
     "pub_ts": 1792886418.0,
-    "score": 10.39,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16
-    ]
+    "score": 10.2,
+    "grp": "main"
   },
   {
     "title_en": "How Qatar Airways Is Rebalancing Its US East Coast Flying After American Airlines Quit Doha",
@@ -1002,7 +850,195 @@
     "link": "https://simpleflying.com/how-qatar-airways-rebalancing-us-east-coast-flying-american-airlines-quit-doha/",
     "source": "Simple Flying",
     "pub_ts": 1792882818.0,
-    "score": 10.25,
+    "score": 10.06,
+    "grp": "main"
+  },
+  {
+    "title_en": "BCA Special Edition Newsletter",
+    "title_zh": "BCA 特别版时事通讯",
+    "summary": "BCA Special Edition Newsletter kylee.adams@in… Fri, 03/07/2025 - 23:30 Business aviation is soaring, and industry events are where game-changing decisions happen. Stay ahead with the BCA Special Edition newsletter—your exclusive source for daily event recaps, ",
+    "summary_zh": "<span>BCA 特别版简讯</span> <span><span lang=\"\" about=\"/users/kylee-adams\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"kylee.adams\">kylee.adams@in…</span></span> <span><time datetime=\"2025-03-07T23:30:14+00:00\"标题=“星期五",
+    "body_en": [
+      "https://aviationweek.com/themes/custom/particle/dist/app-drupal/assets/AW_logo_horizontal_small_white.svg",
+      "Business aviation is soaring, and industry events are where game-changing decisions happen. Stay ahead with the BCA Special Edition newsletter—your exclusive source for daily event recaps, executive insights, and in-depth interviews—directly from the show floor. Gain insider access to emerging opportunities, market trends, and the key partnerships shaping the future of business aviation."
+    ],
+    "body_zh": [
+      "",
+      "公务航空正在飞速发展，而行业活动正是改变游戏规则的决策发生的地方。直接从展会现场获取 BCA 特别版时事通讯，了解每日活动回顾、高管见解和深度访谈的独家来源。获得内部人士了解新兴机遇、市场趋势以及塑造公务航空​​未来的关键合作伙伴关系的机会。"
+    ],
+    "img": "",
+    "link": "https://aviationweek.com/node/4740936",
+    "source": "Aviation Week",
+    "pub_ts": 1741390214.0,
+    "score": 10.0,
+    "grp": "main",
+    "_miss": [
+      0
+    ],
+    "_keep": [
+      0
+    ]
+  },
+  {
+    "title_en": "Selected U.S. Military Contracts for the Week of March 6 - March 10, 2017",
+    "title_zh": "2017年3月6日至10日当周精选美国军事合同",
+    "summary": "Selected U.S. Military Contracts for the Week of March 6 - March 10, 2017 user+1@localho… Wed, 03/15/2017 - 01:41 Selected U.S. military contracts for March 6, 2017 U.S. ARMY Blue Storm Associates Inc. , doing business as Pemdas Technologies and Innovation, Al",
+    "summary_zh": "<span>2017 年 3 月 6 日至 3 月 10 日当周精选美国军事合同</span> <span><span lang=\"\" about=\"/user/1\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"email_registration_qPH4cFMVam\">user+1@localho…</span></span> <span><ti",
+    "body_en": [
+      "Selected U.S. Military Contracts for the Week of March 6 - March 10, 2017 user+1@localho… Wed, 03/15/2017 - 01:41 Selected U.S. military contracts for March 6, 2017 U.S. ARMY Blue Storm Associates Inc. , doing business as Pemdas Technologies and Innovation, Alexandria, Virginia, was awarded a $49,500,000 order dependent contract for the Atmospheric Sensing and Prediction System. Bids were solicited via the internet with one received. U.S. Army Contracting Command, Research Triangle Park, North Carolina, is the contracting activity (W911NF-17-D-0001). Selected U.S. military contracts for March 7, 2017 U.S. AIR FORCE Kelly Aviation Center LP , San Antonio, has been awarded a $1,001,978,024 indefinite-delivery/indefinite-quantity contract for KC-10 engine contractor logistic support. Contractor will provide engine teardown and overhaul, on-wing support/contract field teams, and engine parts and logistics. In addition, the contractor will provide all support required to fulfill this requirement, including but not limited to labor, materials, tools, equipment, parts, and transportation. Air Force Life Cycle Management Center, Tinker AFB, Oklahoma, is the contracting activity (FA8105-17-D-0002). U.S. NAVY Avian LLC , Lexington Park, Maryland, is being awarded an $11,402,443 cost-plus-fixed-fee contract to provide support for the Naval Air Warfare Center Aircraft Division’s Integrated System Evaluation Experimentation and Test Department (AIR-5.1). Services provided will include flight test engineering, programmatic, administrative, design, execution, analysis, evaluation, and reporting of tests and experiments of aircraft, unmanned air systems, weapons and weapons systems. The Naval Air Warfare Center Aircraft Division, Patuxent River, Maryland, is the contracting activity (N00421-17-C-0049). Selected U.S. military contracts for March 8, 2017 U.S. NAVY Sierra Nevada Corp. , Rancho, California, is being awarded a $30,995,905 modification to a previously awarded firm-fixed-price, cost-plus-fixed-fee, indefinite-delivery/indefinite-quantity contract (N00174-09-D-0003) to extend the ordering period and exercise Option Year 6 for the procurement and support of the transmitting set, countermeasures AN/PLT-5, to support explosive ordnance disposal personnel. The AN/PLT-5 is a man-portable system in support of the Joint Service Explosive Ordnance Disposal Counter Radio Controlled Improvised Explosive Device Electronic Warfare program. The Naval Surface Warfare Center Indian Head Explosive Ordnance Disposal Technology Division, Indian Head, Maryland, is the contracting activity. Vector Planning and Services Inc. , San Diego, is being awarded a potential $17,910,070 indefinite-delivery/indefinite-quantity, cost-plus-fixed-fee contract to provide cyberspace science, research, engineering, and technology integration. Support includes innovative technology assessment and development; rapid software development and prototyping; enabling capability training; security engineering; and cybersecurity risk management. This is one of four multiple-award contracts. All awardees will have the opportunity to compete for task orders during the ordering period. The Space and Naval Warfare Systems Center Pacific, San Diego, is the contracting activity (N66001-17-D-0117). Selected U.S. military contracts for March 9, 2017 U.S. MISSILE DEFENSE AGENCY Lockheed Martin Space Systems Co. , Sunnyvale, California, was awarded a $53,052,807 competitive cost-plus-fixed-fee contract for a 36-month period with no options for the Multi-Object Kill Vehicle Technology Risk Reduction (TRR) effort. This contract represents part of the Missile Defense Agency’s technology risk reduction strategy to improve performance and reduce risk for a gimbaled seeker assembly, integrated avionics assembly, component integration and testing, and an advanced seeker. The Missile Defense Agency, Huntsville, Alabama, is the contracting activity (HQ0147-17-C-0002). U.S. NAVY ViON Corp. , Herndon, California, is being awarded a $34,790,000 indefinite-delivery/indefinite-quantity contract to provide Capacity as a Service support to Space and Naval Warfare Systems Command (Spawar) Headquarters, Spawar System Center Pacific and Spawar System Center Atlantic. The Capacity as a Service acquisition model allows Spawar to more accurately scale, up and down, its information technology (IT) infrastructure to meet evolving mission requirements. Savings are realized through no up-front costs and a “pay as you go” acquisition model, reducing waste usually associated with overbuying of IT equipment to eventually meet an expectation of mission requirement. Under this contract, ViON is responsible for providing on-demand, on-premise computing, networking and storage solutions for a variety of systems and applications for the command’s research, development, testing and evaluation core infrastructures, laboratory and data center environments. This contract includes options, which if exercised, would bring the maximum contract value to $49,990,000. The Space and Naval Warfare Systems Command, San Diego, is the contracting activity (N00039-17-D-0003). Content summary Issue Aerospace Daily & Defense Report, March 14, 2017 Article type Article Content source Aerospace Daily & Defense Report Exclude from lists? No Article sub-type Article Gating AWIN Publication date Tue, 03/14/2017 - 21:41"
+    ],
+    "body_zh": [
+      "2017 年 3 月 6 日至 3 月 10 日当周精选美国军事合同 user+1@localho… 星期三，03/15/2017 - 01:41 2017 年 3 月 6 日精选美国军事合同 美国陆军蓝色风暴联合公司 (U.S. ARMY Blue Storm Associates Inc.)，以 Pemdas Technologies and Innovation 名义开展业务，位于弗吉尼亚州亚历山大，荣获大气传感和预测系统的 49,500,000 美元订单相关合同。通过互联网招标并收到一份投标书。北卡罗来纳州三角研究园的美国陆军合同司令部负责合同活动 (W911NF-17-D-0001)。 2017 年 3 月 7 日选定的美国军事合同 位于圣安东尼奥的美国空军凯利航空中心 (Kelly Aviation Center LP) 已获得一份价值 1,001,978,024 美元的无限期交付/无限数量合同，为 KC-10 发动机承包商提供后勤支持。承包商将提供发动机拆卸和大修、机翼支持/合同现场团队以及发动机零件和物流。此外，承包商将提供满足此要求所需的所有支持，包括但不限于劳动力、材料、工具、设备、零件和运输。位于俄克拉荷马州廷克空军基地的空军生命周期管理中心负责承包活动 (FA8105-17-D-0002)。位于马里兰州列克星敦公园的美国海军鸟类有限责任公司 (U.S. NAVY Avian LLC) 获得了一份价值 11,402,443 美元的成本加固定费用合同，为海军空战中心飞机部门的综合系统评估实验和测试部门 (AIR-5.1) 提供支持。提供的服务将包括飞机、无人机系统、武器和武器系统的测试和实验的飞行测试工程、程序、管理、设计、执行、分析、评估和报告。位于马里兰州帕图森特河的海军空战中心飞机分部负责承包活动 (N00421-17-C-0049)。 2017 年 3 月 8 日选定的美国军事合同 加利福尼亚州兰乔市的美国海军内华达山脉公司将获得对先前授予的固定价格、成本加固定费用、无限期交付/无限数量合同 (N00174-09-D-0003) 的 30,995,905 美元的修改，以延长订购期限和执行第 6 年选项，采购和支持发射装置、对抗措施 AN/PLT-5，以支持爆炸物处理人员。 AN/PLT-5 是一种便携式系统，支持联合军种爆炸物处理计数器无线电控制简易爆炸装置电子战计划。位于马里兰州印第安海德的海军水面作战中心印第安海德爆炸物处理技术部负责承包活动。位于圣地亚哥的 Vector Planning and Services Inc. 获得了一份价值 17,910,070 美元的无限期交付/无限数量、成本加固定费用合同，以提供网络空间科学、研究、工程和技术集成。支持包括创新技术评估和开发；快速软件开发和原型设计；赋能能力培训；安全工程；和网络安全风险管理。这是四份多次授予合同之一。所有获奖者将有机会在订购期间竞争任务订单。位于圣地亚哥的太平洋空间和海战系统中心负责承包活动 (N66001-17-D-0117)。 2017 年 3 月 9 日选定的美国军事合同 位于加利福尼亚州桑尼维尔的美国导弹防御局洛克希德·马丁空间系统公司获得了一份价值 53,052,807 美元、为期 36 个月的具有竞争力的成本加固定费用合同，其中没有多目标杀伤飞行器技术风险降低 (TRR) 工作的选项。该合同是导弹防御局降低技术风险战略的一部分，旨在提高万向导引头组件、集成航空电子组件、组件集成和测试以及先进导引头的性能并降低风险。位于阿拉巴马州亨茨维尔的导弹防御局负责承包活动 (HQ0147-17-C-0002)。位于加利福尼亚州赫恩登的美国海军 ViON Corp. 获得了一份价值 34,790,000 美元的无限期交付/无限数量合同，为空间和海战系统司令部 (Spawar) 总部、太平洋 Spawar 系统中心和大西洋 Spawar 系统中心提供容量即服务支持。容量即服务采购模型使 Spawar 能够更准确地扩展和缩减其信息技术 (IT) 基础设施，以满足不断变化的任务需求。通过无前期成本和“现收现付”采购模式实现节省，减少通常与过度购买 IT 设备相关的浪费，最终满足任务要求的预期。根据该合同，ViON 负责为司令部的研究、开发、测试和评估核心基础设施、实验室和数据中心环境的各种系统和应用程序提供按需、本地计算、网络和存储解决方案。该合同包括期权，如果执行，合同价值最高可达 49,990,000 美元。位于圣地亚哥的太空和海战系统司令部负责承包活动 (N00039-17-D-0003)。内容摘要 问题《航空航天日报与防务报告》，2017 年 3 月 14 日 文章类型 文章 内容来源 《航空航天日报与防务报告》 从列表中排除？无文章子类型 文章门控 AWIN 发布日期 星期二, 03/14/2017 - 21:41"
+    ],
+    "img": "",
+    "link": "https://aviationweek.com/selected-us-military-contracts-week-march-6-march-10-2017",
+    "source": "Aviation Week",
+    "pub_ts": 1489542060.0,
+    "score": 10.0,
+    "grp": "main"
+  },
+  {
+    "title_en": "Product Realization Pop Quiz",
+    "title_zh": "产品实现小测验",
+    "summary": "Product Realization Pop Quiz will.herth@pen… Mon, 04/18/2016 - 17:42 How well do you understand Product Realization? Aerospace and Defense companies such as yours are looking for ways to gain insight into program decisions that impact cost, timing and quality.",
+    "summary_zh": "<span class=\"basic-page--title\">产品实现小测验</span> <span><span lang=\"\" about=\"/user/3620551\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"Will.Herth\">will.herth@pen…</span></span> <span><time日期时间=“2016-04-18T17:42:07",
+    "body_en": [
+      "Product Realization Pop Quiz will.herth@pen… Mon, 04/18/2016 - 17:42 How well do you understand Product Realization? Aerospace and Defense companies such as yours are looking for ways to gain insight into program decisions that impact cost, timing and quality. To effectively compete and achieve program execution excellence, you need to make manufacturing a core part of the development process. Put your Product Realization knowledge to test with this pop quiz. Complete the short quiz and be entered to win one of two $50 Amazon gifts cards! To help you with the answers, please download the white paper Product realization facilitates a collaborative approach . Content loading... Please enable javascript! Test Your Product Realization Knowledge What is product realization for Aerospace and Defense companies? It is the final phase of the project It is a process-driven approach to the entire manufacturing lifecycle starting with “Concept to build” through “Build to delivery” It is the decision that a design meets all requirements of OEMs and suppliers How does a product realization solution support program execution excellence? Through simulation of production alternatives to virtually verify the manufacturing processes and tooling throughout the entire manufacturing lifecycle – full digital twin Through concurrent maturing of manufacturing processes and tooling with the design thus impacting the design prior to release Through integration of advanced manufacturing technologies and automation with the ability to virtually commission robotics and CNC equipment Through the ability to trace a requirement to a design feature to an inspection within the electronic work instructions – complete digital thread Through the ability to easily and electronically compare the as-designed to as-built for delivery – complete digital thread All of the above Name the product realization strategy that helps understand the manufacturing implications of multiple design alternatives. (See page 6 of the white paper.) Shift left Shift right Shift up Shift down Which of the following is not a benefit of implementing the shift left strategy? The program team can make manufacturing decisions concurrently with the product design Reduces the number of program changes and ensures smooth transition from product development to production Links requirements to individual test request, test procedure and instrumentation Provides the early digital twin to enable virtual verification as the digital twin matures along with product design Which are the benefits of an ERP-PLM-MES integration? Seamless delivery of 3D work instructions from PLM to MES Shop floor access to released computer numerical control (CNC) programs Ability to digitally compare the as-built to as-designed in a single system Ability to virtually commission robotics and automation All of the above None of the above Test Your Product Realization Knowledge Thank you for participating! Winners will be notified via email."
+    ],
+    "body_zh": [
+      "产品实现小测验 will.herth@pen... Mon, 04/18/2016 - 17:42 您对产品实现的理解程度如何？像您这样的航空航天和国防公司正在寻找方法来深入了解影响成本、时间和质量的项目决策。为了有效竞争并实现卓越的项目执行，您需要将制造作为开发过程的核心部分。通过这个小测验来测试您的产品实现知识。完成小测验即可赢取两张 50 美元亚马逊礼品卡中的一张！为了帮助您找到答案，请下载白皮书 产品实现促进协作方法。内容正在加载...请启用javascript！测试您的产品实现知识 航空航天和国防公司的产品实现是什么？这是项目的最后阶段 这是整个制造生命周期的流程驱动方法，从“概念到构建”一直到“构建到交付” 这是设计满足 OEM 和供应商所有要求的决定 产品实现解决方案如何支持卓越的项目执行？通过模拟生产替代方案，以虚拟方式验证整个制造生命周期中的制造工艺和工具 - 完整的数字孪生 通过制造工艺和工具与设计的同步成熟，从而影响发布前的设计 通过将先进制造技术和自动化与虚拟调试机器人和 CNC 设备的能力相集成 通过在电子工作指令中跟踪设计特征的要求到检查的能力 - 完整的数字线程 通过能够轻松地以电子方式比较设计与交付时的竣工 - 完整的数字线程 上述所有内容 为产品命名实现策略有助于理解多种设计方案对制造的影响。 （参见白皮书第6页。） 左移 右移 上移 下移 以下哪一项不是实施左移策略的好处？项目团队可以在产品设计的同时做出制造决策 减少项目变更的数量并确保从产品开发到生产的平稳过渡 将需求链接到单独的测试请求、测试程序和仪器 提供早期数字孪生，以便随着数字孪生与产品设计一起成熟，实现虚拟验证 ERP-PLM-MES 集成的好处有哪些？从 PLM 到 MES 无缝交付 3D 工作指令 车间访问已发布的计算机数控 (CNC) 程序 能够在单个系统中以数字方式比较竣工与设计 能够虚拟调试机器人和自动化 所有以上都不是 测试您的产品实现知识 感谢您的参与！获奖者将通过电子邮件收到通知。"
+    ],
+    "img": "",
+    "link": "https://aviationweek.com/aerospace/product-realization-pop-quiz-0",
+    "source": "Aviation Week",
+    "pub_ts": 1461001327.0,
+    "score": 10.0,
+    "grp": "main"
+  },
+  {
+    "title_en": "Autoflight V5000 Matrix",
+    "title_zh": "奥飞V5000矩阵",
+    "summary": "Autoflight V5000 Matrix william.moore@… Tue, 03/31/2026 - 07:48 The V5000 Matrix is a lift-plus-cruise hybrid-electric/all-electric vertical take-off and landing (eVTOL) aircraft being developed by AutoFlight Europe GmbH. Unveiled in February 2026, the aircraf",
+    "summary_zh": "<span>Autoflight V5000 矩阵</span> <span><span lang=\"\" about=\"/users/william-moore-7\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"william.moore\">william.moore@…</span></span> <span><time datetime=\"2026-03-31T07:48:56+00:00\" title=\"星期二",
+    "body_en": [
+      "Autoflight V5000 Matrix william.moore@… Tue, 03/31/2026 - 07:48 The V5000 Matrix is a lift-plus-cruise hybrid-electric/all-electric vertical take-off and landing (eVTOL) aircraft being developed by AutoFlight Europe GmbH. Unveiled in February 2026, the aircraft performed a remotely piloted transition from thrustborne hover to wingborne cruise, demonstrating that flight testing is already underway. Industry commentators have suggested that entry into service could be as soon as 2027/2028, although there is no confirmation of this. Certification is to be sought from the Civil Aviation Administration of China (CAAC) under powered-lift regulations. Structure and Powertrain The Matrix pushes regulations to their maximum, being a 10 seat eVTOL with a maximum take-off weight of 5,700kg (hybrid version). The aircraft could be configured in a 6-seat VIP layout, or a 9-seat business layout plus a pilot. It will also feature a lavatory, the first eVTOL design to incorporate this, an indication of its lengthier flight duration capabilities. An uncrewed cargo variant is also in development. The intended market is more regional-focused than previous eVTOL designs. Structurally, the V5000 is an evolution of the previous Autoflight Prosperity I and CarryAll cargo variant. It features a long, aerodynamic cabin with panoramic viewing windows and skid-style landing gear. A main high wing is complemented by two smaller wings to the front and rear of the aircraft, with three booms extending across all three wings parallel to the cabin, on each side. 20 two-blade fixed propellers are mounted to the six booms to provide lift, while eight cruise propellers provide forward thrust, four mounted to the front and four to the rear. Specifications Aircraft Type Lift-plus-Cruise Seats Up to 10 MTOW 5,700kg/12,500 lbs (Hybrid version) Payload 1,500kg/3,300 lbs (Hybrid version) 1,000kg/2,200 lbs (Electric version) Wingspan 20m/66 ft. Landing Gear Skid-style Range 1,500km/930 miles (Hybrid version) 250km/155 miles (Electric version) Entry into Service Estimated 2027/2028 Flight Controls Fly-by-Wire Take-off and Landing VTOL Autonomy Remote piloting capabilities Channel Commercial Aviation Program Profile ID 471809"
+    ],
+    "body_zh": [
+      "Autoflight V5000 Matrix william.moore@… 星期二，03/31/2026 - 07:48 V5000 Matrix 是一款由 AutoFlight Europe GmbH 开发的升力加巡航混合电动/全电动垂直起降 (eVTOL) 飞机。该飞机于 2026 年 2 月亮相，进行了从推力悬停到翼载巡航的遥控转换，表明飞行测试已经在进行中。行业评论员表示最快可能于 2027/2028 年投入使用，但尚未证实这一点。根据动力升降机法规，需向中国民用航空局 (CAAC) 申请认证。结构和动力总成 Matrix 将法规发挥到了极致，是一款 10 座电动垂直起降飞机，最大起飞重量为 5,700 公斤（混合动力版本）。该飞机可配置为 6 座 VIP 布局，或 9 座商务布局加一名飞行员。它还将配备卫生间，这是第一个采用此功能的电动垂直起降设计，这表明其具有更长的飞行时间能力。一种无人驾驶的货运版本也在开发中。与之前的 eVTOL 设计相比，目标市场更加注重区域性。从结构上讲，V5000 是之前 Autoflight Prosperity I 和 CarryAll 货运型号的演变。它拥有一个长长的空气动力学客舱，配有全景窗和滑橇式起落架。主高机翼由飞机前部和后部的两个较小机翼进行补充，每侧都有三个吊杆延伸到所有三个机翼，与机舱平行。 6 个吊杆上安装了 20 个两叶固定螺旋桨以提供升力，而 8 个巡航螺旋桨则提供向前推力，其中 4 个安装在前部，4 个安装在后部。规格 飞机类型 升力加巡航 座椅 最多 10 个最大起飞重量 5,700kg/12,500 lbs（混合动力版） 有效载荷 1,500kg/3,300 lbs（混合动力版） 1,000kg/2,200 lbs（电动版） 翼展 20m/66 ft. 起落架滑橇式航程1,500 公里/930 英里（混合动力版） 250 公里/155 英里（电动版） 预计 2027/2028 年投入使用 飞行控制 电传操纵起飞和着陆 VTOL 自主 远程驾驶能力 频道商业航空计划资料 ID 471809"
+    ],
+    "img": "",
+    "link": "https://aviationweek.com/node/4994461",
+    "source": "Aviation Week",
+    "pub_ts": 1774943336.0,
+    "score": 10.0,
+    "grp": "main"
+  },
+  {
+    "title_en": "Turkey Signs $11 Billion Eurofighter Deal",
+    "title_zh": "土耳其签署价值 110 亿美元的欧洲战斗机协议",
+    "summary": "Turkey Signs $11 Billion Eurofighter Deal hockensmithawi… Mon, 10/27/2025 - 18:19 Turkey has signed a long-anticipated £8 billion ($11 billion) deal to acquire Eurofighter Typhoons, the first major export contract for the four-nation combat aircraft since 2017",
+    "summary_zh": "<span>土耳其签署价值 110 亿美元的欧洲战斗机协议</span> <span><span lang=\"\" about=\"/users/dan-hockensmith\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"hockensmithawin\">hockensmithawi…</span></span> <span><time datetime=\"2025-10-27T18:19:4",
+    "body_en": [
+      "Turkey Signs $11 Billion Eurofighter Deal hockensmithawi… Mon, 10/27/2025 - 18:19 Turkey has signed a long-anticipated £8 billion ($11 billion) deal to acquire Eurofighter Typhoons, the first major export contract for the four-nation combat aircraft since 2017. Twenty new-built aircraft will be purchased in the country’s first acquisition of a European combat aircraft after decades of operating new and secondhand U.S.-built fighters. But Turkey’s Eurofighter order could more than double in size, according to Turkish Defense Minister Yasar Guler. He declared that Ankara would also buy another 24 aircraft second hand, 12 each from Oman and Qatar. If those sales go through, Oman would be giving up Eurofighter operations. With deliveries of the new-build aircraft not due until 2030, delivering those second-hand aircraft—potentially as early as next year from Qatar, according to Guler—would allow Turkey to accelerate the Eurofighter’s entry into service and enable the retirement of older aircraft from its inventory, including the McDonnell Douglas F-4 Phantom. BAE Systems, which will produce the newly built aircraft in Warton, England, says it will receive £5.4 billion of the £8 billion deal. Included in the £5.4 billion are the aircraft and the weapons package from MBDA, including some integration work, potentially for Turkish indigenous weaponry. The remaining £2.6 billion is support and training activity, which will be contracted later, BAE Systems officials say. It is unclear whether the deal will ultimately include offsets to enable Turkish industry to become involved in the Eurofighter program and for Turkey to have a level of freedom of action for the fleet. After decades of facing numerous arms embargoes, Turkey often demands the ability to locally perform airframe, system and engine maintenance, repair and overhaul (MRO) in-country. The deal was struck during a meeting between UK Prime Minister Keir Starmer and Turkish President Recep Tayyip Erdoğan in Ankara. Starmer said the deal was a win for British workers and the wider UK defense industry. Government officials claim the order is “saving the Warton production line,” after concerns about a lack of new orders for UK-built Typhoons were expressed by workers unions. UK industry has a 37% share in the Eurofighter program and production of major component assemblies is being ramped up thanks to orders from the other Eurofighter partner nations including Germany, Italy and Spain. “Today’s announcement extends Typhoon production and preserves crucial sovereign skills which underpin the UK’s defense and security,” BAE Systems CEO Charles Woodburn said. The deal is another major boost for the UK defense industry, coming just weeks after the UK’s Type 26 frigates were selected by Norway in a £10 billion deal. UK Defense Secretary John Healey said the deal went beyond the procurement of aircraft. “It is the leading edge of the growing defense and industrial partnership between our two nations,” he said. As part of the visit, Starmer also visited the facilities of Turkish Aerospace Industries, where he was shown the indigenous Kaan combat aircraft. He was also exposed to the Hurjet advanced jet trainer, a potential candidate to replace the BAE Systems Hawk jet trainer in the UK Royal Air Force (RAF) inventory. The deal follows three years of negotiations, which have included lobbying of the German government for Berlin to lift a restriction on a Eurofighter sale after Erdoğan’s government arrested Istanbul Mayor Ekrem İmamoğlu, who is seen as a serious presidential rival to Erdoğan in upcoming elections. The administration of German Chancellor Friedrich Merz lifted the sanctions in part because of the benefit to German industry. A memorandum of understanding between the UK and Turkish governments for a Eurofighter sale was agreed to in July. Turkey’s interest in the aircraft is driven in part by a need for a more capable air combat platform to be available in the interim until advanced versions of the Kaan aircraft are produced in the 2030s. Ankara’s decision to opt for a European fighter, meanwhile, will have been driven by a need to diversify sources of supply after facing sanctions from the U.S. over its purchase of a Russian air defense system and banishment from the F-35 Joint Strike Fighter program. The transfer of Omani and Qatari aircraft to Turkey begs questions over the future of additional Eurofighter orders from Qatar, which has long been linked to orders for a further 12 aircraft for a total of 36. Oman, meanwhile, appears to want to consolidate its fighter fleet around the Lockheed Martin F-16 Block 50. In BAE Systems’ 2023 full-year results, the company revealed that the Omani air force had chosen not to renew support arrangements for its Typhoons, and it is unclear how active that fleet now is. Buying these additional aircraft would mean Turkey would have a mix of three configurations in its fleet. Qatar’s aircraft have the Mk.0 version of the active electronically scanned array European Common Radar System (ECRS) radar, while Oman’s feature the mechanically scanned Captor sensor. In addition to the Eurofighter order, Erdoğan and Starmer also revealed they were working on a new trade and security pact. Issue Aerospace Daily & Defense Report, October 28, 2025 Article type Article Primary Category Aircraft & Propulsion Author Tony Osborne Content source Aerospace Daily & Defense Report Exclude from lists? No Tags: Turkey , Eurofighter Typhoon , BAE Systems , MBDA Gating ASD Featured Image typhoon_1600px.jpg Secondary Categories/Subcategories Defense Budget, Policy & Operations Is iframe in the header? Off Knowledge Center Featured Content Off Do not render ads Off Temporarily set to AWIN Freemium Off"
+    ],
+    "body_zh": [
+      "土耳其签署价值 110 亿美元的欧洲战斗机交易 hockensmithawi... 2025 年 10 月 27 日星期一 - 18:19 土耳其签署了一项期待已久的 80 亿英镑（110 亿美元）交易，收购欧洲台风战斗机，这是自 2017 年以来第一份四国战斗机的主要出口合同。在运营数十年的新机和二手机之后，该国首次收购欧洲战斗机，将购买 20 架新建飞机美国制造的战斗机。但土耳其国防部长亚萨尔·古勒表示，土耳其的欧洲战斗机订单规模可能会增加一倍以上。他宣布安卡拉还将购买另外 24 架二手飞机，其中阿曼和卡塔尔各 12 架。如果这些销售成功，阿曼将放弃欧洲战斗机业务。新建飞机的交付期要到 2030 年，据古勒称，这些二手飞机最早可能于明年从卡塔尔交付，这将使土耳其能够加快欧洲战斗机的服役速度，并让老旧飞机从其库存中退役，其中包括麦道 F-4 幻影飞机。 BAE Systems 将在英国沃顿生产这架新飞机，该公司表示，该公司将获得 80 亿英镑交易中的 54 亿英镑。 54亿英镑中包括MBDA的飞机和武器包，其中包括一些可能用于土耳其本土武器的整合工作。 BAE Systems 官员表示，剩余的 26 亿英镑用于支持和培训活动，稍后将签订合同。目前尚不清楚该协议最终是否会包括补偿，以使土耳其工业能够参与欧洲战斗机计划，并使土耳其机队拥有一定程度的行动自由。在经历了数十年的多次武器禁运后，土耳其经常要求能够在国内进行机身、系统和发动机维护、修理和大修 (MRO)。该协议是在英国首相基尔·斯塔默和土耳其总统雷杰普·塔伊普·埃尔多安在安卡拉会晤期间达成的。斯塔默表示，这笔交易对英国工人和更广泛的英国国防工业来说是一场胜利。在工会表达了对英国制造的台风战机缺乏新订单的担忧后，政府官员声称该订单正在“拯救沃顿生产线”。英国工业在欧洲战斗机项目中占有 37% 的份额，并且由于德国、意大利和西班牙等其他欧洲战斗机伙伴国家的订单，主要零部件组件的生产正在增加。 BAE Systems 首席执行官查尔斯·伍德伯恩 (Charles Woodburn) 表示：“今天的公告延长了台风战机的生产，并保留了支撑英国国防和安全的关键主权技能。”这笔交易是英国国防工业的又一重大推动力，就在几周前，挪威在一笔价值 100 亿英镑的交易中选择了英国 26 型护卫舰。英国国防部长约翰·希利表示，该交易超出了飞机采购范围。 “这是我们两国之间不断发展的国防和工业伙伴关系的前沿，”他说。作为访问的一部分，斯塔默还参观了土耳其航空航天工业公司的设施，在那里他参观了本土的卡恩战斗机。他还接触了 Hurjet 高级喷气教练机，该教练机是英国皇家空军 (RAF) 库存中 BAE Systems Hawk 喷气教练机的潜在替代者。该协议经过了三年的谈判，其中包括在埃尔多安政府逮捕了伊斯坦布尔市长埃克雷姆·伊马莫格鲁后，游说德国政府要求柏林解除对欧洲战斗机销售的限制，后者被视为埃尔多安在即将举行的选举中的严重总统竞争对手。德国总理弗里德里希·梅尔茨(Friedrich Merz)政府取消了制裁，部分原因是这对德国工业有利。英国和土耳其政府于 7 月就欧洲战斗机销售达成了一份谅解备忘录。土耳其对这款飞机的兴趣部分是因为在 2030 年代生产出先进版本的卡恩飞机之前，需要在过渡期间提供更强大的空战平台。与此同时，安卡拉决定选择欧洲战斗机，是因为在因购买俄罗斯防空系统而面临美国制裁以及被排除在 F-35 联合攻击战斗机计划之外后，供应来源多样化的需要。阿曼和卡塔尔飞机向土耳其的转移引发了人们对卡塔尔额外欧洲战斗机订单未来的疑问，长期以来，卡塔尔的欧洲战斗机订单一直与另外 12 架飞机的订单有关，总计 36 架。与此同时，阿曼似乎希望以洛克希德·马丁公司的 F-16 Block 50 为中心巩固其战斗机机队。在 BAE Systems 的 2023 年全年业绩中，该公司透露，阿曼空军已选择不为其续签支持安排。台风，目前尚不清楚该舰队现在的活跃程度。购买这些额外的飞机意味着土耳其的机队将混合三种配置。卡塔尔的飞机配备了 Mk.0 版本的有源电子扫描阵列欧洲通用雷达系统 (ECRS) 雷达，而阿曼的飞机配备了机械扫描 Captor 传感器。除了欧洲战斗机订单外，埃尔多安和斯塔默还透露，他们正在制定一项新的贸易和安全协议。发行《航空航天日报与国防报告》，2025 年 10 月 28 日 文章类型 文章 主要类别 飞机与推进系统 作者托尼·奥斯本 内容来源 航空航天日报与国防报告 从列表中排除？没有标签： 土耳其 、 欧洲战斗机台风 、 BAE 系统 、 MBDA 门控 ASD 特色图片 Typhoon_1600px.jpg 二级类别/子类别 国防预算、政策和运营 标题中是否有 iframe？关闭 知识中心特色内容 关闭 不呈现广告 关闭 暂时设置为 AWIN 免费增值 关闭"
+    ],
+    "img": "",
+    "link": "https://aviationweek.com/defense/aircraft-propulsion/turkey-signs-11-billion-eurofighter-deal",
+    "source": "Aviation Week",
+    "pub_ts": 1761589186.0,
+    "score": 10.0,
+    "grp": "main"
+  },
+  {
+    "title_en": "Project Lotus, Northrop Grumman’s Secret Autonomous Aircraft Revealed",
+    "title_zh": "诺斯罗普·格鲁曼公司的秘密自主飞机“莲花计划”揭晓",
+    "summary": "Project Lotus, Northrop Grumman’s Secret Autonomous Aircraft Revealed hockensmithawi… Mon, 10/27/2025 - 18:05 Northrop Grumman has secretly built a large new uncrewed aircraft system (UAS), dubbed Project Lotus, at the company’s Scaled Composites rapid prototy",
+    "summary_zh": "<span>莲花计划，诺斯罗普·格鲁曼公司的秘密自主飞机揭晓</span> <span><span lang=\"\" about=\"/users/dan-hockensmith\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"hockensmithawin\">hockensmithawi…</span></span> <span><time",
+    "body_en": [
+      "Project Lotus, Northrop Grumman’s Secret Autonomous Aircraft Revealed hockensmithawi… Mon, 10/27/2025 - 18:05 Northrop Grumman has secretly built a large new uncrewed aircraft system (UAS), dubbed Project Lotus, at the company’s Scaled Composites rapid prototyping facility in Mojave, California, a source familiar with the project tells Aviation Week. A photo of the aircraft reviewed by Aviation Week revealed a completed, turbofan-powered aircraft parked within the Scaled Composites compound at the public airport. The Lotus UAS design in some ways resembles features of the newly revealed Lockheed Martin Project Vectis, with a long, slender fuselage positioned forward of the leading edges of the wings, capped by a nose with swept-back edges leading to a slender point. In many other respects, the Lotus and Vectis designs diverge. Unlike the engine inlet mounted low at mid-fuselage for the Vectis aircraft, the Lotus inlet sits high atop of the extreme aft section of its fuselage. The Lotus also sports sharply canted tails, breaking from the tailless-configured Vectis. Project Lotus appears to represent Northrop’s candidate for the U.S. Air Force’s Collaborative Combat Aircraft (CCA) Increment 2 program, which is finalizing requirements for competitive prototypes ahead of a scheduled acquisition process next year. The photo reveals that Northrop has already built a demonstrator, perhaps gaining a step on Lockheed’s rival design, which is not scheduled to reach first flight until 2027. As Northrop’s rapid prototyping arm, the Scaled Composites facility frequently builds aircraft demonstrators in secret. Scaled Composites registered a turbofan-powered, fixed-wing aircraft identified only as Model 444 earlier this year with the U.S. Federal Aviation Administration (FAA), which granted the organization the N444LX tail number. It is not clear if the registration represents Project Lotus or another undisclosed project. Northrop also is building the XRQ-73, also known as the Series Hybrid Electric Propulsion AiR Demonstration (Shepard), for DARPA. In response to questions about Project Lotus from Aviation Week, Northrop avoided direct answers, but spoke generally about its internal investments in autonomous aircraft. “Our investments prioritize production at speed and scale, without sacrificing performance or capability. The Northrop Grumman team has generated step-change advancements in production speed, weight and parts reduction, and overall cost efficiency. These advancements benefit the spectrum of autonomous capabilities we produce at Northrop Grumman for U.S. and international customers,” Northrop said. As Lockheed’s Project Vectis design revealed in September, Northrop’s Project Lotus represents one side in a long-running debate within industry and the Air Force over the future direction of the CCA fleet between concepts that emphasize greater survivability or lower cost. In 2024, the Air Force decided to seek a middle ground between cost and survivability with the selected competitive prototypes for the CCA Increment 1 program. The General Atomics Aeronautical Systems Inc. YFQ-42 and Anduril YFQ-44 are large aircraft that feature some low-observable, or stealth, technology. But the aircraft are larger and costlier than, for example, the Kratos XQ-58, and lack the stealthier features of Project Vectis and Project Lotus. In September, Air Force officials said they were considering the full spectrum of options for the Increment 2 CCA requirement, ranging from exquisite survivability to small, air-launched systems. Project Lotus also lends new insight into how Northrop’s internal CCA concepts have evolved from previous, publicly released ideas. As the Air Force competition for CCAs heated up in 2023, Northrop showed off the SG-1 and SG-2 concepts, which appeared similar to the cranked-kite planform of the U.S. Navy-funded X-47B demonstrator. Around the same time, Northrop also unveiled the Model 437 concept, an autonomous spinoff from the crewed Model 401 Sierra demonstrator. The Model 437 finally emerged as a piloted demonstrator aircraft in 2024. Earlier this year, Northrop announced that the aircraft had transitioned into the Beacon demonstrator, serving as a testbed for mission autonomy technology. Issue Aerospace Daily & Defense Report, October 28, 2025 Aviation Week & Space Technology, Nov. 10, 2025 Article type Article Primary Category Aircraft & Propulsion Author Steve Trimble Content source Aerospace Daily & Defense Report Aviation Week & Space Technology Exclude from lists? No Tags: UAS , Lockheed Martin , Northrop Grumman , Collaborative Combat Aircraft (CCA) Gating AWST-MRO ASD Featured Image screenshot_2025-10-27_scaled_composites_from_gmaps.png Secondary Categories/Subcategories Aerospace Defense Aircraft & Propulsion Is iframe in the header? Off Knowledge Center Featured Content Off Do not render ads Off Temporarily set to AWIN Freemium Off"
+    ],
+    "body_zh": [
+      "诺斯罗普·格鲁曼公司的莲花项目秘密揭晓 hockensmithawi…2025 年 10 月 27 日星期一 - 18:05 一位熟悉该项目的消息人士告诉《航空周刊》，诺斯罗普·格鲁曼公司已在该公司位于加利福尼亚州莫哈韦的规模化复合材料快速原型制造工厂秘密建造了一个大型新型无人驾驶飞机系统 (UAS)，称为“莲花项目”。 《航空周刊》查看的一张飞机照片显示，一架完工的涡轮风扇飞机停在公共机场的 Scaled Composites 园区内。莲花无人机的设计在某些方面类似于新推出的洛克希德·马丁公司 Vectis 项目的特征，其长而细长的机身位于机翼前缘的前面，其机头顶部有后掠边缘，通向细长的尖端。 Lotus 和 Vectis 的设计在许多其他方面存在差异。与 Vectis 飞机的发动机进气口安装在机身中部较低的位置不同，Lotus 进气口位于机身最后部的高处。 Lotus 还拥有急剧倾斜的尾部，与无尾配置的 Vectis 不同。 Lotus 项目似乎代表了诺斯罗普美国空军协同作战飞机 (CCA) Increment 2 计划的候选者，该计划将在明年预定的采购过程之前最终确定竞争性原型机的要求。这张照片显示，诺斯罗普公司已经制造了一架验证机，或许比洛克希德公司的竞争对手设计领先一步，后者预计要到 2027 年才能实现首飞。作为诺斯罗普公司的快速原型制造部门，Scaled Composites 工厂经常秘密制造飞机验证机。今年早些时候，Scaled Composites 向美国联邦航空管理局 (FAA) 注册了一架涡轮风扇动力固定翼飞机，型号为 444，并授予该组织 N444LX 尾号。目前尚不清楚该注册是否代表 Project Lotus 还是另一个未公开的项目。诺斯罗普还正在为 DARPA 建造 XRQ-73，也称为系列混合电动推进 AiR 演示（Shepard）。在回答《航空周刊》有关莲花项目的问题时，诺斯罗普避免直接回答，但笼统地谈到了其对自动驾驶飞机的内部投资。诺斯罗普表示：“我们的投资优先考虑速度和规模生产，而不牺牲性能或能力。诺斯罗普·格鲁曼团队在生产速度、重量和零件减少以及整体成本效率方面取得了巨大进步。这些进步有利于我们在诺斯罗普·格鲁曼为美国和国际客户生产的一系列自主能力。”正如洛克希德公司的 Vectis 项目设计在 9 月透露的那样，诺斯罗普的 Lotus 项目代表了工业界和空军内部关于 CCA 机队未来方向的长期争论中的一方，争论强调更高的生存能力或更低的成本。 2024 年，空军决定为 CCA Increment 1 计划选定具有竞争力的原型机，在成本和生存能力之间寻求中间立场。通用原子航空系统公司的 YFQ-42 和 Anduril YFQ-44 是大型飞机，采用一些低可观测或隐形技术。但该飞机比 Kratos XQ-58 等飞机更大、更昂贵，并且缺乏 Project Vectis 和 Project Lotus 的隐身功能。 9 月，空军官员表示，他们正在考虑满足 Increment 2 CCA 要求的全方位选择，从出色的生存能力到小型空射系统。 Lotus 项目还为诺斯罗普内部 CCA 概念如何从之前公开发布的想法演变而来提供了新的见解。随着 2023 年空军 CCA 竞争的白热化，诺斯罗普展示了 SG-1 和 SG-2 概念，它们看起来类似于美国海军资助的 X-47B 验证机的曲柄风筝平面图。大约在同一时间，诺斯罗普还推出了 Model 437 概念车，这是载人 Model 401 Sierra 验证机的自主衍生产品。 437 型最终于 2024 年成为有人驾驶验证机。今年早些时候，诺斯罗普宣布该飞机已转变为 Beacon 验证机，作为任务自主技术的测试平台。发行《航空航天日报与国防报告》，2025 年 10 月 28 日 《航空周刊与航天技术》，2025 年 11 月 10 日 文章类型 文章主要类别 飞机与推进系统 作者 Steve Trimble 内容来源 航空航天日报与国防报告 航空周刊与航天技术 从列表中排除？没有标签：UAS、洛克希德·马丁公司、诺斯罗普·格鲁曼公司、协同作战飞机 (CCA) 门控 AWST-MRO ASD 特色图片 snapshot_2025-10-27_scaled_composites_from_gmaps.png 二级类别/子类别 航空航天防御飞机与推进系统 标题中是否有 iframe？关闭 知识中心特色内容 关闭 不呈现广告 关闭 暂时设置为 AWIN 免费增值 关闭"
+    ],
+    "img": "",
+    "link": "https://aviationweek.com/defense/aircraft-propulsion/project-lotus-northrop-grummans-secret-autonomous-aircraft-revealed",
+    "source": "Aviation Week",
+    "pub_ts": 1761588346.0,
+    "score": 10.0,
+    "grp": "main"
+  },
+  {
+    "title_en": "Second B-21 Enters Flight Test In Palmdale",
+    "title_zh": "第二架 B-21 在帕姆代尔进行飞行测试",
+    "summary": "Second B-21 Enters Flight Test In Palmdale hockensmithawi… Thu, 09/11/2025 - 18:36 The B-21 Raider program completed the first flight of a second airborne test aircraft in Palmdale, California on Sept. 11, clearing a key milestone a month before the 10th anniv",
+    "summary_zh": "<span>第二架 B-21 在棕榈谷进行飞行测试</span> <span><span lang=\"\" about=\"/users/dan-hockensmith\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"hockensmithawin\">hockensmithawi…</span></span> <span><time datetime=\"2025-09-11T18:36:",
+    "body_en": [
+      "Second B-21 Enters Flight Test In Palmdale hockensmithawi… Thu, 09/11/2025 - 18:36 The B-21 Raider program completed the first flight of a second airborne test aircraft in Palmdale, California on Sept. 11, clearing a key milestone a month before the 10th anniversary of the U.S. Air Force contract award to Northrop Grumman. Witnesses posted video on social media showing the B-21 flight-test aircraft passing overhead with wheels retracted and followed by a Lockheed Martin F-16 chase plane. “We can now expedite critical evaluations of mission systems and weapons capabilities, directly supporting the strategic deterrence and combat effectiveness envisioned for this aircraft,” Air Force Secretary Troy Meink said. Northrop assembles all B-21s inside Building 401 on Site 4 of the Air Force’s Plant 42 complex at Palmdale Regional Airport. New test aircraft must fly out of the public airport after they have been assembled, before they can relocate to the secure area of nearby Edwards Air Force Base. The milestone comes nearly 22 months after Northrop completed the maiden sortie of the first flight test version of the B-21 on Nov. 10, 2023. The company has also delivered to the Air Force two more fully assembled airframes, which are reserved for static and fatigue testing on the ground. Two more flight-test aircraft have been in some stage of assembly since at least February 2022. Air Force officials say the program remains on track to clear the initial operational capability milestone in the mid-2020s. Northrop won the $21.4 billion contract in October 2015 for the engineering and manufacturing development phase of the Long-Range Strike Bomber, which the Air Force later rechristened as the B-21 Raider. The Air Force also signed orders with Northrop for the first two-year lots of low-rate initial production. Issue Aviation Week & Space Technology, Sept. 15, 2025 Aerospace Daily & Defense Report, September 12, 2025 Article type Article Primary Category Aircraft & Propulsion Author Steve Trimble Content source Aerospace Daily & Defense Report Aviation Week & Space Technology Exclude from lists? No Tags: B-21 , Lockheed Martin F-16 , U.S. Air Force (USAF) Gating AWST ASD A Closer Look At Northrop Grumman's B-21 After B-21 Rollout, U.S. Air Force Plans To Embark On Test Program Arrival Of A Second Airworthy B-21 Inches Closer For U.S. Air Force Featured Image b21awin_usairforce.jpg Secondary Categories/Subcategories Defense Is iframe in the header? Off Knowledge Center Featured Content Off Do not render ads Off Temporarily set to AWIN Freemium Off"
+    ],
+    "body_zh": [
+      "第二架 B-21 在帕姆代尔霍肯史密斯阿维进行飞行测试…2025 年 9 月 11 日星期四 - 18:36 B-21 Raider 项目于 9 月 11 日在加利福尼亚州帕姆代尔完成了第二架机载测试飞机的首次飞行，在美国空军与诺斯罗普·格鲁曼公司签订合同 10 周年前一个月完成了一个重要的里程碑。目击者在社交媒体上发布的视频显示，轮子收起的 B-21 试飞机从头顶飞过，后面跟着一架洛克希德·马丁公司的 F-16 追击机。空军部长特洛伊·梅克说：“我们现在可以加快对任务系统和武器能力的关键评估，直接支持这架飞机的战略威慑和战斗力。”诺斯罗普公司在帕姆代尔地区机场空军 42 号工厂 4 号基地的 401 号楼内组装所有 B-21。新的测试飞机必须在组装后飞离公共机场，然后才能转移到附近爱德华兹空军基地的安全区域。这一里程碑是在诺斯罗普公司于 2023 年 11 月 10 日完成 B-21 首次飞行测试版本的首次飞行近 22 个月后实现的。该公司还向空军交付了两架组装更齐全的机身，用于地面静态和疲劳测试。至少自 2022 年 2 月起，另外两架飞行测试飞机已进入组装阶段。空军官员表示，该计划仍在按计划进行，将在 2020 年代中期实现初始作战能力里程碑。诺斯罗普公司于 2015 年 10 月赢得了价值 214 亿美元的合同，用于远程攻击轰炸机的工程和制造开发阶段，空军后来将其重新命名为 B-21 袭击者。空军还与诺斯罗普公司签署了前两年批量低速初始生产的订单。问题 航空周刊与航天技术，2025 年 9 月 15 日 航空航天日报与国防报告，2025 年 9 月 12 日 文章类型 文章主要类别 飞机与推进系统 作者 Steve Trimble 内容来源 航空航天日报与国防报告 航空周刊与航天技术 从列表中排除？没有标签： B-21 、洛克希德·马丁公司 F-16 、美国空军 (USAF) 关闭 AWST ASD 近距离观察诺斯罗普·格鲁曼公司的 B-21 在 B-21 推出后，美国空军计划启动测试计划 第二架适航 B-21 即将抵达美国空军 特色图片 b21awin_usairforce.jpg类别/子类别 防御 iframe 是否在标头中？关闭 知识中心特色内容 关闭 不呈现广告 关闭 暂时设置为 AWIN 免费增值 关闭"
+    ],
+    "img": "",
+    "link": "https://aviationweek.com/defense/aircraft-propulsion/second-b-21-enters-flight-test-palmdale",
+    "source": "Aviation Week",
+    "pub_ts": 1757615804.0,
+    "score": 10.0,
+    "grp": "main"
+  },
+  {
+    "title_en": "EHang VT35",
+    "title_zh": "亿航VT35",
+    "summary": "EHang VT35 william.moore@… Tue, 07/29/2025 - 08:58 The VT35 is an autonomous lift-plus-cruise eVTOL being developed by EHang. The first prototype VT35 has completed final assembly and is now undergoing flight testing, with the first public flight occurring in ",
+    "summary_zh": "<span>亿航VT35</span> <span><span lang=\"\" about=\"/users/william-moore-7\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"william.moore\">william.moore@…</span></span> <span><时间datetime=\"2025-07-29T08:58:34+00:00\" title=\"7 月 29 日星期二",
+    "body_en": [
+      "EHang VT35 william.moore@… Tue, 07/29/2025 - 08:58 The VT35 is an autonomous lift-plus-cruise eVTOL being developed by EHang. The first prototype VT35 has completed final assembly and is now undergoing flight testing, with the first public flight occurring in December 2025. Certification will be with the Civil Aviation Administration of China (CAAC), as with EHang’s EH216-S, and certification is expected to be accelerated owing to the company’s experience certifying the previous model. Structure and Powertrain The VT35 seats two passengers inside a cabin featuring panoramic viewing windows. It features eight distributed lift propellers on tandem wings for vertical takeoff and landing—four facing upward and four downward—and an aft-mounted pusher prop for cruise flight. Each fan is individually powered by it’s own electric motor. Distributed electric propulsion (DEP) is the name given to this method of powering aircraft. No critical points of failure provide a high level of redundancy and will ensure safety onboard. Specifications Aircraft Type Lift-plus-cruise eVTOL Seats 2 MTOW 2,094 lbs./950kg Payload 440 lbs./200kg Length Approx 26 ft./8m Wingspan Approx 26 ft./8m Landing Gear Unknown – Previous iteration featured fixed tricycle wheeled gear Cruising Altitude Unknown Cruising Speed Unknown Range 124 miles/200km Endurance Unknown Flight Controls Advanced autonomous flight control systems Takeoff & Landing VTOL Autonomy Yes Channel Commercial Aviation Market Indicator Code Commercial Program Profile ID 471806"
+    ],
+    "body_zh": [
+      "EHang VT35 william.moore@… 星期二，07/29/2025 - 08:58 VT35 是 EHang 正在开发的一款自动升降加巡航 eVTOL。首架原型机 VT35 已完成总装，目前正在进行飞行测试，预计将于 2025 年 12 月进行首次公开​​飞行。与亿航 EH216-S 一样，认证将由中国民用航空局 (CAAC) 进行，由于该公司对之前型号的认证经验，预计认证将加快。结构和动力系统 VT35 的机舱内可容纳两名乘客，并配有全景窗户。它的串联机翼上有八个分布式升力螺旋桨，用于垂直起飞和着陆（四个朝上，四个朝下），以及一个用于巡航飞行的安装在船尾的推进器。每个风扇均由自己的电动机单独供电。分布式电力推进（DEP）是这种为飞机提供动力的方法的名称。无关键故障点提供高水平的冗余并确保船上安全。规格 飞机类型 升力加巡航 eVTOL 座位 2 个 MTOW 2,094 磅/950kg 有效负载 440 磅/200kg 长度约 26 ft./8m 翼展约 26 ft./8m 起落架未知 – 上一代采用固定三轮车轮式齿轮 巡航高度未知 巡航速度未知 航程 124英里/200 公里 续航力 未知 飞行控制 先进自主飞行控制系统 起飞和着陆 VTOL 自主 是 频道 商业航空市场指标代码 商业计划概况 ID 471806"
+    ],
+    "img": "",
+    "link": "https://aviationweek.com/node/4780076",
+    "source": "Aviation Week",
+    "pub_ts": 1753779514.0,
+    "score": 10.0,
+    "grp": "main"
+  },
+  {
+    "title_en": "Diamond V.MO",
+    "title_zh": "钻石V.MO",
+    "summary": "Diamond V.MO william.moore@… Wed, 07/02/2025 - 09:55 The V.MO is a lift and cruise eVTOL aircraft being developed by Diamond Aircraft Industries GmbH, a subsidiary of the Wanfeng Auto Holding Group. The aircraft design was originally developed by Volkswagen Ch",
+    "summary_zh": "<span>钻石 V.MO</span> <span><span lang=\"\" about=\"/users/william-moore-7\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"william.moore\">william.moore@…</span></span> <span><时间datetime=\"2025-07-02T09:55:06+00:00\" title=\"七月星期三",
+    "body_en": [
+      "Diamond V.MO william.moore@… Wed, 07/02/2025 - 09:55 The V.MO is a lift and cruise eVTOL aircraft being developed by Diamond Aircraft Industries GmbH, a subsidiary of the Wanfeng Auto Holding Group. The aircraft design was originally developed by Volkswagen China and was transferred to Diamond following a deal between the two companies in February 2024. A subscale prototype of the V.MO first flew in 2022. The full-scale aircraft design was unveiled at the Zhuhai Airshow in November 2024. No official certification plans have been announced. Structure and Powertrain The V.MO seats a pilot and four passengers in a streamlined cabin. The aircraft features a twin-boom connected by fore and aft wings, with eight vertical lift fans distributed along the booms. The aircraft features two pusher propellers, providing propulsion during wing-borne cruise flight. The aircraft features distributed electric propulsion (DEP), with each propeller powered by its own electric motor. This design approach provides high redundancy and reliability by eliminating critical points of failure. Specifications Aircraft Type Lift and Cruise eVTOL Seats Pilot + 4 MTOW 2,000–2,500 kg / 4,400–5,500 lb Range 200 km / 125 miles Cruising Speed 200 kph / 125 mph Propulsion 10 electric motors power 10 propellers (8 lift fans and 2 pusher propellers) Power/Energy Storage Battery details unknown. Flight Controls Fly-by-wire Takeoff & Landing VTOL Autonomy No Channel Commercial Aviation Market Indicator Code Commercial Program Profile ID 471800"
+    ],
+    "body_zh": [
+      "Diamond V.MO william.moore@… 周三，07/02/2025 - 09:55 V.MO 是一款升降巡航电动垂直起降飞机，由万丰奥特控股集团子公司 Diamond Aircraft Industries GmbH 开发。该飞机设计最初由大众中国开发，并在两家公司于 2024 年 2 月达成协议后转让给 Diamond。V.MO 的小型原型机于 2022 年首飞。全尺寸飞机设计于 2024 年 11 月在珠海航展上亮相。目前尚未公布任何官方认证计划。结构和动力系统 V.MO 的流线型机舱内可容纳一名飞行员和四名乘客。该飞机具有由前后翼连接的双吊臂，沿吊臂分布有八个垂直升力风扇。该飞机配有两个推进式螺旋桨，在翼载巡航飞行期间提供推进力。该飞机采用分布式电力推进（DEP），每个螺旋桨均由自己的电动机提供动力。这种设计方法通过消除关键故障点来提供高冗余和可靠性。规格 飞机类型 升降和巡航 eVTOL 座椅 飞行员 + 4 个最大起飞重量 2,000–2,500 公斤/4,400–5,500 磅 航程 200 公里/125 英里 巡航速度 200 公里/小时/125 英里/小时 推进 10 个电动机为 10 个螺旋桨提供动力（8 个升力风扇和 2 个推进螺旋桨） 动力/储能电池详细信息未知。飞行控制 电传飞行起飞和着陆 VTOL 自主 无通道商用航空市场指标代码 商业计划概况 ID 471800"
+    ],
+    "img": "",
+    "link": "https://aviationweek.com/node/4773341",
+    "source": "Aviation Week",
+    "pub_ts": 1751450106.0,
+    "score": 10.0,
+    "grp": "main"
+  },
+  {
+    "title_en": "Zero Gravity ZG-T6",
+    "title_zh": "零重力ZG-T6",
+    "summary": "Zero Gravity ZG-T6 william.moore@… Wed, 07/02/2025 - 09:51 The ZG-T6 is a tiltrotor eVTOL concept being developed by Zero Gravity Aircraft Industry. It is designed for both passenger transport and urban air cargo missions and is set to enter into service in 20",
+    "summary_zh": "<span>零重力 ZG-T6</span> <span><span lang=\"\" about=\"/users/william-moore-7\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"william.moore\">william.moore@…</span></span> <span><time datetime=\"2025-07-02T09:51:25+00:00\" title=\"星期三",
+    "body_en": [
+      "Zero Gravity ZG-T6 william.moore@… Wed, 07/02/2025 - 09:51 The ZG-T6 is a tiltrotor eVTOL concept being developed by Zero Gravity Aircraft Industry. It is designed for both passenger transport and urban air cargo missions and is set to enter into service in 2028. Certification is expected to come from the Civil Aviation Authority of China (CAAC). Structure and Powertrain The aircraft is designed to seat one pilot and five passengers inside a carbon fiber composite cabin with panoramic wrap-around windows for enhanced visibility. It is equipped with six tiltrotors powered by six electric motors, allowing for vertical takeoff and landing, and forward flight. The tiltrotors are positioned on the ends of the V-tail, high wing, and low forewing. Distributed electric propulsion (DEP) is the name given to this method of powering aircraft. No critical points of failure provide a high level of redundancy and will ensure safety onboard. Specifications Aircraft Type Tiltrotor eVTOL Seats Pilot + 5 passengers MTOW 2,500 kg (5,512 lb) (Estimated) Range 300 km (186 miles) (Estimated) Cruising Speed 250 kph (155 mph) (Estimated) Flight Time 90 minutes (Estimated) Landing Gear Fixed tricycle wheeled landing gear Propulsion 6 tilt-propellers powered by 6 electric motors Power/Energy Storage Batteries – details unknown Flight Controls Fly-by-wire Takeoff & Landing VTOL Autonomy Planned for future operations Safety Emergency ballistic parachute Channel Commercial Aviation Market Indicator Code Commercial Program Profile ID 471802"
+    ],
+    "body_zh": [
+      "零重力 ZG-T6 william.moore@… 星期三，07/02/2025 - 09:51 ZG-T6 是零重力飞机工业正在开发的倾转旋翼电动垂直起降概念。它专为客运和城市航空货运任务而设计，计划于 2028 年投入使用。预计将获得中国民航局 (CAAC) 的认证。结构和动力系统 该飞机的碳纤维复合材料机舱内可容纳一名飞行员和五名乘客，并配有全景环绕式窗户，以提高视野。它配备了由六个电动机驱动的六个倾转旋翼机，可以垂直起降和向前飞行。倾转旋翼机位于 V 型尾翼、高机翼和低前翼的末端。分布式电力推进（DEP）是这种为飞机提供动力的方法的名称。无关键故障点提供高水平的冗余并确保船上安全。规格 飞机类型 倾转旋翼电动垂直起降 座位 飞行员 + 5 名乘客 最大起飞重量 2,500 公斤（5,512 磅）（估计） 航程 300 公里（186 英里）（估计） 巡航速度 250 公里/小时（155 英里/小时）（估计） 飞行时间 90 分钟（估计） 起落架 固定三轮式起落架 推进力 6 个倾斜螺旋桨，由 6 提供动力电动马达 动力/储能电池 – 详细信息未知 飞行控制 电传起飞和着陆 VTOL 自主 计划未来操作 安全 紧急弹道降落伞 通道 商业航空市场指标代码 商业计划简介 ID 471802"
+    ],
+    "img": "",
+    "link": "https://aviationweek.com/node/4773331",
+    "source": "Aviation Week",
+    "pub_ts": 1751449885.0,
+    "score": 10.0,
     "grp": "main"
   },
   {
@@ -1050,251 +1086,8 @@
     "link": "https://simpleflying.com/boeing-737-max-cockpit-pilots-see-do-every-flight/",
     "source": "Simple Flying",
     "pub_ts": 1792879218.0,
-    "score": 10.11,
+    "score": 9.93,
     "grp": "main"
-  },
-  {
-    "title_en": "BCA Special Edition Newsletter",
-    "title_zh": "BCA 特别版时事通讯",
-    "summary": "BCA Special Edition Newsletter kylee.adams@in… Fri, 03/07/2025 - 23:30 Business aviation is soaring, and industry events are where game-changing decisions happen. Stay ahead with the BCA Special Edition newsletter—your exclusive source for daily event recaps, ",
-    "summary_zh": "<span>BCA 特别版简讯</span> <span><span lang=\"\" about=\"/users/kylee-adams\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"kylee.adams\">kylee.adams@in…</span></span> <span><time datetime=\"2025-03-07T23:30:14+00:00\"标题=“星期五",
-    "body_en": [
-      "https://aviationweek.com/themes/custom/particle/dist/app-drupal/assets/AW_logo_horizontal_small_white.svg",
-      "Business aviation is soaring, and industry events are where game-changing decisions happen. Stay ahead with the BCA Special Edition newsletter—your exclusive source for daily event recaps, executive insights, and in-depth interviews—directly from the show floor. Gain insider access to emerging opportunities, market trends, and the key partnerships shaping the future of business aviation."
-    ],
-    "body_zh": [
-      "",
-      "公务航空正在飞速发展，而行业活动正是改变游戏规则的决策发生的地方。直接从展会现场获取 BCA 特别版时事通讯，了解每日活动回顾、高管见解和深度访谈的独家来源。获得内部人士了解新兴机遇、市场趋势以及塑造公务航空​​未来的关键合作伙伴关系的机会。"
-    ],
-    "img": "",
-    "link": "https://aviationweek.com/node/4740936",
-    "source": "Aviation Week",
-    "pub_ts": 1741390214.0,
-    "score": 10.0,
-    "grp": "main",
-    "_miss": [
-      0,
-      1
-    ],
-    "_keep": [
-      0
-    ]
-  },
-  {
-    "title_en": "Selected U.S. Military Contracts for the Week of March 6 - March 10, 2017",
-    "title_zh": "2017年3月6日至10日当周精选美国军事合同",
-    "summary": "Selected U.S. Military Contracts for the Week of March 6 - March 10, 2017 user+1@localho… Wed, 03/15/2017 - 01:41 Selected U.S. military contracts for March 6, 2017 U.S. ARMY Blue Storm Associates Inc. , doing business as Pemdas Technologies and Innovation, Al",
-    "summary_zh": "<span>2017 年 3 月 6 日至 3 月 10 日当周精选美国军事合同</span> <span><span lang=\"\" about=\"/user/1\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"email_registration_qPH4cFMVam\">user+1@localho…</span></span> <span><ti",
-    "body_en": [
-      "Selected U.S. Military Contracts for the Week of March 6 - March 10, 2017 user+1@localho… Wed, 03/15/2017 - 01:41 Selected U.S. military contracts for March 6, 2017 U.S. ARMY Blue Storm Associates Inc. , doing business as Pemdas Technologies and Innovation, Alexandria, Virginia, was awarded a $49,500,000 order dependent contract for the Atmospheric Sensing and Prediction System. Bids were solicited via the internet with one received. U.S. Army Contracting Command, Research Triangle Park, North Carolina, is the contracting activity (W911NF-17-D-0001). Selected U.S. military contracts for March 7, 2017 U.S. AIR FORCE Kelly Aviation Center LP , San Antonio, has been awarded a $1,001,978,024 indefinite-delivery/indefinite-quantity contract for KC-10 engine contractor logistic support. Contractor will provide engine teardown and overhaul, on-wing support/contract field teams, and engine parts and logistics. In addition, the contractor will provide all support required to fulfill this requirement, including but not limited to labor, materials, tools, equipment, parts, and transportation. Air Force Life Cycle Management Center, Tinker AFB, Oklahoma, is the contracting activity (FA8105-17-D-0002). U.S. NAVY Avian LLC , Lexington Park, Maryland, is being awarded an $11,402,443 cost-plus-fixed-fee contract to provide support for the Naval Air Warfare Center Aircraft Division’s Integrated System Evaluation Experimentation and Test Department (AIR-5.1). Services provided will include flight test engineering, programmatic, administrative, design, execution, analysis, evaluation, and reporting of tests and experiments of aircraft, unmanned air systems, weapons and weapons systems. The Naval Air Warfare Center Aircraft Division, Patuxent River, Maryland, is the contracting activity (N00421-17-C-0049). Selected U.S. military contracts for March 8, 2017 U.S. NAVY Sierra Nevada Corp. , Rancho, California, is being awarded a $30,995,905 modification to a previously awarded firm-fixed-price, cost-plus-fixed-fee, indefinite-delivery/indefinite-quantity contract (N00174-09-D-0003) to extend the ordering period and exercise Option Year 6 for the procurement and support of the transmitting set, countermeasures AN/PLT-5, to support explosive ordnance disposal personnel. The AN/PLT-5 is a man-portable system in support of the Joint Service Explosive Ordnance Disposal Counter Radio Controlled Improvised Explosive Device Electronic Warfare program. The Naval Surface Warfare Center Indian Head Explosive Ordnance Disposal Technology Division, Indian Head, Maryland, is the contracting activity. Vector Planning and Services Inc. , San Diego, is being awarded a potential $17,910,070 indefinite-delivery/indefinite-quantity, cost-plus-fixed-fee contract to provide cyberspace science, research, engineering, and technology integration. Support includes innovative technology assessment and development; rapid software development and prototyping; enabling capability training; security engineering; and cybersecurity risk management. This is one of four multiple-award contracts. All awardees will have the opportunity to compete for task orders during the ordering period. The Space and Naval Warfare Systems Center Pacific, San Diego, is the contracting activity (N66001-17-D-0117). Selected U.S. military contracts for March 9, 2017 U.S. MISSILE DEFENSE AGENCY Lockheed Martin Space Systems Co. , Sunnyvale, California, was awarded a $53,052,807 competitive cost-plus-fixed-fee contract for a 36-month period with no options for the Multi-Object Kill Vehicle Technology Risk Reduction (TRR) effort. This contract represents part of the Missile Defense Agency’s technology risk reduction strategy to improve performance and reduce risk for a gimbaled seeker assembly, integrated avionics assembly, component integration and testing, and an advanced seeker. The Missile Defense Agency, Huntsville, Alabama, is the contracting activity (HQ0147-17-C-0002). U.S. NAVY ViON Corp. , Herndon, California, is being awarded a $34,790,000 indefinite-delivery/indefinite-quantity contract to provide Capacity as a Service support to Space and Naval Warfare Systems Command (Spawar) Headquarters, Spawar System Center Pacific and Spawar System Center Atlantic. The Capacity as a Service acquisition model allows Spawar to more accurately scale, up and down, its information technology (IT) infrastructure to meet evolving mission requirements. Savings are realized through no up-front costs and a “pay as you go” acquisition model, reducing waste usually associated with overbuying of IT equipment to eventually meet an expectation of mission requirement. Under this contract, ViON is responsible for providing on-demand, on-premise computing, networking and storage solutions for a variety of systems and applications for the command’s research, development, testing and evaluation core infrastructures, laboratory and data center environments. This contract includes options, which if exercised, would bring the maximum contract value to $49,990,000. The Space and Naval Warfare Systems Command, San Diego, is the contracting activity (N00039-17-D-0003). Content summary Issue Aerospace Daily & Defense Report, March 14, 2017 Article type Article Content source Aerospace Daily & Defense Report Exclude from lists? No Article sub-type Article Gating AWIN Publication date Tue, 03/14/2017 - 21:41"
-    ],
-    "body_zh": [
-      "2017 年 3 月 6 日至 3 月 10 日当周精选美国军事合同 user+1@localho… 星期三，03/15/2017 - 01:41 2017 年 3 月 6 日精选美国军事合同 美国陆军蓝色风暴联合公司 (U.S. ARMY Blue Storm Associates Inc.)，以 Pemdas Technologies and Innovation 名义开展业务，位于弗吉尼亚州亚历山大，荣获大气传感和预测系统的 49,500,000 美元订单相关合同。通过互联网招标并收到一份投标书。北卡罗来纳州三角研究园的美国陆军合同司令部负责合同活动 (W911NF-17-D-0001)。 2017 年 3 月 7 日选定的美国军事合同 位于圣安东尼奥的美国空军凯利航空中心 (Kelly Aviation Center LP) 已获得一份价值 1,001,978,024 美元的无限期交付/无限数量合同，为 KC-10 发动机承包商提供后勤支持。承包商将提供发动机拆卸和大修、机翼支持/合同现场团队以及发动机零件和物流。此外，承包商将提供满足此要求所需的所有支持，包括但不限于劳动力、材料、工具、设备、零件和运输。位于俄克拉荷马州廷克空军基地的空军生命周期管理中心负责承包活动 (FA8105-17-D-0002)。位于马里兰州列克星敦公园的美国海军鸟类有限责任公司 (U.S. NAVY Avian LLC) 获得了一份价值 11,402,443 美元的成本加固定费用合同，为海军空战中心飞机部门的综合系统评估实验和测试部门 (AIR-5.1) 提供支持。提供的服务将包括飞机、无人机系统、武器和武器系统的测试和实验的飞行测试工程、程序、管理、设计、执行、分析、评估和报告。位于马里兰州帕图森特河的海军空战中心飞机分部负责承包活动 (N00421-17-C-0049)。 2017 年 3 月 8 日选定的美国军事合同 加利福尼亚州兰乔市的美国海军内华达山脉公司将获得对先前授予的固定价格、成本加固定费用、无限期交付/无限数量合同 (N00174-09-D-0003) 的 30,995,905 美元的修改，以延长订购期限和执行第 6 年选项，采购和支持发射装置、对抗措施 AN/PLT-5，以支持爆炸物处理人员。 AN/PLT-5 是一种便携式系统，支持联合军种爆炸物处理计数器无线电控制简易爆炸装置电子战计划。位于马里兰州印第安海德的海军水面作战中心印第安海德爆炸物处理技术部负责承包活动。位于圣地亚哥的 Vector Planning and Services Inc. 获得了一份价值 17,910,070 美元的无限期交付/无限数量、成本加固定费用合同，以提供网络空间科学、研究、工程和技术集成。支持包括创新技术评估和开发；快速软件开发和原型设计；赋能能力培训；安全工程；和网络安全风险管理。这是四份多次授予合同之一。所有获奖者将有机会在订购期间竞争任务订单。位于圣地亚哥的太平洋空间和海战系统中心负责承包活动 (N66001-17-D-0117)。 2017 年 3 月 9 日选定的美国军事合同 位于加利福尼亚州桑尼维尔的美国导弹防御局洛克希德·马丁空间系统公司获得了一份价值 53,052,807 美元、为期 36 个月的具有竞争力的成本加固定费用合同，其中没有多目标杀伤飞行器技术风险降低 (TRR) 工作的选项。该合同是导弹防御局降低技术风险战略的一部分，旨在提高万向导引头组件、集成航空电子组件、组件集成和测试以及先进导引头的性能并降低风险。位于阿拉巴马州亨茨维尔的导弹防御局负责承包活动 (HQ0147-17-C-0002)。位于加利福尼亚州赫恩登的美国海军 ViON Corp. 获得了一份价值 34,790,000 美元的无限期交付/无限数量合同，为空间和海战系统司令部 (Spawar) 总部、太平洋 Spawar 系统中心和大西洋 Spawar 系统中心提供容量即服务支持。容量即服务采购模型使 Spawar 能够更准确地扩展和缩减其信息技术 (IT) 基础设施，以满足不断变化的任务需求。通过无前期成本和“现收现付”采购模式实现节省，减少通常与过度购买 IT 设备相关的浪费，最终满足任务要求的预期。根据该合同，ViON 负责为司令部的研究、开发、测试和评估核心基础设施、实验室和数据中心环境的各种系统和应用程序提供按需、本地计算、网络和存储解决方案。该合同包括期权，如果执行，合同价值最高可达 49,990,000 美元。位于圣地亚哥的太空和海战系统司令部负责承包活动 (N00039-17-D-0003)。内容摘要 问题《航空航天日报与防务报告》，2017 年 3 月 14 日 文章类型 文章 内容来源 《航空航天日报与防务报告》 从列表中排除？无文章子类型 文章门控 AWIN 发布日期 星期二, 03/14/2017 - 21:41"
-    ],
-    "img": "",
-    "link": "https://aviationweek.com/selected-us-military-contracts-week-march-6-march-10-2017",
-    "source": "Aviation Week",
-    "pub_ts": 1489542060.0,
-    "score": 10.0,
-    "grp": "main",
-    "_miss": [
-      0
-    ],
-    "_keep": [
-      0
-    ]
-  },
-  {
-    "title_en": "Product Realization Pop Quiz",
-    "title_zh": "产品实现小测验",
-    "summary": "Product Realization Pop Quiz will.herth@pen… Mon, 04/18/2016 - 17:42 How well do you understand Product Realization? Aerospace and Defense companies such as yours are looking for ways to gain insight into program decisions that impact cost, timing and quality.",
-    "summary_zh": "<span class=\"basic-page--title\">产品实现小测验</span> <span><span lang=\"\" about=\"/user/3620551\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"Will.Herth\">will.herth@pen…</span></span> <span><time日期时间=“2016-04-18T17:42:07",
-    "body_en": [
-      "Product Realization Pop Quiz will.herth@pen… Mon, 04/18/2016 - 17:42 How well do you understand Product Realization? Aerospace and Defense companies such as yours are looking for ways to gain insight into program decisions that impact cost, timing and quality. To effectively compete and achieve program execution excellence, you need to make manufacturing a core part of the development process. Put your Product Realization knowledge to test with this pop quiz. Complete the short quiz and be entered to win one of two $50 Amazon gifts cards! To help you with the answers, please download the white paper Product realization facilitates a collaborative approach . Content loading... Please enable javascript! Test Your Product Realization Knowledge What is product realization for Aerospace and Defense companies? It is the final phase of the project It is a process-driven approach to the entire manufacturing lifecycle starting with “Concept to build” through “Build to delivery” It is the decision that a design meets all requirements of OEMs and suppliers How does a product realization solution support program execution excellence? Through simulation of production alternatives to virtually verify the manufacturing processes and tooling throughout the entire manufacturing lifecycle – full digital twin Through concurrent maturing of manufacturing processes and tooling with the design thus impacting the design prior to release Through integration of advanced manufacturing technologies and automation with the ability to virtually commission robotics and CNC equipment Through the ability to trace a requirement to a design feature to an inspection within the electronic work instructions – complete digital thread Through the ability to easily and electronically compare the as-designed to as-built for delivery – complete digital thread All of the above Name the product realization strategy that helps understand the manufacturing implications of multiple design alternatives. (See page 6 of the white paper.) Shift left Shift right Shift up Shift down Which of the following is not a benefit of implementing the shift left strategy? The program team can make manufacturing decisions concurrently with the product design Reduces the number of program changes and ensures smooth transition from product development to production Links requirements to individual test request, test procedure and instrumentation Provides the early digital twin to enable virtual verification as the digital twin matures along with product design Which are the benefits of an ERP-PLM-MES integration? Seamless delivery of 3D work instructions from PLM to MES Shop floor access to released computer numerical control (CNC) programs Ability to digitally compare the as-built to as-designed in a single system Ability to virtually commission robotics and automation All of the above None of the above Test Your Product Realization Knowledge Thank you for participating! Winners will be notified via email."
-    ],
-    "body_zh": [
-      "产品实现小测验 will.herth@pen... Mon, 04/18/2016 - 17:42 您对产品实现的理解程度如何？像您这样的航空航天和国防公司正在寻找方法来深入了解影响成本、时间和质量的项目决策。为了有效竞争并实现卓越的项目执行，您需要将制造作为开发过程的核心部分。通过这个小测验来测试您的产品实现知识。完成小测验即可赢取两张 50 美元亚马逊礼品卡中的一张！为了帮助您找到答案，请下载白皮书 产品实现促进协作方法。内容正在加载...请启用javascript！测试您的产品实现知识 航空航天和国防公司的产品实现是什么？这是项目的最后阶段 这是整个制造生命周期的流程驱动方法，从“概念到构建”一直到“构建到交付” 这是设计满足 OEM 和供应商所有要求的决定 产品实现解决方案如何支持卓越的项目执行？通过模拟生产替代方案，以虚拟方式验证整个制造生命周期中的制造工艺和工具 - 完整的数字孪生 通过制造工艺和工具与设计的同步成熟，从而影响发布前的设计 通过将先进制造技术和自动化与虚拟调试机器人和 CNC 设备的能力相集成 通过在电子工作指令中跟踪设计特征的要求到检查的能力 - 完整的数字线程 通过能够轻松地以电子方式比较设计与交付时的竣工 - 完整的数字线程 上述所有内容 为产品命名实现策略有助于理解多种设计方案对制造的影响。 （参见白皮书第6页。） 左移 右移 上移 下移 以下哪一项不是实施左移策略的好处？项目团队可以在产品设计的同时做出制造决策 减少项目变更的数量并确保从产品开发到生产的平稳过渡 将需求链接到单独的测试请求、测试程序和仪器 提供早期数字孪生，以便随着数字孪生与产品设计一起成熟，实现虚拟验证 ERP-PLM-MES 集成的好处有哪些？从 PLM 到 MES 无缝交付 3D 工作指令 车间访问已发布的计算机数控 (CNC) 程序 能够在单个系统中以数字方式比较竣工与设计 能够虚拟调试机器人和自动化 所有以上都不是 测试您的产品实现知识 感谢您的参与！获奖者将通过电子邮件收到通知。"
-    ],
-    "img": "",
-    "link": "https://aviationweek.com/aerospace/product-realization-pop-quiz-0",
-    "source": "Aviation Week",
-    "pub_ts": 1461001327.0,
-    "score": 10.0,
-    "grp": "main",
-    "_miss": [
-      0
-    ],
-    "_keep": [
-      0
-    ]
-  },
-  {
-    "title_en": "Autoflight V5000 Matrix",
-    "title_zh": "奥飞V5000矩阵",
-    "summary": "Autoflight V5000 Matrix william.moore@… Tue, 03/31/2026 - 07:48 The V5000 Matrix is a lift-plus-cruise hybrid-electric/all-electric vertical take-off and landing (eVTOL) aircraft being developed by AutoFlight Europe GmbH. Unveiled in February 2026, the aircraf",
-    "summary_zh": "<span>Autoflight V5000 矩阵</span> <span><span lang=\"\" about=\"/users/william-moore-7\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"william.moore\">william.moore@…</span></span> <span><time datetime=\"2026-03-31T07:48:56+00:00\" title=\"星期二",
-    "body_en": [
-      "Autoflight V5000 Matrix william.moore@… Tue, 03/31/2026 - 07:48 The V5000 Matrix is a lift-plus-cruise hybrid-electric/all-electric vertical take-off and landing (eVTOL) aircraft being developed by AutoFlight Europe GmbH. Unveiled in February 2026, the aircraft performed a remotely piloted transition from thrustborne hover to wingborne cruise, demonstrating that flight testing is already underway. Industry commentators have suggested that entry into service could be as soon as 2027/2028, although there is no confirmation of this. Certification is to be sought from the Civil Aviation Administration of China (CAAC) under powered-lift regulations. Structure and Powertrain The Matrix pushes regulations to their maximum, being a 10 seat eVTOL with a maximum take-off weight of 5,700kg (hybrid version). The aircraft could be configured in a 6-seat VIP layout, or a 9-seat business layout plus a pilot. It will also feature a lavatory, the first eVTOL design to incorporate this, an indication of its lengthier flight duration capabilities. An uncrewed cargo variant is also in development. The intended market is more regional-focused than previous eVTOL designs. Structurally, the V5000 is an evolution of the previous Autoflight Prosperity I and CarryAll cargo variant. It features a long, aerodynamic cabin with panoramic viewing windows and skid-style landing gear. A main high wing is complemented by two smaller wings to the front and rear of the aircraft, with three booms extending across all three wings parallel to the cabin, on each side. 20 two-blade fixed propellers are mounted to the six booms to provide lift, while eight cruise propellers provide forward thrust, four mounted to the front and four to the rear. Specifications Aircraft Type Lift-plus-Cruise Seats Up to 10 MTOW 5,700kg/12,500 lbs (Hybrid version) Payload 1,500kg/3,300 lbs (Hybrid version) 1,000kg/2,200 lbs (Electric version) Wingspan 20m/66 ft. Landing Gear Skid-style Range 1,500km/930 miles (Hybrid version) 250km/155 miles (Electric version) Entry into Service Estimated 2027/2028 Flight Controls Fly-by-Wire Take-off and Landing VTOL Autonomy Remote piloting capabilities Channel Commercial Aviation Program Profile ID 471809"
-    ],
-    "body_zh": [
-      "Autoflight V5000 Matrix william.moore@… 星期二，03/31/2026 - 07:48 V5000 Matrix 是一款由 AutoFlight Europe GmbH 开发的升力加巡航混合电动/全电动垂直起降 (eVTOL) 飞机。该飞机于 2026 年 2 月亮相，进行了从推力悬停到翼载巡航的遥控转换，表明飞行测试已经在进行中。行业评论员表示最快可能于 2027/2028 年投入使用，但尚未证实这一点。根据动力升降机法规，需向中国民用航空局 (CAAC) 申请认证。结构和动力总成 Matrix 将法规发挥到了极致，是一款 10 座电动垂直起降飞机，最大起飞重量为 5,700 公斤（混合动力版本）。该飞机可配置为 6 座 VIP 布局，或 9 座商务布局加一名飞行员。它还将配备卫生间，这是第一个采用此功能的电动垂直起降设计，这表明其具有更长的飞行时间能力。一种无人驾驶的货运版本也在开发中。与之前的 eVTOL 设计相比，目标市场更加注重区域性。从结构上讲，V5000 是之前 Autoflight Prosperity I 和 CarryAll 货运型号的演变。它拥有一个长长的空气动力学客舱，配有全景窗和滑橇式起落架。主高机翼由飞机前部和后部的两个较小机翼进行补充，每侧都有三个吊杆延伸到所有三个机翼，与机舱平行。 6 个吊杆上安装了 20 个两叶固定螺旋桨以提供升力，而 8 个巡航螺旋桨则提供向前推力，其中 4 个安装在前部，4 个安装在后部。规格 飞机类型 升力加巡航 座椅 最多 10 个最大起飞重量 5,700kg/12,500 lbs（混合动力版） 有效载荷 1,500kg/3,300 lbs（混合动力版） 1,000kg/2,200 lbs（电动版） 翼展 20m/66 ft. 起落架滑橇式航程1,500 公里/930 英里（混合动力版） 250 公里/155 英里（电动版） 预计 2027/2028 年投入使用 飞行控制 电传操纵起飞和着陆 VTOL 自主 远程驾驶能力 频道商业航空计划资料 ID 471809"
-    ],
-    "img": "",
-    "link": "https://aviationweek.com/node/4994461",
-    "source": "Aviation Week",
-    "pub_ts": 1774943336.0,
-    "score": 10.0,
-    "grp": "main",
-    "_miss": [
-      0
-    ],
-    "_keep": [
-      0
-    ]
-  },
-  {
-    "title_en": "Turkey Signs $11 Billion Eurofighter Deal",
-    "title_zh": "土耳其签署价值 110 亿美元的欧洲战斗机协议",
-    "summary": "Turkey Signs $11 Billion Eurofighter Deal hockensmithawi… Mon, 10/27/2025 - 18:19 Turkey has signed a long-anticipated £8 billion ($11 billion) deal to acquire Eurofighter Typhoons, the first major export contract for the four-nation combat aircraft since 2017",
-    "summary_zh": "<span>土耳其签署价值 110 亿美元的欧洲战斗机协议</span> <span><span lang=\"\" about=\"/users/dan-hockensmith\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"hockensmithawin\">hockensmithawi…</span></span> <span><time datetime=\"2025-10-27T18:19:4",
-    "body_en": [
-      "Turkey Signs $11 Billion Eurofighter Deal hockensmithawi… Mon, 10/27/2025 - 18:19 Turkey has signed a long-anticipated £8 billion ($11 billion) deal to acquire Eurofighter Typhoons, the first major export contract for the four-nation combat aircraft since 2017. Twenty new-built aircraft will be purchased in the country’s first acquisition of a European combat aircraft after decades of operating new and secondhand U.S.-built fighters. But Turkey’s Eurofighter order could more than double in size, according to Turkish Defense Minister Yasar Guler. He declared that Ankara would also buy another 24 aircraft second hand, 12 each from Oman and Qatar. If those sales go through, Oman would be giving up Eurofighter operations. With deliveries of the new-build aircraft not due until 2030, delivering those second-hand aircraft—potentially as early as next year from Qatar, according to Guler—would allow Turkey to accelerate the Eurofighter’s entry into service and enable the retirement of older aircraft from its inventory, including the McDonnell Douglas F-4 Phantom. BAE Systems, which will produce the newly built aircraft in Warton, England, says it will receive £5.4 billion of the £8 billion deal. Included in the £5.4 billion are the aircraft and the weapons package from MBDA, including some integration work, potentially for Turkish indigenous weaponry. The remaining £2.6 billion is support and training activity, which will be contracted later, BAE Systems officials say. It is unclear whether the deal will ultimately include offsets to enable Turkish industry to become involved in the Eurofighter program and for Turkey to have a level of freedom of action for the fleet. After decades of facing numerous arms embargoes, Turkey often demands the ability to locally perform airframe, system and engine maintenance, repair and overhaul (MRO) in-country. The deal was struck during a meeting between UK Prime Minister Keir Starmer and Turkish President Recep Tayyip Erdoğan in Ankara. Starmer said the deal was a win for British workers and the wider UK defense industry. Government officials claim the order is “saving the Warton production line,” after concerns about a lack of new orders for UK-built Typhoons were expressed by workers unions. UK industry has a 37% share in the Eurofighter program and production of major component assemblies is being ramped up thanks to orders from the other Eurofighter partner nations including Germany, Italy and Spain. “Today’s announcement extends Typhoon production and preserves crucial sovereign skills which underpin the UK’s defense and security,” BAE Systems CEO Charles Woodburn said. The deal is another major boost for the UK defense industry, coming just weeks after the UK’s Type 26 frigates were selected by Norway in a £10 billion deal. UK Defense Secretary John Healey said the deal went beyond the procurement of aircraft. “It is the leading edge of the growing defense and industrial partnership between our two nations,” he said. As part of the visit, Starmer also visited the facilities of Turkish Aerospace Industries, where he was shown the indigenous Kaan combat aircraft. He was also exposed to the Hurjet advanced jet trainer, a potential candidate to replace the BAE Systems Hawk jet trainer in the UK Royal Air Force (RAF) inventory. The deal follows three years of negotiations, which have included lobbying of the German government for Berlin to lift a restriction on a Eurofighter sale after Erdoğan’s government arrested Istanbul Mayor Ekrem İmamoğlu, who is seen as a serious presidential rival to Erdoğan in upcoming elections. The administration of German Chancellor Friedrich Merz lifted the sanctions in part because of the benefit to German industry. A memorandum of understanding between the UK and Turkish governments for a Eurofighter sale was agreed to in July. Turkey’s interest in the aircraft is driven in part by a need for a more capable air combat platform to be available in the interim until advanced versions of the Kaan aircraft are produced in the 2030s. Ankara’s decision to opt for a European fighter, meanwhile, will have been driven by a need to diversify sources of supply after facing sanctions from the U.S. over its purchase of a Russian air defense system and banishment from the F-35 Joint Strike Fighter program. The transfer of Omani and Qatari aircraft to Turkey begs questions over the future of additional Eurofighter orders from Qatar, which has long been linked to orders for a further 12 aircraft for a total of 36. Oman, meanwhile, appears to want to consolidate its fighter fleet around the Lockheed Martin F-16 Block 50. In BAE Systems’ 2023 full-year results, the company revealed that the Omani air force had chosen not to renew support arrangements for its Typhoons, and it is unclear how active that fleet now is. Buying these additional aircraft would mean Turkey would have a mix of three configurations in its fleet. Qatar’s aircraft have the Mk.0 version of the active electronically scanned array European Common Radar System (ECRS) radar, while Oman’s feature the mechanically scanned Captor sensor. In addition to the Eurofighter order, Erdoğan and Starmer also revealed they were working on a new trade and security pact. Issue Aerospace Daily & Defense Report, October 28, 2025 Article type Article Primary Category Aircraft & Propulsion Author Tony Osborne Content source Aerospace Daily & Defense Report Exclude from lists? No Tags: Turkey , Eurofighter Typhoon , BAE Systems , MBDA Gating ASD Featured Image typhoon_1600px.jpg Secondary Categories/Subcategories Defense Budget, Policy & Operations Is iframe in the header? Off Knowledge Center Featured Content Off Do not render ads Off Temporarily set to AWIN Freemium Off"
-    ],
-    "body_zh": [
-      "土耳其签署价值 110 亿美元的欧洲战斗机交易 hockensmithawi... 2025 年 10 月 27 日星期一 - 18:19 土耳其签署了一项期待已久的 80 亿英镑（110 亿美元）交易，收购欧洲台风战斗机，这是自 2017 年以来第一份四国战斗机的主要出口合同。在运营数十年的新机和二手机之后，该国首次收购欧洲战斗机，将购买 20 架新建飞机美国制造的战斗机。但土耳其国防部长亚萨尔·古勒表示，土耳其的欧洲战斗机订单规模可能会增加一倍以上。他宣布安卡拉还将购买另外 24 架二手飞机，其中阿曼和卡塔尔各 12 架。如果这些销售成功，阿曼将放弃欧洲战斗机业务。新建飞机的交付期要到 2030 年，据古勒称，这些二手飞机最早可能于明年从卡塔尔交付，这将使土耳其能够加快欧洲战斗机的服役速度，并让老旧飞机从其库存中退役，其中包括麦道 F-4 幻影飞机。 BAE Systems 将在英国沃顿生产这架新飞机，该公司表示，该公司将获得 80 亿英镑交易中的 54 亿英镑。 54亿英镑中包括MBDA的飞机和武器包，其中包括一些可能用于土耳其本土武器的整合工作。 BAE Systems 官员表示，剩余的 26 亿英镑用于支持和培训活动，稍后将签订合同。目前尚不清楚该协议最终是否会包括补偿，以使土耳其工业能够参与欧洲战斗机计划，并使土耳其机队拥有一定程度的行动自由。在经历了数十年的多次武器禁运后，土耳其经常要求能够在国内进行机身、系统和发动机维护、修理和大修 (MRO)。该协议是在英国首相基尔·斯塔默和土耳其总统雷杰普·塔伊普·埃尔多安在安卡拉会晤期间达成的。斯塔默表示，这笔交易对英国工人和更广泛的英国国防工业来说是一场胜利。在工会表达了对英国制造的台风战机缺乏新订单的担忧后，政府官员声称该订单正在“拯救沃顿生产线”。英国工业在欧洲战斗机项目中占有 37% 的份额，并且由于德国、意大利和西班牙等其他欧洲战斗机伙伴国家的订单，主要零部件组件的生产正在增加。 BAE Systems 首席执行官查尔斯·伍德伯恩 (Charles Woodburn) 表示：“今天的公告延长了台风战机的生产，并保留了支撑英国国防和安全的关键主权技能。”这笔交易是英国国防工业的又一重大推动力，就在几周前，挪威在一笔价值 100 亿英镑的交易中选择了英国 26 型护卫舰。英国国防部长约翰·希利表示，该交易超出了飞机采购范围。 “这是我们两国之间不断发展的国防和工业伙伴关系的前沿，”他说。作为访问的一部分，斯塔默还参观了土耳其航空航天工业公司的设施，在那里他参观了本土的卡恩战斗机。他还接触了 Hurjet 高级喷气教练机，该教练机是英国皇家空军 (RAF) 库存中 BAE Systems Hawk 喷气教练机的潜在替代者。该协议经过了三年的谈判，其中包括在埃尔多安政府逮捕了伊斯坦布尔市长埃克雷姆·伊马莫格鲁后，游说德国政府要求柏林解除对欧洲战斗机销售的限制，后者被视为埃尔多安在即将举行的选举中的严重总统竞争对手。德国总理弗里德里希·梅尔茨(Friedrich Merz)政府取消了制裁，部分原因是这对德国工业有利。英国和土耳其政府于 7 月就欧洲战斗机销售达成了一份谅解备忘录。土耳其对这款飞机的兴趣部分是因为在 2030 年代生产出先进版本的卡恩飞机之前，需要在过渡期间提供更强大的空战平台。与此同时，安卡拉决定选择欧洲战斗机，是因为在因购买俄罗斯防空系统而面临美国制裁以及被排除在 F-35 联合攻击战斗机计划之外后，供应来源多样化的需要。阿曼和卡塔尔飞机向土耳其的转移引发了人们对卡塔尔额外欧洲战斗机订单未来的疑问，长期以来，卡塔尔的欧洲战斗机订单一直与另外 12 架飞机的订单有关，总计 36 架。与此同时，阿曼似乎希望以洛克希德·马丁公司的 F-16 Block 50 为中心巩固其战斗机机队。在 BAE Systems 的 2023 年全年业绩中，该公司透露，阿曼空军已选择不为其续签支持安排。台风，目前尚不清楚该舰队现在的活跃程度。购买这些额外的飞机意味着土耳其的机队将混合三种配置。卡塔尔的飞机配备了 Mk.0 版本的有源电子扫描阵列欧洲通用雷达系统 (ECRS) 雷达，而阿曼的飞机配备了机械扫描 Captor 传感器。除了欧洲战斗机订单外，埃尔多安和斯塔默还透露，他们正在制定一项新的贸易和安全协议。发行《航空航天日报与国防报告》，2025 年 10 月 28 日 文章类型 文章 主要类别 飞机与推进系统 作者托尼·奥斯本 内容来源 航空航天日报与国防报告 从列表中排除？没有标签： 土耳其 、 欧洲战斗机台风 、 BAE 系统 、 MBDA 门控 ASD 特色图片 Typhoon_1600px.jpg 二级类别/子类别 国防预算、政策和运营 标题中是否有 iframe？关闭 知识中心特色内容 关闭 不呈现广告 关闭 暂时设置为 AWIN 免费增值 关闭"
-    ],
-    "img": "",
-    "link": "https://aviationweek.com/defense/aircraft-propulsion/turkey-signs-11-billion-eurofighter-deal",
-    "source": "Aviation Week",
-    "pub_ts": 1761589186.0,
-    "score": 10.0,
-    "grp": "main",
-    "_miss": [
-      0
-    ],
-    "_keep": [
-      0
-    ]
-  },
-  {
-    "title_en": "Project Lotus, Northrop Grumman’s Secret Autonomous Aircraft Revealed",
-    "title_zh": "诺斯罗普·格鲁曼公司的秘密自主飞机“莲花计划”揭晓",
-    "summary": "Project Lotus, Northrop Grumman’s Secret Autonomous Aircraft Revealed hockensmithawi… Mon, 10/27/2025 - 18:05 Northrop Grumman has secretly built a large new uncrewed aircraft system (UAS), dubbed Project Lotus, at the company’s Scaled Composites rapid prototy",
-    "summary_zh": "<span>莲花计划，诺斯罗普·格鲁曼公司的秘密自主飞机揭晓</span> <span><span lang=\"\" about=\"/users/dan-hockensmith\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"hockensmithawin\">hockensmithawi…</span></span> <span><time",
-    "body_en": [
-      "Project Lotus, Northrop Grumman’s Secret Autonomous Aircraft Revealed hockensmithawi… Mon, 10/27/2025 - 18:05 Northrop Grumman has secretly built a large new uncrewed aircraft system (UAS), dubbed Project Lotus, at the company’s Scaled Composites rapid prototyping facility in Mojave, California, a source familiar with the project tells Aviation Week. A photo of the aircraft reviewed by Aviation Week revealed a completed, turbofan-powered aircraft parked within the Scaled Composites compound at the public airport. The Lotus UAS design in some ways resembles features of the newly revealed Lockheed Martin Project Vectis, with a long, slender fuselage positioned forward of the leading edges of the wings, capped by a nose with swept-back edges leading to a slender point. In many other respects, the Lotus and Vectis designs diverge. Unlike the engine inlet mounted low at mid-fuselage for the Vectis aircraft, the Lotus inlet sits high atop of the extreme aft section of its fuselage. The Lotus also sports sharply canted tails, breaking from the tailless-configured Vectis. Project Lotus appears to represent Northrop’s candidate for the U.S. Air Force’s Collaborative Combat Aircraft (CCA) Increment 2 program, which is finalizing requirements for competitive prototypes ahead of a scheduled acquisition process next year. The photo reveals that Northrop has already built a demonstrator, perhaps gaining a step on Lockheed’s rival design, which is not scheduled to reach first flight until 2027. As Northrop’s rapid prototyping arm, the Scaled Composites facility frequently builds aircraft demonstrators in secret. Scaled Composites registered a turbofan-powered, fixed-wing aircraft identified only as Model 444 earlier this year with the U.S. Federal Aviation Administration (FAA), which granted the organization the N444LX tail number. It is not clear if the registration represents Project Lotus or another undisclosed project. Northrop also is building the XRQ-73, also known as the Series Hybrid Electric Propulsion AiR Demonstration (Shepard), for DARPA. In response to questions about Project Lotus from Aviation Week, Northrop avoided direct answers, but spoke generally about its internal investments in autonomous aircraft. “Our investments prioritize production at speed and scale, without sacrificing performance or capability. The Northrop Grumman team has generated step-change advancements in production speed, weight and parts reduction, and overall cost efficiency. These advancements benefit the spectrum of autonomous capabilities we produce at Northrop Grumman for U.S. and international customers,” Northrop said. As Lockheed’s Project Vectis design revealed in September, Northrop’s Project Lotus represents one side in a long-running debate within industry and the Air Force over the future direction of the CCA fleet between concepts that emphasize greater survivability or lower cost. In 2024, the Air Force decided to seek a middle ground between cost and survivability with the selected competitive prototypes for the CCA Increment 1 program. The General Atomics Aeronautical Systems Inc. YFQ-42 and Anduril YFQ-44 are large aircraft that feature some low-observable, or stealth, technology. But the aircraft are larger and costlier than, for example, the Kratos XQ-58, and lack the stealthier features of Project Vectis and Project Lotus. In September, Air Force officials said they were considering the full spectrum of options for the Increment 2 CCA requirement, ranging from exquisite survivability to small, air-launched systems. Project Lotus also lends new insight into how Northrop’s internal CCA concepts have evolved from previous, publicly released ideas. As the Air Force competition for CCAs heated up in 2023, Northrop showed off the SG-1 and SG-2 concepts, which appeared similar to the cranked-kite planform of the U.S. Navy-funded X-47B demonstrator. Around the same time, Northrop also unveiled the Model 437 concept, an autonomous spinoff from the crewed Model 401 Sierra demonstrator. The Model 437 finally emerged as a piloted demonstrator aircraft in 2024. Earlier this year, Northrop announced that the aircraft had transitioned into the Beacon demonstrator, serving as a testbed for mission autonomy technology. Issue Aerospace Daily & Defense Report, October 28, 2025 Aviation Week & Space Technology, Nov. 10, 2025 Article type Article Primary Category Aircraft & Propulsion Author Steve Trimble Content source Aerospace Daily & Defense Report Aviation Week & Space Technology Exclude from lists? No Tags: UAS , Lockheed Martin , Northrop Grumman , Collaborative Combat Aircraft (CCA) Gating AWST-MRO ASD Featured Image screenshot_2025-10-27_scaled_composites_from_gmaps.png Secondary Categories/Subcategories Aerospace Defense Aircraft & Propulsion Is iframe in the header? Off Knowledge Center Featured Content Off Do not render ads Off Temporarily set to AWIN Freemium Off"
-    ],
-    "body_zh": [
-      "诺斯罗普·格鲁曼公司的莲花项目秘密揭晓 hockensmithawi…2025 年 10 月 27 日星期一 - 18:05 一位熟悉该项目的消息人士告诉《航空周刊》，诺斯罗普·格鲁曼公司已在该公司位于加利福尼亚州莫哈韦的规模化复合材料快速原型制造工厂秘密建造了一个大型新型无人驾驶飞机系统 (UAS)，称为“莲花项目”。 《航空周刊》查看的一张飞机照片显示，一架完工的涡轮风扇飞机停在公共机场的 Scaled Composites 园区内。莲花无人机的设计在某些方面类似于新推出的洛克希德·马丁公司 Vectis 项目的特征，其长而细长的机身位于机翼前缘的前面，其机头顶部有后掠边缘，通向细长的尖端。 Lotus 和 Vectis 的设计在许多其他方面存在差异。与 Vectis 飞机的发动机进气口安装在机身中部较低的位置不同，Lotus 进气口位于机身最后部的高处。 Lotus 还拥有急剧倾斜的尾部，与无尾配置的 Vectis 不同。 Lotus 项目似乎代表了诺斯罗普美国空军协同作战飞机 (CCA) Increment 2 计划的候选者，该计划将在明年预定的采购过程之前最终确定竞争性原型机的要求。这张照片显示，诺斯罗普公司已经制造了一架验证机，或许比洛克希德公司的竞争对手设计领先一步，后者预计要到 2027 年才能实现首飞。作为诺斯罗普公司的快速原型制造部门，Scaled Composites 工厂经常秘密制造飞机验证机。今年早些时候，Scaled Composites 向美国联邦航空管理局 (FAA) 注册了一架涡轮风扇动力固定翼飞机，型号为 444，并授予该组织 N444LX 尾号。目前尚不清楚该注册是否代表 Project Lotus 还是另一个未公开的项目。诺斯罗普还正在为 DARPA 建造 XRQ-73，也称为系列混合电动推进 AiR 演示（Shepard）。在回答《航空周刊》有关莲花项目的问题时，诺斯罗普避免直接回答，但笼统地谈到了其对自动驾驶飞机的内部投资。诺斯罗普表示：“我们的投资优先考虑速度和规模生产，而不牺牲性能或能力。诺斯罗普·格鲁曼团队在生产速度、重量和零件减少以及整体成本效率方面取得了巨大进步。这些进步有利于我们在诺斯罗普·格鲁曼为美国和国际客户生产的一系列自主能力。”正如洛克希德公司的 Vectis 项目设计在 9 月透露的那样，诺斯罗普的 Lotus 项目代表了工业界和空军内部关于 CCA 机队未来方向的长期争论中的一方，争论强调更高的生存能力或更低的成本。 2024 年，空军决定为 CCA Increment 1 计划选定具有竞争力的原型机，在成本和生存能力之间寻求中间立场。通用原子航空系统公司的 YFQ-42 和 Anduril YFQ-44 是大型飞机，采用一些低可观测或隐形技术。但该飞机比 Kratos XQ-58 等飞机更大、更昂贵，并且缺乏 Project Vectis 和 Project Lotus 的隐身功能。 9 月，空军官员表示，他们正在考虑满足 Increment 2 CCA 要求的全方位选择，从出色的生存能力到小型空射系统。 Lotus 项目还为诺斯罗普内部 CCA 概念如何从之前公开发布的想法演变而来提供了新的见解。随着 2023 年空军 CCA 竞争的白热化，诺斯罗普展示了 SG-1 和 SG-2 概念，它们看起来类似于美国海军资助的 X-47B 验证机的曲柄风筝平面图。大约在同一时间，诺斯罗普还推出了 Model 437 概念车，这是载人 Model 401 Sierra 验证机的自主衍生产品。 437 型最终于 2024 年成为有人驾驶验证机。今年早些时候，诺斯罗普宣布该飞机已转变为 Beacon 验证机，作为任务自主技术的测试平台。发行《航空航天日报与国防报告》，2025 年 10 月 28 日 《航空周刊与航天技术》，2025 年 11 月 10 日 文章类型 文章主要类别 飞机与推进系统 作者 Steve Trimble 内容来源 航空航天日报与国防报告 航空周刊与航天技术 从列表中排除？没有标签：UAS、洛克希德·马丁公司、诺斯罗普·格鲁曼公司、协同作战飞机 (CCA) 门控 AWST-MRO ASD 特色图片 snapshot_2025-10-27_scaled_composites_from_gmaps.png 二级类别/子类别 航空航天防御飞机与推进系统 标题中是否有 iframe？关闭 知识中心特色内容 关闭 不呈现广告 关闭 暂时设置为 AWIN 免费增值 关闭"
-    ],
-    "img": "",
-    "link": "https://aviationweek.com/defense/aircraft-propulsion/project-lotus-northrop-grummans-secret-autonomous-aircraft-revealed",
-    "source": "Aviation Week",
-    "pub_ts": 1761588346.0,
-    "score": 10.0,
-    "grp": "main",
-    "_miss": [
-      0
-    ],
-    "_keep": [
-      0
-    ]
-  },
-  {
-    "title_en": "Second B-21 Enters Flight Test In Palmdale",
-    "title_zh": "第二架 B-21 在帕姆代尔进行飞行测试",
-    "summary": "Second B-21 Enters Flight Test In Palmdale hockensmithawi… Thu, 09/11/2025 - 18:36 The B-21 Raider program completed the first flight of a second airborne test aircraft in Palmdale, California on Sept. 11, clearing a key milestone a month before the 10th anniv",
-    "summary_zh": "<span>第二架 B-21 在棕榈谷进行飞行测试</span> <span><span lang=\"\" about=\"/users/dan-hockensmith\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"hockensmithawin\">hockensmithawi…</span></span> <span><time datetime=\"2025-09-11T18:36:",
-    "body_en": [
-      "Second B-21 Enters Flight Test In Palmdale hockensmithawi… Thu, 09/11/2025 - 18:36 The B-21 Raider program completed the first flight of a second airborne test aircraft in Palmdale, California on Sept. 11, clearing a key milestone a month before the 10th anniversary of the U.S. Air Force contract award to Northrop Grumman. Witnesses posted video on social media showing the B-21 flight-test aircraft passing overhead with wheels retracted and followed by a Lockheed Martin F-16 chase plane. “We can now expedite critical evaluations of mission systems and weapons capabilities, directly supporting the strategic deterrence and combat effectiveness envisioned for this aircraft,” Air Force Secretary Troy Meink said. Northrop assembles all B-21s inside Building 401 on Site 4 of the Air Force’s Plant 42 complex at Palmdale Regional Airport. New test aircraft must fly out of the public airport after they have been assembled, before they can relocate to the secure area of nearby Edwards Air Force Base. The milestone comes nearly 22 months after Northrop completed the maiden sortie of the first flight test version of the B-21 on Nov. 10, 2023. The company has also delivered to the Air Force two more fully assembled airframes, which are reserved for static and fatigue testing on the ground. Two more flight-test aircraft have been in some stage of assembly since at least February 2022. Air Force officials say the program remains on track to clear the initial operational capability milestone in the mid-2020s. Northrop won the $21.4 billion contract in October 2015 for the engineering and manufacturing development phase of the Long-Range Strike Bomber, which the Air Force later rechristened as the B-21 Raider. The Air Force also signed orders with Northrop for the first two-year lots of low-rate initial production. Issue Aviation Week & Space Technology, Sept. 15, 2025 Aerospace Daily & Defense Report, September 12, 2025 Article type Article Primary Category Aircraft & Propulsion Author Steve Trimble Content source Aerospace Daily & Defense Report Aviation Week & Space Technology Exclude from lists? No Tags: B-21 , Lockheed Martin F-16 , U.S. Air Force (USAF) Gating AWST ASD A Closer Look At Northrop Grumman's B-21 After B-21 Rollout, U.S. Air Force Plans To Embark On Test Program Arrival Of A Second Airworthy B-21 Inches Closer For U.S. Air Force Featured Image b21awin_usairforce.jpg Secondary Categories/Subcategories Defense Is iframe in the header? Off Knowledge Center Featured Content Off Do not render ads Off Temporarily set to AWIN Freemium Off"
-    ],
-    "body_zh": [
-      "第二架 B-21 在帕姆代尔霍肯史密斯阿维进行飞行测试…2025 年 9 月 11 日星期四 - 18:36 B-21 Raider 项目于 9 月 11 日在加利福尼亚州帕姆代尔完成了第二架机载测试飞机的首次飞行，在美国空军与诺斯罗普·格鲁曼公司签订合同 10 周年前一个月完成了一个重要的里程碑。目击者在社交媒体上发布的视频显示，轮子收起的 B-21 试飞机从头顶飞过，后面跟着一架洛克希德·马丁公司的 F-16 追击机。空军部长特洛伊·梅克说：“我们现在可以加快对任务系统和武器能力的关键评估，直接支持这架飞机的战略威慑和战斗力。”诺斯罗普公司在帕姆代尔地区机场空军 42 号工厂 4 号基地的 401 号楼内组装所有 B-21。新的测试飞机必须在组装后飞离公共机场，然后才能转移到附近爱德华兹空军基地的安全区域。这一里程碑是在诺斯罗普公司于 2023 年 11 月 10 日完成 B-21 首次飞行测试版本的首次飞行近 22 个月后实现的。该公司还向空军交付了两架组装更齐全的机身，用于地面静态和疲劳测试。至少自 2022 年 2 月起，另外两架飞行测试飞机已进入组装阶段。空军官员表示，该计划仍在按计划进行，将在 2020 年代中期实现初始作战能力里程碑。诺斯罗普公司于 2015 年 10 月赢得了价值 214 亿美元的合同，用于远程攻击轰炸机的工程和制造开发阶段，空军后来将其重新命名为 B-21 袭击者。空军还与诺斯罗普公司签署了前两年批量低速初始生产的订单。问题 航空周刊与航天技术，2025 年 9 月 15 日 航空航天日报与国防报告，2025 年 9 月 12 日 文章类型 文章主要类别 飞机与推进系统 作者 Steve Trimble 内容来源 航空航天日报与国防报告 航空周刊与航天技术 从列表中排除？没有标签： B-21 、洛克希德·马丁公司 F-16 、美国空军 (USAF) 关闭 AWST ASD 近距离观察诺斯罗普·格鲁曼公司的 B-21 在 B-21 推出后，美国空军计划启动测试计划 第二架适航 B-21 即将抵达美国空军 特色图片 b21awin_usairforce.jpg类别/子类别 防御 iframe 是否在标头中？关闭 知识中心特色内容 关闭 不呈现广告 关闭 暂时设置为 AWIN 免费增值 关闭"
-    ],
-    "img": "",
-    "link": "https://aviationweek.com/defense/aircraft-propulsion/second-b-21-enters-flight-test-palmdale",
-    "source": "Aviation Week",
-    "pub_ts": 1757615804.0,
-    "score": 10.0,
-    "grp": "main",
-    "_miss": [
-      0
-    ],
-    "_keep": [
-      0
-    ]
-  },
-  {
-    "title_en": "EHang VT35",
-    "title_zh": "亿航VT35",
-    "summary": "EHang VT35 william.moore@… Tue, 07/29/2025 - 08:58 The VT35 is an autonomous lift-plus-cruise eVTOL being developed by EHang. The first prototype VT35 has completed final assembly and is now undergoing flight testing, with the first public flight occurring in ",
-    "summary_zh": "<span>亿航VT35</span> <span><span lang=\"\" about=\"/users/william-moore-7\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"william.moore\">william.moore@…</span></span> <span><时间datetime=\"2025-07-29T08:58:34+00:00\" title=\"7 月 29 日星期二",
-    "body_en": [
-      "EHang VT35 william.moore@… Tue, 07/29/2025 - 08:58 The VT35 is an autonomous lift-plus-cruise eVTOL being developed by EHang. The first prototype VT35 has completed final assembly and is now undergoing flight testing, with the first public flight occurring in December 2025. Certification will be with the Civil Aviation Administration of China (CAAC), as with EHang’s EH216-S, and certification is expected to be accelerated owing to the company’s experience certifying the previous model. Structure and Powertrain The VT35 seats two passengers inside a cabin featuring panoramic viewing windows. It features eight distributed lift propellers on tandem wings for vertical takeoff and landing—four facing upward and four downward—and an aft-mounted pusher prop for cruise flight. Each fan is individually powered by it’s own electric motor. Distributed electric propulsion (DEP) is the name given to this method of powering aircraft. No critical points of failure provide a high level of redundancy and will ensure safety onboard. Specifications Aircraft Type Lift-plus-cruise eVTOL Seats 2 MTOW 2,094 lbs./950kg Payload 440 lbs./200kg Length Approx 26 ft./8m Wingspan Approx 26 ft./8m Landing Gear Unknown – Previous iteration featured fixed tricycle wheeled gear Cruising Altitude Unknown Cruising Speed Unknown Range 124 miles/200km Endurance Unknown Flight Controls Advanced autonomous flight control systems Takeoff & Landing VTOL Autonomy Yes Channel Commercial Aviation Market Indicator Code Commercial Program Profile ID 471806"
-    ],
-    "body_zh": [
-      "EHang VT35 william.moore@… 星期二，07/29/2025 - 08:58 VT35 是 EHang 正在开发的一款自动升降加巡航 eVTOL。首架原型机 VT35 已完成总装，目前正在进行飞行测试，预计将于 2025 年 12 月进行首次公开​​飞行。与亿航 EH216-S 一样，认证将由中国民用航空局 (CAAC) 进行，由于该公司对之前型号的认证经验，预计认证将加快。结构和动力系统 VT35 的机舱内可容纳两名乘客，并配有全景窗户。它的串联机翼上有八个分布式升力螺旋桨，用于垂直起飞和着陆（四个朝上，四个朝下），以及一个用于巡航飞行的安装在船尾的推进器。每个风扇均由自己的电动机单独供电。分布式电力推进（DEP）是这种为飞机提供动力的方法的名称。无关键故障点提供高水平的冗余并确保船上安全。规格 飞机类型 升力加巡航 eVTOL 座位 2 个 MTOW 2,094 磅/950kg 有效负载 440 磅/200kg 长度约 26 ft./8m 翼展约 26 ft./8m 起落架未知 – 上一代采用固定三轮车轮式齿轮 巡航高度未知 巡航速度未知 航程 124英里/200 公里 续航力 未知 飞行控制 先进自主飞行控制系统 起飞和着陆 VTOL 自主 是 频道 商业航空市场指标代码 商业计划概况 ID 471806"
-    ],
-    "img": "",
-    "link": "https://aviationweek.com/node/4780076",
-    "source": "Aviation Week",
-    "pub_ts": 1753779514.0,
-    "score": 10.0,
-    "grp": "main",
-    "_miss": [
-      0
-    ],
-    "_keep": [
-      0
-    ]
-  },
-  {
-    "title_en": "Diamond V.MO",
-    "title_zh": "钻石V.MO",
-    "summary": "Diamond V.MO william.moore@… Wed, 07/02/2025 - 09:55 The V.MO is a lift and cruise eVTOL aircraft being developed by Diamond Aircraft Industries GmbH, a subsidiary of the Wanfeng Auto Holding Group. The aircraft design was originally developed by Volkswagen Ch",
-    "summary_zh": "<span>钻石 V.MO</span> <span><span lang=\"\" about=\"/users/william-moore-7\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"william.moore\">william.moore@…</span></span> <span><时间datetime=\"2025-07-02T09:55:06+00:00\" title=\"七月星期三",
-    "body_en": [
-      "Diamond V.MO william.moore@… Wed, 07/02/2025 - 09:55 The V.MO is a lift and cruise eVTOL aircraft being developed by Diamond Aircraft Industries GmbH, a subsidiary of the Wanfeng Auto Holding Group. The aircraft design was originally developed by Volkswagen China and was transferred to Diamond following a deal between the two companies in February 2024. A subscale prototype of the V.MO first flew in 2022. The full-scale aircraft design was unveiled at the Zhuhai Airshow in November 2024. No official certification plans have been announced. Structure and Powertrain The V.MO seats a pilot and four passengers in a streamlined cabin. The aircraft features a twin-boom connected by fore and aft wings, with eight vertical lift fans distributed along the booms. The aircraft features two pusher propellers, providing propulsion during wing-borne cruise flight. The aircraft features distributed electric propulsion (DEP), with each propeller powered by its own electric motor. This design approach provides high redundancy and reliability by eliminating critical points of failure. Specifications Aircraft Type Lift and Cruise eVTOL Seats Pilot + 4 MTOW 2,000–2,500 kg / 4,400–5,500 lb Range 200 km / 125 miles Cruising Speed 200 kph / 125 mph Propulsion 10 electric motors power 10 propellers (8 lift fans and 2 pusher propellers) Power/Energy Storage Battery details unknown. Flight Controls Fly-by-wire Takeoff & Landing VTOL Autonomy No Channel Commercial Aviation Market Indicator Code Commercial Program Profile ID 471800"
-    ],
-    "body_zh": [
-      "Diamond V.MO william.moore@… 周三，07/02/2025 - 09:55 V.MO 是一款升降巡航电动垂直起降飞机，由万丰奥特控股集团子公司 Diamond Aircraft Industries GmbH 开发。该飞机设计最初由大众中国开发，并在两家公司于 2024 年 2 月达成协议后转让给 Diamond。V.MO 的小型原型机于 2022 年首飞。全尺寸飞机设计于 2024 年 11 月在珠海航展上亮相。目前尚未公布任何官方认证计划。结构和动力系统 V.MO 的流线型机舱内可容纳一名飞行员和四名乘客。该飞机具有由前后翼连接的双吊臂，沿吊臂分布有八个垂直升力风扇。该飞机配有两个推进式螺旋桨，在翼载巡航飞行期间提供推进力。该飞机采用分布式电力推进（DEP），每个螺旋桨均由自己的电动机提供动力。这种设计方法通过消除关键故障点来提供高冗余和可靠性。规格 飞机类型 升降和巡航 eVTOL 座椅 飞行员 + 4 个最大起飞重量 2,000–2,500 公斤/4,400–5,500 磅 航程 200 公里/125 英里 巡航速度 200 公里/小时/125 英里/小时 推进 10 个电动机为 10 个螺旋桨提供动力（8 个升力风扇和 2 个推进螺旋桨） 动力/储能电池详细信息未知。飞行控制 电传飞行起飞和着陆 VTOL 自主 无通道商用航空市场指标代码 商业计划概况 ID 471800"
-    ],
-    "img": "",
-    "link": "https://aviationweek.com/node/4773341",
-    "source": "Aviation Week",
-    "pub_ts": 1751450106.0,
-    "score": 10.0,
-    "grp": "main",
-    "_miss": [
-      0
-    ],
-    "_keep": [
-      0
-    ]
-  },
-  {
-    "title_en": "Zero Gravity ZG-T6",
-    "title_zh": "零重力ZG-T6",
-    "summary": "Zero Gravity ZG-T6 william.moore@… Wed, 07/02/2025 - 09:51 The ZG-T6 is a tiltrotor eVTOL concept being developed by Zero Gravity Aircraft Industry. It is designed for both passenger transport and urban air cargo missions and is set to enter into service in 20",
-    "summary_zh": "<span>零重力 ZG-T6</span> <span><span lang=\"\" about=\"/users/william-moore-7\" typeof=\"schema:Person\" property=\"schema:name\" datatype=\"\" content=\"william.moore\">william.moore@…</span></span> <span><time datetime=\"2025-07-02T09:51:25+00:00\" title=\"星期三",
-    "body_en": [
-      "Zero Gravity ZG-T6 william.moore@… Wed, 07/02/2025 - 09:51 The ZG-T6 is a tiltrotor eVTOL concept being developed by Zero Gravity Aircraft Industry. It is designed for both passenger transport and urban air cargo missions and is set to enter into service in 2028. Certification is expected to come from the Civil Aviation Authority of China (CAAC). Structure and Powertrain The aircraft is designed to seat one pilot and five passengers inside a carbon fiber composite cabin with panoramic wrap-around windows for enhanced visibility. It is equipped with six tiltrotors powered by six electric motors, allowing for vertical takeoff and landing, and forward flight. The tiltrotors are positioned on the ends of the V-tail, high wing, and low forewing. Distributed electric propulsion (DEP) is the name given to this method of powering aircraft. No critical points of failure provide a high level of redundancy and will ensure safety onboard. Specifications Aircraft Type Tiltrotor eVTOL Seats Pilot + 5 passengers MTOW 2,500 kg (5,512 lb) (Estimated) Range 300 km (186 miles) (Estimated) Cruising Speed 250 kph (155 mph) (Estimated) Flight Time 90 minutes (Estimated) Landing Gear Fixed tricycle wheeled landing gear Propulsion 6 tilt-propellers powered by 6 electric motors Power/Energy Storage Batteries – details unknown Flight Controls Fly-by-wire Takeoff & Landing VTOL Autonomy Planned for future operations Safety Emergency ballistic parachute Channel Commercial Aviation Market Indicator Code Commercial Program Profile ID 471802"
-    ],
-    "body_zh": [
-      "零重力 ZG-T6 william.moore@… 星期三，07/02/2025 - 09:51 ZG-T6 是零重力飞机工业正在开发的倾转旋翼电动垂直起降概念。它专为客运和城市航空货运任务而设计，计划于 2028 年投入使用。预计将获得中国民航局 (CAAC) 的认证。结构和动力系统 该飞机的碳纤维复合材料机舱内可容纳一名飞行员和五名乘客，并配有全景环绕式窗户，以提高视野。它配备了由六个电动机驱动的六个倾转旋翼机，可以垂直起降和向前飞行。倾转旋翼机位于 V 型尾翼、高机翼和低前翼的末端。分布式电力推进（DEP）是这种为飞机提供动力的方法的名称。无关键故障点提供高水平的冗余并确保船上安全。规格 飞机类型 倾转旋翼电动垂直起降 座位 飞行员 + 5 名乘客 最大起飞重量 2,500 公斤（5,512 磅）（估计） 航程 300 公里（186 英里）（估计） 巡航速度 250 公里/小时（155 英里/小时）（估计） 飞行时间 90 分钟（估计） 起落架 固定三轮式起落架 推进力 6 个倾斜螺旋桨，由 6 提供动力电动马达 动力/储能电池 – 详细信息未知 飞行控制 电传起飞和着陆 VTOL 自主 计划未来操作 安全 紧急弹道降落伞 通道 商业航空市场指标代码 商业计划简介 ID 471802"
-    ],
-    "img": "",
-    "link": "https://aviationweek.com/node/4773331",
-    "source": "Aviation Week",
-    "pub_ts": 1751449885.0,
-    "score": 10.0,
-    "grp": "main",
-    "_miss": [
-      0
-    ],
-    "_keep": [
-      0
-    ]
   },
   {
     "title_en": "Why The Embraer E175's Thrust Sounds Loud For A Regional Jet",
@@ -1343,8 +1136,80 @@
     "link": "https://simpleflying.com/embraer-e175-thrust-loud-regional-jet/",
     "source": "Simple Flying",
     "pub_ts": 1792875619.0,
-    "score": 9.97,
+    "score": 9.8,
     "grp": "main"
+  },
+  {
+    "title_en": "Western Sydney Airport opens as first Jetstar flight hits the runway",
+    "title_zh": "捷星航空首架航班抵达跑道，西悉尼机场正式启用",
+    "summary": "Western Sydney International (Nancy-Bird Walton) Airport (WSI) today welcomed its first customers marking a seismic day for Australian… The post Western Sydney Airport opens as first Jetstar flight hits the runway appeared first on AeroTime .",
+    "summary_zh": "西悉尼国际（南希-伯德沃尔顿）机场 (WSI) 今天迎来了第一批乘客，标志着澳大利亚的地震日......",
+    "body_en": [
+      "Western Sydney International (Nancy-Bird Walton) Airport (WSI) today welcomed its first customers marking a seismic day for Australian commercial aviation and the country’s largest city.",
+      "Starting proceedings on October 25, 2026, a Jetstar Airbus A320neo, registered VH-A5E, was first to hit the runway, departing Western Sydney International just after 11:20, local time, for a flight to Gold Coast Airport (OOL). A later Jetstar flight also departed for Melbourne Airport (MEL).",
+      "Australian Prime Minister Anthony Albanese led the celebrations describing the opening as a “milestone that has been decades in the making”.",
+      "“For the first time in more than 50 years, Australia is opening a major new airport,” Prime Minister Albanese said. “I’ve been a strong supporter of this project for a long time and I’m very proud to officially open it. I want to thank the thousands of workers who made it happen.”",
+      "He added: “This airport will make a real difference for Western Sydney, creating jobs, supporting local businesses, and making it easier for people to travel for generations to come.”",
+      "A spokesperson for the airport said WSI will “transform the way Sydney-siders travel domestically and abroad, substantially boosting capacity, creating greater choice, and delivering 24-hour connectivity”.",
+      "Western Sydney, which will operate 24 hours a day, opens with the capacity to cater for up to 10 million passengers a year and has been designed to grow with Sydney.",
+      "Over time, it is expected to become Australia’s primary gateway, with capacity for more than 80 million passengers annually.",
+      "The airport’s airline partners include Jetstar, Air New Zealand, Singapore Airlines, Qantas Group, Vietjet, Fiji Airway and Qatar Airways.",
+      "“For decades, countless people have advocated for an airport in Western Sydney and the social and economic benefits it would provide,” Western Sydney Airport CEO Simon Hickey, said. “Today, that ambition will become a reality as we mark the beginning of an exciting new chapter in our city’s cultural heartland.”",
+      "He added: “WSI is the most transformational piece of infrastructure our nation has seen since the Syndey Harbour Bridge. It brings the world closer to Western Sydney and opportunity closer to home, creating new meaningful jobs for generations to come.”",
+      "Western Sydney International Airport is located at Badgerys Creek in Western Sydney, about 44 kilometers west of the city’s central business district.",
+      "The post Western Sydney Airport opens as first Jetstar flight hits the runway appeared first on AeroTime ."
+    ],
+    "body_zh": [
+      "西悉尼国际（南希-伯德沃尔顿）机场 (WSI) 今天迎来了第一批乘客，这对澳大利亚商业航空和该国最大的城市来说是一个重大的日子。",
+      "程序于 2026 年 10 月 25 日开始，一架注册为 VH-A5E 的捷星空客 A320neo 最先冲上跑道，于当地时间 11 点 20 分刚过西悉尼国际机场，飞往黄金海岸机场 (OOL)。随后的捷星航空航班也飞往墨尔本机场 (MEL)。",
+      "澳大利亚总理安东尼·阿尔巴内塞 (Anthony Albanese) 主持了庆祝活动，将开业描述为“几十年来酝酿的里程碑”。",
+      "“澳大利亚 50 多年来首次开设一座大型新机场，”阿尔巴内塞总理表示。 “长期以来，我一直是这个项目的坚定支持者，我很自豪能够正式开放它。我要感谢成千上万的工作人员，是他们促成了这个项目。”",
+      "他补充道：“这个机场将为西悉尼带来真正的改变，创造就业机会，支持当地企业，并使子孙后代的出行更加便捷。”",
+      "机场发言人表示，WSI 将“改变悉尼人国内外旅行的方式，大幅提高运力，创造更多选择，并提供 24 小时连通性”。",
+      "西悉尼将全天 24 小时运营，每年可容纳多达 1000 万名旅客，并旨在与悉尼一起发展。",
+      "随着时间的推移，它预计将成为澳大利亚的主要门户，每年接待旅客超过 8000 万人次。",
+      "该机场的航空公司合作伙伴包括捷星航空、新西兰航空、新加坡航空、澳洲航空、越捷航空、斐济航空和卡塔尔航空。",
+      "西悉尼机场首席执行官西蒙·希基 (Simon Hickey) 表示：“几十年来，无数人一直主张在西悉尼建立机场及其所带来的社会和经济效益。” “今天，随着我们标志着我们城市文化中心激动人心的新篇章的开始，这一雄心壮志将成为现实。”",
+      "他补充道：“WSI 是自悉尼海港大桥以来我们国家最具变革性的基础设施。它拉近了世界与西悉尼的距离，让机遇离家乡更近，为子孙后代创造了新的有意义的就业机会。”",
+      "西悉尼国际机场位于西悉尼的 Badgerys Creek，距离城市中央商务区以西约 44 公里。",
+      "AeroTime 率先报道了西悉尼机场启用后首架捷星航班撞上跑道的情况。"
+    ],
+    "img": "https://www.aerotime.aero/images/2026/05/Western-Sydney-International-Airport-1200x800.jpg",
+    "link": "https://www.aerotime.aero/articles/western-sydney-airport-opens-jetstar-flight",
+    "source": "AeroTime",
+    "pub_ts": 1792921013.0,
+    "score": 9.79,
+    "grp": "main",
+    "_miss": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "_keep": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
   },
   {
     "title_en": "Weekly Review: October 24, 2026",
@@ -1399,47 +1264,7 @@
     "link": "https://onemileatatime.com/weekly-review/2026-10-24/",
     "source": "OMAAT",
     "pub_ts": 1792874700.0,
-    "score": 9.94,
-    "grp": "main"
-  },
-  {
-    "title_en": "Reports: United Airlines Planning To Open New Crew Bases In Dallas/Fort Worth & Sacramento",
-    "title_zh": "报道：联合航空计划在达拉斯/沃斯堡和萨克拉门托开设新的机组人员基地",
-    "summary": "United says the new bases will recuce hotel costs and the need for layovers.",
-    "summary_zh": "联合航空表示，新基地将减少酒店成本和中途停留的需要。",
-    "body_en": [
-      "Reports: United Airlines Planning To Open New Crew Bases In Dallas/Fort Worth & Sacramento",
-      "Paul Thompson is an aviation & travel journalist, photographer, & airplane geek with over 25 years of experience at a large domestic US carrier. He is based in Denver, Colorado.",
-      "United Airlines is reportedly opening two new crew bases, and the locations may come as a surprise to a lot of people. The chosen locations of Dallas/Fort Worth International Airport (DFW) and Sacramento International Airport (SMF) will bring the airline's total number of bases to 21. The two new bases will be smaller than their large hubs, which operate hundreds of daily flights.",
-      "The new flight attendant bases will supplement its network, which includes 19 other hub and satellite bases. United says DFW will open first, followed by SMF. United plans to open both bases early next year, according to a video announcement on Instagram.",
-      "The DFW announcement has raised some eyebrows because the airport is home to American Airlines . However, United only operates 31 daily departures at DFW. United operates from six gates at DFW in Terminal E — E4-E9. Each gate can support 10-12 daily flights, so United has room to grow if it chooses. These DFW flights currently serve United's hub cities in Chicago, Denver, Houston, Los Angeles, Newark, San Francisco, and Washington, DC.",
-      "From SMF, United operates only 19-20 daily departures, also to its hub cities. United has hundreds of flight attendants based at San Francisco International Airport SFO who may not live near the airport. This would appeal to people living in the Sacramento area, which has a lower cost of living than San Francisco. It's about a 2-hour drive from Sacramento to SFO (103 miles), but United flies the route in about 40 minutes.",
-      "Adding a flight attendant base doesn't necessarily mean an airline plans major growth in a city. Flight attendants are assigned bases from which their trips begin and end. If a flight attendant doesn't live in their base city, they have to commute to that base without pay. The new bases at DFW and SMF will allow United cabin crew members who live in or near those cities to work from their home airport. In an emailed response to SimpleFlying, United said, \" These locations were chosen because they will help reduce hotel costs and the need for layovers, and they are a good fit for places where our flight attendants already live. \"",
-      "The new crew bases also save United some money. Instead of paying for layover hotels for the flight attendants who end their day at DFW or SMF, they can just go home. A crew base also lets United keep a handful of flight attendants on call and ready for assignment if irregular operations occur. Crew schedulers can assign these flight attendants on the spot to work a flight if another crew is delayed.",
-      "Significant delays may cause a crew to \"time out,\" putting them beyond the legal limit of working hours. This is particularly crucial at DFW, which is often hit by severe thunderstorms and also experiences snow and ice storms in the winter.",
-      "United currently has 19 crew bases across its network, several of which are in cities with relatively small operations compared with its hubs. Austin is considered a \"satellite\" base, with 40-50 daily departures. Fort Lauderdale is another satellite base, with 30 daily departures. In Orlando, United has about 40 daily departures and plans to grow that number to 79 by next year.",
-      "United has two international crew bases — one at London Heathrow Airport (LHR) and one at Antonio B. Won Pat International Airport (GUM), in Guam. At LHR, United has about 20 daily flights to its domestic hubs, using the Boeing 767, 777, and 787 Dreamliner. Having a crew base at LHR allows United to position flight attendants in other European cities more quickly, if needed. United has about 12 daily departures at GUM. GUM is especially unique because United flies to Pacific destinations from there. United has a sub-fleet of 10 737 MAX 8s .",
-      "Commuting can cause headaches for flight attendants who do not live in their base cities and can add several unpaid hours to their time away from home. Newly hired flight attendants are discouraged from commuting, but it can be necessary when the base city's cost of living is unfavorable for those at the low end of the salary scale."
-    ],
-    "body_zh": [
-      "报道：联合航空计划在达拉斯/沃斯堡和萨克拉门托开设新的机组人员基地",
-      "Paul Thompson 是一位航空和旅行记者、摄影师和飞机极客，在美国一家大型国内航空公司拥有超过 25 年的经验。他居住在科罗拉多州丹佛市。",
-      "据报道，联合航空公司将开设两个新的机组人员基地，其地点可能会让很多人感到惊讶。选定的达拉斯/沃斯堡国际机场 (DFW) 和萨克拉门托国际机场 (SMF) 地点将使该航空公司的基地总数达到 21 个。与每天运营数百个航班的大型枢纽相比，这两个新基地的规模将较小。",
-      "新的空乘人员基地将补充其网络，其中包括其他 19 个枢纽和卫星基地。美联航表示 DFW 将首先开业，随后是 SMF。根据美联航在 Instagram 上发布的视频公告（如下），这两个基地均计划于明年初开放。",
-      "DFW 的公告引起了一些人的关注，因为该机场是美国航空公司的所在地。然而，美联航每天仅在 DFW 运营 31 班航班。美联航在 DFW 航站楼 E（E4-E9）的 6 个登机口运营航班。每个登机口每天可支持 10-12 个航班，因此如果美联航选择的话，他们还有发展的空间。这些 DFW 航班目前飞往其枢纽城市：芝加哥 (ORD)、丹佛 (DEN)、休斯顿 (IAH)、洛杉矶 (LAX)、纽瓦克 (EWR)、旧金山 (SFO) 和华盛顿特区 (IAD)。",
-      "美联航每天仅运营 19 至 20 趟从 SMF 出发的航班，也飞往其枢纽城市。美联航在 SFO 设有数百名空乘人员，但他们可能不住在机场附近。这对居住在萨克拉门托地区的人来说很有吸引力，因为那里的生活成本比旧金山低。从萨克拉门托到 SFO 大约需要 2 小时车程（103 英里），但美联航飞这条航线大约需要 40 分钟。",
-      "增加空乘人员数量并不一定意味着航空公司计划在某个城市进行大规模扩张。空乘人员被分配了旅行开始和结束的基地。如果空乘人员不住在他们的基地城市，他们就必须无薪通勤到该基地。 DFW 和 SMF 的新基地将允许居住在这些城市或附近的美联航机组人员在其家乡机场工作。美联航在给 SimpleFlying 的电子邮件回复中表示，“选择这些地点是因为它们将有助于降低酒店成本和中途停留的需要，而且非常适合我们空乘人员已经居住的地方。”",
-      "新的机组人员基地也为曼联节省了一些钱。在 DFW 或 SMF 结束一天工作的空乘人员无需支付中转酒店费用，而是可以直接回家。机组人员基地也是美联航可以让少数空乘人员随时待命的地方，以便在发生不正常操作时做好执行任务的准备。如果其他机组人员延误，机组调度人员可以在现场指派这些空乘人员来处理航班。",
-      "严重的延误可能会导致工作人员“超时”，从而超出法定的工作时间限制。这对于 DFW 尤为重要，这里经常遭受严重的雷暴袭击，并且在冬季还会经历雪和冰暴。美联航在 Instagram 上以视频形式宣布了 DFW 和 SMF 基地的消息。",
-      "美联航目前在整个网络中拥有 19 个机组人员基地，其中几个基地位于与其枢纽相比运营规模相对较小的城市。奥斯汀（澳大利亚）被视为“卫星”基地，每天有 40 至 50 趟航班出发。劳德代尔堡 (FLL) 是另一个卫星基地，每天有 30 趟航班出发。在奥兰多 (MCO)，美联航每天约有 40 班航班出发，美联航计划到明年将这一数字增加到 79 班。",
-      "美联航拥有两个国际机组人员基地，一处位于伦敦希思罗机场 (LHR)，另一处位于关岛的安东尼奥·汪帕特国际机场 (GUM)。在 LHR，美联航每天有约 20 趟航班飞往其国内枢纽，使用的是波音 767、777 和 787。在 LHR 设有机组人员基地，使美联航能够在需要时更快地在其他欧洲城市安排空乘人员。美联航每天大约有 12 趟从古姆百货出发的航班。古姆百货公司尤为独特，因为美联航从那里飞往太平洋目的地。美联航在古姆百货公司拥有一支由 10 架波音 737-800 飞机组成的机队，这些飞机将被 10 架波音 737-8 飞机取代。",
-      "对于不住在基地城市的空乘人员来说，通勤可能会让人头疼，并且可能会增加他们离开家的无薪时间。新雇用的空乘人员不鼓励通勤，但如果基地城市的生活成本对工资低端的人不利，那么通勤可能是必要的。"
-    ],
-    "img": "https://static0.simpleflyingimages.com/wordpress/wp-content/uploads/2026/10/united-at-dfw.jpg",
-    "link": "https://simpleflying.com/united-airlines-planning-open-new-crew-bases-dallas-fort-worth-sacramento/",
-    "source": "Simple Flying",
-    "pub_ts": 1792873639.0,
-    "score": 9.9,
+    "score": 9.77,
     "grp": "main"
   },
   {
@@ -1483,7 +1308,7 @@
     "link": "https://www.aerotime.aero/articles/faa-boeing-737ng-stabilizer-inspections",
     "source": "AeroTime",
     "pub_ts": 1792772785.0,
-    "score": 9.53,
+    "score": 9.47,
     "grp": "main"
   },
   {
@@ -1511,7 +1336,7 @@
       "The Chase Sapphire Preferred dropped its 10% anniversary points bonus",
       "Existing cardholders had a grace period before these changes kicked in, but that ended at the beginning of October 2026.",
       "Chase Sapphire Preferred bonus, eligibility, & fees",
-      "When applying for a card, people are often motivated by a large welcome bonus, and that has to be balanced with the card’s eligibility requirements and annual fee. So to start by Sapphire Preferred review, we’ll take a look at the Sapphire Preferred welcome bonus, eligibility rules, and annual fee."
+      "When applying for a card, people are often motivated by a large welcome bonus, and that has to be balanced with the card’s eligibility requirements and annual fee. So to start my Sapphire Preferred review, we’ll take a look at the Sapphire Preferred welcome bonus, eligibility rules, and annual fee."
     ],
     "body_zh": [
       "最受欢迎的旅行奖励卡之一是年费 95 美元的 Chase Sapphire Preferred® 卡……这是有充分理由的！该卡始终提供出色的欢迎奖金，其奖励类别与我们中的消费数量相匹配。福利非常棒，不需要电子表格来跟踪福利。另外，大通终极奖励是一种利润丰厚的奖励货币。",
@@ -1539,7 +1364,7 @@
     "link": "https://onemileatatime.com/reviews/credit-cards/chase/chase-sapphire-preferred/",
     "source": "OMAAT",
     "pub_ts": 1792861647.0,
-    "score": 9.49,
+    "score": 9.34,
     "grp": "main"
   },
   {
@@ -1587,7 +1412,7 @@
     "link": "https://onemileatatime.com/insights/iata-summer-winter-airline-schedules/",
     "source": "OMAAT",
     "pub_ts": 1792858396.0,
-    "score": 9.39,
+    "score": 9.24,
     "grp": "main"
   },
   {
@@ -1597,7 +1422,6 @@
     "summary_zh": "10 月 23 日星期五，奥斯汀风暴扰乱了西欧各地的航空旅行，导致海峡群岛、法国和荷兰的航班取消",
     "body_en": [
       "Storm Austen forces flight cancellations and diversions across Western Europe - Aviation24.be",
-      "Home Airlines Storm Austen forces flight cancellations and diversions across Western Europe",
       "Storm Austen disrupted air travel across Western Europe on Friday, 23 October, forcing cancellations in the Channel Islands, France and the Netherlands, while flights bound for Paris and Brussels were diverted to alternative airports.",
       "The disruption varied considerably between airports. Channel Island services were particularly badly affected, while larger hubs continued operating with adjustments. No consolidated Europe-wide cancellation total was available in the reports reviewed.",
       "Jersey recorded 41 cancelled flight movements on Friday—22 departures and 19 arrivals—according to an assessment of the airport’s published flight boards by aviation publication Aerosillage. Guernsey also experienced extensive disruption, with operations resuming on Saturday. Jersey authorities had issued a red wind warning ahead of the storm, forecasting gusts of approximately 61–70 knots.",
@@ -1619,7 +1443,6 @@
     ],
     "body_zh": [
       "奥斯汀风暴迫使西欧各地的航班取消和改道 - Aviation24.be",
-      "主页 航空公司 奥斯汀风暴迫使西欧各地的航班取消和改道",
       "10 月 23 日星期五，奥斯汀风暴扰乱了西欧各地的航空旅行，迫使海峡群岛、法国和荷兰的航班取消，而飞往巴黎和布鲁塞尔的航班则改道至其他机场。",
       "不同机场之间的干扰情况差异很大。海峡群岛的服务受到的影响尤其严重，而较大的枢纽在调整后继续运营。审查的报告中没有提供欧洲范围内的综合取消总数。",
       "根据航空出版物 Aerosillage 对机场公布的航班信息板的评估，泽西岛周五记录了 41 架取消的航班，其中 22 架出发，19 架到达。根西岛也经历了广泛的中断，周六恢复运营。泽西岛当局在风暴来临前发布了红风警告，预计阵风约为 61-70 节。",
@@ -1643,52 +1466,8 @@
     "link": "https://www.aviation24.be/airlines/storm-austen-forces-flight-cancellations-and-diversions-across-western-europe/",
     "source": "Aviation24",
     "pub_ts": 1792849054.0,
-    "score": 9.11,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ]
+    "score": 8.97,
+    "grp": "main"
   },
   {
     "title_en": "Riyadh Air Moves Flights To Al Qassim Airport, A 4.5-Hour Bus Ride From Riyadh",
@@ -1735,7 +1514,7 @@
     "link": "https://onemileatatime.com/news/riyadh-air-moves-flights-al-qassim-airport/",
     "source": "OMAAT",
     "pub_ts": 1792847137.0,
-    "score": 9.05,
+    "score": 8.92,
     "grp": "main"
   },
   {
@@ -1789,7 +1568,7 @@
     "link": "https://onemileatatime.com/news/american-flight-returns-miami-water-request-dispute-guyana-president-onboard/",
     "source": "OMAAT",
     "pub_ts": 1792844395.0,
-    "score": 8.97,
+    "score": 8.85,
     "grp": "main"
   },
   {
@@ -1831,7 +1610,7 @@
     "link": "https://onemileatatime.com/news/delta-icelandair-detroit-nasty-side-competition/",
     "source": "OMAAT",
     "pub_ts": 1792786063.0,
-    "score": 7.73,
+    "score": 7.66,
     "grp": "main"
   },
   {
@@ -1875,7 +1654,7 @@
     "link": "https://onemileatatime.com/news/lufthansa-loses-greenwashing-lawsuit-rebrands-green-fares-impact-fares/",
     "source": "OMAAT",
     "pub_ts": 1792784077.0,
-    "score": 7.7,
+    "score": 7.63,
     "grp": "main"
   },
   {
@@ -1931,52 +1710,8 @@
     "link": "https://onemileatatime.com/reviews/credit-cards/bank-of-america/atmos-rewards-companion-fare/",
     "source": "OMAAT",
     "pub_ts": 1792780773.0,
-    "score": 7.65,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ]
+    "score": 7.58,
+    "grp": "main"
   },
   {
     "title_en": "Romanian airline Dan Air files for insolvency amid €10 million environmental debt",
@@ -1985,7 +1720,6 @@
     "summary_zh": "罗马尼亚航空公司寻求债权人保护，总负债达到 2540 万欧元；航班运营面临不确定性 罗马尼亚丹航空公司",
     "body_en": [
       "Romanian airline Dan Air files for insolvency amid €10 million environmental debt - Aviation24.be",
-      "Home Airlines Romanian airline Dan Air files for insolvency amid €10 million environmental debt",
       "Romanian carrier seeks protection from creditors as total liabilities reach €25.4 million; flight operations face uncertainty",
       "Romanian airline Dan Air has filed for insolvency proceedings at the Ilfov Tribunal, citing mounting financial pressure and an approximately €10 million debt owed to Romania’s Environmental Fund Administration (AFM).",
       "The application was submitted on 22 October 2026, making Dan Air the second Romanian airline to seek insolvency protection in recent weeks, following similar developments involving AnimaWings.",
@@ -2003,11 +1737,11 @@
       "Founded in 2017, Dan Air operates scheduled services from Romania, including routes associated with Bucharest and Bac?u airports. The airline previously operated scheduled flights from Bra?ov-Ghimbav International Airport before moving its main operating base to Bac?u.",
       "Dan Air’s financial difficulties follow the recent insolvency proceedings involving AnimaWings, highlighting mounting pressure on parts of Romania’s aviation sector.",
       "The two cases remain legally distinct, and insolvency proceedings do not necessarily lead to the same outcome. However, Dan Air’s ability to secure support from its lessors, restore its flight schedule and reach an agreement with creditors will be crucial to its future.",
-      "Sources: Profit.ro, Ziarul Financiar and Romanian media reports published on 22–23 October 2026."
+      "Sources: Profit.ro, Ziarul Financiar and Romanian media reports published on 22–23 October 2026.",
+      "Airbus forecasts 46% growth in global freighter fleet by 2045"
     ],
     "body_zh": [
       "罗马尼亚航空公司 Dan Air 因 1000 万欧元环境债务而申请破产 - Aviation24.be",
-      "罗马尼亚丹航空公司 (Dan Air) 因 1000 万欧元环境债务申请破产",
       "罗马尼亚航空公司寻求债权人保护，总负债达到 2540 万欧元；航班运营面临不确定性",
       "罗马尼亚丹航空公司 (Dan Air) 已向伊尔福夫法庭 (Ilfov Tribunal) 申请破产程序，理由是财务压力不断增大，且欠罗马尼亚环境基金管理局 (AFM) 约 1000 万欧元的债务。",
       "该申请于 2026 年 10 月 22 日提交，使 Dan Air 成为最近几周第二家寻求破产保护的罗马尼亚航空公司，此前 AnimaWings 也出现了类似的情况。",
@@ -2025,141 +1759,20 @@
       "丹航空成立于 2017 年，运营从罗马尼亚出发的定期航班，包括与布加勒斯特和巴库机场相关的航线。该航空公司此前曾运营从布拉索夫-金巴夫国际机场出发的定期航班，然后将其主要运营基地迁至巴库。",
       "丹航空 (Dan Air) 的财务困难是在最近涉及 AnimaWings 的破产程序之后出现的，这突显了罗马尼亚部分航空业面临的越来越大的压力。",
       "这两个案件在法律上仍然不同，破产程序不一定会导致相同的结果。然而，丹航空能否获得出租人的支持、恢复航班时刻表以及与债权人达成协议，对其未来至关重要。",
-      "资料来源：Profit.ro、Ziarul Financiar 和罗马尼亚媒体于 2026 年 10 月 22 日至 23 日发表的报道。"
+      "资料来源：Profit.ro、Ziarul Financiar 和罗马尼亚媒体于 2026 年 10 月 22 日至 23 日发表的报道。",
+      "空客预计到 2045 年全球货机机队将增长 46%"
     ],
     "img": "",
     "link": "https://www.aviation24.be/airlines/romanian-airline-dan-air-files-for-insolvency-amid-e10-million-environmental-debt/",
     "source": "Aviation24",
     "pub_ts": 1792770061.0,
-    "score": 7.49,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ]
-  },
-  {
-    "title_en": "Jetstar bans passenger after he inflates life jacket during safety demonstration",
-    "title_zh": "捷星航空禁止乘客在安全演示中给救生衣充气",
-    "summary": "Jetstar and Qantas have banned an Australian social media personality from flying with their airlines after he deliberately inflated an emergency life jacket during a pre-flight safety demonstration aboard a Jetstar flight from Sydney to Adelaide. Hugh Lovett,",
-    "summary_zh": "一名澳大利亚社交媒体名人故意夸大紧急情况，捷星航空和澳洲航空已禁止他乘坐该公司的航班",
-    "body_en": [
-      "Jetstar bans passenger after he inflates life jacket during safety demonstration - Aviation24.be",
-      "Home Airlines Jetstar Jetstar bans passenger after he inflates life jacket during safety demonstration",
-      "Jetstar and Qantas have banned an Australian social media personality from flying with their airlines after he deliberately inflated an emergency life jacket during a pre-flight safety demonstration aboard a Jetstar flight from Sydney to Adelaide.",
-      "Hugh Lovett, one of the four brothers behind the Australian TikTok account The Lovetts, pulled the inflation cord on his life jacket aboard flight JQ768 on 16 October. The incident was filmed and subsequently shared on social media, showing the vest rapidly inflating as the recorded safety briefing instructed passengers to inflate their life jackets only after leaving the aircraft. The stunt reportedly formed part of content created for the brothers’ social media account.",
-      "Australian Federal Police officers met the aircraft after it arrived in Adelaide and escorted Lovett from the aircraft. The Qantas Group subsequently imposed a ban preventing him from travelling on both Qantas and Jetstar services. The duration of the ban has not been disclosed.",
-      "A Jetstar spokesperson said passengers are legally required to follow crew safety instructions and must not remove or tamper with emergency equipment unless instructed to do so. The airline added that it has zero tolerance for behaviour that puts passengers or crew at risk.",
-      "Emergency life jackets are designed to be inflated only after passengers have exited an aircraft during an evacuation over water. Inflating one inside the cabin can restrict movement, obstruct access to emergency exits and potentially slow the evacuation process. In the event of flooding, the buoyancy of an inflated vest can also make it more difficult for a passenger to move underwater towards an exit.",
-      "[…] According to Aviation24.be, Hugh Lovett, one of the four brothers behind the Australian TikTok account The Lovetts, pulled the inflation cord on his life jacket during the pre-flight safety demonstration. The incident was filmed and shared on social media. […]",
-      "Airbus forecasts 46% growth in global freighter fleet by 2045",
-      "American posts record revenue but fuel costs drive third-quarter loss",
-      "Storm Austen forces flight cancellations and diversions across Western Europe",
-      "Romanian airline Dan Air files for insolvency amid €10 million environmental debt",
-      "Flemish Government suspends new Brussels Airport flight plan over noise concerns",
-      "Copenhagen Airport faces major security queues after new screening requirements",
-      "Brussels Airport to expand border controls as EES delays persist, government registration kiosks remain offline",
-      "Jetstar bans passenger after he inflates life jacket during safety demonstration"
-    ],
-    "body_zh": [
-      "捷星航空禁止乘客在安全演示中给救生衣充气 - Aviation24.be",
-      "家 航空公司 捷星航空 捷星航空禁止乘客在安全演示中给救生衣充气",
-      "捷星航空和澳洲航空已禁止一名澳大利亚社交媒体名人乘坐该公司的航班，因为他在从悉尼飞往阿德莱德的捷星航班上进行飞行前安全演示时故意给紧急救生衣充气。",
-      "休·洛维特 (Hugh Lovett) 是澳大利亚 TikTok 账户 The Lovetts 的四兄弟之一，10 月 16 日，他在 JQ768 航班上拉开了救生衣上的充气绳。该事件被拍摄下来并随后在社交媒体上分享，显示背心迅速充气，因为录制的安全简报指示乘客只有在离开飞机后才给救生衣充气。据报道，这一特技是为兄弟的社交媒体帐户创建的内容的一部分。",
-      "飞机抵达阿德莱德后，澳大利亚联邦警察接见了飞机，并护送洛维特下了飞机。澳洲航空集团随后实施禁令，禁止他乘坐澳洲航空和捷星航空的航班旅行。禁令的持续时间尚未披露。",
-      "捷星航空发言人表示，法律要求乘客遵守机组人员的安全指示，除非有指示，否则不得拆除或篡改应急设备。该航空公司补充说，它对将乘客或机组人员置于危险之中的行为采取零容忍态度。",
-      "紧急救生衣设计为仅在乘客在水上疏散期间离开飞机后才充气。在机舱内充气会限制行动，阻碍紧急出口，并可能减慢疏散过程。如果发生洪水，充气背心的浮力也会使乘客更难以在水下移动到出口。",
-      "[…] 据 Aviation24.be 报道，澳大利亚 TikTok 账户 The Lovetts 的四兄弟之一休·洛维特 (Hugh Lovett) 在飞行前的安全演示中拉开了救生衣上的充气绳。该事件被拍摄并在社交媒体上分享。 […]",
-      "空客预计到 2045 年全球货机机队将增长 46%",
-      "美国航空营收创历史新高，但燃料成本导致第三季度亏损",
-      "奥斯汀风暴迫使西欧各地的航班取消和改道",
-      "罗马尼亚航空公司 Dan Air 因 1000 万欧元环境债务申请破产",
-      "弗拉芒政府因噪音问题暂停布鲁塞尔机场新航班计划",
-      "哥本哈根机场在新的安检要求后面临严重的安检排队",
-      "由于 EES 持续延误，布鲁塞尔机场扩大边境管制，政府登记亭仍处于离线状态",
-      "捷星航空禁止乘客在安全演示中给救生衣充气"
-    ],
-    "img": "",
-    "link": "https://www.aviation24.be/airlines/jetstar-australia/bans-passenger-after-he-inflates-life-jacket-during-safety-demonstration/",
-    "source": "Aviation24",
-    "pub_ts": 1792765279.0,
     "score": 7.43,
     "grp": "main",
     "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15
+      19
     ],
     "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15
+      19
     ]
   }
 ]

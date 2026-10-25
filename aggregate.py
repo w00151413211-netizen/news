@@ -85,12 +85,20 @@ HOT_WORDS_US = [
     "state department", "openai", "semiconductor", "antitrust",
 ]
 
+# 同一个板块内给某些来源留固定席位：
+# 美国板块要保证「科技为辅」不会被一堆时政新闻挤掉
+US_GROUPS = {"The Verge": "tech", "TechCrunch": "tech",
+             "Ars Technica": "tech", "Wired": "tech"}
+
 # 板块定义（顺序即界面顺序）
+# quota: {分组: (最少条数, 最多条数)}
 SECTIONS = [
     {"key": "aviation", "name": "民航资讯", "icon": "✈️",
-     "sources": SOURCES_AVIATION, "hot": HOT_WORDS_AVIATION},
+     "sources": SOURCES_AVIATION, "hot": HOT_WORDS_AVIATION,
+     "groups": None, "quota": None},
     {"key": "us",       "name": "美国要闻", "icon": "🇺🇸",
-     "sources": SOURCES_US,       "hot": HOT_WORDS_US},
+     "sources": SOURCES_US,       "hot": HOT_WORDS_US,
+     "groups": US_GROUPS, "quota": {"tech": (5, 12)}},
 ]
 
 MAX_ITEMS      = 40        # 最终保留多少条
@@ -110,7 +118,12 @@ NOISE_WORDS    = ("cookie", "subscribe", "newsletter", "sign up", "sign-up",
                   "all rights reserved", "photo:", "getty", "share this",
                   "click here", "terms of service", "privacy policy",
                   "add simple flying", "preferred source", "follow on google",
-                  "add to home screen", "continue reading")
+                  "add to home screen", "continue reading",
+                  # 网站导航/菜单类的垃圾文本（抓全文时容易混进来）
+                  "expand/collapse", "submenu", "skip to main content",
+                  "skip to content", "toggle navigation", "main menu",
+                  "open menu", "close menu", "search this site",
+                  "sign in to", "back to top", "follow npr")
 
 
 # ============================================================
@@ -206,6 +219,35 @@ def html_to_paragraphs(raw, limit=BODY_LIMIT, min_len=45, max_paras=BODY_PARA_MA
     return out
 
 
+def main_block(raw):
+    """优先截取网页里的正文区域（article / main），避开导航菜单和页脚。
+
+    找不到足够长的正文区块就原样返回整页。
+    """
+    for tag in ("article", "main"):
+        m = re.search(r"(?is)<%s\b[^>]*>(.*?)</%s\s*>" % (tag, tag), raw)
+        if m and len(m.group(1)) > 1500:
+            return m.group(1)
+    # 有些站点不用语义标签，退而求其次拿带 article 类名的容器
+    m = re.search(r'(?is)<div[^>]+class="[^"]*\b(?:article|post|story)[^"]*"[^>]*>(.*?)</div>\s*</div>',
+                  raw)
+    if m and len(m.group(1)) > 1500:
+        return m.group(1)
+    return raw
+
+
+def dedup_paras(paras):
+    """去掉重复段落（RSS 摘要常常和正文第一段重复）。"""
+    seen, out = set(), []
+    for p in paras or []:
+        key = re.sub(r"\W+", "", (p or "").lower())[:140]
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        out.append(p)
+    return out
+
+
 def fetch_article_html(url):
     """下载新闻原网页的 HTML。失败返回空字符串。"""
     try:
@@ -240,7 +282,8 @@ def enrich_bodies(items):
         raw = fetch_article_html(it["link"])
         if not raw:
             return 0
-        paras = html_to_paragraphs(raw)
+        # 先裁出正文区域，导航菜单就不会混进正文里
+        paras = html_to_paragraphs(main_block(raw))
         if sum(len(p) for p in paras) > sum(len(p) for p in (it.get("body_en") or [])):
             it["body_en"] = paras
             return 1
@@ -257,6 +300,11 @@ def enrich_bodies(items):
         print(f"  (并发抓取失败，退回串行: {e})")
         got = sum(grab(it) for it in need)
     print(f"  成功补充 {got}/{len(need)} 篇")
+
+    # 去重：抓回来的全文常常把摘要重复一遍
+    for it in items:
+        if it.get("body_en"):
+            it["body_en"] = dedup_paras(it["body_en"])
 
 
 def _img_ok(url):
@@ -303,7 +351,50 @@ def pick_image(entry):
     return ""
 
 
-def collect(sources, hot_words):
+def apply_quota(items, quota):
+    """按分组控制入选条数，保证「为辅」的那类不会被挤光。
+
+    quota: {分组: (最少条数, 最多条数)}。先给每组补足下限，
+    剩下的位置再按热度分从高到低补，受每组上限约束。
+    """
+    if not quota:
+        return items[:MAX_ITEMS]
+
+    groups = {}
+    for it in items:                      # items 已按分数降序
+        groups.setdefault(it.get("grp") or "main", []).append(it)
+
+    chosen, cid = [], set()
+    for g, (mn, mx) in quota.items():
+        for it in groups.get(g, [])[:mn]:
+            chosen.append(it)
+            cid.add(id(it))
+
+    for it in items:
+        if len(chosen) >= MAX_ITEMS:
+            break
+        if id(it) in cid:
+            continue
+        g = it.get("grp") or "main"
+        mx = quota.get(g, (0, MAX_ITEMS))[1]
+        already = sum(1 for x in chosen if (x.get("grp") or "main") == g)
+        if already >= mx:
+            continue
+        chosen.append(it)
+        cid.add(id(it))
+
+    for it in items:                      # 名额没填满时不浪费
+        if len(chosen) >= MAX_ITEMS:
+            break
+        if id(it) not in cid:
+            chosen.append(it)
+            cid.add(id(it))
+
+    chosen.sort(key=lambda x: x["score"], reverse=True)
+    return chosen
+
+
+def collect(sources, hot_words, groups=None, quota=None):
     """从指定源抓取文章，去重，算热度分。"""
     seen = set()
     items = []
@@ -363,12 +454,13 @@ def collect(sources, hot_words):
                 "source":   name,
                 "pub_ts":   pub,
                 "score":    round(score, 2),
+                "grp":      (groups or {}).get(name, "main"),
             })
 
         time.sleep(REQUEST_DELAY)
 
     items.sort(key=lambda x: x["score"], reverse=True)
-    return items[:MAX_ITEMS]
+    return apply_quota(items, quota)
 
 
 # ============================================================
@@ -391,6 +483,8 @@ def probe_ai():
             return
     log("  AI 探测失败，本次正文/标题全部走 Google 免费翻译")
     AI_DISABLED = True
+
+
 AI_BATCH   = 10            # 每批翻译几条：太大易超时，太小请求多
 AI_ENDPOINT = "https://models.github.ai/inference/v1/chat/completions"
 
@@ -1759,7 +1853,8 @@ def main():
     zh_total = 0
     for sec in SECTIONS:
         print(f"\n===== 板块：{sec['name']} =====")
-        items = collect(sec["sources"], sec["hot"])
+        items = collect(sec["sources"], sec["hot"],
+                        groups=sec.get("groups"), quota=sec.get("quota"))
         print(f"共采集 {len(items)} 条")
         if items:
             enrich_bodies(items)        # 摘要不够长的，去原网页补全文

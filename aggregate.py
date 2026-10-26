@@ -60,7 +60,8 @@ SOURCES_US = [
     ("NPR Politics",  "https://feeds.npr.org/1014/rss.xml",                    5),
     ("Politico",      "https://rss.politico.com/politics-news.xml",            5),
     ("Guardian US",   "https://www.theguardian.com/us-news/rss",               5),
-    ("NYT Politics",  "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml", 5),
+    # （已停用 NYT：它有付费墙，抓不到全文，站点上永远只有一句摘要；
+    #   而且它的 RSS 标题写得很绕，中英对照时看着别扭）
     ("NBC News",      "https://feeds.nbcnews.com/nbcnews/public/news",         4),
     ("CBS News",      "https://www.cbsnews.com/latest/rss/main",               4),
     ("ABC Politics",  "https://abcnews.go.com/abcnews/politicsheadlines",      4),
@@ -101,7 +102,12 @@ SECTIONS = [
      "groups": US_GROUPS, "quota": {"tech": (5, 12), "_max_per_source": 3}},
 ]
 
-MAX_ITEMS      = 40        # 最终保留多少条
+MAX_ITEMS      = 40        # 页面上最终显示多少条
+# 去重必然会把同一事件的重复报道丢掉，所以候选要多备一些才补得回 40 条。
+# RSS 阶段就能拿到上百条候选（不花额外时间），去重在两轮里完成：
+#   第一轮只看标题+摘要（几乎零成本），第二轮才为入选的那几十条抓全文复核。
+POOL_SIZE      = 140
+POOL_BATCH     = 25        # 抓全文分批推进，够 MAX_ITEMS 就停手
 TRANSLATE_TO   = "zh-CN"   # 目标语言
 FETCH_PER_SRC  = 12        # 每个源最多取多少条
 REQUEST_DELAY  = 0.4       # 抓取间隔（秒），对服务器友好
@@ -454,14 +460,29 @@ def _ev_overlap(wa, wb):
     return len(wa & wb) / min(len(wa), len(wb))
 
 
+def _ev_title_same(ta, tb):
+    """两篇标题是不是几乎一字不差——不同媒体互相转载时经常这样。
+    看实词交集占「较短那条标题」的比例；门槛定得比较狠（80%），
+    碰瓷的可能性极低，但能兜住「标题里一个地名都没有」的情况。"""
+    sa = {w.lower() for w in _ev_tokens(ta) if w.lower() not in EVENT_STOP}
+    sb = {w.lower() for w in _ev_tokens(tb) if w.lower() not in EVENT_STOP}
+    if not sa or not sb:
+        return False
+    inter = len(sa & sb)
+    return inter >= 4 and inter >= 0.8 * min(len(sa), len(sb))
+
+
 def _same_event(a, b, wa, wb):
     """两篇是不是同一事件。先框住「同一个地方/国家」，再看是否同一件事。
 
+    - 标题几乎一字不差（转载）：不看地名，直接认同一事件；
     - 标题核心词撞上两个（阿拉斯加 + 选举 / 司法部 + 诉讼）：直接算同事件
     - 否则看正文前几段实词重合度，够了也算（同一事件各家措辞不同，标题往往对不上）。
       但这条要额外要求「两篇标题都至少带一个事件核心词」——否则像
       「Audi 在乔治亚建厂」和「Rick Jackson 在乔治亚竞选」这种同州不同事会被误并。
     """
+    if _ev_title_same(a["title_en"], b["title_en"]):
+        return True
     if not (_ev_places(a["title_en"]) & _ev_places(b["title_en"])):
         return False
     ca, cb = _ev_core(a["title_en"]), _ev_core(b["title_en"])
@@ -512,6 +533,72 @@ def group_events(items):
         clusters.append(group)
     clusters.sort(key=lambda g: g[0]["score"], reverse=True)
     return clusters
+
+
+def select_unique(items, want=MAX_ITEMS, quota=None):
+    """同一事件各家都报，只留热度最高的那一条，其余直接丢掉（不再是「折叠成一张卡」）。
+    丢掉留下的空位从后面的候选里继续补，所以页面上永远还是满满 want 条互不相同的新闻。
+
+    分两轮做，是为了省钱又保质：
+      第一轮 —— 只用手头就有的标题和 RSS 摘要聚类，完全不用抓全文，
+                所以能在上百条候选里跑，保证去重之后还剩得下足够的互不重复的新闻；
+      第二轮 —— 对挑出来的那几十条抓全文，用正文再复核一遍。正文比摘要准，
+                能把第一轮没认出来的重复捞掉，代价只是几十次抓取。"""
+    if not EVENT_GROUP:
+        return items[:want], 0
+
+    pooled, dup1 = [], 0
+    for cl in group_events(items):
+        if len(cl) > 1:
+            dup1 += len(cl) - 1
+        pooled.append(cl[0])
+    print(f"  候选 {len(items)} 条，第一轮去重后剩 {len(pooled)} 个不同事件")
+
+    picked, picked_words, dup2 = [], [], 0
+    pos, round_no = 0, 0
+    while len(picked) < want and pos < len(pooled):
+        batch = pooled[pos:pos + POOL_BATCH]
+        pos += POOL_BATCH
+        if not batch:
+            break
+        round_no += 1
+        enrich_bodies(batch)
+        for cl in group_events(batch):
+            head = cl[0]
+            if len(cl) > 1:
+                dup2 += len(cl) - 1
+                print(f"    同一事件 {len(cl)} 家，留 [{head['source']}] {head['title_en'][:44]}")
+            hw = _ev_words(head)
+            if any(_same_event(head, p, hw, picked_words[k])
+                   for k, p in enumerate(picked)):
+                dup2 += 1
+                print(f"    已有更热的一条，跳过 [{head['source']}] {head['title_en'][:44]}")
+                continue
+            picked.append(head)
+            picked_words.append(hw)
+        print(f"  第 {round_no} 批复核后已入选 {len(picked)} 条")
+
+    final = apply_quota(picked, quota, want) if quota else picked[:want]
+    return final, dup1 + dup2
+
+
+def inflate_quota(quota, pool_size, final_size):
+    """把「最终 N 条」的配额，按比例换算成「候选池 M 条」的配额。
+
+    科技类保底 5 条是相对最终 40 条说的；候选池放大之后，
+    池子里得先有 9 条以上科技新闻，挑到最后才留得住那 5 条。
+    """
+    if not quota:
+        return None
+    scale = max(1.0, pool_size / max(1, final_size))
+    out = {}
+    for g, val in quota.items():
+        if isinstance(g, str) and g.startswith("_"):
+            out[g] = val          # 单源席位上限不放大，避免一家媒体霸屏
+            continue
+        mn, mx = val
+        out[g] = (int(round(mn * scale)), int(round(mx * scale)))
+    return out
 
 
 def fetch_article_html(url):
@@ -617,14 +704,15 @@ def pick_image(entry):
     return ""
 
 
-def apply_quota(items, quota):
+def apply_quota(items, quota, limit=None):
     """按分组控制入选条数，保证「为辅」的那类不会被挤光。
 
     quota: {分组: (最少条数, 最多条数)}。先给每组补足下限，
     剩下的位置再按热度分从高到低补，受每组上限约束。
     """
+    limit = limit or MAX_ITEMS
     if not quota:
-        return items[:MAX_ITEMS]
+        return items[:limit]
 
     groups = {}
     for it in items:                      # items 已按分数降序
@@ -658,12 +746,12 @@ def apply_quota(items, quota):
             cid.add(id(it))
 
     for it in items:
-        if len(chosen) >= MAX_ITEMS:
+        if len(chosen) >= limit:
             break
         if id(it) in cid:
             continue
         g = it.get("grp") or "main"
-        mx = quota.get(g, (0, MAX_ITEMS))[1]
+        mx = quota.get(g, (0, limit))[1]
         already = sum(1 for x in chosen if (x.get("grp") or "main") == g)
         if already >= mx:
             continue
@@ -675,7 +763,7 @@ def apply_quota(items, quota):
         cid.add(id(it))
 
     for it in items:                      # 名额没填满时不浪费
-        if len(chosen) >= MAX_ITEMS:
+        if len(chosen) >= limit:
             break
         if id(it) not in cid:
             chosen.append(it)
@@ -685,7 +773,7 @@ def apply_quota(items, quota):
     return chosen
 
 
-def collect(sources, hot_words, groups=None, quota=None):
+def collect(sources, hot_words, groups=None, quota=None, limit=None):
     """从指定源抓取文章，去重，算热度分。"""
     seen = set()
     items = []
@@ -751,7 +839,7 @@ def collect(sources, hot_words, groups=None, quota=None):
         time.sleep(REQUEST_DELAY)
 
     items.sort(key=lambda x: x["score"], reverse=True)
-    return apply_quota(items, quota)
+    return apply_quota(items, quota, limit or MAX_ITEMS)
 
 
 # ============================================================
@@ -1712,7 +1800,6 @@ DETAIL_CSS = """
 .dp-pos{display:inline-block;font-size:10.5px;color:var(--sub);font-style:italic;
   margin-bottom:3px;opacity:.85}
 .dp-zh{font-size:14.5px;line-height:1.5;color:var(--text);font-weight:600}
-.dp-en{font-size:12.5px;line-height:1.5;color:var(--sub);margin-top:4px}
 .dp-load,.dp-none{font-size:13px;color:var(--sub);opacity:.75}
 
 .dorig{background:var(--card);border:.5px solid var(--sep);border-radius:12px;padding:14px}
@@ -1728,17 +1815,6 @@ DETAIL_CSS = """
 .more:active{opacity:.6}
 .dlink{display:block;margin-top:10px;font-size:11.5px;color:var(--sub);
   word-break:break-all;text-decoration:none;opacity:.85}
-
-/* 同一事件的其他家报道 */
-.dalso{margin-top:18px;padding-top:14px;border-top:.5px solid var(--sep)}
-.dalso-h{font-size:12.5px;font-weight:600;color:var(--sub);margin-bottom:8px}
-.dalso-i{display:flex;align-items:baseline;gap:8px;padding:9px 11px;margin-bottom:6px;
-  border-radius:10px;background:var(--card);border:.5px solid var(--sep);
-  text-decoration:none;color:var(--text)}
-.dalso-i:active{opacity:.7}
-.dalso-s{flex:none;font-size:11px;font-weight:700;color:var(--accent)}
-.dalso-t{flex:1;min-width:0;font-size:13.5px;line-height:1.45}
-.dalso-g{flex:none;font-size:12px;color:var(--sub);opacity:.6}
 
 /* 上一条 / 下一条 */
 .dnav{display:flex;gap:10px;margin-top:6px}
@@ -1845,6 +1921,7 @@ POP.className = 'dictpop';
 POP.setAttribute('aria-hidden', 'true');
 document.body.appendChild(POP);
 var popOpen = false;
+var popTop = 0;            // 浮窗弹出时正文的滚动位置，用来判断是浏览还是误触
 var AUD = document.createElement('audio');
 AUD.preload = 'none';
 
@@ -1903,37 +1980,88 @@ function popShow(el, word, data, loading){
 
   if (loading) {
     h += '<div class="dp-load">查询中…</div>';
-  } else if (data && (data.zh || data.en)) {
+  } else if (data && data.zh) {
     if (data.pos) h += '<div class="dp-pos">' + esc(data.pos) + '</div>';
-    if (data.zh) h += '<div class="dp-zh">' + esc(data.zh) + '</div>';
-    if (data.en) h += '<div class="dp-en">' + esc(data.en) + '</div>';
+    h += '<div class="dp-zh">' + esc(data.zh) + '</div>';
   } else {
     h += '<div class="dp-none">没查到释义，点 🔊 仍可朗读</div>';
   }
   POP.innerHTML = h;
   popOpen = true;
+  popTop = (typeof dscroll !== 'undefined' && dscroll) ? dscroll.scrollTop : 0;
   el.classList.add('on');
   place(el);
+}
+
+/* 带超时的跨域取 JSON：拿不到就返回 null，绝不抛异常中断流程 */
+function fetchJson(url, ms){
+  return new Promise(function(res){
+    var timer = setTimeout(function(){ res(null); }, ms || 8000);
+    fetch(url).then(function(r){ return r.ok ? r.json() : null; })
+      .catch(function(){ return null; })
+      .then(function(j){ clearTimeout(timer); res(j); });
+  });
+}
+/* 只留字母，用来比对「翻译结果是不是原词本身」 */
+function plain(x){ return String(x || '').toLowerCase().replace(/[^a-z]/g, ''); }
+
+/* 词性代号翻成中文：这个人是来看中文的，浮窗里不该冒出 noun / verb */
+var POS_CN = { noun: '名词', verb: '动词', adjective: '形容词', adverb: '副词',
+  pronoun: '代词', preposition: '介词', conjunction: '连词', interjection: '感叹词',
+  exclamation: '感叹词', determiner: '限定词', article: '冠词', numeral: '数词',
+  abbreviation: '缩写', proper: '专有名词' };
+function posCn(p){ return POS_CN[String(p || '').toLowerCase()] || ''; }
+
+/* 问 dictionaryapi.dev 要音标和真人发音（有 American/British MP3）。
+   拿不到就返回空对象，绝不抛异常。 */
+function phonOf(word){
+  var url = 'https://api.dictionaryapi.dev/api/v2/entries/en/' + encodeURIComponent(word);
+  return fetchJson(url, 9000).then(function(j){
+    var out = { ph: '', au: '', pos: '' };
+    if (j && j[0]) {
+      var e = j[0], phs = e.phonetics || [];
+      out.ph = e.phonetic || '';
+      for (var i = 0; i < phs.length; i++){
+        if (!out.ph && phs[i].text) out.ph = phs[i].text;
+        if (!out.au && phs[i].audio) out.au = phs[i].audio;
+      }
+      var m0 = e.meanings && e.meanings[0];
+      if (m0 && m0.partOfSpeech) out.pos = posCn(m0.partOfSpeech);
+    }
+    return out;
+  }).catch(function(){ return { ph: '', au: '', pos: '' }; });
 }
 
 /* 一次查词的完整流程 */
 function lookup(word, el){
   var cands = candidates(word), i, key;
 
-  /* ① 内置词表（最快，断网也有） */
+  /* ① 内置词表（最快，断网也有）：先把中文释义秒出，
+        再用一秒钟的时间在后台把音标和真人发音补上——用户点哪个词才去查哪个，
+        而且查到就永久存进 localStorage，下次连这一秒都不用。 */
+  var mem0 = dstore();
   for (i = 0; i < cands.length; i++){
     key = cands[i];
     if (DICT[key]) {
       var z = DICT[key];
-      var d0 = { zh: typeof z === 'string' ? z : z[0], ph: '', en: '', au: '', pos: '' };
+      var d0 = { zh: typeof z === 'string' ? z : z[0], ph: '', au: '', pos: '' };
+      /* 之前补过音标的，这次直接带上（包括断网时）——否则每次都显示没音标，
+         好像 enrich 从没生效过一样 */
+      var saved = mem0[key];
+      if (saved) {
+        if (saved.ph) d0.ph = saved.ph;
+        if (saved.au) d0.au = saved.au;
+        if (saved.pos) d0.pos = saved.pos;
+      }
       popShow(el, word, d0, false);
-      speak(key, '');
+      speak(key, d0.au || '');
+      enrich(key, word, el, d0);
       return;
     }
   }
 
   /* ② 之前查过，本地有记录 */
-  var mem = dstore();
+  var mem = mem0;
   for (i = 0; i < cands.length; i++){
     key = cands[i];
     if (mem[key]) {
@@ -1943,35 +2071,52 @@ function lookup(word, el){
     }
   }
 
-  /* ③ 现场联网：先拿音标/英文释义/真人发音 */
+  /* ③ 现场联网（手机有网时才会走到这里，这个人查阅偶尔用）：
+       两条路并行拿，谁也不耽误谁——
+       - 中文释义走 MyMemory 词典库（返回的是「n.参议院」这种词典义，
+         不是整句的机器译文，而且这个接口允许跨域，手机能直连）；
+       - 音标和真人发音走 dictionaryapi.dev。
+       两条都空手回来也不报错，浮窗退化成「只朗读」。 */
   popShow(el, word, null, true);
   key = cands[0];
-  var url = 'https://api.dictionaryapi.dev/api/v2/entries/en/' + encodeURIComponent(key);
-  fetch(url).then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
-    var rec = { zh: '', en: '', ph: '', au: '', pos: '' };
-    if (j && j[0]) {
-      var e = j[0];
-      rec.ph = e.phonetic || '';
-      var phs = e.phonetics || [];
-      for (var t = 0; t < phs.length; t++){
-        if (!rec.ph && phs[t].text) rec.ph = phs[t].text;
-        if (!rec.au && phs[t].audio) rec.au = phs[t].audio;
-      }
-      var m0 = e.meanings && e.meanings[0];
-      if (m0) {
-        rec.pos = m0.partOfSpeech || '';
-        if (m0.definitions && m0.definitions[0]) {
-          rec.en = m0.definitions[0].definition || '';
-        }
-      }
+  var mmUrl = 'https://api.mymemory.translated.net/get?q='
+            + encodeURIComponent(key) + '&langpair=en%7Czh-CN';
+  Promise.all([fetchJson(mmUrl, 9000), phonOf(key)]).then(function(rs){
+    var rec = { zh: '', ph: '', au: '', pos: '' };
+    var mm = rs[0], extra = rs[1];
+    if (mm && mm.responseData && mm.responseData.translatedText) {
+      var t = String(mm.responseData.translatedText).trim();
+      /* 这个接口查不到时会把原词原样吐回来，这种情况当没查到 */
+      if (t && plain(t) !== plain(key)) rec.zh = t.slice(0, 60);
     }
+    rec.ph = extra.ph || '';
+    rec.au = extra.au || '';
+    rec.pos = extra.pos || '';
     return rec;
-  }).catch(function(){
-    return { zh: '', en: '', ph: '', au: '', pos: '' };
   }).then(function(rec){
-    if (rec.zh || rec.en) { mem[key] = rec; dsaveDesc(); }
+    if (rec.zh) { mem[key] = rec; dsaveDesc(); }
     if (popOpen) popShow(el, word, rec, false);
     speak(key, rec.au || '');
+  });
+}
+
+/* 给已经弹出的释义补音标和真人发音。
+   只在真的需要时才联网：已经有音标、或者刚查过的都不重复请求。
+   成功了记进 localStorage，以后（包括断网）都能立刻显示 / 真人朗读。 */
+function enrich(key, word, el, data){
+  if (!popOpen) return;
+  if (data.ph && data.au) return;
+  var mem0 = dstore();
+  if (mem0[key] && (mem0[key].ph || mem0[key].au)) return;
+  phonOf(key).then(function(x){
+    if (!x || (!x.ph && !x.au)) return;
+    var rec = { zh: data.zh, ph: x.ph, au: x.au, pos: x.pos };
+    mem0[key] = rec; dsaveDesc();
+    /* 用户可能已经点别处了，只对「还停在同一个词上」的浮窗刷新 */
+    if (!popOpen) return;
+    var cur = POP.querySelector('.dp-w b');
+    if (!cur || cur.textContent !== word) return;
+    popShow(el, word, rec, false);
   });
 }
 
@@ -2008,8 +2153,16 @@ document.addEventListener('click', function(e){
   if (popOpen) popHide();
 }, true);
 
-/* 滑动 / 转屏时收起，免得挡住正文 */
-if (dscroll) dscroll.addEventListener('scroll', function(){ if (popOpen) popHide(); }, {passive:true});
+/* 翻阅正文时收起浮窗，免得挡视线。
+   注意：必须加位移阈值。手机上点击一个靠边的词，浏览器常会顺带微调几像素
+   （iOS 上选词、地址栏收放、惯性回弹都会），若不设阈值，浮窗刚弹出就被自己
+   的滚动关掉了，表现为「闪一下就没」。超过 24px 才认定是用户在翻页。 */
+function popWatch(){
+  if (!popOpen) return;
+  var now = (dscroll ? dscroll.scrollTop : 0);
+  if (Math.abs(now - popTop) > 24) popHide();
+}
+if (dscroll) dscroll.addEventListener('scroll', popWatch, {passive:true});
 window.addEventListener('resize', function(){ if (popOpen) popHide(); });
 window.addEventListener('orientationchange', function(){ if (popOpen) popHide(); });
 """
@@ -2088,23 +2241,6 @@ function renderBody(d){
   box.innerHTML = html;
 }
 
-/* 同一事件的其他家报道：列出来，可点开原文对照 */
-function renderAlso(d){
-  var box = $('d-also');
-  var also = d.also || [];
-  if (!also.length) { box.innerHTML = ''; box.style.display = 'none'; return; }
-  box.style.display = '';
-  var html = '<div class="dalso-h">这一事件还有 ' + also.length + ' 家在报道</div>';
-  also.forEach(function(a){
-    html += '<a class="dalso-i" href="' + esc(a.link) + '" target="_blank" rel="noopener">'
-         +  '<span class="dalso-s">' + esc(a.src) + '</span>'
-         +  '<span class="dalso-t">' + esc(a.en) + '</span>'
-         +  '<span class="dalso-g">↗</span>'
-         +  '</a>';
-  });
-  box.innerHTML = html;
-}
-
 function render(i){
   var d = D()[i];
   if (!d) return;
@@ -2129,7 +2265,6 @@ function render(i){
   mode = 'both';
   syncSeg();
   renderBody(d);
-  renderAlso(d);
 
   $('d-open').href = d.link;
   put('d-link', d.link);
@@ -2302,10 +2437,6 @@ def build_html(sections_out):
             title   = it["title_zh"] or it["title_en"]
             summary = it["summary_zh"] or it["summary"]
             img     = it.get("img") or ""
-            also    = it.get("also_list") or []
-            # 「N 家报道」标记：点进去能切换着看，避免同一件事铺满整个列表
-            also_html = (f'<span class="also">+{len(also)} 家报道</span>'
-                         if also else '')
 
             data_js.append({
                 "zh":     it["title_zh"] or it["title_en"],
@@ -2321,8 +2452,6 @@ def build_html(sections_out):
                 "img":    img,
                 "hot":    label,
                 "lv":     level,
-                # 同一事件还有哪些家在报：[[来源, 标题, 链接], ...]
-                "also":   it.get("also_list") or [],
             })
 
             # 图片加载失败就整块隐藏，不留空白框
@@ -2338,7 +2467,6 @@ def build_html(sections_out):
     <div class="meta">
       {label_html}
       <span class="src">{html.escape(it['source'])}</span>
-      {also_html}
       <span class="time">{fmt_time(it['pub_ts'])}</span>
     </div>
     <h2 class="title">{html.escape(title)}</h2>
@@ -2466,10 +2594,6 @@ body{{background:var(--bg);color:var(--text);
 .hot3{{background:var(--hot3)}} .hot2{{background:var(--hot2)}} .hot1{{background:var(--hot1)}}
 .hot0{{display:none}}
 .src{{font-weight:600;color:var(--accent)}}
-/* 「+N 家报道」：同一事件被多家媒体同时报道 */
-.also{{font-size:10.5px;font-weight:600;color:var(--sub);background:var(--bg);
-  border:.5px solid var(--sep);border-radius:5px;padding:1px 5px;flex:none;
-  font-variant-numeric:tabular-nums}}
 .title{{margin:0;font-size:16.5px;font-weight:700;line-height:1.38;color:var(--text)}}
 .sum{{font-size:14px;color:var(--sub);line-height:1.55;margin:5px 0 0;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}}
@@ -2531,8 +2655,6 @@ body{{background:var(--bg);color:var(--text);
 
       <div class="dbody" id="d-body"></div>
 
-      <div class="dalso" id="d-also"></div>
-
       <div class="dlink" id="d-link"></div>
 
       <div class="dnav">
@@ -2591,7 +2713,7 @@ MANIFEST = {
 
 
 # ---- Service Worker：缓存核心资源，离线也能看、二次打开秒开 ----
-SW_JS = """var CACHE = 'news-v3';   /* 改版后升一位，老用户下次打开就能拿到新版 */
+SW_JS = """var CACHE = 'news-v5';   /* 改版后升一位，老用户下次打开就能拿到新版 */
 var CORE = ['./', './index.html', './manifest.json', './icon-180.png',
             './data.json', './us.json'];
 
@@ -2662,8 +2784,13 @@ def write_assets():
 # 这样点词是「零延迟」的，断网也能用；只有生僻词才现场联网兜底。
 
 DICT_PATH  = os.path.join("docs", "dict_cache.json")
-DICT_MAX   = 2600          # 词表最多带多少个词（控制网页体积）
-DICT_MIN_N = 2             # 正文里至少出现几次才收进词表（太生僻的交给现场查）
+# 词表上限：实测两个板块正文加起来约 6900 个不同的实词，全收进去能覆盖 100% 的词次，
+# 也就是页面上几乎不可能再出现「查不到释义」。代价是网页多带约 170KB（gzip 后小很多）。
+DICT_MAX   = 7000
+DICT_MIN_N = 1             # 出现一次就算（以前要求至少 2 次，结果大片生词查不到）
+# 首次要把几千个词一起查出来（之后每天只补几十个新词），所以上限给得宽一点。
+# 真超了也不停流水线：缓存是累积的，今天没查完的明天接着查。
+DICT_BUDGET = 1800        # 查词表的时间上限（秒）
 DICT_STOP = set("""the a an and or but of to in on for at by from as is are was were be
 been being it its this that these those will would could should can may might must have
 has had do does did with about after before over under into out up down off than then so
@@ -2674,6 +2801,34 @@ first last new now way like just even still back again around because while also
 was've they're we're don't didn't isn't wasn't there their theirs they'd they'll
 mr mrs ms dr st no vs per via amid yet both each every either neither another much many
 few own several such being doing having""".split())
+
+# 少数专名会被 Google 当普通词意译掉（例如 techcrunch→「技术危机」），
+# 这里直接钉死正确写法。只收那些几乎不会当普通词用的；像 united / delta /
+# verge / wired 本身就是常见英文词，留给翻译按上下文处理更合适。
+DICT_KEEP = {
+    "techcrunch": "TechCrunch（科技媒体）",
+    "arstechnica": "Ars Technica（科技媒体）",
+    "hackaday": "Hackaday（创客媒体）",
+    "engadget": "Engadget（科技媒体）",
+    "politico": "Politico（政治新闻网）",
+    "axios": "Axios（新闻网）",
+    "bae": "BAE Systems（英国航太国防公司）",
+    "evtol": "eVTOL，电动垂直起降飞行器",
+    "icao": "ICAO 国际民航组织",
+    "iata": "IATA 国际航空运输协会",
+    "easa": "EASA 欧洲航空安全局",
+    "faa": "FAA 美国联邦航空管理局",
+    "ntsb": "NTSB 美国国家运输安全委员会",
+    "boom": "Boom Supersonic（超音速客机公司）",
+    "rolls-royce": "罗尔斯·罗伊斯（航空发动机厂商）",
+    "pratt": "普惠 Pratt & Whitney（航发厂商）",
+    "safran": "赛峰 Safran（航发厂商）",
+    "embraer": "巴西航空工业 Embraer",
+    "bombardier": "庞巴迪 Bombardier",
+    "cessna": "塞斯纳 Cessna",
+    "gulfstream": "湾流 Gulfstream",
+    "emb": "Embraer 巴西航空工业",
+}
 
 _dict_run_cache = {}      # 本次运行内的临时缓存，避免同一个词翻两次
 
@@ -2694,28 +2849,70 @@ def _dict_words(items, max_n=DICT_MAX, min_n=DICT_MIN_N):
     return [w for w, n in cnt.most_common() if n >= min_n][:max_n]
 
 
-def _dict_ask(words):
-    """批量问中文释义。一次请求塞多个词（用换行分隔），省调用次数。"""
+def _dict_one(w, skip_google=False):
+    """查一个词的中文释义。Google 翻译优先，拿不到再退到 MyMemory 词典库，
+    两条都走不通就返回空串（页面上会显示「没查到释义」，不会给错释义）。
+
+    skip_google：整批都没结果的那种情况还要逐个再问一遍 Google 的话，
+    几千个词逐个等超时能把整条流水线拖死，所以那种时候直接去第二套。"""
+    def _clean(txt, enemy=None):
+        t = re.sub(r"^[0-9]+[.、) ]*", "", (txt or "").strip()).split("\n")[0].strip()
+        if not t or not has_cn(t):
+            return ""
+        # 原词原样吐回来 = 没查到
+        if enemy and re.sub(r"[^a-z]", "", t.lower()) == re.sub(r"[^a-z]", "", enemy.lower()):
+            return ""
+        return t[:60]
+
+    if not skip_google:
+        zh = _clean(_translate_google(w, sl="en", timeout=12), w)
+        if zh:
+            return zh
+    try:
+        url = ("https://api.mymemory.translated.net/get?q=" + urllib.parse.quote(w)
+               + "&langpair=en%7Czh-CN")
+        req = urllib.request.Request(url, headers={"User-Agent": UA})
+        raw = urllib.request.urlopen(req, timeout=12).read().decode("utf-8", "replace")
+        val = ((json.loads(raw).get("responseData") or {}).get("translatedText") or "")
+        return _clean(val, w)
+    except Exception:
+        return ""
+
+
+def _dict_ask(words, deadline=None):
+    """批量问中文释义。一次请求塞多个词（用换行分隔），省调用次数。
+
+    行数对得上的批次按行对应即可；对不上说明翻译引擎把行合并/拆开了，
+    这种批次不能瞎对应（宁可没释义，也不要给错释义），退回逐个单查。
+    时间到了还没查完的就停手，剩下的明天补——缓存是累积的，不会白等。"""
     if not words:
         return {}
-    out = {}
-    CHUNK = 40
+    out, CHUNK = {}, 40
     for i in range(0, len(words), CHUNK):
+        if deadline and time.time() > deadline:
+            log(f"  词表时间到，剩下 {len(words) - i} 个词明天接着补")
+            break
         part = words[i:i + CHUNK]
-        joined = "\n".join(part)
-        zh = _translate_google(joined, sl="en", timeout=15)
-        if not zh:
-            continue
-        lines = [x.strip() for x in zh.split("\n") if x.strip()]
-        # 行数对得上才敢按行对应，否则这一批作废（宁可没释义，也不要给错释义）
-        if len(lines) != len(part):
-            if len(part) == 1:
-                out[part[0]] = lines[0]
-            continue
-        for w, line in zip(part, lines):
-            line = re.sub(r"^[0-9]+[.、) ]*", "", line).strip()
-            if line and has_cn(line):
-                out[w] = line[:60]
+        got = {}
+        zh = _translate_google("\n".join(part), sl="en", timeout=15)
+        lines = [x.strip() for x in (zh or "").split("\n") if x.strip()]
+        if len(lines) == len(part):
+            for w, line in zip(part, lines):
+                line = re.sub(r"^[0-9]+[.、) ]*", "", line).strip()
+                if line and has_cn(line):
+                    got[w] = line[:60]
+        elif len(part) == 1 and lines:
+            got[part[0]] = lines[0][:60]
+        miss = [w for w in part if w not in got]
+        if miss:
+            # 整批都没捞回来 = Google 这条通道今天不通，别再逐个去撞它了
+            for w in miss:
+                if deadline and time.time() > deadline:
+                    break
+                one = _dict_one(w, skip_google=not lines)
+                if one:
+                    got[w] = one
+        out.update(got)
     return out
 
 
@@ -2731,12 +2928,29 @@ def build_dict_cache(items):
 
     want = _dict_words(items)
     need = [w for w in want if w not in cache and w not in _dict_run_cache]
+    # 给查词留个总时间上限：缓存是累积的，今天没查完的明天接着查，不吊着整条流水线
+    deadline = time.time() + DICT_BUDGET
+    # 历史遗留的错误释义主动纠正（以前 techcrunch 被译成「技术危机」）
+    fixed = 0
+    for w, correct in DICT_KEEP.items():
+        if w in cache and cache[w] != correct:
+            cache[w] = correct
+            fixed += 1
+    if fixed:
+        log(f"  纠正历史误译 {fixed} 个")
     if need:
+        # 白名单词：不送去翻译（翻译会把它们意译错），直接用钉好的写法
+        for w in list(need):
+            if w in DICT_KEEP:
+                cache[w] = DICT_KEEP[w]
+                _dict_run_cache[w] = DICT_KEEP[w]
+                need.remove(w)
         log(f"  生成点词词表：待查 {len(need)} 个新词")
-        got = _dict_ask(need)
+        got = _dict_ask(need, deadline)
         for w, zh in got.items():
-            cache[w] = zh
-            _dict_run_cache[w] = zh
+            # 白名单词即使被翻出来也以钉好的为准
+            cache[w] = DICT_KEEP.get(w, zh)
+            _dict_run_cache[w] = cache[w]
         log(f"  词表新增 {len(got)}/{len(need)}")
 
     # 只保留还有用的词，别让缓存无限长
@@ -2777,25 +2991,18 @@ def main():
     zh_total = 0
     for sec in SECTIONS:
         print(f"\n===== 板块：{sec['name']} =====")
+        q = sec.get("quota")
+        # 候选池阶段把配额按比例放大，池子里才有足够多的「辅类」新闻可以挑
+        pool_q = inflate_quota(q, POOL_SIZE, MAX_ITEMS) if q else None
         items = collect(sec["sources"], sec["hot"],
-                        groups=sec.get("groups"), quota=sec.get("quota"))
-        print(f"共采集 {len(items)} 条")
+                        groups=sec.get("groups"), quota=pool_q,
+                        limit=POOL_SIZE)
+        print(f"共采集 {len(items)} 条候选")
         if items:
-            enrich_bodies(items)        # 摘要不够长的，去原网页补全文
-            clusters = group_events(items)   # 同一事件的多家报道聚成一簇
-            kept = []
-            for c in clusters:
-                head = c[0]
-                # 同事件的其他报道：只带轻量信息，够在详情页里列出并跳转
-                head["also_list"] = [{"src": x["source"], "en": x["title_en"],
-                                      "link": x["link"], "t": fmt_time(x["pub_ts"])}
-                                     for x in c[1:]]
-                kept.append(head)
-            n_dup = sum(len(c) - 1 for c in clusters)
-            if n_dup:
-                print(f"归并同事件 {n_dup} 条，"
-                      f"其中 {sum(1 for c in clusters if len(c) > 1)} 组有多家报道")
-            items = kept
+            items, dup_n = select_unique(items, MAX_ITEMS, q)
+            if dup_n:
+                print(f"同一事件重复 {dup_n} 条已去掉，"
+                      f"从候选补位后仍是 {len(items)} 条互不相同的新闻")
             log("翻译中 ...")
             translate_items(items)
             align_bodies(items)         # 中文段落数不许超过英文，保证逐段对照不错位

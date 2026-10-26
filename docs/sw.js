@@ -1,4 +1,4 @@
-var CACHE = 'news-v3';   /* 改版后升一位，老用户下次打开就能拿到新版 */
+var CACHE = 'news-v5';   /* 改版后升一位，老用户下次打开就能拿到新版 */
 var CORE = ['./', './index.html', './manifest.json', './icon-180.png',
             './data.json', './us.json'];
 

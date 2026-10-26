@@ -106,6 +106,11 @@ TRANSLATE_TO   = "zh-CN"   # 目标语言
 FETCH_PER_SRC  = 12        # 每个源最多取多少条
 REQUEST_DELAY  = 0.4       # 抓取间隔（秒），对服务器友好
 
+# ---- 同一事件归并 ----
+EVENT_GROUP       = True   # 打开后，同事件的几家报道会折叠成一张卡
+EVENT_BODY_OVERLAP = 0.14  # 正文前几段实词重合度达到这个值，就认定是同一事件
+                           # 实测：真同事件 0.14~0.59，不同事件（同州不同事）≤0.07
+
 # ---- 正文（全文）相关 ----
 BODY_LIMIT     = 7000      # 每篇英文正文最多保留多少字符（要够装下一篇完整报道）
 BODY_TRANSLATE = 8000      # 正文最多翻译多少字符（跟上全文上限，中英段数才对得齐）
@@ -348,6 +353,165 @@ def dedup_paras(paras):
         seen.add(key)
         out.append(p)
     return out
+
+
+# ============================================================
+# 1.5 同一事件归并
+# ============================================================
+# 同一条新闻常有五六家媒体分头报道（阿拉斯加参议员选举诉讼一次来了 5 条）。
+# 全部删掉会丢信息，全部留下又刷屏，所以聚成「事件簇」：
+# 列表里只占一张卡，卡上标「5 家报道」，详情页里能切换着看。
+
+# 地名/国家/州：事件的「坐标」
+EVENT_PLACES = set("""alaska california kansas arkansas georgia florida ohio michigan
+texas arizona nevada pennsylvania wisconsin virginia carolina milwaukee doral york jersey
+washington chicago boston houston atlanta phoenix denver seattle miami detroit nashville
+iran israel china ukraine taiwan japan korea russia india brazil mexico canada france
+germany britain gulf venezuela milan europe africa asia""".split())
+
+# 事件核心词：真正描述「发生了什么」的词
+EVENT_CORE = set("""election vote voter ballot ballots midterm primary poll polls campaign
+race seat candidate democrat democrats gop republican republicans justice doj court judge
+lawsuit sue sues sued ruled ruling certify certification challenge dismiss sequester
+delay results recount immigration border deport deportation detention tariff trade
+shooting shooter killed injured dies death hospital police suspect protest protests
+march strike missile military war senate congress impeachment budget shutdown""".split())
+
+# 词形归并：sue / sues / lawsuit 说的是同一件事，判重时必须当成同一个词
+EVENT_LEMMA = {
+    "sue": "sue", "sues": "sue", "sued": "sue", "suing": "sue",
+    "lawsuit": "sue", "lawsuits": "sue", "litigation": "sue",
+    "challenge": "sue", "challenges": "sue", "challenged": "sue",
+    "judge": "court", "judges": "court", "court": "court", "courts": "court",
+    "ruling": "court", "ruled": "court",
+    "certify": "certify", "certification": "certify", "certified": "certify",
+    "sequester": "sequester", "sequestered": "sequester",
+    "vote": "vote", "votes": "vote", "voter": "vote", "voters": "vote",
+    "voting": "vote", "ballot": "vote", "ballots": "vote",
+    "race": "race", "races": "race", "seat": "race", "seats": "race",
+    "democrat": "dem", "democrats": "dem", "democratic": "dem",
+    "republican": "gop", "republicans": "gop",
+    "result": "result", "results": "result",
+    "delay": "delay", "delays": "delay", "delayed": "delay",
+    "dismiss": "dismiss", "dismissed": "dismiss", "dismissal": "dismiss",
+    "protest": "protest", "protests": "protest", "protester": "protest",
+    "protesters": "protest",
+    "shoot": "shoot", "shooting": "shoot", "shooter": "shoot",
+    "shootings": "shoot",
+    "kill": "kill", "killed": "kill", "killing": "kill", "dead": "kill",
+    "death": "kill", "dies": "kill", "died": "kill",
+    "injure": "injure", "injured": "injure", "injuries": "injure",
+    "deport": "deport", "deported": "deport", "deportation": "deport",
+    "detention": "detention", "detained": "detention", "detain": "detention",
+    "tariff": "tariff", "tariffs": "tariff",
+    "poll": "poll", "polls": "poll", "polling": "poll",
+}
+
+# 停用词：不算信息量
+EVENT_STOP = set("""the a an and or but of to in on for at by from as is are was were be
+been being it its this that these those will would could should can may might must have
+has had do does did with about after before over under into out up down off than then so
+if not no more most other some such only own same too very get got make made take took
+go goes going say says said see seen know known come comes what who whom which when where
+why how his her their our your my him them us they we you i he she want wants doing am
+also one two three first last new now way like just even still back again around because
+while report reports here what's there's they're we're don't didn't isn't wasn't""".split())
+
+
+def _ev_tokens(text):
+    return re.findall(r"[A-Za-z][A-Za-z'\-]{2,}", text or "")
+
+
+def _ev_lemma(w):
+    w = (w or "").lower().strip(".")
+    return EVENT_LEMMA.get(w, w)
+
+
+def _ev_places(title):
+    return {w.lower().strip(".") for w in _ev_tokens(title)} & EVENT_PLACES
+
+
+def _ev_core(title):
+    """标题里的事件核心词，先做词形归并（sues / lawsuit 都算 sue）。"""
+    return {_ev_lemma(w) for w in _ev_tokens(title)
+            if w.lower().strip(".") in EVENT_CORE}
+
+
+def _ev_words(it):
+    """正文前几段 + 摘要的实词集合，用来判断是不是同一件事。"""
+    parts = (it.get("body_en") or [])[:3]
+    txt = " ".join(parts)
+    if len(txt) < 220:                       # 正文太短（NYT 常常只给一段）就用摘要补
+        txt += " " + (it.get("summary") or "")
+    return {w.lower() for w in _ev_tokens(txt)
+            if len(w) > 3 and w.lower() not in EVENT_STOP}
+
+
+def _ev_overlap(wa, wb):
+    """两篇正文实词的重合度；样本太小就返回 None（不下结论）。"""
+    if min(len(wa), len(wb)) < 8:
+        return None
+    return len(wa & wb) / min(len(wa), len(wb))
+
+
+def _same_event(a, b, wa, wb):
+    """两篇是不是同一事件。先框住「同一个地方/国家」，再看是否同一件事。
+
+    - 标题核心词撞上两个（阿拉斯加 + 选举 / 司法部 + 诉讼）：直接算同事件
+    - 否则看正文前几段实词重合度，够了也算（同一事件各家措辞不同，标题往往对不上）。
+      但这条要额外要求「两篇标题都至少带一个事件核心词」——否则像
+      「Audi 在乔治亚建厂」和「Rick Jackson 在乔治亚竞选」这种同州不同事会被误并。
+    """
+    if not (_ev_places(a["title_en"]) & _ev_places(b["title_en"])):
+        return False
+    ca, cb = _ev_core(a["title_en"]), _ev_core(b["title_en"])
+    if len(ca & cb) >= 2:
+        return True
+    if not (ca and cb):                      # 有一边标题完全看不出事件类型，先不合并
+        return False
+    ov = _ev_overlap(wa, wb)
+    return ov is not None and ov >= EVENT_BODY_OVERLAP
+
+
+def group_events(items):
+    """把同一事件的新闻聚成簇，返回 [[主条, 同事件的其他条...], ...]。
+
+    簇内按分数降序，第一条是主条（列表里显示的那条）；簇之间也按主条分数降序。
+    只有 1 条的簇就是普通新闻。
+    """
+    if not EVENT_GROUP:
+        return [[it] for it in items]
+
+    words = [_ev_words(it) for it in items]
+    n = len(items)
+    parent = list(range(n))
+
+    def find(a):
+        while parent[a] != a:
+            parent[a] = parent[parent[a]]
+            a = parent[a]
+        return a
+
+    def union(a, b):
+        ra, rb = find(a), find(b)
+        if ra != rb:
+            parent[max(ra, rb)] = min(ra, rb)
+
+    for i in range(n):
+        for j in range(i + 1, n):
+            if _same_event(items[i], items[j], words[i], words[j]):
+                union(i, j)
+
+    buckets = {}
+    for i in range(n):
+        buckets.setdefault(find(i), []).append(items[i])
+
+    clusters = []
+    for group in buckets.values():
+        group.sort(key=lambda x: x["score"], reverse=True)
+        clusters.append(group)
+    clusters.sort(key=lambda g: g[0]["score"], reverse=True)
+    return clusters
 
 
 def fetch_article_html(url):
@@ -1525,6 +1689,32 @@ DETAIL_CSS = """
 .p-en-only{font-size:16.5px;line-height:1.8;color:var(--text);margin:0 0 15px}
 .p-none{text-align:center;padding:30px 12px;color:var(--sub);font-size:14px}
 
+/* 可点单词：平时看不出来，点下去才高亮，不打扰阅读 */
+.w{border-radius:3px;transition:background .1s}
+.w:active{background:color-mix(in srgb, var(--accent) 22%, transparent)}
+.w.on{background:color-mix(in srgb, var(--accent) 22%, transparent)}
+
+/* 查词浮窗 */
+.dictpop{
+  position:fixed;z-index:99;max-width:min(300px, calc(100vw - 24px));
+  background:var(--card);border:.5px solid var(--sep);border-radius:13px;
+  padding:11px 13px;box-shadow:0 8px 28px rgba(0,0,0,.18);
+  opacity:0;visibility:hidden;transform:translateY(4px);
+  transition:opacity .13s ease, transform .13s ease;
+  pointer-events:none;
+}
+.dictpop.on{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+.dp-w{display:flex;align-items:baseline;gap:7px;margin-bottom:6px}
+.dp-w b{font-size:16.5px;color:var(--text);font-weight:700}
+.dp-ph{font-size:12.5px;color:var(--sub)}
+.dp-play{margin-left:auto;font-size:15px;cursor:pointer;opacity:.75;flex:none}
+.dp-play:active{opacity:1}
+.dp-pos{display:inline-block;font-size:10.5px;color:var(--sub);font-style:italic;
+  margin-bottom:3px;opacity:.85}
+.dp-zh{font-size:14.5px;line-height:1.5;color:var(--text);font-weight:600}
+.dp-en{font-size:12.5px;line-height:1.5;color:var(--sub);margin-top:4px}
+.dp-load,.dp-none{font-size:13px;color:var(--sub);opacity:.75}
+
 .dorig{background:var(--card);border:.5px solid var(--sep);border-radius:12px;padding:14px}
 .dentitle{margin:0 0 8px;font-size:16px;line-height:1.45;font-weight:600}
 .densum{margin:0;font-size:14px;line-height:1.7;color:var(--text)}
@@ -1538,6 +1728,17 @@ DETAIL_CSS = """
 .more:active{opacity:.6}
 .dlink{display:block;margin-top:10px;font-size:11.5px;color:var(--sub);
   word-break:break-all;text-decoration:none;opacity:.85}
+
+/* 同一事件的其他家报道 */
+.dalso{margin-top:18px;padding-top:14px;border-top:.5px solid var(--sep)}
+.dalso-h{font-size:12.5px;font-weight:600;color:var(--sub);margin-bottom:8px}
+.dalso-i{display:flex;align-items:baseline;gap:8px;padding:9px 11px;margin-bottom:6px;
+  border-radius:10px;background:var(--card);border:.5px solid var(--sep);
+  text-decoration:none;color:var(--text)}
+.dalso-i:active{opacity:.7}
+.dalso-s{flex:none;font-size:11px;font-weight:700;color:var(--accent)}
+.dalso-t{flex:1;min-width:0;font-size:13.5px;line-height:1.45}
+.dalso-g{flex:none;font-size:12px;color:var(--sub);opacity:.6}
 
 /* 上一条 / 下一条 */
 .dnav{display:flex;gap:10px;margin-top:6px}
@@ -1572,6 +1773,245 @@ DETAIL_CSS = """
 .card:active{background:color-mix(in srgb, var(--card) 92%, #000);transform:scale(.994)}
 .card .title{pointer-events:none}
 .badge-zh{display:none}
+"""
+
+DICT_WORDS = {}          # 构建时生成，供页面点词查义
+
+DICT_JS = r"""
+/* ================= 点词查义 ================= */
+/* 设计要点：
+   1) 详情页英文段落按词包成 <span class="w">，点一下就能查；
+   2) 释义先查页面内置词表（构建时预生成，零延迟、断网可用），
+      查不到才现场联网，结果存 localStorage，下次秒出；
+   3) 发音优先用 dictionaryapi.dev 的真人 MP3，拿不到就用手机自带 TTS；
+   4) 浮窗贴在点击位置旁边，上方放不下自动翻到下方，点空白处关掉。 */
+
+var DICT = window.__DICT__ || {};          // 构建时预生成的词表
+var DK = 'newsdict.v2';
+var dmem = null;
+
+function dstore(){
+  if (dmem) return dmem;
+  try { dmem = JSON.parse(localStorage.getItem(DK) || '{}'); }
+  catch (e) { dmem = {}; }
+  return dmem;
+}
+function dsaveDesc(){
+  try { localStorage.setItem(DK, JSON.stringify(dmem || {})); } catch (e) {}
+}
+
+/* 词形还原：running / studies / voters / delayed 之类还原成基础形 */
+function lemma(w){
+  var x = (w || '').toLowerCase();
+  if (x.length <= 3) return x;
+  var rules = [
+    [/ies$/, 'y'], [/ves$/, 'f'],
+    [/([^aeiou])es$/, '$1'], [/([^aeiou])s$/, '$1'],
+    /* 先试去掉 e（voter→vote、maker→make），再去掉整个 er，避免 voter→vot */
+    [/([^aeiou])er$/, '$1e'], [/([^aeiou])er$/, '$1'],
+    [/([^aeiou])est$/, '$1e'], [/([^aeiou])est$/, '$1'],
+    [/ing$/, ''], [/ing$/, 'e'],
+    [/ed$/, ''], [/ed$/, 'e'],
+    [/ly$/, '']
+  ];
+  for (var i = 0; i < rules.length; i++){
+    if (rules[i][0].test(x)) {
+      var y = x.replace(rules[i][0], rules[i][1]);
+      if (y.length >= 3 && y !== x) return y;
+    }
+  }
+  return x;
+}
+
+/* 候选词：原词 → 还原形 → 去复数，按顺序试 */
+function candidates(w){
+  var x = (w || '').toLowerCase().replace(/^[^a-z]+|[^a-z]+$/g, '');
+  if (!x) return [];
+  var out = [x];
+  /* 反复还原两轮：voters → voter → vote */
+  var cur = x;
+  for (var k = 0; k < 2; k++){
+    var nxt = lemma(cur);
+    if (nxt === cur) break;
+    out.push(nxt);
+    cur = nxt;
+  }
+  if (/[^s]s$/.test(x)) out.push(x.slice(0, -1));
+  return out.filter(function(v, i, a){ return v && v.length >= 3 && a.indexOf(v) === i; });
+}
+
+var POP = document.createElement('div');
+POP.className = 'dictpop';
+POP.setAttribute('aria-hidden', 'true');
+document.body.appendChild(POP);
+var popOpen = false;
+var AUD = document.createElement('audio');
+AUD.preload = 'none';
+
+function popHide(){
+  popOpen = false;
+  POP.classList.remove('on');
+  POP.setAttribute('aria-hidden', 'true');
+  var on = document.querySelectorAll('.w.on');
+  for (var i = 0; i < on.length; i++) on[i].classList.remove('on');
+}
+
+function place(el){
+  var r = el.getBoundingClientRect();
+  var vw = window.innerWidth, vh = window.innerHeight;
+  POP.style.visibility = 'hidden';
+  POP.classList.add('on');
+  var pw = POP.offsetWidth, ph = POP.offsetHeight;
+  var top = r.top - ph - 9;
+  if (top < 8) top = r.bottom + 9;                 // 上面放不下就翻到下面
+  var left = r.left + r.width / 2 - pw / 2;
+  left = Math.max(10, Math.min(left, vw - pw - 10));
+  top = Math.max(8, Math.min(top, vh - ph - 10));
+  POP.style.top = top + 'px';
+  POP.style.left = left + 'px';
+  POP.style.visibility = '';
+}
+
+function tts(text){
+  if (!('speechSynthesis' in window)) return;
+  try {
+    speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US';
+    u.rate = 0.9;
+    speechSynthesis.speak(u);
+  } catch (e) {}
+}
+
+function speak(text, audioUrl){
+  if (audioUrl) {
+    try {
+      AUD.src = audioUrl;
+      var p = AUD.play();
+      if (p && p.catch) { p.catch(function(){ tts(text); }); }
+      return;
+    } catch (e) {}
+  }
+  tts(text);
+}
+
+/* data: {zh, en, ph, pos, au}；loading 为真时先占位 */
+function popShow(el, word, data, loading){
+  var h = '<div class="dp-w"><b>' + esc(word) + '</b>';
+  if (data && data.ph) h += '<span class="dp-ph">' + esc(data.ph) + '</span>';
+  h += '<span class="dp-play">🔊</span></div>';
+
+  if (loading) {
+    h += '<div class="dp-load">查询中…</div>';
+  } else if (data && (data.zh || data.en)) {
+    if (data.pos) h += '<div class="dp-pos">' + esc(data.pos) + '</div>';
+    if (data.zh) h += '<div class="dp-zh">' + esc(data.zh) + '</div>';
+    if (data.en) h += '<div class="dp-en">' + esc(data.en) + '</div>';
+  } else {
+    h += '<div class="dp-none">没查到释义，点 🔊 仍可朗读</div>';
+  }
+  POP.innerHTML = h;
+  popOpen = true;
+  el.classList.add('on');
+  place(el);
+}
+
+/* 一次查词的完整流程 */
+function lookup(word, el){
+  var cands = candidates(word), i, key;
+
+  /* ① 内置词表（最快，断网也有） */
+  for (i = 0; i < cands.length; i++){
+    key = cands[i];
+    if (DICT[key]) {
+      var z = DICT[key];
+      var d0 = { zh: typeof z === 'string' ? z : z[0], ph: '', en: '', au: '', pos: '' };
+      popShow(el, word, d0, false);
+      speak(key, '');
+      return;
+    }
+  }
+
+  /* ② 之前查过，本地有记录 */
+  var mem = dstore();
+  for (i = 0; i < cands.length; i++){
+    key = cands[i];
+    if (mem[key]) {
+      popShow(el, word, mem[key], false);
+      speak(key, mem[key].au || '');
+      return;
+    }
+  }
+
+  /* ③ 现场联网：先拿音标/英文释义/真人发音 */
+  popShow(el, word, null, true);
+  key = cands[0];
+  var url = 'https://api.dictionaryapi.dev/api/v2/entries/en/' + encodeURIComponent(key);
+  fetch(url).then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
+    var rec = { zh: '', en: '', ph: '', au: '', pos: '' };
+    if (j && j[0]) {
+      var e = j[0];
+      rec.ph = e.phonetic || '';
+      var phs = e.phonetics || [];
+      for (var t = 0; t < phs.length; t++){
+        if (!rec.ph && phs[t].text) rec.ph = phs[t].text;
+        if (!rec.au && phs[t].audio) rec.au = phs[t].audio;
+      }
+      var m0 = e.meanings && e.meanings[0];
+      if (m0) {
+        rec.pos = m0.partOfSpeech || '';
+        if (m0.definitions && m0.definitions[0]) {
+          rec.en = m0.definitions[0].definition || '';
+        }
+      }
+    }
+    return rec;
+  }).catch(function(){
+    return { zh: '', en: '', ph: '', au: '', pos: '' };
+  }).then(function(rec){
+    if (rec.zh || rec.en) { mem[key] = rec; dsaveDesc(); }
+    if (popOpen) popShow(el, word, rec, false);
+    speak(key, rec.au || '');
+  });
+}
+
+/* 把英文段落切成可点的词（保留原有标点和空格） */
+function wrapWords(text){
+  return String(text == null ? '' : text).replace(
+    /([A-Za-z][A-Za-z'\-]*)/g,
+    function(m){ return '<span class="w">' + esc(m) + '</span>'; }
+  );
+}
+
+/* 点词 */
+document.addEventListener('click', function(e){
+  var t = e.target;
+  var w = (t && t.classList && t.classList.contains('w')) ? t : null;
+  if (w) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (popOpen && w.classList.contains('on')) { popHide(); return; }
+    var on = document.querySelectorAll('.w.on');
+    for (var i = 0; i < on.length; i++) on[i].classList.remove('on');
+    lookup(w.textContent, w);
+    return;
+  }
+  /* 点浮窗上的小喇叭重听 */
+  if (popOpen && POP.contains(t)) {
+    if (t.classList && t.classList.contains('dp-play')) {
+      var cur = POP.querySelector('.dp-w b');
+      if (cur) speak(cur.textContent, AUD.src || '');
+      e.stopPropagation();
+    }
+    return;
+  }
+  if (popOpen) popHide();
+}, true);
+
+/* 滑动 / 转屏时收起，免得挡住正文 */
+if (dscroll) dscroll.addEventListener('scroll', function(){ if (popOpen) popHide(); }, {passive:true});
+window.addEventListener('resize', function(){ if (popOpen) popHide(); });
+window.addEventListener('orientationchange', function(){ if (popOpen) popHide(); });
 """
 
 DETAIL_JS = """
@@ -1622,9 +2062,9 @@ function renderBody(d){
     }
   } else if (mode === 'en') {
     if (en.length) {
-      html = en.map(function(t){ return '<p class="p-en-only">' + esc(t) + '</p>'; }).join('');
+      html = en.map(function(t){ return '<p class="p-en-only">' + wrapWords(t) + '</p>'; }).join('');
     } else if (d.ensum) {
-      html = '<p class="p-en-only">' + esc(d.ensum) + '</p>';
+      html = '<p class="p-en-only">' + wrapWords(d.ensum) + '</p>';
     } else {
       html = '<div class="p-none">暂无正文</div>';
     }
@@ -1633,18 +2073,35 @@ function renderBody(d){
       for (var i = 0; i < en.length; i++) {
         var z = (i < zh.length && zh[i]) ? zh[i] : '';
         html += '<div class="para">'
-             +  '<div class="p-en">' + esc(en[i]) + '</div>'
+             +  '<div class="p-en">' + wrapWords(en[i]) + '</div>'
              +  (z ? '<div class="p-zh">' + esc(z) + '</div>'
                    : '<div class="p-zh missing">（本段未翻译）</div>')
              +  '</div>';
       }
     } else if (d.ensum) {
-      html = '<div class="para"><div class="p-en">' + esc(d.ensum) + '</div>'
+      html = '<div class="para"><div class="p-en">' + wrapWords(d.ensum) + '</div>'
            + '<div class="p-zh">' + esc(d.sum || '') + '</div></div>';
     } else {
       html = '<div class="p-none">暂无正文，点下方「阅读原文」看完整报道</div>';
     }
   }
+  box.innerHTML = html;
+}
+
+/* 同一事件的其他家报道：列出来，可点开原文对照 */
+function renderAlso(d){
+  var box = $('d-also');
+  var also = d.also || [];
+  if (!also.length) { box.innerHTML = ''; box.style.display = 'none'; return; }
+  box.style.display = '';
+  var html = '<div class="dalso-h">这一事件还有 ' + also.length + ' 家在报道</div>';
+  also.forEach(function(a){
+    html += '<a class="dalso-i" href="' + esc(a.link) + '" target="_blank" rel="noopener">'
+         +  '<span class="dalso-s">' + esc(a.src) + '</span>'
+         +  '<span class="dalso-t">' + esc(a.en) + '</span>'
+         +  '<span class="dalso-g">↗</span>'
+         +  '</a>';
+  });
   box.innerHTML = html;
 }
 
@@ -1672,6 +2129,7 @@ function render(i){
   mode = 'both';
   syncSeg();
   renderBody(d);
+  renderAlso(d);
 
   $('d-open').href = d.link;
   put('d-link', d.link);
@@ -1844,6 +2302,10 @@ def build_html(sections_out):
             title   = it["title_zh"] or it["title_en"]
             summary = it["summary_zh"] or it["summary"]
             img     = it.get("img") or ""
+            also    = it.get("also_list") or []
+            # 「N 家报道」标记：点进去能切换着看，避免同一件事铺满整个列表
+            also_html = (f'<span class="also">+{len(also)} 家报道</span>'
+                         if also else '')
 
             data_js.append({
                 "zh":     it["title_zh"] or it["title_en"],
@@ -1859,6 +2321,8 @@ def build_html(sections_out):
                 "img":    img,
                 "hot":    label,
                 "lv":     level,
+                # 同一事件还有哪些家在报：[[来源, 标题, 链接], ...]
+                "also":   it.get("also_list") or [],
             })
 
             # 图片加载失败就整块隐藏，不留空白框
@@ -1874,6 +2338,7 @@ def build_html(sections_out):
     <div class="meta">
       {label_html}
       <span class="src">{html.escape(it['source'])}</span>
+      {also_html}
       <span class="time">{fmt_time(it['pub_ts'])}</span>
     </div>
     <h2 class="title">{html.escape(title)}</h2>
@@ -1901,6 +2366,11 @@ def build_html(sections_out):
     sec_payload = json.dumps(sec_meta, ensure_ascii=False, separators=(",", ":"))
     js = (DETAIL_JS.replace("__DATA__", payload)
                    .replace("__SECTIONS__", sec_payload))
+
+    # 点词查义：预置词表 + 查词逻辑一起塞进页面
+    dict_payload = json.dumps(DICT_WORDS, ensure_ascii=False, separators=(",", ":"))
+    dict_payload = dict_payload.replace("</", "<\\/")
+    js += ("\nwindow.__DICT__ = " + dict_payload + ";\n" + DICT_JS)
 
     panes_html = "\n".join(panes)
     footers = " ｜ ".join(
@@ -1996,6 +2466,10 @@ body{{background:var(--bg);color:var(--text);
 .hot3{{background:var(--hot3)}} .hot2{{background:var(--hot2)}} .hot1{{background:var(--hot1)}}
 .hot0{{display:none}}
 .src{{font-weight:600;color:var(--accent)}}
+/* 「+N 家报道」：同一事件被多家媒体同时报道 */
+.also{{font-size:10.5px;font-weight:600;color:var(--sub);background:var(--bg);
+  border:.5px solid var(--sep);border-radius:5px;padding:1px 5px;flex:none;
+  font-variant-numeric:tabular-nums}}
 .title{{margin:0;font-size:16.5px;font-weight:700;line-height:1.38;color:var(--text)}}
 .sum{{font-size:14px;color:var(--sub);line-height:1.55;margin:5px 0 0;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}}
@@ -2057,6 +2531,8 @@ body{{background:var(--bg);color:var(--text);
 
       <div class="dbody" id="d-body"></div>
 
+      <div class="dalso" id="d-also"></div>
+
       <div class="dlink" id="d-link"></div>
 
       <div class="dnav">
@@ -2115,7 +2591,7 @@ MANIFEST = {
 
 
 # ---- Service Worker：缓存核心资源，离线也能看、二次打开秒开 ----
-SW_JS = """var CACHE = 'news-v2';
+SW_JS = """var CACHE = 'news-v3';   /* 改版后升一位，老用户下次打开就能拿到新版 */
 var CORE = ['./', './index.html', './manifest.json', './icon-180.png',
             './data.json', './us.json'];
 
@@ -2176,8 +2652,107 @@ def write_assets():
         f.write(SW_JS)
 
 
+# ============================================================
+# 点词查义用的词表
+# ============================================================
+# 手机端点击英文单词要立刻出中文释义，但：
+#   - 词典接口（dictionaryapi.dev）经常限流，且没有中文；
+#   - 手机端现查现译要等一两秒，还依赖网络。
+# 所以每天构建时，把当天正文里的高频词批量翻好，直接内嵌进网页。
+# 这样点词是「零延迟」的，断网也能用；只有生僻词才现场联网兜底。
+
+DICT_PATH  = os.path.join("docs", "dict_cache.json")
+DICT_MAX   = 2600          # 词表最多带多少个词（控制网页体积）
+DICT_MIN_N = 2             # 正文里至少出现几次才收进词表（太生僻的交给现场查）
+DICT_STOP = set("""the a an and or but of to in on for at by from as is are was were be
+been being it its this that these those will would could should can may might must have
+has had do does did with about after before over under into out up down off than then so
+if not no nor more most other some such only own same too very get got make made take
+took go goes going say says said see seen know known come comes what who whom which when
+where why how his her their our your my him them us they we you i he she one two three
+first last new now way like just even still back again around because while also am are
+was've they're we're don't didn't isn't wasn't there their theirs they'd they'll
+mr mrs ms dr st no vs per via amid yet both each every either neither another much many
+few own several such being doing having""".split())
+
+_dict_run_cache = {}      # 本次运行内的临时缓存，避免同一个词翻两次
+
+
+def _dict_words(items, max_n=DICT_MAX, min_n=DICT_MIN_N):
+    """从所有新闻正文里挑出值得做词表的词，按出现次数降序。"""
+    from collections import Counter
+    cnt = Counter()
+    for it in items:
+        for p in (it.get("body_en") or []):
+            for w in re.findall(r"[A-Za-z][A-Za-z'\-]+", p or ""):
+                w = w.lower().strip("-'")
+                if len(w) < 3 or len(w) > 18 or w in DICT_STOP:
+                    continue
+                if not re.match(r"^[a-z][a-z'\-]*$", w):
+                    continue
+                cnt[w] += 1
+    return [w for w, n in cnt.most_common() if n >= min_n][:max_n]
+
+
+def _dict_ask(words):
+    """批量问中文释义。一次请求塞多个词（用换行分隔），省调用次数。"""
+    if not words:
+        return {}
+    out = {}
+    CHUNK = 40
+    for i in range(0, len(words), CHUNK):
+        part = words[i:i + CHUNK]
+        joined = "\n".join(part)
+        zh = _translate_google(joined, sl="en", timeout=15)
+        if not zh:
+            continue
+        lines = [x.strip() for x in zh.split("\n") if x.strip()]
+        # 行数对得上才敢按行对应，否则这一批作废（宁可没释义，也不要给错释义）
+        if len(lines) != len(part):
+            if len(part) == 1:
+                out[part[0]] = lines[0]
+            continue
+        for w, line in zip(part, lines):
+            line = re.sub(r"^[0-9]+[.、) ]*", "", line).strip()
+            if line and has_cn(line):
+                out[w] = line[:60]
+    return out
+
+
+def build_dict_cache(items):
+    """生成/更新词表缓存。旧词保留，新词补上，最多 DICT_MAX 个。"""
+    cache = {}
+    if os.path.exists(DICT_PATH):
+        try:
+            with open(DICT_PATH, encoding="utf-8") as f:
+                cache = json.load(f) or {}
+        except Exception:
+            cache = {}
+
+    want = _dict_words(items)
+    need = [w for w in want if w not in cache and w not in _dict_run_cache]
+    if need:
+        log(f"  生成点词词表：待查 {len(need)} 个新词")
+        got = _dict_ask(need)
+        for w, zh in got.items():
+            cache[w] = zh
+            _dict_run_cache[w] = zh
+        log(f"  词表新增 {len(got)}/{len(need)}")
+
+    # 只保留还有用的词，别让缓存无限长
+    keep = [w for w in want if w in cache]
+    cache = {w: cache[w] for w in keep}
+
+    try:
+        os.makedirs("docs", exist_ok=True)
+        with open(DICT_PATH, "w", encoding="utf-8") as f:
+            json.dump(cache, f, ensure_ascii=False)
+    except Exception as e:
+        log(f"  词表写入失败: {e}")
+    return cache
+
+
 def prev_has_chinese():
-    """上一版网页是不是中文的？用来决定这次能不能覆盖它。"""
     path = os.path.join("docs", "data.json")
     if not os.path.exists(path):
         return False
@@ -2207,6 +2782,20 @@ def main():
         print(f"共采集 {len(items)} 条")
         if items:
             enrich_bodies(items)        # 摘要不够长的，去原网页补全文
+            clusters = group_events(items)   # 同一事件的多家报道聚成一簇
+            kept = []
+            for c in clusters:
+                head = c[0]
+                # 同事件的其他报道：只带轻量信息，够在详情页里列出并跳转
+                head["also_list"] = [{"src": x["source"], "en": x["title_en"],
+                                      "link": x["link"], "t": fmt_time(x["pub_ts"])}
+                                     for x in c[1:]]
+                kept.append(head)
+            n_dup = sum(len(c) - 1 for c in clusters)
+            if n_dup:
+                print(f"归并同事件 {n_dup} 条，"
+                      f"其中 {sum(1 for c in clusters if len(c) > 1)} 组有多家报道")
+            items = kept
             log("翻译中 ...")
             translate_items(items)
             align_bodies(items)         # 中文段落数不许超过英文，保证逐段对照不错位
@@ -2219,6 +2808,15 @@ def main():
     if total_items and zh_total == 0 and prev_has_chinese():
         print("！本次翻译全部失败，保留上一版中文网页，不覆盖")
     else:
+        # 点词查义用的词表：把当天正文的高频词提前翻好，点一下就出结果
+        global DICT_WORDS
+        all_items = [it for _, items in sections_out for it in items]
+        try:
+            DICT_WORDS = build_dict_cache(all_items)
+            log(f"点词词表：{len(DICT_WORDS)} 个词")
+        except Exception as e:
+            print(f"(词表生成失败，页面仍可现场联网查词: {e})")
+            DICT_WORDS = {}
         out = build_html(sections_out)
         with open("docs/index.html", "w", encoding="utf-8") as f:
             f.write(out)

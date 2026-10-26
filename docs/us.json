@@ -14,7 +14,7 @@
     "link": "https://www.nytimes.com/2026/10/25/us/politics/trumps-election-alaska.html",
     "source": "NYT Politics",
     "pub_ts": 1792977141.0,
-    "score": 19.94,
+    "score": 19.36,
     "grp": "main"
   },
   {
@@ -54,7 +54,7 @@
     "link": "https://www.theguardian.com/us-news/2026/oct/25/mary-peltola-family-car-crash-alaska-senate",
     "source": "Guardian US",
     "pub_ts": 1792960107.0,
-    "score": 19.08,
+    "score": 18.58,
     "grp": "main"
   },
   {
@@ -75,8 +75,8 @@
       "“At least let him use the name Sen. Dan Sullivan as opposed to incumbent, because a lot of people don’t know what incumbent means,” Trump said.",
       "Alaskan voters will see “Dan S. Sullivan” identified as a “registered Republican” and “incumbent” on their ballots, while “Daniel J. Sullivan Jr.” will not have a party affiliation.",
       "Blanche represented Trump as a personal attorney before the Republican president appointed him to lead the Department of Justice, which filed the lawsuit in Alaska. Blanche defended Trump in his election inference case before voters elected Trump to a second White House term, effectively ending the criminal prosecution.",
-      "Britt McHenry resigns from State Department after basketball game altercation",
-      "Minnesota man credited with saving kids, school bus driver surprised with check",
+      "German teen arrested on suspicion of murder in connection with US girl's death",
+      "Amy Acton says Trump, Vance should 'look at the facts' after Ramaswamy attack ad",
       "Airman killed rappelling from Alamodome's ceiling in Salute to Armed Forces ceremony",
       "Blanche told CNN host Dana Bash that it was “crazy” for her to ask him if Trump was trying to lay the groundwork for the same sort of election challenges that occurred before a mob of his supporters stormed the U.S. Capitol on Jan. 6, 2021.",
       "“We are not doing anything improper. We’re not doing anything we’re not allowed to do. And we have to let the process play out,\" Blanche said. \"But I do think it’s important for the American people to understand that we are not — (and) President Trump is not — trying to take over a state election in any way shape or form.”",
@@ -97,8 +97,8 @@
       "“至少让他使用参议员丹·沙利文（Dan Sullivan）的名字，而不是现任参议员的名字，因为很多人不知道现任参议员的含义，”特朗普说。",
       "阿拉斯加选民将在选票上看到“丹·S·沙利文”被标识为“注册共和党”和“现任”，而“小丹尼尔·J·沙利文”则被标识为“注册共和党”和“现任”。不会有党派关系。",
       "在共和党总统任命布兰奇领导司法部之前，布兰奇作为特朗普的私人律师代表特朗普，司法部在阿拉斯加提起了诉讼。在选民选举特朗普连任白宫之前，布兰奇在选举推论案中为特朗普辩护，有效结束了刑事起诉。",
-      "布里特·麦克亨利因篮球比赛争吵而辞去国务院职务",
-      "明尼苏达男子被认为拯救了孩子，校车司机对支票感到惊讶",
+      "德国青少年因涉嫌与美国女孩死亡有关的谋杀罪被捕",
+      "艾米·阿克顿表示特朗普和万斯在拉马斯瓦米攻击广告后应该“看看事实”",
       "飞行员在向武装部队致敬仪式上从阿拉莫圆顶天花板垂降时身亡",
       "布兰奇告诉 CNN 主持人达纳·巴什 (Dana Bash)，她问他特朗普是否试图为 2021 年 1 月 6 日他的支持者暴徒冲进美国国会大厦之前发生的同样类型的选举挑战奠定基础，这太“疯狂”了。",
       "“我们没有做任何不当的事情。我们没有做任何不被允许做的事情。我们必须让这个过程顺利进行，”布兰奇说。 “但我确实认为，美国人民必须明白，我们不会——（而且）特朗普总统也不会——试图以任何方式接管州选举。”",
@@ -110,8 +110,16 @@
     "link": "https://abcnews.com/Politics/wireStory/blanche-trump-meddle-alaska-election-results-suing-senate-137555745",
     "source": "ABC Politics",
     "pub_ts": 1792951862.0,
-    "score": 18.7,
-    "grp": "main"
+    "score": 18.24,
+    "grp": "main",
+    "_miss": [
+      12,
+      13
+    ],
+    "_keep": [
+      12,
+      13
+    ]
   },
   {
     "title_en": "Blanche defends DOJ lawsuit blocking Alaska Senate results if Republican loses",
@@ -166,44 +174,56 @@
     "link": "https://www.npr.org/2026/10/25/nx-s1-6016212/blanche-defends-doj-lawsuit-blocking-alaska-senate-results-if-republican-loses",
     "source": "NPR Politics",
     "pub_ts": 1792950635.0,
-    "score": 18.65,
+    "score": 18.2,
     "grp": "main"
   },
   {
-    "title_en": "Introducing a New Way to Understand the Election: Times Voter Trends",
-    "title_zh": "引入一种理解选举的新方法：时代选民趋势",
-    "summary": "A timely demographic story on election night that we’ve never been able to tell before.",
-    "summary_zh": "这是我们以前从未讲述过的选举之夜的及时人口故事。",
+    "title_en": "In Islamophobic Rant, Trump Seeks to Stir Republican Base in Michigan",
+    "title_zh": "特朗普在仇视伊斯兰的咆哮中寻求煽动密歇根州的共和党基础",
+    "summary": "The president contended that Dr. Abdul El-Sayed, a Muslim, would “invite hordes of jihadis to our shores” as he sought to bolster the G.O.P. candidate in a tight Senate race.",
+    "summary_zh": "总统声称，穆斯林阿卜杜勒·赛义德博士在寻求支持共和党时会“邀请成群的圣战分子来到我们的海岸”。候选人",
     "body_en": [
-      "A timely demographic story on election night that we’ve never been able to tell before."
+      "President Trump’s comments, coming in a key midterm battleground nine days before the elections, underscored the dark themes and personal vilification he and his allies have embraced as part of their closing pitch."
     ],
     "body_zh": [
-      "这是我们以前从未讲述过的选举之夜的及时人口故事。"
+      "特朗普总统的言论是在选举前九天的关键中期战场上发表的，突显了他和他的盟友在最后演讲中所接受的黑暗主题和个人诽谤。"
     ],
-    "img": "https://static01.nyt.com/images/2026/10/24/multimedia/us-estimates-2024-promo/us-estimates-2024-promo-mediumSquareAt3X.png",
-    "link": "https://www.nytimes.com/2026/10/25/upshot/election-midterms-times-voter-trends.html",
+    "img": "https://static01.nyt.com/images/2026/10/25/multimedia/25dc-trump-michigan-wpqz/25dc-trump-michigan-wpqz-mediumSquareAt3X.jpg",
+    "link": "https://www.nytimes.com/2026/10/25/us/elections/trump-michigan-el-sayed-rogers.html",
     "source": "NYT Politics",
-    "pub_ts": 1792972175.0,
-    "score": 17.68,
-    "grp": "main"
+    "pub_ts": 1792981574.0,
+    "score": 17.59,
+    "grp": "main",
+    "_miss": [
+      0
+    ],
+    "_keep": [
+      0
+    ]
   },
   {
-    "title_en": "How Obama and Trump Made their Cases in Dueling Midterm Speeches",
-    "title_zh": "奥巴马和特朗普如何在中期演讲中阐述自己的观点",
-    "summary": "At rallies this weekend, Mr. Obama and Mr. Trump delivered two starkly contrasting pitches, differing in style and substance.",
-    "summary_zh": "在本周末的集会上，奥巴马和特朗普发表了两种截然不同的言论，风格和内容各不相同。",
+    "title_en": "In Deep Red Kansas, a Trump Loyalist Fights to Defend a Senate Seat",
+    "title_zh": "在深红色堪萨斯州，特朗普的忠诚者为捍卫参议院席位而战",
+    "summary": "Senator Roger Marshall was slow to recognize the steep challenge he faced in his solidly conservative state. Now he is confronting dissent among voters with deep economic worries.",
+    "summary_zh": "参议员罗杰·马歇尔迟迟没有意识到他在坚定保守的州所面临的严峻挑战。现在他正面临选民的异议",
     "body_en": [
-      "At rallies this weekend, Mr. Obama and Mr. Trump delivered two starkly contrasting pitches, differing in style and substance."
+      "Senator Roger Marshall, right, before an event at the Great Overland Station in Topeka, Kan., this month."
     ],
     "body_zh": [
-      "在本周末的集会上，奥巴马和特朗普发表了两种截然不同的言论，风格和内容各不相同。"
+      "参议员罗杰·马歇尔（右）本月在堪萨斯州托皮卡大陆上站举行的活动之前。"
     ],
-    "img": "https://static01.nyt.com/images/2026/10/25/multimedia/25pol-obama-trump-wtbj/25pol-obama-trump-wtbj-mediumSquareAt3X-v3.jpg",
-    "link": "https://www.nytimes.com/2026/10/25/us/politics/obama-trump-competing-rallies-midterms.html",
+    "img": "https://static01.nyt.com/images/2026/10/23/multimedia/00dc-marshall-01-hkcb/00dc-marshall-01-hkcb-mediumSquareAt3X.jpg",
+    "link": "https://www.nytimes.com/2026/10/25/us/politics/roger-marshall-kansas-senate.html",
     "source": "NYT Politics",
-    "pub_ts": 1792971331.0,
-    "score": 17.63,
-    "grp": "main"
+    "pub_ts": 1792918854.0,
+    "score": 17.13,
+    "grp": "main",
+    "_miss": [
+      0
+    ],
+    "_keep": [
+      0
+    ]
   },
   {
     "title_en": "Trump rallies for Mike Rogers – and Nicki Minaj’s derriere – in Michigan",
@@ -258,7 +278,7 @@
     "link": "https://www.theguardian.com/us-news/2026/oct/25/trump-nicki-minaj-mike-rogers-michigan-rally",
     "source": "Guardian US",
     "pub_ts": 1792967819.0,
-    "score": 17.45,
+    "score": 16.92,
     "grp": "main"
   },
   {
@@ -279,8 +299,8 @@
       "Asked whether the White House had or hadn't received the bishop's consent for releasing the photos and video, the press office declined to answer that question. Instead, White House spokeswoman Taylor Rogers replied, “There has never been a greater president for Catholic Americans than President Trump, and his strong record proves it.\"",
       "The White House invitation to the bishops — extended in September — offered discussion about such issues as immigration enforcement, religious worker visas , abortion and use of federal tax credits to support private education, according to Joensen and Grob.",
       "“The meeting was in no way an endorsement of the president, his policies, or his party,” wrote Grob. “We were told the meeting was to be a private discussion, that several Catholic members of the cabinet might make an appearance, and that there could be an opportunity to pray privately with the president.”",
-      "Britt McHenry resigns from State Department after basketball game altercation",
-      "Minnesota man credited with saving kids, school bus driver surprised with check",
+      "German teen arrested on suspicion of murder in connection with US girl's death",
+      "Amy Acton says Trump, Vance should 'look at the facts' after Ramaswamy attack ad",
       "Airman killed rappelling from Alamodome's ceiling in Salute to Armed Forces ceremony",
       "“It did not take long thereafter for the White House to post a video and photos of the prayer,” Grob said.",
       "“I soon began receiving messages of serious concern over the possibility that I had inadvertently participated in a political event less than two weeks before a national election,” he added. “I also heard from some who felt wounded because of the ways they or their family had been harmed by the president’s policies.”",
@@ -301,8 +321,8 @@
       "当被问及白宫是否已获得主教同意发布这些照片和视频时，新闻办公室拒绝回答这个问题。相反，白宫发言人泰勒·罗杰斯回答说：“对于美国天主教徒来说，从来没有比特朗普总统更伟大的总统，他的出色记录证明了这一点。”",
       "乔恩森和格罗布表示，白宫于九月延长了对主教的邀请，邀请他们就移民执法、宗教工作者签证、堕胎和利用联邦税收抵免支持私立教育等问题进行讨论。",
       "格罗布写道：“这次会议绝不是对总统、他的政策或他的政党的认可。” “我们被告知，这次会议将是一次私人讨论，几位天主教内阁成员可能会出席，并且可能有机会与总统私下祈祷。”",
-      "布里特·麦克亨利因篮球比赛争吵而辞去国务院职务",
-      "明尼苏达男子被认为拯救了孩子，校车司机对支票感到惊讶",
+      "德国青少年因涉嫌与美国女孩死亡有关的谋杀罪被捕",
+      "艾米·阿克顿表示特朗普和万斯在拉马斯瓦米攻击广告后应该“看看事实”",
       "飞行员在向武装部队致敬仪式上从阿拉莫圆顶天花板垂降时身亡",
       "“此后不久，白宫就发布了祈祷的视频和照片，”格罗布说。",
       "他补充说：“我很快就开始收到严重关切的信息，担心我可能在全国大选前不到两周的时间里无意中参与了一场政治活动。” “我还听到一些人因为总统政策对他们或他们的家人造成的伤害而感到受伤。”",
@@ -314,8 +334,16 @@
     "link": "https://abcnews.com/Politics/wireStory/catholic-bishops-regret-white-house-prayer-photo-trump-137557990",
     "source": "ABC Politics",
     "pub_ts": 1792965246.0,
-    "score": 17.32,
-    "grp": "main"
+    "score": 16.8,
+    "grp": "main",
+    "_miss": [
+      12,
+      13
+    ],
+    "_keep": [
+      12,
+      13
+    ]
   },
   {
     "title_en": "Iowa’s Senate rivals pitch independence from their parties",
@@ -358,7 +386,7 @@
     "link": "https://www.politico.com/news/2026/10/25/iowa-senate-hinson-turek-independence-01134978",
     "source": "Politico",
     "pub_ts": 1792958663.0,
-    "score": 17.01,
+    "score": 16.52,
     "grp": "main"
   },
   {
@@ -382,8 +410,8 @@
       "El-Sayed has taunted Trump, encouraging him to come to Michigan in the belief that a visit would backfire on Rogers.",
       "“Donald, if you’re watching, don’t wuss out, man,” El-Sayed said. The progressive, who won a divisive primary in August, has said the country needs to “turn the page on Donald Trump.”",
       "During their second and final general election campaign debate , Rogers questioned El-Sayed's loyalty to the United States.",
-      "Britt McHenry resigns from State Department after basketball game altercation",
-      "Minnesota man credited with saving kids, school bus driver surprised with check",
+      "German teen arrested on suspicion of murder in connection with US girl's death",
+      "Amy Acton says Trump, Vance should 'look at the facts' after Ramaswamy attack ad",
       "Airman killed rappelling from Alamodome's ceiling in Salute to Armed Forces ceremony",
       "“Are you for America, or are you for these terrorist groups overseas?” Rogers asked.",
       "El-Sayed said that questioning was “shameful.”"
@@ -404,8 +432,8 @@
       "埃尔-赛义德嘲笑特朗普，鼓励他前往密歇根州，因为他相信访问会对罗杰斯产生适得其反的效果。",
       "“唐纳德，如果你在看的话，别发脾气，伙计，”埃尔-赛义德说。这位进步人士在八月份赢得了一场存在分歧的初选，他表示，美国需要“翻开唐纳德·特朗普的新一页”。",
       "在第二次也是最后一次大选辩论中，罗杰斯质疑埃尔赛义德对美国的忠诚度。",
-      "布里特·麦克亨利因篮球比赛争吵而辞去国务院职务",
-      "明尼苏达男子被认为拯救了孩子，校车司机对支票感到惊讶",
+      "德国青少年因涉嫌与美国女孩死亡有关的谋杀罪被捕",
+      "艾米·阿克顿表示特朗普和万斯在拉马斯瓦米攻击广告后应该“看看事实”",
       "飞行员在向武装部队致敬仪式上从阿拉莫圆顶天花板垂降时身亡",
       "“你是支持美国，还是支持海外的恐怖组织？”罗杰斯问道。",
       "赛义德表示，质疑是“可耻的”。"
@@ -414,8 +442,16 @@
     "link": "https://abcnews.com/Politics/wireStory/trumps-midterm-swing-brings-michigan-republicans-aim-undermine-137550585",
     "source": "ABC Politics",
     "pub_ts": 1792957106.0,
-    "score": 16.94,
-    "grp": "main"
+    "score": 16.45,
+    "grp": "main",
+    "_miss": [
+      15,
+      16
+    ],
+    "_keep": [
+      15,
+      16
+    ]
   },
   {
     "title_en": "Alaska Senate candidate Mary Peltola delays campaign events after car crash",
@@ -460,7 +496,7 @@
     "link": "https://www.nbcnews.com/politics/2026-election/mary-peltola-delays-campaign-events-minor-injury-car-crash-alaska-rcna605556",
     "source": "NBC News",
     "pub_ts": 1792955297.0,
-    "score": 16.86,
+    "score": 16.38,
     "grp": "main"
   },
   {
@@ -516,7 +552,7 @@
     "link": "https://www.pbs.org/newshour/politics/blanche-says-trump-isnt-trying-to-meddle-with-alaska-election-results-by-suing-over-senate-race",
     "source": "PBS NewsHour",
     "pub_ts": 1792952367.0,
-    "score": 16.73,
+    "score": 16.26,
     "grp": "main",
     "_miss": [
       2
@@ -560,7 +596,7 @@
     "link": "https://www.politico.com/news/2026/10/25/peltola-car-crash-postpones-campaign-stops-01134902",
     "source": "Politico",
     "pub_ts": 1792949219.0,
-    "score": 16.59,
+    "score": 16.14,
     "grp": "main"
   },
   {
@@ -616,7 +652,7 @@
     "link": "https://www.theguardian.com/us-news/2026/oct/25/todd-blanche-doj-lawsuit-alaska-senate-election-results",
     "source": "Guardian US",
     "pub_ts": 1792946921.0,
-    "score": 16.49,
+    "score": 16.05,
     "grp": "main"
   },
   {
@@ -668,7 +704,7 @@
     "link": "https://www.npr.org/2026/10/24/nx-s1-6012100/week-in-politics-ramaswamys-ohio-ad-trump-greenlights-doj-to-sue-over-alaska-senate",
     "source": "NPR Politics",
     "pub_ts": 1792842126.0,
-    "score": 15.7,
+    "score": 15.54,
     "grp": "main"
   },
   {
@@ -720,56 +756,8 @@
     "link": "https://www.cbsnews.com/news/israel-military-operation-west-bank-elections/",
     "source": "CBS News",
     "pub_ts": 1792971960.0,
-    "score": 15.67,
-    "grp": "main",
-    "_miss": [
-      15,
-      16
-    ],
-    "_keep": [
-      15,
-      16
-    ]
-  },
-  {
-    "title_en": "Netanyahu's party lags in polls ahead of first election since Oct. 7, 2023",
-    "title_zh": "自 2023 年 10 月 7 日以来的首次选举前，内塔尼亚胡的政党在民意调查中落后",
-    "summary": "Benjamin Netanyahu's Likud party is lagging behind in the polls ahead of Israel's first election since the Oct. 7, 2023 terrorist attacks. Matt Gutman has more details ahead of Tuesday.",
-    "summary_zh": "在以色列自 2023 年 10 月 7 日恐怖袭击以来的首次选举之前，本杰明·内塔尼亚胡领导的利库德集团在民意调查中落后。马特·古特曼",
-    "body_en": [
-      "Netanyahu's party lags in polls ahead of first election since Oct. 7, 2023 - CBS News",
-      "Benjamin Netanyahu's Likud party is lagging behind in the polls ahead of Israel's first election since the Oct. 7, 2023 terrorist attacks. Matt Gutman has more details ahead of Tuesday. More",
-      "Rep. Crow on Democrats' challenge in midterms",
-      "Hinojosa: Texans disappointed in both parties",
-      "David Sedaris would like to clear the air about prostate exams",
-      "\"Lincoln in the Bardo\" composer Missy Mazzoli",
-      "\"The Mosquito Bowl\" and the human cost of war",
-      "CBS News Bay Area Evening Edition Weekend 6pm",
-      "<path d=\"M10.853 31.687c-.653.628-1.53.94-2.629.94H2.813V25.67h5.411c.55 0 1.048.1 1.495.296.446.198.824.46 1.134.786.309.327.55.709.721 1.147.172.438.258.898.258 1.379 0 .979-.327 1.782-.98 2.409Zm-8.04-13.49h5.025c.979 0 1.74.262 2.28.786.541.524.812 1.207.812 2.048 0 .911-.27 1.629-.812 2.152-.54.524-1.301.786-2.28.786H2.813v-5.772Zm9.457 7.576a6.044 6.044 0 0 0-1.469-1.005 3.477 3.477 0 0 0 1.03-.799c.258-.292.494-.674.71-1.147.214-.472.322-1.069.322-1.79 0-.636-.125-1.238-.374-1.804a4.61 4.61 0 0 0-1.03-1.482 4.745 4.745 0 0 0-1.585-.992 5.567 5.567 0 0 0-2.036-.36H.88V34.43h7.344c.842 0 1.602-.128 2.281-.386a5.06 5.06 0 0 0 1.74-1.083 4.92 4.92 0 0 0 1.12-1.636c.266-.627.4-1.31.4-2.048 0-.842-.155-1.546-.464-2.113-.31-.567-.653-1.031-1.03-1.392Zm19.61 2.603c-.377.91-.898 1.7-1.558 2.37a7.166 7.166 0 0 1-2.333 1.572 7.328 7.328 0 0 1-2.886.567 7.326 7.326 0 0 1-2.886-.567 7.148 7.148 0 0 1-2.332-1.571 7.33 7.33 0 0 1-1.56-2.371c-.377-.91-.566-1.898-.566-2.964 0-1.065.189-2.053.567-2.963.377-.91.897-1.7 1.559-2.371a7.148 7.148 0 0 1 2.332-1.572 7.335 7.335 0 0 1 2.886-.567c1.03 0 1.992.19 2.886.567.893.378 1.67.902 2.332 1.572.661.67 1.181 1.46 1.56 2.37a7.66 7.66 0 0 1 .566 2.964c0 1.066-.19 2.053-.567 2.964Zm-.206-9.535a9.292 9.292 0 0 0-2.95-1.984 9.112 9.112 0 0 0-3.621-.722c-1.289 0-2.496.241-3.62.722a9.289 9.289 0 0 0-2.951 1.984 9.3 9.3 0 0 0-1.984 2.95 9.107 9.107 0 0 0-.722 3.621c0 1.289.24 2.496.722 3.62a9.292 9.292 0 0 0 1.984 2.951 9.29 9.29 0 0 0 2.95 1.985 9.117 9.117 0 0 0 3.62.721 9.12 9.12 0 0 0 3.622-.721 9.293 9.293 0 0 0 2.95-1.985 9.294 9.294 0 0 0 1.984-2.95 9.11 9.11 0 0 0 .722-3.62c0-1.29-.24-2.496-.722-3.622a9.3 9.3 0 0 0-1.984-2.95Zm13.954 6.661a12.127 12.127 0 0 0-2.358-.889 24.47 24.47 0 0 1-2.358-.747c-.73-.275-1.336-.622-1.817-1.044-.48-.42-.721-1.017-.721-1.79 0-.413.085-.803.258-1."
-    ],
-    "body_zh": [
-      "内塔尼亚胡的政党在自 2023 年 10 月 7 日以来的首次选举前民意调查中落后 - 哥伦比亚广播公司新闻",
-      "在以色列自 2023 年 10 月 7 日恐怖袭击以来的首次选举之前，本杰明·内塔尼亚胡领导的利库德集团在民意调查中落后。马特·古特曼在周二之前提供了更多细节。更多的",
-      "众议员克劳谈民主党在中期选举中的挑战",
-      "伊诺霍萨：德州人对两党都感到失望",
-      "大卫·塞达里斯 (David Sedaris) 想要澄清有关前列腺检查的误区",
-      "《林肯在中阴》作曲家米西·马佐利",
-      "“蚊碗”和战争的人类代价",
-      "CBS 湾区新闻晚报周末下午 6 点",
-      "<路径d =“M10.853 31.687c-.653.628-1.53.94-2.629.94H2.813V25.67h5.411c.55 0 1.048.1 1.495.296.446.198.824.46 1.134.786.309.327.55.709.721 1.147.172.438.258.898.258 1.379 0 .979-.327 1.782-.98 2.409Zm-8.04-13.49h5.025c.979 0 1.74.262 2.28.786.541.524.812 1.207.812 2.048 0 .911-.27 1.629-.812 2.152-.54.524-1.301.786-2.28.786H2.813v-5.772Zm9.457 7.576a6.044 6.044 0 0 0-1.469-1.005 3.477 3.477 0 0 0 1.03-.799c.258-.292.494-.674.71-1.147.214-.472.322-1.069.322-1.79 0-.636-.125-1.238-.374-1.804a4.61 4.61 0 0 0-1.03-1.482 4.745 4.745 0 0 0-1.585-.992 5.567 5.567 0 0 0-2.036-.36H.88V34.43h7.344c.842 0 1.602-.128 2.281-.386a5.06 5.06 0 0 0 1.74-1.083 4.92 4.92 0 0 0 1.12-1.636c.266-.627.4-1.31.4-2.048 0-.842-.155-1.546-.464-2.113-.31-.567-.653-1.031-1.03-1.392Zm19.61 2.603c-.377.91-.898 1.7-1.558 2.37a7.166 7.166 0 0 1-2.333 1.572 7.328 7.328 0 0 1-2.886.567 7.326 7.326 0 0 1-2.886-.567 7.148 7.148 0 0 1-2.332-1.571 7.33 7.33 0 0 1-1.56-2.371c-.377-.91-.566-1.898-.566-2.964 0-1.065.189-2.053.567-2.963.377-.91.897-1.7 1.559-2.371a7.148 7.148 0 0 1 2.332-1.572 7.335 7.335 0 0 1 2.886-.567c1.03 0 1.992.19 2.886.567.893.378 1.67.902 2.332 1.572.661.67 1.181 1.46 1.56 2.37a7.66 7.66 0 0 1 .566 2.964c0 1.066-.19 2.053-.567 2.964Zm-.206-9.535a9.292 9.292 0 0 0-2.95-1.984 9.112 9.112 0 0 0-3.621-.722c-1.289 0-2.496.241-3.62.722a9.289 9.289 0 0 0-2.951 1.984 9.3 9.3 0 0 0-1.984 2.95 9.107 9.107 0 0 0-.722 3.621c0 1.289.24 2.496.722 3.62a9.292 9.292 0 0 0 1.984 2.951 9.29 9.29 0 0 0 2.95 1.985 9.117 9.117 0 0 0 3.62.721 9.12 9.12 0 0 0 3.622-.721 9.293 9.293 0 0 0 2.95-1.985 9.294 9.294 0 0 0 1.984-2.95 9.11 9.11 0 0 0 .722-3.62c0-1.29-.24-2.496-.722-3.622a9.3 9.3 0 0 0-1.984-2.95Zm13.954 6.661a12.127 12.127 0 0 0-2.358-.889 24.47 24.47 0 0 1-2.358-.747c-.73-.275-1.336-.622-1.817-1.044-.48-.42-.721"
-    ],
-    "img": "",
-    "link": "https://www.cbsnews.com/video/netanyahus-party-lags-polls-ahead-first-election-since-oct-7-2023/",
-    "source": "CBS News",
-    "pub_ts": 1792971840.0,
-    "score": 15.66,
-    "grp": "main",
-    "_miss": [
-      7
-    ],
-    "_keep": [
-      7
-    ]
+    "score": 15.11,
+    "grp": "main"
   },
   {
     "title_en": "Trump leans into Islamophobic rhetoric at Michigan rally",
@@ -780,8 +768,10 @@
       "Trump and Obama rally supporters in key battleground states ahead of midterms",
       "President Donald Trump embraced Islamophobic rhetoric Sunday as he rallied in Port Huron, Michigan, in support of the state’s Republican candidates, including the GOP Senate nominee, former Rep. Mike Rogers.",
       "Trump alleged that Abdul El-Sayed, the Democratic Senate nominee who is locked in a dead heat with Rogers, is a “jihadist,” calling him a “Muslim Brotherhood member” while saying Rogers is “apple pie.”",
-      "“Anyone with that record of support for jihadists would be screened and unable to get a seat on an airplane. They certainly should not give him a seat in the United States Senate,” Trump said about El-Sayed. “He would be the only senator that will have to go through a metal detector before he’s allowed to go into the Senate. I want him to have a metal detector.”",
-      "Trump went on to draw a comparison between the Sept. 11, 2001, attacks and El-Sayed as he introduced speaker David Beamer, whose son, Todd Beamer, was a passenger who died on the hijacked United Flight 93.",
+      "“Anyone with that record of support for jihadists would be screened and unable to get a seat on an airplane. They certainly should not give him a seat in the United States Senate,” Trump said about El-Sayed.",
+      "Throughout his comments Sunday, Trump offered no evidence for any of the claims about El-Sayed.",
+      "“He would be the only senator that will have to go through a metal detector before he’s allowed to go into the Senate. I want him to have a metal detector,” Trump said.",
+      "Trump sought to draw a comparison between the Sept. 11, 2001, attacks and El-Sayed as he introduced speaker David Beamer, whose son, Todd Beamer, was a passenger who died on the hijacked United Flight 93.",
       "“Twenty-five years later, Michigan needs to stand up and fight just like Todd did to stop a jihadist from walking into the Capitol,” Trump said.",
       "Beamer went on to extend Trump’s comparison between the Senate race and 9/11.",
       "“What has changed? Well, one thing is 9/11 was a surprise attack. What’s going on right now in our country and here in Michigan? It’s not a surprise. We can see the attack coming that culminates in this battleground state on Tuesday, November the 3rd,” Beamer said as Trump stood behind him onstage.",
@@ -791,19 +781,19 @@
       "“He has blood that’s red. However, he has chosen to remove any strain of the white and blue part in his life. We cannot, cannot allow this man to invade and occupy our country,” he added.",
       "Both Rogers and El-Sayed were born in Michigan.",
       "El-Sayed’s campaign did not immediately respond to a request for comment on Trump’s and Beamer’s remarks.",
-      "Trump has accused El-Sayed of having ties to the Muslim Brotherhood, an international Sunni Islamist organization founded in Egypt in 1928. The Trump administration has designated certain chapters of the group in Lebanon, Jordan and Egypt as terrorist organizations. El-Sayed has repeatedly denied any ties to the group, which he has denounced.",
       "El-Sayed went viral for a heated interaction last week with a town hall attendee who asked him to condemn the organization.",
-      "“You assume ... that because I am Muslim, that somehow I would have some allegiance to something that is not our Constitution,” El-Sayed told the attendee last week.",
-      "Rogers was asked Sunday about Trump’s calling El-Sayed a “Muslim Brotherhood jihadist” and a “violent terrorist” in an interview on NBC’s “Meet the Press.” Pressed about whether he agreed with Trump’s characterizations, Rogers said the election is about “me versus Abdul,” adding, “I’ve never called him a terrorist.”",
-      "Rogers has previously questioned El-Sayed about his mother, Fatten Elkomy, over her work decades ago at a charity the U.S. government later labeled a supporter of terrorist groups , leading to its closure. Elkomy was not accused of wrongdoing at the time.",
-      "Trump helped popularize a false conspiracy theory about former President Barack Obama, claiming he was not a U.S. citizen and demanding to see his birth certificate. He has since repurposed “birther” attacks against other political rivals, including former U.N. Ambassador Nikki Haley , who was born in South Carolina."
+      "“You assume ... that because I am Muslim that somehow I would have some allegiance to something that is not our Constitution,” El-Sayed told the attendee last week.",
+      "Trump has accused El-Sayed of having ties to the Muslim Brotherhood, an international Sunni Islamist organization founded in Egypt in 1928. The Trump administration has designated certain chapters of the group in Lebanon, Jordan and Egypt as terrorist organizations. El-Sayed has repeatedly denied any ties to the group, which he has denounced.",
+      "Rogers was asked Sunday about Trump’s calling El-Sayed a “Muslim Brotherhood jihadist” and a “violent terrorist” in an interview on NBC’s “Meet the Press.” Pressed about whether he agreed with Trump’s characterizations, Rogers said the election is about “me versus Abdul,” adding, “I’ve never called him a terrorist.”"
     ],
     "body_zh": [
       "中期选举前，特朗普和奥巴马在关键战场州集结支持者",
       "唐纳德·特朗普总统周日在密歇根州休伦港集会时发表了仇视伊斯兰教的言论，支持该州的共和党候选人，其中包括共和党参议院候选人、前众议员迈克·罗杰斯。",
       "特朗普声称与罗杰斯不和的民主党参议院候选人阿卜杜勒·赛义德是一名“圣战分子”，称他为“穆斯林兄弟会成员”，同时称罗杰斯是“苹果派”。",
       "“任何有支持圣战分子记录的人都会受到筛查，并且无法在飞机上找到座位。他们当然不应该给他在美国参议院的席位，”特朗普谈到埃尔-赛义德时说道。 “他将是唯一一位在被允许进入参议院之前必须通过金属探测器的参议员。我希望他有一个金属探测器。”",
-      "特朗普接着将 2001 年 9 月 11 日的袭击事件与埃尔·赛义德进行了比较，同时介绍了议长戴维·比默 (David Beamer)，他的儿子托德·比默 (Todd Beamer) 是在被劫持的美联航 93 号航班上丧生的乘客。",
+      "在周日的讲话中，特朗普没有提供任何证据来证明有关埃尔赛义德的任何说法。",
+      "“他将是唯一一位在被允许进入参议院之前必须通过金属探测器的参议员。我希望他有一个金属探测器，”特朗普说。",
+      "特朗普在介绍议长戴维·比默时试图将 2001 年 9 月 11 日的袭击事件与埃尔·赛义德进行比较。比默的儿子托德·比默是在被劫持的美联航 93 号航班上丧生的乘客。",
       "特朗普说：“二十五年后，密歇根州需要像托德那样站起来并战斗，阻止圣战分子走进国会大厦。”",
       "比默继续将特朗普的参议院竞选与 9/11 进行比较。",
       "“发生了什么变化？嗯，有一点是，9/11 是一次突然袭击。我们国家和密歇根州现在正在发生什么？这并不奇怪。我们可以看到袭击即将到来，并在 11 月 3 日星期二在这个战场州达到顶峰，”特朗普在台上站在他身后时，比默说道。",
@@ -813,24 +803,26 @@
       "“他的血液是红色的。然而，他选择消除生命中白色和蓝色部分的任何张力。我们不能、不能允许这个人入侵和占领我们的国家，”他补充道。",
       "罗杰斯和埃尔-赛义德都出生于密歇根州。",
       "赛义德的竞选团队没有立即回应对特朗普和比默言论发表评论的请求。",
-      "特朗普指责埃尔-赛义德与穆斯林兄弟会有联系，穆斯林兄弟会是一个 1928 年在埃及成立的国际逊尼派伊斯兰组织。特朗普政府已将该组织在黎巴嫩、约旦和埃及的某些分会指定为恐怖组织。埃尔-赛义德一再否认与该组织有任何关系，并对此予以谴责。",
       "上周，埃尔-赛义德因与一名市政厅与会者的激烈互动而走红，与会者要求他谴责该组织。",
       "“你认为……因为我是穆斯林，所以我会以某种方式效忠一些不属于我们宪法的东西，”赛义德上周告诉与会者。",
-      "周日，罗杰斯在接受美国全国广播公司(NBC)“会见媒体”节目时被问及特朗普称埃尔-赛义德为“穆斯林兄弟会圣战分子”和“暴力恐怖分子”一事。当被问及他是否同意特朗普的描述时，罗杰斯表示，这次选举是关于“我与阿卜杜勒”的斗争，并补充说，“我从未称他为恐怖分子。”",
-      "罗杰斯此前曾就其母亲法顿·埃尔科米 (Fatten Elkomy) 几十年前在一家慈善机构的工作向埃尔赛义德提出质疑，美国政府后来将其列为恐怖组织支持者，导致该慈善机构关闭。埃尔科米当时并未被指控有不当行为。",
-      "特朗普帮助传播了关于前总统巴拉克·奥巴马的虚假阴谋论，声称他不是美国公民并要求查看他的出生证明。此后，他重新利用“出生地”攻击其他政治对手，包括出生于南卡罗来纳州的前联合国大使尼基·黑利。"
+      "特朗普指责埃尔-赛义德与穆斯林兄弟会有联系，穆斯林兄弟会是一个 1928 年在埃及成立的国际逊尼派伊斯兰组织。特朗普政府已将该组织在黎巴嫩、约旦和埃及的某些分会指定为恐怖组织。埃尔-赛义德一再否认与该组织有任何关系，并对此予以谴责。",
+      "周日，罗杰斯在接受美国全国广播公司(NBC)“会见媒体”节目时被问及特朗普称埃尔-赛义德为“穆斯林兄弟会圣战分子”和“暴力恐怖分子”一事。当被问及他是否同意特朗普的描述时，罗杰斯表示，这次选举是关于“我与阿卜杜勒”的斗争，并补充说，“我从未称他为恐怖分子。”"
     ],
     "img": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit_1500w/rockcms/2026-10/261025-donald-trump-michigan-midterms-ww-1309-d32bf1.jpg",
     "link": "https://www.nbcnews.com/politics/2026-election/trump-leans-islamophobic-rhetoric-michigan-rally-rcna605572",
     "source": "NBC News",
     "pub_ts": 1792971147.0,
-    "score": 15.62,
+    "score": 15.07,
     "grp": "main",
     "_miss": [
-      0
+      4,
+      5,
+      6
     ],
     "_keep": [
-      0
+      4,
+      5,
+      6
     ]
   },
   {
@@ -880,7 +872,7 @@
     "link": "https://www.axios.com/2026/10/25/netanyahu-trump-israeli-elections",
     "source": "Axios",
     "pub_ts": 1792970108.0,
-    "score": 15.57,
+    "score": 15.02,
     "grp": "main"
   },
   {
@@ -928,44 +920,8 @@
     "link": "https://www.nbcnews.com/nightly-news/video/crackdown-in-the-west-bank-days-ahead-of-israeli-elections-272201285820",
     "source": "NBC News",
     "pub_ts": 1792969730.0,
-    "score": 15.55,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15
-    ]
+    "score": 15.01,
+    "grp": "main"
   },
   {
     "title_en": "Trump escalates rhetoric against El-Sayed as he tries to undermine Democrat in Michigan Senate race",
@@ -1020,27 +976,10 @@
     "link": "https://www.pbs.org/newshour/politics/trump-escalates-rhetoric-against-el-sayed-as-he-tries-to-undermine-democrat-in-michigan-senate-race",
     "source": "PBS NewsHour",
     "pub_ts": 1792965029.0,
-    "score": 15.31,
+    "score": 14.79,
     "grp": "main",
     "_miss": [
-      0,
-      2,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
+      2
     ],
     "_keep": [
       2
@@ -1099,8 +1038,108 @@
     "link": "https://www.politico.com/news/2026/10/25/ai-non-english-language-voters-01132772",
     "source": "Politico",
     "pub_ts": 1792958400.0,
-    "score": 15.0,
+    "score": 14.51,
     "grp": "main"
+  },
+  {
+    "title_en": "Venezuela opposition leader María Corina Machado returns to country",
+    "title_zh": "委内瑞拉反对派领导人玛丽亚·科里娜·马查多返回该国",
+    "summary": "Machado covertly snuck out of the South American country in December with a private U.S. rescue team to accept the 2025 Nobel Peace Prize in Norway.",
+    "summary_zh": "12 月，马查多与美国私人救援队秘密潜出这个南美国家，前往挪威接受 2025 年诺贝尔和平奖。",
+    "body_en": [
+      "Venezuelan opposition leader and Nobel laureate María Corina Machado is back in her home country after nearly a year in exile, her team confirmed to CBS News on Sunday.",
+      "\"I am here. With you,\" Machado posted in Spanish on X.",
+      "Later Sunday night, she posted in Spanish, \"Finally, Caracas, I'm here!!\" along with video of supporters enthusiastically greeting her arrival.",
+      "Machado's senior adviser David Smoalnsky said in a statement to CBS that her return is \"a major step toward a democratic transition and free, fair, and verifiable presidential elections in the near future.\"",
+      "\"Machado returns to stand with Venezuelans in their pursuit of freedom, democracy, and justice, and to help advance a peaceful, inclusive, and sustainable transition leading to free, fair, and verifiable presidential elections, with guarantees for all,\" he said, thanking President Trump, the U.S. government and others for \"their continued leadership and support.\"",
+      "Machado covertly snuck out of the South American country in December with a private U.S. rescue team to accept the 2025 Nobel Peace Prize in Norway , her first public appearance in 11 months. The event was a month before the U.S. military deposed the country's then-President Nicolás Maduro.",
+      "Machado, who was barred by Maduro's government from exiting Venezuela, is considered a fugitive by the Venezuelan government, which accuses her of calling for military intervention against the country.",
+      "Edmundo Gonzalez, a former presidential candidate for Machado's movement who has been living in Spain, confirmed her return in his own social media post and said he would be next to her \"very soon.\"",
+      "\"Today is a very important day for Venezuelans. Our sovereign voice returns with her to lead and guide this process!\" he wrote. \"You know it, this is until the end.\"",
+      "After the news of her arrival, Machado was seen at a church in the state of Lara, west of Caracas. Dozens of supporters shook her hand and hugged her, with cellphones aloft to record her return, the Associated Press reported.",
+      "\"María! María!\" someone cried out, as another shouted, \"Welcome to Venezuela!\"",
+      "One woman wiped away tears and called it \"a miracle\" while another woman's hands flew to her face as she saw Machado enter the church.",
+      "Asked by reporters Sunday about Machado's return to Venezuela, President Trump said, \"I don't know anything about it, but I think she's a very nice woman. She gave me her Nobel Prize. So how can I say anything else? And I hope she's safe. She's a very nice woman. But we're doing really well in Venezuela.\"",
+      "Machado made several failed attempts to return to her home country, including during the aftermath of the devastating June 24 double earthquakes.",
+      "In September, the opposition leader was denied entry into Venezuela three times over 24 hours, Smoalnsky said in a statement shared with CBS News' Margaret Brennan and other journalists.",
+      "\"She has attempted to enter the country by air and sea but has been turned away each time,\" he said at the time.",
+      "U.S. Secretary of State Marco Rubio said Sunday the conditions that allowed for Machado's return to Venezuelan soil are \"the direct result of the U.S. support reconciliation talks.\"",
+      "\"The United States expects the freedoms of all sectors of Venezuelan politics to continue to be respected,\" he wrote on X . \"Likewise, we expect all political actors to support these talks which represent the best chance Venezuela has had in thirty years to peacefully achieve not just a free and fair election but an enduring democracy.\"",
+      "Machado's homecoming comes as doubts over Venezuela's democratic future — and the U.S.'s role in it — deepen.",
+      "Since Maduro's ouster, Venezuela has been run by acting President Delcy Rodríguez, a longtime Maduro ally who received the Trump administration's blessing to succeed him."
+    ],
+    "body_zh": [
+      "委内瑞拉反对派领导人、诺贝尔奖获得者玛丽亚·科里娜·马查多的团队周日向哥伦比亚广播公司新闻证实，她在流亡近一年后回到了祖国。",
+      "“我在这里。和你在一起，”马查多在 X 上用西班牙语发帖。",
+      "周日晚上晚些时候，她用西班牙语发帖称：“加拉加斯，我终于来了！！”以及支持者热情欢迎她到来的视频。",
+      "马查多的高级顾问大卫·斯莫阿尔斯基在哥伦比亚广播公司的一份声明中表示，她的回归是“迈向民主过渡和不久的将来自由、公平和可核查的总统选举的重要一步”。",
+      "他说：“马查多再次与委内瑞拉人民站在一起追求自由、民主和正义，并帮助推进和平、包容和可持续的过渡，从而实现自由、公正和可核查的总统选举，并为所有人提供保障。”他感谢特朗普总统、美国政府和其他人“持续的领导和支持”。",
+      "去年 12 月，马查多随美国私人救援队秘密潜出这个南美国家，前往挪威接受 2025 年诺贝尔和平奖，这是她 11 个月来首次公开露面。此次活动发生在美国军方废黜该国时任总统尼古拉斯·马杜罗的一个月前。",
+      "被马杜罗政府禁止离开委内瑞拉的马查多被委内瑞拉政府视为逃犯，并指责她呼吁对该国进行军事干预。",
+      "一直居住在西班牙的马查多运动前总统候选人埃德蒙多·冈萨雷斯在自己的社交媒体帖子中证实了她的回归，并表示他“很快”就会来到她身边。",
+      "“今天对委内瑞拉人来说是非常重要的一天。我们主权的声音与她一起回归，领导和指导这一进程！”他写道。 “你知道的，这件事到最后为止。”",
+      "抵达的消息传出后，人们看到马查多出现在加拉加斯西部拉拉州的一座教堂。据美联社报道，数十名支持者与她握手、拥抱，并高举手机记录她的归来。",
+      "“玛丽亚！玛丽亚！”有人喊道，另一个人喊道：“欢迎来到委内瑞拉！”",
+      "一名妇女擦去眼泪，称其为“奇迹”，而另一名妇女看到马查多进入教堂时，双手捂住了脸。",
+      "周日被记者问及马查多返回委内瑞拉一事时，特朗普总统说：“我对此一无所知，但我认为她是一位非常好的女性。她把诺贝尔奖授予了我。所以我还能说什么？我希望她安全。她是一个非常好的女人。但我们在委内瑞拉做得很好。”",
+      "马查多曾多次尝试返回祖国，包括在 6 月 24 日毁灭性的两次地震之后。",
+      "斯莫阿尔恩斯基在与哥伦比亚广播公司新闻的玛格丽特·布伦南和其他记者分享的一份声明中表示，9月份，反对派领导人在24小时内三次被拒绝进入委内瑞拉。",
+      "“她曾试图通过空中和海上进入该国，但每次都被拒绝，”他当时说。",
+      "美国国务卿卢比奥周日表示，马查多重返委内瑞拉的条件是“美国支持和解谈判的直接结果”。",
+      "“美国期望委内瑞拉政治各阶层的自由继续受到尊重，”他在 X 上写道。 “同样，我们希望所有政治参与者支持这些会谈，这是委内瑞拉三十年来和平实现自由公正选举和持久民主的最佳机会。”",
+      "马查多回国之际，人们对委内瑞拉的民主未来以及美国在其中的角色的疑虑加深。",
+      "自马杜罗下台以来，委内瑞拉一直由代理总统德尔西·罗德里格斯领导，他是马杜罗的长期盟友，得到了特朗普政府的批准接替他。"
+    ],
+    "img": "",
+    "link": "https://www.cbsnews.com/news/venezuela-opposition-maria-corina-machado-return/",
+    "source": "CBS News",
+    "pub_ts": 1792981654.0,
+    "score": 13.59,
+    "grp": "main",
+    "_miss": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "_keep": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ]
   },
   {
     "title_en": "Trump's DOJ barrels into midterms with lawsuits, raids and arrests",
@@ -1155,61 +1194,63 @@
     "link": "https://www.axios.com/2026/10/25/trump-doj-midterms-interference",
     "source": "Axios",
     "pub_ts": 1792933537.0,
-    "score": 13.97,
+    "score": 13.58,
     "grp": "main"
   },
   {
-    "title_en": "Gina Hinojosa says there's \"deep disappointment\" in both parties",
-    "title_zh": "吉娜·伊诺霍萨表示双方都“深感失望”",
-    "summary": "Democratic state Rep. Gina Hinojosa, the Democrat running for governor in Texas, said there's \"deep disappointment in both political parties\" in the Lone Star State.",
-    "summary_zh": "竞选德克萨斯州州长的民主党众议员吉娜·伊诺霍萨 (Gina Hinojosa) 表示，共和党“两党都深感失望”。",
+    "title_en": "Lula wins fourth term as Brazil's president",
+    "title_zh": "卢拉第四次连任巴西总统",
+    "summary": "With 100% of the vote counted, Brazil's electoral court announced that the soon-to-be 81-year-old Luiz Inácio Lula da Silva held an unassailable lead.",
+    "summary_zh": "随着 100% 的选票清点完毕，巴西选举法院宣布即将年满 81 岁的路易斯·伊纳西奥·卢拉·达席尔瓦 (Luiz Inácio Lula da Silva) 遥遥领先。",
     "body_en": [
-      "Gina Hinojosa says there's \"deep disappointment in both political parties\" in Texas right now - CBS News",
-      "Washington — Democratic state Rep. Gina Hinojosa, the Democrat running for governor in Texas, said on Sunday that there's \"deep disappointment in both political parties\" in the Lone Star State, prompting a new path forward that she argued is \"post-partisan in some ways.\"",
-      "\"Right now nobody wants politics as usual. Most of us see that it is broken,\" Hinojosa said on \"Face the Nation .\"",
-      "Hinojosa, 52, is taking on Gov. Greg Abbott in Texas. A civil rights and labor lawyer who's represented parts of Austin in the Texas House since 2017, Hinojosa would be the first Democratic governor and the first woman to lead the state in the governor's mansion in three decades. A recent CBS News poll had Abbott leading Hinojosa, 52% to 48%.",
-      "But in a state like Texas, which has more registered Republican voters than Democrats, Hinojosa will need support from both sides of the aisle to pull off a victory. She argued that the deep disappointment she described in both parties has made Texans forge \"a new way forward.\"",
-      "\"There is bipartisan anger about what Greg Abbott has done to our public schools,\" she said. \"Saving Texas public schools is a key part of my agenda, and that's why this campaign has resonated amongst Texans.\"",
-      "Hinojosa said her agenda \"is not a Democratic agenda,\" but rather a populist one aimed at delivering for Texans. She cited healthcare access for children and combating high insurance premiums as key focus areas.",
-      "She also pointed to data centers as an issue where Texans can find agreement. She said, \"Nobody's pushing back against the data centers harder than MAGA because these data centers are mostly moving into our rural communities that are unincorporated.\"",
-      "\"This part of Texas is being taken advantage of by these data centers, and the people of Texas and rural Texas are being taken advantage of,\" she said. \"There are big water concerns, there are big electricity cost concerns, property rights concerns, and so we need to visit all of it and make sure Texans are protected, and first and foremost have a seat at the table.\"",
-      "The comments come as Hinojosa has filed a lawsuit to obtain emails between Abbott and Elon Musk, who's given millions to Abbott's campaign. She said, \"We need to know what exactly is going on,\" pointing to the relationship between Abbott and Musk, the CEO of Texas-based Tesla and SpaceX.",
-      "\"Governor Abbott is focused on putting Texas on a path to becoming number one in education, codifying his data center guardrails, eliminating sales tax incentives for data centers, and lowering costs for hardworking Texas families,\" Abbott's press secretary, Eduardo Leal, told CBS News in a statement. \"Under Governor Abbott's leadership, Texas public education funding is at an all-time high and average teacher pay has risen by over 30%.\"",
-      "\"While Gina Hinojosa continues to run from her disastrous record, Governor Abbott will continue crisscrossing the state to talk directly to voters and to keep Texas, Texas,\" he added.",
-      "Hinojosa expressed optimism about her chances in next week's election, despite Texas being a reliably red state for over 30 years.",
-      "\"Turnout is high, enthusiasm is high on our side, so we feel really good about where we are,\" she said.",
-      "Gina Hinojosa says there's \"deep disappointment in both political parties\" in Texas right now",
-      "Transcript: Texas Democratic gubernatorial candidate Gina Hinojosa on \"Face the Nation with Margaret Brennan,\" Oct. 25, 2026",
-      "Transcript: Rep. Jason Crow on \"Face the Nation with Margaret Brennan,\" Oct. 25, 2026",
-      "Transcript: Sen. Thom Tillis on \"Face the Nation with Margaret Brennan,\" Oct. 25, 2026",
-      "Democrats Can’t Turn Texas Blue—but Republicans Can"
+      "Brazil's President Luiz Inácio Lula da Silva , a vocal critic of President Trump, was reelected Sunday in a result that provides relief to critics of Mr. Trump and keeps some distance between Latin America's biggest economy and Washington.",
+      "With 100% of the vote counted, Brazil's electoral court announced that the soon-to-be 81-year-old Lula had a lead of nearly 4.4 million votes — 51.8% of the total vote — over opponent Flávio Bolsonaro. The announcement capped an evening of chaos at polling places across Brazil, following a last-minute decision to extend voting by two hours. That decision by a Supreme Court justice may trigger legal action by Bolsonaro.",
+      "Lula's triumph bucks a trend in Latin America where increasing numbers of right-of-center presidential candidates allied with Mr. Trump have been winning, further extending the United States' influence in the region. Lula's victory leaves Mexico and Brazil, Latin America's two most populous nations, with left-of-center leaders. It also positions Latin America's largest economy, with a GDP of $2.6 trillion per year, to remain independent of the U.S., despite the pressure of increased tariffs imposed by Mr. Trump.",
+      "The announcement kicked off a celebration of supporters in and out of the Sao Paulo hotel where Lula watched the count with first lady Rosângela da Silva, allies, and friends.",
+      "Lula's victory, if confirmed by electoral authorities, will give him his non-consecutive fourth term as president. The next term begins on Jan. 5, 2027.",
+      "It is the first time since Brazil's military dictatorship ended in 1985 that the second-highest vote-getter in the first-round elections won the presidency. Bolsonaro had 47% of the vote in the first round to Lula's 45%, a difference of 2.2 million votes. However, more than 33 million voters out of nearly 160 million did not turn out in the first round.",
+      "A video published by Lula's campaign shows the veteran leader celebrating with first lady Rosângela da Silva and allies after his runoff victory was confirmed by Brazil's electoral court. Wearing star-shaped red glasses, he kissed his wife. Hundreds of his supporters began gathering on São Paulo's main artery to celebrate the victory.",
+      "In addressing supporters, Lula expressed his gratitude to the Brazilian people, and pledged to respect all Brazilians, regardless of gender or religion. He also attacked Bolsonaro.\"",
+      "\"This was a defeat for denialism and lies. I must confess that every time I attended a debate, I felt embarrassed,\" he said.",
+      "He also doubled down on his commitment to Brazil's sovereignty.",
+      "\"Either the homeland remains free, or we die for Brazil,\" he said. \"This country will not accept being anyone's backyard.\"",
+      "In Rio de Janiero, cars beeped their horns and a woman dressed in red — the color of Lula supporters — shouted \"You lost! Cry harder!\" to four men in yellow and green sipping beers, Bolsonaro's signature colors. A huge roar echoed in the street as the result was confirmed.",
+      "Rodrigo Valentim, a 51-year-old businessman and supporter of Bolsonaro, said that another Lula government would harm the economy. He pointed to financial markets' positive reaction to the result of the first round, when Bolsonaro bested Lula.",
+      "\"I don't understand how people can vote for Lula,\" he said. \"The country is collapsing.\"",
+      "Sunday's victory will likely be the last of the veteran leader's political career. Lula began his political career in the 1970s as a union leader. He then helped found the Workers' Party, which he represented as a presidential candidate three times until he finally won it in 2002. He was reelected four years later and was succeeded by one of his cabinet ministers, Dilma Rousseff, in 2010. She was reelected in 2014.",
+      "Rousseff was impeached for accounting maneuvering in 2016 amid a sprawling corruption probe, which also ensnared Lula. He tried to run for president again in 2018 but was jailed in March after being convicted.",
+      "Lula was released from prison after 580 days and saw Brazil's Supreme Court annul his sentence after police found messages that showed the judge who convicted him was biased. He quickly became one of former President Jair Bolsonaro's biggest critics and narrowly beat him in 2022.",
+      "Lula admitted in 2024, two years into the job, that his administration had done little to earn the support of his voters.",
+      "Since he lost the first round, Lula reorganized his campaign, appealed to young voters, put millions of Brazilians on the streets to defend democratic values and his legacy, raised fears of another Bolsonaro administration and boosted several government initiatives.",
+      "Lula also defended Brazil's sovereignty and insisted that a Bolsonaro presidency would allow the U.S. to exert control over Brazil."
     ],
     "body_zh": [
-      "吉娜·伊诺霍萨表示，德克萨斯州目前“两党都深感失望” - 哥伦比亚广播公司新闻",
-      "华盛顿——竞选德克萨斯州州长的民主党众议员吉娜·伊诺霍萨(Gina Hinojosa)周日表示，孤星州“两党都深感失望”，这促使她走上一条新的前进道路，她认为这条道路“在某种程度上是后党派之争”。",
-      "“现在没有人像往常一样想要政治。我们大多数人都看到它被打破了，”伊诺霍萨在“面对国家”节目中说道。",
-      "52 岁的伊诺霍萨正在与德克萨斯州州长格雷格·阿博特较量。伊诺霍萨是一名民权和劳工律师，自 2017 年以来在德克萨斯州众议院代表奥斯汀部分地区，她将成为第一位民主党州长，也是三十年来第一位在州长官邸领导该州的女性。哥伦比亚广播公司新闻最近的一项民意调查显示，雅培以 52% 比 48% 领先伊诺霍萨。",
-      "但在德克萨斯州这样的州，登记的共和党选民比民主党多，伊诺霍萨需要两党的支持才能取得胜利。她认为，她所描述的两党的深深失望已经促使德克萨斯人开辟了“一条新的前进道路”。",
-      "“两党对格雷格·阿博特对我们公立学校所做的事情感到愤怒，”她说。 “拯救德克萨斯州公立学校是我议程的关键部分，这就是为什么这项运动在德克萨斯人中引起共鸣。”",
-      "伊诺霍萨表示，她的议程“不是民主党议程”，而是旨在为德克萨斯人做出贡献的民粹主义议程。她指出，儿童的医疗保健服务和应对高额保险费是重点关注领域。",
-      "她还指出数据中心是德克萨斯人可以达成共识的一个问题。她说：“没有人比 MAGA 更强烈地抵制数据中心，因为这些数据中心大多迁入我们的非法人农村社区。”",
-      "她说：“德克萨斯州的这一部分正在被这些数据中心利用，德克萨斯州和德克萨斯州农村地区的人民也正在被利用。” “存在严重的水问题、电力成本问题、产权问题，因此我们需要访问所有这些问题，确保德克萨斯人受到保护，并且首先也是最重要的是在谈判桌上拥有一席之地。”",
-      "伊诺霍萨发表此番言论之际，他已提起诉讼，以获取雅培和埃隆·马斯克之间的电子邮件，后者为雅培的竞选活动提供了数百万美元。她说，“我们需要知道到底发生了什么”，并指出了雅培和德克萨斯州特斯拉和 SpaceX 首席执行官马斯克之间的关系。",
-      "阿博特的新闻秘书爱德华多·莱尔在一份声明中告诉哥伦比亚广播公司新闻，“阿博特州长致力于让德克萨斯州走上教育第一的道路，制定数据中心护栏，取消数据中心的销售税激励措施，并降低辛勤工作的德克萨斯州家庭的成本。” “在阿博特州长的领导下，德克萨斯州的公共教育经费达到历史最高水平，教师平均工资上涨了30%以上。”",
-      "他补充说：“虽然吉娜·伊诺霍萨继续逃避她的灾难性记录，但艾伯特州长将继续穿梭于全州，直接与选民对话，并保住德克萨斯州。”",
-      "尽管德克萨斯州 30 多年来一直是可靠的红州，但伊诺霍萨对下周选举的机会表示乐观。",
-      "“投票率很高，我们这边的热情很高，所以我们对自己的处境感到非常满意，”她说。",
-      "吉娜·伊诺霍萨表示，目前德克萨斯州“两党都深感失望”",
-      "文字记录：得克萨斯州民主党州长候选人吉娜·伊诺霍萨 (Gina Hinojosa) 的“与玛格丽特·布伦南一起面对国家”，2026 年 10 月 25 日",
-      "文字记录：众议员 Jason Crow 于 2026 年 10 月 25 日发表“与玛格丽特·布伦南一起面对国家”",
-      "文字记录：参议员托姆·蒂利斯 (Thom Tillis) 的“与玛格丽特·布伦南一起面对国家”，2026 年 10 月 25 日",
-      "民主党无法将德克萨斯州变成蓝色，但共和党可以"
+      "直言不讳地批评特朗普总统的巴西总统路易斯·伊纳西奥·卢拉·达席尔瓦周日再次当选，这一结果让特朗普的批评者松了口气，并在拉美最大经济体与华盛顿之间保持了一定距离。",
+      "在100%的选票清点完毕后，巴西选举法院宣布即将年满81岁的卢拉领先对手弗拉维奥·博尔索纳罗近440万张选票——占总票数的51.8%。在最后一刻决定将投票延长两个小时后，这一消息结束了巴西各地投票站当晚的混乱。最高法院法官的这一决定可能会引发博尔索纳罗的法律诉讼。",
+      "卢拉的胜利与拉丁美洲的趋势相反，拉丁美洲越来越多与特朗普结盟的中右翼总统候选人获胜，进一步扩大了美国在该地区的影响力。卢拉的胜利使得墨西哥和巴西这两个拉丁美洲人口最多的国家的领导人都属于中左翼。尽管特朗普施加了增加关税的压力，这也使每年 GDP 达 2.6 万亿美元的拉丁美洲最大经济体保持独立于美国。",
+      "这一宣布拉开了圣保罗酒店内外支持者庆祝活动的序幕，卢拉与第一夫人罗桑杰拉·达席尔瓦、盟友和朋友一起观看了计数。",
+      "如果卢拉的胜利得到选举当局的确认，他将获得非连续的第四个总统任期。下一学期于 2027 年 1 月 5 日开始。",
+      "这是自1985年巴西军事独裁结束以来，首轮选举中得票第二高的人首次赢得总统宝座。博尔索纳罗在第一轮投票中获得47%的选票，而卢拉则获得45%的选票，相差220万张选票。然而，在近1.6亿选民中，有超过3300万选民没有参加第一轮投票。",
+      "卢拉竞选团队发布的一段视频显示，在巴西选举法院确认他的决选胜利后，这位资深领导人与第一夫人罗桑杰拉·达席尔瓦和盟友一起庆祝。戴着星星形的红色眼镜，他亲吻了妻子。数百名他的支持者开始聚集在圣保罗的主干道上庆祝胜利。",
+      "卢拉在向支持者发表讲话时表达了对巴西人民的感谢，并承诺尊重所有巴西人，无论性别或宗教。他还袭击了博尔索纳罗。”",
+      "“这是否认主义和谎言的失败。我必须承认，每次我参加辩论，我都感到尴尬，”他说。",
+      "他还加倍致力于维护巴西主权。",
+      "“要么祖国保持自由，要么我们为巴西而死，”他说。 “这个国家不会接受成为任何人的后院。”",
+      "在里约热内卢，汽车鸣响了喇叭，一名身着红衣（卢拉支持者的颜色）的女子喊道：“你输了！哭得更厉害！”四名穿着黄色和绿色衣服的男子正在喝着博尔索纳罗标志性颜色的啤酒。随着结果的确定，街道上响起了巨大的轰鸣声。",
+      "51岁的商人、博尔索纳罗的支持者罗德里戈·瓦伦蒂姆表示，卢拉的另一个政府将损害经济。他指出金融市场对第一轮博尔索纳罗击败卢拉的结果做出了积极反应。",
+      "“我不明白人们怎么能投票给卢拉，”他说。 “国家正在崩溃。”",
+      "周日的胜利可能是这位资深领导人政治生涯的最后一场胜利。卢拉于 20 世纪 70 年代作为工会领袖开始了他的政治生涯。随后，他帮助创建了工人党，并曾三次代表该党竞选总统，直到 2002 年最终获胜。四年后，他再次当选，并于 2010 年由内阁部长之一迪尔玛·罗塞夫 (Dilma Rousseff) 继任。她于 2014 年再次当选。",
+      "2016 年，罗塞夫因会计操纵而被弹劾，当时的腐败调查范围广泛，卢拉也因此陷入困境。 2018年，他试图再次竞选总统，但在3月份被定罪后入狱。",
+      "卢拉在 580 天后出狱，巴西最高法院在警方发现信息显示对他定罪的法官存在偏见后撤销了对他的判决。他很快成为前总统博尔索纳罗最大的批评者之一，并在 2022 年以微弱优势击败了他。",
+      "卢拉在 2024 年上任两年后承认，他的政府在赢得选民的支持方面几乎没有采取任何措施。",
+      "自从输掉第一轮选举后，卢拉重组了他的竞选活动，吸引年轻选民，让数百万巴西人走上街头捍卫民主价值观和他的遗产，引发了人们对博尔索纳罗再次执政的担忧，并推动了几项政府举措。",
+      "卢拉还捍卫了巴西的主权，并坚称博尔索纳罗担任总统将允许美国对巴西施加控制。"
     ],
     "img": "",
-    "link": "https://www.cbsnews.com/news/gina-hinojosa-texas-governors-race-face-the-nation/",
+    "link": "https://www.cbsnews.com/news/brazil-presidential-runoff-lula-flavio-bolsonaro/",
     "source": "CBS News",
-    "pub_ts": 1792976595.0,
-    "score": 13.91,
+    "pub_ts": 1792980662.0,
+    "score": 13.54,
     "grp": "main",
     "_miss": [
       0,
@@ -1230,7 +1271,8 @@
       15,
       16,
       17,
-      18
+      18,
+      19
     ],
     "_keep": [
       0,
@@ -1251,7 +1293,60 @@
       15,
       16,
       17,
-      18
+      18,
+      19
+    ]
+  },
+  {
+    "title_en": "Lula beats Bolsonaro to win Brazil presidential election",
+    "title_zh": "卢拉击败博尔索纳罗赢得巴西总统选举",
+    "summary": "Brazil President Luiz Inácio Lula da Silva was elected to a fourth, nonconsecutive term in the nation's presidential election , according to early results released Sunday evening. Why it matters: Lula's victory deals a setback to Brazil's right-wing populist m",
+    "summary_zh": "根据初步结果，巴西总统路易斯·伊纳西奥·卢拉·达席尔瓦在该国总统选举中第四次当选，非连续任期",
+    "body_en": [
+      "Brazil President Luiz Inácio Lula da Silva was elected to a fourth, nonconsecutive term in the nation's presidential election , according to early results released Sunday evening.",
+      "Why it matters: Lula's victory deals a setback to Brazil's right-wing populist movement and preserves a major counterweight to President Trump 's influence in Latin America, with tensions over trade and tariffs threatening to persist.",
+      "Lula, the incumbent candidate, was facing Flávio Bolsonaro, the son of former Brazilian President Jair Bolsonaro . Flávio was widely seen as the heir to the nation's right-wing populist movement.",
+      "The latest: Lula thanked the Brazilian people after his election win, but Bolsonaro told reporters he would not accept the results and said they should be annulled, according to translations .",
+      "The big picture: The election has been shaped by the impact of U.S. tariffs, climate change and the Amazon rainforest, 60% of which is in Brazil.",
+      "Bolsonaro campaigned on public security and tackling corruption, presenting himself as a continuation of his father's political legacy, while Lula emphasized defending Brazilian sovereignty against U.S. pressure.",
+      "Yet substantive policy debate was limited, with both candidates focusing instead on corruption allegations levied against the opposing camp, wrote Matthew Taylor, a Brazil politics expert at American University.",
+      "Zoom in: After the U.S. imposed additional 25% tariffs on some Brazilian goods this summer, Lula accused Bolsonaro of being \"Trump's candidate\" and the U.S. president of wanting to \"colonize\" Brazil.",
+      "Lula has enacted climate policies aimed at reversing environmental deregulation under the previous administration, while Bolsonaro denied climate change and pledged to continue his father's political legacy.",
+      "Amazon deforestation has fallen 71% since 2022, the year before Lula returned to office, reaching its lowest annual level on record in 2026. Yet Lula's environmental record is complicated by his support for expanded oil development.",
+      "Lula defeated Jair Bolsonaro in the previous election. The elder Bolsonaro is now serving a 27-year prison sentence for plotting a coup to overturn the 2022 election, though he remains under house arrest due to health problems.",
+      "Go deeper: Brazil's markets rally after Bolsonaro's first-round lead",
+      "Editor's note: This story has been updated with comment from the presidential candidates."
+    ],
+    "body_zh": [
+      "根据周日晚间公布的初步结果，巴西总统路易斯·伊纳西奥·卢拉·达席尔瓦在该国总统选举中第四次当选，非连续任期。",
+      "重要性：卢拉的胜利对巴西右翼民粹主义运动造成了挫折，并在贸易和关税紧张局势可能持续存在的情况下，保留了对抗特朗普总统在拉丁美洲影响力的主要力量。",
+      "现任候选人卢拉的对手是巴西前总统雅伊尔·博尔索纳罗的儿子弗拉维奥·博尔索纳罗。弗拉维奥被广泛视为该国右翼民粹主义运动的继承人。",
+      "最新消息：据翻译报道，卢拉在选举获胜后感谢巴西人民，但博尔索纳罗告诉记者，他不会接受结果，并表示结果应该被废除。",
+      "总体情况：此次选举受到美国关税、气候变化和亚马逊雨林（其中 60% 位于巴西）的影响。",
+      "博尔索纳罗在竞选中致力于公共安全和反腐败，将自己描绘成其父亲政治遗产的延续，而卢拉则强调捍卫巴西主权，抵御美国的压力。",
+      "美利坚大学巴西政治专家马修·泰勒写道，然而，实质性政策辩论有限，两位候选人都把重点放在对对方阵营的腐败指控上。",
+      "放大：今年夏天美国对部分巴西商品加征25%关税后，卢拉指责博尔索纳罗是“特朗普的候选人”，美国总统想要“殖民”巴西。",
+      "卢拉制定了气候政策，旨在扭转上届政府放松环境管制的局面，而博尔索纳罗则否认气候变化，并承诺延续其父亲的政治遗产。",
+      "自 2022 年（卢拉重返办公室的前一年）以来，亚马逊森林砍伐量已下降 71%，并于 2026 年达到有记录以来的最低年度水平。然而，卢拉对扩大石油开发的支持使他的环境记录变得复杂。",
+      "卢拉在上次选举中击败了雅伊尔·博尔索纳罗。老博尔索纳罗因策划政变推翻 2022 年选举而被判 27 年监禁，目前正在服刑，但由于健康问题仍被软禁。",
+      "进一步深入：博尔索纳罗首轮领先后巴西市场反弹",
+      "编者注：本文已根据总统候选人的评论进行了更新。"
+    ],
+    "img": "https://images.axios.com/g6MiT0p8DjaBO81oLUFF48MPfxk=/42x0:5377x3001/1366x768/2026/10/25/1792956137578.jpeg",
+    "link": "https://www.axios.com/2026/10/26/brazil-election-results-bolsonaro-lula-trump",
+    "source": "Axios",
+    "pub_ts": 1792980295.0,
+    "score": 13.52,
+    "grp": "main",
+    "_miss": [
+      3,
+      11,
+      12
+    ],
+    "_keep": [
+      3,
+      11,
+      12
     ]
   },
   {
@@ -1305,7 +1400,7 @@
     "link": "https://www.npr.org/2026/10/25/nx-s1-6014525/politics-chat-the-polls-show-a-democratic-sweep-in-the-midterms-can-you-trust-them",
     "source": "NPR Politics",
     "pub_ts": 1792929989.0,
-    "score": 13.84,
+    "score": 13.47,
     "grp": "main"
   },
   {
@@ -1314,56 +1409,56 @@
     "summary": "Brazil's 80-year-old left-wing leader President Lula defeats Flávio Bolsonaro in a bitterly contested runoff.",
     "summary_zh": "巴西 80 岁的左翼领导人总统卢拉在一场激烈的决选中击败了弗拉维奥·博尔索纳罗。",
     "body_en": [
-      "Brazil's Lula wins presidency for a fourth term : NPR",
-      "Brazil's Lula wins presidency for a fourth term Brazil's 80-year-old left-wing leader President Lula defeats Flávio Bolsonaro in a bitterly contested runoff.",
       "Brazil's left-wing President Lula elected for fourth term",
       "Supporters of President Luiz Inácio Lula da Silva cheer as the results of Brazil's presidential runoff election are announced in São Paulo on Sunday, Oct. 25, 2026. Natacha Pisarenko/AP hide caption",
-      "BRASILIA, Brazil — In a stunning comeback, President Luiz Inácio Lula da Silva has been elected president of Brazil, according to official results from Sunday's runoff, with more than 96% of votes counted. Lula won more than 51% of the vote, while Sen. Flávio Bolsonaro received more than 48%.",
-      "Lula defeated 45-year-old Bolsonaro, fending off a right-wing political dynasty that had promised closer relations with President Trump and extending a career that has already included three nonconsecutive presidential terms.",
-      "Election day unfolded chaotically. Around midday, Lula's campaign requested an extension of voting hours, arguing that some local governments had reduced bus service, making it harder for voters to reach polling stations. Bolsonaro also sought an extension, citing heavy rain in some states.",
-      "Supreme Court Justice Cristiano Zanin eventually ordered voting extended by two hours beyond its normal 5 p.m. closing time. But the order reached some polling stations after officials had deactivated their electronic voting machines, meaning voting could not resume there.",
-      "At one polling station in Rio de Janeiro, 36-year-old accountant Manuela Tunas arrived shortly after 6 p.m., hoping to vote after her flight into the city was delayed. She was unable to cast a ballot. \"This is absurd,\" she said. \"If some people can vote, and others can't, it's unfair.\"",
-      "The closely-fought election drew international attention for its implications for a growing right-wing movement in Latin America, the future of the Amazon rainforest and the fate of Brazil's roughly 40-year-old democracy.",
-      "Flávio Bolsonaro is the son of former President Jair Bolsonaro, who narrowly lost to Lula in 2022 and is serving a 27-year prison sentence for plotting a coup to overturn that result. His son had pledged to pardon him.",
-      "Because the election pitted two well-established political camps against each other, Brazilians showed little enthusiasm for street campaigning in the early months. But Bolsonaro's first-place finish in the first round of voting on Oct. 4 energized the contest, and in recent days supporters of both candidates have filled rallies and flooded social media in an effort to sway voters.",
+      "BRASILIA, Brazil — In a stunning political comeback, Luiz Inácio Lula da Silva has been elected president of Brazil, according to official results from Sunday's runoff election, with more than 96% of the votes counted.",
+      "Lula secured more than 51% of the vote, defeating Sen. Flávio Bolsonaro, who received more than 48%.",
+      "The result marks a historic moment in Brazil's democratic era. Since democracy was restored in 1989, no candidate who failed to win the first round of voting has gone on to win the presidency in the second round.",
+      "The victory also adds another chapter to Lula's long political career, securing him a fourth, nonconsecutive presidential term. Lula, who turns 81 on Tuesday, will be among the oldest sitting leaders in the Americas, alongside President Trump and Nicaraguan President Daniel Ortega, both 80.",
+      "In a speech to ecstatic supporters in São Paulo, Lula said the election was a \"defeat of denialism. A defeat of lies.\"",
+      "\"I want to thank the Brazilian people for this generosity they have shown me for so long, to thank the youth who took to the streets to defend democracy, and the elders who went to vote,\" Lula told the crowd.",
+      "President Luiz Inacio Lula da Silva addresses supporters after winning a fourth term in the presidential runoff in , Brazil, Sunday, Oct. 25, 2026. Andre Penner/AP hide caption",
+      "Lula's victory bucks a broader rightward shift across Latin America in recent years. In a pointed message to Trump, Lula declared that Brazil would not accept being \"anyone's backyard.\"",
+      "Election day unfolded chaotically. Around midday, Lula's campaign requested an extension of voting hours, arguing that some local governments had reduced bus services, making it harder for voters to reach polling stations. Bolsonaro also sought an extension, citing heavy rain in some states.",
+      "Supreme Court Justice Cristiano Zanin extended voting by two hours, to 7 p.m., but some polling stations had already deactivated their electronic voting machines and could not resume voting.",
+      "Speaking briefly to journalists outside his home in Brasilia, Bolsonaro called the result \"inexplicable\" and said he would seek to annul the vote. \"I will not give up on my Brazil, and I hope you won't give up either,\" he said.",
+      "Bolsonaro, 45, had campaigned on closer ties with President Trump and pledged to pardon his father, former President Jair Bolsonaro, who is serving a 27-year sentence under house arrest for plotting a coup to overturn his 2022 election defeat to Lula.",
+      "Opposition presidential candidate Sen. Flavio Bolsonaro speaks after the presidential runoff in , Brazil, Sunday, Oct. 25, 2026. Eraldo Peres/AP hide caption",
+      "Brazilians showed little enthusiasm for street campaigning in the early months. But Bolsonaro's first-round finish on Oct. 4 energized the contest, and in recent days supporters of both candidates have filled rallies and flooded social media in an effort to sway voters.",
       "In the end, Lula's message of continuity and a focus on social spending prevailed.",
       "\"I think people woke up about the risk of a Bolsonaro government after the first round, and the mobilization made a difference,\" said Alessandra Miguel, a 35-year-old spa worker who voted for Lula in Rocinha, a favela in Rio de Janeiro.",
-      "Lula will govern a sharply divided country. Brazilian political scientist Jairo Nicolau, who studies presidential elections, said one of the most striking features of this year's contest was the rigidity of Brazilians' political allegiances.",
-      "Unlike in past years, he said, \"people's identity of belonging to a tribe became more important than how they view different policy options.\"",
-      "This is a breaking story and will be updated.",
-      "NPR does not offer or accept money for coverage or interviews.",
-      "Anyone who makes such an offer or request is not an NPR employee and does not represent NPR."
+      "Lula rose to national prominence as the leader of a metalworkers' union that organized strikes that helped bring down Brazil's dictatorship in the 1980s. Unions and progressive Catholic activists joined forces at the time to form the Workers' Party, which Lula has now represented in seven presidential elections.",
+      "During Lula's first two terms in office, from 2003 to 2010, Brazil's economy boomed, and millions of Brazilians rose out of poverty. But many voters turned their backs on the party when Lula and other leaders became embroiled in corruption scandals in the 2010s. Lula himself was jailed, though his convictions were later overturned on procedural grounds."
     ],
     "body_zh": [
-      "巴西卢拉第四次连任总统：NPR",
-      "巴西卢拉第四次连任总统 巴西 80 岁的左翼领导人总统卢拉在一场激烈的决选中击败了弗拉维奥·博尔索纳罗。",
       "巴西左翼总统卢拉当选第四任总统",
       "2026 年 10 月 25 日星期日，巴西总统决选结果在圣保罗公布，路易斯·伊纳西奥·卢拉·达席尔瓦总统的支持者欢呼雀跃。Natacha Pisarenko/美联社隐藏标题栏",
-      "巴西巴西利亚——根据周日决选的官方结果，超过 96% 的选票已清点，总统路易斯·伊纳西奥·卢拉·达席尔瓦以惊人的方式当选巴西总统。卢拉赢得了超过 51% 的选票，而参议员弗拉维奥·博尔索纳罗则获得了超过 48% 的选票。",
-      "卢拉击败了 45 岁的博尔索纳罗，抵御了一个承诺与特朗普总统建立更密切关系的右翼政治王朝，并延长了已经包括三个不连续总统任期的职业生涯。",
+      "巴西巴西利亚——周日决选的官方结果显示，超过 96% 的选票已清点，路易斯·伊纳西奥·卢拉·达席尔瓦 (Luiz Inácio Lula da Silva) 当选巴西总统，令人惊叹的政治回归。",
+      "卢拉获得了超过 51% 的选票，击败了获得超过 48% 选票的参议员弗拉维奥·博尔索纳罗。",
+      "这一结果标志着巴西民主时代的历史性时刻。自1989年恢复民主以来，没有一位未能赢得第一轮投票的候选人在第二轮投票中赢得总统职位。",
+      "这场胜利也为卢拉漫长的政治生涯增添了新的篇章，确保了他第四次非连续的总统任期。周二将满 81 岁的卢拉将成为美洲最年长的现任领导人之一，与特朗普总统和尼加拉瓜总统丹尼尔·奥尔特加并列，均为 80 岁。",
+      "卢拉在圣保罗向欣喜若狂的支持者发表讲话时表示，这次选举是“否认主义的失败。谎言的失败”。",
+      "卢拉对人群说：“我要感谢巴西人民长期以来对我表现出的慷慨，感谢走上街头捍卫民主的年轻人，以及去投票的长辈。”",
+      "2026 年 10 月 25 日星期日，巴西总统路易斯·伊纳西奥·卢拉·达席尔瓦在总统决选中赢得第四个任期后向支持者发表讲话。Andre Penner/美联社隐藏标题栏",
+      "卢拉的胜利与近年来整个拉丁美洲更广泛的右倾趋势背道而驰。卢拉在给特朗普的明确信息中宣称，巴西不会接受成为“任何人的后院”。",
       "选举日混乱地展开。中午左右，卢拉的竞选团队要求延长投票时间，理由是一些地方政府减少了公交车服务，使选民更难到达投票站。博尔索纳罗还以部分州大雨为由寻求延期。",
-      "最高法院法官克里斯蒂亚诺·扎宁 (Cristiano Zanin) 最终下令投票比正常下午 5 点延长两个小时。关门时间。但在官员关闭电子投票机后，该命令到达了一些投票站，这意味着那里的投票无法恢复。",
-      "下午 6 点刚过，36 岁的会计师曼努埃拉·图纳斯 (Manuela Tunas) 抵达里约热内卢的一个投票站，因为她飞往该市的航班延误，希望能够投票。她无法投票。 “这太荒谬了，”她说。 “如果有些人可以投票，而另一些人则不能，这是不公平的。”",
-      "这场势均力敌的选举因其对拉丁美洲日益壮大的右翼运动、亚马逊雨林的未来以及巴西大约 40 年民主的命运的影响而引起了国际关注。",
-      "弗拉维奥·博尔索纳罗是前总统雅伊尔·博尔索纳罗的儿子，后者在 2022 年以微弱优势输给了卢拉，目前因策划政变推翻卢拉而被判 27 年监禁，正在服刑。他的儿子已发誓会赦免他。",
-      "由于这次选举让两个根深蒂固的政治阵营相互对立，巴西人在最初几个月对街头竞选表现出很少的热情。但博尔索纳罗在 10 月 4 日第一轮投票中获得第一名，为这场竞争注入了活力，最近几天，两位候选人的支持者纷纷举行集会并涌入社交媒体，试图影响选民。",
+      "最高法院法官克里斯蒂亚诺·扎宁(Cristiano Zanin)将投票时间延长了两个小时，至晚上7点，但一些投票站已经关闭了电子投票机，无法恢复投票。",
+      "博尔索纳罗在巴西利亚的家外对记者简短地发表讲话，称这一结果“令人费解”，并表示他将寻求废除投票。 “我不会放弃我的巴西，我希望你们也不会放弃，”他说。",
+      "45 岁的博尔索纳罗在竞选时曾致力于与特朗普总统建立更密切的关系，并承诺赦免他的父亲、前总统雅伊尔·博尔索纳罗。博尔索纳罗因策划政变推翻 2022 年选举中输给卢拉的选举而被软禁 27 年。",
+      "2026 年 10 月 25 日星期日，反对派总统候选人参议员弗拉维奥·博尔索纳罗在巴西总统决选后发表讲话。埃拉尔多·佩雷斯/美联社隐藏标题栏",
+      "最初几个月，巴西人对街头竞选活动表现出一点热情。但博尔索纳罗 10 月 4 日的首轮投票给这场竞选注入了活力，最近几天，两位候选人的支持者纷纷举行集会并涌入社交媒体，试图影响选民。",
       "最终，卢拉的连续性和对社会支出的关注占据了上风。",
       "35 岁的水疗中心工人亚历山德拉·米格尔 (Alessandra Miguel) 在里约热内卢贫民窟罗西尼亚 (Rocinha) 投票给卢拉，他说：“我认为，第一轮选举后，人们已经意识到了博尔索纳罗政府的风险，动员行动发挥了作用。”",
-      "卢拉将统治一个分裂严重的国家。研究总统选举的巴西政治学家贾罗·尼科劳表示，今年竞选最引人注目的特点之一是巴西人政治忠诚度的僵化。",
-      "他说，与过去几年不同，“人们属于一个部落的身份变得比他们如何看待不同的政策选择更重要。”",
-      "这是一个重大故事，将会更新。",
-      "NPR 不提供或接受报道或采访费用。",
-      "提出此类提议或要求的任何人都不是 NPR 员工，也不代表 NPR。"
+      "卢拉作为金属工人工会的领导人而声名鹊起，该工会组织罢工，帮助推翻了 20 世纪 80 年代巴西的独裁统治。当时，工会和进步的天主教活动人士联手组建了工人党，卢拉现已代表该党参加了七次总统选举。",
+      "2003年至2010年卢拉前两届任期内，巴西经济蓬勃发展，数百万巴西人摆脱了贫困。但当卢拉和其他领导人在 2010 年代卷入腐败丑闻时，许多选民不再支持该党。卢拉本人被判入狱，但后来因程序原因被推翻。"
     ],
     "img": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/7690x5127+0+0/resize/7690x5127!/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F6d%2F46%2F3b8586734e2997734a0ed801605d%2Fap26299000355395.jpg",
     "link": "https://www.npr.org/2026/10/25/nx-s1-6016299/brazil-lula-bolsonaro-election",
     "source": "NPR News",
     "pub_ts": 1792974900.0,
-    "score": 13.82,
+    "score": 13.25,
     "grp": "main",
     "_miss": [
-      0,
-      1,
       2,
       3,
       4,
@@ -1372,19 +1467,15 @@
       7,
       8,
       9,
-      10,
       11,
       12,
       13,
       14,
       15,
-      16,
-      17,
-      18
+      18,
+      19
     ],
     "_keep": [
-      0,
-      1,
       2,
       3,
       4,
@@ -1393,75 +1484,13 @@
       7,
       8,
       9,
-      10,
       11,
       12,
       13,
       14,
       15,
-      16,
-      17,
-      18
-    ]
-  },
-  {
-    "title_en": "Lula beats Bolsonaro to win Brazil presidential election",
-    "title_zh": "卢拉击败博尔索纳罗赢得巴西总统选举",
-    "summary": "Brazil President Luiz Inácio Lula da Silva was elected to a fourth, nonconsecutive term in the nation's presidential election according to early results released Sunday evening. Why it matters: Lula's victory deals a setback to Brazil's right-wing populist mov",
-    "summary_zh": "根据初步结果，巴西总统路易斯·伊纳西奥·卢拉·达席尔瓦在该国总统选举中第四次当选，非连续任期",
-    "body_en": [
-      "Brazil President Luiz Inácio Lula da Silva was elected to a fourth, nonconsecutive term in the nation's presidential election according to early results released Sunday evening.",
-      "Why it matters: Lula's victory deals a setback to Brazil's right-wing populist movement and preserves a major counterweight to President Trump 's influence in Latin America, with tensions over trade and tariffs threatening to persist.",
-      "Lula, the incumbent candidate, was facing Flávio Bolsonaro, the son of former Brazilian President Jair Bolsonaro . Flávio was widely seen as the heir to the nation's right-wing populist movement.",
-      "The big picture: The election has been shaped by the impact of U.S. tariffs, climate change and the Amazon rainforest, 60% of which is in Brazil.",
-      "Bolsonaro campaigned on public security and tackling corruption, presenting himself as a continuation of his father's political legacy, while Lula emphasized defending Brazilian sovereignty against U.S. pressure.",
-      "Yet substantive policy debate was limited, with both candidates focusing instead on corruption allegations levied against the opposing camp, wrote Matthew Taylor, a Brazil politics expert at American University.",
-      "Zoom in: After the U.S. imposed additional 25% tariffs on some Brazilian goods this summer, Lula accused Bolsonaro of being \"Trump's candidate\" and the U.S. president of wanting to \"colonize\" Brazil.",
-      "Lula has enacted climate policies aimed at reversing environmental deregulation under the previous administration, while Bolsonaro denied climate change and pledged to continue his father's political legacy.",
-      "Amazon deforestation has fallen 71% since 2022, the year before Lula returned to office, reaching its lowest annual level on record in 2026. Yet Lula's environmental record is complicated by his support for expanded oil development.",
-      "Lula defeated Jair Bolsonaro in the previous election. The elder Bolsonaro is now serving a 27-year prison sentence for plotting a coup to overturn the 2022 election, though he remains under house arrest due to health problems."
-    ],
-    "body_zh": [
-      "根据周日晚间公布的初步结果，巴西总统路易斯·伊纳西奥·卢拉·达席尔瓦在该国总统选举中第四次当选，非连续任期。",
-      "重要性：卢拉的胜利对巴西右翼民粹主义运动造成了挫折，并在贸易和关税紧张局势可能持续存在的情况下，保留了对抗特朗普总统在拉丁美洲影响力的主要力量。",
-      "现任候选人卢拉的对手是巴西前总统雅伊尔·博尔索纳罗的儿子弗拉维奥·博尔索纳罗。弗拉维奥被广泛视为该国右翼民粹主义运动的继承人。",
-      "总体情况：此次选举受到美国关税、气候变化和亚马逊雨林（其中 60% 位于巴西）的影响。",
-      "博尔索纳罗在竞选中致力于公共安全和反腐败，将自己描绘成其父亲政治遗产的延续，而卢拉则强调捍卫巴西主权，抵御美国的压力。",
-      "美利坚大学巴西政治专家马修·泰勒写道，然而，实质性政策辩论有限，两位候选人都把重点放在对对方阵营的腐败指控上。",
-      "放大：今年夏天美国对部分巴西商品加征25%关税后，卢拉指责博尔索纳罗是“特朗普的候选人”，美国总统想要“殖民”巴西。",
-      "卢拉制定了气候政策，旨在扭转上届政府放松环境管制的局面，而博尔索纳罗则否认气候变化，并承诺延续其父亲的政治遗产。",
-      "自 2022 年（卢拉重返办公室的前一年）以来，亚马逊森林砍伐量已下降 71%，并于 2026 年达到有记录以来的最低年度水平。然而，卢拉对扩大石油开发的支持使他的环境记录变得复杂。",
-      "卢拉在上次选举中击败了雅伊尔·博尔索纳罗。老博尔索纳罗因策划政变推翻 2022 年选举而被判 27 年监禁，目前正在服刑，但由于健康问题仍被软禁。"
-    ],
-    "img": "https://images.axios.com/g6MiT0p8DjaBO81oLUFF48MPfxk=/42x0:5377x3001/1366x768/2026/10/25/1792956137578.jpeg",
-    "link": "https://www.axios.com/2026/10/26/brazil-election-results-bolsonaro-lula-trump",
-    "source": "Axios",
-    "pub_ts": 1792974375.0,
-    "score": 13.79,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9
+      18,
+      19
     ]
   },
   {
@@ -1517,7 +1546,7 @@
     "link": "https://www.npr.org/2026/10/25/nx-s1-6016205/measles-outbreak-pennsylvania",
     "source": "NPR News",
     "pub_ts": 1792960535.0,
-    "score": 13.1,
+    "score": 12.6,
     "grp": "main"
   },
   {
@@ -1555,7 +1584,7 @@
     "link": "https://www.pbs.org/newshour/politics/alaska-democratic-senate-candidate-mary-peltola-and-her-family-suffer-minor-injuries-in-car-crash",
     "source": "PBS NewsHour",
     "pub_ts": 1792959063.0,
-    "score": 13.03,
+    "score": 12.54,
     "grp": "main",
     "_miss": [
       1
@@ -1615,7 +1644,7 @@
     "link": "https://www.npr.org/2026/10/25/nx-s1-6016222/venezuela-maria-corina-machado-leader-returns-exile",
     "source": "NPR News",
     "pub_ts": 1792945121.0,
-    "score": 12.42,
+    "score": 11.99,
     "grp": "main"
   },
   {
@@ -1671,52 +1700,8 @@
     "link": "https://techcrunch.com/2026/10/25/5-best-apps-track-reading-discover-new-books/",
     "source": "TechCrunch",
     "pub_ts": 1792977000.0,
-    "score": 11.94,
-    "grp": "tech",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ]
+    "score": 11.36,
+    "grp": "tech"
   },
   {
     "title_en": "iFixit’s look inside the iPhone Duo may explain those broken screens and hinges",
@@ -1763,7 +1748,7 @@
     "link": "https://www.theverge.com/tech/1018233/ifixit-iphone-duo-teardown-repairability-hinge",
     "source": "The Verge",
     "pub_ts": 1792964427.0,
-    "score": 11.28,
+    "score": 10.77,
     "grp": "tech"
   },
   {
@@ -1783,7 +1768,7 @@
       "Watch Episode 1 of our Odyssey series made with Grok Imagine.",
       "Let us know in the comments if you'd like a full breakdown of how it was done!",
       "Creative collaboration with @WonderStudiosX and director Dev Walker @glumlot_ pic.twitter.com/xpgpkqSCpq",
-      "I’ll admit it’s not as spectacularly ugly as I’d expected, and certainly more impressive than other videos that Musk has posted recently. If I didn’t know better, there were moments when I might have thought these were real actors sailing across a real sea. And while I can’t speak to Grok’s historical accuracy, it does seem that some fudging was necessary, since no one’s speaking in ancient Greek. had to be made. But at least all the characters come in a Musk-approved skin color, while the narrator uses a British accent that will sound familiar to anyone who’s played a fantasy video game or watched a generic Hollywood epic from the past 25 years.",
+      "I’ll admit it’s not as spectacularly ugly as I’d expected, and certainly more impressive than other videos that Musk has posted recently. If I didn’t know better, there were moments when I might have thought these were real actors sailing across a real sea. And while I can’t speak to Grok’s historical accuracy, it does seem that some fudging was necessary, since no one’s speaking in ancient Greek. But hey, all the characters come in a Musk-approved skin color, while the narrator uses a British accent that will sound familiar to anyone who’s played a fantasy video game or watched a generic Hollywood epic from the past 25 years.",
       "What the footage really lacks is any sense of artistry, inspiration, or human interest. The backstory — delivered via the aforementioned voiceover — seems to go on forever, finally giving way to one bearded face after another, each shouting stilted lines that make Nolan’s questionable dialogue (“Our age of bronze is collapsing!”) sound like Shakespeare.",
       "While a few individual shots might provide a reasonable simulacrum of reality, as a whole, the clip feels completely airless, offering viewers no sense of momentum, no reason to care about anyone or anything on-screen. And where I had no trouble paying attention for the nearly three hours of Nolan’s “Odyssey,” I was listlessly checking how much time I had left before the Grok version was even halfway through. If it was a video game cutscene, I would have hit the “skip” button.",
       "It’s hard to imagine being interested in another seven minutes of this, much less a full movie’s worth.",
@@ -1819,14 +1804,8 @@
     "link": "https://techcrunch.com/2026/10/25/grok-releases-the-first-seven-minutes-of-its-ai-generated-odyssey/",
     "source": "TechCrunch",
     "pub_ts": 1792963876.0,
-    "score": 11.26,
-    "grp": "tech",
-    "_miss": [
-      13
-    ],
-    "_keep": [
-      13
-    ]
+    "score": 10.74,
+    "grp": "tech"
   },
   {
     "title_en": "Scott Walker’s The Drift will get under your skin",
@@ -1834,6 +1813,7 @@
     "summary": "In my mind, Spooky Season music comes in two distinct flavors. There are the fun, occasionally goofy songs like \"The Monster Mash\" and John Carpenter's \"Halloween Theme.\" Then there is the genuinely terrifying: Throbbing Gristle, The Body, or Scott Walker's Th",
     "summary_zh": "在我看来，《幽灵季节》的音乐有两种不同的风格。有一些有趣的、偶尔有些愚蠢的歌曲，比如“The Monster Mash”和“John Carpenter”",
     "body_en": [
+      "Scott Walker’s The Drift will get under your skin | The Verge",
       "Scott Walker’s The Drift will get under your skin",
       "Walker’s 2006 album is unsettling, bizarre, and the perfect way to kill a party.",
       "What we’re listening to, watching, and reading right now.",
@@ -1850,10 +1830,10 @@
       "Mister Organ is one of the most unsettling documentaries I’ve ever seen",
       "George A. Romero’s Season of the Witch is a slow-burn feminist occult drama",
       "What’s your music consumption medium of choice?",
-      "r/opensource just banned AI, non-English speakers, and more",
       "A YouTuber dissected an iPhone Duo and thinks he found the cause of crackgate"
     ],
     "body_zh": [
+      "斯科特·沃克 (Scott Walker) 的《漂移》(The Drift) 会让你心烦意乱 |边缘",
       "斯科特·沃克（Scott Walker）的《漂移》（The Drift）会让你感到不舒服",
       "沃克 2006 年的专辑令人不安、怪异，是扼杀派对的完美方式。",
       "我们现在正在听、看、读的内容。",
@@ -1870,15 +1850,20 @@
       "《风琴先生》是我看过的最令人不安的纪录片之一",
       "乔治·A·罗梅罗的《女巫季节》是一部缓慢燃烧的女权主义神秘剧",
       "您选择的音乐消费媒介是什么？",
-      "r/opensource 刚刚禁止了人工智能、非英语人士等",
       "一位 YouTuber 剖析了 iPhone Duo，并认为他找到了破解门的原因"
     ],
     "img": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/a1635465713_10.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
     "link": "https://www.theverge.com/entertainment/1018300/scott-walker-the-drift-music-album-review",
     "source": "The Verge",
     "pub_ts": 1792962489.0,
-    "score": 11.19,
-    "grp": "tech"
+    "score": 10.68,
+    "grp": "tech",
+    "_miss": [
+      0
+    ],
+    "_keep": [
+      0
+    ]
   },
   {
     "title_en": "‘Cyberselfish’ author takes aim at techno-libertarianism as her book returns from the dead",
@@ -1933,7 +1918,7 @@
     "link": "https://techcrunch.com/2026/10/25/cyberselfish-author-takes-aim-at-techno-libertarianism-as-her-book-returns-from-the-dead/",
     "source": "TechCrunch",
     "pub_ts": 1792959608.0,
-    "score": 11.05,
+    "score": 10.56,
     "grp": "tech"
   },
   {
@@ -1981,7 +1966,7 @@
     "link": "https://www.theverge.com/tech/1018290/dissected-iphone-duo-crackgate-hinge-screen",
     "source": "The Verge",
     "pub_ts": 1792959379.0,
-    "score": 11.04,
+    "score": 10.55,
     "grp": "tech"
   },
   {
@@ -2029,7 +2014,7 @@
     "link": "https://www.wired.com/review/wallhack-m-001/",
     "source": "Wired",
     "pub_ts": 1792931400.0,
-    "score": 9.89,
+    "score": 9.51,
     "grp": "tech"
   },
   {
@@ -2054,10 +2039,10 @@
       "In your inbox: Go inside the world of digital security with Kernel Panic",
       "Jorge Garay is a contributor to WIRED en Español. He specializes in technology, cybersecurity, and the legislative impact of social media. He has worked in digital media for 10 years. He is passionate about geek culture, astronomy, and the development of new communication technologies. ... Read More",
       "Topics antimatter Atoms particle physics physics quantum physics",
+      "Elusive ‘Geoneutrinos’ Are Building a New Map of Earth’s Volatile Interior",
+      "A global network of detectors are reporting some of the most substantial measurements yet of neutrinos created deep underground by the radioactive elements that power our planet’s tectonic activity.",
       "A Scientist Working on the ‘IceCube’ Neutrino Detector Explains the Nobel Prize–Winning Technology",
-      "“Detecting a neutrino is like looking for a needle in a haystack,” says Juan Carlos Díaz Vélez, who breaks down why researchers are looking for the cosmic particles under the Antarctic ice.",
-      "Life Is Asymmetric. The Scientists Who Figured Out Why Won the 2026 Nobel Prize in Chemistry",
-      "Henri Kagan and Kensō Soai designed chemical reactions producing only one of the two mirror-image forms of a molecule—an important finding for the synthesis of pharmaceuticals and other biological substances."
+      "“Detecting a neutrino is like looking for a needle in a haystack,” says Juan Carlos Díaz Vélez, who breaks down why researchers are looking for the cosmic particles under the Antarctic ice."
     ],
     "body_zh": [
       "科学家将反物质粒子捕获数月以研究其秘密有线",
@@ -2076,17 +2061,25 @@
       "在您的收件箱中：通过 Kernel Panic 进入数字安全世界",
       "Jorge Garay 是《连线》西班牙语版的撰稿人。他专门研究技术、网络安全和社交媒体的立法影响。他在数字媒体领域工作了 10 年。他对极客文化、天文学和新通信技术的开发充满热情。 ... 阅读更多",
       "主题 反物质 原子 粒子物理学 物理学 量子物理学",
+      "难以捉摸的“中微子”正在绘制地球内部不稳定的新地图",
+      "全球探测器网络正在报告一些迄今为止最实质性的中微子测量结果，这些中微子是由为地球构造活动提供动力的放射性元素在地下深处产生的。",
       "一位致力于“IceCube”中微子探测器的科学家解释了这项荣获诺贝尔奖的技术",
-      "“探测中微子就像大海捞针一样，”胡安·卡洛斯·迪亚斯·贝莱斯说道，他详细解释了研究人员为何在南极冰层下寻找宇宙粒子。",
-      "生活是不对称的。揭晓为何荣获 2026 年诺贝尔化学奖的科学家",
-      "Henri Kagan 和 Kensō Soai 设计了仅产生分子的两种镜像形式之一的化学反应，这是药物和其他生物物质合成的重要发现。"
+      "“探测中微子就像大海捞针一样，”胡安·卡洛斯·迪亚斯·贝莱斯说道，他详细解释了研究人员为何在南极冰层下寻找宇宙粒子。"
     ],
     "img": "https://media.wired.com/photos/6adaaa0519e924cf3288639a/master/pass/1344013114",
     "link": "https://www.wired.com/story/scientists-trapped-an-antimatter-particle-for-months-to-study-its-secrets/",
     "source": "Wired",
     "pub_ts": 1792929600.0,
-    "score": 9.83,
-    "grp": "tech"
+    "score": 9.45,
+    "grp": "tech",
+    "_miss": [
+      16,
+      17
+    ],
+    "_keep": [
+      16,
+      17
+    ]
   },
   {
     "title_en": "6 Best Folding Phones (2026): Samsung, Apple, Google, Motorola",
@@ -2098,22 +2091,20 @@
       "You may be scoffing as you read this. The best folding phones? Really? Aren’t those just gimmicks? I'm here to tell you they're pretty darn useful. And yes, there are quite a few now (even Apple is in on the action ), so you have options. Folding phones are an evolution of the traditional single-screen slab of glass we've all been using for nearly two decades.",
       "They largely come in two forms: a folding flip phone or a folding book-like phone, enabling you to either relive the glory days of small phones or expand your multitasking options while on the go. A folding phone is a personal decision—arguably even more than a traditional smartphone, since it hinges (heh) on what style you prefer. We have tested almost all of them, and these are our favorites.",
       "Check out our other mobile buying guides, including the Best Android Phones , Best iPhones , Best Cheap Phones , Best Samsung Phones , Best Google Pixel Phones , Best Motorola Phones , Best Phones With a Headphone Jack , and Best Phones You Can't Buy in the US .",
-      "Updated October 2026: We've added the Apple iPhone Duo, more on the Z Flip8 after testing, and updated prices.",
-      "<div class=\"UnifiedProductCardBody-fMbTZU hibBeb product-embed\" data-item=\"{\"ctaAn"
+      "Updated October 2026: We've added the Apple iPhone Duo, more on the Z Flip8 after testing, and updated prices."
     ],
     "body_zh": [
       "6 款最佳折叠手机（2026 年）：三星、苹果、谷歌、摩托罗拉 |有线",
       "当你读到这里的时候，你可能会嗤之以鼻。最好的折叠手机？真的吗？这些不就是噱头吗？我来这里是想告诉你它们非常有用。是的，现在有很多（甚至苹果公司也在采取行动），所以你有选择。折叠手机是我们近二十年来一直使用的传统单屏玻璃板的演变。",
       "它们主要有两种形式：折叠式翻盖手机或折叠式书本式手机，使您能够重温小型手机的辉煌岁月，或在旅途中扩展您的多任务处理选项。折叠手机是个人决定，甚至可以说比传统智能手机更重要，因为它取决于（呵呵）你喜欢什么风格。我们测试了几乎所有这些，这些是我们最喜欢的。",
       "查看我们的其他手机购买指南，包括最佳 Android 手机、最佳 iPhone、最便宜手机、最佳三星手机、最佳 Google Pixel 手机、最佳摩托罗拉手机、带耳机插孔的最佳手机以及在美国买不到的最佳手机。",
-      "2026 年 10 月更新：我们在测试后添加了 Apple iPhone Duo、Z Flip8 的更多内容，并更新了价格。",
-      "<div class=\"UnifiedProductCardBody-fMbTZU hibBeb 产品嵌入\" data-item=\"{\"ctaAn"
+      "2026 年 10 月更新：我们在测试后添加了 Apple iPhone Duo、Z Flip8 的更多内容，并更新了价格。"
     ],
     "img": "https://media.wired.com/photos/6adb855058fe17d926e68364/master/pass/Best%20Folding%20Phones%20iPhone%20Duo%20102026%20top%20art%20SOURCE%20Samsung-Apple.jpg",
     "link": "https://www.wired.com/gallery/best-folding-phones/",
     "source": "Wired",
     "pub_ts": 1792927800.0,
-    "score": 9.76,
+    "score": 9.4,
     "grp": "tech"
   },
   {
@@ -2137,10 +2128,10 @@
       "“We’ve discussed that we need to consider all of those opportunities: public-private partnership, new federal installation, state land, leveraging commercial land—all of those are possibilities. They all have pros and cons. We haven’t made that decision yet, but we’re not discounting any of those options.”",
       "Stephen Clark is a space reporter at Ars Technica, covering private space companies and the world’s space agencies. Stephen writes about the nexus of technology, science, policy, and business on and off the planet.",
       "1. Ice sheet expansion may have started 2,000 years ago, but we canceled that",
-      "2. Rocket Report: SpaceX says no thanks to military launches; Spanish rocket nearly ready",
-      "3. Inside the Pentagon, the pressure is on to find a home for a new spaceport",
-      "4. Crows can evaluate visual info twice as fast as mammals",
-      "5. NASA updates lander plans for Moon landings, finally solves long-festering Orion issue"
+      "2. Inside the Pentagon, the pressure is on to find a home for a new spaceport",
+      "3. Rocket Report: SpaceX says no thanks to military launches; Spanish rocket nearly ready",
+      "4. NASA updates lander plans for Moon landings, finally solves long-festering Orion issue",
+      "5. Crows can evaluate visual info twice as fast as mammals"
     ],
     "body_zh": [
       "五角大楼内部面临着为新太空港寻找落脚点的压力 - Ars Technica",
@@ -2158,16 +2149,28 @@
       "“我们已经讨论过，我们需要考虑所有这些机会：公私合作、新的联邦设施、国有土地、利用商业土地——所有这些都是可能的。它们都有优点和缺点。我们还没有做出这个决定，但我们不会忽视任何这些选择。”",
       "斯蒂芬·克拉克 (Stephen Clark) 是 Ars Technica 的太空记者，报道私人太空公司和世界各地的太空机构。斯蒂芬撰写了关于地球内外技术、科学、政策和商业的联系的文章。",
       "1. 乌鸦评估视觉信息的速度是哺乳动物的两倍",
-      "2.火箭报道：SpaceX对军事发射说不；西班牙火箭即将准备就绪",
-      "3.五角大楼内部面临着为新太空港寻找落脚点的压力",
-      "4.乌鸦评估视觉信息的速度是哺乳动物的两倍",
-      "5. NASA更新登月登陆器计划，最终解决长期困扰的猎户座问题"
+      "2.五角大楼内部面临着为新太空港寻找落脚点的压力",
+      "3.火箭报道：SpaceX对军事发射说不；西班牙火箭即将准备就绪",
+      "4. NASA更新登陆器登月计划，终于解决了长期困扰的猎户座问题",
+      "5. 乌鸦评估视觉信息的速度是哺乳动物的两倍"
     ],
     "img": "https://cdn.arstechnica.net/wp-content/uploads/2026/10/gallery-gallery_ng-2-ascent-2-1152x648.jpg",
     "link": "https://arstechnica.com/space/2026/10/senior-commander-says-space-force-needs-new-spaceport-by-2030/",
     "source": "Ars Technica",
     "pub_ts": 1792784038.0,
-    "score": 8.99,
-    "grp": "tech"
+    "score": 8.9,
+    "grp": "tech",
+    "_miss": [
+      15,
+      16,
+      17,
+      18
+    ],
+    "_keep": [
+      15,
+      16,
+      17,
+      18
+    ]
   }
 ]

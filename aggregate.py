@@ -131,7 +131,9 @@ NOISE_WORDS    = ("cookie", "subscribe", "newsletter", "sign up", "sign-up",
                   "npr transcripts", "was this helpful",
                   "republished with permission", "originally published",
                   "share this page", "most viewed", "latest stories",
-                  "home airlines")            # Aviation24 的面包屑导航
+                  "home airlines",             # Aviation24 的面包屑导航
+                  "ie 11", "optimal experience",  # NBC 等站的浏览器兼容提示
+                  "another browser", "update your browser")
 
 # 老译文里可能还挂着这些当年的站点标识/导航词，属于「陈旧译文」，必须重翻不能复用
 STALE_CN = ("|卫报", "｜卫报", "|the guardian", "跳到主要内容", "跳到导航",
@@ -1507,24 +1509,25 @@ DETAIL_CSS = """
 .en-tag{font-size:9.5px;font-weight:700;letter-spacing:.5px;color:var(--sub);
   border:.5px solid var(--sep);border-radius:4px;padding:1px 4px}
 /* 正文：中英逐段对照 */
-.orgtitle{font-size:12.5px;color:var(--sub);line-height:1.55;margin:0 0 15px;
+.orgtitle{font-size:12.5px;color:var(--text);line-height:1.55;margin:0 0 15px;
   padding-left:9px;border-left:2px solid var(--sep)}
 .segbar{display:flex;background:var(--sep);border-radius:9px;padding:2px;margin-bottom:18px}
 .seg{flex:1;border:0;background:none;padding:7px 0;border-radius:7px;font-size:13.5px;
   font-family:inherit;color:var(--text);cursor:pointer;transition:all .15s}
 .seg.on{background:var(--card);font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.08)}
 .para{margin-bottom:20px}
-.p-en{font-size:16.5px;line-height:1.8;color:var(--sub);margin-bottom:9px}
-.p-zh{font-size:16.5px;line-height:1.8;color:var(--text);padding-left:12px;
+/* 以英文为主阅读语言：英文用主色，中文译文退为次要色 */
+.p-en{font-size:16.5px;line-height:1.8;color:var(--text);margin-bottom:9px}
+.p-zh{font-size:16.5px;line-height:1.8;color:var(--sub);padding-left:12px;
   border-left:3px solid var(--accent)}
 .p-zh.missing{font-size:12px;color:var(--sub);opacity:.65;border-left-color:var(--sep)}
-.p-zh-only{font-size:16.5px;line-height:1.8;margin:0 0 17px}
-.p-en-only{font-size:16.5px;line-height:1.8;color:var(--sub);margin:0 0 15px}
+.p-zh-only{font-size:16.5px;line-height:1.8;color:var(--sub);margin:0 0 17px}
+.p-en-only{font-size:16.5px;line-height:1.8;color:var(--text);margin:0 0 15px}
 .p-none{text-align:center;padding:30px 12px;color:var(--sub);font-size:14px}
 
 .dorig{background:var(--card);border:.5px solid var(--sep);border-radius:12px;padding:14px}
 .dentitle{margin:0 0 8px;font-size:16px;line-height:1.45;font-weight:600}
-.densum{margin:0;font-size:14px;line-height:1.7;color:var(--sub)}
+.densum{margin:0;font-size:14px;line-height:1.7;color:var(--text)}
 .densum p{margin:0 0 11px}
 .densum p:last-child{margin-bottom:0}
 .more{

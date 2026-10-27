@@ -1,7 +1,7 @@
 # 每天自动抓取民航新闻并更新网站
 #
 # 触发方式：
-#   - schedule：每天 UTC 0:00（北京时间 8:00）自动运行
+#   - schedule：每天北京时间 08:00 / 15:00 / 20:00 自动运行（共三次）
 #   - workflow_dispatch：在 GitHub 网页上点一下手动触发
 #
 # 部署目标：GitHub Pages
@@ -10,7 +10,11 @@ name: 每日民航新闻
 
 on:
   schedule:
-    - cron: "0 0 * * *"        # 每天 UTC 00:00 = 北京时间 08:00
+    # GitHub Actions 的 cron 使用 UTC，换算成北京时间需 +8 小时：
+    #   北京时间 08:00 = UTC 00:00
+    #   北京时间 15:00 = UTC 07:00
+    #   北京时间 20:00 = UTC 12:00
+    - cron: "0 0,7,12 * * *"
   workflow_dispatch:            # 允许手动点 Run 按钮
 
 permissions:

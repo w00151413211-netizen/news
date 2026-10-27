@@ -831,7 +831,6 @@ def collect(sources, hot_words, groups=None, quota=None, limit=None):
                 "img":      pick_image(e),
                 "link":     link,
                 "source":   name,
-                "pub_ts":   pub,
                 "score":    round(score, 2),
                 "grp":      (groups or {}).get(name, "main"),
             })
@@ -1694,18 +1693,6 @@ def translate_items(items):
 # 3. 生成网页
 # ============================================================
 
-def fmt_time(ts):
-    dt = datetime.fromtimestamp(ts, tz=timezone(timedelta(hours=8)))
-    now = datetime.now(tz=timezone(timedelta(hours=8)))
-    diff = now - dt
-    if diff.days == 0:
-        h = diff.seconds // 3600
-        return f"{h} 小时前" if h else "刚刚"
-    if diff.days == 1:
-        return "昨天"
-    return dt.strftime("%m月%d日")
-
-
 def hot_label(score):
     """根据热度分给一个中文标签和等级，界面用。"""
     if score >= 14: return "爆", 3
@@ -2044,7 +2031,8 @@ function lookup(word, el){
     key = cands[i];
     if (DICT[key]) {
       var z = DICT[key];
-      var d0 = { zh: typeof z === 'string' ? z : z[0], ph: '', au: '', pos: '' };
+      var d0 = { zh: typeof z === 'string' ? z : z[0],
+                 ph: (typeof z === 'string' ? '' : (z[1] || '')), au: '', pos: '' };
       /* 之前补过音标的，这次直接带上（包括断网时）——否则每次都显示没音标，
          好像 enrich 从没生效过一样 */
       var saved = mem0[key];
@@ -2252,7 +2240,6 @@ function render(i){
   else { hb.style.display = 'none'; }
 
   put('d-src',  d.src);
-  put('d-time', d.t);
   put('d-rank', (i + 1) + ' / ' + D().length);
 
   put('d-en-title', d.en);
@@ -2447,7 +2434,6 @@ def build_html(sections_out):
                 # 英文段落跟中文段落取同样长度，对照时才不会末尾挂一串「未翻译」
                 "enbody": (it.get("body_en") or [])[:len(it.get("body_zh") or []) or 12],
                 "src":    it["source"],
-                "t":      fmt_time(it["pub_ts"]),
                 "link":   it["link"],
                 "img":    img,
                 "hot":    label,
@@ -2467,7 +2453,6 @@ def build_html(sections_out):
     <div class="meta">
       {label_html}
       <span class="src">{html.escape(it['source'])}</span>
-      <span class="time">{fmt_time(it['pub_ts'])}</span>
     </div>
     <h2 class="title">{html.escape(title)}</h2>
     {f'<p class="sum">{html.escape(summary)}</p>' if summary else ''}
@@ -2636,7 +2621,6 @@ body{{background:var(--bg);color:var(--text);
     <div class="dwrap">
       <div class="dmeta">
         <span class="hot" id="d-hot"></span>
-        <span id="d-time"></span>
       </div>
       <h1 class="dtitle" id="d-title"></h1>
 
@@ -2791,6 +2775,12 @@ DICT_MIN_N = 1             # 出现一次就算（以前要求至少 2 次，结
 # 首次要把几千个词一起查出来（之后每天只补几十个新词），所以上限给得宽一点。
 # 真超了也不停流水线：缓存是累积的，今天没查完的明天接着查。
 DICT_BUDGET = 1800        # 查词表的时间上限（秒）
+# 音标走单独一份缓存。手机端现查音标的那个接口被 Cloudflare 挡着（iPhone 直连会 502），
+# 所以改成在构建时把音标烘进词表：-server 端请求稳定，而且离网也能显示。
+DICT_PH_PATH = os.path.join("docs", "dict_phon.json")
+PHON_MAX     = 1200       # 只给最常用的一千多个词烘音标（再往后出现频率太低，收益递减）
+PHON_WORKERS = 3          # 并发请求数；再高会被限流更狠
+PHON_BUDGET  = 420        # 烘音标的时间上限（秒）
 DICT_STOP = set("""the a an and or but of to in on for at by from as is are was were be
 been being it its this that these those will would could should can may might must have
 has had do does did with about after before over under into out up down off than then so
@@ -2916,6 +2906,82 @@ def _dict_ask(words, deadline=None):
     return out
 
 
+def _phon_one(w):
+    """问 dictionaryapi.dev 要一个词的音标（IPA）。拿到就返回，拿不到返回空串。
+
+    注意必须带浏览器模样的 UA，否则它的 CDN 直接 502。
+
+    匿名请求会被限流（429），所以内置重试+退避：同一轮内多试几次，
+    把瞬时限流扛过去，首轮就能把覆盖率拉起来，而不是把限流的词误当成
+    「词典没收」永久丢掉。"""
+    url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + urllib.parse.quote(w)
+    for attempt in range(3):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA})
+            raw = urllib.request.urlopen(req, timeout=12).read().decode("utf-8", "replace")
+            entry = (json.loads(raw) or [{}])[0]
+            ph = entry.get("phonetic") or ""
+            for p in entry.get("phonetics") or []:
+                if p.get("text"):
+                    ph = p["text"]
+                    break
+            return w, ph.strip()
+        except Exception:
+            if attempt < 2:
+                time.sleep(0.6 * (attempt + 1))
+    return w, ""
+
+
+def build_phon_cache(words):
+    """给一批词烘音标。旧结果进缓存留着，只补新词，所以它也是累积的。
+
+    跟查释义不一样的是：约有 20% 的词那本词典里本来就没收，或者这一次撞上限流，
+    命中率八成左右属正常；另外超时就收工，剩下的明天接着补。
+    """
+    cache = {}
+    if os.path.exists(DICT_PH_PATH):
+        try:
+            with open(DICT_PH_PATH, encoding="utf-8") as f:
+                cache = json.load(f) or {}
+        except Exception:
+            cache = {}
+    need = [w for w in words if w not in cache]
+    if need:
+        need = need[:PHON_MAX * 2]
+        log(f"  生成音标：待查 {len(need)} 个词")
+        deadline = time.time() + PHON_BUDGET
+        got = 0
+        # 分批并发。不能一把梭完再看时间——那样等线程池收尾的时候，
+        # 早就超时的请求会照跑不误，时间预算等于白设。
+        STEP = 150
+        try:
+            from concurrent.futures import ThreadPoolExecutor
+            for i in range(0, len(need), STEP):
+                if time.time() > deadline:
+                    log("  音标时间到，剩下的明天接着补")
+                    break
+                with ThreadPoolExecutor(PHON_WORKERS) as pool:
+                    for w, ph in pool.map(_phon_one, need[i:i + STEP]):
+                        # 查到和没查到都写进缓存：没查到的词（词典没收 / 本次限流）
+                        # 不该每次重跑都重新请求，否则构建永远收敛不了、还白白耗时间预算
+                        cache[w] = ph
+                        if ph:
+                            got += 1
+        except Exception as e:
+            log(f"  音标抓取中断: {e}")
+        log(f"  音标新增 {got}/{len(need)}")
+
+    # 只留住还能用得上的词，别让缓存无限长
+    keep = {w: cache[w] for w in words if w in cache}
+    try:
+        os.makedirs("docs", exist_ok=True)
+        with open(DICT_PH_PATH, "w", encoding="utf-8") as f:
+            json.dump(keep, f, ensure_ascii=False)
+    except Exception as e:
+        log(f"  音标写入失败: {e}")
+    return keep
+
+
 def build_dict_cache(items):
     """生成/更新词表缓存。旧词保留，新词补上，最多 DICT_MAX 个。"""
     cache = {}
@@ -3019,8 +3085,16 @@ def main():
         global DICT_WORDS
         all_items = [it for _, items in sections_out for it in items]
         try:
-            DICT_WORDS = build_dict_cache(all_items)
-            log(f"点词词表：{len(DICT_WORDS)} 个词")
+            words_map = build_dict_cache(all_items)
+            log(f"点词词表：{len(words_map)} 个词")
+            # 把构建时烘好的音标并进去：[中文释义, 音标]
+            phon = build_phon_cache(list(words_map.keys()))
+            if phon:
+                for w, ph in phon.items():
+                    if w in words_map and ph:
+                        words_map[w] = [words_map[w], ph]
+                log(f"其中 {sum(1 for v in words_map.values() if isinstance(v, list))} 个词带音标")
+            DICT_WORDS = words_map
         except Exception as e:
             print(f"(词表生成失败，页面仍可现场联网查词: {e})")
             DICT_WORDS = {}

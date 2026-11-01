@@ -91,22 +91,77 @@ HOT_WORDS_US = [
 US_GROUPS = {"The Verge": "tech", "TechCrunch": "tech",
              "Ars Technica": "tech", "Wired": "tech"}
 
+# ---- 板块三：国际要闻（美国已单独成一栏，这里覆盖欧洲/中东/亚太/非洲拉美）----
+SOURCES_INTL = [
+    ("BBC 国际",      "https://feeds.bbci.co.uk/news/world/rss.xml",         5),
+    ("Guardian 国际", "https://www.theguardian.com/world/rss",               5),
+    ("Al Jazeera",   "https://www.aljazeera.com/xml/rss/all.xml",           4),
+    ("DW 德国之声",   "https://rss.dw.com/rdf/rss-en-world",                 4),
+    ("France 24",    "https://www.france24.com/en/rss",                     3),
+    ("NPR 国际",     "https://feeds.npr.org/1004/rss.xml",                  4),
+]
+
+HOT_WORDS_INTL = [
+    "war", "ceasefire", "ukraine", "russia", "gaza", "israel", "peace",
+    "sanction", "election", "protest", "coup", "attack", "summit", "treaty",
+    "refugee", "earthquake", "flood", "wildfire", "un", "nato", "strike",
+]
+
+# ---- 板块四：韩国要闻（韩语原文 + 中文译文，走「中韩双语」）----
+# 这几个源都实测过能返回内容：연합뉴스 各栏目每支 120 条、한겨레 30 条、경향신문 50 条
+SOURCES_KOREA = [
+    ("연합뉴스",     "https://www.yna.co.kr/rss/news.xml",                  5),
+    ("연합뉴스 정치", "https://www.yna.co.kr/rss/politics.xml",             4),
+    ("연합뉴스 경제", "https://www.yna.co.kr/rss/economy.xml",              4),
+    ("한겨레",       "http://www.hani.co.kr/rss/",                          4),
+    ("경향신문",     "https://www.khan.co.kr/rss/rssdata/total_news.xml",   4),
+]
+
+# 韩语热点词：命中标题就提分（中文同胞最关心的还是这些）
+HOT_WORDS_KOREA = [
+    "대통령", "국회", "정부", "여당", "야당", "탄핵", "선거", "외교",
+    "북한", "경제", "금리", "물가", "부동산", "파업", "사고", "수사",
+    "기소", "구속", "정상회담", "수출",
+]
+
+# 原文语种 ↔ 界面上的称呼（韩语板块不该再显示「只看英文」）
+LANG_NAME = {"en": "英文", "ko": "韩文"}
+# 当前正在处理的板块用的是哪种原文；翻译接口按它来取 sl=
+SRC_LANG = "en"
+
 # 板块定义（顺序即界面顺序）
 # quota: {分组: (最少条数, 最多条数)}，_max_per_source 限制同一媒体的席位数
+# limit: 这个板块最终显示多少条（不给就用 MAX_ITEMS）
+# lang:  原文语种，决定翻译源语言和点词查义的语种
 SECTIONS = [
     {"key": "aviation", "name": "民航资讯", "icon": "✈️",
      "sources": SOURCES_AVIATION, "hot": HOT_WORDS_AVIATION,
-     "groups": None, "quota": None},
+     "groups": None, "quota": None, "limit": 20, "lang": "en"},
     {"key": "us",       "name": "美国要闻", "icon": "🇺🇸",
      "sources": SOURCES_US,       "hot": HOT_WORDS_US,
-     "groups": US_GROUPS, "quota": {"tech": (5, 12), "_max_per_source": 3}},
+     "groups": US_GROUPS, "quota": {"tech": (5, 12), "_max_per_source": 3},
+     "limit": 40, "lang": "en"},
+    {"key": "intl",     "name": "国际要闻", "icon": "🌍",
+     "sources": SOURCES_INTL,     "hot": HOT_WORDS_INTL,
+     "groups": None, "quota": None, "limit": 20, "lang": "en"},
+    {"key": "korea",    "name": "韩国要闻", "icon": "🇰🇷",
+     "sources": SOURCES_KOREA,    "hot": HOT_WORDS_KOREA,
+     "groups": None, "quota": None, "limit": 20, "lang": "ko"},
 ]
 
-MAX_ITEMS      = 40        # 页面上最终显示多少条
-# 去重必然会把同一事件的重复报道丢掉，所以候选要多备一些才补得回 40 条。
+# 每天的条数按板块单独配（民航 20 / 美国 40 / 国际 20 / 韩国 20，见 SECTIONS 的 limit）。
+# 这里只保留一个「没写 limit 时的默认值」，给 select_unique 之类的兜底用。
+MAX_ITEMS      = 40
+
+# 页面/App 的标题跟着板块自动生成，以后增删板块不用再来改一遍文案
+PAGE_TITLE = "每日资讯 · " + " / ".join(s["name"] for s in SECTIONS)
+
+# 去重必然会把同一事件的重复报道丢掉，所以候选要多备一些才补得回目标条数。
 # RSS 阶段就能拿到上百条候选（不花额外时间），去重在两轮里完成：
 #   第一轮只看标题+摘要（几乎零成本），第二轮才为入选的那几十条抓全文复核。
-POOL_SIZE      = 140
+POOL_SIZE      = 140       # 兼容旧称呼：最大板块（40 条）用的候选池大小
+POOL_RATIO     = 3.5       # 候选池 = 目标条数 × 这个倍数（原 40 条对应 140 候选）
+POOL_MIN       = 60        # 再少也不低于这个数，去重后才补得回目标条数
 POOL_BATCH     = 25        # 抓全文分批推进，够 MAX_ITEMS 就停手
 TRANSLATE_TO   = "zh-CN"   # 目标语言
 FETCH_PER_SRC  = 12        # 每个源最多取多少条
@@ -145,6 +200,15 @@ NOISE_WORDS    = ("cookie", "subscribe", "newsletter", "sign up", "sign-up",
                   "home airlines",             # Aviation24 的面包屑导航
                   "ie 11", "optimal experience",  # NBC 等站的浏览器兼容提示
                   "another browser", "update your browser")
+
+# 韩语网站的订阅/分享/版权之类残留，抓全文时一样会混进来
+# （写成韩语原文才匹配得上，翻成中文再比对就晚了）
+KO_NOISE = ("구독", "뉴스레터", "저작권", "기사 제보", "광고",
+            "공유하기", "원문 보기", "관련 기사", "본문 바로가기",
+            "주요뉴스", "기사공유", "댓글", "로그인", "회원가입",
+            "무단 전재", "재배포 금지", "sns 공유", "저작자")
+
+ALL_NOISE = NOISE_WORDS + KO_NOISE
 
 # 老译文里可能还挂着这些当年的站点标识/导航词，属于「陈旧译文」，必须重翻不能复用
 STALE_CN = ("|卫报", "｜卫报", "|the guardian", "跳到主要内容", "跳到导航",
@@ -303,7 +367,7 @@ def html_to_paragraphs(raw, limit=BODY_LIMIT, min_len=45, max_paras=BODY_PARA_MA
         if len(p) < min_len:
             continue
         low = p.lower()[:120]
-        if any(w in low for w in NOISE_WORDS):
+        if any(w in low for w in ALL_NOISE):
             continue
         if total + len(p) > limit and out:
             break
@@ -423,9 +487,50 @@ why how his her their our your my him them us they we you i he she want wants do
 also one two three first last new now way like just even still back again around because
 while report reports here what's there's they're we're don't didn't isn't wasn't""".split())
 
+# 韩语词尾：助词、连接词尾这些几乎每个词都可能挂的尾巴（长的排在前面，先剥长的）
+KO_PARTICLES = tuple(sorted((
+    "으로부터", "로부터", "까지", "부터", "에서", "에게서", "에게", "한테", "처럼",
+    "으로서", "로써", "으로는", "에는", "에도", "과는", "와는", "이나", "이라",
+    "이며", "이나마", "이었", "었던", "하는", "된다", "된다고", "라고", "라고는",
+    "은", "는", "이", "가", "을", "를", "의", "에", "로", "과", "와", "도", "만",
+    "며", "고", "며", "나", "며는",
+), key=len, reverse=True))
+
+# 韩语高频虚词/常用词：不用来判断「是不是同一件事」
+KO_STOP = set("""기자 뉴스 속보 단독 인터뷰 사진 영상 제보 기사 확인 밝혔다 설명 전했다
+말했다 조사 결과 관련 통해 따른 대한 위해 있으며 있다 없다 한다 된다 이다 그의 지난
+오늘 내일 어제 이번 해당 등등 그리고 그러나 하지만 또한 또는 및 등""".split())
+
 
 def _ev_tokens(text):
-    return re.findall(r"[A-Za-z][A-Za-z'\-]{2,}", text or "")
+    """抽出标题/正文里的实词。英文按字母取，韩语按韩文音节取。
+
+    韩语是黏着语，同一个词会因为助词不同写成「예산안을 / 예산안은 /
+    예산안이」。直接拿原词比对的话，同一事件的两条标题常常一个都对不上，
+    所以先把尾巴上的助词剥掉再参与比对。
+    """
+    s = text or ""
+    out = re.findall(r"[A-Za-z][A-Za-z'\-]{2,}", s)
+    out.extend(_ev_ko_strip(w) for w in re.findall(r"[\uac00-\ud7a3]{2,}", s))
+    return out
+
+
+def _has_ko(text):
+    return bool(re.search(r"[\uac00-\ud7a3]", text or ""))
+
+
+def _ev_ko_strip(w):
+    """剥掉韩语词尾的助词/连接词尾（一次一个，且至少要剩两个音节）。"""
+    for p in KO_PARTICLES:
+        if w.endswith(p) and len(w) - len(p) >= 2:
+            return w[:len(w) - len(p)]
+    return w
+
+
+def _ev_tokens_ko(text):
+    """韩语实词集合：短词（多半是虚词）和高频词一概剔掉。"""
+    return {w for w in _ev_tokens(text)
+            if len(w) >= 2 and w not in KO_STOP}
 
 
 def _ev_lemma(w):
@@ -472,6 +577,20 @@ def _ev_title_same(ta, tb):
     return inter >= 4 and inter >= 0.8 * min(len(sa), len(sb))
 
 
+def _ev_title_same_ko(ta, tb):
+    """韩语版「标题是不是同一条」：一手费用朝鲜语的实词重合度。
+
+    韩语标题比英文长得多（常常是一整句话），掺进来的无关虚词也多，
+    所以门槛设在「重合 ≥3 个实词、且覆盖较短标题的六成」——
+    实测转载/同题新闻能兜住（七成以上），不同事件不会被错杀。
+    """
+    sa, sb = _ev_tokens_ko(ta), _ev_tokens_ko(tb)
+    if not sa or not sb:
+        return False
+    inter = len(sa & sb)
+    return inter >= 3 and inter >= 0.6 * min(len(sa), len(sb))
+
+
 def _same_event(a, b, wa, wb):
     """两篇是不是同一事件。先框住「同一个地方/国家」，再看是否同一件事。
 
@@ -480,8 +599,14 @@ def _same_event(a, b, wa, wb):
     - 否则看正文前几段实词重合度，够了也算（同一事件各家措辞不同，标题往往对不上）。
       但这条要额外要求「两篇标题都至少带一个事件核心词」——否则像
       「Audi 在乔治亚建厂」和「Rick Jackson 在乔治亚竞选」这种同州不同事会被误并。
+
+    韩语标题里没有上面那些英文地名、也没法套用英文的核心词表，
+    所以单独走一条只比标题实词的路（见 _ev_title_same_ko）。
     """
-    if _ev_title_same(a["title_en"], b["title_en"]):
+    ta, tb = a["title_en"], b["title_en"]
+    if _has_ko(ta) and _has_ko(tb):
+        return _ev_title_same_ko(ta, tb)
+    if _ev_title_same(ta, tb):
         return True
     if not (_ev_places(a["title_en"]) & _ev_places(b["title_en"])):
         return False
@@ -533,6 +658,41 @@ def group_events(items):
         clusters.append(group)
     clusters.sort(key=lambda g: g[0]["score"], reverse=True)
     return clusters
+
+
+USED_TITLES = set()      # 前面板块已收走的标题（归一化后），后面板块不再重复收
+USED_TITLE_LIST = []     # 归一化会漏掉小差异，所以再留一份原文做模糊比对
+
+
+def _title_key(t):
+    """标题指纹：只留字母数字，去掉标点和空格。"""
+    return re.sub(r"\W+", "", (t or "").lower())
+
+
+def _dup_of_used(title):
+    """这条新闻是不是已经被前面的板块收走了。
+
+    国际/美国这类英文板块可能都报到同一件事，跨板块重复看着很别扭。
+    判据沿用同事件归并里最严的那一档（实词交集 ≥4 且覆盖较短标题 80%），
+    宁可漏掉个别重复，也不能把两条不同的新闻错杀成一条。
+    """
+    k = _title_key(title)
+    if not k:
+        return False
+    if k in USED_TITLES:
+        return True
+    for prev in USED_TITLE_LIST:
+        if _ev_title_same(title, prev):
+            return True
+    return False
+
+
+def _mark_used(items):
+    for it in items:
+        k = _title_key(it.get("title_en"))
+        if k:
+            USED_TITLES.add(k)
+            USED_TITLE_LIST.append(it.get("title_en") or "")
 
 
 def select_unique(items, want=MAX_ITEMS, quota=None):
@@ -789,6 +949,10 @@ def collect(sources, hot_words, groups=None, quota=None, limit=None):
             if not link or not title:
                 continue
 
+            # 跨板块去重：前面板块已经收走的同一条新闻，这里不再重复
+            if _dup_of_used(title):
+                continue
+
             # 用链接前 80 个字符去重（去掉跟踪参数）
             key = re.sub(r"[?#].*$", "", link)[:80]
             if key in seen:
@@ -866,11 +1030,19 @@ def probe_ai():
 AI_BATCH   = 10            # 每批翻译几条：太大易超时，太小请求多
 AI_ENDPOINT = "https://models.github.ai/inference/v1/chat/completions"
 
-SYS_PROMPT = ("你是专业民航新闻翻译。把英文新闻标题/摘要逐条翻译成简体中文。\n"
-              "要求：准确、简洁，符合中文新闻表达习惯；"
-              "航空公司名、机型（如 Boeing 737 MAX）、机场三字码等专有名词保留英文原文；"
-              "不要添加任何解释、前言或后记。\n"
-              "必须严格按输入的行数输出，每行格式为「序号| 译文」，序号与输入一致。")
+def sys_prompt():
+    """按当前板块的原文语种生成提示词。
+
+    写成函数而不是常量，是因为韩语板块得说「把韩文…译成中文」——
+    提示词里还写着「英文」的话，模型对着韩语原文容易发懵。
+    英文板块取回来的字符串跟原来一字不差，翻译行为不会变。
+    """
+    lg = LANG_NAME.get(SRC_LANG, "英文")
+    return ("你是专业新闻翻译。把" + lg + "新闻标题/摘要逐条翻译成简体中文。\n"
+            "要求：准确、简洁，符合中文新闻表达习惯；"
+            "航空公司名、机型（如 Boeing 737 MAX）、机场三字码等专有名词保留英文原文；"
+            "不要添加任何解释、前言或后记。\n"
+            "必须严格按输入的行数输出，每行格式为「序号| 译文」，序号与输入一致。")
 
 
 def has_cn(text):
@@ -947,7 +1119,7 @@ def _ai_batch(texts, model):
     payload = {
         "model": model,
         "messages": [
-            {"role": "system", "content": SYS_PROMPT},
+            {"role": "system", "content": sys_prompt()},
             {"role": "user", "content": numbered},
         ],
         "temperature": 0.3,
@@ -1017,11 +1189,14 @@ def ai_translate(texts):
     return result
 
 
-BODY_SYS_PROMPT = ("你是专业民航新闻翻译。把英文新闻正文逐段翻译成简体中文。\n"
-                   "如果输入里带有 [[段号]] 标记，请原样保留这些标记，一段对应一段翻译。\n"
-                   "无论如何：段落数量必须与输入一致，一段对一段，不要合并、拆分或省略，"
-                   "段落之间用一个空行分隔。\n"
-                   "语言通顺自然，航空公司名、机型、机场三字码保留英文；不要加任何解释或标题。")
+def body_sys_prompt():
+    """整篇正文翻译的提示词（语种随板块变，见 sys_prompt 的说明）。"""
+    lg = LANG_NAME.get(SRC_LANG, "英文")
+    return ("你是专业新闻翻译。把" + lg + "新闻正文逐段翻译成简体中文。\n"
+            "如果输入里带有 [[段号]] 标记，请原样保留这些标记，一段对应一段翻译。\n"
+            "无论如何：段落数量必须与输入一致，一段对一段，不要合并、拆分或省略，"
+            "段落之间用一个空行分隔。\n"
+            "语言通顺自然，航空公司名、机型、机场三字码保留英文；不要加任何解释或标题。")
 
 
 def _ai_batch_body(blocks, model):
@@ -1041,7 +1216,7 @@ def _ai_batch_body(blocks, model):
     payload = {
         "model": model,
         "messages": [
-            {"role": "system", "content": BODY_SYS_PROMPT},
+            {"role": "system", "content": body_sys_prompt()},
             {"role": "user", "content": "\n".join(numbered)},
         ],
         "temperature": 0.3,
@@ -1152,10 +1327,13 @@ def ai_translate_bodies(blocks, batch=1):
 
 PARA_BATCH = 6     # 逐段翻译每批几条：正文比标题长，批次要小一点
 
-PARA_SYS_PROMPT = ("你是专业民航新闻翻译。把英文新闻正文逐段翻译成简体中文。\n"
-                   "严格按输入的行数输出，每行格式为「序号| 译文」，序号从 1 开始，与输入一一对应。\n"
-                   "每一段只输出一行，不要在译文中间换行；"
-                   "航空公司名称、机型、机场三字码保留英文；不要加任何解释或标题。")
+def para_sys_prompt():
+    """逐段翻译的提示词（语种随板块变）。"""
+    lg = LANG_NAME.get(SRC_LANG, "英文")
+    return ("你是专业新闻翻译。把" + lg + "新闻正文逐段翻译成简体中文。\n"
+            "严格按输入的行数输出，每行格式为「序号| 译文」，序号从 1 开始，与输入一一对应。\n"
+            "每一段只输出一行，不要在译文中间换行；"
+            "航空公司名称、机型、机场三字码保留英文；不要加任何解释或标题。")
 
 
 def _ai_batch_para(texts, model):
@@ -1171,7 +1349,7 @@ def _ai_batch_para(texts, model):
     payload = {
         "model": model,
         "messages": [
-            {"role": "system", "content": PARA_SYS_PROMPT},
+            {"role": "system", "content": para_sys_prompt()},
             {"role": "user", "content": numbered},
         ],
         "temperature": 0.3,
@@ -1293,7 +1471,7 @@ def google_translate_paragraphs(packs):
     ok = 0
     miss = 0
     for i, t in enumerate(flat):
-        out = _translate_google(t, sl="en", timeout=12)
+        out = _translate_google(t, sl=SRC_LANG, timeout=12)
         if out and has_cn(out):
             result[i] = out
             ok += 1
@@ -1330,12 +1508,17 @@ def mymemory_translate_paragraphs(packs, budget=4000):
     return _rebuild(result, spans, len(packs))
 
 
-def _translate_mymemory(text, target="zh-CN"):
-    """备用翻译：MyMemory（免费，无需密钥，每天限额约 5000 字）。失败返回 None。"""
+def _translate_mymemory(text, target="zh-CN", sl=None):
+    """备用翻译：MyMemory（免费，无需密钥，每天限额约 5000 字）。失败返回 None。
+
+    sl 不给就按当前板块的原文语种来——韩语板块得走 ko|zh-CN，
+    沿用 en| 的话整篇会被当成英文处理。
+    """
     if not text:
         return ""
+    src = sl or SRC_LANG
     url = ("https://api.mymemory.translated.net/get?q="
-           + urllib.parse.quote(text) + f"&langpair=en|{target}")
+           + urllib.parse.quote(text) + f"&langpair={src}|{target}")
     try:
         req = urllib.request.Request(url, headers={"User-Agent": UA})
         with urllib.request.urlopen(req, timeout=8) as resp:
@@ -1888,6 +2071,11 @@ function lemma(w){
 
 /* 候选词：原词 → 还原形 → 去复数，按顺序试 */
 function candidates(w){
+  /* 韩语没有英文那套 -s / -ed 词形变化，还原也无从下手，直接用原词 */
+  if (CUR_LANG === 'ko') {
+    var kw = String(w || '').replace(/\s+/g, '');
+    return kw ? [kw] : [];
+  }
   var x = (w || '').toLowerCase().replace(/^[^a-z]+|[^a-z]+$/g, '');
   if (!x) return [];
   var out = [x];
@@ -1941,7 +2129,8 @@ function tts(text){
   try {
     speechSynthesis.cancel();
     var u = new SpeechSynthesisUtterance(text);
-    u.lang = 'en-US';
+    /* 韩语词要用韩语合成器念，否则英文引擎会把韩文读成一团乱音 */
+    u.lang = (CUR_LANG === 'ko') ? 'ko-KR' : 'en-US';
     u.rate = 0.9;
     speechSynthesis.speak(u);
   } catch (e) {}
@@ -1989,8 +2178,14 @@ function fetchJson(url, ms){
       .then(function(j){ clearTimeout(timer); res(j); });
   });
 }
-/* 只留字母，用来比对「翻译结果是不是原词本身」 */
-function plain(x){ return String(x || '').toLowerCase().replace(/[^a-z]/g, ''); }
+/* 只留下有效字符，用来比对「翻译结果是不是原词本身」。
+   必须跟语种走：这里原本只留 a-z，放到韩语上会把韩文全剥光，
+   两端都变成空串、判定成「查到的就是原词」，释义就永远显示不出来了。 */
+function plain(x){
+  var s = String(x || '').toLowerCase();
+  return (CUR_LANG === 'ko') ? s.replace(/[^\uAC00-\uD7A3]/g, '')
+                             : s.replace(/[^a-z]/g, '');
+}
 
 /* 词性代号翻成中文：这个人是来看中文的，浮窗里不该冒出 noun / verb */
 var POS_CN = { noun: '名词', verb: '动词', adjective: '形容词', adverb: '副词',
@@ -2060,18 +2255,23 @@ function lookup(word, el){
   }
 
   /* ③ 现场联网（手机有网时才会走到这里，这个人查阅偶尔用）：
-       两条路并行拿，谁也不耽误谁——
        - 中文释义走 MyMemory 词典库（返回的是「n.参议院」这种词典义，
          不是整句的机器译文，而且这个接口允许跨域，手机能直连）；
-       - 音标和真人发音走 dictionaryapi.dev。
-       两条都空手回来也不报错，浮窗退化成「只朗读」。 */
+         韩语板块把语种换成 ko→zh，同一套逻辑就能查出韩语词的中文意思。
+       - 英文另外还会并一路 dictionaryapi.dev 拿音标和真人发音；
+         韩语不需要 IPA 音标，只用系统语音朗读，所以不去打扰这个接口。
+       空手回来也不报错，浮窗退化成「只朗读」。 */
   popShow(el, word, null, true);
   key = cands[0];
+  var isKo = (CUR_LANG === 'ko');
   var mmUrl = 'https://api.mymemory.translated.net/get?q='
-            + encodeURIComponent(key) + '&langpair=en%7Czh-CN';
-  Promise.all([fetchJson(mmUrl, 9000), phonOf(key)]).then(function(rs){
+            + encodeURIComponent(key)
+            + (isKo ? '&langpair=ko%7Czh-CN' : '&langpair=en%7Czh-CN');
+  var jobs = isKo ? [fetchJson(mmUrl, 9000)]
+                  : [fetchJson(mmUrl, 9000), phonOf(key)];
+  Promise.all(jobs).then(function(rs){
     var rec = { zh: '', ph: '', au: '', pos: '' };
-    var mm = rs[0], extra = rs[1];
+    var mm = rs[0], extra = rs[1] || {};
     if (mm && mm.responseData && mm.responseData.translatedText) {
       var t = String(mm.responseData.translatedText).trim();
       /* 这个接口查不到时会把原词原样吐回来，这种情况当没查到 */
@@ -2108,10 +2308,17 @@ function enrich(key, word, el, data){
   });
 }
 
-/* 把英文段落切成可点的词（保留原有标点和空格） */
+/* 把段落切成可点的词（保留原有标点和空格）。
+   英文按字母切；韩语板块按韩文音节切——两种语言的「词边界」完全不是一回事，
+   共用一套规则的话，韩语会把整句黏成一个点不出来的大块。 */
 function wrapWords(text){
-  return String(text == null ? '' : text).replace(
-    /([A-Za-z][A-Za-z'\-]*)/g,
+  var s = String(text == null ? '' : text);
+  if (CUR_LANG === 'ko') {
+    return s.replace(/[\uAC00-\uD7A3]+/g,
+      function(m){ return '<span class="w">' + esc(m) + '</span>'; }
+    );
+  }
+  return s.replace(/([A-Za-z][A-Za-z'\-]*)/g,
     function(m){ return '<span class="w">' + esc(m) + '</span>'; }
   );
 }
@@ -2159,6 +2366,27 @@ DETAIL_JS = """
 var DATASETS = __DATA__;
 var SECTIONS = __SECTIONS__;
 var curSec = SECTIONS[0].key;
+
+/* 当前板块的原文语种（en / ko）。
+   英文和韩语的差别不止是文字——切词规则、查词语种、朗读音色、
+   还有「只看英文」这种按钮文案，都得跟着板块一起换。 */
+var CUR_LANG = 'en';
+function applySecLang(key){
+  var lg = 'en';
+  for (var i = 0; i < SECTIONS.length; i++){
+    if (SECTIONS[i].key === key) { lg = SECTIONS[i].lang || 'en'; break; }
+  }
+  CUR_LANG = lg;
+  setSegLabel('both', lg === 'ko' ? '中韩对照' : '中英对照');
+  setSegLabel('en',   lg === 'ko' ? '只看韩文' : '只看英文');
+}
+function setSegLabel(m, txt){
+  try {
+    var b = document.querySelector('.seg[data-m="' + m + '"]');
+    if (b) b.textContent = txt;
+  } catch (e) {}
+}
+applySecLang(curSec);
 var detail  = document.getElementById('detail');
 var dscroll = document.getElementById('dscroll');
 var list    = document.getElementById('scroll');
@@ -2281,7 +2509,7 @@ function route(){
   detail.classList.remove('open');
   detail.setAttribute('aria-hidden', 'true');
   list.scrollTop = listPos;
-  document.title = '每日资讯 · 民航 & 美国要闻';
+  document.title = '__TITLE__';
 }
 
 function go(i){
@@ -2323,6 +2551,7 @@ function buildFilters(){
 function switchSec(key, keepHash){
   if (!DATASETS[key]) return;
   curSec = key;
+  applySecLang(key);          // 按钮文案和切词规则跟着这个板块的语言走
   var tabs = document.querySelectorAll('.sectab');
   for (var i = 0; i < tabs.length; i++) {
     tabs[i].classList.toggle('on', tabs[i].getAttribute('data-sec') === key);
@@ -2467,18 +2696,21 @@ def build_html(sections_out):
             f'<div class="listpane{" on" if pos == 0 else ""}" id="list-{key}">\n'
             f'{cards_html}\n</div>')
         datasets[key] = data_js
-        sec_meta.append({"key": key, "name": sec["name"], "icon": sec["icon"]})
+        sec_meta.append({"key": key, "name": sec["name"], "icon": sec["icon"],
+                         "lang": sec.get("lang") or "en"})
 
     tabs = "\n".join(
         f'    <button class="sectab{" on" if i == 0 else ""}" data-sec="{s["key"]}">'
         f'{s["icon"]} {s["name"]}</button>'
         for i, s in enumerate(sec_meta))
 
+    title_txt = PAGE_TITLE
     payload = json.dumps(datasets, ensure_ascii=False, separators=(",", ":"))
     payload = payload.replace("</", "<\\/").replace("<!--", "<\\!--")
     sec_payload = json.dumps(sec_meta, ensure_ascii=False, separators=(",", ":"))
     js = (DETAIL_JS.replace("__DATA__", payload)
-                   .replace("__SECTIONS__", sec_payload))
+                   .replace("__SECTIONS__", sec_payload)
+                   .replace("__TITLE__", title_txt))
 
     # 点词查义：预置词表 + 查词逻辑一起塞进页面
     dict_payload = json.dumps(DICT_WORDS, ensure_ascii=False, separators=(",", ":"))
@@ -2499,7 +2731,7 @@ def build_html(sections_out):
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="每日资讯">
-<title>每日资讯 · 民航 & 美国要闻</title>
+<title>{title_txt}</title>
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="apple-touch-startup-image" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)" href="splash-1290x2796.png">
@@ -2680,7 +2912,7 @@ SPLASH_828 = "iVBORw0KGgoAAAANSUhEUgAAAzwAAAcACAIAAACaY9F8AAAt/klEQVR4nO3db6xn+V
 SPLASH_750 = "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"
 
 MANIFEST = {
-    "name": "每日资讯 · 民航 & 美国要闻",
+    "name": "每日资讯",
     "short_name": "每日资讯",
     "start_url": "./index.html",
     "scope": "./",
@@ -3053,25 +3285,33 @@ def main():
     probe = _translate_google("Boeing 737", sl="en", timeout=10)
     log("Google 通道探测: " + (repr(probe) if probe else "不可用"))
 
+    global SRC_LANG
     sections_out = []
     zh_total = 0
     for sec in SECTIONS:
         print(f"\n===== 板块：{sec['name']} =====")
+        # 这个板块最终要显示多少条（不给就用 MAX_ITEMS）
+        want = sec.get("limit") or MAX_ITEMS
+        # 原文语种决定：AI 提示词怎么说、翻译接口的 sl=、点词查义走哪套
+        SRC_LANG = sec.get("lang") or "en"
         q = sec.get("quota")
-        # 候选池阶段把配额按比例放大，池子里才有足够多的「辅类」新闻可以挑
-        pool_q = inflate_quota(q, POOL_SIZE, MAX_ITEMS) if q else None
+        # 候选池按目标条数等比放大（原来 40 条配 140 候选，约 3.5 倍），
+        # 20 条的板块就配 70 个候选，够去重后补位即可，不必多抓。
+        pool = max(POOL_MIN, int(want * POOL_RATIO))
+        pool_q = inflate_quota(q, pool, want) if q else None
         items = collect(sec["sources"], sec["hot"],
                         groups=sec.get("groups"), quota=pool_q,
-                        limit=POOL_SIZE)
+                        limit=pool)
         print(f"共采集 {len(items)} 条候选")
         if items:
-            items, dup_n = select_unique(items, MAX_ITEMS, q)
+            items, dup_n = select_unique(items, want, q)
             if dup_n:
                 print(f"同一事件重复 {dup_n} 条已去掉，"
                       f"从候选补位后仍是 {len(items)} 条互不相同的新闻")
+            _mark_used(items)          # 登记标题，后面板块不再重复收这一批
             log("翻译中 ...")
             translate_items(items)
-            align_bodies(items)         # 中文段落数不许超过英文，保证逐段对照不错位
+            align_bodies(items)        # 中文段落数不许超过原文，保证逐段对照不错位
         zh_total += sum(1 for it in items if has_cn(it.get("title_zh", "")))
         sections_out.append((sec, items))
 
@@ -3081,11 +3321,14 @@ def main():
     if total_items and zh_total == 0 and prev_has_chinese():
         print("！本次翻译全部失败，保留上一版中文网页，不覆盖")
     else:
-        # 点词查义用的词表：把当天正文的高频词提前翻好，点一下就出结果
+        # 点词查义用的词表：把当天正文的高频词提前翻好，点一下就出结果。
+        # 只取英文板块——韩语正文的分词规则是另一套，混进来只会污染英文词表，
+        # 而且英文词典对韩语词本来也没意义（韩语走在线查词那条路）。
         global DICT_WORDS
-        all_items = [it for _, items in sections_out for it in items]
+        en_items = [it for sec, items in sections_out
+                    if (sec.get("lang") or "en") == "en" for it in items]
         try:
-            words_map = build_dict_cache(all_items)
+            words_map = build_dict_cache(en_items)
             log(f"点词词表：{len(words_map)} 个词")
             # 把构建时烘好的音标并进去：[中文释义, 音标]
             phon = build_phon_cache(list(words_map.keys()))

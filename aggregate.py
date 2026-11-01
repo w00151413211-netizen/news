@@ -2021,7 +2021,9 @@ DETAIL_CSS = """
 .badge-zh{display:none}
 """
 
-DICT_WORDS = {}          # 构建时生成，供页面点词查义
+DICT_WORDS = {}          # 构建时生成，供页面点词查义（英文板块）
+KO_DICT_WORDS = {}       # 韩语板块专用的中韩词表（韩语没有英文那套词典接口，
+                         # 手机直连翻译接口又常被限流，所以同样在构建时烘好）
 
 DICT_JS = r"""
 /* ================= 点词查义 ================= */
@@ -2032,7 +2034,8 @@ DICT_JS = r"""
    3) 发音优先用 dictionaryapi.dev 的真人 MP3，拿不到就用手机自带 TTS；
    4) 浮窗贴在点击位置旁边，上方放不下自动翻到下方，点空白处关掉。 */
 
-var DICT = window.__DICT__ || {};          // 构建时预生成的词表
+var DICT = window.__DICT__ || {};          // 构建时预生成的词表（英文板块）
+var KODICT = window.__KODICT__ || {};      // 韩语板块的中韩词表
 var DK = 'newsdict.v2';
 var dmem = null;
 
@@ -2070,11 +2073,35 @@ function lemma(w){
 }
 
 /* 候选词：原词 → 还原形 → 去复数，按顺序试 */
+/* 韩语词尾表由构建时注入，与后端取词用的是同一份——
+   两边剥离逻辑必须一致，否则「点的原形」对不上「词表里的词干」。 */
+var KOTAILS = window.__KOTAILS__ || [];
+function koStripOnce(w){
+  for (var i = 0; i < KOTAILS.length; i++){
+    var t = KOTAILS[i];
+    if (w.length - t.length >= 2 && w.lastIndexOf(t) === w.length - t.length)
+      return w.slice(0, w.length - t.length);
+  }
+  return null;
+}
+function koCands(w){
+  var out = [w], cur = w;
+  for (var k = 0; k < 3; k++){
+    var n = koStripOnce(cur);
+    if (!n || n === cur) break;
+    out.push(n); cur = n;
+  }
+  return out;
+}
+
 function candidates(w){
-  /* 韩语没有英文那套 -s / -ed 词形变化，还原也无从下手，直接用原词 */
+  /* 韩语靠剥词尾还原：예산안을 → 예산안은 → 예산안 都收敛到同一个词干 */
   if (CUR_LANG === 'ko') {
     var kw = String(w || '').replace(/\s+/g, '');
-    return kw ? [kw] : [];
+    if (!kw) return [];
+    return koCands(kw).filter(function(v, i, a){
+      return v && v.length >= 2 && a.indexOf(v) === i;
+    });
   }
   var x = (w || '').toLowerCase().replace(/^[^a-z]+|[^a-z]+$/g, '');
   if (!x) return [];
@@ -2222,10 +2249,11 @@ function lookup(word, el){
         再用一秒钟的时间在后台把音标和真人发音补上——用户点哪个词才去查哪个，
         而且查到就永久存进 localStorage，下次连这一秒都不用。 */
   var mem0 = dstore();
+  var table = (CUR_LANG === 'ko') ? KODICT : DICT;   // 韩语板块查中韩词表
   for (i = 0; i < cands.length; i++){
     key = cands[i];
-    if (DICT[key]) {
-      var z = DICT[key];
+    if (table[key]) {
+      var z = table[key];
       var d0 = { zh: typeof z === 'string' ? z : z[0],
                  ph: (typeof z === 'string' ? '' : (z[1] || '')), au: '', pos: '' };
       /* 之前补过音标的，这次直接带上（包括断网时）——否则每次都显示没音标，
@@ -2293,6 +2321,9 @@ function lookup(word, el){
    成功了记进 localStorage，以后（包括断网）都能立刻显示 / 真人朗读。 */
 function enrich(key, word, el, data){
   if (!popOpen) return;
+  /* 韩语没有可用的 IPA 音标接口（dictionaryapi.dev 只收英文），
+     发音一律走手机系统朗读，别去白请求一趟。 */
+  if (CUR_LANG === 'ko') return;
   if (data.ph && data.au) return;
   var mem0 = dstore();
   if (mem0[key] && (mem0[key].ph || mem0[key].au)) return;
@@ -2715,7 +2746,12 @@ def build_html(sections_out):
     # 点词查义：预置词表 + 查词逻辑一起塞进页面
     dict_payload = json.dumps(DICT_WORDS, ensure_ascii=False, separators=(",", ":"))
     dict_payload = dict_payload.replace("</", "<\\/")
-    js += ("\nwindow.__DICT__ = " + dict_payload + ";\n" + DICT_JS)
+    ko_payload = json.dumps(KO_DICT_WORDS, ensure_ascii=False, separators=(",", ":"))
+    ko_payload = ko_payload.replace("</", "<\\/")
+    js += ("\nwindow.__DICT__ = " + dict_payload + ";\n"
+           + "window.__KODICT__ = " + ko_payload + ";\n"
+           + "window.__KOTAILS__ = "
+           + json.dumps(KO_TAILS_SORTED, ensure_ascii=False) + ";\n" + DICT_JS)
 
     panes_html = "\n".join(panes)
     footers = " ｜ ".join(
@@ -3011,6 +3047,12 @@ DICT_BUDGET = 1800        # 查词表的时间上限（秒）
 # 所以改成在构建时把音标烘进词表：-server 端请求稳定，而且离网也能显示。
 DICT_PH_PATH = os.path.join("docs", "dict_phon.json")
 PHON_MAX     = 1200       # 只给最常用的一千多个词烘音标（再往后出现频率太低，收益递减）
+# 中韩词表（韩国板块专用）。韩语没有英文那套现成词典接口，手机直连翻译接口又常被限流
+# （实测连查 15 个词有一半被拒），所以同样在构建时烘好，点词零延迟、断网也能查。
+KO_DICT_PATH   = os.path.join("docs", "dict_ko.json")
+KO_DICT_MAX    = 900      # 韩国板块一天 20 篇，正文里的不同韩语词也就几百个
+KO_DICT_MIN_N  = 1
+KO_DICT_BUDGET = 300      # 韩语词表的时间上限（秒）
 PHON_WORKERS = 3          # 并发请求数；再高会被限流更狠
 PHON_BUDGET  = 420        # 烘音标的时间上限（秒）
 DICT_STOP = set("""the a an and or but of to in on for at by from as is are was were be
@@ -3069,6 +3111,138 @@ def _dict_words(items, max_n=DICT_MAX, min_n=DICT_MIN_N):
                     continue
                 cnt[w] += 1
     return [w for w, n in cnt.most_common() if n >= min_n][:max_n]
+
+
+# 韩语里最常见的一串词尾/助词。查词时点到的多半是「词干+尾巴」，
+# 不剥掉的话「예산안을 / 예산안은 / 예산안이」会被当成三个词，词表永远填不满。
+KO_TAILS = (
+    "들에게서", "들에 의해", "들에게는", "들과 함께", "으로써", "에서부터",
+    "이라고", "이라는", "이라며", "이라도", "이나마", "이지만", "이며", "이야",
+    "을 통해", "를 통해", "에 따라", "에 대한", "에 관한", "으로 인해",
+    "에서는", "에서", "에게", "한테", "까지", "부터", "처럼", "보다", "만큼",
+    "이라고", "라는", "이라는", "라는", "으며", "면서", "으나", "으나마",
+    "한다", "했다", "된다", "됐다", "였다", "이다", "이고", "이며", "이나",
+    "하는", "되는", "있는", "없는", "있는", "했던", "하던", "되던",
+    "으며", "도록", "거나", "거나", "다면", "다면",
+    "을", "를", "이", "가", "은", "는", "의", "에", "로", "으로", "와", "과",
+    "도", "만", "까지", "부터", "께", "께서", "한테", "처럼",
+)
+
+KO_STOP = set("""기자 대답 때문 것 수 것들 등 및 또는 그리고 그러나 따라서 또한
+이번 오늘 내일 어제 지금 당시 이후 이전 동안 때 year""".split())
+
+
+# 长尾巴先试（「에게서」要先于「에게」），否则会剥出不存在的半截词
+KO_TAILS_SORTED = sorted(set(KO_TAILS), key=len, reverse=True)
+
+
+def _ko_strip_once(w):
+    """剥掉一层词尾；剥不动或剥完太短就返回 None。"""
+    for t in KO_TAILS_SORTED:
+        if w.endswith(t) and len(w) - len(t) >= 2:
+            return w[: len(w) - len(t)]
+    return None
+
+
+def _ko_cands(w, depth=3):
+    """逐级剥词尾，返回由长到短的候选（第一个是原词）。
+
+    前端查词和这里取词必须用同一套剥离逻辑，否则「点的原形」和
+    「词表里的词干」对不上，烘好的词表一个也命中不了。"""
+    out, cur = [w], w
+    for _ in range(depth):
+        nxt = _ko_strip_once(cur)
+        if not nxt or nxt == cur:
+            break
+        out.append(nxt)
+        cur = nxt
+    return out
+
+
+def _ko_stem(w):
+    """剥到底拿到词干。剥不动就还是原样（别把「경제」剥成「경」）。"""
+    return _ko_cands(w)[-1]
+
+
+def _ko_words(items, max_n=KO_DICT_MAX, min_n=KO_DICT_MIN_N):
+    """从韩国板块正文里挑值得收录的韩语词，按出现次数降序。
+
+    韩语没有英文那种现成的开源词典接口，手机直连翻译接口又常被限流，
+    所以只能像音标那样：构建时在服务端把高频词翻好，烘进页面。"""
+    from collections import Counter
+    cnt = Counter()
+    for it in items:
+        for p in (it.get("body_en") or []):
+            for w in re.findall(r"[\uac00-\ud7a3]{2,}", p or ""):
+                w = _ko_stem(w)
+                if len(w) < 2 or len(w) > 8 or w in KO_STOP or w.isdigit():
+                    continue
+                cnt[w] += 1
+    return [w for w, n in cnt.most_common() if n >= min_n][:max_n]
+
+
+def _ko_dict_ask(words, deadline=None):
+    """批量问韩语词的中文释义。Google 优先（生产可用），MyMemory 兜底。"""
+    if not words:
+        return {}
+    out, CHUNK = {}, 40
+    for i in range(0, len(words), CHUNK):
+        if deadline and time.time() > deadline:
+            log(f"  韩语词表时间到，剩下 {len(words) - i} 个词明天接着补")
+            break
+        part = words[i:i + CHUNK]
+        got = {}
+        zh = _translate_google("\n".join(part), sl="ko", timeout=15)
+        lines = [x.strip() for x in (zh or "").split("\n") if x.strip()]
+        if len(lines) == len(part):
+            for w, line in zip(part, lines):
+                line = re.sub(r"^[0-9]+[.、) ]*", "", line).strip()
+                # 原词原样吐回来 = 没查到（韩语不含汉字，认这个很容易）
+                if line and has_cn(line) and line != w:
+                    got[w] = line[:60]
+        miss = [w for w in part if w not in got]
+        if miss:
+            for w in miss:
+                if deadline and time.time() > deadline:
+                    break
+                one = _translate_mymemory(w, "zh-CN", sl="ko")
+                one = re.sub(r"^[0-9]+[.、) ]*", "", (one or "").strip())
+                if one and has_cn(one) and one != w:
+                    got[w] = one[:60]
+        out.update(got)
+    return out
+
+
+def build_ko_dict_cache(items):
+    """生成/更新中韩词表缓存。旧词保留，新词补上，最多 KO_DICT_MAX 个。"""
+    cache = {}
+    if os.path.exists(KO_DICT_PATH):
+        try:
+            with open(KO_DICT_PATH, encoding="utf-8") as f:
+                cache = json.load(f) or {}
+        except Exception:
+            cache = {}
+
+    want = _ko_words(items)
+    need = [w for w in want if w not in cache]
+    deadline = time.time() + KO_DICT_BUDGET
+    if need:
+        log(f"  生成中韩词表：待查 {len(need)} 个新词")
+        got = _ko_dict_ask(need, deadline)
+        cache.update(got)
+        log(f"  中韩词表新增 {len(got)}/{len(need)}")
+
+    # 只保留还有用的词，别让缓存无限长
+    keep = [w for w in want if w in cache]
+    cache = {w: cache[w] for w in keep}
+
+    try:
+        os.makedirs("docs", exist_ok=True)
+        with open(KO_DICT_PATH, "w", encoding="utf-8") as f:
+            json.dump(cache, f, ensure_ascii=False)
+    except Exception as e:
+        log(f"  中韩词表写盘失败（不影响出页）：{e}")
+    return cache
 
 
 def _dict_one(w, skip_google=False):
@@ -3324,9 +3498,19 @@ def main():
         # 点词查义用的词表：把当天正文的高频词提前翻好，点一下就出结果。
         # 只取英文板块——韩语正文的分词规则是另一套，混进来只会污染英文词表，
         # 而且英文词典对韩语词本来也没意义（韩语走在线查词那条路）。
-        global DICT_WORDS
+        global DICT_WORDS, KO_DICT_WORDS
         en_items = [it for sec, items in sections_out
                     if (sec.get("lang") or "en") == "en" for it in items]
+        ko_items = [it for sec, items in sections_out
+                    if (sec.get("lang") or "en") == "ko" for it in items]
+        # 韩语词表单独烘一份：手机直连翻译接口常被限流，不烘的话点词基本查不到
+        if ko_items:
+            try:
+                KO_DICT_WORDS = build_ko_dict_cache(ko_items)
+                log(f"中韩词表：{len(KO_DICT_WORDS)} 个词")
+            except Exception as e:
+                print(f"(中韩词表生成失败，仍可现场联网查词: {e})")
+                KO_DICT_WORDS = {}
         try:
             words_map = build_dict_cache(en_items)
             log(f"点词词表：{len(words_map)} 个词")

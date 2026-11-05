@@ -1011,7 +1011,7 @@ def collect(sources, hot_words, groups=None, quota=None, limit=None):
 
 CACHE_PATH = os.path.join("docs", "translate_cache.json")
 CACHE_MAX  = 5000          # 缓存最多保留多少条新闻的译文
-AI_MODELS  = ["openai/gpt-4o-mini", "openai/gpt-4.1-mini"]
+AI_MODELS  = ["openai/gpt-4o-mini", "openai/gpt-4.1-mini", "openai/gpt-4.1"]
 AI_DISABLED = False      # AI 探测失败后置 True，本次直接全走 Google，省掉上百次无效请求
 
 
@@ -1023,12 +1023,55 @@ def probe_ai():
         if got and any(has_cn(x) for x in got):
             log(f"  AI 探测通过（{model}）")
             return
-    log("  AI 探测失败，本次正文/标题全部走 Google 免费翻译")
+    log("  AI 探测失败，本次正文/标题全部走免费接口兜底")
+    log("  常见原因：工作流缺少 models: read 权限，或免费额度用尽"
+        "（详见上面各模型的 HTTP 状态码）")
     AI_DISABLED = True
 
 
 AI_BATCH   = 10            # 每批翻译几条：太大易超时，太小请求多
-AI_ENDPOINT = "https://models.github.ai/inference/v1/chat/completions"
+# GitHub 官方端点（文档：models.github.ai/inference/chat/completions）。
+# 之前写的 .../inference/v1/chat/completions 多了一层 /v1，会返回空响应，
+# 解析时报 "Expecting value: line 1 column 1" —— AI 翻译就这样整片失效了。
+# 保留旧地址作为第二个尝试，万一哪天端点又调整也不至于全军覆没。
+AI_ENDPOINTS = [
+    "https://models.github.ai/inference/chat/completions",
+    "https://models.github.ai/inference/v1/chat/completions",
+]
+AI_ENDPOINT = AI_ENDPOINTS[0]
+
+
+def _ai_request(payload, timeout=120):
+    """POST 到 GitHub Models 并解析 JSON；失败时换下一个端点重试。
+
+    会把 HTTP 状态码和响应片段写进日志，权限不足/额度耗尽一眼可见。
+    """
+    token = os.environ.get("GITHUB_TOKEN")
+    last = None
+    for url in AI_ENDPOINTS:
+        try:
+            req = urllib.request.Request(
+                url, method="POST",
+                headers={"Authorization": f"Bearer {token}",
+                         "Content-Type": "application/json",
+                         "Accept": "application/json",
+                         "User-Agent": "aviation-news-bot"},
+                data=json.dumps(payload).encode("utf-8"))
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return json.loads(resp.read().decode("utf-8"))
+        except Exception as e:
+            last = e
+            code = getattr(e, "code", "")
+            detail = ""
+            try:
+                if hasattr(e, "read"):
+                    detail = e.read().decode("utf-8", "ignore")[:160]
+            except Exception:
+                pass
+            log(f"  (AI 端点失败 {url.rsplit('/', 2)[-2]}: HTTP {code} {e} {detail})")
+    if last:
+        raise last
+    raise RuntimeError("AI 端点均不可用")
 
 def sys_prompt():
     """按当前板块的原文语种生成提示词。
@@ -1125,14 +1168,7 @@ def _ai_batch(texts, model):
         "temperature": 0.3,
     }
     try:
-        req = urllib.request.Request(
-            AI_ENDPOINT, method="POST",
-            headers={"Authorization": f"Bearer {token}",
-                     "Content-Type": "application/json",
-                     "User-Agent": "aviation-news-bot"},
-            data=json.dumps(payload).encode("utf-8"))
-        with urllib.request.urlopen(req, timeout=120) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
+        data = _ai_request(payload, timeout=120)
         content = data["choices"][0]["message"]["content"]
     except Exception as e:
         log(f"  ({model} 调用失败: {e})")
@@ -1223,14 +1259,7 @@ def _ai_batch_body(blocks, model):
         "max_tokens": 4096,
     }
     def _post(body):
-        req = urllib.request.Request(
-            AI_ENDPOINT, method="POST",
-            headers={"Authorization": f"Bearer {token}",
-                     "Content-Type": "application/json",
-                     "User-Agent": "aviation-news-bot"},
-            data=json.dumps(body).encode("utf-8"))
-        with urllib.request.urlopen(req, timeout=180) as resp:
-            return json.loads(resp.read().decode("utf-8"))
+        return _ai_request(body, timeout=180)
 
     try:
         try:
@@ -1355,14 +1384,7 @@ def _ai_batch_para(texts, model):
         "temperature": 0.3,
     }
     try:
-        req = urllib.request.Request(
-            AI_ENDPOINT, method="POST",
-            headers={"Authorization": f"Bearer {token}",
-                     "Content-Type": "application/json",
-                     "User-Agent": "aviation-news-bot"},
-            data=json.dumps(payload).encode("utf-8"))
-        with urllib.request.urlopen(req, timeout=180) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
+        data = _ai_request(payload, timeout=180)
         content = data["choices"][0]["message"]["content"]
     except Exception as e:
         log(f"  ({model} 逐段调用失败: {e})")
@@ -1486,25 +1508,39 @@ def google_translate_paragraphs(packs):
     return _rebuild(result, spans, len(packs))
 
 
-def mymemory_translate_paragraphs(packs, budget=4000):
-    """最后兜底：MyMemory 逐段翻。有每日字数限额，用完就停。"""
+def mymemory_translate_paragraphs(packs, budget=20000):
+    """最后兜底：MyMemory 逐段翻。有每日字数限额，用完就停。
+
+    AI 整体不可用时这一层是唯一的中文来源，所以预算放宽、并发 + 重试，
+    尽量把能翻的段落都翻出来，别让页面挂一长串「本段未翻译」。"""
+    from concurrent.futures import ThreadPoolExecutor
     flat, spans = _pack_spans(packs)
     if not flat:
         return [None] * len(packs)
 
     result = [None] * len(flat)
-    used = 0
-    ok = 0
+    used, todo = 0, []
     for i, t in enumerate(flat):
         if used >= budget:
             break
-        out = _translate_mymemory(t)
+        todo.append(i)
         used += len(t or "")
-        if out and has_cn(out):
-            result[i] = out
-            ok += 1
-        time.sleep(0.4)
-    log(f"  MyMemory 逐段翻译 {ok}/{len(flat)} 段（用掉 {used} 字额度）")
+
+    def one(i):
+        for _ in range(2):
+            out = _translate_mymemory(flat[i], sl=SRC_LANG)
+            if out and has_cn(out):
+                return i, out
+            time.sleep(0.5)
+        return i, None
+
+    ok = 0
+    with ThreadPoolExecutor(3) as ex:
+        for i, out in ex.map(one, todo):
+            if out:
+                result[i] = out
+                ok += 1
+    log(f"  MyMemory 逐段翻译 {ok}/{len(flat)} 段（预算 {used} 字）")
     return _rebuild(result, spans, len(packs))
 
 
@@ -1678,6 +1714,35 @@ def match_cached_body(en, c):
     return zh, list(range(len(en)))
 
 
+def _dedupe_body(en, zh, title):
+    """去掉正文里混进来的标题/来源行，以及完全重复的段落。
+
+    有些源（NPR 等）会把标题、导语在正文里重复塞好几遍，既让页面看起来
+    车轱辘话连篇，又白白多出几十段要翻译。中文段落必须同步删，否则会错位。
+    """
+    def norm(s):
+        return re.sub(r"[^a-z0-9\uac00-\ud7a3\u4e00-\u9fff]", "", (s or "").lower())
+
+    t = norm(title)
+    out_en, out_zh, seen = [], [], set()
+    for i, p in enumerate(en):
+        n = norm(p)
+        if len(n) < 8:
+            continue
+        # 与标题相同、或只是标题后面挂了个来源名（「标题 : NPR」）——丢掉
+        if t and len(t) >= 12 and n.startswith(t) and len(n) - len(t) <= 8:
+            continue
+        if n in seen:
+            continue
+        seen.add(n)
+        out_en.append(p)
+        out_zh.append(zh[i] if i < len(zh) else "")
+    # 全被删光说明判据过严（正文就是标题那种短文），退回原文
+    if not out_en:
+        return list(en), list(zh)
+    return out_en, out_zh
+
+
 def align_bodies(items):
     """写进网页前最后兜底：中文段落数必须等于英文段落数。
 
@@ -1687,6 +1752,8 @@ def align_bodies(items):
     for it in items:
         en = it.get("body_en") or []
         zh = list(it.get("body_zh") or [])
+        en, zh = _dedupe_body(en, zh, it.get("title_en") or "")
+        it["body_en"] = en
         it["body_zh"] = (zh + [""] * len(en))[:len(en)]
 
 
@@ -2470,13 +2537,18 @@ function renderBody(d){
     }
   } else {
     if (en.length) {
+      var zhCnt = 0;
       for (var i = 0; i < en.length; i++) {
         var z = (i < zh.length && zh[i]) ? zh[i] : '';
+        if (z) zhCnt++;
         html += '<div class="para">'
              +  '<div class="p-en">' + wrapWords(en[i]) + '</div>'
-             +  (z ? '<div class="p-zh">' + esc(z) + '</div>'
-                   : '<div class="p-zh missing">（本段未翻译）</div>')
+             +  (z ? '<div class="p-zh">' + esc(z) + '</div>' : '')
              +  '</div>';
+      }
+      /* 整篇都没译出来时给一条提示就够了，别每段都挂一行「未翻译」 */
+      if (zhCnt === 0) {
+        html = '<div class="p-zh missing">（本文暂缺中文译文，可先看原文）</div>' + html;
       }
     } else if (d.ensum) {
       html = '<div class="para"><div class="p-en">' + wrapWords(d.ensum) + '</div>'
@@ -3004,6 +3076,108 @@ self.addEventListener('fetch', function(e) {
     })
   );
 });"""
+
+
+# 正确的工作流配置（唯一正本）。cron 用 UTC，换算成北京时间 08:00 / 15:00 / 20:00；
+# permissions 里的 models: read 是 GitHub 免费 AI 翻译的权限，缺了它接口会 403，
+# 正文翻译就会整片退回不可靠的免费接口，页面上出现大量「本段未翻译」。
+WORKFLOW_YML = """# 每天自动抓取新闻并更新网站（北京时间 08:00 / 15:00 / 20:00，共三次）
+# 这个文件由 aggregate.py 自动维护，请勿手工改回旧版本。
+name: 每日民航新闻
+
+on:
+  schedule:
+    - cron: "0 0,7,12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  models: read                  # 调用 GitHub 免费 AI 接口做翻译
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v4
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+      - name: 抓取新闻并生成网页
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python aggregate.py
+      - name: 提交更新
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/ .github/workflows/daily.yml
+          git diff --staged --quiet || git commit -m "更新新闻 $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
+      - name: 上传到 Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 部署到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+"""
+
+
+def ensure_workflow():
+    """检查并纠正仓库里的工作流文件。
+
+    只在实际内容不对时才动手；全部包在 try 里，任何一步失败都不影响出页。
+    注意：当前这次运行的 GITHUB_TOKEN 权限在任务启动时就定了，所以修好文件后
+    要等下一次运行（自动三更或手动 Run）AI 翻译才会恢复——这个限制会写进日志。
+    """
+    path = os.path.join(".github", "workflows", "daily.yml")
+    try:
+        cur = ""
+        if os.path.exists(path):
+            with open(path, encoding="utf-8") as f:
+                cur = f.read()
+        good = ("models: read" in cur
+                and "0 0,7,12" in cur
+                and "workflow_dispatch" in cur)
+        if good:
+            log("工作流检查：已是正确版本（三更 + AI 权限）")
+            return
+
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(WORKFLOW_YML)
+        log("！工作流是旧版，已自动写回正确版本（三更 + AI 翻译权限）")
+
+        # 让修正真正落到仓库里：后续那次运行才会用到新权限
+        import subprocess
+        for cmd in (["git", "add", path],
+                    ["git", "commit", "-m", "自动修复工作流：恢复三更与 AI 翻译权限"],
+                    ["git", "push"]):
+            try:
+                subprocess.run(cmd, check=False, capture_output=True, timeout=90)
+            except Exception:
+                pass
+        log("  已提交工作流修正；本次运行的 AI 权限仍是旧的，需再手动 Run 一次恢复")
+    except Exception as e:
+        log(f"  (工作流自动修复失败，不影响出页：{e})")
 
 
 def write_assets():
@@ -3545,6 +3719,11 @@ def main():
             f"英文段落 {en_p}，中文段落 {zh_p}，配图 {img_n}")
 
     write_assets()
+
+    # 防呆：仓库里的工作流文件如果是老版本（缺 AI 权限、或只有早八点一次），
+    # 在这里自动写回正确版本。漏传文件是这套流程最容易踩的坑：
+    # 老版本既让更新频率变回一天一次，又会让 AI 翻译因为没有 models:read 权限而全线 403。
+    ensure_workflow()
 
     # 把诊断日志存到 docs/，这样上线后能直接打开查看失败原因
     try:

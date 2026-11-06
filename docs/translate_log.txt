@@ -1,72 +1,95 @@
 GITHUB_TOKEN: 已配置
-Google 通道探测: 不可用
+Google 通道探测: '波音 737'
 翻译中 ...
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
   (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
   (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
-  AI 探测失败，本次正文/标题全部走 Google 免费翻译
-  待翻正文 19 篇 / 337 段
-  AI 整篇翻译正文 0/19 篇
-  AI 逐段翻译正文 0 篇
-  Google 逐段翻译连续失败 4 次，放弃
-  Google 逐段翻译 0/337 段
-  Google 逐段翻译正文 0 篇
-  MyMemory 逐段翻译 9/337 段（用掉 4073 字额度）
-  MyMemory 逐段翻译正文 0 篇
-  仍有 19 篇正文没翻出来
-  兜底翻译：MyMemory
-翻译中 ...
-  (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
-  (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
-  AI 探测失败，本次正文/标题全部走 Google 免费翻译
-  待翻正文 39 篇 / 578 段
-  AI 整篇翻译正文 0/39 篇
-  AI 逐段翻译正文 0 篇
-  Google 逐段翻译连续失败 4 次，放弃
-  Google 逐段翻译 0/578 段
-  Google 逐段翻译正文 0 篇
-  MyMemory 逐段翻译 22/578 段（用掉 4089 字额度）
-  MyMemory 逐段翻译正文 1 篇
-  仍有 38 篇正文没翻出来
-  兜底翻译：MyMemory
-翻译中 ...
-  (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
-  (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
-  AI 探测失败，本次正文/标题全部走 Google 免费翻译
-  待翻正文 19 篇 / 276 段
-  AI 整篇翻译正文 0/19 篇
-  AI 逐段翻译正文 0 篇
-  Google 逐段翻译连续失败 4 次，放弃
-  Google 逐段翻译 0/276 段
-  Google 逐段翻译正文 0 篇
-  MyMemory 逐段翻译 0/276 段（用掉 4041 字额度）
-  MyMemory 逐段翻译正文 0 篇
-  仍有 19 篇正文没翻出来
-  兜底翻译：MyMemory
-翻译中 ...
-  (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
-  (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
-  AI 探测失败，本次正文/标题全部走 Google 免费翻译
-  待翻正文 20 篇 / 242 段
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (openai/gpt-4.1 调用失败: Expecting value: line 1 column 1 (char 0))
+  AI 探测失败，本次正文/标题全部走免费接口兜底
+  常见原因：工作流缺少 models: read 权限，或免费额度用尽（详见上面各模型的 HTTP 状态码）
+  待翻正文 20 篇 / 335 段
   AI 整篇翻译正文 0/20 篇
   AI 逐段翻译正文 0 篇
-  Google 逐段翻译连续失败 4 次，放弃
-  Google 逐段翻译 0/242 段
-  Google 逐段翻译正文 0 篇
-  MyMemory 逐段翻译 0/242 段（用掉 4057 字额度）
+  Google 逐段翻译 335/335 段
+  Google 逐段翻译正文 20 篇
+  兜底翻译：Google
+翻译中 ...
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (openai/gpt-4.1 调用失败: Expecting value: line 1 column 1 (char 0))
+  AI 探测失败，本次正文/标题全部走免费接口兜底
+  常见原因：工作流缺少 models: read 权限，或免费额度用尽（详见上面各模型的 HTTP 状态码）
+  待翻正文 39 篇 / 627 段
+  AI 整篇翻译正文 0/39 篇
+  AI 逐段翻译正文 0 篇
+  Google 逐段翻译 624/627 段
+  Google 逐段翻译正文 36 篇
+  MyMemory 逐段翻译 0/3 段（预算 398 字）
   MyMemory 逐段翻译正文 0 篇
-  仍有 20 篇正文没翻出来
-  兜底翻译：MyMemory
-  生成中韩词表：待查 676 个新词
-  中韩词表新增 0/676
-中韩词表：224 个词
-  生成点词词表：待查 2996 个新词
-  词表新增 554/2996
-点词词表：3897 个词
-  生成音标：待查 1217 个词
+  仍有 3 篇正文没翻出来
+  兜底翻译：Google
+翻译中 ...
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (openai/gpt-4.1 调用失败: Expecting value: line 1 column 1 (char 0))
+  AI 探测失败，本次正文/标题全部走免费接口兜底
+  常见原因：工作流缺少 models: read 权限，或免费额度用尽（详见上面各模型的 HTTP 状态码）
+  待翻正文 20 篇 / 299 段
+  AI 整篇翻译正文 0/20 篇
+  AI 逐段翻译正文 0 篇
+  Google 逐段翻译 299/299 段
+  Google 逐段翻译正文 20 篇
+  兜底翻译：Google
+翻译中 ...
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (openai/gpt-4o-mini 调用失败: Expecting value: line 1 column 1 (char 0))
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (openai/gpt-4.1-mini 调用失败: Expecting value: line 1 column 1 (char 0))
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (AI 端点失败 chat: HTTP  Expecting value: line 1 column 1 (char 0) )
+  (openai/gpt-4.1 调用失败: Expecting value: line 1 column 1 (char 0))
+  AI 探测失败，本次正文/标题全部走免费接口兜底
+  常见原因：工作流缺少 models: read 权限，或免费额度用尽（详见上面各模型的 HTTP 状态码）
+  待翻正文 20 篇 / 203 段
+  AI 整篇翻译正文 0/20 篇
+  AI 逐段翻译正文 0 篇
+  Google 逐段翻译 194/203 段
+  Google 逐段翻译正文 17 篇
+  MyMemory 逐段翻译 0/9 段（预算 2328 字）
+  MyMemory 逐段翻译正文 0 篇
+  仍有 3 篇正文没翻出来
+  兜底翻译：Google
+  生成中韩词表：待查 767 个新词
+  中韩词表新增 763/767
+中韩词表：896 个词
+  生成点词词表：待查 3937 个新词
+  词表新增 3917/3937
+点词词表：6473 个词
+  生成音标：待查 2400 个词
   音标时间到，剩下的明天接着补
-  音标新增 367/1217
-其中 1611 个词带音标
-结果[民航资讯]：20 条，中文标题 20，英文段落 363，中文段落 35，配图 14
-结果[美国要闻]：40 条，中文标题 22，英文段落 598，中文段落 42，配图 30
-结果[国际要闻]：20 条，中文标题 1，英文段落 295，中文段落 19，配图 12
-结果[韩国要闻]：20 条，中文标题 4，英文段落 242，中文段落 0，配图 18
+  音标新增 314/2400
+其中 1530 个词带音标
+结果[民航资讯]：20 条，中文标题 20，英文段落 331，中文段落 331，配图 13
+结果[美国要闻]：40 条，中文标题 40，英文段落 587，中文段落 584，配图 31
+结果[国际要闻]：20 条，中文标题 20，英文段落 288，中文段落 288，配图 11
+结果[韩国要闻]：20 条，中文标题 20，英文段落 202，中文段落 193，配图 16
+工作流检查：已是正确版本（三更 + AI 权限）

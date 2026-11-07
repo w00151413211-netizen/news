@@ -1,0 +1,36 @@
+name: probe-translate
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+  models: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 测试 dict-chrome-ex 详情
+        run: |
+          U="https://clients5.google.com/translate_a/t?client=dict-chrome-ex"
+          echo "=== 1 en short ==="
+          curl -sS --max-time 20 "$U&sl=en&tl=zh-CN&q=aircraft" | head -c 900
+          echo ""
+          echo "=== 2 en long paragraph ==="
+          curl -sS --max-time 25 -G "$U" --data-urlencode "sl=en" --data-urlencode "tl=zh-CN" --data-urlencode "q=The airline said the aircraft landed safely after the incident at the airport, and regulators opened an investigation into the engine failure reported last week. No injuries were reported among the passengers." | head -c 1600
+          echo ""
+          echo "=== 3 ko short ==="
+          curl -sS --max-time 20 -G "$U" --data-urlencode "sl=ko" --data-urlencode "tl=zh-CN" --data-urlencode "q=정부가 예산안을 확정했다" | head -c 900
+          echo ""
+          echo "=== 4 ko long ==="
+          curl -sS --max-time 25 -G "$U" --data-urlencode "sl=ko" --data-urlencode "tl=zh-CN" --data-urlencode "q=정부가 내년 예산안을 확정했다. 예산안은 복지 예산을 크게 늘린다." | head -c 1600
+          echo ""
+          echo "=== 5 burst 6 ==="
+          for i in 1 2 3 4 5 6; do
+            code=$(curl -sS -o /dev/null -w "%{http_code}" --max-time 20 "$U&sl=en&tl=zh-CN&q=flight$i")
+            echo -n "req$i=$code "
+          done
+          echo ""
+          echo "=== 6 gtx / other clients ==="
+          curl -sS -o /dev/null -w "gtx=%{http_code}\n" --max-time 20 "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=zh-CN&dt=t&q=aircraft"
+          curl -sS --max-time 20 "$U&sl=ko&tl=zh-CN&q=대통령" | head -c 400
+          echo ""
+          echo "=== DONE ==="

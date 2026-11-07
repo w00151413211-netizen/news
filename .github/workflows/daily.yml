@@ -1,17 +1,18 @@
-# 每天自动抓取新闻并更新网站（北京时间 08:00 / 15:00 / 20:00，共三次）
+# NEWS_WORKFLOW_VERSION: 3
+# 每天自动抓取新闻并更新网站（北京时间 07:00，每天一次）
 # 这个文件由 aggregate.py 自动维护，请勿手工改回旧版本。
 name: 每日民航新闻
 
 on:
   schedule:
-    - cron: "0 0,7,12 * * *"
+    - cron: "0 23 * * *"        # UTC 23:00 = 北京时间次日 07:00
   workflow_dispatch:
 
 permissions:
   contents: write
   pages: write
   id-token: write
-  models: read                  # 调用 GitHub 免费 AI 接口做翻译
+  models: read                  # 保留给 GitHub AI；当前该端点不可用，翻译走 Google
 
 concurrency:
   group: "pages"

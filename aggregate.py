@@ -1012,20 +1012,26 @@ def collect(sources, hot_words, groups=None, quota=None, limit=None):
 CACHE_PATH = os.path.join("docs", "translate_cache.json")
 CACHE_MAX  = 5000          # 缓存最多保留多少条新闻的译文
 AI_MODELS  = ["openai/gpt-4o-mini", "openai/gpt-4.1-mini", "openai/gpt-4.1"]
-AI_DISABLED = False      # AI 探测失败后置 True，本次直接全走 Google，省掉上百次无效请求
+# GitHub Models 接口在真实 Actions 里实测（2026-11-07）：带 models: read 权限、
+# 官方端点、GITHUB_TOKEN 都齐全，返回仍是 HTTP 200 + text/plain 的 "OK" 两字，
+# 根本不是 JSON。不是权限也不是额度问题，是这个推理服务对该账号不可用。
+# 与其每次白跑 6 次请求、刷一屏报错，不如直接停用，让 Google 通道当主力。
+# 哪天 GitHub 修好了，把这里改回 False 就会自动优先走 AI。
+AI_DISABLED = True
 
 
 def probe_ai():
-    """先用两条短句探路：AI 不通就把 AI 全部跳过（日志已证实接口在 Actions 里不可用）。"""
+    """AI 已实测不可用就直接跳过；真要启用时才探路。"""
     global AI_DISABLED
+    if AI_DISABLED:
+        log("  GitHub AI 已停用（端点只回纯文本 OK），本次全部走 Google 免费翻译")
+        return
     for model in AI_MODELS:
         got = _ai_batch(["Boeing 737", "Airbus A350"], model)
         if got and any(has_cn(x) for x in got):
             log(f"  AI 探测通过（{model}）")
             return
     log("  AI 探测失败，本次正文/标题全部走免费接口兜底")
-    log("  常见原因：工作流缺少 models: read 权限，或免费额度用尽"
-        "（详见上面各模型的 HTTP 状态码）")
     AI_DISABLED = True
 
 
@@ -1134,20 +1140,71 @@ def save_cache(cache):
         print(f"  (缓存写入失败: {e})")
 
 
+# ---------- 段落级译文缓存：同一段原文翻过一次，就永久留着 ----------
+# 以前只按「新闻链接」缓存：新闻一换、或正文段落顺序稍变，整篇译文就作废；
+# 哪次接口抽风没翻出来，正文就被空译文覆盖 —— 这正是「中文译文总消失」的根因。
+# 改成按段落原文指纹存，跟新闻链接、段落位置都无关，中文只增不减。
+SEG_CACHE_PATH = os.path.join("docs", "seg_cache.json")
+SEG_CACHE_MAX = 12000
+
+
+def load_seg_cache():
+    for path in (SEG_CACHE_PATH, "seg_cache.json"):
+        if not os.path.exists(path):
+            continue
+        try:
+            with open(path, encoding="utf-8") as f:
+                data = json.load(f)
+            if isinstance(data, dict) and data:
+                return data
+        except Exception:
+            continue
+    return {}
+
+
+def save_seg_cache(cache):
+    try:
+        if len(cache) > SEG_CACHE_MAX:
+            cache = dict(list(cache.items())[-SEG_CACHE_MAX:])
+        with open(SEG_CACHE_PATH, "w", encoding="utf-8") as f:
+            json.dump(cache, f, ensure_ascii=False)
+    except Exception as e:
+        print(f"  (段落缓存写入失败: {e})")
+
+
 # ---------- 翻译接口 ----------
 
-def _translate_google(text, target="zh-CN", sl="auto", timeout=8):
-    """免费 Google 翻译接口（无需密钥）。失败返回 None。"""
+def _translate_google(text, target="zh-CN", sl="en", timeout=8):
+    """免费 Google 翻译接口（无需密钥）。失败返回 None。
+
+    2026-11-07 在真实 GitHub Actions 里实测过四条通道，只有这条能用：
+      - translate.googleapis.com/.../single?client=gtx  → 恒为 429（Google 限流 Actions 的 IP）
+      - models.github.ai/.../chat/completions (GitHub AI) → 恒返回纯文本 "OK"，不是 JSON
+      - clients5.google.com/.../t?client=dict-chrome-ex → 200，长段落/韩语都正常，连发不限流 ✅
+    它的返回格式是 ["译文"]，偶尔是 [[...]] 嵌套，两种都兼容。
+    """
     if not text:
         return ""
-    q = urllib.parse.quote(text)
-    url = (f"https://translate.googleapis.com/translate_a/single"
-           f"?client=gtx&sl={sl}&tl={target}&dt=t&q={q}")
+    url = ("https://clients5.google.com/translate_a/t?"
+           + urllib.parse.urlencode({"client": "dict-chrome-ex",
+                                     "sl": sl, "tl": target, "q": text}))
     try:
         req = urllib.request.Request(url, headers={"User-Agent": UA})
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             data = json.loads(resp.read().decode("utf-8"))
-        return "".join(seg[0] for seg in data[0] if seg[0])
+        if isinstance(data, list) and data:
+            first = data[0]
+            if isinstance(first, str):
+                return first
+            if isinstance(first, list):
+                # 老 gtx 风格：[[译文, 原文, ...], ...]
+                parts = [seg[0] for seg in first
+                         if isinstance(seg, list) and seg and isinstance(seg[0], str)]
+                # 有些版本直接给 ["译文1", "译文2"]
+                if not parts and all(isinstance(x, str) for x in first):
+                    parts = [x for x in first if x.strip()]
+                return "".join(parts) if parts else None
+        return None
     except Exception:
         return None
 
@@ -1503,7 +1560,7 @@ def google_translate_paragraphs(packs):
             if miss >= 4 and ok == 0:
                 log(f"  Google 逐段翻译连续失败 {miss} 次，放弃")
                 break
-        time.sleep(0.2 + 0.2 * (i % 3))     # 稍微抖一抖，别打得太密
+        time.sleep(0.1)                      # 实测连发 6 次全部 200，不必留长间隔
     log(f"  Google 逐段翻译 {ok}/{len(flat)} 段")
     return _rebuild(result, spans, len(packs))
 
@@ -1767,8 +1824,9 @@ def translate_items(items):
       4. 最后无论如何都填成英文，界面上绝不会出现空白标题
     """
     cache = load_cache()
-    if cache:
-        print(f"  译文缓存 {len(cache)} 条，可复用")
+    seg_cache = load_seg_cache()
+    if cache or seg_cache:
+        print(f"  译文缓存 {len(cache)} 条，段落缓存 {len(seg_cache)} 段，可复用")
 
     title_todo, sum_todo, body_todo = [], [], []
     for it in items:
@@ -1782,11 +1840,20 @@ def translate_items(items):
             sum_todo.append(it)
         if it.get("body_en"):
             zh, miss = match_cached_body(it["body_en"], c)
+            # 段落级回填：新闻换了、段落顺序变了都不怕，这段原文翻过就复用
+            filled = 0
+            for i in miss:
+                old = seg_cache.get(_fp(it["body_en"][i]))
+                if old and has_cn(old):
+                    zh[i] = old
+                    filled += 1
+            if filled:
+                miss = [i for i in range(len(it["body_en"])) if not has_cn(zh[i])]
             it["body_zh"] = zh
             if miss:
                 it["_miss"] = miss
                 body_todo.append(it)
-            elif any(has_cn(v) for v in zh) and not c.get("f"):
+            elif filled == 0 and any(has_cn(v) for v in zh) and not c.get("f"):
                 # 老缓存没指纹、但这次校验通过了：顺手把指纹补上。
                 # 从下一轮起这篇就是精确匹配，再也不用靠猜。
                 rec = cache.setdefault(it["link"], {})
@@ -1858,10 +1925,25 @@ def translate_items(items):
                     for k, i in enumerate(keep):
                         if k < len(clean) and i < len(body) and has_cn(clean[k]):
                             body[i] = clean[k]
+                            seg_cache[_fp(en[i])] = clean[k]   # 段落级永久保留
                 it["body_zh"] = body
                 if any(has_cn(x) for x in body):
                     rec = cache.setdefault(it["link"], {})
-                    rec["b"] = "\n".join(body)
+                    # 只增不减：本次某段没翻出来时，按「段落指纹」把以前的中文找回来，
+                    # 绝不能用空串把翻好的整篇覆盖掉；按位置补会错位，所以只认指纹。
+                    old = (rec.get("b") or "").split("\n")
+                    oldfps = (rec.get("f") or "").split("\n")
+                    by_fp = {f: old[j] for j, f in enumerate(oldfps)
+                             if f and j < len(old) and has_cn(old[j])}
+                    merged = []
+                    for i, v in enumerate(body):
+                        if has_cn(v):
+                            merged.append(v)
+                        else:
+                            fp = _fp(en[i])
+                            old_v = by_fp.get(fp) or seg_cache.get(fp)
+                            merged.append(old_v if old_v and has_cn(old_v) else "")
+                    rec["b"] = "\n".join(merged)
                     rec["f"] = "\n".join(_fp(p) for p in en)
                     rec["ts"] = time.time()
                 left = [i for i in range(len(en)) if not has_cn(body[i])]
@@ -1936,6 +2018,7 @@ def translate_items(items):
 
     zh_n = sum(1 for it in items if has_cn(it["title_zh"]))
     print(f"  最终中文标题 {zh_n}/{len(items)} 条")
+    save_seg_cache(seg_cache)      # 随网站一起提交，下次运行继续累积
     return items
 
 
@@ -3078,23 +3161,24 @@ self.addEventListener('fetch', function(e) {
 });"""
 
 
-# 正确的工作流配置（唯一正本）。cron 用 UTC，换算成北京时间 08:00 / 15:00 / 20:00；
-# permissions 里的 models: read 是 GitHub 免费 AI 翻译的权限，缺了它接口会 403，
-# 正文翻译就会整片退回不可靠的免费接口，页面上出现大量「本段未翻译」。
-WORKFLOW_YML = """# 每天自动抓取新闻并更新网站（北京时间 08:00 / 15:00 / 20:00，共三次）
+# 正确的工作流配置（唯一正本）。cron 用 UTC：0 23 * * * = 北京时间次日 07:00，每天一次。
+# 版本号写在文件首行，ensure_workflow() 靠它判断仓库里是不是旧版，
+# 以后再改时间或权限，不用回来改判断条件。
+WORKFLOW_YML = """# NEWS_WORKFLOW_VERSION: 3
+# 每天自动抓取新闻并更新网站（北京时间 07:00，每天一次）
 # 这个文件由 aggregate.py 自动维护，请勿手工改回旧版本。
 name: 每日民航新闻
 
 on:
   schedule:
-    - cron: "0 0,7,12 * * *"
+    - cron: "0 23 * * *"        # UTC 23:00 = 北京时间次日 07:00
   workflow_dispatch:
 
 permissions:
   contents: write
   pages: write
   id-token: write
-  models: read                  # 调用 GitHub 免费 AI 接口做翻译
+  models: read                  # 保留给 GitHub AI；当前该端点不可用，翻译走 Google
 
 concurrency:
   group: "pages"
@@ -3145,8 +3229,7 @@ def ensure_workflow():
     """检查并纠正仓库里的工作流文件。
 
     只在实际内容不对时才动手；全部包在 try 里，任何一步失败都不影响出页。
-    注意：当前这次运行的 GITHUB_TOKEN 权限在任务启动时就定了，所以修好文件后
-    要等下一次运行（自动三更或手动 Run）AI 翻译才会恢复——这个限制会写进日志。
+    用文件里的版本标记比对，以后再改时间/权限不用回来改这段判断。
     """
     path = os.path.join(".github", "workflows", "daily.yml")
     try:
@@ -3154,28 +3237,25 @@ def ensure_workflow():
         if os.path.exists(path):
             with open(path, encoding="utf-8") as f:
                 cur = f.read()
-        good = ("models: read" in cur
-                and "0 0,7,12" in cur
-                and "workflow_dispatch" in cur)
+        good = "NEWS_WORKFLOW_VERSION: 3" in cur
         if good:
-            log("工作流检查：已是正确版本（三更 + AI 权限）")
+            log("工作流检查：已是正确版本（每天北京时间 07:00 一次）")
             return
 
         os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "w", encoding="utf-8") as f:
             f.write(WORKFLOW_YML)
-        log("！工作流是旧版，已自动写回正确版本（三更 + AI 翻译权限）")
+        log("！工作流是旧版，已自动写回正确版本（每天 07:00 一次）")
 
-        # 让修正真正落到仓库里：后续那次运行才会用到新权限
         import subprocess
         for cmd in (["git", "add", path],
-                    ["git", "commit", "-m", "自动修复工作流：恢复三更与 AI 翻译权限"],
+                    ["git", "commit", "-m", "自动修复工作流：恢复每天 07:00 一次"],
                     ["git", "push"]):
             try:
                 subprocess.run(cmd, check=False, capture_output=True, timeout=90)
             except Exception:
                 pass
-        log("  已提交工作流修正；本次运行的 AI 权限仍是旧的，需再手动 Run 一次恢复")
+        log("  已提交工作流修正；下次运行起按新时间表执行")
     except Exception as e:
         log(f"  (工作流自动修复失败，不影响出页：{e})")
 
@@ -3720,9 +3800,8 @@ def main():
 
     write_assets()
 
-    # 防呆：仓库里的工作流文件如果是老版本（缺 AI 权限、或只有早八点一次），
-    # 在这里自动写回正确版本。漏传文件是这套流程最容易踩的坑：
-    # 老版本既让更新频率变回一天一次，又会让 AI 翻译因为没有 models:read 权限而全线 403。
+    # 防呆：仓库里的工作流文件若是老版本（时间表不对），自动写回正确版本。
+    # 漏传这个文件是这套流程最容易踩的坑，会悄悄把更新频率变回旧设置。
     ensure_workflow()
 
     # 把诊断日志存到 docs/，这样上线后能直接打开查看失败原因

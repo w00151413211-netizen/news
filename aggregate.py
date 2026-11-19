@@ -3161,17 +3161,21 @@ self.addEventListener('fetch', function(e) {
 });"""
 
 
-# 正确的工作流配置（唯一正本）。cron 用 UTC：0 23 * * * = 北京时间次日 07:00，每天一次。
-# 版本号写在文件首行，ensure_workflow() 靠它判断仓库里是不是旧版，
-# 以后再改时间或权限，不用回来改判断条件。
-WORKFLOW_YML = """# NEWS_WORKFLOW_VERSION: 3
-# 每天自动抓取新闻并更新网站（北京时间 07:00，每天一次）
+# 正确的工作流配置（唯一正本）。cron 用 UTC。
+# GitHub 会在整点（:00）和高负载时静默丢弃 schedule 任务，单靠一个整点任务极不可靠。
+# 因此设两个错开的「非整点」触发点：前一个被丢，后一个兜底；两个都跑到时，
+# 脚本里的 already_updated_today() 会让后跑的那个直接跳过，保证一天只更新一次。
+# 版本号写在文件首行，ensure_workflow() 靠它判断仓库里是不是旧版。
+WORKFLOW_YML = """# NEWS_WORKFLOW_VERSION: 4
+# 每天自动抓取新闻并更新网站（北京时间 07:00 左右，每天一次）。
+# 双触发点 + 当天幂等：任一被 GitHub 丢弃都能兜底，且绝不重复更新。
 # 这个文件由 aggregate.py 自动维护，请勿手工改回旧版本。
 name: 每日民航新闻
 
 on:
   schedule:
-    - cron: "0 23 * * *"        # UTC 23:00 = 北京时间次日 07:00
+    - cron: "45 22 * * *"       # UTC 22:45 = 北京时间次日 06:45（避开整点）
+    - cron: "45 23 * * *"       # UTC 23:45 = 北京时间次日 07:45（前一点被丢时兜底）
   workflow_dispatch:
 
 permissions:
@@ -3237,19 +3241,19 @@ def ensure_workflow():
         if os.path.exists(path):
             with open(path, encoding="utf-8") as f:
                 cur = f.read()
-        good = "NEWS_WORKFLOW_VERSION: 3" in cur
+        good = "NEWS_WORKFLOW_VERSION: 4" in cur
         if good:
-            log("工作流检查：已是正确版本（每天北京时间 07:00 一次）")
+            log("工作流检查：已是正确版本（每天 06:45/07:45 双触发点，防 GitHub 丢任务）")
             return
 
         os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "w", encoding="utf-8") as f:
             f.write(WORKFLOW_YML)
-        log("！工作流是旧版，已自动写回正确版本（每天 07:00 一次）")
+        log("！工作流是旧版，已自动写回正确版本（双触发点防丢任务）")
 
         import subprocess
         for cmd in (["git", "add", path],
-                    ["git", "commit", "-m", "自动修复工作流：恢复每天 07:00 一次"],
+                    ["git", "commit", "-m", "自动修复工作流：恢复双触发点防丢任务"],
                     ["git", "push"]):
             try:
                 subprocess.run(cmd, check=False, capture_output=True, timeout=90)
@@ -3706,7 +3710,37 @@ def prev_has_chinese():
     return False
 
 
+def already_updated_today():
+    """判断今天是否已经成功更新过网页（供双触发点做幂等）。
+
+    GitHub 的 schedule 会在整点/高负载时丢任务，所以配了 06:45、07:45 两个触发点。
+    两个都跑到时，后跑的这个读页面顶部「更新于 YYYY年MM月DD日」：
+    若日期就是今天，说明前一个点已经更新好了，直接跳过，避免一天更两次、白耗额度。
+    只有北京时间当天日期能对上才算数；读不到或解析失败一律返回 False（宁可多更，不可漏更）。
+    手动触发（workflow_dispatch）不受此限制——传 force=1 可强制更新。
+    """
+    if os.environ.get("NEWS_FORCE") == "1":
+        return False
+    try:
+        p = os.path.join("docs", "index.html")
+        if not os.path.exists(p):
+            return False
+        with open(p, encoding="utf-8") as f:
+            head = f.read(6000)          # 「更新于」在页头，读前 6000 字足够
+        m = re.search(r"更新于\s*(\d{4})年(\d{2})月(\d{2})日", head)
+        if not m:
+            return False
+        stamp = f"{int(m.group(1)):04d}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
+        today = datetime.now(tz=timezone(timedelta(hours=8))).strftime("%Y-%m-%d")
+        return stamp == today
+    except Exception:
+        return False
+
+
 def main():
+    if already_updated_today() and os.environ.get("GITHUB_EVENT_NAME") != "workflow_dispatch":
+        log("今天已更新过（另一个触发点已完成），本次自动跳过，避免重复更新")
+        return
     os.makedirs("docs", exist_ok=True)
 
     log("GITHUB_TOKEN: " + ("已配置" if os.environ.get("GITHUB_TOKEN") else "缺失"))

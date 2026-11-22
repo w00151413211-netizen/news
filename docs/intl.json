@@ -51,52 +51,8 @@
     "img": "",
     "link": "https://www.aljazeera.com/news/2026/11/22/displaced-palestinians-protest-as-israeli-air-strikes-continue-in-gaza?traffic_source=rss",
     "source": "Al Jazeera",
-    "score": 21.9,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ]
+    "score": 21.75,
+    "grp": "main"
   },
   {
     "title_en": "Russia-bound ship attacked in Gulf of Finland",
@@ -150,52 +106,8 @@
     "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4cee/live/4e2fa7a0-e5c5-11f1-a738-4787e1a18cce.jpg",
     "link": "https://www.bbc.co.uk/news/articles/cj752ddve27ko?at_medium=RSS&at_campaign=rss",
     "source": "BBC 国际",
-    "score": 20.69,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ]
+    "score": 20.57,
+    "grp": "main"
   },
   {
     "title_en": "Russia attacks Zelensky's hometown, Ukraine reaffirms wish to join NATO",
@@ -211,14 +123,8 @@
     "img": "https://s.france24.com/media/display/700b9322-e5d7-11f1-9865-13439ca2fe89/w:1024/p:16x9/AP26325430245749.jpg",
     "link": "https://www.france24.com/en/europe/20261121-russia-attacks-zelensky-s-hometown-ukraine-reaffirms-wish-to-join-nato",
     "source": "France 24",
-    "score": 18.78,
-    "grp": "main",
-    "_miss": [
-      0
-    ],
-    "_keep": [
-      0
-    ]
+    "score": 18.66,
+    "grp": "main"
   },
   {
     "title_en": "Russia launches ballistic missile attack on Zelensky's hometown in central Ukraine",
@@ -234,14 +140,8 @@
     "img": "https://s.france24.com/media/display/a1864982-e5d3-11f1-8806-1bac47ab2f5d/w:1024/p:16x9/EN-20261121-180653-181143-CS-01.jpg",
     "link": "https://www.france24.com/en/russia-launches-ballistic-missile-attack-on-zelensky-s-hometown-in-central-ukraine",
     "source": "France 24",
-    "score": 18.78,
-    "grp": "main",
-    "_miss": [
-      0
-    ],
-    "_keep": [
-      0
-    ]
+    "score": 18.66,
+    "grp": "main"
   },
   {
     "title_en": "Iran war live: Iran targets US bases in Bahrain; Houthi strikes continue",
@@ -257,14 +157,8 @@
     "img": "",
     "link": "https://www.aljazeera.com/news/liveblog/2026/11/21/iran-war-live-iran-targets-us-military-in-bahrain-houthi-strikes-continue?traffic_source=rss",
     "source": "Al Jazeera",
-    "score": 17.47,
-    "grp": "main",
-    "_miss": [
-      0
-    ],
-    "_keep": [
-      0
-    ]
+    "score": 17.34,
+    "grp": "main"
   },
   {
     "title_en": "Russia strikes Zelenskyy's hometown, killing 2",
@@ -314,48 +208,8 @@
     "img": "",
     "link": "https://www.dw.com/en/russia-strikes-zelenskyy-s-hometown-killing-2/a-80009458?maca=en-rss-en-world-4025-rdf",
     "source": "DW 德国之声",
-    "score": 16.02,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18
-    ]
+    "score": 15.92,
+    "grp": "main"
   },
   {
     "title_en": "Zelensky says Crimean Bridge strikes 'fair response' as he meets UK's Streeting",
@@ -409,52 +263,8 @@
     "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3686/live/9ee585d0-e5a6-11f1-99b6-a35a62fa4264.jpg",
     "link": "https://www.bbc.co.uk/news/articles/c6wy0qj7w5zqo?at_medium=RSS&at_campaign=rss",
     "source": "BBC 国际",
-    "score": 15.83,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ]
+    "score": 15.74,
+    "grp": "main"
   },
   {
     "title_en": "Mexican drug lord on FBI's 10 most wanted list arrested in shoot-out",
@@ -508,85 +318,8 @@
     "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/5701/live/7ac9e270-e5ad-11f1-99a1-253766e7ad8b.jpg",
     "link": "https://www.bbc.co.uk/news/articles/ckz749ey0r75o?at_medium=RSS&at_campaign=rss",
     "source": "BBC 国际",
-    "score": 15.74,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ]
-  },
-  {
-    "title_en": "Moviegoers head for the exits as quake strikes Peru",
-    "title_zh": "秘鲁地震 观众纷纷撤离",
-    "summary": "Moviegoers head for the exits as quake strikes Peru",
-    "summary_zh": "秘鲁地震 观众纷纷撤离",
-    "body_en": [
-      "Moviegoers head for the exits as quake strikes Peru | Earthquakes | Al Jazeera",
-      "Video shows moviegoers rushing out of a cinema during the new Hunger Games movie when a 6.7-magnitude earthquake hit Peru on Friday.",
-      "Share Moviegoers head for the exits as quake strikes Peru on social media"
-    ],
-    "body_zh": [
-      "秘鲁地震，电影观众纷纷撤离地震 |半岛电视台",
-      "视频显示，周五秘鲁发生 6.7 级地震，观看新电影《饥饿游戏》的观众纷纷冲出电影院。",
-      "社交媒体上秘鲁地震袭来，电影观众纷纷撤离"
-    ],
-    "img": "",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/22/moviegoers-head-for-the-exits-as-quake-strikes-peru?traffic_source=rss",
-    "source": "Al Jazeera",
-    "score": 15.68,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3
-    ]
+    "score": 15.6,
+    "grp": "main"
   },
   {
     "title_en": "‘Weak and dizzy’: the secretive ICE force-feeding tactics that ended a Cuban father’s hunger strike",
@@ -638,41 +371,29 @@
     "img": "https://i.guim.co.uk/img/media/753c8bfdbccb0b49e67ae5dbfac970caa7c20394/0_0_3000_2400/master/3000.jpg?width=140&quality=85&auto=format&fit=max&s=dfe5f4af44bfed45282bdb4342afd283",
     "link": "https://www.theguardian.com/us-news/2026/nov/20/ice-cuba-hunger-strike-force-feeding",
     "source": "Guardian 国际",
-    "score": 15.6,
+    "score": 15.56,
     "grp": "main"
   },
   {
-    "title_en": "Clashes erupt across France in another night of protest",
-    "title_zh": "又一个抗议之夜，法国各地爆发冲突",
-    "summary": "French police charged to disperse crowds on Saturday as the country faced a sixth weekend of demonstrations.",
-    "summary_zh": "法国警方周六负责驱散人群，因为该国面临第六个周末的示威活动。",
+    "title_en": "Moviegoers head for the exits as quake strikes Peru",
+    "title_zh": "秘鲁地震 观众纷纷撤离",
+    "summary": "Moviegoers head for the exits as quake strikes Peru",
+    "summary_zh": "秘鲁地震 观众纷纷撤离",
     "body_en": [
-      "Clashes erupt across France in another night of protest | Protests | Al Jazeera",
-      "French police charged to disperse crowds of protesters on Saturday as the country faced demonstrations for a sixth straight weekend over the cost-of-living crisis and income inequality.",
-      "Share Clashes erupt across France in another night of protest on social media"
+      "Moviegoers head for the exits as quake strikes Peru | Earthquakes | Al Jazeera",
+      "Video shows moviegoers rushing out of a cinema during the new Hunger Games movie when a 6.7-magnitude earthquake hit Peru on Friday.",
+      "Share Moviegoers head for the exits as quake strikes Peru on social media"
     ],
     "body_zh": [
-      "又一个抗议之夜，法国各地爆发冲突|抗议|半岛电视台",
-      "法国警方周六负责驱散抗议人群，因为该国因生活成本危机和收入不平等而连续第六个周末面临示威活动。",
-      "社交媒体抗议之夜，法国各地爆发冲突"
+      "秘鲁地震，电影观众纷纷撤离地震 |半岛电视台",
+      "视频显示，周五秘鲁发生 6.7 级地震，观看新电影《饥饿游戏》的观众纷纷冲出电影院。",
+      "社交媒体上秘鲁地震袭来，电影观众纷纷撤离"
     ],
     "img": "",
-    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/22/clashes-erupt-across-france-in-another-night-of-protest?traffic_source=rss",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/22/moviegoers-head-for-the-exits-as-quake-strikes-peru?traffic_source=rss",
     "source": "Al Jazeera",
-    "score": 15.59,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3
-    ]
+    "score": 15.54,
+    "grp": "main"
   },
   {
     "title_en": "Haitians excited but uneasy as El Salvador troops fight gangs",
@@ -724,133 +445,29 @@
     "img": "https://i.guim.co.uk/img/media/50cadcfc3b9aea76e63e685b18e73e9625ebe68b/479_0_4942_3957/master/4942.jpg?width=140&quality=85&auto=format&fit=max&s=40ed7d0881298a1c6a8fae92ef3d7ba7",
     "link": "https://www.theguardian.com/world/2026/nov/21/excitement-unease-haiti-el-salvador-troops-gangs-war-bukele",
     "source": "Guardian 国际",
-    "score": 15.55,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ]
+    "score": 15.46,
+    "grp": "main"
   },
   {
-    "title_en": "FBI reportedly investigating apparent hack of its criminal database",
-    "title_zh": "据报道，联邦调查局正在调查其犯罪数据库明显遭到黑客攻击",
-    "summary": "The National Crime Information Center database is used by federal and local law enforcement to share information.",
-    "summary_zh": "联邦和地方执法部门使用国家犯罪信息中心数据库来共享信息。",
+    "title_en": "Clashes erupt across France in another night of protest",
+    "title_zh": "又一个抗议之夜，法国各地爆发冲突",
+    "summary": "French police charged to disperse crowds on Saturday as the country faced a sixth weekend of demonstrations.",
+    "summary_zh": "法国警方周六负责驱散人群，因为该国面临第六个周末的示威活动。",
     "body_en": [
-      "The FBI is investigating an apparent breach of its criminal information database, US media reports, citing two people briefed on the issue.",
-      "The National Crime Information Center (NCIC) database is used by federal and local law enforcement to share information on warrants and background checks.",
-      "It would not be the first time hackers have targeted the FBI, the domestic intelligence and security service of the US. The agency did not respond to the BBC's request for comment.",
-      "When asked about the breach in a Fox News interview on Saturday, President Donald Trump said he had \"just heard\" about the hack. \"I will say that it's not good. I don't like that,\" he said.",
-      "\"But maybe we'll learn things that we would've never learned otherwise,\" Trump added.",
-      "This apparent breach of FBI database comes after a string of tech outages which hit banking, air traffic control and other sectors in the US last week. Officials have said they were not caused by cyber-attacks, but the blackouts have sparked scrutiny from lawmakers.",
-      "White House National Cyber Director Sean Cairncross was fired this week, with Trump saying he was not good enough.",
-      "Dan Lorhmann, a former analyst for the National Security Agency (NSA), told the BBC News Channel that the NCIC's data included \"critical information relating to nationwide criminal activity\" and needed to be protected.",
-      "He added that while US security agencies including the FBI have \"an amazing ability\" to keep such information safe\" and are \"globally respected\", the level of cyber-attacks is rising globally.",
-      "\"There's a lot of different reasons why that's happening but I do have faith in our experts in government,\" Lorhmann said.",
-      "In September, the FBI said it was investigating an apparent breach by a cyber-crime group ShinyHunters, which claimed it had stolen sensitive information on all bureau staff - around 38,000 people.",
-      "After that hack, one former FBI agent told the BBC he feared for the safety of current employees, whose personal information could soon become available online to criminals and hostile nation-state hackers.",
-      "In a separate development, NBC reported an apparent cyberattack against the US Department of Agriculture (USDA).",
-      "Employees were informed on Thursday that its farm payment system had been targeted, NBC said.",
-      "The USDA has not publicly commented on the issue."
+      "Clashes erupt across France in another night of protest | Protests | Al Jazeera",
+      "French police charged to disperse crowds of protesters on Saturday as the country faced demonstrations for a sixth straight weekend over the cost-of-living crisis and income inequality.",
+      "Share Clashes erupt across France in another night of protest on social media"
     ],
     "body_zh": [
-      "美国媒体援引两名知情人士的话报道称，联邦调查局正在调查其犯罪信息数据库明显遭到破坏的事件。",
-      "联邦和地方执法部门使用国家犯罪信息中心 (NCIC) 数据库来共享有关逮捕令和背景调查的信息。",
-      "这并不是黑客第一次针对美国国内情报和安全部门联邦调查局 (FBI)。该机构没有回应 BBC 的置评请求。",
-      "唐纳德·特朗普总统在周六接受福克斯新闻采访时被问及此次黑客攻击事件时表示，他“刚刚听说”了此次黑客攻击。 “我会说这不好。我不喜欢这样，”他说。",
-      "特朗普补充道：“但也许我们会学到一些我们永远不会学到的东西。”",
-      "上周，美国银行业、空中交通管制和其他部门发生一系列技术中断事件，导致联邦调查局数据库明显遭到破坏。官员们表示，这不是由网络攻击引起的，但停电事件引发了立法者的审查。",
-      "白宫国家网络主任肖恩·凯恩克罗斯本周被解雇，特朗普称他不够好。",
-      "美国国家安全局 (NSA) 前分析师 Dan Lorhmann 告诉 BBC 新闻频道，NCIC 的数据包括“与全国犯罪活动有关的关键信息”，需要受到保护。",
-      "他补充说，尽管包括联邦调查局在内的美国安全机构拥有“惊人的能力”来确保此类信息的安全，并且“受到全球的尊重”，但全球网络攻击的程度正在上升。",
-      "洛曼说：“发生这种情况的原因有很多，但我确实对政府专家充满信心。”",
-      "9 月，FBI 表示正在调查网络犯罪组织 ShinyHunters 的一起明显违规行为，该组织声称窃取了联邦调查局所有工作人员（约 38,000 人）的敏感信息。",
-      "在那次黑客攻击之后，一名前联邦调查局特工告诉英国广播公司，他担心现任员工的安全，他们的个人信息很快就会被犯罪分子和敌对的民族国家黑客在网上获取。",
-      "在另一项进展中，NBC 报道了针对美国农业部 (USDA) 的明显网络攻击。",
-      "NBC 称，员工周四获悉其农场支付系统已成为攻击目标。",
-      "美国农业部尚未对此问题公开发表评论。"
+      "又一个抗议之夜，法国各地爆发冲突|抗议|半岛电视台",
+      "法国警方周六负责驱散抗议人群，因为该国因生活成本危机和收入不平等而连续第六个周末面临示威活动。",
+      "社交媒体抗议之夜，法国各地爆发冲突"
     ],
-    "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3fd7/live/9009b220-e58d-11f1-99a1-253766e7ad8b.jpg",
-    "link": "https://www.bbc.co.uk/news/articles/cvze7de86pk3o?at_medium=RSS&at_campaign=rss",
-    "source": "BBC 国际",
-    "score": 15.51,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15
-    ]
+    "img": "",
+    "link": "https://www.aljazeera.com/video/newsfeed/2026/11/22/clashes-erupt-across-france-in-another-night-of-protest?traffic_source=rss",
+    "source": "Al Jazeera",
+    "score": 15.45,
+    "grp": "main"
   },
   {
     "title_en": "Denmark accuses Russia of plotting to assassinate US-Ukrainian rapper",
@@ -902,26 +519,53 @@
     "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/9834/live/684cb9a0-e527-11f1-b32f-b1f1a32fbf0e.jpg",
     "link": "https://www.bbc.co.uk/news/articles/cmde1lj4yjxno?at_medium=RSS&at_campaign=rss",
     "source": "BBC 国际",
-    "score": 15.48,
-    "grp": "main",
-    "_miss": [
-      2,
-      5,
-      6,
-      7,
-      8,
-      9,
-      18
+    "score": 15.4,
+    "grp": "main"
+  },
+  {
+    "title_en": "FBI reportedly investigating apparent hack of its criminal database",
+    "title_zh": "据报道，联邦调查局正在调查其犯罪数据库明显遭到黑客攻击",
+    "summary": "The National Crime Information Center database is used by federal and local law enforcement to share information.",
+    "summary_zh": "联邦和地方执法部门使用国家犯罪信息中心数据库来共享信息。",
+    "body_en": [
+      "The FBI is investigating an apparent breach of its criminal information database, US media reports, citing two people briefed on the issue.",
+      "The National Crime Information Center (NCIC) database is used by federal and local law enforcement to share information on warrants and background checks.",
+      "It would not be the first time hackers have targeted the FBI, the domestic intelligence and security service of the US. The agency did not respond to the BBC's request for comment.",
+      "When asked about the breach in a Fox News interview on Saturday, President Donald Trump said he had \"just heard\" about the hack. \"I will say that it's not good. I don't like that,\" he said.",
+      "\"But maybe we'll learn things that we would've never learned otherwise,\" Trump added.",
+      "This apparent breach of FBI database comes after a string of tech outages which hit banking, air traffic control and other sectors in the US last week. Officials have said they were not caused by cyber-attacks, but the blackouts have sparked scrutiny from lawmakers.",
+      "White House National Cyber Director Sean Cairncross was fired this week, with Trump saying he was not good enough.",
+      "Dan Lorhmann, a former analyst for the National Security Agency (NSA), told the BBC News Channel that the NCIC's data included \"critical information relating to nationwide criminal activity\" and needed to be protected.",
+      "He added that while US security agencies including the FBI have \"an amazing ability\" to keep such information safe\" and are \"globally respected\", the level of cyber-attacks is rising globally.",
+      "\"There's a lot of different reasons why that's happening but I do have faith in our experts in government,\" Lorhmann said.",
+      "In September, the FBI said it was investigating an apparent breach by a cyber-crime group ShinyHunters, which claimed it had stolen sensitive information on all bureau staff - around 38,000 people.",
+      "After that hack, one former FBI agent told the BBC he feared for the safety of current employees, whose personal information could soon become available online to criminals and hostile nation-state hackers.",
+      "In a separate development, NBC reported an apparent cyberattack against the US Department of Agriculture (USDA).",
+      "Employees were informed on Thursday that its farm payment system had been targeted, NBC said.",
+      "The USDA has not publicly commented on the issue."
     ],
-    "_keep": [
-      2,
-      5,
-      6,
-      7,
-      8,
-      9,
-      18
-    ]
+    "body_zh": [
+      "美国媒体援引两名知情人士的话报道称，联邦调查局正在调查其犯罪信息数据库明显遭到破坏的事件。",
+      "联邦和地方执法部门使用国家犯罪信息中心 (NCIC) 数据库来共享有关逮捕令和背景调查的信息。",
+      "这并不是黑客第一次针对美国国内情报和安全部门联邦调查局 (FBI)。该机构没有回应 BBC 的置评请求。",
+      "唐纳德·特朗普总统在周六接受福克斯新闻采访时被问及此次黑客攻击事件时表示，他“刚刚听说”了此次黑客攻击。 “我会说这不好。我不喜欢这样，”他说。",
+      "特朗普补充道：“但也许我们会学到一些我们永远不会学到的东西。”",
+      "上周，美国银行业、空中交通管制和其他部门发生一系列技术中断事件，导致联邦调查局数据库明显遭到破坏。官员们表示，这不是由网络攻击引起的，但停电事件引发了立法者的审查。",
+      "白宫国家网络主任肖恩·凯恩克罗斯本周被解雇，特朗普称他不够好。",
+      "美国国家安全局 (NSA) 前分析师 Dan Lorhmann 告诉 BBC 新闻频道，NCIC 的数据包括“与全国犯罪活动有关的关键信息”，需要受到保护。",
+      "他补充说，尽管包括联邦调查局在内的美国安全机构拥有“惊人的能力”来确保此类信息的安全，并且“受到全球的尊重”，但全球网络攻击的程度正在上升。",
+      "洛曼说：“发生这种情况的原因有很多，但我确实对政府专家充满信心。”",
+      "9 月，FBI 表示正在调查网络犯罪组织 ShinyHunters 的一起明显违规行为，该组织声称窃取了联邦调查局所有工作人员（约 38,000 人）的敏感信息。",
+      "在那次黑客攻击之后，一名前联邦调查局特工告诉英国广播公司，他担心现任员工的安全，他们的个人信息很快就会被犯罪分子和敌对的民族国家黑客在网上获取。",
+      "在另一项进展中，NBC 报道了针对美国农业部 (USDA) 的明显网络攻击。",
+      "NBC 称，员工周四获悉其农场支付系统已成为攻击目标。",
+      "美国农业部尚未对此问题公开发表评论。"
+    ],
+    "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3fd7/live/9009b220-e58d-11f1-99a1-253766e7ad8b.jpg",
+    "link": "https://www.bbc.co.uk/news/articles/cvze7de86pk3o?at_medium=RSS&at_campaign=rss",
+    "source": "BBC 国际",
+    "score": 15.37,
+    "grp": "main"
   },
   {
     "title_en": "Lebanese president demands Israel withdrawal, decries Iran’s interference",
@@ -975,52 +619,8 @@
     "img": "",
     "link": "https://www.aljazeera.com/news/2026/11/21/lebanese-president-demands-israel-withdrawal-decries-irans-interference?traffic_source=rss",
     "source": "Al Jazeera",
-    "score": 15.43,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ]
+    "score": 15.29,
+    "grp": "main"
   },
   {
     "title_en": "Fight over fossil fuels leaves COP31 climate talks in deadlock",
@@ -1074,52 +674,8 @@
     "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/5253/live/c9ca5500-e579-11f1-a5f6-b3028adf2d6d.jpg",
     "link": "https://www.bbc.co.uk/news/articles/c6ly5w40eg07o?at_medium=RSS&at_campaign=rss",
     "source": "BBC 国际",
-    "score": 15.18,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19
-    ]
+    "score": 15.05,
+    "grp": "main"
   },
   {
     "title_en": "Lock of former US President George Washington's hair sells for $4,000",
@@ -1161,42 +717,8 @@
     "img": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/5138/live/c4d4d0c0-e5ec-11f1-ad4d-5dd9d517a6dd.jpg",
     "link": "https://www.bbc.co.uk/news/articles/cwe9k23dpz0do?at_medium=RSS&at_campaign=rss",
     "source": "BBC 国际",
-    "score": 15.13,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14
-    ]
+    "score": 15.0,
+    "grp": "main"
   },
   {
     "title_en": "Bahrain says Iranian attack hits industrial facility",
@@ -1216,20 +738,8 @@
     "img": "",
     "link": "https://www.aljazeera.com/video/newsfeed/2026/11/21/bahrain-says-iranian-attack-hits-industrial-facility?traffic_source=rss",
     "source": "Al Jazeera",
-    "score": 15.13,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3
-    ]
+    "score": 15.0,
+    "grp": "main"
   },
   {
     "title_en": "What did Xi Jinping get from the bear hug with Trump at the Shenzhen summit?",
@@ -1251,20 +761,8 @@
     "img": "",
     "link": "https://www.npr.org/2026/11/21/nx-s1-6048741/what-did-xi-jinping-get-from-the-bear-hug-with-trump-at-the-shenzhen-summit",
     "source": "NPR 国际",
-    "score": 15.13,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3
-    ]
+    "score": 15.0,
+    "grp": "main"
   },
   {
     "title_en": "Impunity fuels surge in settler violence across occupied West Bank",
@@ -1284,19 +782,7 @@
     "img": "",
     "link": "https://www.aljazeera.com/video/newsfeed/2026/11/21/impunity-fuels-surge-in-settler-violence-across-occupied-west-bank?traffic_source=rss",
     "source": "Al Jazeera",
-    "score": 14.99,
-    "grp": "main",
-    "_miss": [
-      0,
-      1,
-      2,
-      3
-    ],
-    "_keep": [
-      0,
-      1,
-      2,
-      3
-    ]
+    "score": 14.86,
+    "grp": "main"
   }
 ]

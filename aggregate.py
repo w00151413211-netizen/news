@@ -3120,7 +3120,7 @@ MANIFEST = {
 
 
 # ---- Service Worker：缓存核心资源，离线也能看、二次打开秒开 ----
-SW_JS = """var CACHE = 'news-v5';   /* 改版后升一位，老用户下次打开就能拿到新版 */
+SW_JS = """var CACHE = 'news-v6';   /* 改版后升一位，老用户下次打开就能拿到新版 */
 var CORE = ['./', './index.html', './manifest.json', './icon-180.png',
             './data.json', './us.json'];
 
@@ -3140,22 +3140,22 @@ self.addEventListener('activate', function(e) {
   }).then(function() { return self.clients.claim(); }));
 });
 
-// 缓存优先 + 后台更新：离线能看到上次的内容，有网时悄悄换新
+// 网络优先：有网就先拿线上最新的（避免"明明更新了手机却显示旧的"），
+// 只有联网失败才回退缓存，保证离线仍能看。
 self.addEventListener('fetch', function(e) {
   var req = e.request;
   if (req.method !== 'GET') return;
   var url = new URL(req.url);
   if (url.origin !== location.origin) return;   // 外域图片直接放行
   e.respondWith(
-    caches.match(req).then(function(hit) {
-      var net = fetch(req).then(function(resp) {
-        if (resp && resp.status === 200) {
-          var copy = resp.clone();
-          caches.open(CACHE).then(function(c) { c.put(req, copy); });
-        }
-        return resp;
-      }).catch(function() { return hit; });
-      return hit || net;
+    fetch(req).then(function(resp) {
+      if (resp && resp.status === 200) {
+        var copy = resp.clone();
+        caches.open(CACHE).then(function(c) { c.put(req, copy); });
+      }
+      return resp;
+    }).catch(function() {
+      return caches.match(req);   // 断网/超时才用缓存兜底
     })
   );
 });"""
@@ -3726,7 +3726,7 @@ def already_updated_today():
         if not os.path.exists(p):
             return False
         with open(p, encoding="utf-8") as f:
-            head = f.read(6000)          # 「更新于」在页头，读前 6000 字足够
+            head = f.read()              # 读全文：「更新于」被页内内联样式推到约 1.2 万字符处
         m = re.search(r"更新于\s*(\d{4})年(\d{2})月(\d{2})日", head)
         if not m:
             return False
